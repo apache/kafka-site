@@ -1,0 +1,6 @@
+Options +Includes
+AddType text/html .html
+AddHandler server-parsed .html
+Redirect 301 /design.html /documentation.html#design
+Redirect 301 /quickstart.html /documentation.html#quickstart
+Redirect 301 /uses.html /documentation.html#uses

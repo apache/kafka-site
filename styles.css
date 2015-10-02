@@ -1,0 +1,141 @@
+html, body{
+	font-family: 'Source Sans Pro', sans-serif;
+    margin: 0px;
+	padding: 0px;
+	background-color: #fff;
+	color: #333;
+	line-height: 175%;
+	font-size: 13pt;
+}
+code, pre {
+	font: 1em/normal "courier new", courier, monospace;
+}
+h1, h2, h3, h4 {
+  color: #2e4a8e;
+}
+h1 {
+	font-size: 24pt;
+}
+h2 {
+	font-size: 18pt;
+}
+h3 {
+	font-size: 16pt;
+}
+h4 {
+	font-size: 14pt;
+}
+a {
+	color: #2e4a8e;
+	font-weight: bold;
+	text-decoration: none;
+}
+#everything {
+	margin: auto;
+	width: 1000px;
+}
+#header {
+	margin: auto;
+	padding-left: 35px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: white;
+	min-width: 1000px;
+	overflow: hidden;
+}
+#header a {
+	color: black;
+	text-decoration: none;
+}
+#header table {
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+#header img {
+	margin: 5px;
+}
+#footer {
+	text-align: center;
+	font-size: 10pt;
+	width: 500px;
+	margin: auto;
+	line-height: 100%;
+}
+.title, .subtitle {
+	color: black;
+	font-size: 50pt;
+	line-height: 55%;	
+}
+.subtitle {
+	font-size: 16pt;
+}
+.feather {
+	margin: 5px;
+	border: 0px;
+}
+.projects, .projects a {
+	font-style: normal;
+	font-size: 11pt;
+}
+.lsidebar {
+	float: left;
+	font-size: 15pt;
+	color: #2e4a8e;
+	width: 250px;
+	line-height: 120%;
+}
+.lsidebar li {
+	list-style-type: none;
+}
+.lsidebar li a {
+	text-decoration: none;
+	font-weight: normal;
+	color: #2e4a8e;
+}
+.lsidebar li li {
+	list-style-type: circle;
+}
+.content {
+	width: 800px;
+	margin-left: 250px;
+	min-height: 550px;
+	padding: 0px;
+}
+.numeric {
+  text-align: right;
+}
+.data-table {
+  border: 1px solid #a9a9a9;
+  border-collapse: collapse;
+  width: 1000px;
+}
+.data-table td, .data-table th {
+  border: 1px solid #888;
+  padding: 2px;
+}
+.data-table th {
+  background-color: #ccc;
+  font-weight: bold;
+}
+.advert-message {
+  border: 3px solid #2e4a8e;
+  padding: 15px;
+}
+.buzzword {
+	font-size: 18pt;
+	line-height: 200%;
+	color: #2e4a8e;
+}
+.caption {
+	font-size: 11pt; 
+	font-weight: bold
+}
+.toc {
+	font-size: 15pt;
+}
+.toc ul {
+	font-size: 14pt;
+}
+.toc ul ul {
+	font-size: 13pt;
+}
