@@ -17,7 +17,7 @@ To submit a change for inclusion, please do the following:
 	<li>If you are introducing a completely new feature or API it is a good idea to start a wiki and get consensus on the basic design first.</li>
 	<li>Make sure you have observed the recommendations in the <a href="coding-guide.html">style guide</a>.</li>
 	<li>Follow the detailed instructions in <a href="https://cwiki.apache.org/confluence/display/KAFKA/Contributing+Code+Changes">Contributing Code Changes</a>.</li>
-	<li>Note that if the change is related to user-facing protocols / interface / configs, etc, you need to make the corresponding change on the documentation as well. For wiki page changes feel free to edit the page content directly (you may need to contact us to get the permission first if it is your first time to edit on wiki); for website doc changes please follow the steps below to submit another patch as well, except it can be under the same JIRA as the code change and you do not need to create a new JIRA for it.
+	<li>Note that if the change is related to user-facing protocols / interface / configs, etc, you need to make the corresponding change on the documentation as well. For wiki page changes feel free to edit the page content directly (you may need to contact us to get the permission first if it is your first time to edit on wiki);  website docs live in the code repo under `docs` so that changes to that can be done in the same PR as changes to the code. Website doc change instructions are given below.
 	<li>It is our job to follow up on patches in a timely fashion. <a href="mailto: dev@kafka.apache.org">Nag us</a> if we aren't doing our job (sometimes we drop things).</li>
 </ul>
 
@@ -26,9 +26,8 @@ To submit a change for inclusion, please do the following:
 To submit a change for inclusion please do the following:
 
 <ul>
-	<li>Create a patch that applies cleanly against <a href="http://svn.apache.org/repos/asf/kafka/site/">SVN trunk</a>.</li>
-	<li>Open a <a href="https://issues.apache.org/jira/browse/KAFKA">JIRA</a> ticket describing the patch and attach your patch to the JIRA. Include in the JIRA information about the issue and the approach you took in fixing it (if this isn't obvious). Also, mark the jira as "Patch Available" by clicking on the "Submit Patch" button (this is done automatically if you use the code review tool below). Creating the JIRA will automatically send an email to the developer email list alerting us of the new issue.</li>
-	<li>It is our job to follow up on patches in a timely fashion. <a href="mailto: dev@kafka.apache.org">Nag us</a> if we aren't doing our job (sometimes we drop things). If the patch needs improvement, the reviwer will mark the jira back to "In Progress" after reviewing.</li>
+       <li>Follow the instructions in <a href="https://cwiki.apache.org/confluence/display/KAFKA/Contributing+Website+Documentation+Changes">Contributing Website Changes</a>.</li>
+       <li>It is our job to follow up on patches in a timely fashion. <a href="mailto: dev@kafka.apache.org">Nag us</a> if we aren't doing our job (sometimes we drop things). If the patch needs improvement, the reviewer will mark the jira back to "In Progress" after reviewing.</li>
 </ul>
 
 <h2>Finding A Project To Work On</h2>
