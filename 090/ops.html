@@ -1,3 +1,20 @@
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+ 
+    http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
 Here is some information on actually running Kafka as a production system based on usage and experience at LinkedIn. Please send us any additional tips you know of.
 
 <h3><a id="basic_ops">6.1 Basic Kafka Operations</a></h3>
@@ -79,9 +96,9 @@ Since running this command can be tedious you can also configure Kafka to do thi
 
 <h4><a id="basic_ops_mirror_maker">Mirroring data between clusters</a></h4>
 
-We refer to the process of replicating data <i>between</i> Kafka clusters "mirroring" to avoid confusion with the replication that happens amongst the nodes in a single cluster. Kafka comes with a tool for mirroring data between Kafka clusters. The tool reads from one or more source clusters and writes to a destination cluster, like this:
+We refer to the process of replicating data <i>between</i> Kafka clusters "mirroring" to avoid confusion with the replication that happens amongst the nodes in a single cluster. Kafka comes with a tool for mirroring data between Kafka clusters. The tool reads from a source cluster and writes to a destination cluster, like this:
 <p>
-<img src="/images/mirror-maker.png">
+<img src="images/mirror-maker.png">
 <p>
 A common use case for this kind of mirroring is to provide a replica in another datacenter. This scenario will be discussed in more detail in the next section.
 <p>
@@ -278,6 +295,25 @@ You can also verify the increase in replication factor with the kafka-topics too
 > bin/kafka-topics.sh --zookeeper localhost:2181 --topic foo --describe
 Topic:foo	PartitionCount:1	ReplicationFactor:3	Configs:
 	Topic: foo	Partition: 0	Leader: 5	Replicas: 5,6,7	Isr: 5,6,7
+</pre>
+
+<h4><a id="quotas">Setting quotas</a></h4>
+It is possible to set default quotas that apply to all client-ids by setting these configs on the brokers. By default, each client-id receives an unlimited quota. The following sets the default quota per producer and consumer client-id to 10MB/sec.
+<pre>
+  quota.producer.default=10485760
+  quota.consumer.default=10485760
+</pre>
+
+It is also possible to set custom quotas for each client.
+<pre>
+> bin/kafka-configs.sh  --zookeeper localhost:2181 --alter --add-config 'producer_byte_rate=1024,consumer_byte_rate=2048' --entity-name clientA --entity-type clients
+Updated config for clientId: "clientA".
+</pre>
+
+Here's how to describe the quota for a given client.
+<pre>
+> ./kafka-configs.sh  --zookeeper localhost:2181 --describe --entity-name clientA --entity-type clients
+Configs for clients:clientA are producer_byte_rate=1024,consumer_byte_rate=2048
 </pre>
 
 <h3><a id="datacenters">6.2 Datacenters</a></h3>
@@ -584,6 +620,12 @@ We pay particular we do graphing and alerting on the following metrics:
       <td>kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent</td>
       <td>between 0 and 1, ideally &gt 0.3</td>
     </tr>
+    <tr>
+      <td>Quota metrics per client-id</td>
+      <td>kafka.server:type={Produce|Fetch},client-id==([-.\w]+)</td>
+      <td>Two attributes. throttle-time indicates the amount of time in ms the client-id was throttled. Ideally = 0.
+          byte-rate indicates the data produce/consume rate of the client in bytes/sec.</td>
+    </tr>
 </tbody></table>
 
 <h4><a id="new_producer_monitoring">New producer monitoring</a></h4>
@@ -830,6 +872,16 @@ The following metrics are available on new producer instances.
       <td>record-error-rate</td>
       <td>The average per-second number of record sends that resulted in errors for a topic.</td>
       <td>kafka.producer:type=producer-topic-metrics,client-id=([-.\w]+),topic=([-.\w]+)</td>
+    </tr>
+    <tr>
+      <td>produce-throttle-time-max</td>
+      <td>The maximum time in ms a request was throttled by a broker.</td>
+      <td>kafka.producer:type=producer-topic-metrics,client-id=([-.\w]+)</td>
+    </tr>
+    <tr>
+      <td>produce-throttle-time-avg</td>
+      <td>The average time in ms a request was throttled by a broker.</td>
+      <td>kafka.producer:type=producer-topic-metrics,client-id=([-.\w]+)</td>
     </tr>
 </tbody></table>
 
