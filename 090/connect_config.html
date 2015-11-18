@@ -26,23 +26,21 @@
 <tr>
 <td>session.timeout.ms</td><td>The timeout used to detect failures when using Kafka's group management facilities.</td><td>int</td><td>30000</td><td></td><td>high</td></tr>
 <tr>
-<td>ssl.key.password</td><td>The password of the private key in the key store file. This is optional for client.</td><td>string</td><td>null</td><td></td><td>high</td></tr>
+<td>ssl.key.password</td><td>The password of the private key in the key store file. This is optional for client.</td><td>password</td><td>null</td><td></td><td>high</td></tr>
 <tr>
 <td>ssl.keystore.location</td><td>The location of the key store file. This is optional for client and can be used for two-way authentication for client.</td><td>string</td><td>null</td><td></td><td>high</td></tr>
 <tr>
-<td>ssl.keystore.password</td><td>The store password for the key store file.This is optional for client and only needed if ssl.keystore.location is configured. </td><td>string</td><td>null</td><td></td><td>high</td></tr>
+<td>ssl.keystore.password</td><td>The store password for the key store file.This is optional for client and only needed if ssl.keystore.location is configured. </td><td>password</td><td>null</td><td></td><td>high</td></tr>
 <tr>
 <td>ssl.truststore.location</td><td>The location of the trust store file. </td><td>string</td><td>null</td><td></td><td>high</td></tr>
 <tr>
-<td>ssl.truststore.password</td><td>The password for the trust store file. </td><td>string</td><td>null</td><td></td><td>high</td></tr>
+<td>ssl.truststore.password</td><td>The password for the trust store file. </td><td>password</td><td>null</td><td></td><td>high</td></tr>
 <tr>
 <td>connections.max.idle.ms</td><td>Close idle connections after the number of milliseconds specified by this config.</td><td>long</td><td>540000</td><td></td><td>medium</td></tr>
 <tr>
 <td>receive.buffer.bytes</td><td>The size of the TCP receive buffer (SO_RCVBUF) to use when reading data.</td><td>int</td><td>32768</td><td>[0,...]</td><td>medium</td></tr>
 <tr>
 <td>request.timeout.ms</td><td>The configuration controls the maximum amount of time the client will wait for the response of a request. If the response is not received before the timeout elapses the client will resend the request if necessary or fail the request if retries are exhausted.</td><td>int</td><td>40000</td><td>[0,...]</td><td>medium</td></tr>
-<tr>
-<td>sasl.kerberos.principal.to.local.rules</td><td>A list of rules for mapping from principal names to short names (typically operating system usernames). The rules are evaluated in order and the first rule that matches a principal name is used to map it to a short name. Any later rules in the list are ignored. By default, principal names of the form <username>/<hostname>@<REALM> are mapped to <username>.</td><td>list</td><td>[DEFAULT]</td><td></td><td>medium</td></tr>
 <tr>
 <td>sasl.kerberos.service.name</td><td>The Kerberos principal name that Kafka runs as. This can be defined either in Kafka's JAAS config or in Kafka's config.</td><td>string</td><td>null</td><td></td><td>medium</td></tr>
 <tr>
@@ -77,8 +75,6 @@
 <td>offset.flush.interval.ms</td><td>Interval at which to try committing offsets for tasks.</td><td>long</td><td>60000</td><td></td><td>low</td></tr>
 <tr>
 <td>offset.flush.timeout.ms</td><td>Maximum number of milliseconds to wait for records to flush and partition offset data to be committed to offset storage before cancelling the process and restoring the offset data to be committed in a future attempt.</td><td>long</td><td>5000</td><td></td><td>low</td></tr>
-<tr>
-<td>principal.builder.class</td><td>principal builder to generate a java Principal. This config is optional for client.</td><td>class</td><td>class org.apache.kafka.common.security.auth.DefaultPrincipalBuilder</td><td></td><td>low</td></tr>
 <tr>
 <td>reconnect.backoff.ms</td><td>The amount of time to wait before attempting to reconnect to a given host. This avoids repeatedly connecting to a host in a tight loop. This backoff applies to all requests sent by the consumer to the broker.</td><td>long</td><td>50</td><td>[0,...]</td><td>low</td></tr>
 <tr>

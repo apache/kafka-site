@@ -200,7 +200,7 @@
 <tr>
 <td>num.partitions</td><td>The default number of log partitions per topic</td><td>int</td><td>1</td><td>[1,...]</td><td>medium</td></tr>
 <tr>
-<td>principal.builder.class</td><td>principal builder to generate a java Principal. This config is optional for client.</td><td>class</td><td>class org.apache.kafka.common.security.auth.DefaultPrincipalBuilder</td><td></td><td>medium</td></tr>
+<td>principal.builder.class</td><td>The fully qualified name of a class that implements the PrincipalBuilder interface, which is currently used to build the Principal for connections with the SSL SecurityProtocol. Default is DefaultPrincipalBuilder.</td><td>class</td><td>class org.apache.kafka.common.security.auth.DefaultPrincipalBuilder</td><td></td><td>medium</td></tr>
 <tr>
 <td>producer.purgatory.purge.interval.requests</td><td>The purge interval (in number of requests) of the producer request purgatory</td><td>int</td><td>1000</td><td></td><td>medium</td></tr>
 <tr>
