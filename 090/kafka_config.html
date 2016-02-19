@@ -144,6 +144,8 @@
 <tr>
 <td>zookeeper.set.acl</td><td>Set client to use secure ACLs</td><td>boolean</td><td>false</td><td></td><td>high</td></tr>
 <tr>
+<td>broker.id.generation.enable</td><td>Enable automatic broker id generation on the server? When enabled the value configured for reserved.broker.max.id should be reviewed.</td><td>boolean</td><td>true</td><td></td><td>medium</td></tr>
+<tr>
 <td>connections.max.idle.ms</td><td>Idle connections timeout: the server socket processor threads close the connections that idle more than this</td><td>long</td><td>600000</td><td></td><td>medium</td></tr>
 <tr>
 <td>controlled.shutdown.enable</td><td>Enable controlled shutdown of the server</td><td>boolean</td><td>true</td><td></td><td>medium</td></tr>
@@ -168,11 +170,11 @@
 <tr>
 <td>log.cleaner.backoff.ms</td><td>The amount of time to sleep when there are no logs to clean</td><td>long</td><td>15000</td><td>[0,...]</td><td>medium</td></tr>
 <tr>
-<td>log.cleaner.dedupe.buffer.size</td><td>The total memory used for log deduplication across all cleaner threads</td><td>long</td><td>524288000</td><td></td><td>medium</td></tr>
+<td>log.cleaner.dedupe.buffer.size</td><td>The total memory used for log deduplication across all cleaner threads</td><td>long</td><td>134217728</td><td></td><td>medium</td></tr>
 <tr>
 <td>log.cleaner.delete.retention.ms</td><td>How long are delete records retained?</td><td>long</td><td>86400000</td><td></td><td>medium</td></tr>
 <tr>
-<td>log.cleaner.enable</td><td>Should we enable log cleaning?</td><td>boolean</td><td>false</td><td></td><td>medium</td></tr>
+<td>log.cleaner.enable</td><td>Enable the log cleaner process to run on the server? Should be enabled if using any topics with a cleanup.policy=compact including the internal offsets topic. If disabled those topics will not be compacted and continually grow in size.</td><td>boolean</td><td>true</td><td></td><td>medium</td></tr>
 <tr>
 <td>log.cleaner.io.buffer.load.factor</td><td>Log cleaner dedupe buffer load factor. The percentage full the dedupe buffer can become. A higher value will allow more log to be cleaned at once but will lead to more hash collisions</td><td>double</td><td>0.9</td><td></td><td>medium</td></tr>
 <tr>
@@ -212,7 +214,7 @@
 <tr>
 <td>sasl.kerberos.min.time.before.relogin</td><td>Login thread sleep time between refresh attempts.</td><td>long</td><td>60000</td><td></td><td>medium</td></tr>
 <tr>
-<td>sasl.kerberos.principal.to.local.rules</td><td>A list of rules for mapping from principal names to short names (typically operating system usernames). The rules are evaluated in order and the first rule that matches a principal name is used to map it to a short name. Any later rules in the list are ignored. By default, principal names of the form {username}/{hostname}@{REALM} are mapped to {username}.</td><td>list</td><td>[DEFAULT]</td><td></td><td>medium</td></tr>
+<td>sasl.kerberos.principal.to.local.rules</td><td>A list of rules for mapping from principal names to short names (typically operating system usernames). The rules are evaluated in order and the first rule that matches a principal name is used to map it to a short name. Any later rules in the list are ignored. By default, principal names of the form {username}/{hostname}@{REALM} are mapped to {username}. For more details on the format please see <a href="#security_authz"> security authorization and acls</a>.</td><td>list</td><td>[DEFAULT]</td><td></td><td>medium</td></tr>
 <tr>
 <td>sasl.kerberos.service.name</td><td>The Kerberos principal name that Kafka runs as. This can be defined either in Kafka's JAAS config or in Kafka's config.</td><td>string</td><td>null</td><td></td><td>medium</td></tr>
 <tr>
