@@ -10,11 +10,13 @@
 <tr>
 <td>zookeeper.connect</td><td>Zookeeper host string</td><td>string</td><td></td><td></td><td>high</td></tr>
 <tr>
-<td>advertised.host.name</td><td>Hostname to publish to ZooKeeper for clients to use. In IaaS environments, this may need to be different from the interface to which the broker binds. If this is not set, it will use the value for "host.name" if configured. Otherwise it will use the value returned from java.net.InetAddress.getCanonicalHostName().</td><td>string</td><td>null</td><td></td><td>high</td></tr>
+<td>advertised.host.name</td><td>DEPRECATED: only used when `advertised.listeners` or `listeners` are not set. Use `advertised.listeners` instead. 
+Hostname to publish to ZooKeeper for clients to use. In IaaS environments, this may need to be different from the interface to which the broker binds. If this is not set, it will use the value for `host.name` if configured. Otherwise it will use the value returned from java.net.InetAddress.getCanonicalHostName().</td><td>string</td><td>null</td><td></td><td>high</td></tr>
 <tr>
-<td>advertised.listeners</td><td>Listeners to publish to ZooKeeper for clients to use, if different than the listeners above. In IaaS environments, this may need to be different from the interface to which the broker binds. If this is not set, the value for "listeners" will be used.</td><td>string</td><td>null</td><td></td><td>high</td></tr>
+<td>advertised.listeners</td><td>Listeners to publish to ZooKeeper for clients to use, if different than the listeners above. In IaaS environments, this may need to be different from the interface to which the broker binds. If this is not set, the value for `listeners` will be used.</td><td>string</td><td>null</td><td></td><td>high</td></tr>
 <tr>
-<td>advertised.port</td><td>The port to publish to ZooKeeper for clients to use. In IaaS environments, this may need to be different from the port to which the broker binds. If this is not set, it will publish the same port that the broker binds to.</td><td>int</td><td>null</td><td></td><td>high</td></tr>
+<td>advertised.port</td><td>DEPRECATED: only used when `advertised.listeners` or `listeners` are not set. Use `advertised.listeners` instead. 
+The port to publish to ZooKeeper for clients to use. In IaaS environments, this may need to be different from the port to which the broker binds. If this is not set, it will publish the same port that the broker binds to.</td><td>int</td><td>null</td><td></td><td>high</td></tr>
 <tr>
 <td>auto.create.topics.enable</td><td>Enable auto creation of topic on the server</td><td>boolean</td><td>true</td><td></td><td>high</td></tr>
 <tr>
@@ -28,7 +30,8 @@
 <tr>
 <td>delete.topic.enable</td><td>Enables delete topic. Delete topic through the admin tool will have no effect if this config is turned off</td><td>boolean</td><td>false</td><td></td><td>high</td></tr>
 <tr>
-<td>host.name</td><td>hostname of broker. If this is set, it will only bind to this address. If this is not set, it will bind to all interfaces</td><td>string</td><td>""</td><td></td><td>high</td></tr>
+<td>host.name</td><td>DEPRECATED: only used when `listeners` is not set. Use `listeners` instead. 
+hostname of broker. If this is set, it will only bind to this address. If this is not set, it will bind to all interfaces</td><td>string</td><td>""</td><td></td><td>high</td></tr>
 <tr>
 <td>leader.imbalance.check.interval.seconds</td><td>The frequency with which the partition rebalance check is triggered by the controller</td><td>long</td><td>300</td><td></td><td>high</td></tr>
 <tr>
@@ -106,7 +109,8 @@
 <tr>
 <td>offsets.topic.segment.bytes</td><td>The offsets topic segment bytes should be kept relatively small in order to facilitate faster log compaction and cache loads</td><td>int</td><td>104857600</td><td>[1,...]</td><td>high</td></tr>
 <tr>
-<td>port</td><td>the port to listen and accept connections on</td><td>int</td><td>9092</td><td></td><td>high</td></tr>
+<td>port</td><td>DEPRECATED: only used when `listeners` is not set. Use `listeners` instead. 
+the port to listen and accept connections on</td><td>int</td><td>9092</td><td></td><td>high</td></tr>
 <tr>
 <td>queued.max.requests</td><td>The number of queued requests allowed before blocking the network threads</td><td>int</td><td>500</td><td>[1,...]</td><td>high</td></tr>
 <tr>
@@ -162,9 +166,9 @@
 <tr>
 <td>fetch.purgatory.purge.interval.requests</td><td>The purge interval (in number of requests) of the fetch request purgatory</td><td>int</td><td>1000</td><td></td><td>medium</td></tr>
 <tr>
-<td>group.max.session.timeout.ms</td><td>The maximum allowed session timeout for registered consumers</td><td>int</td><td>30000</td><td></td><td>medium</td></tr>
+<td>group.max.session.timeout.ms</td><td>The maximum allowed session timeout for registered consumers. Longer timeouts give consumers more time to process messages in between heartbeats at the cost of a longer time to detect failures.</td><td>int</td><td>30000</td><td></td><td>medium</td></tr>
 <tr>
-<td>group.min.session.timeout.ms</td><td>The minimum allowed session timeout for registered consumers</td><td>int</td><td>6000</td><td></td><td>medium</td></tr>
+<td>group.min.session.timeout.ms</td><td>The minimum allowed session timeout for registered consumers. Shorter timeouts leader to quicker failure detection at the cost of more frequent consumer heartbeating, which can overwhelm broker resources.</td><td>int</td><td>6000</td><td></td><td>medium</td></tr>
 <tr>
 <td>inter.broker.protocol.version</td><td>Specify which version of the inter-broker protocol will be used.
  This is typically bumped after all brokers were upgraded to a new version.
@@ -266,7 +270,7 @@
 <tr>
 <td>metrics.num.samples</td><td>The number of samples maintained to compute metrics.</td><td>int</td><td>2</td><td>[1,...]</td><td>low</td></tr>
 <tr>
-<td>metrics.sample.window.ms</td><td>The number of samples maintained to compute metrics.</td><td>long</td><td>30000</td><td>[1,...]</td><td>low</td></tr>
+<td>metrics.sample.window.ms</td><td>The window of time a metrics sample is computed over.</td><td>long</td><td>30000</td><td>[1,...]</td><td>low</td></tr>
 <tr>
 <td>quota.window.num</td><td>The number of samples to retain in memory</td><td>int</td><td>11</td><td>[1,...]</td><td>low</td></tr>
 <tr>

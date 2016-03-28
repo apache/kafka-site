@@ -31,7 +31,7 @@
 <tr><td>INCONSISTENT_GROUP_PROTOCOL</td><td>23</td><td>False</td><td>The group member's supported protocols are incompatible with those of existing members.</td></tr>
 <tr><td>INVALID_GROUP_ID</td><td>24</td><td>False</td><td>The configured groupId is invalid</td></tr>
 <tr><td>UNKNOWN_MEMBER_ID</td><td>25</td><td>False</td><td>The coordinator is not aware of this member.</td></tr>
-<tr><td>INVALID_SESSION_TIMEOUT</td><td>26</td><td>False</td><td>The session timeout is not within an acceptable range.</td></tr>
+<tr><td>INVALID_SESSION_TIMEOUT</td><td>26</td><td>False</td><td>The session timeout is not within the range allowed by the broker (as configured by group.min.session.timeout.ms and group.max.session.timeout.ms).</td></tr>
 <tr><td>REBALANCE_IN_PROGRESS</td><td>27</td><td>False</td><td>The group is rebalancing, so a rejoin is needed.</td></tr>
 <tr><td>INVALID_COMMIT_OFFSET_SIZE</td><td>28</td><td>False</td><td>The committing offset data size is not valid</td></tr>
 <tr><td>TOPIC_AUTHORIZATION_FAILED</td><td>29</td><td>False</td><td>Not authorized to access topics: [Topic authorization failed.]</td></tr>
