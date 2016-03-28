@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>coordinator - core 0.10.0.0 API - kafka.coordinator</title>
+          <meta name="description" content="coordinator - core 0.10.0.0 API - kafka.coordinator" />
+          <meta name="keywords" content="coordinator core 0.10.0.0 API kafka.coordinator" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'kafka.coordinator.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="kafka">kafka</a></p>
+        <h1>coordinator</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">coordinator</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="kafka.coordinator.BaseKey" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BaseKeyextendsAnyRef"></a>
+      <a id="BaseKey:BaseKey"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BaseKey.html"><span class="name">BaseKey</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.coordinator.DelayedStore" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DelayedStoreextendsProductwithSerializable"></a>
+      <a id="DelayedStore:DelayedStore"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="DelayedStore.html"><span class="name">DelayedStore</span></a><span class="params">(<span name="messageSet">messageSet: <span class="extype" name="scala.collection.Map">Map</span>[<span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span>, <a href="../message/MessageSet.html" class="extype" name="kafka.message.MessageSet">MessageSet</a>]</span>, <span name="callback">callback: (<span class="extype" name="scala.collection.Map">Map</span>[<span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span>, <span class="extype" name="org.apache.kafka.common.requests.ProduceResponse.PartitionResponse">PartitionResponse</span>]) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.coordinator.GroupConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GroupConfigextendsProductwithSerializable"></a>
+      <a id="GroupConfig:GroupConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GroupConfig.html"><span class="name">GroupConfig</span></a><span class="params">(<span name="groupMinSessionTimeoutMs">groupMinSessionTimeoutMs: <span class="extype" name="scala.Int">Int</span></span>, <span name="groupMaxSessionTimeoutMs">groupMaxSessionTimeoutMs: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.coordinator.GroupCoordinator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GroupCoordinatorextendsLogging"></a>
+      <a id="GroupCoordinator:GroupCoordinator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GroupCoordinator.html"><span class="name">GroupCoordinator</span></a><span class="result"> extends <a href="../utils/Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">GroupCoordinator handles general group membership and offset management.</p>
+    </li><li name="kafka.coordinator.GroupMetadataKey" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GroupMetadataKeyextendsBaseKeywithProductwithSerializable"></a>
+      <a id="GroupMetadataKey:GroupMetadataKey"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GroupMetadataKey.html"><span class="name">GroupMetadataKey</span></a><span class="params">(<span name="version">version: <span class="extype" name="scala.Short">Short</span></span>, <span name="key">key: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="BaseKey.html" class="extype" name="kafka.coordinator.BaseKey">BaseKey</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.coordinator.GroupMetadataManager" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GroupMetadataManagerextendsLoggingwithKafkaMetricsGroup"></a>
+      <a id="GroupMetadataManager:GroupMetadataManager"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GroupMetadataManager.html"><span class="name">GroupMetadataManager</span></a><span class="result"> extends <a href="../utils/Logging.html" class="extype" name="kafka.utils.Logging">Logging</a> with <a href="../metrics/KafkaMetricsGroup.html" class="extype" name="kafka.metrics.KafkaMetricsGroup">KafkaMetricsGroup</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.coordinator.GroupOverview" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GroupOverviewextendsProductwithSerializable"></a>
+      <a id="GroupOverview:GroupOverview"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GroupOverview.html"><span class="name">GroupOverview</span></a><span class="params">(<span name="groupId">groupId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="protocolType">protocolType: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Case class used to represent group metadata for the ListGroups API
+</p>
+    </li><li name="kafka.coordinator.GroupSummary" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GroupSummaryextendsProductwithSerializable"></a>
+      <a id="GroupSummary:GroupSummary"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GroupSummary.html"><span class="name">GroupSummary</span></a><span class="params">(<span name="state">state: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="protocolType">protocolType: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="protocol">protocol: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="members">members: <span class="extype" name="scala.List">List</span>[<a href="MemberSummary.html" class="extype" name="kafka.coordinator.MemberSummary">MemberSummary</a>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Case class used to represent group metadata for the DescribeGroup API
+</p>
+    </li><li name="kafka.coordinator.GroupTopicPartition" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GroupTopicPartitionextendsProductwithSerializable"></a>
+      <a id="GroupTopicPartition:GroupTopicPartition"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GroupTopicPartition.html"><span class="name">GroupTopicPartition</span></a><span class="params">(<span name="group">group: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="topicPartition">topicPartition: <span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.coordinator.JoinGroupResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="JoinGroupResultextendsProductwithSerializable"></a>
+      <a id="JoinGroupResult:JoinGroupResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="JoinGroupResult.html"><span class="name">JoinGroupResult</span></a><span class="params">(<span name="members">members: <span class="extype" name="scala.collection.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Byte">Byte</span>]]</span>, <span name="memberId">memberId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="generationId">generationId: <span class="extype" name="scala.Int">Int</span></span>, <span name="subProtocol">subProtocol: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="leaderId">leaderId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="errorCode">errorCode: <span class="extype" name="scala.Short">Short</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.coordinator.MemberSummary" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MemberSummaryextendsProductwithSerializable"></a>
+      <a id="MemberSummary:MemberSummary"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MemberSummary.html"><span class="name">MemberSummary</span></a><span class="params">(<span name="memberId">memberId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="clientId">clientId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="clientHost">clientHost: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="metadata">metadata: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Byte">Byte</span>]</span>, <span name="assignment">assignment: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Byte">Byte</span>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.coordinator.OffsetConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OffsetConfigextendsProductwithSerializable"></a>
+      <a id="OffsetConfig:OffsetConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="OffsetConfig.html"><span class="name">OffsetConfig</span></a><span class="params">(<span name="maxMetadataSize">maxMetadataSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">OffsetConfig.DefaultMaxMetadataSize</span></span>, <span name="loadBufferSize">loadBufferSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">OffsetConfig.DefaultLoadBufferSize</span></span>, <span name="offsetsRetentionMs">offsetsRetentionMs: <span class="extype" name="scala.Long">Long</span> = <span class="defval" name="OffsetConfig.DefaultOffsetRetentionMs">...</span></span>, <span name="offsetsRetentionCheckIntervalMs">offsetsRetentionCheckIntervalMs: <span class="extype" name="scala.Long">Long</span> = <span class="defval" name="OffsetConfig.DefaultOffsetsRetentionCheckIntervalMs">...</span></span>, <span name="offsetsTopicNumPartitions">offsetsTopicNumPartitions: <span class="extype" name="scala.Int">Int</span> = <span class="defval" name="OffsetConfig.DefaultOffsetsTopicNumPartitions">...</span></span>, <span name="offsetsTopicSegmentBytes">offsetsTopicSegmentBytes: <span class="extype" name="scala.Int">Int</span> = <span class="defval" name="OffsetConfig.DefaultOffsetsTopicSegmentBytes">...</span></span>, <span name="offsetsTopicReplicationFactor">offsetsTopicReplicationFactor: <span class="extype" name="scala.Short">Short</span> = <span class="defval" name="OffsetConfig.DefaultOffsetsTopicReplicationFactor">...</span></span>, <span name="offsetsTopicCompressionCodec">offsetsTopicCompressionCodec: <a href="../message/CompressionCodec.html" class="extype" name="kafka.message.CompressionCodec">CompressionCodec</a> = <span class="defval" name="OffsetConfig.DefaultOffsetsTopicCompressionCodec">...</span></span>, <span name="offsetCommitTimeoutMs">offsetCommitTimeoutMs: <span class="extype" name="scala.Int">Int</span> = <span class="defval" name="OffsetConfig.DefaultOffsetCommitTimeoutMs">...</span></span>, <span name="offsetCommitRequiredAcks">offsetCommitRequiredAcks: <span class="extype" name="scala.Short">Short</span> = <span class="defval" name="OffsetConfig.DefaultOffsetCommitRequiredAcks">...</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Configuration settings for in-built offset management</p>
+    </li><li name="kafka.coordinator.OffsetKey" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OffsetKeyextendsBaseKeywithProductwithSerializable"></a>
+      <a id="OffsetKey:OffsetKey"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="OffsetKey.html"><span class="name">OffsetKey</span></a><span class="params">(<span name="version">version: <span class="extype" name="scala.Short">Short</span></span>, <span name="key">key: <a href="GroupTopicPartition.html" class="extype" name="kafka.coordinator.GroupTopicPartition">GroupTopicPartition</a></span>)</span><span class="result"> extends <a href="BaseKey.html" class="extype" name="kafka.coordinator.BaseKey">BaseKey</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="kafka.coordinator.GroupCoordinator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GroupCoordinator"></a>
+      <a id="GroupCoordinator:GroupCoordinator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GroupCoordinator$.html"><span class="name">GroupCoordinator</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.coordinator.GroupMetadataManager" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GroupMetadataManager"></a>
+      <a id="GroupMetadataManager:GroupMetadataManager"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GroupMetadataManager$.html"><span class="name">GroupMetadataManager</span></a>
+      </span>
+      </h4>
+      <p class="comment cmt">Messages stored for the group topic has versions for both the key and value fields.</p>
+    </li><li name="kafka.coordinator.OffsetConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OffsetConfig"></a>
+      <a id="OffsetConfig:OffsetConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="OffsetConfig$.html"><span class="name">OffsetConfig</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../lib/template.js"></script>
+    </body>
+      </html>

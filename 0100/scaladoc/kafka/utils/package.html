@@ -1,0 +1,635 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>utils - core 0.10.0.0 API - kafka.utils</title>
+          <meta name="description" content="utils - core 0.10.0.0 API - kafka.utils" />
+          <meta name="keywords" content="utils core 0.10.0.0 API kafka.utils" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'kafka.utils.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="kafka">kafka</a></p>
+        <h1>utils</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">utils</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="kafka.utils.ByteBoundedBlockingQueue" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ByteBoundedBlockingQueue[E]extendsIterable[E]"></a>
+      <a id="ByteBoundedBlockingQueue[E]:ByteBoundedBlockingQueue[E]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ByteBoundedBlockingQueue.html"><span class="name">ByteBoundedBlockingQueue</span></a><span class="tparams">[<span name="E">E</span>]</span><span class="result"> extends <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="kafka.utils.ByteBoundedBlockingQueue.E">E</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">A blocking queue that have size limits on both number of elements and number of bytes.</p>
+    </li><li name="kafka.utils.DelayedItem" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DelayedItemextendsDelayedwithLogging"></a>
+      <a id="DelayedItem:DelayedItem"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DelayedItem.html"><span class="name">DelayedItem</span></a><span class="result"> extends <span class="extype" name="java.util.concurrent.Delayed">Delayed</span> with <a href="Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.FileLock" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FileLockextendsLogging"></a>
+      <a id="FileLock:FileLock"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="FileLock.html"><span class="name">FileLock</span></a><span class="result"> extends <a href="Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A file lock a la flock/funlock</p>
+    </li><li name="kafka.utils.IteratorTemplate" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="IteratorTemplate[T]extendsIterator[T]withIterator[T]"></a>
+      <a id="IteratorTemplate[T]:IteratorTemplate[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="IteratorTemplate.html"><span class="name">IteratorTemplate</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.Iterator">Iterator</span>[<span class="extype" name="kafka.utils.IteratorTemplate.T">T</span>] with <span class="extype" name="java.util.Iterator">Iterator</span>[<span class="extype" name="kafka.utils.IteratorTemplate.T">T</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Transliteration of the iterator template in google collections.</p>
+    </li><li name="kafka.utils.KafkaScheduler" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KafkaSchedulerextendsSchedulerwithLogging"></a>
+      <a id="KafkaScheduler:KafkaScheduler"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="KafkaScheduler.html"><span class="name">KafkaScheduler</span></a><span class="result"> extends <a href="Scheduler.html" class="extype" name="kafka.utils.Scheduler">Scheduler</a> with <a href="Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A scheduler based on java.</p>
+    </li><li name="kafka.utils.Logging" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LoggingextendsAnyRef"></a>
+      <a id="Logging:Logging"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Logging.html"><span class="name">Logging</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.NetworkClientBlockingOps" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NetworkClientBlockingOpsextendsAnyVal"></a>
+      <a id="NetworkClientBlockingOps:NetworkClientBlockingOps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="NetworkClientBlockingOps.html"><span class="name">NetworkClientBlockingOps</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Provides extension methods for <code>NetworkClient</code> that are useful for implementing blocking behaviour.</p>
+    </li><li name="kafka.utils.Pool" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Pool[K,V]extendsIterable[(K,V)]"></a>
+      <a id="Pool[K,V]:Pool[K,V]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Pool.html"><span class="name">Pool</span></a><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span><span class="result"> extends <span class="extype" name="scala.Iterable">Iterable</span>[(<span class="extype" name="kafka.utils.Pool.K">K</span>, <span class="extype" name="kafka.utils.Pool.V">V</span>)]</span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.Scheduler" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SchedulerextendsAnyRef"></a>
+      <a id="Scheduler:Scheduler"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Scheduler.html"><span class="name">Scheduler</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A scheduler for running jobs</p>
+    </li><li name="kafka.utils.ShutdownableThread" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ShutdownableThreadextendsThreadwithLogging"></a>
+      <a id="ShutdownableThread:ShutdownableThread"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ShutdownableThread.html"><span class="name">ShutdownableThread</span></a><span class="result"> extends <span class="extype" name="java.lang.Thread">Thread</span> with <a href="Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.State" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StateextendsAnyRef"></a>
+      <a id="State:State"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="State.html"><span class="name">State</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.Throttler" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ThrottlerextendsLoggingwithKafkaMetricsGroup"></a>
+      <a id="Throttler:Throttler"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Throttler.html"><span class="name">Throttler</span></a><span class="result"> extends <a href="Logging.html" class="extype" name="kafka.utils.Logging">Logging</a> with <a href="../metrics/KafkaMetricsGroup.html" class="extype" name="kafka.metrics.KafkaMetricsGroup">KafkaMetricsGroup</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A class to measure and throttle the rate of some process.</p>
+    </li><li name="kafka.utils.Time" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="TimeextendsAnyRef"></a>
+      <a id="Time:Time"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Time.html"><span class="name">Time</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A mockable interface for time functions
+</p>
+    </li><li name="kafka.utils.VerifiableProperties" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VerifiablePropertiesextendsLogging"></a>
+      <a id="VerifiableProperties:VerifiableProperties"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="VerifiableProperties.html"><span class="name">VerifiableProperties</span></a><span class="result"> extends <a href="Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.ZKCheckedEphemeral" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ZKCheckedEphemeralextendsLogging"></a>
+      <a id="ZKCheckedEphemeral:ZKCheckedEphemeral"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ZKCheckedEphemeral.html"><span class="name">ZKCheckedEphemeral</span></a><span class="result"> extends <a href="Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Creates an ephemeral znode checking the session owner
+in the case of conflict.</p>
+    </li><li name="kafka.utils.ZKConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ZKConfigextendsAnyRef"></a>
+      <a id="ZKConfig:ZKConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ZKConfig.html"><span class="name">ZKConfig</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.ZKGroupDirs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ZKGroupDirsextendsAnyRef"></a>
+      <a id="ZKGroupDirs:ZKGroupDirs"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ZKGroupDirs.html"><span class="name">ZKGroupDirs</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.ZKGroupTopicDirs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ZKGroupTopicDirsextendsZKGroupDirs"></a>
+      <a id="ZKGroupTopicDirs:ZKGroupTopicDirs"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ZKGroupTopicDirs.html"><span class="name">ZKGroupTopicDirs</span></a><span class="result"> extends <a href="ZKGroupDirs.html" class="extype" name="kafka.utils.ZKGroupDirs">ZKGroupDirs</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.ZkUtils" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ZkUtilsextendsLogging"></a>
+      <a id="ZkUtils:ZkUtils"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ZkUtils.html"><span class="name">ZkUtils</span></a><span class="result"> extends <a href="Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.immutable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="immutableextendsAnnotationwithStaticAnnotation"></a>
+      <a id="immutable:immutable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="immutable.html"><span class="name">immutable</span></a><span class="result"> extends <span class="extype" name="scala.annotation.Annotation">Annotation</span> with <span class="extype" name="scala.annotation.StaticAnnotation">StaticAnnotation</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Indicates that the annotated class is immutable
+</p>
+    </li><li name="kafka.utils.nonthreadsafe" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="nonthreadsafeextendsAnnotationwithStaticAnnotation"></a>
+      <a id="nonthreadsafe:nonthreadsafe"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="nonthreadsafe.html"><span class="name">nonthreadsafe</span></a><span class="result"> extends <span class="extype" name="scala.annotation.Annotation">Annotation</span> with <span class="extype" name="scala.annotation.StaticAnnotation">StaticAnnotation</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Indicates that the annotated class is not threadsafe
+</p>
+    </li><li name="kafka.utils.threadsafe" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="threadsafeextendsAnnotationwithStaticAnnotation"></a>
+      <a id="threadsafe:threadsafe"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="threadsafe.html"><span class="name">threadsafe</span></a><span class="result"> extends <span class="extype" name="scala.annotation.Annotation">Annotation</span> with <span class="extype" name="scala.annotation.StaticAnnotation">StaticAnnotation</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Indicates that the annotated class is meant to be threadsafe.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="kafka.utils.CommandLineUtils" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CommandLineUtils"></a>
+      <a id="CommandLineUtils:CommandLineUtils"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CommandLineUtils$.html"><span class="name">CommandLineUtils</span></a><span class="result"> extends <a href="Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Helper functions for dealing with command line utilities
+</p>
+    </li><li name="kafka.utils.CoreUtils" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CoreUtils"></a>
+      <a id="CoreUtils:CoreUtils"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CoreUtils$.html"><span class="name">CoreUtils</span></a><span class="result"> extends <a href="Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">General helper functions!</p>
+    </li><li name="kafka.utils.DONE" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DONE"></a>
+      <a id="DONE:DONE"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DONE$.html"><span class="name">DONE</span></a><span class="result"> extends <a href="State.html" class="extype" name="kafka.utils.State">State</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.FAILED" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FAILED"></a>
+      <a id="FAILED:FAILED"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="FAILED$.html"><span class="name">FAILED</span></a><span class="result"> extends <a href="State.html" class="extype" name="kafka.utils.State">State</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.Json" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Json"></a>
+      <a id="Json:Json"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Json$.html"><span class="name">Json</span></a><span class="result"> extends <a href="Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt"> A wrapper that synchronizes JSON in scala, which is not threadsafe.</p>
+    </li><li name="kafka.utils.Log4jController" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Log4jController"></a>
+      <a id="Log4jController:Log4jController"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Log4jController$.html"><span class="name">Log4jController</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.Mx4jLoader" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Mx4jLoader"></a>
+      <a id="Mx4jLoader:Mx4jLoader"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Mx4jLoader$.html"><span class="name">Mx4jLoader</span></a><span class="result"> extends <a href="Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">If mx4j-tools is in the classpath call maybeLoad to load the HTTP interface of mx4j.</p>
+    </li><li name="kafka.utils.NOT_READY" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NOT_READY"></a>
+      <a id="NOT_READY:NOT_READY"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NOT_READY$.html"><span class="name">NOT_READY</span></a><span class="result"> extends <a href="State.html" class="extype" name="kafka.utils.State">State</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.NetworkClientBlockingOps" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NetworkClientBlockingOps"></a>
+      <a id="NetworkClientBlockingOps:NetworkClientBlockingOps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NetworkClientBlockingOps$.html"><span class="name">NetworkClientBlockingOps</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.Os" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Os"></a>
+      <a id="Os:Os"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Os$.html"><span class="name">Os</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.READY" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="READY"></a>
+      <a id="READY:READY"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="READY$.html"><span class="name">READY</span></a><span class="result"> extends <a href="State.html" class="extype" name="kafka.utils.State">State</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.ReplicationUtils" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReplicationUtils"></a>
+      <a id="ReplicationUtils:ReplicationUtils"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ReplicationUtils$.html"><span class="name">ReplicationUtils</span></a><span class="result"> extends <a href="Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.SystemTime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SystemTime"></a>
+      <a id="SystemTime:SystemTime"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SystemTime$.html"><span class="name">SystemTime</span></a><span class="result"> extends <a href="Time.html" class="extype" name="kafka.utils.Time">Time</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The normal system implementation of time functions
+</p>
+    </li><li name="kafka.utils.Throttler" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Throttler"></a>
+      <a id="Throttler:Throttler"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Throttler$.html"><span class="name">Throttler</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.Time" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Time"></a>
+      <a id="Time:Time"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Time$.html"><span class="name">Time</span></a>
+      </span>
+      </h4>
+      <p class="comment cmt">Some common constants
+</p>
+    </li><li name="kafka.utils.ToolsUtils" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ToolsUtils"></a>
+      <a id="ToolsUtils:ToolsUtils"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ToolsUtils$.html"><span class="name">ToolsUtils</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.ZkPath" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ZkPath"></a>
+      <a id="ZkPath:ZkPath"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ZkPath$.html"><span class="name">ZkPath</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.ZkUtils" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ZkUtils"></a>
+      <a id="ZkUtils:ZkUtils"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ZkUtils$.html"><span class="name">ZkUtils</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.utils.timer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="timer"></a>
+      <a id="timer:timer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="timer/package.html"><span class="name">timer</span></a>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../lib/template.js"></script>
+    </body>
+      </html>

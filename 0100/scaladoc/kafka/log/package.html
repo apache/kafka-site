@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>log - core 0.10.0.0 API - kafka.log</title>
+          <meta name="description" content="log - core 0.10.0.0 API - kafka.log" />
+          <meta name="keywords" content="log core 0.10.0.0 API kafka.log" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'kafka.log.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="kafka">kafka</a></p>
+        <h1>log</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">log</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="kafka.log.CleanerConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CleanerConfigextendsProductwithSerializable"></a>
+      <a id="CleanerConfig:CleanerConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="CleanerConfig.html"><span class="name">CleanerConfig</span></a><span class="params">(<span name="numThreads">numThreads: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">1</span></span>, <span name="dedupeBufferSize">dedupeBufferSize: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">4.*(1024).*(1024L)</span></span>, <span name="dedupeBufferLoadFactor">dedupeBufferLoadFactor: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.9</span></span>, <span name="ioBufferSize">ioBufferSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">1024.*(1024)</span></span>, <span name="maxMessageSize">maxMessageSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">32.*(1024).*(1024)</span></span>, <span name="maxIoBytesPerSecond">maxIoBytesPerSecond: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">scala.Double.MaxValue</span></span>, <span name="backOffMs">backOffMs: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">15.*(1000)</span></span>, <span name="enableCleaner">enableCleaner: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>, <span name="hashAlgorithm">hashAlgorithm: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;MD5&quot;</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Configuration parameters for the log cleaner
+</p>
+    </li><li name="kafka.log.FileMessageSet" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FileMessageSetextendsMessageSetwithLogging"></a>
+      <a id="FileMessageSet:FileMessageSet"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="FileMessageSet.html"><span class="name">FileMessageSet</span></a><span class="result"> extends <a href="../message/MessageSet.html" class="extype" name="kafka.message.MessageSet">MessageSet</a> with <a href="../utils/Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">An on-disk message set.</p>
+    </li><li name="kafka.log.Log" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LogextendsLoggingwithKafkaMetricsGroup"></a>
+      <a id="Log:Log"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Log.html"><span class="name">Log</span></a><span class="result"> extends <a href="../utils/Logging.html" class="extype" name="kafka.utils.Logging">Logging</a> with <a href="../metrics/KafkaMetricsGroup.html" class="extype" name="kafka.metrics.KafkaMetricsGroup">KafkaMetricsGroup</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">An append-only log for storing messages.</p>
+    </li><li name="kafka.log.LogAppendInfo" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LogAppendInfoextendsProductwithSerializable"></a>
+      <a id="LogAppendInfo:LogAppendInfo"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="LogAppendInfo.html"><span class="name">LogAppendInfo</span></a><span class="params">(<span name="firstOffset">firstOffset: <span class="extype" name="scala.Long">Long</span></span>, <span name="lastOffset">lastOffset: <span class="extype" name="scala.Long">Long</span></span>, <span name="timestamp">timestamp: <span class="extype" name="scala.Long">Long</span></span>, <span name="sourceCodec">sourceCodec: <a href="../message/CompressionCodec.html" class="extype" name="kafka.message.CompressionCodec">CompressionCodec</a></span>, <span name="targetCodec">targetCodec: <a href="../message/CompressionCodec.html" class="extype" name="kafka.message.CompressionCodec">CompressionCodec</a></span>, <span name="shallowCount">shallowCount: <span class="extype" name="scala.Int">Int</span></span>, <span name="validBytes">validBytes: <span class="extype" name="scala.Int">Int</span></span>, <span name="offsetsMonotonic">offsetsMonotonic: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Struct to hold various quantities we compute about each message set before appending to the log</p>
+    </li><li name="kafka.log.LogCleaner" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LogCleanerextendsLoggingwithKafkaMetricsGroup"></a>
+      <a id="LogCleaner:LogCleaner"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LogCleaner.html"><span class="name">LogCleaner</span></a><span class="result"> extends <a href="../utils/Logging.html" class="extype" name="kafka.utils.Logging">Logging</a> with <a href="../metrics/KafkaMetricsGroup.html" class="extype" name="kafka.metrics.KafkaMetricsGroup">KafkaMetricsGroup</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The cleaner is responsible for removing obsolete records from logs which have the dedupe retention strategy.</p>
+    </li><li name="kafka.log.LogConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LogConfigextendsAbstractConfigwithProductwithSerializable"></a>
+      <a id="LogConfig:LogConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="LogConfig.html"><span class="name">LogConfig</span></a><span class="params">(<span name="props">props: <span class="extype" name="java.util.Map">Map</span>[_, _]</span>)</span><span class="result"> extends <span class="extype" name="org.apache.kafka.common.config.AbstractConfig">AbstractConfig</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.log.LogManager" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LogManagerextendsLogging"></a>
+      <a id="LogManager:LogManager"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LogManager.html"><span class="name">LogManager</span></a><span class="result"> extends <a href="../utils/Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The entry point to the kafka log management subsystem.</p>
+    </li><li name="kafka.log.LogSegment" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LogSegmentextendsLogging"></a>
+      <a id="LogSegment:LogSegment"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LogSegment.html"><span class="name">LogSegment</span></a><span class="result"> extends <a href="../utils/Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A segment of the log.</p>
+    </li><li name="kafka.log.OffsetIndex" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OffsetIndexextendsLogging"></a>
+      <a id="OffsetIndex:OffsetIndex"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="OffsetIndex.html"><span class="name">OffsetIndex</span></a><span class="result"> extends <a href="../utils/Logging.html" class="extype" name="kafka.utils.Logging">Logging</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">An index that maps offsets to physical file locations for a particular log segment.</p>
+    </li><li name="kafka.log.OffsetMap" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="OffsetMapextendsAnyRef"></a>
+      <a id="OffsetMap:OffsetMap"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="OffsetMap.html"><span class="name">OffsetMap</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.log.OffsetPosition" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OffsetPositionextendsProductwithSerializable"></a>
+      <a id="OffsetPosition:OffsetPosition"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="OffsetPosition.html"><span class="name">OffsetPosition</span></a><span class="params">(<span name="offset">offset: <span class="extype" name="scala.Long">Long</span></span>, <span name="position">position: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The mapping between a logical log offset and the physical position
+in some log file of the beginning of the message set entry with the
+given offset.</p>
+    </li><li name="kafka.log.SkimpyOffsetMap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SkimpyOffsetMapextendsOffsetMap"></a>
+      <a id="SkimpyOffsetMap:SkimpyOffsetMap"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SkimpyOffsetMap.html"><span class="name">SkimpyOffsetMap</span></a><span class="result"> extends <a href="OffsetMap.html" class="extype" name="kafka.log.OffsetMap">OffsetMap</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">An hash table used for deduplicating the log.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="kafka.log.Defaults" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Defaults"></a>
+      <a id="Defaults:Defaults"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Defaults$.html"><span class="name">Defaults</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.log.FileMessageSet" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FileMessageSet"></a>
+      <a id="FileMessageSet:FileMessageSet"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="FileMessageSet$.html"><span class="name">FileMessageSet</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.log.Log" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Log"></a>
+      <a id="Log:Log"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Log$.html"><span class="name">Log</span></a>
+      </span>
+      </h4>
+      <p class="comment cmt">Helper functions for logs
+</p>
+    </li><li name="kafka.log.LogAppendInfo" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LogAppendInfo"></a>
+      <a id="LogAppendInfo:LogAppendInfo"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LogAppendInfo$.html"><span class="name">LogAppendInfo</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.log.LogConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LogConfig"></a>
+      <a id="LogConfig:LogConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LogConfig$.html"><span class="name">LogConfig</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.log.LogFlushStats" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LogFlushStats"></a>
+      <a id="LogFlushStats:LogFlushStats"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LogFlushStats$.html"><span class="name">LogFlushStats</span></a><span class="result"> extends <a href="../metrics/KafkaMetricsGroup.html" class="extype" name="kafka.metrics.KafkaMetricsGroup">KafkaMetricsGroup</a></span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../lib/template.js"></script>
+    </body>
+      </html>

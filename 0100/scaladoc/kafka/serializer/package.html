@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>serializer - core 0.10.0.0 API - kafka.serializer</title>
+          <meta name="description" content="serializer - core 0.10.0.0 API - kafka.serializer" />
+          <meta name="keywords" content="serializer core 0.10.0.0 API kafka.serializer" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'kafka.serializer.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="kafka">kafka</a></p>
+        <h1>serializer</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">serializer</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="kafka.serializer.Decoder" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Decoder[T]extendsAnyRef"></a>
+      <a id="Decoder[T]:Decoder[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Decoder.html"><span class="name">Decoder</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A decoder is a method of turning byte arrays into objects.</p>
+    </li><li name="kafka.serializer.DefaultDecoder" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DefaultDecoderextendsDecoder[Array[Byte]]"></a>
+      <a id="DefaultDecoder:DefaultDecoder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DefaultDecoder.html"><span class="name">DefaultDecoder</span></a><span class="result"> extends <a href="Decoder.html" class="extype" name="kafka.serializer.Decoder">Decoder</a>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Byte">Byte</span>]]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">The default implementation does nothing, just returns the same byte array it takes in.</p>
+    </li><li name="kafka.serializer.DefaultEncoder" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DefaultEncoderextendsEncoder[Array[Byte]]"></a>
+      <a id="DefaultEncoder:DefaultEncoder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DefaultEncoder.html"><span class="name">DefaultEncoder</span></a><span class="result"> extends <a href="Encoder.html" class="extype" name="kafka.serializer.Encoder">Encoder</a>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Byte">Byte</span>]]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">The default implementation is a no-op, it just returns the same array it takes in
+</p>
+    </li><li name="kafka.serializer.Encoder" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Encoder[T]extendsAnyRef"></a>
+      <a id="Encoder[T]:Encoder[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Encoder.html"><span class="name">Encoder</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">An encoder is a method of turning objects into byte arrays.</p>
+    </li><li name="kafka.serializer.NullEncoder" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NullEncoder[T]extendsEncoder[T]"></a>
+      <a id="NullEncoder[T]:NullEncoder[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="NullEncoder.html"><span class="name">NullEncoder</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Encoder.html" class="extype" name="kafka.serializer.Encoder">Encoder</a>[<span class="extype" name="kafka.serializer.NullEncoder.T">T</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="kafka.serializer.StringDecoder" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StringDecoderextendsDecoder[String]"></a>
+      <a id="StringDecoder:StringDecoder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="StringDecoder.html"><span class="name">StringDecoder</span></a><span class="result"> extends <a href="Decoder.html" class="extype" name="kafka.serializer.Decoder">Decoder</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">The string decoder translates bytes into strings.</p>
+    </li><li name="kafka.serializer.StringEncoder" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StringEncoderextendsEncoder[String]"></a>
+      <a id="StringEncoder:StringEncoder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="StringEncoder.html"><span class="name">StringEncoder</span></a><span class="result"> extends <a href="Encoder.html" class="extype" name="kafka.serializer.Encoder">Encoder</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">The string encoder takes an optional parameter serializer.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../lib/template.js"></script>
+    </body>
+      </html>
