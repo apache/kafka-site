@@ -22,7 +22,7 @@
 <tr>
 <td>max.partition.fetch.bytes</td><td>The maximum amount of data per-partition the server will return. The maximum total memory used for a request will be <code>#partitions * max.partition.fetch.bytes</code>. This size must be at least as large as the maximum message size the server allows or else it is possible for the producer to send messages larger than the consumer can fetch. If that happens, the consumer can get stuck trying to fetch a large message on a certain partition.</td><td>int</td><td>1048576</td><td>[0,...]</td><td>high</td></tr>
 <tr>
-<td>session.timeout.ms</td><td>The timeout used to detect failures when using Kafka's group management facilities.</td><td>int</td><td>30000</td><td></td><td>high</td></tr>
+<td>session.timeout.ms</td><td>The timeout used to detect failures when using Kafka's group management facilities. When a consumer's heartbeat is not received within the session timeout, the broker will mark the consumer as failed and rebalance the group. Since heartbeats are sent only when poll() is invoked, a higher session timeout allows more time for message processing in the consumer's poll loop at the cost of a longer time to detect hard failures. See also <code>max.poll.records</code> for another option to control the processing time in the poll loop. Note that the value must be in the allowable range as configured in the broker configuration by <code>group.min.session.timeout.ms</code> and <code>group.max.session.timeout.ms</code>.</td><td>int</td><td>30000</td><td></td><td>high</td></tr>
 <tr>
 <td>ssl.key.password</td><td>The password of the private key in the key store file. This is optional for client.</td><td>password</td><td>null</td><td></td><td>high</td></tr>
 <tr>
@@ -46,7 +46,7 @@
 <tr>
 <td>partition.assignment.strategy</td><td>The class name of the partition assignment strategy that the client will use to distribute partition ownership amongst consumer instances when group management is used</td><td>list</td><td>[org.apache.kafka.clients.consumer.RangeAssignor]</td><td></td><td>medium</td></tr>
 <tr>
-<td>receive.buffer.bytes</td><td>The size of the TCP receive buffer (SO_RCVBUF) to use when reading data.</td><td>int</td><td>32768</td><td>[0,...]</td><td>medium</td></tr>
+<td>receive.buffer.bytes</td><td>The size of the TCP receive buffer (SO_RCVBUF) to use when reading data.</td><td>int</td><td>65536</td><td>[0,...]</td><td>medium</td></tr>
 <tr>
 <td>request.timeout.ms</td><td>The configuration controls the maximum amount of time the client will wait for the response of a request. If the response is not received before the timeout elapses the client will resend the request if necessary or fail the request if retries are exhausted.</td><td>int</td><td>40000</td><td>[0,...]</td><td>medium</td></tr>
 <tr>
@@ -82,7 +82,7 @@
 <tr>
 <td>metrics.num.samples</td><td>The number of samples maintained to compute metrics.</td><td>int</td><td>2</td><td>[1,...]</td><td>low</td></tr>
 <tr>
-<td>metrics.sample.window.ms</td><td>The number of samples maintained to compute metrics.</td><td>long</td><td>30000</td><td>[0,...]</td><td>low</td></tr>
+<td>metrics.sample.window.ms</td><td>The window of time a metrics sample is computed over.</td><td>long</td><td>30000</td><td>[0,...]</td><td>low</td></tr>
 <tr>
 <td>reconnect.backoff.ms</td><td>The amount of time to wait before attempting to reconnect to a given host. This avoids repeatedly connecting to a host in a tight loop. This backoff applies to all requests sent by the consumer to the broker.</td><td>long</td><td>50</td><td>[0,...]</td><td>low</td></tr>
 <tr>
