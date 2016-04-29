@@ -419,6 +419,7 @@
     partition_responses => partition error_code [offsets] 
       partition => INT32
       error_code => INT16
+      offsets => INT64
 </pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
@@ -440,11 +441,21 @@
 
 <b>Requests:</b><br>
 <p><pre>Metadata Request (Version: 0) => [topics] 
+  topics => STRING
 </pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
 <td>topics</td><td>An array of topics to fetch metadata for. If no topics are specified fetch metadata for all topics.</td></tr>
+</table>
+</p>
+<p><pre>Metadata Request (Version: 1) => [topics] 
+  topics => STRING
+</pre><table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>topics</td><td>An array of topics to fetch metadata for. If the topics array is null fetch metadata for all topics.</td></tr>
 </table>
 </p>
 <b>Responses:</b><br>
@@ -460,6 +471,8 @@
       partition_error_code => INT16
       partition_id => INT32
       leader => INT32
+      replicas => INT32
+      isr => INT32
 </pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
@@ -491,6 +504,60 @@
 <td>isr</td><td>The set of nodes that are in sync with the leader for this partition.</td></tr>
 </table>
 </p>
+<p><pre>Metadata Response (Version: 1) => [brokers] controller_id [topic_metadata] 
+  brokers => node_id host port rack 
+    node_id => INT32
+    host => STRING
+    port => INT32
+    rack => NULLABLE_STRING
+  controller_id => INT32
+  topic_metadata => topic_error_code topic is_internal [partition_metadata] 
+    topic_error_code => INT16
+    topic => STRING
+    is_internal => BOOLEAN
+    partition_metadata => partition_error_code partition_id leader [replicas] [isr] 
+      partition_error_code => INT16
+      partition_id => INT32
+      leader => INT32
+      replicas => INT32
+      isr => INT32
+</pre><table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>brokers</td><td>Host and port information for all brokers.</td></tr>
+<tr>
+<td>node_id</td><td>The broker id.</td></tr>
+<tr>
+<td>host</td><td>The hostname of the broker.</td></tr>
+<tr>
+<td>port</td><td>The port on which the broker accepts requests.</td></tr>
+<tr>
+<td>rack</td><td>The rack of the broker.</td></tr>
+<tr>
+<td>controller_id</td><td>The broker id of the controller broker.</td></tr>
+<tr>
+<td>topic_metadata</td><td></td></tr>
+<tr>
+<td>topic_error_code</td><td>The error code for the given topic.</td></tr>
+<tr>
+<td>topic</td><td>The name of the topic</td></tr>
+<tr>
+<td>is_internal</td><td>Indicates if the topic is considered a Kafka internal topic</td></tr>
+<tr>
+<td>partition_metadata</td><td>Metadata for each partition of the topic.</td></tr>
+<tr>
+<td>partition_error_code</td><td>The error code for the partition, if any.</td></tr>
+<tr>
+<td>partition_id</td><td>The id of the partition.</td></tr>
+<tr>
+<td>leader</td><td>The id of the broker acting as leader for this partition.</td></tr>
+<tr>
+<td>replicas</td><td>The set of all nodes that host this partition.</td></tr>
+<tr>
+<td>isr</td><td>The set of nodes that are in sync with the leader for this partition.</td></tr>
+</table>
+</p>
 <h5>LeaderAndIsr API (Key: 4):</h5>
 
 <b>Requests:</b><br>
@@ -503,7 +570,9 @@
     controller_epoch => INT32
     leader => INT32
     leader_epoch => INT32
+    isr => INT32
     zk_version => INT32
+    replicas => INT32
   live_leaders => id host port 
     id => INT32
     host => STRING
@@ -626,7 +695,9 @@
     controller_epoch => INT32
     leader => INT32
     leader_epoch => INT32
+    isr => INT32
     zk_version => INT32
+    replicas => INT32
   live_brokers => id host port 
     id => INT32
     host => STRING
@@ -675,7 +746,9 @@
     controller_epoch => INT32
     leader => INT32
     leader_epoch => INT32
+    isr => INT32
     zk_version => INT32
+    replicas => INT32
   live_brokers => id [end_points] 
     id => INT32
     end_points => port host security_protocol_type 
@@ -730,7 +803,9 @@
     controller_epoch => INT32
     leader => INT32
     leader_epoch => INT32
+    isr => INT32
     zk_version => INT32
+    replicas => INT32
   live_brokers => id [end_points] rack 
     id => INT32
     end_points => port host security_protocol_type 
@@ -1298,6 +1373,7 @@
 
 <b>Requests:</b><br>
 <p><pre>DescribeGroups Request (Version: 0) => [group_ids] 
+  group_ids => STRING
 </pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
@@ -1331,7 +1407,7 @@
 <tr>
 <td>state</td><td>The current state of the group (one of: Dead, Stable, AwaitingSync, or PreparingRebalance, or empty if there is no active group)</td></tr>
 <tr>
-<td>protocol_type</td><td>The current group protocol type (will be empty if the there is no active group)</td></tr>
+<td>protocol_type</td><td>The current group protocol type (will be empty if there is no active group)</td></tr>
 <tr>
 <td>protocol</td><td>The current group protocol (only provided if the group is Stable)</td></tr>
 <tr>
@@ -1374,6 +1450,62 @@
 <td>group_id</td><td></td></tr>
 <tr>
 <td>protocol_type</td><td></td></tr>
+</table>
+</p>
+<h5>SaslHandshake API (Key: 17):</h5>
+
+<b>Requests:</b><br>
+<p><pre>SaslHandshake Request (Version: 0) => mechanism 
+  mechanism => STRING
+</pre><table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>mechanism</td><td>SASL Mechanism chosen by the client.</td></tr>
+</table>
+</p>
+<b>Responses:</b><br>
+<p><pre>SaslHandshake Response (Version: 0) => error_code [enabled_mechanisms] 
+  error_code => INT16
+  enabled_mechanisms => STRING
+</pre><table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>error_code</td><td></td></tr>
+<tr>
+<td>enabled_mechanisms</td><td>Array of mechanisms enabled in the server.</td></tr>
+</table>
+</p>
+<h5>ApiVersions API (Key: 18):</h5>
+
+<b>Requests:</b><br>
+<p><pre>ApiVersions Request (Version: 0) => 
+</pre><table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr></table>
+</p>
+<b>Responses:</b><br>
+<p><pre>ApiVersions Response (Version: 0) => error_code [api_versions] 
+  error_code => INT16
+  api_versions => api_key min_version max_version 
+    api_key => INT16
+    min_version => INT16
+    max_version => INT16
+</pre><table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>error_code</td><td>Error code.</td></tr>
+<tr>
+<td>api_versions</td><td>API versions supported by the broker.</td></tr>
+<tr>
+<td>api_key</td><td>API key.</td></tr>
+<tr>
+<td>min_version</td><td>Minimum supported version.</td></tr>
+<tr>
+<td>max_version</td><td>Maximum supported version.</td></tr>
 </table>
 </p>
 

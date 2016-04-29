@@ -50,6 +50,8 @@
 <tr>
 <td>sasl.kerberos.service.name</td><td>The Kerberos principal name that Kafka runs as. This can be defined either in Kafka's JAAS config or in Kafka's config.</td><td>string</td><td>null</td><td></td><td>medium</td></tr>
 <tr>
+<td>sasl.mechanism</td><td>SASL mechanism used for client connections. This may be any mechanism for which a security provider is available. GSSAPI is the default mechanism.</td><td>string</td><td>GSSAPI</td><td></td><td>medium</td></tr>
+<tr>
 <td>security.protocol</td><td>Protocol used to communicate with brokers. Valid values are: PLAINTEXT, SSL, SASL_PLAINTEXT, SASL_SSL.</td><td>string</td><td>PLAINTEXT</td><td></td><td>medium</td></tr>
 <tr>
 <td>send.buffer.bytes</td><td>The size of the TCP send buffer (SO_SNDBUF) to use when sending data.</td><td>int</td><td>131072</td><td>[0,...]</td><td>medium</td></tr>
@@ -67,6 +69,8 @@
 <td>worker.sync.timeout.ms</td><td>When the worker is out of sync with other workers and needs to resynchronize configurations, wait up to this amount of time before giving up, leaving the group, and waiting a backoff period before rejoining.</td><td>int</td><td>3000</td><td></td><td>medium</td></tr>
 <tr>
 <td>worker.unsync.backoff.ms</td><td>When the worker is out of sync with other workers and  fails to catch up within worker.sync.timeout.ms, leave the Connect cluster for this long before rejoining.</td><td>int</td><td>300000</td><td></td><td>medium</td></tr>
+<tr>
+<td>access.control.allow.methods</td><td>Sets the methods supported for cross origin requests by setting the Access-Control-Allow-Methods header. The default value of the Access-Control-Allow-Methods header allows cross origin requests for GET, POST and HEAD.</td><td>string</td><td>""</td><td></td><td>low</td></tr>
 <tr>
 <td>access.control.allow.origin</td><td>Value to set the Access-Control-Allow-Origin header to for REST API requests.To enable cross origin access, set this to the domain of the application that should be permitted to access the API, or '*' to allow access from any domain. The default value only allows access from the domain of the REST API.</td><td>string</td><td>""</td><td></td><td>low</td></tr>
 <tr>
@@ -94,7 +98,7 @@
 <tr>
 <td>rest.port</td><td>Port for the REST API to listen on.</td><td>int</td><td>8083</td><td></td><td>low</td></tr>
 <tr>
-<td>retry.backoff.ms</td><td>The amount of time to wait before attempting to retry a failed fetch request to a given topic partition. This avoids repeated fetching-and-failing in a tight loop.</td><td>long</td><td>100</td><td>[0,...]</td><td>low</td></tr>
+<td>retry.backoff.ms</td><td>The amount of time to wait before attempting to retry a failed request to a given topic partition. This avoids repeatedly sending requests in a tight loop under some failure scenarios.</td><td>long</td><td>100</td><td>[0,...]</td><td>low</td></tr>
 <tr>
 <td>sasl.kerberos.kinit.cmd</td><td>Kerberos kinit command path.</td><td>string</td><td>/usr/bin/kinit</td><td></td><td>low</td></tr>
 <tr>

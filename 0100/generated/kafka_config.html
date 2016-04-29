@@ -118,7 +118,7 @@ the port to listen and accept connections on</td><td>int</td><td>9092</td><td></
 <tr>
 <td>quota.producer.default</td><td>Any producer distinguished by clientId will get throttled if it produces more bytes than this value per-second</td><td>long</td><td>9223372036854775807</td><td>[1,...]</td><td>high</td></tr>
 <tr>
-<td>replica.fetch.max.bytes</td><td>The number of byes of messages to attempt to fetch</td><td>int</td><td>1048576</td><td></td><td>high</td></tr>
+<td>replica.fetch.max.bytes</td><td>The number of bytes of messages to attempt to fetch</td><td>int</td><td>1048576</td><td></td><td>high</td></tr>
 <tr>
 <td>replica.fetch.min.bytes</td><td>Minimum bytes expected for each fetch response. If not enough bytes, wait up to replicaMaxWaitTimeMs</td><td>int</td><td>1</td><td></td><td>high</td></tr>
 <tr>
@@ -166,7 +166,7 @@ the port to listen and accept connections on</td><td>int</td><td>9092</td><td></
 <tr>
 <td>fetch.purgatory.purge.interval.requests</td><td>The purge interval (in number of requests) of the fetch request purgatory</td><td>int</td><td>1000</td><td></td><td>medium</td></tr>
 <tr>
-<td>group.max.session.timeout.ms</td><td>The maximum allowed session timeout for registered consumers. Longer timeouts give consumers more time to process messages in between heartbeats at the cost of a longer time to detect failures.</td><td>int</td><td>30000</td><td></td><td>medium</td></tr>
+<td>group.max.session.timeout.ms</td><td>The maximum allowed session timeout for registered consumers. Longer timeouts give consumers more time to process messages in between heartbeats at the cost of a longer time to detect failures.</td><td>int</td><td>300000</td><td></td><td>medium</td></tr>
 <tr>
 <td>group.min.session.timeout.ms</td><td>The minimum allowed session timeout for registered consumers. Shorter timeouts leader to quicker failure detection at the cost of more frequent consumer heartbeating, which can overwhelm broker resources.</td><td>int</td><td>6000</td><td></td><td>medium</td></tr>
 <tr>
@@ -222,6 +222,8 @@ the port to listen and accept connections on</td><td>int</td><td>9092</td><td></
 <tr>
 <td>reserved.broker.max.id</td><td>Max number that can be used for a broker.id</td><td>int</td><td>1000</td><td>[0,...]</td><td>medium</td></tr>
 <tr>
+<td>sasl.enabled.mechanisms</td><td>The list of SASL mechanisms enabled in the Kafka server. The list may contain any mechanism for which a security provider is available. Only GSSAPI is enabled by default.</td><td>list</td><td>[GSSAPI]</td><td></td><td>medium</td></tr>
+<tr>
 <td>sasl.kerberos.kinit.cmd</td><td>Kerberos kinit command path.</td><td>string</td><td>/usr/bin/kinit</td><td></td><td>medium</td></tr>
 <tr>
 <td>sasl.kerberos.min.time.before.relogin</td><td>Login thread sleep time between refresh attempts.</td><td>long</td><td>60000</td><td></td><td>medium</td></tr>
@@ -233,6 +235,8 @@ the port to listen and accept connections on</td><td>int</td><td>9092</td><td></
 <td>sasl.kerberos.ticket.renew.jitter</td><td>Percentage of random jitter added to the renewal time.</td><td>double</td><td>0.05</td><td></td><td>medium</td></tr>
 <tr>
 <td>sasl.kerberos.ticket.renew.window.factor</td><td>Login thread will sleep until the specified window factor of time from last refresh to ticket's expiry has been reached, at which time it will try to renew the ticket.</td><td>double</td><td>0.8</td><td></td><td>medium</td></tr>
+<tr>
+<td>sasl.mechanism.inter.broker.protocol</td><td>SASL mechanism used for inter-broker communication. Default is GSSAPI.</td><td>string</td><td>GSSAPI</td><td></td><td>medium</td></tr>
 <tr>
 <td>security.inter.broker.protocol</td><td>Security protocol used to communicate between brokers. Valid values are: PLAINTEXT, SSL, SASL_PLAINTEXT, SASL_SSL.</td><td>string</td><td>PLAINTEXT</td><td></td><td>medium</td></tr>
 <tr>
