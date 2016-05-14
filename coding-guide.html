@@ -29,10 +29,10 @@ We are following the style guide given <a href="http://davetron5000.github.com/s
 <li>Prefer a single top-level class per file for ease of finding things.</li>
 <li>Do not use semi-colons unless required.</li>
 <li>Avoid getters and setters - stick to plain <code>val</code>s or <code>var</code>s instead. If (later on) you require a custom setter (or getter) for a <code>var</code> named <code>myVar</code> then add a shadow <code>var myVar_underlying</code> and override the setter (<code>def myVar_=</code>) and the getter (<code>def myVar = myVar_underlying</code>).</li>
-<li>Perfer Option to null in scala APIs.</li>
+<li>Prefer <code>Option</code> to <code>null</code> in scala APIs.</li>
 <li>Use named arguments when passing in literal values if the meaning is at all unclear, for example instead of <code>Utils.delete(true)</code> prefer <code>Utils.delete(recursive=true)</code>.
 <li>Indentation is 2 spaces and never tabs. One could argue the right amount of indentation, but 2 seems to be standard for scala and consistency is best here since there is clearly no "right" way.</li>
-<li>Include the optional paranthesis on a no-arg method only if the method has a side-effect, otherwise omit them. For example <code>fileChannel.force()</code> and <code>fileChannel.size</code>. This helps emphasize that you are calling the method for the side effect, which is changing some state, not just getting the return value.</li>
+<li>Include the optional parenthesis on a no-arg method only if the method has a side-effect, otherwise omit them. For example <code>fileChannel.force()</code> and <code>fileChannel.size</code>. This helps emphasize that you are calling the method for the side effect, which is changing some state, not just getting the return value.</li>
 <li>Prefer case classes to tuples in important APIs to make it clear what the intended contents are.</li>
 </ul>
 
@@ -97,7 +97,7 @@ We are following the style guide given <a href="http://davetron5000.github.com/s
 <p>There are a few things that need to be considered in client code that are not a major concern on the server side.</p>
 <ul>
 	<li>Libraries needed by the client should be avoided whenever possible. Clients are run in someone else's code and it is very possible that they may have the same library we have, but a different and incompatible version. This will mean they can't use our client. For this reason the client should not use any libraries that are not strictly necessary.</li>
-<li>We should attempt to maintain API compatibility when possible, though at this point in the project's lifecycle it is more important to make things good rather avoid breakage.</li>
+<li>We should attempt to maintain API compatibility when possible, though at this point in the project's lifecycle it is more important to make things good rather than avoid breakage.</li>
 </ul>
 
 <!--#include virtual="includes/footer.html" -->
