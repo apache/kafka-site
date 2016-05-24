@@ -157,8 +157,8 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
  <p>
  The <code>buffer.memory</code> controls the total amount of memory available to the producer for buffering. If records
  are sent faster than they can be transmitted to the server then this buffer space will be exhausted. When the buffer space is
- exhausted additional send calls will block. For uses where you want to avoid any blocking you can set <code>block.on.buffer.full=false</code> which
- will cause the send call to result in an exception.
+ exhausted additional send calls will block. The threshold for time to block is determined by <code>max.block.ms</code> after which it throws
+ a TimeoutException.
  <p>
  The <code>key.serializer</code> and <code>value.serializer</code> instruct how to turn the key and value objects the user provides with
  their <code>ProducerRecord</code> into bytes. You can use the included <a href="../../../../../org/apache/kafka/common/serialization/ByteArraySerializer.html" title="class in org.apache.kafka.common.serialization"><code>ByteArraySerializer</code></a> or
@@ -441,7 +441,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/common/errors/InterruptException.html" title="class in org.apache.kafka.common.errors">InterruptException</a></code> - If the thread is interrupted while blocked</dd>
 <dd><code><a href="../../../../../org/apache/kafka/common/errors/SerializationException.html" title="class in org.apache.kafka.common.errors">SerializationException</a></code> - If the key or value are not valid objects given the configured serializers</dd>
-<dd><code><a href="../../../../../org/apache/kafka/clients/producer/BufferExhaustedException.html" title="class in org.apache.kafka.clients.producer">BufferExhaustedException</a></code> - If <code>block.on.buffer.full=false</code> and the buffer is full.</dd></dl>
+<dd><code><a href="../../../../../org/apache/kafka/common/errors/TimeoutException.html" title="class in org.apache.kafka.common.errors">TimeoutException</a></code> - if the time taken for fetching metadata or allocating memory for the record has surpassed <code>max.block.ms</code>.</dd></dl>
 </li>
 </ul>
 <a name="flush()">
