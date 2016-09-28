@@ -65,9 +65,10 @@ a {
 	color: black;
 	font-size: 50pt;
 	line-height: 55%;	
+    text-align: center;
 }
 .subtitle {
-	font-size: 16pt;
+	font-size: 20pt;
 }
 .feather {
 	margin: 5px;
@@ -138,4 +139,16 @@ a {
 }
 .toc ul ul {
 	font-size: 13pt;
+}
+.index {
+	font-size:14pt;
+	width: 80%;
+}
+.index big {
+	font-size:20pt;
+	font-weight: bold;
+}
+.index li {
+	list-style: none;
+	margin: 5px;
 }

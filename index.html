@@ -1,21 +1,16 @@
 <!--#include virtual="includes/header.html" -->
 
-Apache Kafka is publish-subscribe messaging rethought as a distributed commit log.
-
-<div class="buzzword">Fast</div>
-
-A single Kafka broker can handle hundreds of megabytes of reads and writes per second from thousands of clients.
-
-<div class="buzzword">Scalable</div>
-
-Kafka is designed to allow a single cluster to serve as the central data backbone for a large organization. It can be elastically and transparently expanded without downtime. Data streams are partitioned and spread over a cluster of machines to allow data streams larger than the capability of any single machine and to allow clusters of co-ordinated consumers
-
-<div class="buzzword">Durable</div>
-
-Messages are persisted on disk and replicated within the cluster to prevent data loss. Each broker can handle terabytes of messages without performance impact.
-
-<div class="buzzword">Distributed by Design</div>
-
-Kafka has a modern cluster-centric design that offers strong durability and fault-tolerance guarantees.
+<div class="index">
+	<div style="float: right">
+	   <img src="images/kafka-apis.png" style="width:300px">
+    </div>
+Apache Kafka is streaming platform. It lets you...
+<ul>
+	<li><big>Publish and subscribe</big> to streams of data like a messaging system
+	<li><big>Store</big> streams of data in a distributed, replicated cluster
+	<li><big>Process</big> streams of data in real-time
+</ul>
+Kafka is used for building real-time data pipelines and streaming apps. It is horizontally scalable, fault-tolerant, wicked fast, and runs in production in thousands of companies. You can learn more about it <a href="/intro.html">here</a>.
+</div>
 
 <!--#include virtual="includes/footer.html" -->
