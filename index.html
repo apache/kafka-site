@@ -1,16 +1,33 @@
 <!--#include virtual="includes/header.html" -->
+<!--#include virtual="includes/top.html" -->
+<div class="content">
+	<!--#include virtual="includes/nav.html" -->
+	<div class="right">
+		<div class="desc">
+			<div class="desc-item">
+				<h2>Publish &amp; subscribe</h2>
+				<p>to streams of data like a messaging system</p>
+			</div>
+			<div class="desc-item">
+				<h2>Process</h2>
+				<p>streams of data efficiently and in real time</p>
+			</div>
+			<div class="desc-item">
+				<h2>Store</h2>
+				<p>streams of data safely in a distributed replicated cluster</p>
+			</div>
+		</div>
+		<div class="index">
+			<img width="451" height="435" class="kafka-diagram" src="/images/kafka_diagram.png">
+			<div class="callout">
+				<p>Kafka is used for building real-time data pipelines and streaming apps. It is horizontally scalable, fault-tolerant, wicked fast, and runs in production in thousands of companies.</p>
+				<a class="btn btn--secondary btn--sm callout__action" href="/intro.html">Learn more</a>
+			</div>
+		</div>
 
-<div class="index">
-	<div style="float: right">
-	   <img src="images/kafka-apis.png" style="width:300px">
-    </div>
-Apache Kafka is a distributed streaming platform. It lets you...
-<ul>
-	<li><big>Publish and subscribe</big> to streams of data like a messaging system
-	<li><big>Store</big> streams of data in a distributed, replicated cluster
-	<li><big>Process</big> streams of data in real-time
-</ul>
-Kafka is used for building real-time data pipelines and streaming apps. It is horizontally scalable, fault-tolerant, wicked fast, and runs in production in thousands of companies. You can learn more about it <a href="/intro.html">here</a>.
-</div>
+<script>
+// Show selected style on nav item
+$(function() { $('.b-nav__home').addClass('selected'); });
+</script>
 
 <!--#include virtual="includes/footer.html" -->
