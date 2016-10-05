@@ -197,6 +197,9 @@ ul {
 .footer__legal {
 	margin: 0 2rem;
 }
+.footer__legal a {
+	color: #666666;
+}
 .sub-header {
 	overflow: hidden;
 	margin: 3rem 0 1rem;
@@ -209,15 +212,35 @@ nav {
 	text-transform: uppercase;
 	width: 16rem;
 }
-.nav__item {
+.nav__item,
+.nav__item__with__subs {
 	color: #000000;
 	border-right: 2px solid #000000;
 	display: block;
 	padding-top: 1.5rem;
 	position: relative;
 }
+.nav__item__with__subs {
+	padding-top: 0;
+}
+.nav__sub__anchor,
+.nav__sub__item {
+	border-right: none;
+}
+.nav__sub__item {
+	display: none;
+	color: #888888;
+	font-size: 1.2rem;
+	text-transform: capitalize;
+}
+.nav__item__with__subs--expanded .nav__sub__item {
+	display: block;
+}
 .nav__item:first-of-type {
 	padding-top: 0;
+}
+.nav__item__with__subs .nav__item:first-of-type {
+	padding-top: 1.5rem;
 }
 .nav__item::after {
 	content: "";
@@ -240,6 +263,9 @@ nav {
 }
 .nav__item.selected:first-of-type::after {
 	top: .2rem;
+}
+.nav__item__with__subs .nav__item:first-of-type::after {
+	top: 1.7rem;
 }
 nav .btn {
 	display: block;
@@ -270,13 +296,48 @@ nav .btn {
 	position: absolute;
 	bottom: 2rem;
 	right: 2rem;
-	transition: all .2s ease-out;
 
 }
 .apache-feather:hover {
-	-ms-transform: rotate(-56deg);
-  -webkit-transform: rotate(-56deg);
-  transform: rotate(-56deg);
+	-webkit-animation-name: spin;
+  -webkit-animation-duration: 200ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 200ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 200ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+
+  animation-name: spin;
+  animation-duration: 200ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }
 
 /* pages */
@@ -337,6 +398,24 @@ nav .btn {
 	width: 10rem;
 }
 
+.documentation__banner {
+	background-color: rgba(0,0,0,0.8);
+	color: #ffffff;
+	display: block;
+	padding: 1.5rem 2rem;
+	margin-bottom: 3rem
+}
+
+.documentation__banner:hover {
+	background-color: #888888;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.documentation--current .documentation__banner {
+	display: none;
+}
+
 /* Responsive styles */
 @media only screen and (max-width: 1240px) {
 	.main {
@@ -368,6 +447,12 @@ nav .btn {
 	.callout {
 		margin: 2rem 1.5rem;
 	}
+	.apache-feather {
+		bottom: 2.8rem;
+	}
+	.footer__legal span {
+		display:block;
+	}
 }
 
 @media only screen and (max-width: 800px) {
@@ -390,12 +475,23 @@ nav .btn {
 }
 
 @media only screen and (max-width: 650px) {
+	html, body {
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+	.main {
+		padding: 0 1rem;
+		margin: 0;
+	}
 	.kafka-diagram {
 		display: block;
 		margin: 0 auto;
 	}
 	.callout {
 		margin: 2rem auto;
+	}
+	.right {
+		padding-bottom: 10rem;
 	}
 	.navindicator {
 		min-width: 32rem;
@@ -426,17 +522,20 @@ nav .btn {
     width: 100%;
 	}
 	.nav-scroller {
+		white-space: nowrap;
+		overflow-y: hidden;
 		overflow-x: scroll;
+		-webkit-overflow-scrolling: touch;
 		box-shadow: 0 0 1rem rgba(0,0,0,0.3);
 	}
 	.nav__inner {
-		width: 1500px;
+		width: 2000px;
 	}
 	.nav__item,
 	.nav__item:first-of-type {
 		color: #888888;
 		float: left;
-		padding: 2.2rem 1.6rem 1.1rem;
+		padding: 2.6rem 1.1rem 1.8rem;
 		border: none;
 	}
 	.nav__item.selected,
@@ -450,6 +549,14 @@ nav .btn {
 	.social-links,
 	.footer {
 		display: none;
+	}
+	.nav__item__with__subs .nav__item:first-of-type,
+	.nav__item .nav__item {
+		padding: 0;
+	}
+	.nav__sub__item {
+		margin-left: 2rem;
+		line-height: 2.2rem;
 	}
 	.right {
 		margin: 0;
@@ -468,7 +575,7 @@ nav .btn {
 		font-size: 1.6rem;
 	}
 	.logo {
-		width: 23rem;
+		width: 21.667rem;
 		height: auto;
 	}
 	.desc-item,
