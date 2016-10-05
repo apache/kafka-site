@@ -1,4 +1,8 @@
 Options +Includes
+RewriteEngine On
 AddType text/html .html
 AddHandler server-parsed .html
-Redirect 301 /design.html /documentation.html#design
+Redirect 301 /design.html /documentation#design
+
+RewriteRule ^/?(\d+)/documentation(\.html)? - [S=1]
+RewriteRule ^/?(\d+)/([a-z]+)(\.html)? /$1/documentation#$2 [R=302,L,NE]

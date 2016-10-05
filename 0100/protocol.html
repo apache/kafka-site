@@ -15,10 +15,10 @@
  limitations under the License.
 -->
 
-<!--#include virtual="../includes/header.html" -->
-<!--#include virtual="../includes/top.html" -->
+<!--#include virtual="../includes/_header.htm" -->
+<!--#include virtual="../includes/_top.htm" -->
 <div class="content">
-	<!--#include virtual="../includes/nav.html" -->
+	<!--#include virtual="../includes/_nav.htm" -->
 	<div class="right">
 		<h1>Kafka protocol guide</h1>
     <p>This document covers the wire protocol implemented in Kafka. It is meant to give a readable guide to the protocol that covers the available requests, their binary format, and the proper way to make use of them to implement a client. This document assumes you understand the basic design and terminology described <a href="https://kafka.apache.org/documentation.html#design">here</a></p>
@@ -222,9 +222,8 @@
 
     <p>A final question is why we don't use a system like Protocol Buffers or Thrift to define our request messages. These packages excel at helping you to managing lots and lots of serialized messages. However we have only a few messages. Support across languages is somewhat spotty (depending on the package). Finally the mapping between binary log format and wire protocol is something we manage somewhat carefully and this would not be possible with these systems. Finally we prefer the style of versioning APIs explicitly and checking this to inferring new values as nulls as it allows more nuanced control of compatibility.</p>
 
-  <script>
-	// Show selected style on nav item
-	$(function() { $('.b-nav__project').addClass('selected'); });
-	</script>
-
-<!--#include virtual="../includes/footer.html" -->
+<!--#include virtual="../includes/_footer.htm" -->
+<script>
+// Show selected style on nav item
+$(function() { $('.b-nav__project').addClass('selected'); });
+</script>
