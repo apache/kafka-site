@@ -16,14 +16,20 @@ body {
 }
 code, pre {
 	font-family: 'Cutive Mono', monospace;
+}
+pre {
 	border-style: solid;
 	border-color: #E5E5E5;
 	border-width: .1rem .5rem;
 	overflow-x: scroll;
 	padding: 1rem 2rem 1.5rem;
 	color: #444444;
-	display: block;
 	margin: 2rem 0;
+}
+code {
+	border: .1rem solid #E5E5E5;
+	margin: 0 .3rem;
+	padding: .2rem .4rem;
 }
 code b, pre b,
 h1, h2, h3, h4 {
