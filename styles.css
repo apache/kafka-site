@@ -197,6 +197,7 @@ ul {
 	width: 100%;
 	border-top: .1rem solid #dedede;
 	font-size: .9rem;
+	line-height: 1.2rem;
 	color: #888888;
 	padding: 2rem 0;
 }
@@ -278,7 +279,7 @@ nav .btn {
 	margin-top: 4rem;
 }
 .social-links {
-	margin-top: 2rem;
+	margin: 2rem 0 3rem;
 	font-size: 1.2rem;
 }
 .twitter {
@@ -429,6 +430,9 @@ nav .btn {
 		max-width: 100%;
 		margin: 0 2rem;
 	}
+	.footer__legal__one {
+		display:block;
+	}
 }
 
 @media only screen and (max-width: 1035px) {
@@ -456,9 +460,6 @@ nav .btn {
 	.apache-feather {
 		bottom: 2.8rem;
 	}
-	.footer__legal span {
-		display:block;
-	}
 }
 
 @media only screen and (max-width: 800px) {
@@ -477,6 +478,9 @@ nav .btn {
 	}
 	.callout::before {
 		right: 25%;
+	}
+	.footer__legal__two {
+		display:block;
 	}
 }
 
