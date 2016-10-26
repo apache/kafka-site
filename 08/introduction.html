@@ -1,9 +1,7 @@
 <h3><a id="introduction">1.1 Introduction</a></h3>
-Kafka is a distributed, partitioned, replicated commit log service. It provides the functionality of a messaging system, but with a unique design.
-<p>
-What does all that mean?
-<p>
-First let's review some basic messaging terminology:
+<p>Kafka&trade; is a distributed, partitioned, replicated commit log service. It provides the functionality of a messaging system, but with a unique design.</p>
+<p>What does all that mean?</p>
+<p>First let's review some basic messaging terminology:</p>
 <ul>
 	<li>Kafka maintains feeds of messages in categories called <i>topics</i>.
 	<li>We'll call processes that publish messages to a Kafka topic <i>producers</i>.
@@ -33,7 +31,7 @@ In fact the only metadata retained on a per-consumer basis is the position of th
 <p>
 This combination of features means that Kafka consumers are very cheap&mdash;they can come and go without much impact on the cluster or on other consumers. For example, you can use our command line tools to "tail" the contents of any topic without changing what is consumed by any existing consumers.
 <p>
-The partitions in the log serve several purposes. First, they allow the log to scale beyond a size that will fit on a single server. Each individual partition must fit on the servers that host it, but a topic may have many partitions so it can handle an arbitrary amount of data. Second they act as the unit of parallelism&mdash;more on that in a bit. 
+The partitions in the log serve several purposes. First, they allow the log to scale beyond a size that will fit on a single server. Each individual partition must fit on the servers that host it, but a topic may have many partitions so it can handle an arbitrary amount of data. Second they act as the unit of parallelism&mdash;more on that in a bit.
 
 <h4>Distribution</h4>
 
@@ -53,7 +51,7 @@ Consumers label themselves with a consumer group name, and each message publishe
 <p>
 If all the consumer instances have the same consumer group, then this works just like a traditional queue balancing load over the consumers.
 <p>
-If all the consumer instances have different consumer groups, then this works like publish-subscribe and all messages are broadcast to all consumers. 
+If all the consumer instances have different consumer groups, then this works like publish-subscribe and all messages are broadcast to all consumers.
 <p>
 More commonly, however, we have found that topics have a small number of consumer groups, one for each "logical subscriber". Each group is composed of many consumer instances for scalability and fault tolerance. This is nothing more than publish-subscribe semantics where the subscriber is cluster of consumers instead of a single process.
 <p>
