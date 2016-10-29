@@ -514,7 +514,7 @@ nav .btn {
 	}
 	.navindicator__item {
 		height: .2rem;
-		width: calc(79% / 11);
+		width: calc(79% / 12); /* Note: width of mobile nav indicator should be divided by number of top level pages */
 		background-color: #888888;
 		display: inline-block;
 		margin: 0 .5%;
