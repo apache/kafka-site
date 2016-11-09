@@ -53,6 +53,9 @@ h3, h4 {
 	font-size: 2rem;
 	font-weight: 700;
 }
+h5 {
+	font-size: 1.6rem;
+}
 h3.bullet {
 	margin-bottom: 1rem;
 }
@@ -97,6 +100,7 @@ img {
 }
 ul {
 	padding-left: 2rem;
+	margin:1rem 0 1rem 0;
 }
 .toc {
 	padding: 0;

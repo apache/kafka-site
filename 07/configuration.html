@@ -1,10 +1,8 @@
-<!--#include virtual="../includes/_header.htm" -->
-
-<h2> Configuration </h2>
+<h2 id="configuration"> Configuration </h2>
 
 <h3> Important configuration properties for Kafka broker: </h3>
 
-<p>More details about server configuration can be found in the scala class <code>kafka.server.KafkaConfig</code>.</p> 
+<p>More details about server configuration can be found in the scala class <code>kafka.server.KafkaConfig</code>.</p>
 
 <table class="data-table">
 <tr>
@@ -25,7 +23,7 @@
 <tr>
      <td><code>log.flush.interval</code></td>
      <td>500</td>
-     <td>Controls the number of messages accumulated in each topic (partition) before the data is flushed to disk and made available to consumers.</td>  
+     <td>Controls the number of messages accumulated in each topic (partition) before the data is flushed to disk and made available to consumers.</td>
 </tr>
 <tr>
     <td><code>log.default.flush.scheduler.interval.ms</code></td>
@@ -138,7 +136,7 @@
 
 <h3> Important configuration properties for the high-level consumer: </h3>
 
-<p>More details about consumer configuration can be found in the scala class <code>kafka.consumer.ConsumerConfig</code>.</p> 
+<p>More details about consumer configuration can be found in the scala class <code>kafka.consumer.ConsumerConfig</code>.</p>
 
 <table class="data-table">
 <tr>
@@ -169,7 +167,7 @@
 <tr>
     <td><code>backoff.increment.ms</code></td>
     <td>1000</td>
-    <td>This parameter avoids repeatedly polling a broker node which has no new data. We will backoff every time we get an empty set 
+    <td>This parameter avoids repeatedly polling a broker node which has no new data. We will backoff every time we get an empty set
 from the broker for this time period</td>
 </tr>
 <tr>
@@ -228,7 +226,7 @@ the size of those queues</td>
 
 <h3> Important configuration properties for the producer: </h3>
 
-<p>More details about producer configuration can be found in the scala class <code>kafka.producer.ProducerConfig</code>.</p> 
+<p>More details about producer configuration can be found in the scala class <code>kafka.producer.ProducerConfig</code>.</p>
 
 <table class="data-table">
 <tr>
@@ -330,7 +328,7 @@ the size of those queues</td>
 <tr>
     <td><code>event.handler</code></td>
     <td><code>kafka.producer.async.EventHandler&lt;T&gt;</code></td>
-    <td>the class that implements <code>kafka.producer.async.IEventHandler&lt;T&gt;</code> used to dispatch a batch of produce requests, using an instance of <code>kafka.producer.SyncProducer</code>. 
+    <td>the class that implements <code>kafka.producer.async.IEventHandler&lt;T&gt;</code> used to dispatch a batch of produce requests, using an instance of <code>kafka.producer.SyncProducer</code>.
 </td>
 </tr>
 <tr>
@@ -350,6 +348,3 @@ the size of those queues</td>
     <td>the <code>java.util.Properties()</code> object used to initialize the custom <code>callback.handler</code> through its <code>init()</code> API</td>
 </tr>
 </table>
-
-
-<!--#include virtual="../includes/_footer.htm" -->

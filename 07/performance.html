@@ -1,6 +1,4 @@
-<!--#include virtual="../includes/_header.htm" -->
-
-<h2>Performance Results</h2>
+<h2 id="performance">Performance Results</h2>
 <p>The following tests give some basic information on Kafka throughput as the number of topics, consumers and producers and overall data size varies. Since Kafka nodes are independent, these tests are run with a single producer, consumer, and broker machine. Results can be extrapolated for a larger cluster.
 </p>
 
@@ -46,13 +44,13 @@ The below graph is an experiment where we used 40 producers and varied the numbe
 
 <p>&nbsp;../run-simulator.sh -kafkaServer=localhost -numTopic=10&nbsp;  -reportFile=report-html/data -time=15 -numConsumer=20 -numProducer=40  -xaxis=numTopic</p>
 
-<p>It will run a simulator with 40 producer and 20 consumer threads 
+<p>It will run a simulator with 40 producer and 20 consumer threads
           producing/consuming from a local kafkaserver.&nbsp; The simulator is going to
-          run 15 minutes and the results are going to be saved under 
+          run 15 minutes and the results are going to be saved under
           report-html/data</p>
 
-<p>and they will be plotted from there. Basically it will write MB of 
-          data consumed/produced, number of messages consumed/produced given a 
+<p>and they will be plotted from there. Basically it will write MB of
+          data consumed/produced, number of messages consumed/produced given a
           number of topic and report.html will plot the charts.</p>
 
 
@@ -63,9 +61,9 @@ The below graph is an experiment where we used 40 producers and varied the numbe
 
 
       <p>#!/bin/bash<br />
-      			 
+
          for i in 1 10 20 30 40 50;<br />
-     
+
          do<br />
 
          &nbsp; ../kafka-server.sh server.properties 2>&amp;1 >kafka.out&amp;<br />
@@ -73,11 +71,9 @@ The below graph is an experiment where we used 40 producers and varied the numbe
   &nbsp;../run-simulator.sh -kafkaServer=localhost -numTopic=$i&nbsp;  -reportFile=report-html/data -time=15 -numConsumer=20 -numProducer=40  -xaxis=numTopic<br />
          &nbsp;../stop-server.sh<br />
 	  &nbsp;rm -rf /tmp/kafka-logs<br />
-     
+
          &nbsp;sleep 300<br />
-    	   
+
          done</p>
 
 <p>The charts similar to above graphs can be plotted with report.html automatically.</p>
-
-<!--#include virtual="../includes/_footer.htm" -->
