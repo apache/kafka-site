@@ -10,5 +10,5 @@ RewriteRule ^/?(\d+)/javadoc - [S=2]
 RewriteRule ^/?(\d+)/images/ - [S=1]
 RewriteRule ^/?(\d+)/([a-z]+)(\.html)? /$1/documentation#$2 [R=302,L,NE]
 
-RewriteRule ^/?(\d+)/documentation#streams_([a-z]+)(\.html)? /$1/documentation/streams#$2 [R=302,L,NE]
+RewriteRule ^/?0101/documentation#streams_([a-z]+)(\.html)? /0101/documentation/streams#$1 [R=302,L,NE]
 RewriteRule ^/documentation#streams_([a-z]+)(\.html)? /$1/documentation/streams#$2 [R=302,L,NE]
