@@ -408,4 +408,12 @@
     </div>
 </div>
 <!--#include virtual="../includes/_footer.htm" -->
-<!--#include virtual="../includes/_docs_footer.htm" -->
+<script>
+$(function() {
+  // Show selected style on nav item
+  $('.b-nav__streams').addClass('selected');
+
+  // Display docs subnav items
+  $('.b-nav__docs').parent().toggleClass('nav__item__with__subs--expanded');
+});
+</script>
