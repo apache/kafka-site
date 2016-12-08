@@ -42,7 +42,7 @@
 	<li>The <a href="/documentation.html#streams">Streams API</a> allows an application to act as a <i>stream processor</i>, consuming an input stream from one or more topics and producing an output stream to one or more output topics, effectively transforming the input streams to output streams.
 	<li>The <a href="/documentation.html#connect">Connector API</a> allows building and running reusable producers or consumers that connect Kafka topics to existing applications or data systems. For example, a connector to a relational database might capture every change to a table.
 </ul>
-    <img src="images/kafka-apis.png" style="float: right; width: 50%;">
+    <img src="/0101/images/kafka-apis.png" style="float: right; width: 50%;">
     </div>
 <p>
 In Kafka the communication between the clients and the servers is done with a simple, high-performance, language agnostic <a href="https://kafka.apache.org/protocol.html">TCP protocol</a>. This protocol is versioned and maintains backwards compatibility with older version. We provide a Java client for Kafka, but clients are available in <a href="https://cwiki.apache.org/confluence/display/KAFKA/Clients">many languages</a>.</p>
@@ -51,14 +51,14 @@ In Kafka the communication between the clients and the servers is done with a si
 <p>Let's first dive into the core abstraction Kafka provides for a stream of records&mdash;the topic.</p>
 <p>A topic is a category or feed name to which records are published. Topics in Kafka are always multi-subscriber; that is, a topic can have zero, one, or many consumers that subscribe to the data written to it.</p>
 <p> For each topic, the Kafka cluster maintains a partitioned log that looks like this: </p>
-<img class="centered" src="images/log_anatomy.png">
+<img class="centered" src="/0101/images/log_anatomy.png">
 
 <p> Each partition is an ordered, immutable sequence of records that is continually appended to&mdash;a structured commit log. The records in the partitions are each assigned a sequential id number called the <i>offset</i> that uniquely identifies each record within the partition.
 </p>
 <p>
 The Kafka cluster retains all published records&mdash;whether or not they have been consumed&mdash;using a configurable retention period. For example, if the retention policy is set to two days, then for the two days after a record is published, it is available for consumption, after which it will be discarded to free up space. Kafka's performance is effectively constant with respect to data size so storing data for a long time is not a problem.
 </p>
-<img class="centered" src="images/log_consumer.png" style="width:400px">
+<img class="centered" src="/0101/images/log_consumer.png" style="width:400px">
 <p>
 In fact, the only metadata retained on a per-consumer basis is the offset or position of that consumer in the log. This offset is controlled by the consumer: normally a consumer will advance its offset linearly as it reads records, but, in fact, since the position is controlled by the consumer it can consume records in any order it likes. For example a consumer can reset to an older offset to reprocess data from the past or skip ahead to the most recent record and start consuming from "now".
 </p>
@@ -93,7 +93,7 @@ If all the consumer instances have the same consumer group, then the records wil
 <p>
 If all the consumer instances have different consumer groups, then each record will be broadcast to all the consumer processes.
 </p>
-<img class="centered" src="images/consumer-groups.png">
+<img class="centered" src="/0101/images/consumer-groups.png">
 <p>
   A two server Kafka cluster hosting four partitions (P0-P3) with two consumer groups. Consumer group A has two consumer instances and group B has four.
 </p>

@@ -18,4 +18,25 @@
 		<link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:400,700,900" rel="stylesheet">
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/jquery.sticky-kit.min.js"></script>
+		<script>
+			// Legacy versions of the documentation to leave alone
+			var legacyDocPaths = [
+				'/07/documentation',
+				'/08/documentation',
+				'/081/documentation',
+				'/082/documentation',
+				'/090/documentation',
+				'/0100/documentation'
+			];
+
+			// Any direct request for Streams documentation in docs versions prior to 0101
+			// Redirect these requests to the standalone Streams doc page
+			var currentPath = window.location.pathname;
+			if (legacyDocPaths.indexOf(currentPath) === -1 &&
+				currentPath.includes('/documentation') &&
+				currentPath !== '/documentation/streams' &&
+				window.location.hash.includes('#streams_')) {
+				window.location.pathname = '/documentation/streams';
+			}
+		</script>
 	</head>
