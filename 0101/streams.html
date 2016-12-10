@@ -15,16 +15,10 @@
   ~ limitations under the License.
   ~-->
 
-<!--#include virtual="../includes/_header.htm" -->
-<!--#include virtual="../includes/_top.htm" -->
-<div class="content documentation documentation--current">
-	<!--#include virtual="../includes/_nav.htm" -->
-	<div class="right">
-		<!--#include virtual="../includes/_docs_banner.htm" -->
-        <ul class="breadcrumbs">
-            <li><a href="/documentation">Documentation</a></li>
-        </ul>
-        <h1>Streams</h1>
+<script><!--#include virtual="js/templateData.js" --></script>
+
+<script id="streams-template" type="text/x-handlebars-template">
+    <h1>Streams</h1>
 
         <ol class="toc">
             <li>
@@ -404,7 +398,18 @@
         in <code>StreamsConfig</code> before running it. A complete list of
         Kafka Streams configs can be found <a href="#streamsconfigs"><b>here</b></a>.
         </p>
+</script>
 
+<!--#include virtual="../includes/_header.htm" -->
+<!--#include virtual="../includes/_top.htm" -->
+<div class="content documentation documentation--current">
+	<!--#include virtual="../includes/_nav.htm" -->
+	<div class="right">
+		<!--#include virtual="../includes/_docs_banner.htm" -->
+        <ul class="breadcrumbs">
+            <li><a href="/documentation">Documentation</a></li>
+        </ul>
+        <div class="p-streams"></div>
     </div>
 </div>
 <!--#include virtual="../includes/_footer.htm" -->

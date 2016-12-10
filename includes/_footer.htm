@@ -15,6 +15,35 @@
 		</div>
 	</body>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+	<script>
+		$(function () {
+			// list of pages that are rendered with Handlebars
+			var templates = [
+				'introduction',
+				'implementation',
+				'design',
+				'api',
+				'configuration',
+				'ops',
+				'security',
+				'connect',
+				'streams'
+			];
+
+			// loop through all Handlebar templates on the page and render them
+			for(var i = 0; i < templates.length; i++) {
+				var templateScript = $("#" + templates[i] + "-template").html();
+				if(templateScript) {
+					var template = Handlebars.compile(templateScript);
+					var html = template(context);
+					$(".p-" + templates[i]).html(html);
+				}
+			}
+		});
+	</script>
+
+	<script src="/js/jquery.sticky-kit.min.js"></script>
 	<script>
 		$(function() {
 			// Set mobile scroll position on nav
@@ -71,6 +100,7 @@
 			};
 		});
 	</script>
+
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
