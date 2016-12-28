@@ -166,7 +166,7 @@ the port to listen and accept connections on</td><td>int</td><td>9092</td><td></
 <tr>
 <td>group.max.session.timeout.ms</td><td>The maximum allowed session timeout for registered consumers. Longer timeouts give consumers more time to process messages in between heartbeats at the cost of a longer time to detect failures.</td><td>int</td><td>300000</td><td></td><td>medium</td></tr>
 <tr>
-<td>group.min.session.timeout.ms</td><td>The minimum allowed session timeout for registered consumers. Shorter timeouts leader to quicker failure detection at the cost of more frequent consumer heartbeating, which can overwhelm broker resources.</td><td>int</td><td>6000</td><td></td><td>medium</td></tr>
+<td>group.min.session.timeout.ms</td><td>The minimum allowed session timeout for registered consumers. Shorter timeouts result in quicker failure detection at the cost of more frequent consumer heartbeating, which can overwhelm broker resources.</td><td>int</td><td>6000</td><td></td><td>medium</td></tr>
 <tr>
 <td>inter.broker.protocol.version</td><td>Specify which version of the inter-broker protocol will be used.
  This is typically bumped after all brokers were upgraded to a new version.
