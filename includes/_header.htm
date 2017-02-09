@@ -18,24 +18,40 @@
 		<link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:400,700,900" rel="stylesheet">
 		<script src="/js/jquery.min.js"></script>
 		<script>
-			// Legacy versions of the documentation to leave alone
+			// DO NOT NEED TO UPDATE
+			// Legacy versions of the documentation to not do frontend redirect for
+			// These docs are written as a single super long file so no need to re-route
 			var legacyDocPaths = [
 				'/07/documentation',
+				'/07/documentation/',
 				'/08/documentation',
+				'/08/documentation/',
 				'/081/documentation',
+				'/081/documentation/',
 				'/082/documentation',
+				'/082/documentation/',
 				'/090/documentation',
-				'/0100/documentation'
+				'/090/documentation/',
+				'/0100/documentation',
+				'/0100/documentation/'
 			];
 
 			// Any direct request for Streams documentation in docs versions prior to 0101
 			// Redirect these requests to the standalone Streams doc page
 			var currentPath = window.location.pathname;
-			if (legacyDocPaths.indexOf(currentPath) === -1 &&
-				currentPath.includes('/documentation') &&
-				currentPath !== '/documentation/streams' &&
-				window.location.hash.includes('#streams_')) {
-				window.location.pathname = '/documentation/streams';
+			var shouldRedirect = !legacyDocPaths.includes(currentPath);
+			var isDocumenationPage = currentPath.includes('/documentation');
+
+			var hasNotSpecifiedFullPath = !currentPath.includes('/documentation/streams') && !currentPath.includes('/documentation/streams/');
+			
+			// Look for legacy anchors to clue us in on what full path the user needs
+			// Add more as needed
+			var specifiedStreamsAnchor = window.location.hash.includes('#streams_');
+
+			if (shouldRedirect && isDocumenationPage && hasNotSpecifiedFullPath) {
+				if (specifiedStreamsAnchor) {
+					window.location.pathname = currentPath + 'streams';
+				}
 			}
 		</script>
 	</head>
