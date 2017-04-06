@@ -1,6 +1,6 @@
 <div id="org.apache.kafka.connect.transforms.InsertField">
 <h5>org.apache.kafka.connect.transforms.InsertField</h5>
-Insert field(s) using attributes from the record metadata or a configured static value.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.InsertField.Key</code>) or value (<code>org.apache.kafka.connect.transforms.InsertField.Value</code>).
+Insert field(s) using attributes from the record metadata or a configured static value.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.InsertField$Key</code>) or value (<code>org.apache.kafka.connect.transforms.InsertField$Value</code>).
 <p/>
 <table class="data-table"><tbody>
 <tr>
@@ -27,7 +27,7 @@ Insert field(s) using attributes from the record metadata or a configured static
 </div>
 <div id="org.apache.kafka.connect.transforms.ReplaceField">
 <h5>org.apache.kafka.connect.transforms.ReplaceField</h5>
-Filter or rename fields.
+Filter or rename fields.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.ReplaceField$Key</code>) or value (<code>org.apache.kafka.connect.transforms.ReplaceField$Value</code>).
 <p/>
 <table class="data-table"><tbody>
 <tr>
@@ -48,7 +48,7 @@ Filter or rename fields.
 </div>
 <div id="org.apache.kafka.connect.transforms.MaskField">
 <h5>org.apache.kafka.connect.transforms.MaskField</h5>
-Mask specified fields with a valid null value for the field type (i.e. 0, false, empty string, and so on).<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.MaskField.Key</code>) or value (<code>org.apache.kafka.connect.transforms.MaskField.Value</code>).
+Mask specified fields with a valid null value for the field type (i.e. 0, false, empty string, and so on).<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.MaskField$Key</code>) or value (<code>org.apache.kafka.connect.transforms.MaskField$Value</code>).
 <p/>
 <table class="data-table"><tbody>
 <tr>
@@ -82,7 +82,7 @@ Replace the record key with a new key formed from a subset of fields in the reco
 </div>
 <div id="org.apache.kafka.connect.transforms.HoistField">
 <h5>org.apache.kafka.connect.transforms.HoistField</h5>
-Wrap data using the specified field name in a Struct when schema present, or a Map in the case of schemaless data.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.HoistField.Key</code>) or value (<code>org.apache.kafka.connect.transforms.HoistField.Value</code>).
+Wrap data using the specified field name in a Struct when schema present, or a Map in the case of schemaless data.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.HoistField$Key</code>) or value (<code>org.apache.kafka.connect.transforms.HoistField$Value</code>).
 <p/>
 <table class="data-table"><tbody>
 <tr>
@@ -99,7 +99,7 @@ Wrap data using the specified field name in a Struct when schema present, or a M
 </div>
 <div id="org.apache.kafka.connect.transforms.ExtractField">
 <h5>org.apache.kafka.connect.transforms.ExtractField</h5>
-Extract the specified field from a Struct when schema present, or a Map in the case of schemaless data.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.ExtractField.Key</code>) or value (<code>org.apache.kafka.connect.transforms.ExtractField.Value</code>).
+Extract the specified field from a Struct when schema present, or a Map in the case of schemaless data.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.ExtractField$Key</code>) or value (<code>org.apache.kafka.connect.transforms.ExtractField$Value</code>).
 <p/>
 <table class="data-table"><tbody>
 <tr>
@@ -116,7 +116,7 @@ Extract the specified field from a Struct when schema present, or a Map in the c
 </div>
 <div id="org.apache.kafka.connect.transforms.SetSchemaMetadata">
 <h5>org.apache.kafka.connect.transforms.SetSchemaMetadata</h5>
-Set the schema name, version or both on the record's key (<code>org.apache.kafka.connect.transforms.SetSchemaMetadata.Key</code>) or value (<code>org.apache.kafka.connect.transforms.SetSchemaMetadata.Value</code>) schema.
+Set the schema name, version or both on the record's key (<code>org.apache.kafka.connect.transforms.SetSchemaMetadata$Key</code>) or value (<code>org.apache.kafka.connect.transforms.SetSchemaMetadata$Value</code>) schema.
 <p/>
 <table class="data-table"><tbody>
 <tr>
