@@ -26,7 +26,7 @@
 </tr><tr>
 <td>correlation_id</td><td>The user-supplied value passed in with the request</td></tr>
 </table>
-<h5>Produce API (Key: 0):</h5>
+<h5><a name="The_Messages_Produce">Produce API (Key: 0):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>Produce Request (Version: 0) => acks timeout [topic_data] 
@@ -192,7 +192,7 @@
 <td>throttle_time_ms</td><td>Duration in milliseconds for which the request was throttled due to quota violation. (Zero if the request did not violate any quota.)</td></tr>
 </table>
 </p>
-<h5>Fetch API (Key: 1):</h5>
+<h5><a name="The_Messages_Fetch">Fetch API (Key: 1):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>Fetch Request (Version: 0) => replica_id max_wait_time min_bytes [topics] 
@@ -460,7 +460,7 @@
 <td>record_set</td><td></td></tr>
 </table>
 </p>
-<h5>Offsets API (Key: 2):</h5>
+<h5><a name="The_Messages_Offsets">Offsets API (Key: 2):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>Offsets Request (Version: 0) => replica_id [topics] 
@@ -566,7 +566,7 @@
 <td>offset</td><td>offset found</td></tr>
 </table>
 </p>
-<h5>Metadata API (Key: 3):</h5>
+<h5><a name="The_Messages_Metadata">Metadata API (Key: 3):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>Metadata Request (Version: 0) => [topics] 
@@ -753,7 +753,7 @@
 <td>isr</td><td>The set of nodes that are in sync with the leader for this partition.</td></tr>
 </table>
 </p>
-<h5>LeaderAndIsr API (Key: 4):</h5>
+<h5><a name="The_Messages_LeaderAndIsr">LeaderAndIsr API (Key: 4):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>LeaderAndIsr Request (Version: 0) => controller_id controller_epoch [partition_states] [live_leaders] 
@@ -829,7 +829,7 @@
 <td>error_code</td><td>Error code.</td></tr>
 </table>
 </p>
-<h5>StopReplica API (Key: 5):</h5>
+<h5><a name="The_Messages_StopReplica">StopReplica API (Key: 5):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>StopReplica Request (Version: 0) => controller_id controller_epoch delete_partitions [partitions] 
@@ -878,7 +878,7 @@
 <td>error_code</td><td>Error code.</td></tr>
 </table>
 </p>
-<h5>UpdateMetadata API (Key: 6):</h5>
+<h5><a name="The_Messages_UpdateMetadata">UpdateMetadata API (Key: 6):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>UpdateMetadata Request (Version: 0) => controller_id controller_epoch [partition_states] [live_brokers] 
@@ -1149,7 +1149,7 @@
 <td>error_code</td><td>Error code.</td></tr>
 </table>
 </p>
-<h5>ControlledShutdown API (Key: 7):</h5>
+<h5><a name="The_Messages_ControlledShutdown">ControlledShutdown API (Key: 7):</a></h5>
 
 <b>Requests:</b><br>
 </p>
@@ -1182,7 +1182,7 @@
 <td>partition</td><td>Topic partition id.</td></tr>
 </table>
 </p>
-<h5>OffsetCommit API (Key: 8):</h5>
+<h5><a name="The_Messages_OffsetCommit">OffsetCommit API (Key: 8):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>OffsetCommit Request (Version: 0) => group_id [topics] 
@@ -1348,7 +1348,7 @@
 <td>error_code</td><td></td></tr>
 </table>
 </p>
-<h5>OffsetFetch API (Key: 9):</h5>
+<h5><a name="The_Messages_OffsetFetch">OffsetFetch API (Key: 9):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>OffsetFetch Request (Version: 0) => group_id [topics] 
@@ -1499,7 +1499,7 @@
 <td>error_code</td><td></td></tr>
 </table>
 </p>
-<h5>GroupCoordinator API (Key: 10):</h5>
+<h5><a name="The_Messages_GroupCoordinator">GroupCoordinator API (Key: 10):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>GroupCoordinator Request (Version: 0) => group_id 
@@ -1533,7 +1533,7 @@
 <td>port</td><td>The port on which the broker accepts requests.</td></tr>
 </table>
 </p>
-<h5>JoinGroup API (Key: 11):</h5>
+<h5><a name="The_Messages_JoinGroup">JoinGroup API (Key: 11):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>JoinGroup Request (Version: 0) => group_id session_timeout member_id protocol_type [group_protocols] 
@@ -1654,7 +1654,7 @@
 <td>member_metadata</td><td></td></tr>
 </table>
 </p>
-<h5>Heartbeat API (Key: 12):</h5>
+<h5><a name="The_Messages_Heartbeat">Heartbeat API (Key: 12):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>Heartbeat Request (Version: 0) => group_id group_generation_id member_id 
@@ -1682,7 +1682,7 @@
 <td>error_code</td><td></td></tr>
 </table>
 </p>
-<h5>LeaveGroup API (Key: 13):</h5>
+<h5><a name="The_Messages_LeaveGroup">LeaveGroup API (Key: 13):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>LeaveGroup Request (Version: 0) => group_id member_id 
@@ -1707,7 +1707,7 @@
 <td>error_code</td><td></td></tr>
 </table>
 </p>
-<h5>SyncGroup API (Key: 14):</h5>
+<h5><a name="The_Messages_SyncGroup">SyncGroup API (Key: 14):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>SyncGroup Request (Version: 0) => group_id generation_id member_id [group_assignment] 
@@ -1747,7 +1747,7 @@
 <td>member_assignment</td><td></td></tr>
 </table>
 </p>
-<h5>DescribeGroups API (Key: 15):</h5>
+<h5><a name="The_Messages_DescribeGroups">DescribeGroups API (Key: 15):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>DescribeGroups Request (Version: 0) => [group_ids] 
@@ -1802,7 +1802,7 @@
 <td>member_assignment</td><td>The current assignment provided by the group leader (will only be present if the group is stable).</td></tr>
 </table>
 </p>
-<h5>ListGroups API (Key: 16):</h5>
+<h5><a name="The_Messages_ListGroups">ListGroups API (Key: 16):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>ListGroups Request (Version: 0) => 
@@ -1830,7 +1830,7 @@
 <td>protocol_type</td><td></td></tr>
 </table>
 </p>
-<h5>SaslHandshake API (Key: 17):</h5>
+<h5><a name="The_Messages_SaslHandshake">SaslHandshake API (Key: 17):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>SaslHandshake Request (Version: 0) => mechanism 
@@ -1855,7 +1855,7 @@
 <td>enabled_mechanisms</td><td>Array of mechanisms enabled in the server.</td></tr>
 </table>
 </p>
-<h5>ApiVersions API (Key: 18):</h5>
+<h5><a name="The_Messages_ApiVersions">ApiVersions API (Key: 18):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>ApiVersions Request (Version: 0) => 
@@ -1886,7 +1886,7 @@
 <td>max_version</td><td>Maximum supported version.</td></tr>
 </table>
 </p>
-<h5>CreateTopics API (Key: 19):</h5>
+<h5><a name="The_Messages_CreateTopics">CreateTopics API (Key: 19):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>CreateTopics Request (Version: 0) => [create_topic_requests] timeout 
@@ -2004,7 +2004,7 @@
 <td>error_message</td><td></td></tr>
 </table>
 </p>
-<h5>DeleteTopics API (Key: 20):</h5>
+<h5><a name="The_Messages_DeleteTopics">DeleteTopics API (Key: 20):</a></h5>
 
 <b>Requests:</b><br>
 <p><pre>DeleteTopics Request (Version: 0) => [topics] timeout 
