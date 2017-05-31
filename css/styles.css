@@ -10,12 +10,12 @@ body {
 	flex-direction: column;
 	min-width: 32rem;
 	font-size: 1.4rem;
-	line-height: 1.6;
+	line-height: 1.8;
 	font-family: 'Roboto', sans-serif;
 	margin: 0;
 }
 code, pre {
-	font-family: 'Cutive Mono', monospace;
+	font-family: Menlo, Consolas, monospace;
 }
 pre {
 	border-style: solid;
@@ -30,6 +30,7 @@ code {
 	border: .1rem solid #E5E5E5;
 	margin: 0 .3rem;
 	padding: .2rem .4rem;
+	background-color: #F4F9F9;
 }
 code b, pre b,
 h1, h2, h3, h4 {
