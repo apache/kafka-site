@@ -270,7 +270,7 @@
     support a two-phase commit. As an example of this, our Hadoop ETL that populates data in HDFS stores its offsets in HDFS with the data it reads so that it is guaranteed that either data and offsets are both updated
     or neither is. We follow similar patterns for many other data systems which require these stronger semantics and for which the messages do not have a primary key to allow for deduplication.
     <p>
-    A special case is when the output system is just another Kafka topic (e.g. in a Kafka Streams appication). Here we can leverage the new transactional producer capabilities in 0.11.0.0 that were mentioned above.
+    A special case is when the output system is just another Kafka topic (e.g. in a Kafka Streams application). Here we can leverage the new transactional producer capabilities in 0.11.0.0 that were mentioned above.
     Since the consumer's position is stored as a message in a topic, we can ensure that that topic is included in the same transaction as the output topics receiving the processed data. If the transaction is aborted,
     the consumer's position will revert to its old value and none of the output data will be visible to consumers. To enable this, consumers support an "isolation level" to achieve this. In the default
     "read_uncommitted" mode, all messages are visible to consumers even if they were part of an aborted transaction, but in "read_committed" mode, the consumer will only return data from transactions which were committed
