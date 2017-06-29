@@ -234,16 +234,17 @@ ol.toc > li {
 	list-style: none;
     padding: 0;
     text-transform: uppercase;
-	overflow: hidden;
 	margin-bottom: 0;
+	display: flex;
 }
 .breadcrumbs li {
 	display: flex;
 	align-items: center;
+	margin-right: .8rem;
 }
 .breadcrumbs li::after {
 	content: '\00BB';
-    margin-left: .5rem;
+    margin-left: .6rem;
 	height: 1rem;
     line-height: .9rem;
 }
@@ -511,7 +512,44 @@ nav .btn {
   border-top: 1px solid #888888;
 }
 
+.pagination {
+	margin-top: 5rem;
+	margin-bottom: 8rem;
+	display: flex;
+	justify-content: space-between;
+}
 
+.pagination__btn {
+	border: .1rem solid #0B6D88;
+	border-radius: .2rem;
+	padding: .3rem;
+	width: 8rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pagination__btn__next::after {
+    content: '\00BB';
+    margin-left: .6rem;
+    height: 1rem;
+    line-height: .9rem;
+}
+
+.pagination__btn__prev::before {
+    content: '\00AB';
+    margin-right: .6rem;
+    height: 1rem;
+    line-height: .9rem;
+}
+
+.pagination__btn:hover {
+	opacity: .7;
+}
+
+.pagination__btn--disabled {
+	opacity: .2;
+}
 
 /* Responsive styles */
 @media only screen and (max-width: 1240px) {
