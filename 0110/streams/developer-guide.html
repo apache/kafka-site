@@ -26,7 +26,7 @@
     </p>
 
     <p>
-    As we have mentioned above, the computational logic of a Kafka Streams application is defined as a <a href="#streams_topology">processor topology</a>.
+    As we have mentioned above, the computational logic of a Kafka Streams application is defined as a <a href="/{{version}}/documentation/streams/core-concepts#streams_topology">processor topology</a>.
     Currently Kafka Streams provides two sets of APIs to define the processor topology, which will be described in the subsequent sections.
     </p>
 
@@ -35,7 +35,7 @@
     <h4><a id="streams_processor_process" href="#streams_processor_process">Processor</a></h4>
 
     <p>
-    As mentioned in the <a href="#streams_concepts">Core Concepts</a> section, a stream processor is a node in the processor topology that represents a single processing step.
+    As mentioned in the <a href="/{{version}}/documentation/streams/core-concepts">Core Concepts</a> section, a stream processor is a node in the processor topology that represents a single processing step.
     With the <code>Processor</code> API developers can define arbitrary stream processors that process one received record at a time, and connect these processors with
     their associated state stores to compose the processor topology that represents their customized processing logic.
     </p>
@@ -303,7 +303,7 @@
     </p>
 
     <p>
-    Late-arriving records are always possible in real-time data streams. However, it depends on the effective <a href="#streams_time">time semantics</a> how late records are handled. Using processing-time, the semantics are "when the data is being processed",
+    Late-arriving records are always possible in real-time data streams. However, it depends on the effective <a href="/{{version}}/documentation/streams/core-concepts#streams_time">time semantics</a> how late records are handled. Using processing-time, the semantics are "when the data is being processed",
     which means that the notion of late records is not applicable as, by definition, no record can be late. Hence, late-arriving records only really can be considered as such (i.e. as arriving "late") for event-time or ingestion-time semantics. In both cases,
     Kafka Streams is able to properly handle late-arriving records.
     </p>
@@ -572,7 +572,7 @@
     It is important to understand that, when starting your application as described above, you are actually launching what Kafka Streams considers to be one instance of your application.
     More than one instance of your application may be running at a time, and in fact the common scenario is that there are indeed multiple instances of your application running in parallel (e.g., on another JVM or another machine).
     In such cases, Kafka Streams transparently re-assigns tasks from the existing instances to the new instance that you just started.
-    See <a href="#streams_architecture_tasks">Stream Partitions and Tasks</a> and <a href="#streams_architecture_threads">Threading Model</a> for details.
+    See <a href="/{{version}}/documentation/streams/architecture#streams_architecture_tasks"><b>Stream Partitions and Tasks</b></a> and <a href="/{{version}}/documentation/streams/architecture#streams_architecture_threads"><b>Threading Model</b></a> for details.
     </p>
 
     <div class="pagination">
