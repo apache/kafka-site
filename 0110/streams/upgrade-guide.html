@@ -21,21 +21,21 @@
     <h1>Upgrade Guide &amp; API Changes</h1>
 
     <p>
-    If you want to upgrade from 0.10.2.x to 0.11.0 you don't need to do any code changes as the public API is fully backward compatible.
-    However, some configuration parameters were deprecated and thus it is recommend to update your code eventually to allow for future upgrades.
-    See <a href="#streams_api_changes_0110">below</a> a complete list of 0.11.0 API and semantical changes that allow you to advance your application and/or simplify your code base, including the usage of new features.
+        If you want to upgrade from 0.10.2.x to 0.11.0 you don't need to do any code changes as the public API is fully backward compatible.
+        However, some configuration parameters were deprecated and thus it is recommend to update your code eventually to allow for future upgrades.
+        See <a href="#streams_api_changes_0110">below</a> a complete list of 0.11.0 API and semantical changes that allow you to advance your application and/or simplify your code base, including the usage of new features.
     </p>
 
     <p>
-    If you want to upgrade from 0.10.1.x to 0.10.2, see the <a href="/{{version}}/documentation/#upgrade_1020_streams">Upgrade Section for 0.10.2</a>.
-    It highlights incompatible changes you need to consider to upgrade your code and application.
-    See <a href="#streams_api_changes_0102">below</a> a complete list of 0.10.2 API and semantical changes that allow you to advance your application and/or simplify your code base, including the usage of new features.
+        If you want to upgrade from 0.10.1.x to 0.10.2, see the <a href="/{{version}}/documentation/#upgrade_1020_streams">Upgrade Section for 0.10.2</a>.
+        It highlights incompatible changes you need to consider to upgrade your code and application.
+        See <a href="#streams_api_changes_0102">below</a> a complete list of 0.10.2 API and semantical changes that allow you to advance your application and/or simplify your code base, including the usage of new features.
     </p>
 
     <p>
-    If you want to upgrade from 0.10.0.x to 0.10.1, see the <a href="/{{version}}/documentation/#upgrade_1010_streams">Upgrade Section for 0.10.1</a>.
-    It highlights incompatible changes you need to consider to upgrade your code and application.
-    See <a href="#streams_api_changes_0101">below</a> a complete list of 0.10.1 API changes that allow you to advance your application and/or simplify your code base, including the usage of new features.
+        If you want to upgrade from 0.10.0.x to 0.10.1, see the <a href="/{{version}}/documentation/#upgrade_1010_streams">Upgrade Section for 0.10.1</a>.
+        It highlights incompatible changes you need to consider to upgrade your code and application.
+        See <a href="#streams_api_changes_0101">below</a> a complete list of 0.10.1 API changes that allow you to advance your application and/or simplify your code base, including the usage of new features.
     </p>
 
     <h3><a id="streams_api_changes_0110" href="#streams_api_changes_0110">Streams API changes in 0.11.0.0</a></h3>
@@ -100,12 +100,12 @@
         <li> at-least-once (default): <code>[client.Id]-StreamThread-[sequence-number]</code> </li>
         <li> exactly-once: <code>[client.Id]-StreamThread-[sequence-number]-[taskId]</code> </li>
     </ul>
-    <p> <code>[client.Id]</code> is either set via Streams configuration parameter <code>client.id</code> or defaults to <code>[application.id]-[processId]</code> (<code>[processId]</code> is a random UUID). </p>
+    <p> <code>[client.Id]</code> is either set via Streams configuration parameter <code>client.id<code> or defaults to <code>[application.id]-[processId]</code> (<code>[processId]</code> is a random UUID). </p>
 
     <h3><a id="streams_api_changes_01021" href="#streams_api_changes_01021">Notable changes in 0.10.2.1</a></h3>
 
     <p>
-    Parameter updates in <code>StreamsConfig</code>:
+        Parameter updates in <code>StreamsConfig</code>:
     </p>
     <ul>
         <li> The default config values of embedded producer's <code>retries</code> and consumer's <code>max.poll.interval.ms</code> have been changed to improve the resiliency of a Kafka Streams application </li>
@@ -137,7 +137,7 @@
     <ul>
         <li> removed methods: <code>#addLatencySensor()</code> </li>
         <li> added methods: <code>#addLatencyAndThroughputSensor()</code>, <code>#addThroughputSensor()</code>, <code>#recordThroughput()</code>,
-        <code>#addSensor()</code>, <code>#removeSensor()</code> </li>
+            <code>#addSensor()</code>, <code>#removeSensor()</code> </li>
     </ul>
 
     <p> New methods in <code>TopologyBuilder</code>: </p>
@@ -157,7 +157,7 @@
         <li> added overloads for <code>#join()</code> to join with <code>KTable</code> </li>
         <li> added overloads for <code>#join()</code> and <code>leftJoin()</code> to join with <code>GlobalKTable</code> </li>
         <li> note, join semantics in 0.10.2 were improved and thus you might see different result compared to 0.10.0.x and 0.10.1.x
-                (cf. <a href="https://cwiki.apache.org/confluence/display/KAFKA/Kafka+Streams+Join+Semantics">Kafka Streams Join Semantics</a> in the Apache Kafka wiki)
+            (cf. <a href="https://cwiki.apache.org/confluence/display/KAFKA/Kafka+Streams+Join+Semantics">Kafka Streams Join Semantics</a> in the Apache Kafka wiki)
     </ul>
 
     <p> Aligned <code>null</code>-key handling for <code>KTable</code> joins: </p>
@@ -169,14 +169,14 @@
     <ul>
         <li> added class <code>SessionWindows</code> to specify session windows </li>
         <li> added overloads for <code>KGroupedStream</code> methods <code>#count()</code>, <code>#reduce()</code>, and <code>#aggregate()</code>
-                to allow session window aggregations </li>
+            to allow session window aggregations </li>
     </ul>
 
     <p> Changes to <code>TimestampExtractor</code>: </p>
     <ul>
         <li> method <code>#extract()</code> has a second parameter now </li>
         <li> new default timestamp extractor class <code>FailOnInvalidTimestamp</code>
-                (it gives the same behavior as old (and removed) default extractor <code>ConsumerRecordTimestampExtractor</code>) </li>
+            (it gives the same behavior as old (and removed) default extractor <code>ConsumerRecordTimestampExtractor</code>) </li>
         <li> new alternative timestamp extractor classes <code>LogAndSkipOnInvalidTimestamp</code> and <code>UsePreviousTimeOnInvalidTimestamps</code> </li>
     </ul>
 
@@ -226,9 +226,9 @@
 <!--#include virtual="../../includes/_header.htm" -->
 <!--#include virtual="../../includes/_top.htm" -->
 <div class="content documentation documentation--current">
-	<!--#include virtual="../../includes/_nav.htm" -->
-	<div class="right">
-		<!--#include virtual="../../includes/_docs_banner.htm" -->
+    <!--#include virtual="../../includes/_nav.htm" -->
+    <div class="right">
+        <!--#include virtual="../../includes/_docs_banner.htm" -->
         <ul class="breadcrumbs">
             <li><a href="/documentation">Documentation</a></li>
             <li><a href="/documentation/streams">Streams</a></li>
