@@ -27,8 +27,8 @@
             <img src="/{{version}}/images/streams-welcome.png" />
         </div>
         <div class="hero__cta">
-            <a href="/{{version}}/documentation/streams/tutorial" class="btn">Write your first app</a>
-            <a href="/{{version}}/documentation/streams/quickstart" class="btn btn--secondary">Play with demo app</a>
+            <a style="display: none;" href="/{{version}}/documentation/streams/tutorial" class="btn">Write your first app</a>
+            <a href="/{{version}}/documentation/streams/quickstart" class="btn">Play with demo app</a>
         </div>
     </div>
 
@@ -47,9 +47,9 @@
         <a class="card" href="/{{version}}/documentation/streams/developer-guide">
             <img class="card__icon" src="/{{version}}/images/icons/documentation.png" />
             <img class="card__icon card__icon--hover" src="/{{version}}/images/icons/documentation--white.png" />
-            <span class="card__label">Documentation</span>
+            <span class="card__label">Developer manual</span>
         </a>
-        <a class="card" href="/{{version}}/documentation/streams/tutorial">
+        <a style="display: none;" class="card" href="/{{version}}/documentation/streams/tutorial">
             <img class="card__icon" src="/{{version}}/images/icons/tutorials.png" />
             <img class="card__icon card__icon--hover" src="/{{version}}/images/icons/tutorials--white.png" />
             <span class="card__label">Tutorials</span>
@@ -135,16 +135,16 @@
                         KStream&lt;String, String&gt; textLines = builder.stream("TextLinesTopic");
                         KTable&lt;String, Long&gt; wordCounts = textLines
                             .flatMapValues(new ValueMapper&lt;String, Iterable&lt;String&gt;&gt;() {
-                            @Override
-                            public Iterable&lt;String&gt; apply(String textLine) {
-                                return Arrays.asList(textLine.toLowerCase().split("\\W+"));
-                            }
+                                @Override
+                                public Iterable&lt;String&gt; apply(String textLine) {
+                                    return Arrays.asList(textLine.toLowerCase().split("\\W+"));
+                                }
                             })
                             .groupBy(new KeyValueMapper&lt;String, String, String&gt;() {
-                            @Override
-                            public String apply(String key, String word) {
-                                return word;
-                            }
+                                @Override
+                                public String apply(String key, String word) {
+                                    return word;
+                                }
                             })
                             .count("Counts");
                         wordCounts.to(Serdes.String(), Serdes.Long(), "WordsWithCountsTopic");
@@ -173,12 +173,12 @@
 
                     def main(args: Array[String]) {
                         val config: Properties = {
-                        val p = new Properties()
-                        p.put(StreamsConfig.APPLICATION_ID_CONFIG, "wordcount-application")
-                        p.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka-broker1:9092")
-                        p.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass)
-                        p.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass)
-                        p
+                            val p = new Properties()
+                            p.put(StreamsConfig.APPLICATION_ID_CONFIG, "wordcount-application")
+                            p.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka-broker1:9092")
+                            p.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass)
+                            p.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass)
+                            p
                         }
 
                         val builder: KStreamBuilder = new KStreamBuilder()
@@ -193,7 +193,7 @@
                         streams.start()
 
                         Runtime.getRuntime.addShutdownHook(new Thread(() => {
-                        streams.close(10, TimeUnit.SECONDS)
+                            streams.close(10, TimeUnit.SECONDS)
                         }))
                     }
 
