@@ -432,13 +432,15 @@ nav .btn {
 }
 .desc-item {
 	float: left;
-	width: 18rem;
+	width: 24rem;
 	margin-left: 4.2rem;
 }
 .desc-item:first-of-type {
-	width: 25rem;
-	margin-right: 1rem;
 	margin-left: 0;
+}
+.desc-item h2,
+.desc-item p {
+	color: #000000;
 }
 .desc-item p {
 	margin: 0;
@@ -448,8 +450,19 @@ nav .btn {
 	content: "";
 	border-top: 2px solid #000000;
 	display: block;
+	-webkit-transition: width .5s;
+    transition: width .5s;
 	width: 5rem;
 	margin: .2rem 0 1rem;
+}
+.desc-item:hover p:before {
+	border-color: #0C637B;
+	width: 22rem;
+}
+.desc-item:hover h2,
+.desc-item:hover p
+ {
+	color: #0C637B;
 }
 .callout {
 	background-color: #F0F0F0;
@@ -710,6 +723,31 @@ nav .btn {
 }
 
 @media only screen and (max-width: 1125px) {
+	.right {
+		margin-left: 32rem;
+	}
+	.desc {
+		margin-left: 0;
+		margin-bottom: 3rem;
+	}
+	.desc-item,
+	.desc-item:first-of-type {
+		float: none;
+		width: auto;
+		margin-left: 0;
+		display: block;
+		margin-bottom: 2rem;
+	}
+	.desc-item p {
+		width: auto;
+	}
+	.index {
+		padding-right: 0;
+		text-align: left;
+	}
+	.callout {
+		margin: 2rem 1.5rem;
+	}
 	.hero {
 		justify-content: flex-start;
 	}
@@ -723,33 +761,15 @@ nav .btn {
 }
 
 @media only screen and (max-width: 1035px) {
-	.desc {
-		margin-left: 0;
-		margin-bottom: 2rem;
-	}
-  .desc-item,
-	.desc-item:first-of-type {
-		float: none;
-		width: auto;
-		margin-left: 0;
-		margin-bottom: 4rem;
-	}
-	.desc-item p {
-		width: auto;
-	}
-	.index {
-		padding-right: 0;
-		text-align: left;
-	}
-	.callout {
-		margin: 2rem 1.5rem;
-	}
 	.apache-feather {
 		bottom: 2.8rem;
 	}
 }
 
 @media only screen and (max-width: 950px) {
+	.right {
+		margin-left: 22rem;
+	}
 	.hero {
 		flex-direction: column;
 	}
@@ -772,10 +792,6 @@ nav .btn {
 }
 
 @media only screen and (max-width: 800px) {
-	.desc-item,
-	.desc-item:first-of-type {
-		margin-bottom: 3rem;
-	}
 	.kafka-diagram {
 		width: 80%;
 		min-width: 28rem;
