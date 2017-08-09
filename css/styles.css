@@ -444,7 +444,11 @@ nav .btn {
 }
 .desc-item p {
 	margin: 0;
-	width: 18rem;
+	width: 20rem;
+}
+.desc-item__cta {
+	margin-top: .5rem;
+	display: block;
 }
 .desc-item p:before {
 	content: "";
@@ -736,7 +740,7 @@ nav .btn {
 		width: auto;
 		margin-left: 0;
 		display: block;
-		margin-bottom: 2rem;
+		margin-bottom: 4rem;
 	}
 	.desc-item p {
 		width: auto;
