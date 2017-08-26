@@ -214,6 +214,12 @@ ol.toc > li {
 	-webkit-hyphens: auto;
 	hyphens: auto;
 }
+.data-table tr td:first-of-type {
+	-ms-hyphens: none;
+	-moz-hyphens: none;
+	-webkit-hyphens: none;
+	hyphens: none;
+}
 
 /* helper classes */
 .centered {
