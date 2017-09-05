@@ -102,6 +102,47 @@
 		<li>We should attempt to maintain API compatibility when possible, though at this point in the project's lifecycle it is more important to make things good rather than avoid breakage.</li>
 		</ul>
 
+		<h2>Streams API</h2>
+		<p>Kafka's Streams API (aka Kafka Streams) uses a few more additional coding guidelines.
+                   All contributors should follow these the get a high quality and uniform code base.
+                   Some rules help to simplify PR reviews and thus make the life of all contributors easier.</p>
+		<ul>
+			<li>Use <code>final</code> when possible.
+                            This holds for all class members, local variables, loop variables, and method parameters.</li>
+			<li>Write modular and thus testable code. Refactor if necessary!</li>
+			<li>Avoid large PRs (recommended is not more the 500 lines per PR).
+                            Many JIRAs requires larger code changes; thus, split the work in multiple PRs and create according sub-task on the JIRA to track the work.</li>
+			<li>All public APIs must have JavaDocs.</li>
+			<li>Verify if JavaDocs are still up to date or if they need to be updated.</li>
+			<li>JavaDocs: Write grammatically correct sentences and use punctuation marks correctly.</li>
+			<li>Use proper markup (e.g., <code>{@code null}</code>).</li>
+			<li>Update the documentation on the Kafka webpage (i.e., within folder <code>docs/</codes>.
+                            Doc changes are not additional work (i.e. no follow up PRs) but part of the actual PR (can also be a sub-tasks).</li>
+			<li>Testing:
+				<ul>
+					<li>Use self-explaining method names (e.g., <code>shouldNotAcceptNullAsTopicName()</code>).</li>
+					<li>Each test should cover only a single case.</li>
+					<li>Keep tests as short as possible (i.e., write crisp code).</li>
+					<li>Write tests for all possible parameter values.</li>
+					<li>Don't use reflections but rewrite your code (reflections indicate bad design in the first place).</li>
+					<li>Use annotations such as <code>@Test(expected = SomeException.class)</code> only for single line tests.</li>
+				</ul>
+			</li>
+			<li>Code formatting (those make Github diffs easier to read and thus simplify code reviews):
+				<ul>
+					<li>No line should be longer than 120 characters.</li>
+					<li>Use a "single parameter per line" formatting when defining methods (also for methods with only 2 parameters).</li>
+					<li>If a method call is longer than 120 characters, switch to a single parameter per line formatting
+                                            (instead of just breaking it into two lines only).</li>
+					<li>For JavaDocs, start a new line for each new sentence.</li>
+					<li>Avoid unnecessary reformatting.</li>
+					<li>If reformatting is neccessary, do a minor PR (either upfront or as follow up).</li>
+				</ul>
+			</li>
+			<li>Run <code>./gradlew clean chechstyleMain checkstyleTest</code> before opening/updating a PR.</li>
+			<li>Help reviewing!
+                            No need to be shy; if you can contribute code, you know enough to comment on the work of others.</li>
+		</ul>
 	<script>
 	// Show selected style on nav item
 	$(function() { $('.b-nav__project').addClass('selected'); });
