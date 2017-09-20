@@ -993,3 +993,76 @@ nav .btn {
 		margin-right: 0;
 	}
 }
+
+.customer__cards {
+    display: flex;
+    height: 30rem;
+    max-width: 92rem;
+      
+}
+
+.customer_cards_2{
+    margin-top: 4.2rem;
+}
+
+.customer__card {
+    flex: 1;
+    margin-right: 2rem;
+    border-radius: .4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align:justify;
+}
+    
+.customer-right{
+    margin-right:0rem;
+}
+
+.customer__card__icon{
+    align-items: center;
+    border: 1px solid #888;
+    border-radius: 4px;
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    width: 268px;
+}
+
+.green_card{
+    background-color: #00b900;
+}
+
+.customer__card__label {
+    color: #000000;
+    margin-top: 2.4rem;
+    display: flex;
+}
+
+@media only screen and (max-width: 1109px) {
+    .customer__cards {
+        height: 35rem;
+      
+      }
+}
+
+@media only screen and (max-width: 1023px) {
+
+    .customer__cards {
+         height: 60rem;
+         flex-direction: column;
+   }
+    .customer-right{
+         margin-right:2rem;
+    }
+   .customer_cards_2{
+         margin-top: 0rem;
+    }
+
+    }
+    .customer-title{
+    	 margin-top:62px;
+    	 margin-bottom: 4.2rem;
+    }
+   
+}
