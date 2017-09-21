@@ -1003,6 +1003,9 @@ nav .btn {
 
 .customer_cards_2{
     margin-top: 4.2rem;
+    display: flex;
+    height: 35rem;
+    max-width: 92rem;
 }
 
 .customer__card {
