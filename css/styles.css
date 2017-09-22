@@ -1004,7 +1004,7 @@ nav .btn {
 .customer_cards_2{
     margin-top: 4.2rem;
     display: flex;
-    height: 35rem;
+    height: 40rem;
     max-width: 92rem;
 }
 
@@ -1047,13 +1047,22 @@ nav .btn {
         height: 35rem;
       
       }
+    .customer_cards_2 {
+         height: 45rem;
+    }       
+
 }
 
 @media only screen and (max-width: 1023px) {
 
-    .customer__cards {
-         height: 60rem;
+    .customer__cards{
+         height: 65rem;
          flex-direction: column;
+   }
+   .customer_cards_2 {
+         height: 75rem;
+         flex-direction: column;
+          margin-top: 5.2rem;
    }
     .customer-right{
          margin-right:2rem;
