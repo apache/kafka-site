@@ -268,3 +268,11 @@
     .syntaxhighlighter .gutter .line.highlighted {
       background-color: #898989 !important;
       color: white !important; }
+
+@media only screen and (max-width: 800px) {
+      .syntaxhighlighter a, .syntaxhighlighter div, .syntaxhighlighter code, .syntaxhighlighter table, .syntaxhighlighter table td, .syntaxhighlighter table tr, .syntaxhighlighter table tbody, .syntaxhighlighter table thead, .syntaxhighlighter table caption, .syntaxhighlighter textarea
+      {
+
+      font-size:1.2rem!important;
+      }
+    }
