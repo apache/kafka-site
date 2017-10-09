@@ -34,25 +34,25 @@
        <div class="video__series__grid">
           <div class="yt__video__block">
             <div class="yt__video__inner__block">
-                <iframe  class="yt_series video_1 active" style="display:block" src="https://www.youtube.com/embed/Z3JKCLG3VP4?&modestbranding=1&controls=2&showinfo=1" frameborder="0" allowfullscreen></iframe>
-                <iframe  class="yt_series video_2" src="https://www.youtube.com/embed/LxxeXI1mPKo?&modestbranding=1&controls=2&showinfo=1" frameborder="0" allowfullscreen></iframe>
-                <iframe  class="yt_series video_3" src="https://www.youtube.com/embed/7JYEEx7SBuE?&modestbranding=1&controls=2&showinfo=1" frameborder="0" allowfullscreen></iframe>
-                <iframe  class="yt_series video_4" src="https://www.youtube.com/embed/3kJgYIkAeHs?&modestbranding=1&controls=2&showinfo=1" frameborder="0" allowfullscreen></iframe>
+                <iframe  class="yt_series video_1 active" style="display:block" src="https://www.youtube.com/embed/Z3JKCLG3VP4?&modestbranding=1&controls=2&showinfo=1&end=602" frameborder="0" allowfullscreen></iframe>
+                <iframe  class="yt_series video_2" src="https://www.youtube.com/embed/LxxeXI1mPKo?&modestbranding=1&controls=2&showinfo=1&end=623" frameborder="0" allowfullscreen></iframe>
+                <iframe  class="yt_series video_3" src="https://www.youtube.com/embed/7JYEEx7SBuE?&modestbranding=1&controls=2&showinfo=1&end=557" frameborder="0" allowfullscreen></iframe>
+                <iframe  class="yt_series video_4" src="https://www.youtube.com/embed/3kJgYIkAeHs?&modestbranding=1&controls=2&showinfo=1&end=564" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
         <div class="video__block">
             <h3>TOUR OF THE STREAMS API</h3>
             <div class="video__list">
-                <p class="video__item active" onclick="$('.video__item').removeClass('active'); $(this).addClass('active');$('.yt_series').hide();$('.video_1').show();">
+                <p class="video__item video_list_1 active" onclick="$('.video__item').removeClass('active'); $(this).addClass('active');$('.yt_series').hide();$('.video_1').show();">
                     <span class="number">1</span><span class="video__text">Intro to Streams</span>
                 </p>
-                <p class="video__item" onclick="$('.video__item').removeClass('active'); $(this).addClass('active');$('.yt_series').hide();$('.video_2').show();">
+                <p class="video__item video_list_2" onclick="$('.video__item').removeClass('active'); $(this).addClass('active');$('.yt_series').hide();$('.video_2').show();">
                     <span class="number">2</span><span class="video__text">Creating a Streams Application</span>
                 </p>
-                <p class="video__item" onclick="$('.video__item').removeClass('active'); $(this).addClass('active');$('.yt_series').hide();$('.video_3').show();">
+                <p class="video__item video_list_3" onclick="$('.video__item').removeClass('active'); $(this).addClass('active');$('.yt_series').hide();$('.video_3').show();">
                     <span class="number">3</span><span class="video__text">Transforming Data Pt. 1</span>
                 </p>
-                <p class="video__item" onclick="$('.video__item').removeClass('active'); $(this).addClass('active');$('.yt_series').hide();$('.video_4').show();">
+                <p class="video__item video_list_4" onclick="$('.video__item').removeClass('active'); $(this).addClass('active');$('.yt_series').hide();$('.video_4').show();">
                     <span class="number">4</span><span class="video__text">Transforming Data Pt. 11</span>
                 </p>
             </div>
@@ -114,7 +114,7 @@
                <a href="https://www.rabobank.com" target="_blank" class="grid__logo__link">
                  <span class="grid__item__logo" style="background-image: url('/images/powered-by/rabobank.jpg');"></span>
                </a>
-               <p class="grid__item__customer__description">Rabobank is one of the 3 largest banks in the Netherlands. Its digital nervous system, the Business Event Bus, is powered by Apache Kafka. It is used by an increasing amount of financial processes and services, one which is Rabo Alerts. This service alerts customers in real-time upon financial events and is built using Kafka Streams.</p>
+               <p class="grid__item__customer__description">Rabobank is one of the 3 largest banks in the Netherlands. Its digital nervous system, the Business Event Bus, is powered by Apache Kafka. It is used by an increasing amount of financial processes and services, one of which is Rabo Alerts. This service alerts customers in real-time upon financial events and is built using Kafka Streams.</p>
              </div>
            </div>
          </div>
@@ -283,7 +283,33 @@
          // Show selected style on nav item
          $('.b-nav__streams').addClass('selected');
     
-    
+         $('.video_list_1').click(function(){    
+             $('.video_2').attr('src', $('.video_2').attr('src'));
+             $('.video_3').attr('src', $('.video_3').attr('src'));
+             $('.video_4').attr('src', $('.video_4').attr('src'));
+
+           });
+
+         $('.video_list_2').click(function(){    
+               $('.video_1').attr('src', $('.video_1').attr('src'));
+               $('.video_3').attr('src', $('.video_3').attr('src'));
+               $('.video_4').attr('src', $('.video_4').attr('src'));
+
+           });
+
+         $('.video_list_3').click(function(){    
+              $('.video_1').attr('src', $('.video_1').attr('src'));
+              $('.video_2').attr('src', $('.video_2').attr('src'));
+              $('.video_4').attr('src', $('.video_4').attr('src'));
+           });
+
+         $('.video_list_4').click(function(){    
+              $('.video_1').attr('src', $('.video_1').attr('src'));
+              $('.video_2').attr('src', $('.video_2').attr('src'));
+              $('.video_3').attr('src', $('.video_3').attr('src'));
+           });
+           
+
           //sticky secondary nav
           var $navbar = $(".sub-nav-sticky"),
                y_pos = $navbar.offset().top,
