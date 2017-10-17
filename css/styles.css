@@ -1340,6 +1340,9 @@ ul.video-list {
     height: 0;
     overflow: hidden;
 }
+.extra__space{
+    padding-bottom:7.2rem;
+}
 
 /* Responsive styles */
 
@@ -1353,6 +1356,9 @@ ul.video-list {
     }
     .use-feature-list li {
         width: 100%;
+    }
+    .extra__space{
+       padding-bottom:0rem;
     }
 }
 @media only screen and (max-width: 950px) {
