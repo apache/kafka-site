@@ -1074,7 +1074,6 @@ nav .btn {
 .sticky-top {
     white-space: nowrap;
     overflow-y: hidden;
-    overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
 }
 .video__series__grid {
@@ -1216,12 +1215,7 @@ ul.video-list {
         z-index: 1;
         width: 100%;
     }
-    .sticky-top {
-        white-space: nowrap;
-        overflow-y: hidden;
-        overflow-x: scroll;
-        -webkit-overflow-scrolling: touch;
-    }
+    
 }
 .yt_series {
     display: none;
@@ -1349,6 +1343,7 @@ ul.video-list {
 .extra__space{
     padding-bottom:7.2rem;
 }
+
 /* Responsive styles */
 
 @media only screen and (max-width: 1125px) {
@@ -1435,6 +1430,9 @@ ul.video-list {
     iframe {
         width: 100%;
     }
+    .sticky-top{
+        overflow-x:scroll;
+    }
 }
 @media only screen and (min-width: 1126px) {
     .customers__grid {
@@ -1442,6 +1440,9 @@ ul.video-list {
         -moz-column-count: 2;
         column-count: 2;
         max-width: 92rem;
+    }
+    .sticky-top{
+        overflow-x:hidden;
     }
 }
 @media only screen and (max-width: 1125px) {
