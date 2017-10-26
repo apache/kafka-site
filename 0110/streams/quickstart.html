@@ -18,11 +18,21 @@
 
 <script id="content-template" type="text/x-handlebars-template">
   <h1>Run Streams Demo Application</h1>
-
-<p>
+  <div class="sub-nav-sticky">
+      <div class="sticky-top">
+        <div style="height:35px">
+          <a href="/{{version}}/documentation/streams/">Introduction</a>
+          <a href="/{{version}}/documentation/streams/developer-guide">Developers Guide</a>
+          <a href="/{{version}}/documentation/streams/core-concepts">Concepts</a>
+          <a class="active-menu-item" href="/{{version}}/documentation/streams/quickstart">Run Demo App</a>
+          <a href="/{{version}}/documentation/streams/tutorial">Tutorial: Write App</a>
+        </div>
+      </div>
+  </div> 
+ <p>
   This tutorial assumes you are starting fresh and have no existing Kafka or ZooKeeper data. However, if you have already started Kafka and
   ZooKeeper, feel free to skip the first two steps.
-</p>
+ </p>
 
   <p>
  Kafka Streams is a client library for building mission-critical real-time applications and microservices,
