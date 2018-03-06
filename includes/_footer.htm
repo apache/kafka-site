@@ -51,6 +51,25 @@
 	<script src="/js/jquery.sticky-kit.min.js"></script>
 	<script>
 		$(function() {
+
+
+            $('.download-version').mouseenter(function(){
+                $('a',this).css('visibility','visible');
+            });
+
+            $('.download-version').mouseleave(function(){
+                $('a',this).css('visibility','hidden');
+            });
+
+            $('.download-version a').click(function(){
+               $('a',this).css('visibility','hidden');
+            });
+
+
+            $('.download-version a').mouseenter(function(){
+               $('a',this).css('visibility','visible');
+            });
+
 			// Set mobile scroll position on nav
 			function setNavScroll(offsetLeft) {
 				$('.nav-scroller').animate({
