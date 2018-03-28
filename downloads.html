@@ -36,17 +36,17 @@
         </ul>
 
         <p>
-            Kafka 1.1.0 includes a number of significant new features. Here is a summary of notable changes:
+            Kafka 1.1.0 includes a number of significant new features. Here is a summary of some notable changes:
         </p>
 
         <ul>
-            <li> Kafka 1.1.0 includes significant improvements to the Kafka Controller that speeds up controlled shutdown. ZooKeeper session expiration edge cases have also been fixed as part of this effort.</li>
-            <li>Controller improvements also enable more partitions to be supported on a single cluster.  KIP-227 introduced incremental fetch requests providing more efficient replication when the number of partitions is large.</li>
+            <li> Kafka 1.1.0 includes significant improvements to the Kafka Controller that speed up controlled shutdown. ZooKeeper session expiration edge cases have also been fixed as part of this effort.</li>
+            <li>Controller improvements also enable more partitions to be supported on a single cluster.  KIP-227 introduced incremental fetch requests, providing more efficient replication when the number of partitions is large.</li>
             <li>KIP-113 added support for replica movement between log directories to enable data balancing with JBOD.</li>
-            <li>Some of the broker configuration options like SSL keystores can now be updated dynamically without restarting the broker. See KIP-226 for the full list of dynamic configs.</li>
+            <li>Some of the broker configuration options like SSL keystores can now be updated dynamically without restarting the broker. See KIP-226 for details and the full list of dynamic configs.</li>
             <li>Delegation token based authentication (KIP-48) has been added to Kafka brokers to support large number of clients without overloading Kerberos KDCs or other authentication servers.</li>
-            <li>Several improvements have been added to the Kafka Streams API, including reducing repartition topic partitions footprint, customizable producing error handling and enhanced resilience to broker unavailability. See KIPs 205, 210, 220, 224 and 239 for details.</li>
-            <li>Finally, Kafka Connect adds several new features, including header support (KIP-145), SSL and Kafka cluster identifiers in the Connect REST interface (KIP-208 and KIP-238), validation of connector names (KIP-212) and support for topic regex in sink connectors (KIP-215). Additionally, the default maximum heap size for Connect workers was increased to 2GB.</li>
+            <li>Several new features have been added to Kafka Connect, including header support (KIP-145), SSL and Kafka cluster identifiers in the Connect REST interface (KIP-208 and KIP-238), validation of connector names (KIP-212) and support for topic regex in sink connectors (KIP-215). Additionally, the default maximum heap size for Connect workers was increased to 2GB.</li>
+            <li>Several improvements have been added to the Kafka Streams API, including reducing repartition topic partitions footprint, customizable error handling for produce failures and enhanced resilience to broker unavailability. See KIPs 205, 210, 220, 224 and 239 for details.</li>
         </ul>
         <p>
             For more information, please read the detailed <a href="https://www.apache.org/dist/kafka/1.1.0/RELEASE_NOTES.html">Release Notes</a>.
