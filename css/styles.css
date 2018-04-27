@@ -260,6 +260,8 @@ th {
     margin: 0;
     overflow: visible;
     padding: 8px 16px;
+    text-align:left;
+    background-color:#ccc;
 }
 
 tr:nth-child(even) {
