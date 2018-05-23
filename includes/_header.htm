@@ -5,6 +5,7 @@
 		<link rel='stylesheet' href='/css/styles.css' type='text/css'>
 		<link rel='stylesheet' href='/css/syntax-highlighting.css' type='text/css'>
 		<link rel="icon" type="image/gif" href="/images/apache_feather.gif">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 		<meta name="robots" content="index,follow" />
 		<meta name="language" content="en" />
 		<meta name="keywords" content="apache kafka messaging queuing distributed stream processing">
@@ -45,7 +46,7 @@
 			var isDocumenationPage = currentPath.includes('/documentation');
 
 			var hasNotSpecifiedFullPath = !currentPath.includes('/documentation/streams') && !currentPath.includes('/documentation/streams/');
-			
+
 			// Look for legacy anchors to clue us in on what full path the user needs
 			// Add more as needed
 			var specifiedStreamsAnchor = window.location.hash.includes('#streams_');
@@ -56,4 +57,17 @@
 				}
 			}
 		</script>
+
+
+			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+			<script type="text/javascript">
+				document.addEventListener("DOMContentLoaded", function(event) {
+					docsearch({
+					apiKey: 'aa09166cb320ff3715048b35f14631ca',
+					indexName: 'kafka_apache',
+					inputSelector: '#searchbox',
+					debug: true // Set debug to true if you want to inspect the dropdown
+					});
+				});
+			</script>
 	</head>

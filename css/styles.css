@@ -1508,3 +1508,32 @@ ul.video-list {
         display: none;
     }
 }
+
+/* search box styling */
+
+#nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    height: 40px;
+    line-height: 40px;
+}
+
+#searchbox {
+    position:static !important;
+    float: right !important;
+    display: inline !important;
+    padding: 6px;
+    border: solid black;
+    margin-top: 35px;
+    margin-right: 45px;
+    font-size: 17px;
+}
+
+/* Main category headers */
+.algolia-docsearch-suggestion--category-header {
+  background-color: #E9E9E9;
+}
