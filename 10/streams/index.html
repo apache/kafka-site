@@ -15,7 +15,6 @@
 <script>
   <!--#include virtual="../js/templateData.js" -->
 </script>
-
 <script id="streams-template" type="text/x-handlebars-template">
   <h1>Kafka Streams</h1>
        <div class="sub-nav-sticky">
@@ -79,10 +78,9 @@
            <div class="first__app__cta">
                <a href="/{{version}}/documentation/streams/tutorial" class="first__app__btn">Write your first app</a>
            </div>
-       </div>  
-       <hr class="separator" id="streams-use-cases">
-        <h3 class="stream__text streams-link">Streams API use cases <a id="streams-use-case" href="#streams-use-cases"><i class="fas fa-link " style="color:#053ce2"></i></a></h3>
-
+       </div>
+       <hr class="separator"> 
+        <h3 class="stream__text">Streams API use cases</h3>
          <div class="customers__grid">
            <div class="customer__grid">
              <div class="customer__item streams_logo_grid streams__ny__grid">
@@ -316,27 +314,8 @@
 </div>
 <!--#include virtual="../../includes/_footer.htm" -->
 <script>
-
   $(function() {
-
-
-         $('.streams-link').mouseenter(function(){
-              $('#streams-use-case').css('visibility','visible');
-         });
-
-          $('.streams-link').mouseleave(function(){
-              $('#streams-use-case').css('visibility','hidden');
-         });
-
-          $('#streams-use-case').click(function(){
-              $('#streams-use-case').css('visibility','hidden');
-         });
-
-
-          $('#streams-use-case').mouseenter(function(){
-              $('#streams-use-case').css('visibility','visible');
-         });
-
+         
          // Show selected style on nav item
          $('.b-nav__streams').addClass('selected');
     
