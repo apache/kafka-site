@@ -78,6 +78,8 @@
 <tr>
 <td>timestamp.extractor</td><td>Timestamp extractor class that implements the <code>org.apache.kafka.streams.processor.TimestampExtractor</code> interface. This config is deprecated, use <code>default.timestamp.extractor</code> instead</td><td>class</td><td>null</td><td></td><td>low</td></tr>
 <tr>
+<td>upgrade.from</td><td>Allows upgrading from version 0.10.0 to version 0.10.1 (or newer) in a backward compatible way. Default is null. Accepted values are "0.10.0" (for upgrading from 0.10.0.x).</td><td>string</td><td>null</td><td>[null, 0.10.0]</td><td>low</td></tr>
+<tr>
 <td>value.serde</td><td>Serializer / deserializer class for value that implements the <code>org.apache.kafka.common.serialization.Serde</code> interface. This config is deprecated, use <code>default.value.serde</code> instead</td><td>class</td><td>null</td><td></td><td>low</td></tr>
 <tr>
 <td>windowstore.changelog.additional.retention.ms</td><td>Added to a windows maintainMs to ensure data is not deleted from the log prematurely. Allows for clock drift. Default is 1 day</td><td>long</td><td>86400000</td><td></td><td>low</td></tr>
