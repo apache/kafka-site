@@ -28,6 +28,7 @@ org.apache.kafka.connect.storage
 org.apache.kafka.connect.transforms
 org.apache.kafka.connect.util
 org.apache.kafka.server.policy
+org.apache.kafka.server.quota
 org.apache.kafka.streams
 org.apache.kafka.streams.errors
 org.apache.kafka.streams.kstream
