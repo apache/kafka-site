@@ -5,11 +5,77 @@
 	<div class="right">
     <h1>Download</h1>
 
-    <p>1.1.1 is the latest release. The current stable version is 1.1.1.</p>
+    <p>2.0.0 is the latest release. The current stable version is 2.0.0.</p>
 
     <p>
     You can verify your download by following these <a href="https://www.apache.org/info/verification.html">procedures</a> and using these <a href="https://kafka.apache.org/KEYS">KEYS</a>.
     </p>
+
+    <span id="2.0.0"></span>
+    <h3 class="download-version">2.0.0<a href="#2.0.0"><i class="fas fa-link " style="color:#053ce2"></i></a></h3>
+        <ul>
+            <li>
+                Released July 30, 2018
+            </li>
+            <li>
+                <a href="https://www.apache.org/dist/kafka/2.0.0/RELEASE_NOTES.html">Release Notes</a>
+            </li>
+            <li>
+                Source download: <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.0.0/kafka-2.0.0-src.tgz">kafka-2.0.0-src.tgz</a> (<a href="https://www.apache.org/dist/kafka/2.0.0/kafka-2.0.0-src.tgz.asc">asc</a>, <a href="https://www.apache.org/dist/kafka/2.0.0/kafka-2.0.0-src.tgz.sha512">sha512</a>)
+            </li>
+            <li>
+                Binary downloads:
+                <ul>
+                    <li>Scala 2.11 &nbsp;- <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.0.0/kafka_2.11-2.0.0.tgz">kafka_2.11-2.0.0.tgz</a> (<a href="https://www.apache.org/dist/kafka/2.0.0/kafka_2.11-2.0.0.tgz.asc">asc</a>, <a href="https://www.apache.org/dist/kafka/2.0.0/kafka_2.11-2.0.0.tgz.sha512">sha512</a>)</li>
+                    <li>Scala 2.12 &nbsp;- <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.0.0/kafka_2.12-2.0.0.tgz">kafka_2.12-2.0.0.tgz</a> (<a href="https://www.apache.org/dist/kafka/2.0.0/kafka_2.12-2.0.0.tgz.asc">asc</a>, <a href="https://www.apache.org/dist/kafka/2.0.0/kafka_2.12-2.0.0.tgz.sha512">sha512</a>)</li>
+                </ul>
+                We build for multiple versions of Scala. This only matters if you are using Scala and you want a version built for the same Scala version you use. Otherwise any version should work (2.11 is recommended).
+            </li>
+        </ul>
+
+        <p>
+            Kafka 2.0.0 includes a number of significant new features. Here is a summary of some notable changes:
+        </p>
+
+        <ul>
+          <li>KIP-290 adds support for prefixed ACLs, simplifying access control management in large secure deployments.
+              Bulk access to topics, consumer groups or transactional ids with a prefix can now be granted using a single rule.
+              Access control for topic creation has also been improved to enable access to be granted to create specific topics or topics
+              with a prefix.</li>
+          <li>KIP-255 adds a framework for authenticating to Kafka brokers using OAuth2 bearer tokens. The SASL/OAUTHBEARER implementation
+              is customizable using callbacks for token retrieval and validation.</li>
+          <li>Host name verification is now enabled by default for SSL connections to ensure that the default SSL configuration is not
+              susceptible to man-in-the-middle attacks. You can disable this verification if required.</li>
+          <li>You can now dynamically update SSL truststores without broker restart. You can also configure security for broker listeners
+              in ZooKeeper before starting brokers, including SSL keystore and truststore passwords and JAAS configuration for SASL.
+              With this new feature, you can store sensitive password configs in encrypted form in ZooKeeper rather than in cleartext
+              in the broker properties file.</li>
+          <li>The replication protocol has been improved to avoid log divergence between leader and follower during fast leader failover.
+              We have also improved resilience of brokers by reducing the memory footprint of message down-conversions. By using message
+              chunking, both memory usage and memory reference time have been reduced to avoid OutOfMemory errors in brokers.</li>
+          <li>Kafka clients are now notified of throttling before any throttling is applied when quotas are enabled. This enables clients to
+              distinguish between network errors and large throttle times when quotas are exceeded.</li>
+          <li>We have added a configuration option for Kafka consumer to avoid indefinite blocking in the consumer.</li>
+          <li>We have dropped support for Java 7 and removed the previously deprecated Scala producer and consumer.</li>
+          <li>Kafka Connect includes a number of improvements and features. KIP-298 enables you to control how errors in connectors,
+              transformations and converters are handled by enabling automatic retries and controlling the number of errors that are tolerated
+              before the connector is stopped.  More contextual information can be included in the logs to help diagnose problems and
+              problematic messages consumed by sink connectors can be sent to a dead letter queue rather than forcing the connector to stop.</li>
+          <li>KIP-297 adds a new extension point to move secrets out of connector configurations and integrate with any external
+              key management system. The placeholders in connector configurations are only resolved before sending the configuration
+              to the connector, ensuring that secrets are stored and managed securely in your preferred key management system and
+              not exposed over the REST APIs or in log files.</li>
+          <li>We have added a thin Scala wrapper API for our Kafka Streams DSL, which provides better type inference and better type safety
+              during compile time. Scala users can have less boilerplate in their code, notably regarding Serdes with new implicit Serdes.</li>
+          <li>Message headers are now supported in the Kafka Streams Processor API, allowing users to add and manipulate headers read
+              from the source topics and propagate them to the sink topics.</li>
+          <li>Windowed aggregations performance in Kafka Streams has been largely improved (sometimes by an order of magnitude) thanks to
+              the new single-key-fetch API.</li>
+          <li>We have further improved unit testibility of Kafka Streams with the kafka-streams-testutil artifact.</li>
+        </ul>
+        <p>
+            For more information, please read the detailed <a href="https://www.apache.org/dist/kafka/2.0.0/RELEASE_NOTES.html">Release Notes</a>.
+        </p>
 
     <span id="1.1.1"></span>
     <h3 class="download-version">1.1.1<a href="#1.1.1"><i class="fas fa-link " style="color:#053ce2"></i></a></h3>
