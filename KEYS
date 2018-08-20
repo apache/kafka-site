@@ -1065,6 +1065,10 @@ C2RSAJrvjQT1TGi2PeByFb7Hj0QMjQ==
 =e4if
 -----END PGP PUBLIC KEY BLOCK-----
 
+pub   4096R/B9F77D0E 2018-06-12
+      Key fingerprint = AFAC DB09 E6F0 FF28 C93D  64BC BEED 4F6C B9F7 7D0E
+uid                  Dong Lin (CODE SIGNING KEY) <lindong28@gmail.com>
+sub   4096R/F3DA5025 2018-06-12
 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v2.0.22 (GNU/Linux)
@@ -1118,9 +1122,3 @@ Dp5cZknuBM3Jg4nSsXbWxQ39TnrEX0LCs+pm92keXpioxnA9d23Ks7Hg1qixPegY
 DhC7tv8R7gzBhBCSn6oOMw0=
 =ekpR
 -----END PGP PUBLIC KEY BLOCK-----
-
-pub   4096R/B9F77D0E 2018-06-12
-      Key fingerprint = AFAC DB09 E6F0 FF28 C93D  64BC BEED 4F6C B9F7 7D0E
-uid                  Dong Lin (CODE SIGNING KEY) <lindong28@gmail.com>
-sub   4096R/F3DA5025 2018-06-12
-
