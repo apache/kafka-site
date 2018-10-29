@@ -81,11 +81,7 @@ h3.bullet::after {
     width: 5rem;
 }
 a {
-    color: #0B6D88;
-    text-decoration: none;
-}
-a:hover {
-    color: #0C637B;
+    color: #0968DE;
 }
 img {
     max-width: 100%;
@@ -352,6 +348,9 @@ nav {
     float: left;
     text-transform: uppercase;
     width: 16rem;
+}
+nav a {
+    text-decoration: none;
 }
 .nav__item,
 .nav__item__with__subs {
