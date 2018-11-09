@@ -100,7 +100,7 @@ hostname of broker. If this is set, it will only bind to this address. If this i
 <tr>
 <td>offsets.commit.timeout.ms</td></td><td>Offset commit will be delayed until all replicas for the offsets topic receive the commit or this timeout is reached. This is similar to the producer request timeout.</td></td><td>int</td></td><td>5000</td></td><td>[1,...]</td></td><td>high</td></td><td>read-only</td></tr>
 <tr>
-<td>offsets.load.buffer.size</td></td><td>Batch size for reading from the offsets segments when loading offsets into the cache.</td></td><td>int</td></td><td>5242880</td></td><td>[1,...]</td></td><td>high</td></td><td>read-only</td></tr>
+<td>offsets.load.buffer.size</td></td><td>Batch size for reading from the offsets segments when loading offsets into the cache (soft-limit, overridden if records are too large).</td></td><td>int</td></td><td>5242880</td></td><td>[1,...]</td></td><td>high</td></td><td>read-only</td></tr>
 <tr>
 <td>offsets.retention.check.interval.ms</td></td><td>Frequency at which to check for stale offsets</td></td><td>long</td></td><td>600000</td></td><td>[1,...]</td></td><td>high</td></td><td>read-only</td></tr>
 <tr>
@@ -145,7 +145,7 @@ the port to listen and accept connections on</td></td><td>int</td></td><td>9092<
 <tr>
 <td>transaction.max.timeout.ms</td></td><td>The maximum allowed timeout for transactions. If a client’s requested transaction time exceed this, then the broker will return an error in InitProducerIdRequest. This prevents a client from too large of a timeout, which can stall consumers reading from topics included in the transaction.</td></td><td>int</td></td><td>900000</td></td><td>[1,...]</td></td><td>high</td></td><td>read-only</td></tr>
 <tr>
-<td>transaction.state.log.load.buffer.size</td></td><td>Batch size for reading from the transaction log segments when loading producer ids and transactions into the cache.</td></td><td>int</td></td><td>5242880</td></td><td>[1,...]</td></td><td>high</td></td><td>read-only</td></tr>
+<td>transaction.state.log.load.buffer.size</td></td><td>Batch size for reading from the transaction log segments when loading producer ids and transactions into the cache (soft-limit, overridden if records are too large).</td></td><td>int</td></td><td>5242880</td></td><td>[1,...]</td></td><td>high</td></td><td>read-only</td></tr>
 <tr>
 <td>transaction.state.log.min.isr</td></td><td>Overridden min.insync.replicas config for the transaction topic.</td></td><td>int</td></td><td>2</td></td><td>[1,...]</td></td><td>high</td></td><td>read-only</td></tr>
 <tr>
