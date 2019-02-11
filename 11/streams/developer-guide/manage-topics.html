@@ -67,10 +67,38 @@
     </div>
     <div class="section" id="internal-topics">
       <span id="streams-developer-guide-topics-internal"></span><h2>Internal topics<a class="headerlink" href="#internal-topics" title="Permalink to this headline"></a></h2>
-      <p>Internal topics are used internally by the Kafka Streams application while executing, for example the
-        changelog topics for state stores. These topics are created by the application and are only used by that stream application.</p>
-      <p>If security is enabled on the Kafka brokers, you must grant the underlying clients admin permissions so that they can
-        create internal topics set. For more information, see <a class="reference internal" href="security.html#streams-developer-guide-security"><span class="std std-ref">Streams Security</span></a>.</p>
+      <p>
+        Internal topics are used internally by the Kafka Streams application
+        while executing, for example the changelog topics for state stores.
+        These topics are created by the application and are only used by that
+        stream application.
+      </p>
+      <p>
+        If security is enabled on the Kafka brokers, you must grant the
+        underlying clients admin permissions so that they can
+        create internal topics set. For more information, see
+        <a class="reference internal" href="security.html#streams-developer-guide-security">
+          <span class="std std-ref">Streams Security</span>
+        </a>.
+      </p>
+      <p>
+        Kafka Streams automatically creates internal repartitioning and changelog
+        topics, and does <em>not</em> use broker auto-topic creation.
+        Therefore, internal topics take on the default broker configurations for
+        new topics.
+        You can override the default configs used when creating these topics by
+        adding any configs from <code>TopicConfig</code> to your
+        <code>StreamsConfig</code> with the prefix
+        <code>StreamsConfig.topicPrefix()</code>.
+      </p>
+      <p>
+        <pre class="brush: java;">
+          Properties config = new Properties();
+          config.put(StreamsConfig.APPLICATION_ID_CONFIG, "myapp");
+          config.put(StreamsConfig.topicPrefix(TopicConfig.SEGMENT_MS_CONFIG), 100);
+          KafkaStreams streams = new KafkaStreams(topology, config);
+        </pre>
+      </p>
       <div class="admonition note">
         <p class="first admonition-title">Note</p>
         <p class="last">The internal topics follow the naming convention <code class="docutils literal"><span class="pre">&lt;application.id&gt;-&lt;operatorName&gt;-&lt;suffix&gt;</span></code>, but this convention
