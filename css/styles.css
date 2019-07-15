@@ -208,18 +208,18 @@ ol.toc > li {
 }
 .data-table td {
     /* These are technically the same, but use both */
-    
+
     overflow-wrap: break-word;
     word-wrap: break-word;
     -ms-word-break: break-all;
     /* This is the dangerous one in WebKit, as it breaks things wherever */
-    
+
     word-break: break-all;
     /* Instead use this non-standard one: */
-    
+
     word-break: break-word;
     /* Adds a hyphen where the word breaks, if supported (No Blink) */
-    
+
     -ms-hyphens: auto;
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
@@ -232,7 +232,7 @@ ol.toc > li {
     hyphens: none;
 }
 
-table.docutils  {    
+table.docutils  {
     border-collapse: collapse;
     border-spacing: 0;
     empty-cells: show;
@@ -494,23 +494,23 @@ nav .btn {
     padding-right: 25%;
 }
 .desc {
-    margin-left: 3rem;
     margin-bottom: 6rem;
     overflow: hidden;
 }
 .desc-item {
     float: left;
-    width: 24rem;
     margin-left: 4.2rem;
+    overflow: hidden;
 }
 .desc-item:first-of-type {
     margin-left: 0;
 }
-.desc-item h2,
-.desc-item p {
+.desc-item h2 {
     color: #000000;
+    margin-top: 20px;
 }
 .desc-item p {
+    color: #000000;
     margin: 0;
     width: 20rem;
 }
@@ -534,6 +534,36 @@ nav .btn {
 .desc-item:hover h2,
 .desc-item:hover p {
     color: #0C637B;
+}
+.news {
+    text-transform: uppercase;
+    color: #000;
+    display: inline-block;
+    border: solid 3px #000;
+    padding: 20px;
+    margin-left: 20px;
+    vertical-align: top;
+}
+.news h2 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.news article {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.news h3 {
+    font-size: 13px;
+    margin: 0;
+}
+.news h3 a {
+    color: #1471E2;
+    text-decoration: none;
+}
+.news time {
+    font-size: 10px;
 }
 .callout {
     background-color: #F0F0F0;
@@ -776,7 +806,7 @@ nav .btn {
 #streams-use-case {
     visibility: hidden;
     opacity:0.7;
-        
+
 }
 
 /* Responsive styles */
@@ -790,6 +820,13 @@ nav .btn {
     .footer__legal__one {
         display: block;
     }
+    .desc-item h2 {
+        margin-top: 4rem;
+    }
+    .news {
+        margin-left: 0;
+        margin-top: 4rem;
+    }
 }
 @media only screen and (min-width: 1126px) {
     .video__series__grid {
@@ -797,6 +834,9 @@ nav .btn {
     }
 }
 @media only screen and (max-width: 1125px) {
+    .news {
+        margin-top: 0;
+    }
     .video__block {
         padding-left: 0px!important;
         padding-top: 15px;
@@ -828,6 +868,12 @@ nav .btn {
     }
     .desc-item p {
         width: auto;
+    }
+    .desc-item h2 {
+        margin-top: 0;
+    }
+    .desc-item:first-of-type h2 {
+        margin-top: 4rem;
     }
     .index {
         padding-right: 0;
@@ -952,7 +998,7 @@ nav .btn {
         height: .2rem;
         width: calc(79% / 12);
         /* Note: width of mobile nav indicator should be divided by number of top level pages */
-        
+
         background-color: #888888;
         display: inline-block;
         margin: 0 .5%;
@@ -1134,7 +1180,7 @@ nav .btn {
     width: 92%;
     display: -webkit-flex;
     /* Safari */
-    
+
     display: flex;
     margin-bottom: 60px;
     /*flex-direction: row;*/
@@ -1158,7 +1204,7 @@ nav .btn {
 ul.video-list {
     list-style-type: none;
     /* Setup the counter. */
-    
+
     counter-reset: num;
     padding-left: 0px;
 }
@@ -1167,10 +1213,10 @@ ul.video-list {
 }
 .video-list li:before {
     /* Advance the number. */
-    
+
     counter-increment: num;
     /* Use the counter number as content. */
-    
+
     content: counter(num);
     color: #fff;
     background-color: #d8d8d8;
@@ -1248,7 +1294,7 @@ ul.video-list {
     margin-top: 0px;
     padding: 10px 0px 20px;
     /*width: 92rem;*/
-    
+
     z-index: 1000;
     top: 0px;
     overflow: auto;
@@ -1262,14 +1308,14 @@ ul.video-list {
         margin-top: 0px;
         padding: 10px 0px 20px;
         /*width: 92rem;*/
-        
+
         z-index: 1000;
         top: 0px;
         left: 0;
         z-index: 1;
         width: 100%;
     }
-    
+
 }
 .yt_series {
     display: none;
@@ -1381,10 +1427,10 @@ ul.video-list {
 .yt__video__block {
     -webkit-flex: 1;
     /* Safari 6.1+ */
-    
+
     -ms-flex: 1;
     /* IE 10 */
-    
+
     flex: 1;
 }
 .yt__video__inner__block {
