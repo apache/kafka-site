@@ -2,7 +2,7 @@
 <html xmlns:og="http://ogp.me/ns#">
 	<head>
 		<title>Apache Kafka</title>
-		<link rel='stylesheet' href='/css/styles.css' type='text/css'>
+		<link rel='stylesheet' href='/css/styles.css?1' type='text/css'>
 		<link rel='stylesheet' href='/css/syntax-highlighting.css' type='text/css'>
 		<link rel="icon" type="image/gif" href="/images/apache_feather.gif">
 		<meta name="robots" content="index,follow" />
@@ -45,7 +45,7 @@
 			var isDocumenationPage = currentPath.includes('/documentation');
 
 			var hasNotSpecifiedFullPath = !currentPath.includes('/documentation/streams') && !currentPath.includes('/documentation/streams/');
-			
+
 			// Look for legacy anchors to clue us in on what full path the user needs
 			// Add more as needed
 			var specifiedStreamsAnchor = window.location.hash.includes('#streams_');
