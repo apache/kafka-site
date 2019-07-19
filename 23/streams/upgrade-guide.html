@@ -85,7 +85,7 @@
         First, add this line to your properties, <code>properties.setProperty(StreamsConfig.TOPOLOGY_OPTIMIZATION, StreamsConfig.OPTIMIZE);</code>, as you have done before.
         Second, when constructing your <code>KafkaStreams</code> instance, you'll need to pass your configuration properties when building your
         topology by using the overloaded <code>StreamsBuilder.build(Properties)</code> method.
-        For example <code>KafkaStreams myStream = new KafkaStreams(streamsBuilder.build(properties), properties)</code>.
+        For example, <code>KafkaStreams myStream = new KafkaStreams(streamsBuilder.build(properties), properties)</code>.
     </p>
 
     <p>
