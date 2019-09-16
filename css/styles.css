@@ -250,7 +250,6 @@ td {
     width: 200px;
 }
 
-
 th {
     border: 1px solid #e1e4e5;
     margin: 0;
@@ -261,14 +260,32 @@ th {
 }
 
 tr:nth-child(even) {
-
     background-color: #f2f2f2;
+}
 
+/* Configuration lists */
+.config-list>li {
+    list-style-type: none;
+}
+
+.config-list>li:nth-child(odd) {
+    background: #f2f2f2;
+}
+
+.horizontal-list li {
+    display: inline-block;
+}
+
+.horizontal-list li:before {
+    content: '\00a0\00a0\2015\00a0';
+}
+
+.horizontal-list li:first-child:before {
+    content: '';
 }
 
 .highlight pre span {
-
-   font-size:1.4rem;
+    font-size:1.4rem;
 }
 
 /* helper classes */
@@ -962,7 +979,6 @@ nav .btn {
     }
     .card__label {
         margin: 0;
-        s
     }
 }
 @media only screen and (max-width: 650px) {
@@ -1326,8 +1342,7 @@ ul.video-list {
     left: 0;
     width: 100%;
     height: 100%;
-    "
- border: none;
+    border: none;
 }
 .video__series_grid .active {
     display: block;
