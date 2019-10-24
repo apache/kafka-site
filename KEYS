@@ -1169,6 +1169,13 @@ L89X6lzo2Ztm+iR3E2R+nOd6M8cO2ijJhg0/tuom11v8GXAkgVW9bIMx
 -----END PGP PUBLIC KEY BLOCK-----
 
 
+pub   rsa4096 2019-09-10 [SC] [expires: 2020-09-10]
+      63F2B2B8D10CCC7A0CE88A72E9F87164989E9B3F
+uid           [ultimate] David Arthur (CODE SIGNING KEY) <davidarthur@apache.org>
+sig 3        E9F87164989E9B3F 2019-09-10  David Arthur (CODE SIGNING KEY) <davidarthur@apache.org>
+sub   rsa4096 2019-09-10 [E] [expires: 2020-09-10]
+sig          E9F87164989E9B3F 2019-09-10  David Arthur (CODE SIGNING KEY) <davidarthur@apache.org>
+
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQINBF13qmABEACjLjD7Kk0ZcrRu2t4/gzTS+aokaKSgJpUAlsZG+97VyeRXwEOY
