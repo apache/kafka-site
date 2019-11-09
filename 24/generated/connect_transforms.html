@@ -1,0 +1,120 @@
+<div id="org.apache.kafka.connect.transforms.InsertField">
+<h5>org.apache.kafka.connect.transforms.InsertField</h5>
+Insert field(s) using attributes from the record metadata or a configured static value.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.InsertField$Key</code>) or value (<code>org.apache.kafka.connect.transforms.InsertField$Value</code>).
+<p/>
+<ul class="config-list">
+<li><b>offset.field</b>: Field name for Kafka offset - only applicable to sink connectors.<br/>Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: null</li><li><b>Valid Values</b>: </li><li><b>Importance</b>: medium</li></ul></li>
+<li><b>partition.field</b>: Field name for Kafka partition. Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: null</li><li><b>Valid Values</b>: </li><li><b>Importance</b>: medium</li></ul></li>
+<li><b>static.field</b>: Field name for static data field. Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: null</li><li><b>Valid Values</b>: </li><li><b>Importance</b>: medium</li></ul></li>
+<li><b>static.value</b>: Static field value, if field name configured.<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: null</li><li><b>Valid Values</b>: </li><li><b>Importance</b>: medium</li></ul></li>
+<li><b>timestamp.field</b>: Field name for record timestamp. Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: null</li><li><b>Valid Values</b>: </li><li><b>Importance</b>: medium</li></ul></li>
+<li><b>topic.field</b>: Field name for Kafka topic. Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: null</li><li><b>Valid Values</b>: </li><li><b>Importance</b>: medium</li></ul></li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.ReplaceField">
+<h5>org.apache.kafka.connect.transforms.ReplaceField</h5>
+Filter or rename fields.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.ReplaceField$Key</code>) or value (<code>org.apache.kafka.connect.transforms.ReplaceField$Value</code>).
+<p/>
+<ul class="config-list">
+<li><b>blacklist</b>: Fields to exclude. This takes precedence over the whitelist.<br/><ul class="horizontal-list"><li><b>Type</b>: list</li><li><b>Default</b>: ""</li><li><b>Valid Values</b>: </li><li><b>Importance</b>: medium</li></ul></li>
+<li><b>renames</b>: Field rename mappings.<br/><ul class="horizontal-list"><li><b>Type</b>: list</li><li><b>Default</b>: ""</li><li><b>Valid Values</b>: list of colon-delimited pairs, e.g. <code>foo:bar,abc:xyz</code></li><li><b>Importance</b>: medium</li></ul></li>
+<li><b>whitelist</b>: Fields to include. If specified, only these fields will be used.<br/><ul class="horizontal-list"><li><b>Type</b>: list</li><li><b>Default</b>: ""</li><li><b>Valid Values</b>: </li><li><b>Importance</b>: medium</li></ul></li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.MaskField">
+<h5>org.apache.kafka.connect.transforms.MaskField</h5>
+Mask specified fields with a valid null value for the field type (i.e. 0, false, empty string, and so on).<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.MaskField$Key</code>) or value (<code>org.apache.kafka.connect.transforms.MaskField$Value</code>).
+<p/>
+<ul class="config-list">
+<li><b>fields</b>: Names of fields to mask.<br/><ul class="horizontal-list"><li><b>Type</b>: list</li><li><b>Default</b>: </li><li><b>Valid Values</b>: non-empty list</li><li><b>Importance</b>: high</li></ul></li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.ValueToKey">
+<h5>org.apache.kafka.connect.transforms.ValueToKey</h5>
+Replace the record key with a new key formed from a subset of fields in the record value.
+<p/>
+<ul class="config-list">
+<li><b>fields</b>: Field names on the record value to extract as the record key.<br/><ul class="horizontal-list"><li><b>Type</b>: list</li><li><b>Default</b>: </li><li><b>Valid Values</b>: non-empty list</li><li><b>Importance</b>: high</li></ul></li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.HoistField">
+<h5>org.apache.kafka.connect.transforms.HoistField</h5>
+Wrap data using the specified field name in a Struct when schema present, or a Map in the case of schemaless data.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.HoistField$Key</code>) or value (<code>org.apache.kafka.connect.transforms.HoistField$Value</code>).
+<p/>
+<ul class="config-list">
+<li><b>field</b>: Field name for the single field that will be created in the resulting Struct or Map.<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: </li><li><b>Valid Values</b>: </li><li><b>Importance</b>: medium</li></ul></li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.ExtractField">
+<h5>org.apache.kafka.connect.transforms.ExtractField</h5>
+Extract the specified field from a Struct when schema present, or a Map in the case of schemaless data. Any null values are passed through unmodified.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.ExtractField$Key</code>) or value (<code>org.apache.kafka.connect.transforms.ExtractField$Value</code>).
+<p/>
+<ul class="config-list">
+<li><b>field</b>: Field name to extract.<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: </li><li><b>Valid Values</b>: </li><li><b>Importance</b>: medium</li></ul></li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.SetSchemaMetadata">
+<h5>org.apache.kafka.connect.transforms.SetSchemaMetadata</h5>
+Set the schema name, version or both on the record's key (<code>org.apache.kafka.connect.transforms.SetSchemaMetadata$Key</code>) or value (<code>org.apache.kafka.connect.transforms.SetSchemaMetadata$Value</code>) schema.
+<p/>
+<ul class="config-list">
+<li><b>schema.name</b>: Schema name to set.<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: null</li><li><b>Valid Values</b>: </li><li><b>Importance</b>: high</li></ul></li>
+<li><b>schema.version</b>: Schema version to set.<br/><ul class="horizontal-list"><li><b>Type</b>: int</li><li><b>Default</b>: null</li><li><b>Valid Values</b>: </li><li><b>Importance</b>: high</li></ul></li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.TimestampRouter">
+<h5>org.apache.kafka.connect.transforms.TimestampRouter</h5>
+Update the record's topic field as a function of the original topic value and the record timestamp.<p/>This is mainly useful for sink connectors, since the topic field is often used to determine the equivalent entity name in the destination system(e.g. database table or search index name).
+<p/>
+<ul class="config-list">
+<li><b>timestamp.format</b>: Format string for the timestamp that is compatible with <code>java.text.SimpleDateFormat</code>.<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: yyyyMMdd</li><li><b>Valid Values</b>: </li><li><b>Importance</b>: high</li></ul></li>
+<li><b>topic.format</b>: Format string which can contain <code>${topic}</code> and <code>${timestamp}</code> as placeholders for the topic and timestamp, respectively.<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: ${topic}-${timestamp}</li><li><b>Valid Values</b>: </li><li><b>Importance</b>: high</li></ul></li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.RegexRouter">
+<h5>org.apache.kafka.connect.transforms.RegexRouter</h5>
+Update the record topic using the configured regular expression and replacement string.<p/>Under the hood, the regex is compiled to a <code>java.util.regex.Pattern</code>. If the pattern matches the input topic, <code>java.util.regex.Matcher#replaceFirst()</code> is used with the replacement string to obtain the new topic.
+<p/>
+<ul class="config-list">
+<li><b>regex</b>: Regular expression to use for matching.<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: </li><li><b>Valid Values</b>: valid regex</li><li><b>Importance</b>: high</li></ul></li>
+<li><b>replacement</b>: Replacement string.<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: </li><li><b>Valid Values</b>: </li><li><b>Importance</b>: high</li></ul></li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.Flatten">
+<h5>org.apache.kafka.connect.transforms.Flatten</h5>
+Flatten a nested data structure, generating names for each field by concatenating the field names at each level with a configurable delimiter character. Applies to Struct when schema present, or a Map in the case of schemaless data. The default delimiter is '.'.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.Flatten$Key</code>) or value (<code>org.apache.kafka.connect.transforms.Flatten$Value</code>).
+<p/>
+<ul class="config-list">
+<li><b>delimiter</b>: Delimiter to insert between field names from the input record when generating field names for the output record<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: .</li><li><b>Valid Values</b>: </li><li><b>Importance</b>: medium</li></ul></li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.Cast">
+<h5>org.apache.kafka.connect.transforms.Cast</h5>
+Cast fields or the entire key or value to a specific type, e.g. to force an integer field to a smaller width. Only simple primitive types are supported -- integers, floats, boolean, and string. <p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.Cast$Key</code>) or value (<code>org.apache.kafka.connect.transforms.Cast$Value</code>).
+<p/>
+<ul class="config-list">
+<li><b>spec</b>: List of fields and the type to cast them to of the form field1:type,field2:type to cast fields of Maps or Structs. A single type to cast the entire value. Valid types are int8, int16, int32, int64, float32, float64, boolean, and string.<br/><ul class="horizontal-list"><li><b>Type</b>: list</li><li><b>Default</b>: </li><li><b>Valid Values</b>: list of colon-delimited pairs, e.g. <code>foo:bar,abc:xyz</code></li><li><b>Importance</b>: high</li></ul></li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.TimestampConverter">
+<h5>org.apache.kafka.connect.transforms.TimestampConverter</h5>
+Convert timestamps between different formats such as Unix epoch, strings, and Connect Date/Timestamp types.Applies to individual fields or to the entire value.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.TimestampConverter$Key</code>) or value (<code>org.apache.kafka.connect.transforms.TimestampConverter$Value</code>).
+<p/>
+<ul class="config-list">
+<li><b>target.type</b>: The desired timestamp representation: string, unix, Date, Time, or Timestamp<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: </li><li><b>Valid Values</b>: </li><li><b>Importance</b>: high</li></ul></li>
+<li><b>field</b>: The field containing the timestamp, or empty if the entire value is a timestamp<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: ""</li><li><b>Valid Values</b>: </li><li><b>Importance</b>: high</li></ul></li>
+<li><b>format</b>: A SimpleDateFormat-compatible format for the timestamp. Used to generate the output when type=string or used to parse the input if the input is a string.<br/><ul class="horizontal-list"><li><b>Type</b>: string</li><li><b>Default</b>: ""</li><li><b>Valid Values</b>: </li><li><b>Importance</b>: medium</li></ul></li>
+</ul>
+
+</div>
