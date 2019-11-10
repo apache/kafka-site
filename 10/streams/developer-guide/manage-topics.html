@@ -84,7 +84,7 @@
       <p>
         Kafka Streams automatically creates internal repartitioning and changelog
         topics, and does <em>not</em> use broker auto-topic creation.
-        Therefore, internal topics take on the default broker configurations for
+        Therefore, internal topics do not take on the default broker configurations for
         new topics.
         You can override the default configs used when creating these topics by
         adding any configs from <code>TopicConfig</code> to your
