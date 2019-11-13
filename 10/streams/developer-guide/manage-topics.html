@@ -84,8 +84,10 @@
       <p>
         Kafka Streams automatically creates internal repartitioning and changelog
         topics, and does <em>not</em> use broker auto-topic creation.
-        Therefore, internal topics do not take on the default broker configurations for
-        new topics.
+        Therefore, internal topics do not take on all the default broker configurations for
+        new topics. In particular, <code>replication.factor</code> (which defaults to <code>1</code>),
+        <code>num.partitions</code>, and <code>cleanup.policy</code> do not respect broker configurations
+        fot automatically created topics.
         You can override the default configs used when creating these topics by
         adding any configs from <code>TopicConfig</code> to your
         <code>StreamsConfig</code> with the prefix
