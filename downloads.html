@@ -5,10 +5,53 @@
 	<div class="right">
     <h1>Download</h1>
 
-    <p>2.3.1 is the latest release. The current stable version is 2.3.1.</p>
+    <p>2.4.0 is the latest release. The current stable version is 2.4.0.</p>
 
     <p>
     You can verify your download by following these <a href="https://www.apache.org/info/verification.html">procedures</a> and using these <a href="https://www.apache.org/dist/kafka/KEYS">KEYS</a>.
+    </p>
+
+    <span id="2.4.0"></span>
+    <h3 class="download-version">2.4.0<a href="#2.4.0"><i class="fas fa-link " style="color:#053ce2"></i></a></h3>
+    <ul>
+        <li>
+            Released December 16, 2019
+        </li>
+        <li>
+            <a href="https://www.apache.org/dist/kafka/2.4.0/RELEASE_NOTES.html">Release Notes</a>
+        </li>
+        <li>
+            Source download: <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.4.0/kafka-2.4.0-src.tgz">kafka-2.4.0-src.tgz</a> (<a href="https://www.apache.org/dist/kafka/2.4.0/kafka-2.4.0-src.tgz.asc">asc</a>, <a href="https://www.apache.org/dist/kafka/2.4.0/kafka-2.4.0-src.tgz.sha512">sha512</a>)
+        </li>
+        <li>
+            Binary downloads:
+            <ul>
+                <li>Scala 2.11 &nbsp;- <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.4.0/kafka_2.11-2.4.0.tgz">kafka_2.11-2.4.0.tgz</a> (<a href="https://www.apache.org/dist/kafka/2.4.0/kafka_2.11-2.4.0.tgz.asc">asc</a>, <a href="https://www.apache.org/dist/kafka/2.4.0/kafka_2.11-2.4.0.tgz.sha512">sha512</a>)</li>
+                <li>Scala 2.12 &nbsp;- <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.4.0/kafka_2.12-2.4.0.tgz">kafka_2.12-2.4.0.tgz</a> (<a href="https://www.apache.org/dist/kafka/2.4.0/kafka_2.12-2.4.0.tgz.asc">asc</a>, <a href="https://www.apache.org/dist/kafka/2.4.0/kafka_2.12-2.4.0.tgz.sha512">sha512</a>)</li>
+                <li>Scala 2.13 &nbsp;- <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.4.0/kafka_2.13-2.4.0.tgz">kafka_2.13-2.4.0.tgz</a> (<a href="https://www.apache.org/dist/kafka/2.4.0/kafka_2.13-2.4.0.tgz.asc">asc</a>, <a href="https://www.apache.org/dist/kafka/2.4.0/kafka_2.13-2.4.0.tgz.sha512">sha512</a>)</li>
+            </ul>
+            We build for multiple versions of Scala. This only matters if you are using Scala and you want a version
+            built for the same Scala version you use. Otherwise any version should work (2.12 is recommended).
+        </li>
+    </ul>
+
+    <p>
+        Kafka 2.4.0 includes a number of significant new features. Here is a summary of some notable changes:
+    </p>
+
+    <ul>
+        <li>Allow consumers to fetch from closest replica.</li>
+        <li>Support for incremental cooperative rebalancing to the consumer rebalance protocol.</li>
+        <li>MirrorMaker 2.0 (MM2), a new multi-cluster, cross-datacenter replication engine.</li>
+        <li>New Java authorizer Interface.</li>
+        <li>Support for non-key joining in KTable.</li>
+        <li>Administrative API for replica reassignment.</li>
+        <li>New Java authorizer Interface.</li>
+        <li>Support for non-key joining in KTable.</li>
+        <li>Administrative API for replica reassignment.</li>
+    </ul>
+    <p>
+        For more information, please read the detailed <a href="https://www.apache.org/dist/kafka/2.4.0/RELEASE_NOTES.html">Release Notes</a>.
     </p>
 
     <span id="2.3.1"></span>
@@ -109,16 +152,16 @@
             Released Jun 1, 2019
         </li>
         <li>
-            <a href="https://www.apache.org/dist/kafka/2.2.1/RELEASE_NOTES.html">Release Notes</a>
+            <a href="https://archive.apache.org/dist/kafka/2.2.1/RELEASE_NOTES.html">Release Notes</a>
         </li>
         <li>
-            Source download: <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.2.1/kafka-2.2.1-src.tgz">kafka-2.2.1-src.tgz</a> (<a href="https://www.apache.org/dist/kafka/2.2.1/kafka-2.2.1-src.tgz.asc">asc</a>, <a href="https://www.apache.org/dist/kafka/2.2.1/kafka-2.2.1-src.tgz.sha512">sha512</a>)
+            Source download: <a href="https://archive.apache.org/dist/kafka/2.2.1/kafka-2.2.1-src.tgz">kafka-2.2.1-src.tgz</a> (<a href="https://archive.apache.org/dist/kafka/2.2.1/kafka-2.2.1-src.tgz.asc">asc</a>, <a href="https://archive.apache.org/dist/kafka/2.2.1/kafka-2.2.1-src.tgz.sha512">sha512</a>)
         </li>
         <li>
             Binary downloads:
             <ul>
-                <li>Scala 2.11 &nbsp;- <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.2.1/kafka_2.11-2.2.1.tgz">kafka_2.11-2.2.1.tgz</a> (<a href="https://www.apache.org/dist/kafka/2.2.1/kafka_2.11-2.2.1.tgz.asc">asc</a>, <a href="https://www.apache.org/dist/kafka/2.2.1/kafka_2.11-2.2.1.tgz.sha512">sha512</a>)</li>
-                <li>Scala 2.12 &nbsp;- <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.2.1/kafka_2.12-2.2.1.tgz">kafka_2.12-2.2.1.tgz</a> (<a href="https://www.apache.org/dist/kafka/2.2.1/kafka_2.12-2.2.1.tgz.asc">asc</a>, <a href="https://www.apache.org/dist/kafka/2.2.1/kafka_2.12-2.2.1.tgz.sha512">sha512</a>)</li>
+                <li>Scala 2.11 &nbsp;- <a href="https://archive.apache.org/dist/kafka/2.2.1/kafka_2.11-2.2.1.tgz">kafka_2.11-2.2.1.tgz</a> (<a href="https://archive.apache.org/dist/kafka/2.2.1/kafka_2.11-2.2.1.tgz.asc">asc</a>, <a href="https://archive.apache.org/dist/kafka/2.2.1/kafka_2.11-2.2.1.tgz.sha512">sha512</a>)</li>
+                <li>Scala 2.12 &nbsp;- <a href="https://archive.apache.org/dist/kafka/2.2.1/kafka_2.12-2.2.1.tgz">kafka_2.12-2.2.1.tgz</a> (<a href="https://archive.apache.org/dist/kafka/2.2.1/kafka_2.12-2.2.1.tgz.asc">asc</a>, <a href="https://archive.apache.org/dist/kafka/2.2.1/kafka_2.12-2.2.1.tgz.sha512">sha512</a>)</li>
             </ul>
             We build for multiple versions of Scala. This only matters if you are using Scala and you want a version built for the same Scala version you use. Otherwise any version should work (2.12 is recommended).
         </li>
@@ -168,7 +211,7 @@
           <li>Metric improvements: All <code>-min</code>, <code>-avg</code> and <code>-max</code> metrics will now output <code>NaN</code> as default value</li>
         </ul>
         <p>
-            For more information, please read the detailed <a href="https://www.apache.org/dist/kafka/2.2.0/RELEASE_NOTES.html">Release Notes</a>.
+            For more information, please read the detailed <a href="https://archive.apache.org/dist/kafka/2.2.0/RELEASE_NOTES.html">Release Notes</a>.
         </p>
 
     <span id="2.1.1"></span>
@@ -178,16 +221,16 @@
                 Released Feb 15, 2019
             </li>
             <li>
-                <a href="https://www.apache.org/dist/kafka/2.1.1/RELEASE_NOTES.html">Release Notes</a>
+                <a href="https://archive.apache.org/dist/kafka/2.1.1/RELEASE_NOTES.html">Release Notes</a>
             </li>
             <li>
-                Source download: <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.1.1/kafka-2.1.1-src.tgz">kafka-2.1.1-src.tgz</a> (<a href="https://www.apache.org/dist/kafka/2.1.1/kafka-2.1.1-src.tgz.asc">asc</a>, <a href="https://www.apache.org/dist/kafka/2.1.1/kafka-2.1.1-src.tgz.sha512">sha512</a>)
+                Source download: <a href="https://archive.apache.org/dist/kafka/2.1.1/kafka-2.1.1-src.tgz">kafka-2.1.1-src.tgz</a> (<a href="https://archive.apache.org/dist/kafka/2.1.1/kafka-2.1.1-src.tgz.asc">asc</a>, <a href="https://archive.apache.org/dist/kafka/2.1.1/kafka-2.1.1-src.tgz.sha512">sha512</a>)
             </li>
             <li>
                 Binary downloads:
                 <ul>
-                    <li>Scala 2.11 &nbsp;- <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.1.1/kafka_2.11-2.1.1.tgz">kafka_2.11-2.1.1.tgz</a> (<a href="https://www.apache.org/dist/kafka/2.1.1/kafka_2.11-2.1.1.tgz.asc">asc</a>, <a href="https://www.apache.org/dist/kafka/2.1.1/kafka_2.11-2.1.1.tgz.sha512">sha512</a>)</li>
-                    <li>Scala 2.12 &nbsp;- <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.1.1/kafka_2.12-2.1.1.tgz">kafka_2.12-2.1.1.tgz</a> (<a href="https://www.apache.org/dist/kafka/2.1.1/kafka_2.12-2.1.1.tgz.asc">asc</a>, <a href="https://www.apache.org/dist/kafka/2.1.1/kafka_2.12-2.1.1.tgz.sha512">sha512</a>)</li>
+                    <li>Scala 2.11 &nbsp;- <a href="https://archive.apache.org/dist/kafka/2.1.1/kafka_2.11-2.1.1.tgz">kafka_2.11-2.1.1.tgz</a> (<a href="https://archive.apache.org/dist/kafka/2.1.1/kafka_2.11-2.1.1.tgz.asc">asc</a>, <a href="https://archive.apache.org/dist/kafka/2.1.1/kafka_2.11-2.1.1.tgz.sha512">sha512</a>)</li>
+                    <li>Scala 2.12 &nbsp;- <a href="https://archive.apache.org/dist/kafka/2.1.1/kafka_2.12-2.1.1.tgz">kafka_2.12-2.1.1.tgz</a> (<a href="https://archive.apache.org/dist/kafka/2.1.1/kafka_2.12-2.1.1.tgz.asc">asc</a>, <a href="https://archive.apache.org/dist/kafka/2.1.1/kafka_2.12-2.1.1.tgz.sha512">sha512</a>)</li>
                 </ul>
                 We build for multiple versions of Scala. This only matters if you are using Scala and you want a version built for the same Scala version you use. Otherwise any version should work (2.12 is recommended).
             </li>
