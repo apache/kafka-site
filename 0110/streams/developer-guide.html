@@ -586,14 +586,14 @@
           KeyValueIterator&lt;String, Long&gt; range = keyValueStore.range("all", "streams");
           while (range.hasNext()) {
             KeyValue&lt;String, Long&gt; next = range.next();
-            System.out.println("count for " + next.key + ": " + value);
+            System.out.println("count for " + next.key + ": " + next.value);
           }
 
           // Get the values for all of the keys available in this application instance
           KeyValueIterator&lt;String, Long&gt; range = keyValueStore.all();
           while (range.hasNext()) {
             KeyValue&lt;String, Long&gt; next = range.next();
-            System.out.println("count for " + next.key + ": " + value);
+            System.out.println("count for " + next.key + ": " + next.value);
           }
         </pre>
 
