@@ -266,6 +266,32 @@ tr:nth-child(even) {
 /* Configuration lists */
 .config-list>li {
     list-style-type: none;
+    padding: 15px 0px 15px 20px;
+    border-bottom: 1px solid black;
+}
+
+.config-list h4 {
+    margin: 0;
+}
+
+.config-list table *{
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+}
+
+.config-list tr {
+    border-width: 0;
+    background-color: transparent;
+}
+
+.config-list th {
+    text-align: right;
+}
+
+.config-list td {
+    text-align: left;
+    padding: 0px 0px 0px 10px;
 }
 
 .config-list>li:nth-child(odd) {
