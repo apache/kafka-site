@@ -271,29 +271,25 @@ tr:nth-child(even) {
 }
 
 .config-list h4 {
-    margin: 0px;
+    margin: 0;
 }
 
-.config-list table {
-    border-width: 0px;
+.config-list table *{
+    border: 0;
+    background-color: transparent;
+    padding: 0;
 }
 
 .config-list tr {
-    border-width: 0px;
+    border-width: 0;
     background-color: transparent;
-    padding: 0px;
 }
 
 .config-list th {
-    border-width: 0;
-    background-color: transparent;
     text-align: right;
-    padding: 0px;
 }
 
 .config-list td {
-    border-width: 0;
-    background-color: transparent;
     text-align: left;
     padding: 0px 0px 0px 10px;
 }
