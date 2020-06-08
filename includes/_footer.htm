@@ -123,6 +123,16 @@
 			  }
 			};
 		});
+
+		// Let's start getting rid of jQuery...
+		(function() {
+			var navToggle = document.getElementById('top-nav-toggle');
+			var nav = document.getElementById('top-nav-container');
+
+			navToggle.addEventListener('click', () => {
+				navToggle.classList.toggle('active');
+			});
+		}());
 	</script>
 
 	<script>

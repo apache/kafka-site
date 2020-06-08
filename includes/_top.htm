@@ -2,7 +2,14 @@
 	<div class="header">
 		<a href="/" class="logo-link"><img width="217" class="logo" src="/images/logo.png"></a>
 
-		<div class="top-nav-container">
+		<button type="button" class="top-nav-toggle burger-toggle" id="top-nav-toggle">
+			<span class="visually-hidden">Toggle navigation</span>
+			<span class="burger-line"></span>
+			<span class="burger-line"></span>
+			<span class="burger-line"></span>
+		</button>
+
+		<div class="top-nav-container" id="top-nav-container">
 			<div class="top-nav" role="navigation">
 				<ul class="top-nav-list">
 					<li class="top-nav-item">
@@ -45,7 +52,7 @@
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li class="top-nav-item">
 						<button class="top-nav-download" id="top-nav-download">
 							Install Kafka
 						</button>
