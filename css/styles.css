@@ -1964,6 +1964,16 @@ ul.video-list {
     .page-home .content-bottom {
         padding-top: 1rem;
     }
+    .page-home .content-bottom .content-section-item {
+        width: 47vw;
+        padding: 3vw;
+    }
+    .page-home .content-bottom .content-section-title {
+        margin-left: auto;
+        margin-right: auto;
+        width: 97vw;
+        padding-left: 3vw;
+    }
 }
 @media only screen and (max-width: 460px) {
     .use-item-section {
