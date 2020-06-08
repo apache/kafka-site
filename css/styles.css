@@ -531,8 +531,8 @@ tr:nth-child(even) {
     padding: 0;
 }
 .header {
-    width: auto;
-    max-width: 127.5rem;
+    width: 100vw;
+    box-sizing: border-box;
     margin: 0 auto;
 }
 .page-home .content-top {
