@@ -327,16 +327,299 @@ tr:nth-child(even) {
 /* components */
 
 .main {
-    margin: 0 auto;
-    width: 120rem;
-    padding: 0 2rem 8rem 2rem;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 .header {
     padding: 2rem 0 1rem;
     background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 102.4rem;
+    margin: 0 auto;
+    padding: 2rem 2.2rem;
+}
+.top-nav {
+    margin-top: 1rem;
+    display: inline-block;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.top-nav-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.top-nav-item {
+    display: block;
+    padding: 0;
+    position: relative;
+}
+.top-nav-item:hover .top-nav-menu,
+.top-nav-item:focus .top-nav-menu,
+.top-nav-item:active .top-nav-menu {
+    display: block;
+}
+.top-nav-item-anchor {
+    display: block;
+    padding: 1.55rem 2.75rem;
+    position: relative;
+    cursor: pointer;
+    color: black;
+}
+.top-nav-menu {
+    display: none;
+    background: white;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 4rem;
+    left: 50%;
+    z-index: 60;
+    transform: translateX(-50%);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.38);
+}
+.top-nav-anchor {
+    display: inline-block;
+    padding: 1rem 0;
+    width: 16rem;
+    text-align: center;
+    font-family: inherit;
+}
+.top-nav-item-anchor:link,
+.top-nav-item-anchor:active,
+.top-nav-item-anchor:visited,
+.top-nav-anchor:link,
+.top-nav-anchor:active,
+.top-nav-anchor:visited {
+    color: black;
+    text-decoration: none;
+}
+.top-nav-item-anchor:hover,
+.top-nav-anchor:hover,
+.top-nav-item-anchor:focus,
+.top-nav-anchor:focus {
+    color: #5CA2A2;
+}
+.top-nav-download {
+    font-size: 14px;
+    letter-spacing: 0.11rem;
+    line-height: 16px;
+    background: linear-gradient(115.55deg, #000000, rgba(255, 255, 255, 0.5) 131.3%), #0A1011;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.38);
+    border-radius: 2px;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 1.5rem;
+    margin-left: 3rem;
+    cursor: pointer;
+}
+.page-home .waves {
+    background: url("/images/waves.svg") no-repeat top center;
+    background-size: cover;
+    min-height: 316px;
+    height: 22vw;
+}
+.page-home .content-bottom {
+    background: linear-gradient(359.92deg, #264444 4.29%, #363D3F 97.03%);
+    color: white;
+    margin-top: -1px; /* fixes scaling issues from the little hack i'm doing */
+}
+.page-home .content-bottom .content-section {
+    max-width: 110rem;
+    margin: 0 auto;
+}
+.page-home .content-bottom .content-section-separator {
+    max-width: 105.8rem;
+    height: 1px;
+    background-color: #969191;
+    margin: 0 auto 7rem;
+    border: none;
+}
+.page-home .content-bottom .content-section-title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.1rem;
+    line-height: 2.9rem;
+    text-transform: uppercase;
+    color: #A9CBD4;
+    padding: 0 0 0 2.2rem;
+    margin: 0 0 5rem 0;
+}
+.page-home .content-bottom .content-section-header {
+    font-size: 21px;
+    line-height: 2.9rem;
+    padding: 2.2rem;
+    height: 6rem;
+}
+.page-home .content-bottom .content-section-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+.page-home .content-bottom .content-section-item {
+    width: 25rem;
+    height: 38.4rem;
+    padding: 2.2rem;
+}
+.page-home .content-bottom .content-section-item-icon {
+    /* TODO */
+    display: inline-block;
+}
+.page-home .content-bottom .content-section-item-title {
+    margin: 3.1rem 0 0;
+    font-size: 18px;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+    color: #A9CBD4;
+    height: 6rem;
+    padding: 0;
+}
+.page-home .content-bottom .content-section-item-content {
+    font-family: "Roboto Condensed";
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    margin: 0;
+    padding: 0;
+}
+.page-home .content * {
+    box-sizing: border-box;
+}
+.page-home .content {
+    box-sizing: border-box;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+.page-home .header {
+    width: auto;
+    max-width: 127.5rem;
+    margin: 0 auto;
+}
+.page-home .content-top {
+    width: 76.7rem;
+    margin: 13rem auto 0;
+    text-align: center;
+    font-family: Roboto;
+}
+.page-home .content-top-title {
+    font-weight: 900;
+    font-size: 3.8rem;
+    line-height: 4.5rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 0.2rem;
+}
+.page-home .content-top-subtitle {
+    font-size: 21px;
+    font-style: italic;
+    line-height: 3rem;
+    margin: 0;
+    font-weight: 400;
+}
+.page-home .content-top-subtitle-strong {
+    color: #5CA2A2;
+    font-weight: bold;
+}
+.page-home .content-top-text {
+    font-weight: 100;
+    font-size: 2.1rem;
+    line-height: 3rem;
+    padding: 0 .5rem 0;
+}
+.page-home .content-top-separator {
+    width: 10rem;
+    height: 1px;
+    background-color: black;
+    border: none;
+    margin: 3.5rem auto 0;
+    padding: 0;
+}
+.page-home .content-top-industry {
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin-bottom: 6rem;
+}
+.page-home .content-top-industry-list {
+    list-style-type: none;
+    display: flex;
+    max-width: 53rem;
+    margin: 0 auto;
+    padding: 0;
+    justify-content: space-between;
+    font-style: italic;
+}
+.page-home .content-top-industry-item {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.page-home .content-top-industry-title {
+    margin: 0;
+    padding: 0.5rem 0.5rem 0 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-top: 1px solid black;
+    position: relative;
+    width: 100%;
+    left: -.5rem;
+}
+.page-home .content-top-industry-ratio {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 2.6rem;
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0 0;
+    padding: .2rem .3rem .2rem 0;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid black;
+    width: 100%;
+}
+.page-home .content-top-industry-ratio-stacked {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    width: 1.7rem;
+    line-height: 0.9rem;
+    text-align: left;
+    margin-left: .5rem;
+    font-weight: 400;
+}
+.page-home .content-top-disclaimer {
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 2.4rem;
+    width: 38.5rem;
+    padding: 2rem;
+    margin: 1.5rem auto 0;
 }
 .footer {
     flex: 1;
+    min-height: 5.3rem;
     position: relative;
 }
 .footer__inner {
@@ -385,7 +668,10 @@ tr:nth-child(even) {
     color: #0B6D88;
 }
 .content {
+    width: 98rem; /* the original width (120) minus the padding that accounted for the left nav (22) */
+    margin: 0 auto;
     margin-top: 3rem;
+    padding: 0 0 12rem 0;
 }
 nav {
     float: left;
@@ -471,7 +757,6 @@ nav .btn {
     opacity: 0.8;
 }
 .right {
-    margin-left: 22rem;
     min-height: 60rem;
     overflow: hidden;
 }
@@ -860,6 +1145,9 @@ nav .btn {
         max-width: 100%;
         margin: 0 2rem;
     }
+    .page-home .main {
+        margin: 0;
+    }
     .footer__legal__one {
         display: block;
     }
@@ -890,12 +1178,6 @@ nav .btn {
     }
     ul.video-list {
         padding-left: 21px!important;
-    }
-    .right {
-        margin-left: 22rem;
-    }
-    .right-home {
-        margin-left: 32rem;
     }
     .desc {
         margin-left: 0;
@@ -942,9 +1224,6 @@ nav .btn {
     }
 }
 @media only screen and (max-width: 950px) {
-    .right {
-        margin-left: 22rem;
-    }
     .hero {
         flex-direction: column;
     }
@@ -1016,6 +1295,9 @@ nav .btn {
     .main {
         padding: 0 1rem;
         margin: 0;
+    }
+    .page-home .main {
+        padding: 0;
     }
     .kafka-diagram {
         display: block;
@@ -1337,7 +1619,7 @@ ul.video-list {
     padding: 10px 0px 20px;
     /*width: 92rem;*/
 
-    z-index: 1000;
+    z-index: 50;
     top: 0px;
     overflow: auto;
     width: 95%;
@@ -1351,7 +1633,7 @@ ul.video-list {
         padding: 10px 0px 20px;
         /*width: 92rem;*/
 
-        z-index: 1000;
+        z-index: 50;
         top: 0px;
         left: 0;
         z-index: 1;

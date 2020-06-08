@@ -1,64 +1,258 @@
 <!--#include virtual="includes/_header.htm" -->
+<body class="page-home">
 <!--#include virtual="includes/_top.htm" -->
-<div class="content">
+<div class="content content-home">
 	<!--#include virtual="includes/_nav.htm" -->
-	<div class="right right-home">
-		<div class="desc">
-			<a href="/documentation/#producerapi" class="desc-item">
-				<h2>Publish &amp; subscribe</h2>
-				<p>Read and write streams of data like a messaging system.</p>
-				<span class="desc-item__cta">Learn more &raquo;</span>
-			</a>
-			<a href="/documentation/streams" class="desc-item">
-				<h2>Process</h2>
-				<p>Write scalable stream processing applications that react to events in real-time.</p>
-				<span class="desc-item__cta">Learn more &raquo;</span>
-			</a>
-			<a href="/intro#kafka_storage" class="desc-item">
-				<h2>Store</h2>
-				<p>Store streams of data safely in a distributed, replicated, fault-tolerant cluster.</p>
-				<span class="desc-item__cta">Learn more &raquo;</span>
-			</a>
-			<div class="news">
-				<h2>Latest News</h2>
-				<article>
-					<h3><a href="https://events.kafka-summit.org/2020" target="_blank" rel="noopener noreferrer">
-						Kafka Summit 2020
-					</a></h3>
-					<time>Aug 24 - Aug 25, 2020</time>
-				</article>
-				<article>
-					<h3><a href="https://kafka.apache.org/downloads#2.5.0">AK Release 2.5.0</a></h3>
-					<time>April 15, 2020</time>
-				</article>
-				<article>
-					<h3><a href="https://kafka.apache.org/downloads#2.4.1">AK Release 2.4.1</a></h3>
-					<time>March 12, 2019</time>
-				</article>
-				<article>
-					<h3><a href="https://kafka.apache.org/downloads#2.2.2">AK Release 2.2.2</a></h3>
-					<time>December 1, 2019</time>
-				</article>
-				<article>
-					<h3><a href="https://kafka.apache.org/downloads#2.3.1">AK Release 2.3.1</a></h3>
-					<time>October 24, 2019</time>
-				</article>
-			</div>
+	<section class="content-top">
+		<h2 class="content-top-title">
+			Apache Kafka
+		</h2>
+		<p class="content-top-subtitle">
+			More than <strong class="content-top-subtitle-strong">30% of all Fortune 500 companies</strong> trust, and use Kafka.
+		</p>
+		<p class="content-top-text">
+			Apache Kafka is an open-source distributed event streaming platform used by
+			thousands of companies for real time analytics, integration, streaming analytics,
+			and mission-critical applications.
+		</p>
+		<hr class="content-top-separator" />
+		<p class="content-top-industry">
+			The Number of Top Ten Companies That Use Kafka*
+		</p>
+		<ul class="content-top-industry-list">
+			<li class="content-top-industry-item">
+				<h4 class="content-top-industry-title">
+					Travel
+				</h4>
+				<p class="content-top-industry-ratio">
+					10
+					<span class="content-top-industry-ratio-stacked">
+						out of
+					</span>
+					10
+				</p>
+				<img class="content-top-industry-image"
+					src="/images/icons/airplane.svg"
+					width="50" height="50" />
+			</li>
+			<li class="content-top-industry-item">
+				<h4 class="content-top-industry-title">
+					Banks
+				</h4>
+				<p class="content-top-industry-ratio">
+					8
+					<span class="content-top-industry-ratio-stacked">
+						out of
+					</span>
+					10
+				</p>
+				<img class="content-top-industry-image"
+					src="/images/icons/bank.svg"
+					height="50" />
+			</li>
+			<li class="content-top-industry-item">
+				<h4 class="content-top-industry-title">
+					Insurance
+				</h4>
+				<p class="content-top-industry-ratio">
+					8
+					<span class="content-top-industry-ratio-stacked">
+						out of
+					</span>
+					10
+				</p>
+				<img class="content-top-industry-image"
+					src="/images/icons/shield.svg"
+					height="50" />
+			</li>
+			<li class="content-top-industry-item">
+				<h4 class="content-top-industry-title">
+					Telecom
+				</h4>
+				<p class="content-top-industry-ratio">
+					9
+					<span class="content-top-industry-ratio-stacked">
+						out of
+					</span>
+					10
+				</p>
+				<img class="content-top-industry-image"
+					src="/images/icons/telecom-tower.svg"
+					height="50" />
+			</li>
+		</ul>
+		<p class="content-top-disclaimer">
+			*Above is a snapshot of the number of top-ten companies that use Kafka, per-industry.
+		</p>
+	</section>
+	<div class="waves" role="presentation"></div>
+	<section class="content-bottom">
+		<div class="content-section">
+			<h3 class="content-section-title">
+				Core Capabilities
+			</h3>
+			<ul class="content-section-list">
+				<li class="content-section-item">
+					<img class="content-section-item-icon"
+						src="#"
+						width="74" height="74" />
+					<h4 class="content-section-item-title">
+						High Throughput
+					</h4>
+					<p class="content-section-item-content">
+						Deliver messages at network limited throughput using a cluster of machines
+						with latencies as low as 2ms.
+					</p>
+				</li>
+				<li class="content-section-item">
+					<img class="content-section-item-icon"
+						src="#"
+						width="74" height="74" />
+					<h4 class="content-section-item-title">
+						Scalable
+					</h4>
+					<p class="content-section-item-content">
+						Production clusters with up to a thousand brokers, trillions of messages per
+						day, petabytes of data, hundreds of thousands of partitions. Expand and
+						contract storage and processing.  
+					</p>
+				</li>
+				<li class="content-section-item">
+					<img class="content-section-item-icon"
+						src="#"
+						width="74" height="74" />
+					<h4 class="content-section-item-title">
+						Permanent storage
+					</h4>
+					<p class="content-section-item-content">
+						Store streams of data safely in a distributed, durable, fault-tolerant cluster.
+					</p>
+				</li>
+				<li class="content-section-item">
+					<img class="content-section-item-icon"
+						src="#"
+						width="74" height="74" />
+					<h4 class="content-section-item-title">
+						High availability
+					</h4>
+					<p class="content-section-item-content">
+						Stretch clusters efficiently over availability zones or connect separate
+						clusters across geographic regions.
+					</p>
+				</li>
+			</ul>
 		</div>
-		<div class="index">
-			<img width="451" height="435" class="kafka-diagram" src="/images/kafka_diagram.png">
-			<div class="callout">
-				<p>Kafka&reg; is used for building real-time data pipelines and streaming apps. It is horizontally scalable,
-					fault-tolerant, wicked fast, and runs in production in thousands of companies.</p>
-				<a class="btn btn--secondary btn--sm callout__action" href="/intro.html">Learn more</a>
-			</div>
+		<hr class="content-section-separator" />
+		<div class="content-section">
+			<h3 class="content-section-title">
+				Ecosystem
+			</h3>
+			<ul class="content-section-list">
+				<li class="content-section-item">
+					<img class="content-section-item-icon"
+						src="#"
+						width="74" height="74" />
+					<h4 class="content-section-item-title">
+						Built-in Stream Processing
+					</h4>
+					<p class="content-section-item-content">
+						Process stream of events with joins, aggregations, filters, transformations,
+						and more, using event-time and exactly-once processing.
+					</p>
+				</li>
+				<li class="content-section-item">
+					<img class="content-section-item-icon"
+						src="#"
+						width="74" height="74" />
+					<h4 class="content-section-item-title">
+						Connect To Almost Anything
+					</h4>
+					<p class="content-section-item-content">
+						Kafka’s out-of-the-box Connect interface integrates with hundreds of event
+						sources and event sinks including Postgres, JMS, Elasticsearch, AWS S3, and more. 
+					</p>
+				</li>
+				<li class="content-section-item">
+					<img class="content-section-item-icon"
+						src="#"
+						width="74" height="74" />
+					<h4 class="content-section-item-title">
+						Client Libraries
+					</h4>
+					<p class="content-section-item-content">
+						Read, write, and process stream of events in a vast array of programming languages.
+					</p>
+				</li>
+				<li class="content-section-item">
+					<img class="content-section-item-icon"
+						src="#"
+						width="74" height="74" />
+					<h4 class="content-section-item-title">
+						Large Ecosystem Open Source Tools
+					</h4>
+					<p class="content-section-item-content">
+						Large ecosystem of open source tools: Leverage a vast array of community-driven tooling.
+					</p>
+				</li>
+			</ul>
 		</div>
-
-		<script>
-			// Show selected style on nav item
-			$(function () {
-				$('.b-nav__home').addClass('selected');
-			});
-		</script>
+		<hr class="content-section-separator" />
+		<div class="content-section">
+			<h3 class="content-section-title">
+				Trust &amp; Ease Of Use
+			</h3>
+			<ul class="content-section-list">
+				<li class="content-section-item">
+					<img class="content-section-item-icon"
+						src="#"
+						width="74" height="74" />
+					<h4 class="content-section-item-title">
+						Mission Critical:
+					</h4>
+					<p class="content-section-item-content">
+						Support mission-critical use cases with guaranteed ordering, zero message loss,
+						and efficient exactly-once processing. 
+					</p>
+				</li>
+				<li class="content-section-item">
+					<img class="content-section-item-icon"
+						src="#"
+						width="74" height="74" />
+					<h4 class="content-section-item-title">
+						Trusted By Thousands of Orgs
+					</h4>
+					<p class="content-section-item-content">
+						Thousands of organizations use Kafka, from internet giants to car manufacturers
+						to stock exchanges. More than 5 million unique lifetime downloads.
+					</p>
+				</li>
+				<li class="content-section-item">
+					<img class="content-section-item-icon"
+						src="#"
+						width="74" height="74" />
+					<h4 class="content-section-item-title">
+						Vast User Community:
+					</h4>
+					<p class="content-section-item-content">
+						Kafka is one of the five most active projects of the Apache Software Foundation,
+						with hundreds of meetups around the world.
+					</p>
+				</li>
+				<li class="content-section-item">
+					<img class="content-section-item-icon"
+						src="#"
+						width="74" height="74" />
+					<h4 class="content-section-item-title">
+						Rich Online Resources:
+					</h4>
+					<p class="content-section-item-content">
+						Rich documentation, online training, guided tutorials, videos, sample projects,
+						Stack Overflow, etc. 
+					</p>
+				</li>
+			</ul>
+		</div>
+	</section>
+</div>
 
 		<!--#include virtual="includes/_footer.htm" -->
