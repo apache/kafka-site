@@ -698,6 +698,7 @@ tr:nth-child(even) {
 }
 .content {
     width: 98rem; /* the original width (120) minus the padding that accounted for the left nav (22) */
+    max-width: 98vw;
     margin: 0 auto;
     margin-top: 12rem;
     padding: 0 0 12rem 0;
@@ -1860,6 +1861,9 @@ ul.video-list {
     }
     .first__app__cta .first__app_btn:first-of-type {
         margin-right: 1rem;
+    }
+    .content {
+        max-width: 90vw;
     }
     .page-home .content-top {
         padding: 0 2rem;
