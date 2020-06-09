@@ -336,12 +336,21 @@ tr:nth-child(even) {
     padding: 2rem 0 1rem;
     background-color: #FFFFFF;
     position: fixed;
+    left: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 102.4rem;
     padding: 2rem 2.2rem;
-    width: 100vw;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    z-index: 99;
+    transition: box-shadow 0.5s;
+}
+.header.scrolled {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.38);
+    margin: 0;
+    padding: 1rem 2.2rem;
 }
 .burger-toggle {
     padding: .4rem;
@@ -362,9 +371,11 @@ tr:nth-child(even) {
 .top-nav-toggle {
     display: none;
 }
+.top-nav-container {
+    display: flex;
+    box-sizing: border-box;
+}
 .top-nav {
-    margin-top: 1rem;
-    display: inline-block;
     font-family: Roboto;
     font-style: normal;
     font-weight: 600;
@@ -372,6 +383,7 @@ tr:nth-child(even) {
     line-height: 14px;
     display: flex;
     align-items: center;
+    align-self: center;
     text-align: center;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -529,11 +541,6 @@ tr:nth-child(even) {
     width: auto;
     margin: 0;
     padding: 0;
-}
-.header {
-    width: 100vw;
-    box-sizing: border-box;
-    margin: 0 auto;
 }
 .page-home .content-top {
     max-width: 76.7rem;

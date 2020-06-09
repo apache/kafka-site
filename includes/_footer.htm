@@ -124,6 +124,34 @@
 			};
 		});
 
+		function debounce(func, wait, immediate) {
+			var timeout;
+			return function() {
+				var context = this;
+				var args = arguments;
+				var later = function() {
+					timeout = null;
+					if (!immediate) func.apply(context, args);
+				};
+				var callNow = immediate && !timeout;
+				clearTimeout(timeout);
+				timeout = setTimeout(later, wait);
+				if (callNow) func.apply(context, args);
+			};
+		};
+
+		function checkPageScroll() {
+			if (window.scrollY >= 80) {
+				document.getElementById('header').classList.add('scrolled');
+			} else {
+				document.getElementById('header').classList.remove('scrolled');
+			}
+		}
+
+		function pageScroll() {
+			requestAnimationFrame(checkPageScroll);
+		};
+
 		// Let's start getting rid of jQuery...
 		(function() {
 			var navToggle = document.getElementById('top-nav-toggle');
@@ -132,6 +160,8 @@
 			navToggle.addEventListener('click', () => {
 				navToggle.classList.toggle('active');
 			});
+
+			window.addEventListener('scroll', pageScroll);
 		}());
 	</script>
 
