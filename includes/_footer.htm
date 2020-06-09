@@ -140,6 +140,7 @@
 			};
 		};
 
+		// Let's start getting rid of jQuery...
 		function checkPageScroll() {
 			if (window.scrollY >= 80) {
 				document.getElementById('header').classList.add('scrolled');
@@ -152,7 +153,7 @@
 			requestAnimationFrame(checkPageScroll);
 		};
 
-		// Let's start getting rid of jQuery...
+		// jQuery free IIFE
 		(function() {
 			var navToggle = document.getElementById('top-nav-toggle');
 			var nav = document.getElementById('top-nav-container');

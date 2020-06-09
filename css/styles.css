@@ -458,6 +458,10 @@ tr:nth-child(even) {
     padding: 1.5rem;
     margin-left: 3rem;
     cursor: pointer;
+    font-weight: normal;
+    text-decoration: none;
+    position: relative;
+    top: 1.4rem;
 }
 .page-home .waves {
     background: url("/images/waves.svg") no-repeat top center;
@@ -1955,6 +1959,7 @@ ul.video-list {
         text-align: center;
         margin: 3rem auto 0;
         display: block;
+        position: static;
     }
 }
 @media only screen and (max-width: 800px) {
