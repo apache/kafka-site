@@ -542,7 +542,7 @@ tr:nth-child(even) {
 .page-home .content {
     box-sizing: border-box;
     width: auto;
-    margin: 0;
+    margin: 25rem 0 0;
     padding: 0;
 }
 .page-home .content-top {
@@ -1883,7 +1883,7 @@ ul.video-list {
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.38);
     }
     .page-home .content-home {
-        padding-top: 4rem;
+        margin-top: 16rem;
     }
     .logo {
         width: auto;
