@@ -410,6 +410,9 @@ tr:nth-child(even) {
     cursor: pointer;
     color: black;
 }
+.top-nav-item-anchor[href="#"] {
+    cursor: default;
+}
 .top-nav-menu {
     display: none;
     background: white;

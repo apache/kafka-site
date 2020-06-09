@@ -162,6 +162,14 @@
 				navToggle.classList.toggle('active');
 			});
 
+			// allow # links in the nav so they can have focus and we can treat them like links
+			nav.addEventListener('click', function(e) {
+				if (e.target.hasAttribute('href') && e.target.getAttribute('href') === '#') {
+					e.preventDefault();
+					e.stopPropagation();
+				}
+			})
+
 			window.addEventListener('scroll', pageScroll);
 		}());
 	</script>
