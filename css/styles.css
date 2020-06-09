@@ -350,7 +350,7 @@ tr:nth-child(even) {
 .header.scrolled {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.38);
     margin: 0;
-    padding: 1rem 2.2rem;
+    padding: 0.5rem 2.2rem;
 }
 .burger-toggle {
     padding: .4rem;
@@ -696,7 +696,7 @@ tr:nth-child(even) {
 .content {
     width: 98rem; /* the original width (120) minus the padding that accounted for the left nav (22) */
     margin: 0 auto;
-    margin-top: 3rem;
+    margin-top: 12rem;
     padding: 0 0 12rem 0;
 }
 nav {
