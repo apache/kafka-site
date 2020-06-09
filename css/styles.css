@@ -544,6 +544,7 @@ tr:nth-child(even) {
     width: auto;
     margin: 25rem 0 0;
     padding: 0;
+    max-width: none;
 }
 .page-home .content-top {
     max-width: 76.7rem;
