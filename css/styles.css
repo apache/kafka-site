@@ -1878,9 +1878,6 @@ ul.video-list {
         background-color: rgba(255, 255, 255, 0.9);
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.38);
     }
-    .content {
-        padding-top: 10rem; /* Accounts for fixed header */
-    }
     .page-home .content-home {
         padding-top: 4rem;
     }
