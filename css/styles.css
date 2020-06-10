@@ -442,6 +442,17 @@ tr:nth-child(odd) {
     background-color: black;
     border-radius: 2px;
 }
+.page-dark .burger-toggle {
+    padding: .4rem;
+    border-radius: .3rem;
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.page-dark .burger-toggle .burger-line {
+    background-color: white;
+}
 .top-nav-toggle {
     display: none;
 }
@@ -1979,6 +1990,13 @@ ul.video-list {
         background-color: rgba(255, 255, 255, 0.9);
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.38);
     }
+    .page-dark .header {
+        background-color: #373E40;
+    }
+    .page-dark .top-nav-toggle + .top-nav-container {
+        background-color: #373E40;
+    }
+    .page-d
     .page-home .content-home {
         margin-top: 16rem;
     }
@@ -2001,12 +2019,14 @@ ul.video-list {
         left: 0;
         right: 0;
         bottom: 0;
-        width: 100vw;
-        height: 100vh;
         top: 8rem;
+        width: 100vw;
+        height: calc(100vh - 8rem);
         z-index: 99;
         background: rgba(255, 255, 255, 0.95);
         transition: all 0.35s;
+        overflow-x: hidden;
+        overflow: scroll;
     }
     .top-nav-toggle + .top-nav-container .top-nav {
         margin-top: 0;
