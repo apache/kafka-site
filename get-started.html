@@ -1,0 +1,166 @@
+<!--#include virtual="includes/_header.htm" -->
+<body class="page-get-started page-dark">
+  <!-- TODO: figure out if the param approach works -->
+  <!--#include virtual="includes/_top.htm?current_nav=get-started" -->
+  <div class="get-started-header">
+    <h1 class="get-started-header-heading">Get Started</h1>
+    <p class="get-started-header-text"></p>
+    <ul class="get-started-nav">
+      <li class="get-started-nav-item">
+        <a href="/get-started#introduction">Introduction</a>
+      </li>
+      <li class="get-started-nav-item">
+        <a href="/get-started#quickstart">Quickstart</a>
+      </li>
+      <li class="get-started-nav-item">
+        <a href="/get-started#usecases">Usecases</a>
+      </li>
+    </ul>
+  </div>
+  <hr class="content-separator" />
+  <div class="content content-get-started">
+    <h1 class="content-title">
+      Introduction
+    </h1>
+    <p class="content-subtitle">
+      Apache Kafka® is a distributed streaming platform. What exactly does that mean?
+    </p>
+    <section class="conent-section">
+      <h2 class="content-section-title">
+        A streaming platform has three key capabilities:
+      </h2>
+      <ul class="content-feature-list">
+        <li class="content-feature-item">
+          <h3 class="content-feature-title">
+            Pub/Sub
+          </h3>
+          <p class="content-feature-text">
+            Publish and subscribe to streams of records, similar to a message queue or enterprise messaging system.
+          </p>
+        </li>
+        <li class="content-feature-item">
+          <h3 class="content-feature-title">
+            Stream Storage
+          </h3>
+          <p class="content-feature-text">
+            Store streams of records in a fault-tolerant durable way.
+          </p>
+        </li>
+        <li class="content-feature-item">
+          <h3 class="content-feature-title">
+            Real-Time
+          </h3>
+          <p class="content-feature-text">
+            Process streams of records as they occur.
+          </p>
+        </li>
+      </ul>
+    </section>
+    <section class="conent-section">
+      <h2 class="content-section-title">
+        Kafka is generally used for two broad classes of applications:
+      </h2>
+      <ul class="content-feature-list">
+        <li class="content-feature-item">
+          <h3 class="content-feature-title">
+            Real-Time Pipelines
+          </h3>
+          <p class="content-feature-text">
+            Building real-time streaming data pipelines that reliably get data between systems or applications.
+          </p>
+        </li>
+        <li class="content-feature-item">
+          <h3 class="content-feature-title">
+            Real-Time Apps
+          </h3>
+          <p class="content-feature-text">
+            Building real-time streaming applications that transform or react to the streams of data
+          </p>
+        </li>
+      </ul>
+    </section>
+    <section class="conent-section">
+      <h2 class="content-section-title">
+        First a few concepts:
+      </h2>
+      <ul class="content-list">
+        <li class="content-item">
+          Kafka is run as a cluster on one or more servers that can span multiple datacenters.
+        </li>
+        <li class="content-item">
+          The Kafka cluster stores streams of records in categories called topics.
+        </li>
+        <li class="content-item">
+          Each record consists of a key, a value, and a timestamp.
+        </li>
+      </ul>
+    </section>
+    <section class="conent-section">
+      <h2 class="content-section-title">
+        Kafka has five core APIs:
+      </h2>
+      <ul class="content-feature-list">
+        <li class="content-feature-item">
+          <h3 class="content-feature-title">
+            Producer API
+          </h3>
+          <p class="content-feature-text">
+            The Producer API allows an application to publish a stream of
+            records to one or more Kafka topics.
+          </p>
+          <a href="#" class="content-feature-learn-more">Learn more</a>
+        </li>
+        <li class="content-feature-item">
+          <h3 class="content-feature-title">
+            Consumer API
+          </h3>
+          <p class="content-feature-text">
+            The Consumer API allows an application to subscribe to one
+            or more topics and process the stream of records produced to them.
+          </p>
+        </li>
+        <li class="content-feature-item">
+          <h3 class="content-feature-title">
+            Streams API
+          </h3>
+          <p class="content-feature-text">
+            The Streams API allows an application to act as a stream
+            processor, consuming an input stream from one or more topics
+            and producing an output stream to one or more output topics,
+            effectively transforming the input streams to output streams.
+          </p>
+        </li>
+        <li class="content-feature-diagram">
+          <img src="/images/cluster-diagram.svg" width="644" />
+        </li>
+        <li class="content-feature-item">
+          <h3 class="content-feature-title">
+            Connector API
+          </h3>
+          <p class="content-feature-text">
+            The Connector API allows building and running reusable
+            producers or consumers that connect Kafka topics to existing
+            applications or data systems. For example, a connector to a
+            relational database might capture every change to a table.
+          </p>
+        </li>
+        <li class="content-feature-item">
+          <h3 class="content-feature-title">
+            Admin API
+          </h3>
+          <p class="content-feature-text">
+            The Admin API allows managing and inspecting topics, brokers
+            and other Kafka objects.
+          </p>
+        </li>
+      </ul>
+    </section>
+  </ul>
+  <script>
+  // Show selected style on nav item
+  $(function() { $('.b-nav__intro').addClass('selected'); });
+  </script>
+  
+  
+      <!--#include virtual="includes/_footer.htm" -->
+  

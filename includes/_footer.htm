@@ -13,175 +13,176 @@
 				</a>
 			</div>
 		</div>
-	</body>
 
-    <script type="text/javascript" src="/js/syntaxhighlighter.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-	<script>
-		$(function () {
-			// list of pages that are rendered with Handlebars
-			var templates = [
-				'introduction',
-				'implementation',
-				'design',
-				'api',
-				'configuration',
-				'ops',
-				'security',
-				'connect',
-				'streams',
-				'quickstart',
-				'toc',
-				'upgrade',
-				'content'
-			];
+		<!-- Script tags should be inside the body tag -- not inside the html tag -->
+		<script type="text/javascript" src="/js/syntaxhighlighter.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+		<script>
+			$(function () {
+				// list of pages that are rendered with Handlebars
+				var templates = [
+					'introduction',
+					'implementation',
+					'design',
+					'api',
+					'configuration',
+					'ops',
+					'security',
+					'connect',
+					'streams',
+					'quickstart',
+					'toc',
+					'upgrade',
+					'content'
+				];
 
-			// loop through all Handlebar templates on the page and render them
-			for(var i = 0; i < templates.length; i++) {
-				var templateScript = $("#" + templates[i] + "-template").html();
-				if(templateScript) {
-					var template = Handlebars.compile(templateScript);
-					var html = template(context);
-					$(".p-" + templates[i]).html(html);
+				// loop through all Handlebar templates on the page and render them
+				for(var i = 0; i < templates.length; i++) {
+					var templateScript = $("#" + templates[i] + "-template").html();
+					if(templateScript) {
+						var template = Handlebars.compile(templateScript);
+						var html = template(context);
+						$(".p-" + templates[i]).html(html);
+					}
 				}
-			}
-		});
-	</script>
-
-	<script src="/js/jquery.sticky-kit.min.js"></script>
-	<script>
-		$(function() {
-
-
-            $('.download-version').mouseenter(function(){
-                $('a',this).css('visibility','visible');
-            });
-
-            $('.download-version').mouseleave(function(){
-                $('a',this).css('visibility','hidden');
-            });
-
-            $('.download-version a').click(function(){
-               $('a',this).css('visibility','hidden');
-            });
-
-
-            $('.download-version a').mouseenter(function(){
-               $('a',this).css('visibility','visible');
-            });
-
-			// Set mobile scroll position on nav
-			function setNavScroll(offsetLeft) {
-				$('.nav-scroller').animate({
-					scrollLeft: $('.nav-scroller').scrollLeft() + $('nav .selected').offset().left - offsetLeft
-				}, 50);
-			}
-
-			// Helper classes for nav
-			$('nav').mouseenter(function(){
-				$(this).addClass('hovering');
 			});
-			$('nav').mouseleave(function(){
-				$(this).removeClass('hovering');
-			});
+		</script>
 
-			// Handle expanding sections of nav (async)
-			$('.b-nav__sub__anchor').click(function(){
-				$('nav .selected').removeClass('selected');
-				$('.nav__item__with__subs--expanded').removeClass('nav__item__with__subs--expanded');
+		<script src="/js/jquery.sticky-kit.min.js"></script>
+		<script>
+			$(function() {
 
-				$(this).addClass('selected');
-				$(this).parent().toggleClass('nav__item__with__subs--expanded');
 
-				if($(window).width() <= 650) {
+							$('.download-version').mouseenter(function(){
+									$('a',this).css('visibility','visible');
+							});
+
+							$('.download-version').mouseleave(function(){
+									$('a',this).css('visibility','hidden');
+							});
+
+							$('.download-version a').click(function(){
+								$('a',this).css('visibility','hidden');
+							});
+
+
+							$('.download-version a').mouseenter(function(){
+								$('a',this).css('visibility','visible');
+							});
+
+				// Set mobile scroll position on nav
+				function setNavScroll(offsetLeft) {
+					$('.nav-scroller').animate({
+						scrollLeft: $('.nav-scroller').scrollLeft() + $('nav .selected').offset().left - offsetLeft
+					}, 50);
+				}
+
+				// Helper classes for nav
+				$('nav').mouseenter(function(){
+					$(this).addClass('hovering');
+				});
+				$('nav').mouseleave(function(){
+					$(this).removeClass('hovering');
+				});
+
+				// Handle expanding sections of nav (async)
+				$('.b-nav__sub__anchor').click(function(){
+					$('nav .selected').removeClass('selected');
+					$('.nav__item__with__subs--expanded').removeClass('nav__item__with__subs--expanded');
+
+					$(this).addClass('selected');
+					$(this).parent().toggleClass('nav__item__with__subs--expanded');
+
+					if($(window).width() <= 650) {
+						window.setTimeout(function(){
+							setNavScroll(30);
+						}, 300);
+					}
+				});
+
+				// Initialize sticky elements on the page
+				if($(window).width() > 650) {
+					// Nav for desktop
+					$('.b-sticky-nav').stick_in_parent({offset_top: 40});
+					// Documentation banner for desktop
+					$('.b-sticky-doc-banner').stick_in_parent({offset_top: 0});
+				}	else {
+					// Scroll nav for mobile so current nav item is in view
 					window.setTimeout(function(){
-						setNavScroll(30);
+						setNavScroll(80);
 					}, 300);
 				}
-			});
 
-			// Initialize sticky elements on the page
-			if($(window).width() > 650) {
-				// Nav for desktop
-				$('.b-sticky-nav').stick_in_parent({offset_top: 40});
-				// Documentation banner for desktop
-				$('.b-sticky-doc-banner').stick_in_parent({offset_top: 0});
-			}	else {
-				// Scroll nav for mobile so current nav item is in view
-				window.setTimeout(function(){
-					setNavScroll(80);
-				}, 300);
-			}
-
-			// On window resize check to see if stuff should be unstuck
-			window.onresize = function(event) {
-			  if($(window).width() <= 650) {
-			    $('.b-sticky-nav').trigger("sticky_kit:detach");
-			  } else {
-			    $('.b-sticky-nav').stick_in_parent({offset_top: 40});
-					$('.b-sticky-doc-banner').stick_in_parent({offset_top: 0});
-			  }
-			};
-		});
-
-		function debounce(func, wait, immediate) {
-			var timeout;
-			return function() {
-				var context = this;
-				var args = arguments;
-				var later = function() {
-					timeout = null;
-					if (!immediate) func.apply(context, args);
+				// On window resize check to see if stuff should be unstuck
+				window.onresize = function(event) {
+					if($(window).width() <= 650) {
+						$('.b-sticky-nav').trigger("sticky_kit:detach");
+					} else {
+						$('.b-sticky-nav').stick_in_parent({offset_top: 40});
+						$('.b-sticky-doc-banner').stick_in_parent({offset_top: 0});
+					}
 				};
-				var callNow = immediate && !timeout;
-				clearTimeout(timeout);
-				timeout = setTimeout(later, wait);
-				if (callNow) func.apply(context, args);
-			};
-		};
-
-		// Let's start getting rid of jQuery...
-		function checkPageScroll() {
-			if (window.scrollY >= 80) {
-				document.getElementById('header').classList.add('scrolled');
-			} else {
-				document.getElementById('header').classList.remove('scrolled');
-			}
-		}
-
-		function pageScroll() {
-			requestAnimationFrame(checkPageScroll);
-		};
-
-		// jQuery free IIFE
-		(function() {
-			var navToggle = document.getElementById('top-nav-toggle');
-			var nav = document.getElementById('top-nav-container');
-
-			navToggle.addEventListener('click', () => {
-				navToggle.classList.toggle('active');
 			});
 
-			// allow # links in the nav so they can have focus and we can treat them like links
-			nav.addEventListener('click', function(e) {
-				if (e.target.hasAttribute('href') && e.target.getAttribute('href') === '#') {
-					e.preventDefault();
-					e.stopPropagation();
+			function debounce(func, wait, immediate) {
+				var timeout;
+				return function() {
+					var context = this;
+					var args = arguments;
+					var later = function() {
+						timeout = null;
+						if (!immediate) func.apply(context, args);
+					};
+					var callNow = immediate && !timeout;
+					clearTimeout(timeout);
+					timeout = setTimeout(later, wait);
+					if (callNow) func.apply(context, args);
+				};
+			};
+
+			// Let's start getting rid of jQuery...
+			function checkPageScroll() {
+				if (window.scrollY >= 80) {
+					document.getElementById('header').classList.add('scrolled');
+				} else {
+					document.getElementById('header').classList.remove('scrolled');
 				}
-			})
+			}
 
-			window.addEventListener('scroll', pageScroll);
-		}());
-	</script>
+			function pageScroll() {
+				requestAnimationFrame(checkPageScroll);
+			};
 
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			// jQuery free IIFE
+			(function() {
+				var navToggle = document.getElementById('top-nav-toggle');
+				var nav = document.getElementById('top-nav-container');
 
-		ga('create', 'UA-7818013-4', 'apache.org');
-		ga('send', 'pageview');
+				navToggle.addEventListener('click', () => {
+					navToggle.classList.toggle('active');
+				});
 
-	</script>
+				// allow # links in the nav so they can have focus and we can treat them like links
+				nav.addEventListener('click', function(e) {
+					if (e.target.hasAttribute('href') && e.target.getAttribute('href') === '#') {
+						e.preventDefault();
+						e.stopPropagation();
+					}
+				})
+
+				window.addEventListener('scroll', pageScroll);
+			}());
+		</script>
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-7818013-4', 'apache.org');
+			ga('send', 'pageview');
+
+		</script>
+	</body>
 </html>

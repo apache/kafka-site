@@ -28,6 +28,7 @@ pre {
     padding: 1rem 2rem 1.5rem;
     color: #444444;
     margin: 2rem 0;
+    background: #fff;
 }
 code {
     border: .1rem solid #E5E5E5;
@@ -262,6 +263,9 @@ th {
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+tr:nth-child(odd) {
+    background-color: white;
+}
 
 /* Configuration lists */
 .config-list>li {
@@ -298,6 +302,17 @@ tr:nth-child(even) {
     background: #f2f2f2;
 }
 
+.page-dark .config-list>li:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.page-dark code {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0.3rem;
+    font-size: 1.4rem;
+}
+
 .horizontal-list li {
     display: inline-block;
 }
@@ -313,7 +328,67 @@ tr:nth-child(even) {
 .highlight pre span {
     font-size:1.4rem;
 }
-
+.page-dark .main {
+    background: linear-gradient(359.87deg, #264444, #363D3F);
+    color: white;
+}
+.page-dark .content {
+    max-width: 100rem;
+}
+.page-dark .content-separator {
+    max-width: 100rem;
+    background-color: #969191;
+    border: none;
+    height: 1px;
+}
+.page-dark .content-get-started {
+    margin-top: 3rem;
+}
+.page-dark a:link {
+    color: #BBD1D5;
+}
+.page-dark a:visited {
+    color: #b0bfcc;
+}
+.page-dark .top-nav-item-anchor:link,
+.page-dark .top-nav-item-anchor:active,
+.page-dark .top-nav-item-anchor:visited,
+.page-dark .top-nav-anchor:link,
+.page-dark .top-nav-anchor:active,
+.page-dark .top-nav-anchor:visited {
+    color: white;
+    text-decoration: none;
+}
+.page-dark .top-nav-item-anchor:hover,
+.page-dark .top-nav-anchor:hover,
+.page-dark .top-nav-item-anchor:focus,
+.page-dark .top-nav-anchor:focus {
+    color: #59A2A2;
+}
+.page-dark .top-nav-menu {
+    background-color: #373E40;
+}
+.page-dark .header {
+    background-color: transparent;
+}
+.page-dark .header.scrolled {
+    background-color: #373E40;
+}
+.page-dark .top-nav-download {
+    background: linear-gradient(270deg, #427583 -15.13%, #59A2A2 100%), #0A1011;
+    color: white !important; /* ignoring link colors */
+}
+.page-dark .top-nav-download:hover {
+    background: linear-gradient(270deg, #427583 -15.13%, #80bdbd 100%), #0A1011;
+}
+.page-dark .docs-title {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 4.2rem;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
 /* helper classes */
 
 .centered {
@@ -465,6 +540,9 @@ tr:nth-child(even) {
     text-decoration: none;
     position: relative;
     top: 1.4rem;
+}
+.top-nav-download:hover {
+    background-color: rgb(178, 178, 178);
 }
 .page-home .waves {
     background: url("/images/waves.svg") no-repeat top center;
@@ -938,6 +1016,10 @@ nav .btn {
 .callout--basic {
     width: auto;
 }
+.page-dark .callout {
+    background-color: #0C221D;
+    border-radius: .4rem;
+}
 .callout::before {
     content: "";
     width: 0;
@@ -1022,6 +1104,9 @@ nav .btn {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.page-dark .pagination__btn {
+    border-color: rgba(255, 255, 255, 0.3);
 }
 .pagination__btn__next::after {
     content: '\00BB';
@@ -1523,6 +1608,10 @@ nav .btn {
     border-bottom: solid 4px #000000;
     color: #000!important;
     padding-bottom: 7px;
+}
+.page-dark .sticky-top .active-menu-item {
+    color: #fff!important; /* have to override the previous -- assuming it was there for a reason */
+    border-bottom-color: #fff;
 }
 .sticky-top a {
     color: #8c8888;
