@@ -394,7 +394,8 @@ tr:nth-child(odd) {
 .page-dark .top-nav-download:hover {
     background: linear-gradient(270deg, #427583 -15.13%, #80bdbd 100%), #0A1011;
 }
-.page-dark .docs-title {
+.page-dark .docs-title,
+.page-dark .content-title {
     font-family: Roboto;
     font-weight: bold;
     font-size: 3rem;
@@ -1961,7 +1962,7 @@ ul.video-list {
     .page-dark.page-streams .main {
         margin: 0;
     }
-    .page-dark .content.documentation--current {
+    .page-dark .content {
         margin: 0 auto;
         max-width: 96vw;
         padding-top: 12rem;
@@ -2030,7 +2031,6 @@ ul.video-list {
     .page-dark .top-nav-toggle + .top-nav-container {
         background-color: #373E40;
     }
-    .page-d
     .page-home .content-home {
         margin-top: 16rem;
     }
@@ -2122,10 +2122,12 @@ ul.video-list {
         background-size: 168px auto;
     }
     .page-dark .content {
-        max-width: 100vw;
+        margin: 0 auto;
+        max-width: 96vw;
+        padding-top: 12rem;
     }
     .page-dark .content-separator {
-        max-width: 100vw;
+        max-width: 96vw;
         background-color: #969191;
         border: none;
         height: 1px;
