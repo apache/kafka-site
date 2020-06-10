@@ -343,6 +343,7 @@ tr:nth-child(odd) {
 .page-dark .main {
     background: linear-gradient(359.87deg, #264444, #363D3F);
     color: white;
+    margin: 0;
 }
 .page-dark .content {
     max-width: 100rem;
@@ -1956,6 +1957,27 @@ ul.video-list {
         padding-left: 3vw;
     }
 }
+@media only screen and (max-width: 1000px) {
+    .page-dark.page-streams .main {
+        margin: 0;
+    }
+    .page-dark .content.documentation--current {
+        margin: 0 auto;
+        max-width: 96vw;
+        padding-top: 12rem;
+    }
+    .page-dark .documentation--current .sticky-top {
+        white-space: normal;
+        overflow: auto;
+    }
+    .page-dark .documentation--current .sticky-top .active-menu-item {
+        border-bottom: none;
+        font-weight: bold;
+    }
+    .page-dark .documentation--current .sticky-top > div {
+        height: auto !important; /* override inline styles */
+    }
+}
 @media only screen and (max-width: 950px) {
     .use-item-section {
         flex-direction: column-reverse;
@@ -2107,25 +2129,6 @@ ul.video-list {
         background-color: #969191;
         border: none;
         height: 1px;
-    }
-    .page-dark.page-streams .main {
-        margin: 0;
-    }
-    .page-dark .documentation--current {
-        margin: 0 auto;
-        max-width: 94vw;
-        padding-top: 10rem;
-    }
-    .page-dark .documentation--current .sticky-top {
-        white-space: normal;
-        overflow: auto;
-    }
-    .page-dark .documentation--current .sticky-top .active-menu-item {
-        border-bottom: none;
-        font-weight: bold;
-    }
-    .page-dark .documentation--current .sticky-top > div {
-        height: auto !important; /* override inline styles */
     }
 }
 @media only screen and (max-width: 800px) {
