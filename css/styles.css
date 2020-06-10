@@ -328,6 +328,18 @@ tr:nth-child(odd) {
 .highlight pre span {
     font-size:1.4rem;
 }
+.logo-link {
+    display: inline-block;
+    width: 217px;
+    height: 64.77px;
+    background: url("/images/logo.png");
+    background-size: 217px auto;
+    background-repeat: no-repeat;
+    /* small: 168 x 50 */
+}
+.page-dark .logo-link {
+    background: url('/logos/kafka-white.svg');
+}
 .page-dark .main {
     background: linear-gradient(359.87deg, #264444, #363D3F);
     color: white;
@@ -2077,6 +2089,43 @@ ul.video-list {
         margin: 3rem auto 0;
         display: block;
         position: static;
+    }
+    .page-home .content {
+        margin-top: 16rem;
+    }
+    .logo-link,
+    .page-dark .logo-link {
+        width: 168px;
+        height: 50px;
+        background-size: 168px auto;
+    }
+    .page-dark .content {
+        max-width: 100vw;
+    }
+    .page-dark .content-separator {
+        max-width: 100vw;
+        background-color: #969191;
+        border: none;
+        height: 1px;
+    }
+    .page-dark.page-streams .main {
+        margin: 0;
+    }
+    .page-dark .documentation--current {
+        margin: 0 auto;
+        max-width: 94vw;
+        padding-top: 10rem;
+    }
+    .page-dark .documentation--current .sticky-top {
+        white-space: normal;
+        overflow: auto;
+    }
+    .page-dark .documentation--current .sticky-top .active-menu-item {
+        border-bottom: none;
+        font-weight: bold;
+    }
+    .page-dark .documentation--current .sticky-top > div {
+        height: auto !important; /* override inline styles */
     }
 }
 @media only screen and (max-width: 800px) {

@@ -71,11 +71,12 @@
 							});
 
 				// Set mobile scroll position on nav
-				function setNavScroll(offsetLeft) {
-					$('.nav-scroller').animate({
-						scrollLeft: $('.nav-scroller').scrollLeft() + $('nav .selected').offset().left - offsetLeft
-					}, 50);
-				}
+				// Doesn't work with new nav
+				// function setNavScroll(offsetLeft) {
+				// 	$('.nav-scroller').animate({
+				// 		scrollLeft: $('.nav-scroller').scrollLeft() + $('nav .selected').offset().left - offsetLeft
+				// 	}, 50);
+				// }
 
 				// Helper classes for nav
 				$('nav').mouseenter(function(){
@@ -108,9 +109,10 @@
 					$('.b-sticky-doc-banner').stick_in_parent({offset_top: 0});
 				}	else {
 					// Scroll nav for mobile so current nav item is in view
-					window.setTimeout(function(){
-						setNavScroll(80);
-					}, 300);
+					// Doesn't work with new nav
+					// window.setTimeout(function(){
+					// 	setNavScroll(80);
+					// }, 300);
 				}
 
 				// On window resize check to see if stuff should be unstuck
@@ -142,6 +144,7 @@
 
 			// Let's start getting rid of jQuery...
 			function checkPageScroll() {
+				console.log('scroll scroll scroll');
 				if (window.scrollY >= 80) {
 					document.getElementById('header').classList.add('scrolled');
 				} else {
