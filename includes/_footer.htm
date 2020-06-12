@@ -144,7 +144,6 @@
 
 			// Let's start getting rid of jQuery...
 			function checkPageScroll() {
-				console.log('scroll scroll scroll');
 				if (window.scrollY >= 80) {
 					document.getElementById('header').classList.add('scrolled');
 				} else {
@@ -166,12 +165,18 @@
 				});
 
 				// allow # links in the nav so they can have focus and we can treat them like links
-				nav.addEventListener('click', function(e) {
+				nav.addEventListener('click', (e) => {
 					if (e.target.hasAttribute('href') && e.target.getAttribute('href') === '#') {
 						e.preventDefault();
 						e.stopPropagation();
 					}
-				})
+				});
+
+				// jQuery free document ready
+				document.addEventListener("DOMContentLoaded", (e) => { 
+					// anything to do on dom ready here
+					pageScroll();
+				});
 
 				window.addEventListener('scroll', pageScroll);
 			}());

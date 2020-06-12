@@ -188,7 +188,7 @@ ol.toc > li {
 .data-table tbody {
     border-style: solid;
     border-color: #E5E5E5;
-    border-width: 0 .5rem;
+    border-width: 0;
 }
 .data-table td,
 .data-table th {
@@ -300,9 +300,22 @@ tr:nth-child(odd) {
 .config-list>li:nth-child(odd) {
     background: #f2f2f2;
 }
-
+.page-dark,
+.page-dark * {
+    box-sizing: border-box;
+}
+.page-dark .config-list {
+    padding-left: 0;
+}
 .page-dark .config-list>li:nth-child(odd) {
     background: rgba(0, 0, 0, 0.2);
+}
+.page-dark .config-list td {
+    color: white;
+}
+
+.page-dark .config-list .data-table {
+    width: auto;
 }
 
 .page-dark code {
@@ -354,7 +367,7 @@ tr:nth-child(odd) {
     height: 1px;
 }
 .page-dark .content-get-started {
-    margin-top: 3rem;
+    margin-top: 7rem;
 }
 .page-dark a:link {
     color: #BBD1D5;
@@ -381,7 +394,7 @@ tr:nth-child(odd) {
     background-color: #373E40;
 }
 .page-dark .header {
-    background-color: transparent;
+    background-color: #363d3f;
 }
 .page-dark .header.scrolled {
     background-color: #373E40;
@@ -1926,10 +1939,75 @@ ul.video-list {
 .extra__space{
     padding-bottom:2.8rem;
 }
+/* TODO: this may be repeatable -- let's pay attention to any new designs */
+.get-started-header {
+    margin-top: 10rem;
+    padding-top: 22rem;
+    width: 76.6rem;
+    margin: 0 auto;
+}
+.get-started-header-title {
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 3.8rem;
+    line-height: 4.5rem;
+    text-align: center;
+    letter-spacing: 0.06rem;
+    text-transform: uppercase;
+}
+.get-started-header-text {
+    font-family: Roboto;
+    font-style: italic;
+    font-size: 2.1rem;
+    line-height: 3rem;
+    text-align: center;
+}
+.get-started-nav {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5rem 0 10rem;
+    padding: 0;
+}
+.get-started-nav-item {
+    display: inline-block;
+    margin: 0 1rem;
+}
+.get-started-nav-item-anchor {
+    display: flex;
+    width: 20rem;
+    height: 5.2rem;
+    justify-content: center;
+    align-items: center;
+    border: 0.2rem solid;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.get-started-nav-item-anchor.current {
+    background: #A9CBD4;
+    color: #353E40;
+}
+a.get-started-nav-item-anchor:link {
+    color: #A9CBD4;
+}
+a.get-started-nav-item-anchor.current:link {
+    color: #353E40;
+}
+.page-get-started .content-subtitle {
+    font-style: italic;
+    font-size: 2.1rem;
+}
 .page-get-started .content-section-title {
     font-weight: normal;
     text-transform: none;
     font-size: 1.8rem;
+    margin: 5rem 0 3.2rem;
 }
 .page-get-started .content-section-title::before {
     content: " ";
@@ -1943,10 +2021,59 @@ ul.video-list {
     margin: 0;
     list-style-type: none;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
 }
 .page-get-started .content-feature-item {
     margin: 0;
-
+    width: 31.7%;
+    min-height: 19.5rem;
+    margin: 0;
+    padding: 3rem 3.5rem;
+    border: 0.2rem solid #A9CBD4;
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column;
+}
+.page-get-started .content-feature-learn-more {
+    display: block;
+    margin-top: auto;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    color: #59A2A2;
+}
+.page-get-started a.content-feature-learn-more:link {
+    color: #59A2A2;
+}
+.page-get-started .content-feature-title {
+    margin: 0 0 2.1rem;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+.page-get-started .content-feature-text {
+    font-family: "Roboto Condensed";
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    margin-top: 0;
+}
+.page-get-started .content-feature-diagram {
+    width: 100%;
+    text-align: center;
+    padding: 3rem 0;
+}
+.page-get-started .content-feature-diagram-image {
+    width: 100%;
+    max-width: 64.5rem;
 }
 
 /* Utilities */

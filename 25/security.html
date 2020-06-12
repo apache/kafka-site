@@ -724,7 +724,7 @@
             <li>The default implementation of SASL/OAUTHBEARER in Kafka creates and validates <a href="https://tools.ietf.org/html/rfc7515#appendix-A.5">Unsecured JSON Web Tokens</a>.
             While suitable only for non-production use, it does provide the flexibility to create arbitrary tokens in a DEV or TEST environment.</li>
             <li>Here are the various supported JAAS module options on the client side (and on the broker side if OAUTHBEARER is the inter-broker protocol):
-                 <table>
+                 <table class="data-table">
                  <tr>
                  <th>JAAS Module Option for Unsecured Token Creation</th>
                  <th>Documentation</th>
@@ -780,7 +780,7 @@
         <li><h5><a id="security_sasl_oauthbearer_unsecured_validation" href="#security_sasl_oauthbearer_unsecured_validation">Unsecured Token Validation Options for SASL/OAUTHBEARER</a></h5>
             <ul>
             <li>Here are the various supported JAAS module options on the broker side for <a href="https://tools.ietf.org/html/rfc7515#appendix-A.5">Unsecured JSON Web Token</a> validation:
-                 <table>
+                 <table class="data-table">
                  <tr>
                  <th>JAAS Module Option for Unsecured Token Validation</th>
                  <th>Documentation</th>
@@ -822,7 +822,7 @@
         and are as follows. See the documentation for these properties elsewhere for
         details.  The default values are usually reasonable, in which case these
         configuration parameters would not need to be explicitly set.
-        <table>
+        <table class="data-table">
         <tr>
         <th>Producer/Consumer/Broker Configuration Property</th>
         </tr>

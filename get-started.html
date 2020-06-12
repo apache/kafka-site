@@ -2,18 +2,18 @@
 <body class="page-get-started page-dark">
   <!-- TODO: figure out if the param approach works -->
   <!--#include virtual="includes/_top.htm?current_nav=get-started" -->
-  <div class="get-started-header">
-    <h1 class="get-started-header-heading">Get Started</h1>
-    <p class="get-started-header-text"></p>
+  <div class="get-started-header" id="secondary-nav">
+    <h1 class="get-started-header-title">Get Started</h1>
+    <p class="get-started-header-text">All you need to know to get up and running with Apache Kafka can be found here. Etc. Etc.</p>
     <ul class="get-started-nav">
       <li class="get-started-nav-item">
-        <a href="/get-started#introduction">Introduction</a>
+        <a class="get-started-nav-item-anchor current" href="/get-started#introduction">Introduction</a>
       </li>
       <li class="get-started-nav-item">
-        <a href="/get-started#quickstart">Quickstart</a>
+        <a class="get-started-nav-item-anchor" href="/get-started#quickstart">Quickstart</a>
       </li>
       <li class="get-started-nav-item">
-        <a href="/get-started#usecases">Usecases</a>
+        <a class="get-started-nav-item-anchor" href="/get-started#usecases">Usecases</a>
       </li>
     </ul>
   </div>
@@ -23,7 +23,7 @@
       Introduction
     </h1>
     <p class="content-subtitle">
-      Apache Kafka® is a distributed streaming platform. What exactly does that mean?
+      Apache Kafka&reg; is a distributed streaming platform. What exactly does that mean?
     </p>
     <section class="conent-section">
       <h2 class="content-section-title">
@@ -118,6 +118,7 @@
             The Consumer API allows an application to subscribe to one
             or more topics and process the stream of records produced to them.
           </p>
+          <a href="#" class="content-feature-learn-more">Learn more</a>
         </li>
         <li class="content-feature-item">
           <h3 class="content-feature-title">
@@ -129,9 +130,10 @@
             and producing an output stream to one or more output topics,
             effectively transforming the input streams to output streams.
           </p>
+          <a href="#" class="content-feature-learn-more">Learn more</a>
         </li>
         <li class="content-feature-diagram">
-          <img src="/images/cluster-diagram.svg" width="644" />
+          <img class="content-feature-diagram-image" src="/images/cluster-diagram.svg" />
         </li>
         <li class="content-feature-item">
           <h3 class="content-feature-title">
