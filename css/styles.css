@@ -406,6 +406,14 @@ tr:nth-child(odd) {
 .page-dark .top-nav-download:hover {
     background: linear-gradient(90deg, #427583 -15.13%, #80bdbd 100%), #0A1011;
 }
+.page-dark .docs-anchor-heading {
+    position: relative;
+}
+.page-dark .docs-anchor-link {
+    position: absolute;
+    top: -12rem;
+    left: 0;
+}
 .page-dark .docs-title,
 .page-dark .content-title {
     font-family: Roboto;
@@ -498,6 +506,9 @@ tr:nth-child(odd) {
     text-align: center;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    /* fix inherited styles from nav selector */
+    float: none;
+    width: auto;
 }
 .top-nav-list {
     display: flex;
@@ -509,11 +520,6 @@ tr:nth-child(odd) {
     display: block;
     padding: 0;
     position: relative;
-}
-.top-nav-item:hover .top-nav-menu,
-.top-nav-item:focus .top-nav-menu,
-.top-nav-item:active .top-nav-menu {
-    display: block;
 }
 .top-nav-item-anchor {
     display: block;
@@ -537,6 +543,9 @@ tr:nth-child(odd) {
     z-index: 60;
     transform: translateX(-50%);
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.38);
+}
+.top-nav-menu[aria-hidden="false"] {
+    display: block;
 }
 .top-nav-anchor {
     display: inline-block;
@@ -708,13 +717,13 @@ tr:nth-child(odd) {
     font-weight: bold;
     font-size: 1.6rem;
     line-height: 2.4rem;
-    margin-bottom: 6rem;
+    margin-bottom: 0;
 }
 .page-home .content-top-industry-list {
     list-style-type: none;
     display: flex;
     max-width: 53rem;
-    margin: 0 auto;
+    margin: 6rem auto;
     padding: 0;
     justify-content: space-between;
     font-style: italic;
@@ -2232,6 +2241,7 @@ a.get-started-nav-item-anchor.current:link {
     .top-nav-toggle + .top-nav-container .top-nav {
         margin-top: 0;
         transition: all 0.35s;
+        background: transparent;
     }
     .top-nav-toggle.active + .top-nav-container {
         pointer-events: all;

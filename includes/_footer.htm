@@ -126,22 +126,6 @@
 				};
 			});
 
-			function debounce(func, wait, immediate) {
-				var timeout;
-				return function() {
-					var context = this;
-					var args = arguments;
-					var later = function() {
-						timeout = null;
-						if (!immediate) func.apply(context, args);
-					};
-					var callNow = immediate && !timeout;
-					clearTimeout(timeout);
-					timeout = setTimeout(later, wait);
-					if (callNow) func.apply(context, args);
-				};
-			};
-
 			// Let's start getting rid of jQuery...
 			function checkPageScroll() {
 				if (window.scrollY >= 80) {
@@ -155,14 +139,19 @@
 				requestAnimationFrame(checkPageScroll);
 			};
 
-			// jQuery free IIFE
-			(function() {
-				var navToggle = document.getElementById('top-nav-toggle');
-				var nav = document.getElementById('top-nav-container');
-
-				navToggle.addEventListener('click', () => {
-					navToggle.classList.toggle('active');
-				});
+			function setUpA11yMenus(nav) {
+				const itemsWithMenu = nav.querySelectorAll('[aria-haspopup="true"]');
+				const topLevelItems = nav.querySelectorAll('.top-nav-item-anchor');
+				const navAnchors = nav.getElementsByTagName('a');
+				const menus = nav.querySelectorAll('[role="menu"]');
+				const keyMap = {
+					// directions
+					'left': 37, 'up': 38, 'right': 39, 'down': 40,
+					// actions
+					'tab': 9, 'enter': 13, 'esc': 27, 'space': 32,
+				}
+				// TODO: keep synced with the above map
+				const keyCodes = [37, 38, 39, 40, 9, 13, 27, 32];
 
 				// allow # links in the nav so they can have focus and we can treat them like links
 				nav.addEventListener('click', (e) => {
@@ -172,8 +161,252 @@
 					}
 				});
 
+				for (let i = 0; i < topLevelItems.length; i++) {
+					const item = topLevelItems[i];
+					const attrNames = {
+						currentFocus: 'data-current-focus',
+						hidden: 'aria-hidden',
+						expanded: 'aria-expanded',
+					};
+					// get the actual anchor
+					// get the menu which is a sibling to the item
+					const itemMenu = item.parentNode.querySelector('[role="menu"]');
+
+					function selectPreviousMenuItem(e, keyPressed) {
+						let selectedIndex = -1;
+
+						if (!itemMenu) {
+							selectPreviousTopLevelItem(e);
+						}
+
+						if (itemMenu && itemMenu.hasAttribute(attrNames.currentFocus)) {
+							selectedIndex = parseInt(itemMenu.getAttribute(attrNames.currentFocus), 10);
+						}
+						let nextIndex = selectedIndex - 1;
+						const menuItems = itemMenu.getElementsByTagName('a');
+						 
+						if (nextIndex >= 0) {
+						// select next item
+							menuItems[nextIndex].focus();
+							itemMenu.setAttribute(attrNames.currentFocus, nextIndex);
+						} else if (nextIndex === -1) {
+						// select top level menu item
+							item.focus();
+							itemMenu.setAttribute(attrNames.currentFocus, -1);
+						} else if (nextIndex === -2) {
+							if (keyPressed === 'tab') {
+								// go to the previous top level item
+								selectPreviousTopLevelItem(e);
+							} else {
+								// go to the last menu item
+								menuItems[menuItems.length - 1].focus()
+								itemMenu.setAttribute(attrNames.currentFocus, menuItems.length - 1);
+							}
+						}
+					}
+
+					function selectNextMenuItem(keyPressed) {
+						let selectedIndex = -1;
+						let nextIndex;
+						let menuItems;
+
+						if (!itemMenu) {
+							selectNextTopLevelItem();
+						}
+
+						menuItems = itemMenu.getElementsByTagName('a');
+
+						for (let j = 0; j < menuItems.length; j++) {
+							if (menuItems[j] === document.activeElement) {
+								selectedIndex = j;
+								break;
+							}
+						}
+
+						nextIndex = selectedIndex + 1;
+
+						// debugger;
+						
+						if (keyPressed === 'tab') {
+							if (nextIndex >= menuItems.length) {
+								selectNextTopLevelItem()
+							} else {
+								menuItems[nextIndex].focus();
+							}
+						} else {
+							if (nextIndex < menuItems.length) {
+								menuItems[nextIndex].focus();
+							} else {
+								item.focus();
+							}
+						}
+					}
+					
+					function selectPreviousTopLevelItem() {
+						let newIndex;
+
+						for (let j = 0; j < topLevelItems.length; j++) {
+							if (topLevelItems[j] === item) {
+								newIndex = j - 1;
+								break;
+							}
+						}
+
+						if (itemMenu) {
+							hideMenu();
+						}
+
+						if (newIndex < 0) {
+							document.querySelector('.logo-link').focus();
+						} else {
+							topLevelItems[newIndex].focus();
+						}
+					}
+					
+					function selectNextTopLevelItem() {
+						let newIndex;
+
+						for (let j = 0; j < topLevelItems.length; j++) {
+							if (topLevelItems[j] === item) {
+								newIndex = j + 1;
+								break;
+							}
+						}
+
+						if (itemMenu) {
+							hideMenu();
+						}
+
+						if (newIndex > topLevelItems.length - 1) {
+							document.getElementById('top-nav-download').focus();
+						} else {
+							topLevelItems[newIndex].focus();
+						}
+					}
+
+					function isMenuOpen() {
+						return itemMenu && itemMenu.getAttribute(attrNames.hidden) === 'false';
+					}
+
+					function showMenu() {
+						item.setAttribute(attrNames.expanded, 'true');
+						if (itemMenu) {
+							itemMenu.setAttribute(attrNames.hidden, 'false');
+						}
+					}
+
+					function hideMenu() {
+						item.setAttribute(attrNames.expanded, 'false');
+						if (itemMenu) {
+							itemMenu.setAttribute(attrNames.hidden, 'true');
+							delete itemMenu.dataset.currentFocus;
+						}
+					}
+
+					item.parentNode.addEventListener('mouseover', showMenu);
+					item.parentNode.addEventListener('mouseout', hideMenu);
+					item.parentNode.addEventListener('blur', hideMenu);
+					item.addEventListener('focus', showMenu);
+
+					// use keydown for direction keys
+					item.parentNode.addEventListener('keydown', (e) => {
+						// check for an important keycode
+						if (keyCodes.indexOf(e.keyCode) > -1) {
+							e.preventDefault();
+							e.stopPropagation();
+
+							switch(e.keyCode) {
+								case keyMap.left:
+									if (itemMenu) {
+										if (!isMenuOpen()) {
+											selectPreviousTopLevelItem();
+										} else {
+											hideMenu();
+											item.focus();
+										}
+									} else {
+										selectPreviousTopLevelItem();
+									}
+								break;
+								case keyMap.up:
+									if (itemMenu) {
+										if (isMenuOpen()) {
+											selectPreviousMenuItem(e, 'up');
+										}
+									}
+								break;
+								case keyMap.right:
+									if (!isMenuOpen() || document.activeElement === item) {
+										selectNextTopLevelItem('right');
+									}
+								break;
+								case keyMap.down:
+									if (itemMenu) {
+										if (isMenuOpen()) {
+											selectNextMenuItem('down');
+										} else {
+											showMenu();
+										}
+									}
+								break;
+								case keyMap.tab:
+									const isShiftActive = e.getModifierState('Shift');
+									if (itemMenu) {
+										if (isShiftActive) {
+											selectPreviousTopLevelItem();
+										} else {
+											if (isMenuOpen()) {
+												selectNextMenuItem('tab');
+											} else {
+												showMenu();
+											}
+										}
+									} else {
+										if (isShiftActive) {
+											selectPreviousTopLevelItem();
+										} else {
+											selectNextTopLevelItem('tab');
+										}
+									}
+								break;
+								case keyMap.esc:
+									if (itemMenu && isMenuOpen()) {
+										hideMenu();
+									}
+								break;
+								default:
+									// can probably remove the default case (in this case)
+								break;
+							}
+						}
+					});
+				};
+			}
+
+			function is_touch_enabled() { 
+				return ( 'ontouchstart' in window ) ||  
+							( navigator.maxTouchPoints > 0 ) ||  
+							( navigator.msMaxTouchPoints > 0 ); 
+			}
+
+			// jQuery free IIFE
+			(function() {
+				var navToggle = document.getElementById('top-nav-toggle');
+				var nav = document.getElementById('top-nav-container');
+
+				navToggle.addEventListener('click', () => {
+					navToggle.classList.toggle('active');
+				});
+
+				// skip this for touch devices
+				if (is_touch_enabled()) {
+					nav.getElementsByTagName('a').forEach(anchor => anchor.removeAttribute('tabindex'))
+				} else {
+					setUpA11yMenus(nav);
+				}
+
 				// jQuery free document ready
-				document.addEventListener("DOMContentLoaded", (e) => { 
+				document.addEventListener("DOMContentLoaded", function() { 
 					// anything to do on dom ready here
 					pageScroll();
 				});
