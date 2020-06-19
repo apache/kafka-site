@@ -147,7 +147,7 @@ ul {
     height: 100%;
     width: 30rem;
 }
-.toc {
+.documentation--current .toc {
     width: 30rem;
     position: fixed;
     top: 11.5rem;
@@ -363,7 +363,7 @@ tr:nth-child(odd) {
     background: url('/logos/kafka-white.svg');
 }
 .page-dark .main {
-    background: linear-gradient(359.87deg, #264444, #363D3F);
+    background: #363D3F;
     color: white;
     margin: 0;
 }
@@ -380,10 +380,10 @@ tr:nth-child(odd) {
     margin-top: 7rem;
 }
 .page-dark a:link {
-    color: #BBD1D5;
+    color: #59A2A2;
 }
 .page-dark a:visited {
-    color: #b0bfcc;
+    color: #59A2A2;
 }
 .page-dark .top-nav-item-anchor:link,
 .page-dark .top-nav-item-anchor:active,
@@ -404,7 +404,7 @@ tr:nth-child(odd) {
     background-color: #373E40;
 }
 .page-dark .header {
-    background-color: #363d3f;
+    background-color: #363D3F;
 }
 .page-dark .header.scrolled {
     background-color: #373E40;
@@ -432,6 +432,9 @@ tr:nth-child(odd) {
     line-height: 4.2rem;
     text-transform: uppercase;
     color: #FFFFFF;
+}
+#docs-top-link {
+    display: none;
 }
 /* helper classes */
 
@@ -607,7 +610,7 @@ tr:nth-child(odd) {
     height: 24vw;
 }
 .page-home .content-bottom {
-    background: linear-gradient(359.92deg, #264444 4.29%, #363D3F 97.03%);
+    background: #363D3F;
     color: white;
     margin-top: -1px; /* fixes scaling issues from the little hack i'm doing */
 }
@@ -2311,7 +2314,7 @@ a.get-started-nav-item-anchor.current:link {
         height: auto;
         width: auto;
     }
-    .toc {
+    .documentation--current .toc {
         width: auto;
         position: static;
         margin-top: 0;
@@ -2320,6 +2323,25 @@ a.get-started-nav-item-anchor.current:link {
         margin-bottom: 5rem;
         overflow: hidden;
         overflow-y: auto;
+    }
+    .page-dark .docs-anchor-link {
+        top: -10rem;
+    }
+    #docs-top-link {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        display: block;
+        padding: .5rem 1.5rem;
+        background: linear-gradient(90deg, #427583 -15.13%, #59A2A2 100%), #0A1011;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.38);
+        color: white !important; /* ignoring link colors */
+        text-transform: uppercase;
+        text-align: center;
+        text-decoration: none;
+    }
+    .docs-toc-title {
+        margin-top: 0;
     }
     .content.documentation--current {
         display: block;
