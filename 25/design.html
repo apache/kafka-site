@@ -18,8 +18,8 @@
 <script id="design-template" type="text/x-handlebars-template">
     <h3 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="majordesignelements" href="#majordesignelements"></a>
-      4.1 Motivation
-    </h3>
+<a href="#majordesignelements">4.1 Motivation
+    </a></h3>
     <p>
     We designed Kafka to be able to act as a unified platform for handling all the real-time data feeds <a href="#introduction">a large company might have</a>. To do this we had to think through a fairly broad set of use cases.
     <p>
@@ -37,11 +37,11 @@
 
     <h3 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="persistence" href="#persistence"></a>
-      4.2 Persistence
-    </h3>
+<a href="#persistence">4.2 Persistence
+    </a></h3>
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_filesystem" href="#design_filesystem"></a>
-      Don't fear the filesystem!
+<a href="#design_filesystem">Don</a>'t fear the filesystem!
     </h4>
     <p>
     Kafka relies heavily on the filesystem for storing and caching messages. There is a general perception that "disks are slow" which makes people skeptical that a persistent structure can offer competitive performance.
@@ -77,8 +77,8 @@
 
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_constanttime" href="#design_constanttime"></a>
-      Constant Time Suffices
-    </h4>
+<a href="#design_constanttime">Constant Time Suffices
+    </a></h4>
     <p>
     The persistent data structure used in messaging systems are often a per-consumer queue with an associated BTree or other general-purpose random access data structures to maintain metadata about messages.
     BTrees are the most versatile data structure available, and make it possible to support a wide variety of transactional and non-transactional semantics in the messaging system.
@@ -96,8 +96,8 @@
 
     <h3 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="maximizingefficiency" href="#maximizingefficiency"></a>
-      4.3 Efficiency
-    </h3>
+<a href="#maximizingefficiency">4.3 Efficiency
+    </a></h3>
     <p>
     We have put significant effort into efficiency. One of our primary use cases is handling web activity data, which is very high volume: each page view may generate dozens of writes. Furthermore, we assume each
     message published is read by at least one consumer (often many), hence we strive to make consumption as cheap as possible.
@@ -144,7 +144,7 @@
 
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_compression" href="#design_compression"></a>
-      End-to-end Batch Compression
+<a href="#design_compression">End</a>-to-end Batch Compression
     </h4>
     <p>
     In some cases the bottleneck is actually not CPU or disk but network bandwidth. This is particularly true for a data pipeline that needs to send messages between data centers over a wide-area network. Of course,
@@ -158,13 +158,13 @@
 
     <h3 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="theproducer" href="#theproducer"></a>
-      4.4 The Producer
-    </h3>
+<a href="#theproducer">4.4 The Producer
+    </a></h3>
 
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_loadbalancing" href="#design_loadbalancing"></a>
-      Load balancing
-    </h4>
+<a href="#design_loadbalancing">Load balancing
+    </a></h4>
     <p>
     The producer sends data directly to the broker that is the leader for the partition without any intervening routing tier. To help the producer do this all Kafka nodes can answer a request for metadata about which
     servers are alive and where the leaders for the partitions of a topic are at any given time to allow the producer to appropriately direct its requests.
@@ -176,8 +176,8 @@
 
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_asyncsend" href="#design_asyncsend"></a>
-      Asynchronous send
-    </h4>
+<a href="#design_asyncsend">Asynchronous send
+    </a></h4>
     <p>
     Batching is one of the big drivers of efficiency, and to enable batching the Kafka producer will attempt to accumulate data in memory and to send out larger batches in a single request. The batching can be configured
     to accumulate no more than a fixed number of messages and to wait no longer than some fixed latency bound (say 64k or 10 ms). This allows the accumulation of more bytes to send, and few larger I/O operations on the
@@ -188,16 +188,16 @@
 
     <h3 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="theconsumer" href="#theconsumer"></a>
-      4.5 The Consumer
-    </h3>
+<a href="#theconsumer">4.5 The Consumer
+    </a></h3>
 
     The Kafka consumer works by issuing "fetch" requests to the brokers leading the partitions it wants to consume. The consumer specifies its offset in the log with each request and receives back a chunk of log
     beginning from that position. The consumer thus has significant control over this position and can rewind it to re-consume data if need be.
 
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_pull" href="#design_pull"></a>
-      Push vs. pull
-    </h4>
+<a href="#design_pull">Push vs. pull
+    </a></h4>
     <p>
     An initial question we considered is whether consumers should pull data from brokers or brokers should push data to the consumer. In this respect Kafka follows a more traditional design, shared by most messaging
     systems, where data is pushed to the broker from the producer and pulled from the broker by the consumer. Some logging-centric systems, such as <a href="http://github.com/facebook/scribe">Scribe</a> and
@@ -222,8 +222,8 @@
 
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_consumerposition" href="#design_consumerposition"></a>
-      Consumer Position
-    </h4>
+<a href="#design_consumerposition">Consumer Position
+    </a></h4>
     Keeping track of <i>what</i> has been consumed is, surprisingly, one of the key performance points of a messaging system.
     <p>
     Most messaging systems keep metadata about what messages have been consumed on the broker. That is, as a message is handed out to a consumer, the broker either records that fact locally immediately or it may wait
@@ -246,8 +246,8 @@
 
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_offlineload" href="#design_offlineload"></a>
-      Offline Data Load
-    </h4>
+<a href="#design_offlineload">Offline Data Load
+    </a></h4>
 
     Scalable persistence allows for the possibility of consumers that only periodically consume such as batch data loads that periodically bulk-load data into an offline system such as Hadoop or a relational data
     warehouse.
@@ -257,8 +257,8 @@
 
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="static_membership" href="#static_membership"></a>
-      Static Membership
-    </h4>
+<a href="#static_membership">Static Membership
+    </a></h4>
     Static membership aims to improve the availability of stream applications, consumer groups and other applications built on top of the group rebalance protocol.
     The rebalance protocol relies on the group coordinator to allocate entity ids to group members. These generated ids are ephemeral and will change when members restart and rejoin.
     For consumer based apps, this "dynamic membership" can cause a large percentage of tasks re-assigned to different instances during administrative operations
@@ -282,8 +282,8 @@
 
     <h3 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="semantics" href="#semantics"></a>
-      4.6 Message Delivery Semantics
-    </h3>
+<a href="#semantics">4.6 Message Delivery Semantics
+    </a></h3>
     <p>
     Now that we understand a little about how producers and consumers work, let's discuss the semantic guarantees Kafka provides between producer and consumer. Clearly there are multiple possible message delivery
     guarantees that could be provided:
@@ -350,8 +350,8 @@
 
     <h3 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="replication" href="#replication"></a>
-      4.7 Replication
-    </h3>
+<a href="#replication">4.7 Replication
+    </a></h3>
     <p>
     Kafka replicates the log for each topic's partitions across a configurable number of servers (you can set this replication factor on a topic-by-topic basis). This allows automatic failover to these replicas when a
     server in the cluster fails so messages remain available in the presence of failures.
@@ -392,7 +392,7 @@
 
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_replicatedlog" href="#design_replicatedlog"></a>
-      Replicated Logs: Quorums, ISRs, and State Machines (Oh my!)
+<a href="#design_replicatedlog">Replicated Logs</a>: Quorums, ISRs, and State Machines (Oh my!)
     </h4>
 
     At its heart a Kafka partition is a replicated log. The replicated log is one of the most basic primitives in distributed data systems, and there are many approaches for implementing one. A replicated log can be
@@ -446,7 +446,7 @@
 
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_uncleanleader" href="#design_uncleanleader"></a>
-      Unclean leader election: What if they all die?
+<a href="#design_uncleanleader">Unclean leader election</a>: What if they all die?
     </h4>
 
     Note that Kafka's guarantee with respect to data loss is predicated on at least one replica remaining in sync. If all the nodes replicating a partition die, this guarantee no longer holds.
@@ -469,8 +469,8 @@
 
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_ha" href="#design_ha"></a>
-      Availability and Durability Guarantees
-    </h4>
+<a href="#design_ha">Availability and Durability Guarantees
+    </a></h4>
 
     When writing to Kafka, producers can choose whether they wait for the message to be acknowledged by 0,1 or all (-1) replicas.
     Note that "acknowledgement by all replicas" does not guarantee that the full set of assigned replicas have received the message. By default, when acks=all, acknowledgement happens as soon as all the current in-sync
@@ -491,8 +491,8 @@
 
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_replicamanagment" href="#design_replicamanagment"></a>
-      Replica Management
-    </h4>
+<a href="#design_replicamanagment">Replica Management
+    </a></h4>
 
     The above discussion on replicated logs really covers only a single log, i.e. one topic partition. However a Kafka cluster will manage hundreds or thousands of these partitions. We attempt to balance partitions
     within a cluster in a round-robin fashion to avoid clustering all partitions for high-volume topics on a small number of nodes. Likewise we try to balance leadership so that each node is the leader for a proportional
@@ -505,8 +505,8 @@
 
     <h3 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="compaction" href="#compaction"></a>
-      4.8 Log Compaction
-    </h3>
+<a href="#compaction">4.8 Log Compaction
+    </a></h3>
 
     Log compaction ensures that Kafka will always retain at least the last known value for each message key within the log of data for a single topic partition.  It addresses use cases and scenarios such as restoring
     state after application crashes or system failure, or reloading caches after application restarts during operational maintenance. Let's dive into these use cases in more detail and then describe how compaction works.
@@ -562,8 +562,8 @@
 
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_compactionbasics" href="#design_compactionbasics"></a>
-      Log Compaction Basics
-    </h4>
+<a href="#design_compactionbasics">Log Compaction Basics
+    </a></h4>
 
     Here is a high-level picture that shows the logical structure of a Kafka log with the offset for each message.
     <p>
@@ -585,7 +585,7 @@
     <p>
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_compactionguarantees" href="#design_compactionguarantees"></a>
-      What guarantees does log compaction provide?
+<a href="#design_compactionguarantees">What guarantees does log compaction provide</a>?
     </h4>
 
     Log compaction guarantees the following:
@@ -602,8 +602,8 @@
 
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_compactiondetails" href="#design_compactiondetails"></a>
-      Log Compaction Details
-    </h4>
+<a href="#design_compactiondetails">Log Compaction Details
+    </a></h4>
 
     Log compaction is handled by the log cleaner, a pool of background threads that recopy log segment files, removing records whose key appears in the head of the log. Each compactor thread works as follows:
     <ol>
@@ -617,8 +617,8 @@
     <p>
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_compactionconfig" href="#design_compactionconfig"></a>
-      Configuring The Log Cleaner
-    </h4>
+<a href="#design_compactionconfig">Configuring The Log Cleaner
+    </a></h4>
 
     The log cleaner is enabled by default. This will start the pool of cleaner threads.
     To enable log cleaning on a particular topic, add the log-specific property
@@ -647,8 +647,8 @@
 
     <h3 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_quotas" href="#design_quotas"></a>
-      4.9 Quotas
-    </h3>
+<a href="#design_quotas">4.9 Quotas
+    </a></h3>
     <p>
     Kafka cluster has the ability to enforce quotas on requests to control the broker resources used by clients. Two types
     of client quotas can be enforced by Kafka brokers for each group of clients sharing a quota:
@@ -660,7 +660,7 @@
 
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_quotasnecessary" href="#design_quotasnecessary"></a>
-      Why are quotas necessary?
+<a href="#design_quotasnecessary">Why are quotas necessary</a>?
     </h4>
     <p>
     It is possible for producers and consumers to produce/consume very high volumes of data or generate requests at a very high
@@ -670,8 +670,8 @@
     </p>
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_quotasgroups" href="#design_quotasgroups"></a>
-      Client groups
-    </h4>
+<a href="#design_quotasgroups">Client groups
+    </a></h4>
         The identity of Kafka clients is the user principal which represents an authenticated user in a secure cluster. In a cluster that supports unauthenticated clients, user principal is a grouping of unauthenticated
         users
         chosen by the broker using a configurable <code>PrincipalBuilder</code>. Client-id is a logical grouping of clients with a meaningful name chosen by the client application. The tuple (user, client-id) defines
@@ -682,8 +682,8 @@
     </p>
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_quotasconfig" href="#design_quotasconfig"></a>
-      Quota Configuration
-    </h4>
+<a href="#design_quotasconfig">Quota Configuration
+    </a></h4>
     <p>
         Quota configuration may be defined for (user, client-id), user and client-id groups. It is possible to override the default quota at any of the quota levels that needs a higher (or even lower) quota.
         The mechanism is similar to the per-topic log config overrides.
@@ -709,8 +709,8 @@
     </p>
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_quotasbandwidth" href="#design_quotasbandwidth"></a>
-      Network Bandwidth Quotas
-    </h4>
+<a href="#design_quotasbandwidth">Network Bandwidth Quotas
+    </a></h4>
     <p>
         Network bandwidth quotas are defined as the byte rate threshold for each group of clients sharing a quota.
         By default, each unique client group receives a fixed quota in bytes/sec as configured by the cluster.
@@ -719,8 +719,8 @@
     </p>
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_quotascpu" href="#design_quotascpu"></a>
-      Request Rate Quotas
-    </h4>
+<a href="#design_quotascpu">Request Rate Quotas
+    </a></h4>
     <p>
         Request rate quotas are defined as the percentage of time a client can utilize on request handler I/O
         threads and network threads of each broker within a quota window. A quota of <tt>n%</tt> represents
@@ -732,8 +732,8 @@
     </p>
     <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="design_quotasenforcement" href="#design_quotasenforcement"></a>
-      Enforcement
-    </h4>
+<a href="#design_quotasenforcement">Enforcement
+    </a></h4>
     <p>
         By default, each unique client group receives a fixed quota as configured by the cluster.
         This quota is defined on a per-broker basis. Each client can utilize this quota per broker before it gets throttled. We decided that defining these quotas per broker is much better than

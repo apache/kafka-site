@@ -195,6 +195,10 @@ ol.toc > li {
     overflow-x: scroll;
     margin: 2rem 0;
 }
+.page-dark .data-table th,
+.page-dark .data-table td {
+    color: black;
+}
 .data-table tbody {
     border-style: solid;
     border-color: #E5E5E5;
@@ -435,7 +439,7 @@ tr:nth-child(odd) {
 }
 #docs-top-link {
     position: fixed;
-    bottom: 1rem;
+    bottom: 6.5rem;
     right: 1rem;
     display: block;
     padding: .5rem 1.5rem;
@@ -793,12 +797,44 @@ tr:nth-child(odd) {
     margin-left: .5rem;
     font-weight: 400;
 }
+.content-top-industry-full-list {
+    position: relative;
+    color: #59A2A2;
+    text-decoration: underline;
+    text-align: center;
+    cursor: default;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: .5rem;
+    font-size: 1.2rem;
+}
+.content-top-industry-full-list:hover .content-top-industry-full-list-tooltip,
+.content-top-industry-full-list:active .content-top-industry-full-list-tooltip {
+    display: block;
+} 
+.content-top-industry-full-list-tooltip {
+    font-size: 1.4rem;
+    font-weight: 300;
+    display: none;
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    text-align: left;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25);
+    color: black;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1.2rem 2.2rem;
+    background: white;
+    white-space: nowrap;
+    text-transform: none;
+}
 .page-home .content-top-disclaimer {
     font-weight: 100;
     font-size: 16px;
     line-height: 2.4rem;
     max-width: 38.5rem;
-    padding: 2rem;
+    padding: 0 2rem;
     margin: 0 auto;
 }
 .footer {
@@ -1119,12 +1155,17 @@ nav .btn {
     color: #ffffff;
     display: block;
     padding: 1.5rem 2rem;
-    margin-bottom: 3rem
+    margin-bottom: 3rem;
+    border-bottom: 2px solid transparent;
 }
 .documentation__banner:hover {
     background-color: #888888;
     color: #ffffff;
     cursor: pointer;
+}
+.page-dark .documentation__banner:hover {
+    background-color: #222;
+    border-bottom: 2px solid white;
 }
 .documentation--current .documentation__banner {
     display: none;
@@ -1203,7 +1244,7 @@ nav .btn {
     opacity: .7;
 }
 .pagination__btn--disabled {
-    opacity: .2;
+    display: none;
 }
 .page-dark .pagination__btn {
     border-color: white;
@@ -1794,6 +1835,9 @@ ul.video-list {
     margin-bottom: 54px;
     max-width: 91rem;
 }
+.page-dark .streams__description {
+    color: white;
+}
 .separator {
     width: 920px;
     margin-right: 153px;
@@ -1957,8 +2001,17 @@ ul.video-list {
     background-color: #000;
     color: #fff;
 }
+.page-dark .video__list .active .number {
+    background-color: white;
+    color: black;
+}
 .video__list .active .video__text {
     color: #000;
+}
+.page-dark .video__list .active .video__text {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: black;
 }
 .video__item {
     margin: 0px;
@@ -2367,6 +2420,9 @@ a.get-started-nav-item-anchor.current:link {
         background-color: #969191;
         border: none;
         height: 1px;
+    }
+    #docs-top-link {
+        bottom: 1rem;
     }
 }
 @media only screen and (max-width: 800px) {

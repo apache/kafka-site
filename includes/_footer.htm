@@ -50,81 +50,6 @@
 
 		<script src="/js/jquery.sticky-kit.min.js"></script>
 		<script>
-			$(function() {
-
-
-							$('.download-version').mouseenter(function(){
-									$('a',this).css('visibility','visible');
-							});
-
-							$('.download-version').mouseleave(function(){
-									$('a',this).css('visibility','hidden');
-							});
-
-							$('.download-version a').click(function(){
-								$('a',this).css('visibility','hidden');
-							});
-
-
-							$('.download-version a').mouseenter(function(){
-								$('a',this).css('visibility','visible');
-							});
-
-				// Set mobile scroll position on nav
-				// Doesn't work with new nav
-				// function setNavScroll(offsetLeft) {
-				// 	$('.nav-scroller').animate({
-				// 		scrollLeft: $('.nav-scroller').scrollLeft() + $('nav .selected').offset().left - offsetLeft
-				// 	}, 50);
-				// }
-
-				// Helper classes for nav
-				$('nav').mouseenter(function(){
-					$(this).addClass('hovering');
-				});
-				$('nav').mouseleave(function(){
-					$(this).removeClass('hovering');
-				});
-
-				// Handle expanding sections of nav (async)
-				$('.b-nav__sub__anchor').click(function(){
-					$('nav .selected').removeClass('selected');
-					$('.nav__item__with__subs--expanded').removeClass('nav__item__with__subs--expanded');
-
-					$(this).addClass('selected');
-					$(this).parent().toggleClass('nav__item__with__subs--expanded');
-
-					if($(window).width() <= 650) {
-						window.setTimeout(function(){
-							setNavScroll(30);
-						}, 300);
-					}
-				});
-
-				// Initialize sticky elements on the page
-				if($(window).width() > 650) {
-					// Nav for desktop
-					$('.b-sticky-nav').stick_in_parent({offset_top: 40});
-					// Documentation banner for desktop
-					$('.b-sticky-doc-banner').stick_in_parent({offset_top: 0});
-				}	else {
-					// Scroll nav for mobile so current nav item is in view
-					// Doesn't work with new nav
-					// window.setTimeout(function(){
-					// 	setNavScroll(80);
-					// }, 300);
-				}
-
-				// On window resize check to see if stuff should be unstuck
-				window.onresize = function(event) {
-					if($(window).width() <= 650) {
-						$('.b-sticky-nav').trigger("sticky_kit:detach");
-					} else {
-						$('.b-sticky-nav').stick_in_parent({offset_top: 40});
-						$('.b-sticky-doc-banner').stick_in_parent({offset_top: 0});
-					}
-				};
-			});
 
 			// Let's start getting rid of jQuery...
 			function checkPageScroll() {
@@ -142,7 +67,7 @@
 			function setUpA11yMenus(nav) {
 				const itemsWithMenu = nav.querySelectorAll('[aria-haspopup="true"]');
 				const topLevelItems = nav.querySelectorAll('.top-nav-item-anchor');
-				const navAnchors = nav.getElementsByTagName('a');
+				const navAnchors = nav.querySelectorAll('a');
 				const menus = nav.querySelectorAll('[role="menu"]');
 				const keyMap = {
 					// directions
@@ -400,7 +325,7 @@
 
 				// skip this for touch devices
 				if (is_touch_enabled()) {
-					nav.getElementsByTagName('a').forEach(anchor => anchor.removeAttribute('tabindex'))
+					nav.querySelectorAll('a').forEach(anchor => anchor.removeAttribute('tabindex'))
 				} else {
 					setUpA11yMenus(nav);
 				}

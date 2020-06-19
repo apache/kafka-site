@@ -53,8 +53,8 @@
 
   <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="intro_topics" href="#intro_topics"></a>
-      Topics and Logs
-    </h4>
+<a href="#intro_topics">Topics and Logs
+    </a></h4>
   <p>Let's first dive into the core abstraction Kafka provides for a stream of records&mdash;the topic.</p>
   <p>A topic is a category or feed name to which records are published. Topics in Kafka are always multi-subscriber; that is, a topic can have zero, one, or many consumers that subscribe to the data written to it.</p>
   <p> For each topic, the Kafka cluster maintains a partitioned log that looks like this: </p>
@@ -78,8 +78,8 @@
 
   <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="intro_distribution" href="#intro_distribution"></a>
-      Distribution
-    </h4>
+<a href="#intro_distribution">Distribution
+    </a></h4>
 
   <p>
   The partitions of the log are distributed over the servers in the Kafka cluster with each server handling data and requests for a share of the partitions. Each partition is replicated across a configurable number of servers for fault tolerance.
@@ -97,16 +97,16 @@
 
   <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="intro_producers" href="#intro_producers"></a>
-      Producers
-    </h4>
+<a href="#intro_producers">Producers
+    </a></h4>
   <p>
   Producers publish data to the topics of their choice. The producer is responsible for choosing which record to assign to which partition within the topic. This can be done in a round-robin fashion simply to balance load or it can be done according to some semantic partition function (say based on some key in the record). More on the use of partitioning in a second!
   </p>
 
   <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="intro_consumers" href="#intro_consumers"></a>
-      Consumers
-    </h4>
+<a href="#intro_consumers">Consumers
+    </a></h4>
 
   <p>
   Consumers label themselves with a <i>consumer group</i> name, and each record published to a topic is delivered to one consumer instance within each subscribing consumer group. Consumer instances can be in separate processes or on separate machines.
@@ -137,8 +137,8 @@
   <p>You can deploy Kafka as a multi-tenant solution. Multi-tenancy is enabled by configuring which topics can produce or consume data. There is also operations support for quotas.  Administrators can define and enforce quotas on requests to control the broker resources that are used by clients.  For more information, see the <a href="https://kafka.apache.org/documentation/#security">security documentation</a>. </p>
   <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="intro_guarantees" href="#intro_guarantees"></a>
-      Guarantees
-    </h4>
+<a href="#intro_guarantees">Guarantees
+    </a></h4>
   <p>
   At a high-level Kafka gives the following guarantees:
   </p>
@@ -152,8 +152,8 @@
   </p>
   <h4 class="docs-anchor-heading">
       <a class="docs-anchor-link" id="kafka_mq" href="#kafka_mq"></a>
-      Kafka as a Messaging System
-    </h4>
+<a href="#kafka_mq">Kafka as a Messaging System
+    </a></h4>
   <p>
   How does Kafka's notion of streams compare to a traditional enterprise messaging system?
   </p>
