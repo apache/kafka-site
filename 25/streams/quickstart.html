@@ -89,7 +89,10 @@ because it cannot know when it has processed "all" the input data.
   prepare input data to a Kafka topic, which will subsequently be processed by a Kafka Streams application.
 </p>
 
-<h4><a id="quickstart_streams_download" href="#quickstart_streams_download">Step 1: Download the code</a></h4>
+<h4 class="docs-anchor-heading">
+      <a class="docs-anchor-link" id="quickstart_streams_download" href="#quickstart_streams_download"></a>
+      Step 1: Download the code
+    </h4>
 
 <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/{{fullDotVersion}}/kafka_{{scalaVersion}}-{{fullDotVersion}}.tgz" title="Kafka downloads">Download</a> the {{fullDotVersion}} release and un-tar it.
 Note that there are multiple downloadable Scala versions and we choose to use the recommended version ({{scalaVersion}}) here:
@@ -99,7 +102,10 @@ Note that there are multiple downloadable Scala versions and we choose to use th
 &gt; cd kafka_{{scalaVersion}}-{{fullDotVersion}}
 </pre>
 
-<h4><a id="quickstart_streams_startserver" href="#quickstart_streams_startserver">Step 2: Start the Kafka server</a></h4>
+<h4 class="docs-anchor-heading">
+      <a class="docs-anchor-link" id="quickstart_streams_startserver" href="#quickstart_streams_startserver"></a>
+      Step 2: Start the Kafka server
+    </h4>
 
 <p>
 Kafka uses <a href="https://zookeeper.apache.org/">ZooKeeper</a> so you need to first start a ZooKeeper server if you don't already have one. You can use the convenience script packaged with kafka to get a quick-and-dirty single-node ZooKeeper instance.
@@ -120,7 +126,10 @@ Kafka uses <a href="https://zookeeper.apache.org/">ZooKeeper</a> so you need to 
 </pre>
 
 
-<h4><a id="quickstart_streams_prepare" href="#quickstart_streams_prepare">Step 3: Prepare input topic and start Kafka producer</a></h4>
+<h4 class="docs-anchor-heading">
+      <a class="docs-anchor-link" id="quickstart_streams_prepare" href="#quickstart_streams_prepare"></a>
+      Step 3: Prepare input topic and start Kafka producer
+    </h4>
 
 <!--
 
@@ -171,7 +180,10 @@ Topic:streams-plaintext-input	PartitionCount:1	ReplicationFactor:1	Configs:segme
 	Topic: streams-plaintext-input	Partition: 0	Leader: 0	Replicas: 0	Isr: 0
 </pre>
 
-<h4><a id="quickstart_streams_start" href="#quickstart_streams_start">Step 4: Start the Wordcount Application</a></h4>
+<h4 class="docs-anchor-heading">
+      <a class="docs-anchor-link" id="quickstart_streams_start" href="#quickstart_streams_start"></a>
+      Step 4: Start the Wordcount Application
+    </h4>
 
 The following command starts the WordCount demo application:
 
@@ -205,7 +217,10 @@ and inspect the output of the WordCount demo application by reading from its out
 </pre>
 
 
-<h4><a id="quickstart_streams_process" href="#quickstart_streams_process">Step 5: Process some data</a></h4>
+<h4 class="docs-anchor-heading">
+      <a class="docs-anchor-link" id="quickstart_streams_process" href="#quickstart_streams_process"></a>
+      Step 5: Process some data
+    </h4>
 
 Now let's write some message with the console producer into the input topic <b>streams-plaintext-input</b> by entering a single line of text and then hit &lt;RETURN&gt;.
 This will send a new message to the input topic, where the message key is null and the message value is the string encoded text line that you just entered
@@ -338,7 +353,10 @@ And so on (we skip the illustration of how the third line is being processed). T
 Looking beyond the scope of this concrete example, what Kafka Streams is doing here is to leverage the duality between a table and a changelog stream (here: table = the KTable, changelog stream = the downstream KStream): you can publish every change of the table to a stream, and if you consume the entire changelog stream from beginning to end, you can reconstruct the contents of the table.
 </p>
 
-<h4><a id="quickstart_streams_stop" href="#quickstart_streams_stop">Step 6: Teardown the application</a></h4>
+<h4 class="docs-anchor-heading">
+      <a class="docs-anchor-link" id="quickstart_streams_stop" href="#quickstart_streams_stop"></a>
+      Step 6: Teardown the application
+    </h4>
 
 <p>You can now stop the console consumer, the console producer, the Wordcount application, the Kafka broker and the ZooKeeper server in order via <b>Ctrl-C</b>.</p>
 
