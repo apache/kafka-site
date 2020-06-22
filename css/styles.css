@@ -35,6 +35,7 @@ code {
     margin: 0 .3rem;
     padding: .2rem .4rem;
     background-color: #F4F9F9;
+    border-radius: 0.3rem;
 }
 code b,
 pre b,
@@ -197,7 +198,7 @@ ol.toc > li {
 }
 .page-dark .data-table th,
 .page-dark .data-table td {
-    color: black;
+    color: white;
 }
 .data-table tbody {
     border-style: solid;
@@ -212,13 +213,15 @@ ol.toc > li {
 }
 .data-table th {
     text-align: left;
-    background-color: #000000;
+    background-color: #fff;
     border: .1rem solid #222222;
-    color: #ffffff;
+    color:#000;
     font-weight: 400;
     padding: 1rem;
     text-transform: uppercase;
     overflow: hidden;
+    vertical-align: top;
+    width: 25%;
 }
 .data-table td {
     /* These are technically the same, but use both */
@@ -356,7 +359,7 @@ tr:nth-child(odd) {
 }
 .logo-link {
     display: inline-block;
-    width: 217px;
+    width: 220px;
     height: 64.77px;
     background: url("/images/logo.png");
     background-size: 217px auto;
@@ -365,8 +368,9 @@ tr:nth-child(odd) {
 }
 .page-dark .logo-link {
     background: url('/logos/kafka-white.svg');
+    background-repeat: no-repeat;
 }
-.page-dark .main {
+.page-dark {
     background: #363D3F;
     color: white;
     margin: 0;
@@ -852,6 +856,7 @@ tr:nth-child(odd) {
     line-height: 1.2rem;
     color: #888888;
     padding: 2rem 0;
+    background: white;
 }
 .footer__legal {
     margin: 0 2rem;
@@ -1126,7 +1131,8 @@ nav .btn {
     width: auto;
 }
 .page-dark .callout {
-    background-color: #0C221D;
+    background-color: #363D3F;
+    border: 1px solid #888;
     border-radius: .4rem;
 }
 .callout::before {
@@ -1195,6 +1201,8 @@ nav .btn {
     margin-bottom: -.1rem;
     text-align: center;
     padding-top: 2rem;
+    text-decoration: none;
+    border-bottom: 1px solid #888888;
 }
 .grid__item__link:hover {
     opacity: .8;
@@ -1211,7 +1219,6 @@ nav .btn {
 .grid__item__description {
     margin: 0 2rem 2rem;
     padding-top: 2rem;
-    border-top: 1px solid #888888;
 }
 .pagination {
     margin-top: 5rem;
@@ -1735,7 +1742,7 @@ nav .btn {
     height: 2px;
     border-bottom: solid 4px #000000;
     color: #000!important;
-    padding-bottom: 7px;
+    padding-bottom: 0;
 }
 .page-dark .sticky-top .active-menu-item {
     color: #fff!important; /* have to override the previous -- assuming it was there for a reason */
@@ -1753,9 +1760,11 @@ nav .btn {
     text-transform: uppercase;
 }
 .sticky-top {
-    white-space: nowrap;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
+}
+.sticky-top > div {
+    height: auto !important;
 }
 .video__series__grid {
     width: 92%;
@@ -2222,23 +2231,23 @@ a.get-started-nav-item-anchor.current:link {
     }
 }
 @media only screen and (max-width: 1000px) {
-    .page-dark.page-streams .main {
+    .page-streams .main {
         margin: 0;
     }
-    .page-dark .content {
+    .content {
         margin: 0 auto;
         max-width: 96vw;
         padding-top: 12rem;
     }
-    .page-dark .documentation--current .sticky-top {
+    .documentation--current .sticky-top {
         white-space: normal;
         overflow: auto;
     }
-    .page-dark .documentation--current .sticky-top .active-menu-item {
+    .documentation--current .sticky-top .active-menu-item {
         border-bottom: none;
         font-weight: bold;
     }
-    .page-dark .documentation--current .sticky-top > div {
+    .documentation--current .sticky-top > div {
         height: auto !important; /* override inline styles */
     }
 }
@@ -2329,13 +2338,13 @@ a.get-started-nav-item-anchor.current:link {
         margin-top: 0;
         transition: all 0.35s;
         background: transparent;
+        top: 10rem;
+        display: block;
+        overflow-y: auto;
     }
     .top-nav-toggle.active + .top-nav-container {
         pointer-events: all;
         opacity: 1;
-    }
-    .top-nav-toggle.active + .top-nav-container .top-nav {
-        margin-top: 1rem;
     }
     .top-nav {
         padding: 0.8rem 2.2rem;
@@ -2390,7 +2399,7 @@ a.get-started-nav-item-anchor.current:link {
         overflow: hidden;
         overflow-y: auto;
     }
-    .page-dark .docs-anchor-link {
+    .docs-anchor-link {
         top: -10rem;
     }
     .content.documentation--current {
@@ -2406,16 +2415,17 @@ a.get-started-nav-item-anchor.current:link {
     }
     .logo-link,
     .page-dark .logo-link {
-        width: 168px;
+        width: 170px;
         height: 50px;
         background-size: 168px auto;
+        background-repeat: no-repeat;
     }
-    .page-dark .content {
+    .content {
         margin: 0 auto;
         max-width: 96vw;
         padding-top: 12rem;
     }
-    .page-dark .content-separator {
+    .content-separator {
         max-width: 96vw;
         background-color: #969191;
         border: none;
