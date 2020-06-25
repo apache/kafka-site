@@ -427,8 +427,8 @@ tr:nth-child(odd) {
 .page-dark .docs-anchor-heading {
     position: relative;
 }
-.page-dark .docs-anchor-link {
-    position: absolute;
+.docs-anchor-link {
+    position: relative;
     top: -12rem;
     left: 0;
 }
