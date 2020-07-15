@@ -584,7 +584,7 @@
 </li>
 <li>
 <h4><a id="replica.fetch.min.bytes" href="#replica.fetch.min.bytes">replica.fetch.min.bytes</a></h4>
-<p>Minimum bytes expected for each fetch response. If not enough bytes, wait up to <code>replica.fetch.wait.max.ms</code> (broker config).</p>
+<p>Minimum bytes expected for each fetch response. If not enough bytes, wait up to replicaMaxWaitTimeMs</p>
 <table><tbody>
 <tr><th>Type:</th><td>int</td></tr>
 <tr><th>Default:</th><td>1</td></tr>
@@ -1049,8 +1049,8 @@
 <p>Specify which version of the inter-broker protocol will be used.<br> This is typically bumped after all brokers were upgraded to a new version.<br> Example of some valid values are: 0.8.0, 0.8.1, 0.8.1.1, 0.8.2, 0.8.2.0, 0.8.2.1, 0.9.0.0, 0.9.0.1 Check ApiVersion for the full list.</p>
 <table><tbody>
 <tr><th>Type:</th><td>string</td></tr>
-<tr><th>Default:</th><td>2.7-IV0</td></tr>
-<tr><th>Valid Values:</th><td>[0.8.0, 0.8.1, 0.8.2, 0.9.0, 0.10.0-IV0, 0.10.0-IV1, 0.10.1-IV0, 0.10.1-IV1, 0.10.1-IV2, 0.10.2-IV0, 0.11.0-IV0, 0.11.0-IV1, 0.11.0-IV2, 1.0-IV0, 1.1-IV0, 2.0-IV0, 2.0-IV1, 2.1-IV0, 2.1-IV1, 2.1-IV2, 2.2-IV0, 2.2-IV1, 2.3-IV0, 2.3-IV1, 2.4-IV0, 2.4-IV1, 2.5-IV0, 2.6-IV0, 2.7-IV0]</td></tr>
+<tr><th>Default:</th><td>2.6-IV0</td></tr>
+<tr><th>Valid Values:</th><td>[0.8.0, 0.8.1, 0.8.2, 0.9.0, 0.10.0-IV0, 0.10.0-IV1, 0.10.1-IV0, 0.10.1-IV1, 0.10.1-IV2, 0.10.2-IV0, 0.11.0-IV0, 0.11.0-IV1, 0.11.0-IV2, 1.0-IV0, 1.1-IV0, 2.0-IV0, 2.0-IV1, 2.1-IV0, 2.1-IV1, 2.1-IV2, 2.2-IV0, 2.2-IV1, 2.3-IV0, 2.3-IV1, 2.4-IV0, 2.4-IV1, 2.5-IV0, 2.6-IV0]</td></tr>
 <tr><th>Importance:</th><td>medium</td></tr>
 <tr><th>Update Mode:</th><td>read-only</td></tr>
 </tbody></table>
@@ -1214,8 +1214,8 @@
 <p>Specify the message format version the broker will use to append messages to the logs. The value should be a valid ApiVersion. Some examples are: 0.8.2, 0.9.0.0, 0.10.0, check ApiVersion for more details. By setting a particular message format version, the user is certifying that all the existing messages on disk are smaller or equal than the specified version. Setting this value incorrectly will cause consumers with older versions to break as they will receive messages with a format that they don't understand.</p>
 <table><tbody>
 <tr><th>Type:</th><td>string</td></tr>
-<tr><th>Default:</th><td>2.7-IV0</td></tr>
-<tr><th>Valid Values:</th><td>[0.8.0, 0.8.1, 0.8.2, 0.9.0, 0.10.0-IV0, 0.10.0-IV1, 0.10.1-IV0, 0.10.1-IV1, 0.10.1-IV2, 0.10.2-IV0, 0.11.0-IV0, 0.11.0-IV1, 0.11.0-IV2, 1.0-IV0, 1.1-IV0, 2.0-IV0, 2.0-IV1, 2.1-IV0, 2.1-IV1, 2.1-IV2, 2.2-IV0, 2.2-IV1, 2.3-IV0, 2.3-IV1, 2.4-IV0, 2.4-IV1, 2.5-IV0, 2.6-IV0, 2.7-IV0]</td></tr>
+<tr><th>Default:</th><td>2.6-IV0</td></tr>
+<tr><th>Valid Values:</th><td>[0.8.0, 0.8.1, 0.8.2, 0.9.0, 0.10.0-IV0, 0.10.0-IV1, 0.10.1-IV0, 0.10.1-IV1, 0.10.1-IV2, 0.10.2-IV0, 0.11.0-IV0, 0.11.0-IV1, 0.11.0-IV2, 1.0-IV0, 1.1-IV0, 2.0-IV0, 2.0-IV1, 2.1-IV0, 2.1-IV1, 2.1-IV2, 2.2-IV0, 2.2-IV1, 2.3-IV0, 2.3-IV1, 2.4-IV0, 2.4-IV1, 2.5-IV0, 2.6-IV0]</td></tr>
 <tr><th>Importance:</th><td>medium</td></tr>
 <tr><th>Update Mode:</th><td>read-only</td></tr>
 </tbody></table>
