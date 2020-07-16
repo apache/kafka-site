@@ -16,31 +16,31 @@
 -->
 
 <script id="implementation-template" type="text/x-handlebars-template">
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="networklayer" href="#networklayer"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="networklayer" href="#networklayer"></a>
 <a href="#networklayer">5.1 Network Layer
     </a></h3>
     <p>
     The network layer is a fairly straight-forward NIO server, and will not be described in great detail. The sendfile implementation is done by giving the <code>MessageSet</code> interface a <code>writeTo</code> method. This allows the file-backed message set to use the more efficient <code>transferTo</code> implementation instead of an in-process buffered write. The threading model is a single acceptor thread and <i>N</i> processor threads which handle a fixed number of connections each. This design has been pretty thoroughly tested <a href="http://sna-projects.com/blog/2009/08/introducing-the-nio-socketserver-implementation">elsewhere</a> and found to be simple to implement and fast. The protocol is kept quite simple to allow for future implementation of clients in other languages.
     </p>
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="messages" href="#messages"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="messages" href="#messages"></a>
 <a href="#messages">5.2 Messages
     </a></h3>
     <p>
     Messages consist of a variable-length header, a variable-length opaque key byte array and a variable-length opaque value byte array. The format of the header is described in the following section.
     Leaving the key and value opaque is the right decision: there is a great deal of progress being made on serialization libraries right now, and any particular choice is unlikely to be right for all uses. Needless to say a particular application using Kafka would likely mandate a particular serialization type as part of its usage. The <code>RecordBatch</code> interface is simply an iterator over messages with specialized methods for bulk reading and writing to an NIO <code>Channel</code>.</p>
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="messageformat" href="#messageformat"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="messageformat" href="#messageformat"></a>
 <a href="#messageformat">5.3 Message Format
     </a></h3>
     <p>
     Messages (aka Records) are always written in batches. The technical term for a batch of messages is a record batch, and a record batch contains one or more records. In the degenerate case, we could have a record batch containing a single record.
     Record batches and records have their own headers. The format of each is described below. </p>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="recordbatch" href="#recordbatch"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="recordbatch" href="#recordbatch"></a>
 <a href="#recordbatch">5.3.1 Record Batch
     </a></h4>
 	<p> The following is the on-disk format of a RecordBatch. </p>
@@ -82,8 +82,8 @@
     it is possible to have empty batches in the log when all the records in the batch are cleaned but batch is still retained in order to preserve a producer's last sequence number. One oddity here is that the baseTimestamp
     field is not preserved during compaction, so it will change if the first record in the batch is compacted away.</p>
 
-    <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="controlbatch" href="#controlbatch"></a>
+    <h5 class="anchor-heading">
+      <a class="anchor-link" id="controlbatch" href="#controlbatch"></a>
 <a href="#controlbatch">5.3.1.1 Control Batches
     </a></h5>
     <p>A control batch contains a single record called the control record. Control records should not be passed on to applications. Instead, they are used by consumers to filter out aborted transactional messages.</p>
@@ -94,8 +94,8 @@
     </pre></p>
     <p>The schema for the value of a control record is dependent on the type. The value is opaque to clients.</p>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="record" href="#record"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="record" href="#record"></a>
 <a href="#record">5.3.2 Record
     </a></h4>
 	<p>Record level headers were introduced in Kafka 0.11.0. The on-disk format of a record with Headers is delineated below. </p>
@@ -111,8 +111,8 @@
 		value: byte[]
 		Headers => [Header]
 	</pre></p>
-	<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="recordheader" href="#recordheader"></a>
+	<h5 class="anchor-heading">
+      <a class="anchor-link" id="recordheader" href="#recordheader"></a>
 <a href="#recordheader">5.3.2.1 Record Header
     </a></h5>
 	<p><pre class="brush: java;">
@@ -124,8 +124,8 @@
     <p>We use the same varint encoding as Protobuf. More information on the latter can be found <a href="https://developers.google.com/protocol-buffers/docs/encoding#varints">here</a>. The count of headers in a record
     is also encoded as a varint.</p>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="messageset" href="#messageset"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="messageset" href="#messageset"></a>
 <a href="#messageset">5.3.3 Old Message Format
     </a></h4>
     <p>
@@ -194,8 +194,8 @@
 
     <p>The crc field contains the CRC32 (and not CRC-32C) of the subsequent message bytes (i.e. from magic byte to the value).</p>
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="log" href="#log"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="log" href="#log"></a>
 <a href="#log">5.4 Log
     </a></h3>
     <p>
@@ -208,15 +208,15 @@
     The use of the message offset as the message id is unusual. Our original idea was to use a GUID generated by the producer, and maintain a mapping from GUID to offset on each broker. But since a consumer must maintain an ID for each server, the global uniqueness of the GUID provides no value. Furthermore, the complexity of maintaining the mapping from a random id to an offset requires a heavy weight index structure which must be synchronized with disk, essentially requiring a full persistent random-access data structure. Thus to simplify the lookup structure we decided to use a simple per-partition atomic counter which could be coupled with the partition id and node id to uniquely identify a message; this makes the lookup structure simpler, though multiple seeks per consumer request are still likely. However once we settled on a counter, the jump to directly using the offset seemed natural&mdash;both after all are monotonically increasing integers unique to a partition. Since the offset is hidden from the consumer API this decision is ultimately an implementation detail and we went with the more efficient approach.
     </p>
     <img class="centered" src="/{{version}}/images/kafka_log.png">
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="impl_writes" href="#impl_writes"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="impl_writes" href="#impl_writes"></a>
 <a href="#impl_writes">Writes
     </a></h4>
     <p>
     The log allows serial appends which always go to the last file. This file is rolled over to a fresh file when it reaches a configurable size (say 1GB). The log takes two configuration parameters: <i>M</i>, which gives the number of messages to write before forcing the OS to flush the file to disk, and <i>S</i>, which gives a number of seconds after which a flush is forced. This gives a durability guarantee of losing at most <i>M</i> messages or <i>S</i> seconds of data in the event of a system crash.
     </p>
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="impl_reads" href="#impl_reads"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="impl_reads" href="#impl_reads"></a>
 <a href="#impl_reads">Reads
     </a></h4>
     <p>
@@ -250,8 +250,8 @@
     ...
     messageSetSend n
     </pre>
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="impl_deletes" href="#impl_deletes"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="impl_deletes" href="#impl_deletes"></a>
 <a href="#impl_deletes">Deletes
     </a></h4>
     <p>
@@ -265,8 +265,8 @@
         style segment list implementation that provides consistent views to allow a binary search to proceed on an
         immutable static snapshot view of the log segments while deletes are progressing.
     </p>
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="impl_guarantees" href="#impl_guarantees"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="impl_guarantees" href="#impl_guarantees"></a>
 <a href="#impl_guarantees">Guarantees
     </a></h4>
     <p>
@@ -276,12 +276,12 @@
     Note that two kinds of corruption must be handled: truncation in which an unwritten block is lost due to a crash, and corruption in which a nonsense block is ADDED to the file. The reason for this is that in general the OS makes no guarantee of the write order between the file inode and the actual block data so in addition to losing written data the file can gain nonsense data if the inode is updated with a new size but a crash occurs before the block containing that data is written. The CRC detects this corner case, and prevents it from corrupting the log (though the unwritten messages are, of course, lost).
     </p>
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="distributionimpl" href="#distributionimpl"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="distributionimpl" href="#distributionimpl"></a>
 <a href="#distributionimpl">5.5 Distribution
     </a></h3>
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="impl_offsettracking" href="#impl_offsettracking"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="impl_offsettracking" href="#impl_offsettracking"></a>
 <a href="#impl_offsettracking">Consumer Offset Tracking
     </a></h4>
     <p>
@@ -310,24 +310,24 @@
         CoordinatorLoadInProgressException and the consumer may retry the OffsetFetchRequest after backing off.
     </p>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="impl_zookeeper" href="#impl_zookeeper"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="impl_zookeeper" href="#impl_zookeeper"></a>
 <a href="#impl_zookeeper">ZooKeeper Directories
     </a></h4>
     <p>
     The following gives the ZooKeeper structures and algorithms used for co-ordination between consumers and brokers.
     </p>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="impl_zknotation" href="#impl_zknotation"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="impl_zknotation" href="#impl_zknotation"></a>
 <a href="#impl_zknotation">Notation
     </a></h4>
     <p>
     When an element in a path is denoted [xyz], that means that the value of xyz is not fixed and there is in fact a ZooKeeper znode for each possible value of xyz. For example /topics/[topic] would be a directory named /topics containing a sub-directory for each topic name. Numerical ranges are also given such as [0...5] to indicate the subdirectories 0, 1, 2, 3, 4. An arrow -> is used to indicate the contents of a znode. For example /hello -> world would indicate a znode /hello containing the value "world".
     </p>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="impl_zkbroker" href="#impl_zkbroker"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="impl_zkbroker" href="#impl_zkbroker"></a>
 <a href="#impl_zkbroker">Broker Node Registry
     </a></h4>
     <pre class="brush: json;">
@@ -339,8 +339,8 @@
     <p>
     Since the broker registers itself in ZooKeeper using ephemeral znodes, this registration is dynamic and will disappear if the broker is shutdown or dies (thus notifying consumers it is no longer available).
     </p>
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="impl_zktopic" href="#impl_zktopic"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="impl_zktopic" href="#impl_zktopic"></a>
 <a href="#impl_zktopic">Broker Topic Registry
     </a></h4>
     <pre class="brush: json;">
@@ -351,8 +351,8 @@
     Each broker registers itself under the topics it maintains and stores the number of partitions for that topic.
     </p>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="impl_clusterid" href="#impl_clusterid"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="impl_clusterid" href="#impl_clusterid"></a>
 <a href="#impl_clusterid">Cluster Id
     </a></h4>
 
@@ -363,8 +363,8 @@
         Implementation-wise, it is generated when a broker with version 0.10.1 or later is successfully started for the first time. The broker tries to get the cluster id from the <code>/cluster/id</code> znode during startup. If the znode does not exist, the broker generates a new cluster id and creates the znode with this cluster id.
     </p>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="impl_brokerregistration" href="#impl_brokerregistration"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="impl_brokerregistration" href="#impl_brokerregistration"></a>
 <a href="#impl_brokerregistration">Broker node registration
     </a></h4>
 

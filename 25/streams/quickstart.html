@@ -89,8 +89,8 @@ because it cannot know when it has processed "all" the input data.
   prepare input data to a Kafka topic, which will subsequently be processed by a Kafka Streams application.
 </p>
 
-<h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="quickstart_streams_download" href="#quickstart_streams_download"></a>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="quickstart_streams_download" href="#quickstart_streams_download"></a>
 <a href="#quickstart_streams_download">Step 1</a>: Download the code
     </h4>
 
@@ -102,8 +102,8 @@ Note that there are multiple downloadable Scala versions and we choose to use th
 &gt; cd kafka_{{scalaVersion}}-{{fullDotVersion}}
 </pre>
 
-<h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="quickstart_streams_startserver" href="#quickstart_streams_startserver"></a>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="quickstart_streams_startserver" href="#quickstart_streams_startserver"></a>
 <a href="#quickstart_streams_startserver">Step 2</a>: Start the Kafka server
     </h4>
 
@@ -126,8 +126,8 @@ Kafka uses <a href="https://zookeeper.apache.org/">ZooKeeper</a> so you need to 
 </pre>
 
 
-<h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="quickstart_streams_prepare" href="#quickstart_streams_prepare"></a>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="quickstart_streams_prepare" href="#quickstart_streams_prepare"></a>
 <a href="#quickstart_streams_prepare">Step 3</a>: Prepare input topic and start Kafka producer
     </h4>
 
@@ -180,8 +180,8 @@ Topic:streams-plaintext-input	PartitionCount:1	ReplicationFactor:1	Configs:segme
 	Topic: streams-plaintext-input	Partition: 0	Leader: 0	Replicas: 0	Isr: 0
 </pre>
 
-<h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="quickstart_streams_start" href="#quickstart_streams_start"></a>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="quickstart_streams_start" href="#quickstart_streams_start"></a>
 <a href="#quickstart_streams_start">Step 4</a>: Start the Wordcount Application
     </h4>
 
@@ -217,8 +217,8 @@ and inspect the output of the WordCount demo application by reading from its out
 </pre>
 
 
-<h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="quickstart_streams_process" href="#quickstart_streams_process"></a>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="quickstart_streams_process" href="#quickstart_streams_process"></a>
 <a href="#quickstart_streams_process">Step 5</a>: Process some data
     </h4>
 
@@ -353,8 +353,8 @@ And so on (we skip the illustration of how the third line is being processed). T
 Looking beyond the scope of this concrete example, what Kafka Streams is doing here is to leverage the duality between a table and a changelog stream (here: table = the KTable, changelog stream = the downstream KStream): you can publish every change of the table to a stream, and if you consume the entire changelog stream from beginning to end, you can reconstruct the contents of the table.
 </p>
 
-<h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="quickstart_streams_stop" href="#quickstart_streams_stop"></a>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="quickstart_streams_stop" href="#quickstart_streams_stop"></a>
 <a href="#quickstart_streams_stop">Step 6</a>: Teardown the application
     </h4>
 

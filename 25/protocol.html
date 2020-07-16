@@ -60,13 +60,13 @@
     <li><a href="#protocol_philosophy">Some Common Philosophical Questions</a></li>
 </ul>
 
-<h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="protocol_preliminaries" href="#protocol_preliminaries"></a>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="protocol_preliminaries" href="#protocol_preliminaries"></a>
 <a href="#protocol_preliminaries">Preliminaries
     </a></h4>
 
-<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="protocol_network" href="#protocol_network"></a>
+<h5 class="anchor-heading">
+      <a class="anchor-link" id="protocol_network" href="#protocol_network"></a>
 <a href="#protocol_network">Network
     </a></h5>
 
@@ -80,8 +80,8 @@
 
 <p>The server has a configurable maximum limit on request size and any request that exceeds this limit will result in the socket being disconnected.</p>
 
-<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="protocol_partitioning" href="#protocol_partitioning"></a>
+<h5 class="anchor-heading">
+      <a class="anchor-link" id="protocol_partitioning" href="#protocol_partitioning"></a>
 <a href="#protocol_partitioning">Partitioning and bootstrapping
     </a></h5>
 
@@ -102,8 +102,8 @@
     <li>If we get an appropriate error, refresh the metadata and try again.</li>
 </ol>
 
-<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="protocol_partitioning_strategies" href="#protocol_partitioning_strategies"></a>
+<h5 class="anchor-heading">
+      <a class="anchor-link" id="protocol_partitioning_strategies" href="#protocol_partitioning_strategies"></a>
 <a href="#protocol_partitioning_strategies">Partitioning Strategies
     </a></h5>
 
@@ -121,8 +121,8 @@
 
 <p>Semantic partitioning means using some key in the message to assign messages to partitions. For example if you were processing a click message stream you might want to partition the stream by the user id so that all data for a particular user would go to a single consumer. To accomplish this the client can take a key associated with the message and use some hash of this key to choose the partition to which to deliver the message.</p>
 
-<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="protocol_batching" href="#protocol_batching"></a>
+<h5 class="anchor-heading">
+      <a class="anchor-link" id="protocol_batching" href="#protocol_batching"></a>
 <a href="#protocol_batching">Batching
     </a></h5>
 
@@ -130,8 +130,8 @@
 
 <p>The client implementer can choose to ignore this and send everything one at a time if they like.</p>
 
-<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="protocol_compatibility" href="#protocol_compatibility"></a>
+<h5 class="anchor-heading">
+      <a class="anchor-link" id="protocol_compatibility" href="#protocol_compatibility"></a>
 <a href="#protocol_compatibility">Compatibility
     </a></h5>
 
@@ -147,8 +147,8 @@
 
 <p>Note that <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-482%3A+The+Kafka+Protocol+should+Support+Optional+Tagged+Fields">KIP-482 tagged fields</a> can be added to a request without incrementing the version number.  This offers an additional way of evolving the message schema without breaking compatibility.  Tagged fields do not take up any space when the field is not set.  Therefore, if a field is rarely used, it is more efficient to make it a tagged field than to put it in the mandatory schema.  However, tagged fields are ignored by recipients that don't know about them, which could pose a challenge if this is not the behavior that the sender wants.  In such cases, a version bump may be more appropriate.
 
-<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="api_versions" href="#api_versions"></a>
+<h5 class="anchor-heading">
+      <a class="anchor-link" id="api_versions" href="#api_versions"></a>
 <a href="#api_versions">Retrieving Supported API versions
     </a></h5>
 <p>In order to work against multiple broker versions, clients need to know what versions of various APIs a
@@ -173,8 +173,8 @@
         upgraded/downgraded in the mean time.</li>
 </ol>
 
-<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="sasl_handshake" href="#sasl_handshake"></a>
+<h5 class="anchor-heading">
+      <a class="anchor-link" id="sasl_handshake" href="#sasl_handshake"></a>
 <a href="#sasl_handshake">SASL Authentication Sequence
     </a></h5>
 <p>The following sequence is used for SASL authentication:
@@ -192,28 +192,28 @@
 Kafka request. SASL/GSSAPI authentication is performed starting with this packet, skipping the first two steps above.</p>
 
 
-<h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="protocol_details" href="#protocol_details"></a>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="protocol_details" href="#protocol_details"></a>
 <a href="#protocol_details">The Protocol
     </a></h4>
 
-<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="protocol_types" href="#protocol_types"></a>
+<h5 class="anchor-heading">
+      <a class="anchor-link" id="protocol_types" href="#protocol_types"></a>
 <a href="#protocol_types">Protocol Primitive Types
     </a></h5>
 
 <p>The protocol is built out of the following primitive types.</p>
 <!--#include virtual="generated/protocol_types.html" -->
 
-<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="protocol_grammar" href="#protocol_grammar"></a>
+<h5 class="anchor-heading">
+      <a class="anchor-link" id="protocol_grammar" href="#protocol_grammar"></a>
 <a href="#protocol_grammar">Notes on reading the request format grammars
     </a></h5>
 
 <p>The <a href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form">BNF</a>s below give an exact context free grammar for the request and response binary format. The BNF is intentionally not compact in order to give human-readable name. As always in a BNF a sequence of productions indicates concatenation. When there are multiple possible productions these are separated with '|' and may be enclosed in parenthesis for grouping. The top-level definition is always given first and subsequent sub-parts are indented.</p>
 
-<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="protocol_common" href="#protocol_common"></a>
+<h5 class="anchor-heading">
+      <a class="anchor-link" id="protocol_common" href="#protocol_common"></a>
 <a href="#protocol_common">Common Request and Response Structure
     </a></h5>
 
@@ -229,41 +229,41 @@ RequestOrResponse => Size (RequestMessage | ResponseMessage)
 <tr><td>message_size</td><td>The message_size field gives the size of the subsequent request or response message in bytes. The client can read requests by first reading this 4 byte size as an integer N, and then reading and parsing the subsequent N bytes of the request.</td></tr>
 </table>
 
-<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="protocol_recordbatch" href="#protocol_recordbatch"></a>
+<h5 class="anchor-heading">
+      <a class="anchor-link" id="protocol_recordbatch" href="#protocol_recordbatch"></a>
 <a href="#protocol_recordbatch">Record Batch
     </a></h5>
 <p>A description of the record batch format can be found <a href="/documentation/#recordbatch">here</a>.</p>
 
-<h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="protocol_constants" href="#protocol_constants"></a>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="protocol_constants" href="#protocol_constants"></a>
 <a href="#protocol_constants">Constants
     </a></h4>
 
-<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="protocol_error_codes" href="#protocol_error_codes"></a>
+<h5 class="anchor-heading">
+      <a class="anchor-link" id="protocol_error_codes" href="#protocol_error_codes"></a>
 <a href="#protocol_error_codes">Error Codes
     </a></h5>
 <p>We use numeric codes to indicate what problem occurred on the server. These can be translated by the client into exceptions or whatever the appropriate error handling mechanism in the client language. Here is a table of the error codes currently in use:</p>
 <!--#include virtual="generated/protocol_errors.html" -->
 
-<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="protocol_api_keys" href="#protocol_api_keys"></a>
+<h5 class="anchor-heading">
+      <a class="anchor-link" id="protocol_api_keys" href="#protocol_api_keys"></a>
 <a href="#protocol_api_keys">Api Keys
     </a></h5>
 <p>The following are the numeric codes that the ApiKey in the request can take for each of the below request types.</p>
 <!--#include virtual="generated/protocol_api_keys.html" -->
 
-<h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="protocol_messages" href="#protocol_messages"></a>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="protocol_messages" href="#protocol_messages"></a>
 <a href="#protocol_messages">The Messages
     </a></h4>
 
 <p>This section gives details on each of the individual API Messages, their usage, their binary format, and the meaning of their fields.</p>
 <!--#include virtual="generated/protocol_messages.html" -->
 
-<h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="protocol_philosophy" href="#protocol_philosophy"></a>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="protocol_philosophy" href="#protocol_philosophy"></a>
 <a href="#protocol_philosophy">Some Common Philosophical Questions
     </a></h4>
 

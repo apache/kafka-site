@@ -58,8 +58,8 @@
         We first summarize the key concepts of Kafka Streams.
     </p>
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="streams_topology" href="#streams_topology"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="streams_topology" href="#streams_topology"></a>
 <a href="#streams_topology">Stream Processing Topology
     </a></h3>
 
@@ -91,8 +91,8 @@
         At runtime, the logical topology is instantiated and replicated inside the application for parallel processing (see <a href="/{{version}}/documentation/streams/architecture#streams_architecture_tasks"><b>Stream Partitions and Tasks</b></a> for details).
     </p>
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="streams_time" href="#streams_time"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="streams_time" href="#streams_time"></a>
 <a href="#streams_time">Time
     </a></h3>
 
@@ -137,8 +137,8 @@
 	Note, that the describe default behavior can be changed in the Processor API by assigning timestamps to output records explicitly when calling <code>#forward()</code>.
     </p>
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="streams_concepts_aggregations" href="#streams_concepts_aggregations"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="streams_concepts_aggregations" href="#streams_concepts_aggregations"></a>
 <a href="#streams_concepts_aggregations">Aggregations
     </a></h3>
     <p>
@@ -149,8 +149,8 @@
         In the <code>Kafka Streams DSL</code>, an input stream of an <code>aggregation</code> can be a KStream or a KTable, but the output stream will always be a KTable. This allows Kafka Streams to update an aggregate value upon the out-of-order arrival of further records after the value was produced and emitted. When such out-of-order arrival happens, the aggregating KStream or KTable emits a new aggregate value. Because the output is a KTable, the new value is considered to overwrite the old value with the same key in subsequent processing steps.
     </p>
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="streams_concepts_windowing" href="#streams_concepts_windowing"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="streams_concepts_windowing" href="#streams_concepts_windowing"></a>
 <a href="#streams_concepts_windowing">Windowing
     </a></h3>
     <p>
@@ -163,8 +163,8 @@
         Out-of-order records are always possible in the real world and should be properly accounted for in your applications. It depends on the effective <code>time semantics </code> how out-of-order records are handled. In the case of processing-time, the semantics are &quot;when the record is being processed&quot;, which means that the notion of out-of-order records is not applicable as, by definition, no record can be out-of-order. Hence, out-of-order records can only be considered as such for event-time. In both cases, Kafka Streams is able to properly handle out-of-order records.
     </p>
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="streams_concepts_duality" href="#streams-concepts-duality"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="streams_concepts_duality" href="#streams-concepts-duality"></a>
       Duality of Streams and Tables
     </h3>
     <p>
@@ -193,8 +193,8 @@
       Essentially, this duality means that a stream can be viewed as a table, and a table can be viewed as a stream.
   </p>
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="streams_state" href="#streams_state"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="streams_state" href="#streams_state"></a>
 <a href="#streams_state">States
     </a></h3>
 
@@ -216,8 +216,8 @@
     </p>
     <br>
 
-    <h2 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="streams_processing_guarantee" href="#streams_processing_guarantee"></a>
+    <h2 class="anchor-heading">
+      <a class="anchor-link" id="streams_processing_guarantee" href="#streams_processing_guarantee"></a>
 <a href="#streams_processing_guarantee">Processing Guarantees
     </a></h2>
 
@@ -240,8 +240,8 @@
         More details can be found in the <a href="/{{version}}/documentation#streamsconfigs"><b>Kafka Streams Configs</b></a> section.
     </p>
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="streams_out_of_ordering" href="#streams_out_of_ordering"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="streams_out_of_ordering" href="#streams_out_of_ordering"></a>
 <a href="#streams_out_of_ordering">Out</a>-of-Order Handling
     </h3>
 

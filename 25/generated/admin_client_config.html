@@ -1,7 +1,7 @@
 <ul class="config-list">
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="bootstrap.servers" href="#bootstrap.servers"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="bootstrap.servers" href="#bootstrap.servers"></a>
       bootstrap.servers
 </h4>
 <p>A list of host/port pairs to use for establishing the initial connection to the Kafka cluster. The client will make use of all servers irrespective of which servers are specified here for bootstrapping&mdash;this list only impacts the initial hosts used to discover the full set of servers. This list should be in the form <code>host1:port1,host2:port2,...</code>. Since these servers are just used for the initial connection to discover the full cluster membership (which may change dynamically), this list need not contain the full set of servers (you may want more than one, though, in case a server is down).</p>
@@ -13,8 +13,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.key.password" href="#ssl.key.password"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.key.password" href="#ssl.key.password"></a>
       ssl.key.password
 </h4>
 <p>The password of the private key in the key store file. This is optional for client.</p>
@@ -26,8 +26,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.keystore.location" href="#ssl.keystore.location"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.keystore.location" href="#ssl.keystore.location"></a>
       ssl.keystore.location
 </h4>
 <p>The location of the key store file. This is optional for client and can be used for two-way authentication for client.</p>
@@ -39,8 +39,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.keystore.password" href="#ssl.keystore.password"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.keystore.password" href="#ssl.keystore.password"></a>
       ssl.keystore.password
 </h4>
 <p>The store password for the key store file. This is optional for client and only needed if ssl.keystore.location is configured. </p>
@@ -52,8 +52,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.truststore.location" href="#ssl.truststore.location"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.truststore.location" href="#ssl.truststore.location"></a>
       ssl.truststore.location
 </h4>
 <p>The location of the trust store file. </p>
@@ -65,8 +65,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.truststore.password" href="#ssl.truststore.password"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.truststore.password" href="#ssl.truststore.password"></a>
       ssl.truststore.password
 </h4>
 <p>The password for the trust store file. If a password is not set access to the truststore is still available, but integrity checking is disabled.</p>
@@ -78,8 +78,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="client.dns.lookup" href="#client.dns.lookup"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="client.dns.lookup" href="#client.dns.lookup"></a>
       client.dns.lookup
 </h4>
 <p>Controls how the client uses DNS lookups. If set to <code>use_all_dns_ips</code> then, when the lookup returns multiple IP addresses for a hostname, they will all be attempted to connect to before failing the connection. Applies to both bootstrap and advertised servers. If the value is <code>resolve_canonical_bootstrap_servers_only</code> each entry will be resolved and expanded into a list of canonical names.</p>
@@ -91,8 +91,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="client.id" href="#client.id"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="client.id" href="#client.id"></a>
       client.id
 </h4>
 <p>An id string to pass to the server when making requests. The purpose of this is to be able to track the source of requests beyond just ip/port by allowing a logical application name to be included in server-side request logging.</p>
@@ -104,8 +104,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="connections.max.idle.ms" href="#connections.max.idle.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="connections.max.idle.ms" href="#connections.max.idle.ms"></a>
       connections.max.idle.ms
 </h4>
 <p>Close idle connections after the number of milliseconds specified by this config.</p>
@@ -117,8 +117,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="default.api.timeout.ms" href="#default.api.timeout.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="default.api.timeout.ms" href="#default.api.timeout.ms"></a>
       default.api.timeout.ms
 </h4>
 <p>Specifies the timeout (in milliseconds) for client APIs. This configuration is used as the default timeout for all client operations that do not specify a <code>timeout</code> parameter.</p>
@@ -130,8 +130,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="receive.buffer.bytes" href="#receive.buffer.bytes"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="receive.buffer.bytes" href="#receive.buffer.bytes"></a>
       receive.buffer.bytes
 </h4>
 <p>The size of the TCP receive buffer (SO_RCVBUF) to use when reading data. If the value is -1, the OS default will be used.</p>
@@ -143,8 +143,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="request.timeout.ms" href="#request.timeout.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="request.timeout.ms" href="#request.timeout.ms"></a>
       request.timeout.ms
 </h4>
 <p>The configuration controls the maximum amount of time the client will wait for the response of a request. If the response is not received before the timeout elapses the client will resend the request if necessary or fail the request if retries are exhausted.</p>
@@ -156,8 +156,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.client.callback.handler.class" href="#sasl.client.callback.handler.class"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.client.callback.handler.class" href="#sasl.client.callback.handler.class"></a>
       sasl.client.callback.handler.class
 </h4>
 <p>The fully qualified name of a SASL client callback handler class that implements the AuthenticateCallbackHandler interface.</p>
@@ -169,8 +169,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.jaas.config" href="#sasl.jaas.config"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.jaas.config" href="#sasl.jaas.config"></a>
       sasl.jaas.config
 </h4>
 <p>JAAS login context parameters for SASL connections in the format used by JAAS configuration files. JAAS configuration file format is described <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/jgss/tutorials/LoginConfigFile.html"></a>
@@ -183,8 +183,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.kerberos.service.name" href="#sasl.kerberos.service.name"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.kerberos.service.name" href="#sasl.kerberos.service.name"></a>
       sasl.kerberos.service.name
 </h4>
 <p>The Kerberos principal name that Kafka runs as. This can be defined either in Kafka's JAAS config or in Kafka's config.</p>
@@ -196,8 +196,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.login.callback.handler.class" href="#sasl.login.callback.handler.class"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.login.callback.handler.class" href="#sasl.login.callback.handler.class"></a>
       sasl.login.callback.handler.class
 </h4>
 <p>The fully qualified name of a SASL login callback handler class that implements the AuthenticateCallbackHandler interface. For brokers, login callback handler config must be prefixed with listener prefix and SASL mechanism name in lower-case. For example, listener.name.sasl_ssl.scram-sha-256.sasl.login.callback.handler.class=com.example.CustomScramLoginCallbackHandler</p>
@@ -209,8 +209,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.login.class" href="#sasl.login.class"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.login.class" href="#sasl.login.class"></a>
       sasl.login.class
 </h4>
 <p>The fully qualified name of a class that implements the Login interface. For brokers, login config must be prefixed with listener prefix and SASL mechanism name in lower-case. For example, listener.name.sasl_ssl.scram-sha-256.sasl.login.class=com.example.CustomScramLogin</p>
@@ -222,8 +222,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.mechanism" href="#sasl.mechanism"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.mechanism" href="#sasl.mechanism"></a>
       sasl.mechanism
 </h4>
 <p>SASL mechanism used for client connections. This may be any mechanism for which a security provider is available. GSSAPI is the default mechanism.</p>
@@ -235,8 +235,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="security.protocol" href="#security.protocol"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="security.protocol" href="#security.protocol"></a>
       security.protocol
 </h4>
 <p>Protocol used to communicate with brokers. Valid values are: PLAINTEXT, SSL, SASL_PLAINTEXT, SASL_SSL.</p>
@@ -248,8 +248,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="send.buffer.bytes" href="#send.buffer.bytes"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="send.buffer.bytes" href="#send.buffer.bytes"></a>
       send.buffer.bytes
 </h4>
 <p>The size of the TCP send buffer (SO_SNDBUF) to use when sending data. If the value is -1, the OS default will be used.</p>
@@ -261,8 +261,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.enabled.protocols" href="#ssl.enabled.protocols"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.enabled.protocols" href="#ssl.enabled.protocols"></a>
       ssl.enabled.protocols
 </h4>
 <p>The list of protocols enabled for SSL connections.</p>
@@ -274,8 +274,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.keystore.type" href="#ssl.keystore.type"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.keystore.type" href="#ssl.keystore.type"></a>
       ssl.keystore.type
 </h4>
 <p>The file format of the key store file. This is optional for client.</p>
@@ -287,8 +287,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.protocol" href="#ssl.protocol"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.protocol" href="#ssl.protocol"></a>
       ssl.protocol
 </h4>
 <p>The SSL protocol used to generate the SSLContext. Default setting is TLSv1.2, which is fine for most cases. Allowed values in recent JVMs are TLSv1.2 and TLSv1.3. TLS, TLSv1.1, SSL, SSLv2 and SSLv3 may be supported in older JVMs, but their usage is discouraged due to known security vulnerabilities.</p>
@@ -300,8 +300,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.provider" href="#ssl.provider"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.provider" href="#ssl.provider"></a>
       ssl.provider
 </h4>
 <p>The name of the security provider used for SSL connections. Default value is the default security provider of the JVM.</p>
@@ -313,8 +313,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.truststore.type" href="#ssl.truststore.type"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.truststore.type" href="#ssl.truststore.type"></a>
       ssl.truststore.type
 </h4>
 <p>The file format of the trust store file.</p>
@@ -326,8 +326,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="metadata.max.age.ms" href="#metadata.max.age.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="metadata.max.age.ms" href="#metadata.max.age.ms"></a>
       metadata.max.age.ms
 </h4>
 <p>The period of time in milliseconds after which we force a refresh of metadata even if we haven't seen any partition leadership changes to proactively discover any new brokers or partitions.</p>
@@ -339,8 +339,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="metric.reporters" href="#metric.reporters"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="metric.reporters" href="#metric.reporters"></a>
       metric.reporters
 </h4>
 <p>A list of classes to use as metrics reporters. Implementing the <code>org.apache.kafka.common.metrics.MetricsReporter</code> interface allows plugging in classes that will be notified of new metric creation. The JmxReporter is always included to register JMX statistics.</p>
@@ -352,8 +352,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="metrics.num.samples" href="#metrics.num.samples"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="metrics.num.samples" href="#metrics.num.samples"></a>
       metrics.num.samples
 </h4>
 <p>The number of samples maintained to compute metrics.</p>
@@ -365,8 +365,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="metrics.recording.level" href="#metrics.recording.level"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="metrics.recording.level" href="#metrics.recording.level"></a>
       metrics.recording.level
 </h4>
 <p>The highest recording level for metrics.</p>
@@ -378,8 +378,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="metrics.sample.window.ms" href="#metrics.sample.window.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="metrics.sample.window.ms" href="#metrics.sample.window.ms"></a>
       metrics.sample.window.ms
 </h4>
 <p>The window of time a metrics sample is computed over.</p>
@@ -391,8 +391,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="reconnect.backoff.max.ms" href="#reconnect.backoff.max.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="reconnect.backoff.max.ms" href="#reconnect.backoff.max.ms"></a>
       reconnect.backoff.max.ms
 </h4>
 <p>The maximum amount of time in milliseconds to wait when reconnecting to a broker that has repeatedly failed to connect. If provided, the backoff per host will increase exponentially for each consecutive connection failure, up to this maximum. After calculating the backoff increase, 20% random jitter is added to avoid connection storms.</p>
@@ -404,8 +404,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="reconnect.backoff.ms" href="#reconnect.backoff.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="reconnect.backoff.ms" href="#reconnect.backoff.ms"></a>
       reconnect.backoff.ms
 </h4>
 <p>The base amount of time to wait before attempting to reconnect to a given host. This avoids repeatedly connecting to a host in a tight loop. This backoff applies to all connection attempts by the client to a broker.</p>
@@ -417,8 +417,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="retries" href="#retries"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="retries" href="#retries"></a>
 <a href="#retries">retries
 </a></h4>
 <p>Setting a value greater than zero will cause the client to resend any request that fails with a potentially transient error.</p>
@@ -430,8 +430,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="retry.backoff.ms" href="#retry.backoff.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="retry.backoff.ms" href="#retry.backoff.ms"></a>
       retry.backoff.ms
 </h4>
 <p>The amount of time to wait before attempting to retry a failed request. This avoids repeatedly sending requests in a tight loop under some failure scenarios.</p>
@@ -443,8 +443,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.kerberos.kinit.cmd" href="#sasl.kerberos.kinit.cmd"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.kerberos.kinit.cmd" href="#sasl.kerberos.kinit.cmd"></a>
       sasl.kerberos.kinit.cmd
 </h4>
 <p>Kerberos kinit command path.</p>
@@ -456,8 +456,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.kerberos.min.time.before.relogin" href="#sasl.kerberos.min.time.before.relogin"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.kerberos.min.time.before.relogin" href="#sasl.kerberos.min.time.before.relogin"></a>
       sasl.kerberos.min.time.before.relogin
 </h4>
 <p>Login thread sleep time between refresh attempts.</p>
@@ -469,8 +469,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.kerberos.ticket.renew.jitter" href="#sasl.kerberos.ticket.renew.jitter"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.kerberos.ticket.renew.jitter" href="#sasl.kerberos.ticket.renew.jitter"></a>
       sasl.kerberos.ticket.renew.jitter
 </h4>
 <p>Percentage of random jitter added to the renewal time.</p>
@@ -482,8 +482,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.kerberos.ticket.renew.window.factor" href="#sasl.kerberos.ticket.renew.window.factor"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.kerberos.ticket.renew.window.factor" href="#sasl.kerberos.ticket.renew.window.factor"></a>
       sasl.kerberos.ticket.renew.window.factor
 </h4>
 <p>Login thread will sleep until the specified window factor of time from last refresh to ticket's expiry has been reached, at which time it will try to renew the ticket.</p>
@@ -495,8 +495,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.login.refresh.buffer.seconds" href="#sasl.login.refresh.buffer.seconds"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.login.refresh.buffer.seconds" href="#sasl.login.refresh.buffer.seconds"></a>
       sasl.login.refresh.buffer.seconds
 </h4>
 <p>The amount of buffer time before credential expiration to maintain when refreshing a credential, in seconds. If a refresh would otherwise occur closer to expiration than the number of buffer seconds then the refresh will be moved up to maintain as much of the buffer time as possible. Legal values are between 0 and 3600 (1 hour); a default value of  300 (5 minutes) is used if no value is specified. This value and sasl.login.refresh.min.period.seconds are both ignored if their sum exceeds the remaining lifetime of a credential. Currently applies only to OAUTHBEARER.</p>
@@ -508,8 +508,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.login.refresh.min.period.seconds" href="#sasl.login.refresh.min.period.seconds"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.login.refresh.min.period.seconds" href="#sasl.login.refresh.min.period.seconds"></a>
       sasl.login.refresh.min.period.seconds
 </h4>
 <p>The desired minimum time for the login refresh thread to wait before refreshing a credential, in seconds. Legal values are between 0 and 900 (15 minutes); a default value of 60 (1 minute) is used if no value is specified.  This value and  sasl.login.refresh.buffer.seconds are both ignored if their sum exceeds the remaining lifetime of a credential. Currently applies only to OAUTHBEARER.</p>
@@ -521,8 +521,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.login.refresh.window.factor" href="#sasl.login.refresh.window.factor"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.login.refresh.window.factor" href="#sasl.login.refresh.window.factor"></a>
       sasl.login.refresh.window.factor
 </h4>
 <p>Login refresh thread will sleep until the specified window factor relative to the credential's lifetime has been reached, at which time it will try to refresh the credential. Legal values are between 0.5 (50%) and 1.0 (100%) inclusive; a default value of 0.8 (80%) is used if no value is specified. Currently applies only to OAUTHBEARER.</p>
@@ -534,8 +534,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.login.refresh.window.jitter" href="#sasl.login.refresh.window.jitter"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.login.refresh.window.jitter" href="#sasl.login.refresh.window.jitter"></a>
       sasl.login.refresh.window.jitter
 </h4>
 <p>The maximum amount of random jitter relative to the credential's lifetime that is added to the login refresh thread's sleep time. Legal values are between 0 and 0.25 (25%) inclusive; a default value of 0.05 (5%) is used if no value is specified. Currently applies only to OAUTHBEARER.</p>
@@ -547,8 +547,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="security.providers" href="#security.providers"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="security.providers" href="#security.providers"></a>
       security.providers
 </h4>
 <p>A list of configurable creator classes each returning a provider implementing security algorithms. These classes should implement the <code>org.apache.kafka.common.security.auth.SecurityProviderCreator</code> interface.</p>
@@ -560,8 +560,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.cipher.suites" href="#ssl.cipher.suites"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.cipher.suites" href="#ssl.cipher.suites"></a>
       ssl.cipher.suites
 </h4>
 <p>A list of cipher suites. This is a named combination of authentication, encryption, MAC and key exchange algorithm used to negotiate the security settings for a network connection using TLS or SSL network protocol. By default all the available cipher suites are supported.</p>
@@ -573,8 +573,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.endpoint.identification.algorithm" href="#ssl.endpoint.identification.algorithm"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.endpoint.identification.algorithm" href="#ssl.endpoint.identification.algorithm"></a>
       ssl.endpoint.identification.algorithm
 </h4>
 <p>The endpoint identification algorithm to validate server hostname using server certificate. </p>
@@ -586,8 +586,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.keymanager.algorithm" href="#ssl.keymanager.algorithm"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.keymanager.algorithm" href="#ssl.keymanager.algorithm"></a>
       ssl.keymanager.algorithm
 </h4>
 <p>The algorithm used by key manager factory for SSL connections. Default value is the key manager factory algorithm configured for the Java Virtual Machine.</p>
@@ -599,8 +599,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.secure.random.implementation" href="#ssl.secure.random.implementation"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.secure.random.implementation" href="#ssl.secure.random.implementation"></a>
       ssl.secure.random.implementation
 </h4>
 <p>The SecureRandom PRNG implementation to use for SSL cryptography operations. </p>
@@ -612,8 +612,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.trustmanager.algorithm" href="#ssl.trustmanager.algorithm"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.trustmanager.algorithm" href="#ssl.trustmanager.algorithm"></a>
       ssl.trustmanager.algorithm
 </h4>
 <p>The algorithm used by trust manager factory for SSL connections. Default value is the trust manager factory algorithm configured for the Java Virtual Machine.</p>

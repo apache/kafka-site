@@ -16,8 +16,8 @@
 -->
 
 <script id="design-template" type="text/x-handlebars-template">
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="majordesignelements" href="#majordesignelements"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="majordesignelements" href="#majordesignelements"></a>
 <a href="#majordesignelements">4.1 Motivation
     </a></h3>
     <p>
@@ -35,12 +35,12 @@
     <p>
     Supporting these uses led us to a design with a number of unique elements, more akin to a database log than a traditional messaging system. We will outline some elements of the design in the following sections.
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="persistence" href="#persistence"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="persistence" href="#persistence"></a>
 <a href="#persistence">4.2 Persistence
     </a></h3>
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_filesystem" href="#design_filesystem"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_filesystem" href="#design_filesystem"></a>
 <a href="#design_filesystem">Don</a>'t fear the filesystem!
     </h4>
     <p>
@@ -75,8 +75,8 @@
     <p>
     This style of pagecache-centric design is described in an <a href="http://varnish-cache.org/wiki/ArchitectNotes">article</a> on the design of Varnish here (along with a healthy dose of arrogance).
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_constanttime" href="#design_constanttime"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_constanttime" href="#design_constanttime"></a>
 <a href="#design_constanttime">Constant Time Suffices
     </a></h4>
     <p>
@@ -94,8 +94,8 @@
     Having access to virtually unlimited disk space without any performance penalty means that we can provide some features not usually found in a messaging system. For example, in Kafka, instead of attempting to
     delete messages as soon as they are consumed, we can retain messages for a relatively long period (say a week). This leads to a great deal of flexibility for consumers, as we will describe.
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="maximizingefficiency" href="#maximizingefficiency"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="maximizingefficiency" href="#maximizingefficiency"></a>
 <a href="#maximizingefficiency">4.3 Efficiency
     </a></h3>
     <p>
@@ -142,8 +142,8 @@
     <p>
     For more background on the sendfile and zero-copy support in Java, see this <a href="https://developer.ibm.com/articles/j-zerocopy/">article</a>.
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_compression" href="#design_compression"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_compression" href="#design_compression"></a>
 <a href="#design_compression">End</a>-to-end Batch Compression
     </h4>
     <p>
@@ -156,13 +156,13 @@
     <p>
     Kafka supports GZIP, Snappy, LZ4 and ZStandard compression protocols. More details on compression can be found <a href="https://cwiki.apache.org/confluence/display/KAFKA/Compression">here</a>.
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="theproducer" href="#theproducer"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="theproducer" href="#theproducer"></a>
 <a href="#theproducer">4.4 The Producer
     </a></h3>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_loadbalancing" href="#design_loadbalancing"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_loadbalancing" href="#design_loadbalancing"></a>
 <a href="#design_loadbalancing">Load balancing
     </a></h4>
     <p>
@@ -174,8 +174,8 @@
     chosen was a user id then all data for a given user would be sent to the same partition. This in turn will allow consumers to make locality assumptions about their consumption. This style of partitioning is explicitly
     designed to allow locality-sensitive processing in consumers.
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_asyncsend" href="#design_asyncsend"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_asyncsend" href="#design_asyncsend"></a>
 <a href="#design_asyncsend">Asynchronous send
     </a></h4>
     <p>
@@ -186,16 +186,16 @@
     Details on <a href="#producerconfigs">configuration</a> and the <a href="http://kafka.apache.org/082/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html">api</a> for the producer can be found
     elsewhere in the documentation.
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="theconsumer" href="#theconsumer"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="theconsumer" href="#theconsumer"></a>
 <a href="#theconsumer">4.5 The Consumer
     </a></h3>
 
     The Kafka consumer works by issuing "fetch" requests to the brokers leading the partitions it wants to consume. The consumer specifies its offset in the log with each request and receives back a chunk of log
     beginning from that position. The consumer thus has significant control over this position and can rewind it to re-consume data if need be.
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_pull" href="#design_pull"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_pull" href="#design_pull"></a>
 <a href="#design_pull">Push vs. pull
     </a></h4>
     <p>
@@ -220,8 +220,8 @@
     scale led us to feel that involving thousands of disks in the system across many applications would not actually make things more reliable and would be a nightmare to operate. And in practice we have found that we
     can run a pipeline with strong SLAs at large scale without a need for producer persistence.
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_consumerposition" href="#design_consumerposition"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_consumerposition" href="#design_consumerposition"></a>
 <a href="#design_consumerposition">Consumer Position
     </a></h4>
     Keeping track of <i>what</i> has been consumed is, surprisingly, one of the key performance points of a messaging system.
@@ -244,8 +244,8 @@
     There is a side benefit of this decision. A consumer can deliberately <i>rewind</i> back to an old offset and re-consume data. This violates the common contract of a queue, but turns out to be an essential feature
     for many consumers. For example, if the consumer code has a bug and is discovered after some messages are consumed, the consumer can re-consume those messages once the bug is fixed.
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_offlineload" href="#design_offlineload"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_offlineload" href="#design_offlineload"></a>
 <a href="#design_offlineload">Offline Data Load
     </a></h4>
 
@@ -255,8 +255,8 @@
     In the case of Hadoop we parallelize the data load by splitting the load over individual map tasks, one for each node/topic/partition combination, allowing full parallelism in the loading. Hadoop provides the task
     management, and tasks which fail can restart without danger of duplicate data&mdash;they simply restart from their original position.
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="static_membership" href="#static_membership"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="static_membership" href="#static_membership"></a>
 <a href="#static_membership">Static Membership
     </a></h4>
     Static membership aims to improve the availability of stream applications, consumer groups and other applications built on top of the group rebalance protocol.
@@ -280,8 +280,8 @@
     For more details, see
     <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-345%3A+Introduce+static+membership+protocol+to+reduce+consumer+rebalances">KIP-345</a>
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="semantics" href="#semantics"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="semantics" href="#semantics"></a>
 <a href="#semantics">4.6 Message Delivery Semantics
     </a></h3>
     <p>
@@ -348,8 +348,8 @@
     offset which makes implementing this feasible (see also <a href="https://kafka.apache.org/documentation/#connect">Kafka Connect</a>). Otherwise, Kafka guarantees at-least-once delivery by default, and allows
     the user to implement at-most-once delivery by disabling retries on the producer and committing offsets in the consumer prior to processing a batch of messages.
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="replication" href="#replication"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="replication" href="#replication"></a>
 <a href="#replication">4.7 Replication
     </a></h3>
     <p>
@@ -390,8 +390,8 @@
     <p>
     Kafka will remain available in the presence of node failures after a short fail-over period, but may not remain available in the presence of network partitions.
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_replicatedlog" href="#design_replicatedlog"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_replicatedlog" href="#design_replicatedlog"></a>
 <a href="#design_replicatedlog">Replicated Logs</a>: Quorums, ISRs, and State Machines (Oh my!)
     </h4>
 
@@ -444,8 +444,8 @@
     guarantees as this can reduce performance by two to three orders of magnitude. Our protocol for allowing a replica to rejoin the ISR ensures that before rejoining, it must fully re-sync again even if it lost unflushed
     data in its crash.
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_uncleanleader" href="#design_uncleanleader"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_uncleanleader" href="#design_uncleanleader"></a>
 <a href="#design_uncleanleader">Unclean leader election</a>: What if they all die?
     </h4>
 
@@ -467,8 +467,8 @@
     your data or violate consistency by taking what remains on an existing server as your new source of truth.
 
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_ha" href="#design_ha"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_ha" href="#design_ha"></a>
 <a href="#design_ha">Availability and Durability Guarantees
     </a></h4>
 
@@ -489,8 +489,8 @@
     </ol>
 
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_replicamanagment" href="#design_replicamanagment"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_replicamanagment" href="#design_replicamanagment"></a>
 <a href="#design_replicamanagment">Replica Management
     </a></h4>
 
@@ -503,8 +503,8 @@
     affected partitions in a failed broker. The result is that we are able to batch together many of the required leadership change notifications which makes the election process far cheaper and faster for a large number
     of partitions. If the controller fails, one of the surviving brokers will become the new controller.
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="compaction" href="#compaction"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="compaction" href="#compaction"></a>
 <a href="#compaction">4.8 Log Compaction
     </a></h3>
 
@@ -560,8 +560,8 @@
     Unlike most log-structured storage systems Kafka is built for subscription and organizes data for fast linear reads and writes. Unlike Databus, Kafka acts as a source-of-truth store so it is useful even in
     situations where the upstream data source would not otherwise be replayable.
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_compactionbasics" href="#design_compactionbasics"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_compactionbasics" href="#design_compactionbasics"></a>
 <a href="#design_compactionbasics">Log Compaction Basics
     </a></h4>
 
@@ -583,8 +583,8 @@
     <p>
     <img class="centered" src="/{{version}}/images/log_compaction.png">
     <p>
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_compactionguarantees" href="#design_compactionguarantees"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_compactionguarantees" href="#design_compactionguarantees"></a>
 <a href="#design_compactionguarantees">What guarantees does log compaction provide</a>?
     </h4>
 
@@ -600,8 +600,8 @@
     concurrently with reads, it is possible for a consumer to miss delete markers if it lags by more than <code>delete.retention.ms</code>.
     </ol>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_compactiondetails" href="#design_compactiondetails"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_compactiondetails" href="#design_compactiondetails"></a>
 <a href="#design_compactiondetails">Log Compaction Details
     </a></h4>
 
@@ -615,8 +615,8 @@
     (assuming 1k messages).
     </ol>
     <p>
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_compactionconfig" href="#design_compactionconfig"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_compactionconfig" href="#design_compactionconfig"></a>
 <a href="#design_compactionconfig">Configuring The Log Cleaner
     </a></h4>
 
@@ -645,8 +645,8 @@
     <p>
     Further cleaner configurations are described <a href="/documentation.html#brokerconfigs">here</a>.
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_quotas" href="#design_quotas"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="design_quotas" href="#design_quotas"></a>
 <a href="#design_quotas">4.9 Quotas
     </a></h3>
     <p>
@@ -658,8 +658,8 @@
     </ol>
     </p>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_quotasnecessary" href="#design_quotasnecessary"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_quotasnecessary" href="#design_quotasnecessary"></a>
 <a href="#design_quotasnecessary">Why are quotas necessary</a>?
     </h4>
     <p>
@@ -668,8 +668,8 @@
     Having quotas protects against these issues and is all the more important in large multi-tenant clusters where a small set of badly behaved clients can degrade user experience for the well behaved ones.
     In fact, when running Kafka as a service this even makes it possible to enforce API limits according to an agreed upon contract.
     </p>
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_quotasgroups" href="#design_quotasgroups"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_quotasgroups" href="#design_quotasgroups"></a>
 <a href="#design_quotasgroups">Client groups
     </a></h4>
         The identity of Kafka clients is the user principal which represents an authenticated user in a secure cluster. In a cluster that supports unauthenticated clients, user principal is a grouping of unauthenticated
@@ -680,8 +680,8 @@
         Quotas can be applied to (user, client-id), user or client-id groups. For a given connection, the most specific quota matching the connection is applied. All connections of a quota group share the quota configured for the group.
         For example, if (user="test-user", client-id="test-client") has a produce quota of 10MB/sec, this is shared across all producer instances of user "test-user" with the client-id "test-client".
     </p>
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_quotasconfig" href="#design_quotasconfig"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_quotasconfig" href="#design_quotasconfig"></a>
 <a href="#design_quotasconfig">Quota Configuration
     </a></h4>
     <p>
@@ -707,8 +707,8 @@
         Broker properties (quota.producer.default, quota.consumer.default) can also be used to set defaults of network bandwidth quotas for client-id groups. These properties are being deprecated and will be removed in a later release.
         Default quotas for client-id can be set in Zookeeper similar to the other quota overrides and defaults.
     </p>
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_quotasbandwidth" href="#design_quotasbandwidth"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_quotasbandwidth" href="#design_quotasbandwidth"></a>
 <a href="#design_quotasbandwidth">Network Bandwidth Quotas
     </a></h4>
     <p>
@@ -717,8 +717,8 @@
         This quota is defined on a per-broker basis. Each group of clients can publish/fetch a maximum of X bytes/sec
         per broker before clients are throttled.
     </p>
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_quotascpu" href="#design_quotascpu"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_quotascpu" href="#design_quotascpu"></a>
 <a href="#design_quotascpu">Request Rate Quotas
     </a></h4>
     <p>
@@ -730,8 +730,8 @@
         on the number of cores available on the broker host, request rate quotas represent the total percentage of CPU
         that may be used by each group of clients sharing the quota.
     </p>
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="design_quotasenforcement" href="#design_quotasenforcement"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="design_quotasenforcement" href="#design_quotasenforcement"></a>
 <a href="#design_quotasenforcement">Enforcement
     </a></h4>
     <p>

@@ -1,7 +1,7 @@
 <ul class="config-list">
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="config.storage.topic" href="#config.storage.topic"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="config.storage.topic" href="#config.storage.topic"></a>
       config.storage.topic
 </h4>
 <p>The name of the Kafka topic where connector configurations are stored</p>
@@ -13,8 +13,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="group.id" href="#group.id"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="group.id" href="#group.id"></a>
       group.id
 </h4>
 <p>A unique string that identifies the Connect cluster group this worker belongs to.</p>
@@ -26,8 +26,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="key.converter" href="#key.converter"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="key.converter" href="#key.converter"></a>
       key.converter
 </h4>
 <p>Converter class used to convert between Kafka Connect format and the serialized form that is written to Kafka. This controls the format of the keys in messages written to or read from Kafka, and since this is independent of connectors it allows any connector to work with any serialization format. Examples of common formats include JSON and Avro.</p>
@@ -39,8 +39,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="offset.storage.topic" href="#offset.storage.topic"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="offset.storage.topic" href="#offset.storage.topic"></a>
       offset.storage.topic
 </h4>
 <p>The name of the Kafka topic where connector offsets are stored</p>
@@ -52,8 +52,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="status.storage.topic" href="#status.storage.topic"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="status.storage.topic" href="#status.storage.topic"></a>
       status.storage.topic
 </h4>
 <p>The name of the Kafka topic where connector and task status are stored</p>
@@ -65,8 +65,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="value.converter" href="#value.converter"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="value.converter" href="#value.converter"></a>
       value.converter
 </h4>
 <p>Converter class used to convert between Kafka Connect format and the serialized form that is written to Kafka. This controls the format of the values in messages written to or read from Kafka, and since this is independent of connectors it allows any connector to work with any serialization format. Examples of common formats include JSON and Avro.</p>
@@ -78,8 +78,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="bootstrap.servers" href="#bootstrap.servers"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="bootstrap.servers" href="#bootstrap.servers"></a>
       bootstrap.servers
 </h4>
 <p>A list of host/port pairs to use for establishing the initial connection to the Kafka cluster. The client will make use of all servers irrespective of which servers are specified here for bootstrapping&mdash;this list only impacts the initial hosts used to discover the full set of servers. This list should be in the form <code>host1:port1,host2:port2,...</code>. Since these servers are just used for the initial connection to discover the full cluster membership (which may change dynamically), this list need not contain the full set of servers (you may want more than one, though, in case a server is down).</p>
@@ -91,8 +91,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="heartbeat.interval.ms" href="#heartbeat.interval.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="heartbeat.interval.ms" href="#heartbeat.interval.ms"></a>
       heartbeat.interval.ms
 </h4>
 <p>The expected time between heartbeats to the group coordinator when using Kafka's group management facilities. Heartbeats are used to ensure that the worker's session stays active and to facilitate rebalancing when new members join or leave the group. The value must be set lower than <code>session.timeout.ms</code>, but typically should be set no higher than 1/3 of that value. It can be adjusted even lower to control the expected time for normal rebalances.</p>
@@ -104,8 +104,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="rebalance.timeout.ms" href="#rebalance.timeout.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="rebalance.timeout.ms" href="#rebalance.timeout.ms"></a>
       rebalance.timeout.ms
 </h4>
 <p>The maximum allowed time for each worker to join the group once a rebalance has begun. This is basically a limit on the amount of time needed for all tasks to flush any pending data and commit offsets. If the timeout is exceeded, then the worker will be removed from the group, which will cause offset commit failures.</p>
@@ -117,8 +117,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="session.timeout.ms" href="#session.timeout.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="session.timeout.ms" href="#session.timeout.ms"></a>
       session.timeout.ms
 </h4>
 <p>The timeout used to detect worker failures. The worker sends periodic heartbeats to indicate its liveness to the broker. If no heartbeats are received by the broker before the expiration of this session timeout, then the broker will remove the worker from the group and initiate a rebalance. Note that the value must be in the allowable range as configured in the broker configuration by <code>group.min.session.timeout.ms</code> and <code>group.max.session.timeout.ms</code>.</p>
@@ -130,8 +130,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.key.password" href="#ssl.key.password"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.key.password" href="#ssl.key.password"></a>
       ssl.key.password
 </h4>
 <p>The password of the private key in the key store file. This is optional for client.</p>
@@ -143,8 +143,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.keystore.location" href="#ssl.keystore.location"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.keystore.location" href="#ssl.keystore.location"></a>
       ssl.keystore.location
 </h4>
 <p>The location of the key store file. This is optional for client and can be used for two-way authentication for client.</p>
@@ -156,8 +156,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.keystore.password" href="#ssl.keystore.password"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.keystore.password" href="#ssl.keystore.password"></a>
       ssl.keystore.password
 </h4>
 <p>The store password for the key store file. This is optional for client and only needed if ssl.keystore.location is configured. </p>
@@ -169,8 +169,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.truststore.location" href="#ssl.truststore.location"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.truststore.location" href="#ssl.truststore.location"></a>
       ssl.truststore.location
 </h4>
 <p>The location of the trust store file. </p>
@@ -182,8 +182,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.truststore.password" href="#ssl.truststore.password"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.truststore.password" href="#ssl.truststore.password"></a>
       ssl.truststore.password
 </h4>
 <p>The password for the trust store file. If a password is not set access to the truststore is still available, but integrity checking is disabled.</p>
@@ -195,8 +195,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="client.dns.lookup" href="#client.dns.lookup"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="client.dns.lookup" href="#client.dns.lookup"></a>
       client.dns.lookup
 </h4>
 <p>Controls how the client uses DNS lookups. If set to <code>use_all_dns_ips</code> then, when the lookup returns multiple IP addresses for a hostname, they will all be attempted to connect to before failing the connection. Applies to both bootstrap and advertised servers. If the value is <code>resolve_canonical_bootstrap_servers_only</code> each entry will be resolved and expanded into a list of canonical names.</p>
@@ -208,8 +208,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="connections.max.idle.ms" href="#connections.max.idle.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="connections.max.idle.ms" href="#connections.max.idle.ms"></a>
       connections.max.idle.ms
 </h4>
 <p>Close idle connections after the number of milliseconds specified by this config.</p>
@@ -221,8 +221,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="connector.client.config.override.policy" href="#connector.client.config.override.policy"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="connector.client.config.override.policy" href="#connector.client.config.override.policy"></a>
       connector.client.config.override.policy
 </h4>
 <p>Class name or alias of implementation of <code>ConnectorClientConfigOverridePolicy</code>. Defines what client configurations can be overriden by the connector. The default implementation is `None`. The other possible policies in the framework include `All` and `Principal`. </p>
@@ -234,8 +234,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="receive.buffer.bytes" href="#receive.buffer.bytes"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="receive.buffer.bytes" href="#receive.buffer.bytes"></a>
       receive.buffer.bytes
 </h4>
 <p>The size of the TCP receive buffer (SO_RCVBUF) to use when reading data. If the value is -1, the OS default will be used.</p>
@@ -247,8 +247,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="request.timeout.ms" href="#request.timeout.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="request.timeout.ms" href="#request.timeout.ms"></a>
       request.timeout.ms
 </h4>
 <p>The configuration controls the maximum amount of time the client will wait for the response of a request. If the response is not received before the timeout elapses the client will resend the request if necessary or fail the request if retries are exhausted.</p>
@@ -260,8 +260,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.client.callback.handler.class" href="#sasl.client.callback.handler.class"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.client.callback.handler.class" href="#sasl.client.callback.handler.class"></a>
       sasl.client.callback.handler.class
 </h4>
 <p>The fully qualified name of a SASL client callback handler class that implements the AuthenticateCallbackHandler interface.</p>
@@ -273,8 +273,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.jaas.config" href="#sasl.jaas.config"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.jaas.config" href="#sasl.jaas.config"></a>
       sasl.jaas.config
 </h4>
 <p>JAAS login context parameters for SASL connections in the format used by JAAS configuration files. JAAS configuration file format is described <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/jgss/tutorials/LoginConfigFile.html"></a>
@@ -287,8 +287,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.kerberos.service.name" href="#sasl.kerberos.service.name"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.kerberos.service.name" href="#sasl.kerberos.service.name"></a>
       sasl.kerberos.service.name
 </h4>
 <p>The Kerberos principal name that Kafka runs as. This can be defined either in Kafka's JAAS config or in Kafka's config.</p>
@@ -300,8 +300,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.login.callback.handler.class" href="#sasl.login.callback.handler.class"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.login.callback.handler.class" href="#sasl.login.callback.handler.class"></a>
       sasl.login.callback.handler.class
 </h4>
 <p>The fully qualified name of a SASL login callback handler class that implements the AuthenticateCallbackHandler interface. For brokers, login callback handler config must be prefixed with listener prefix and SASL mechanism name in lower-case. For example, listener.name.sasl_ssl.scram-sha-256.sasl.login.callback.handler.class=com.example.CustomScramLoginCallbackHandler</p>
@@ -313,8 +313,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.login.class" href="#sasl.login.class"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.login.class" href="#sasl.login.class"></a>
       sasl.login.class
 </h4>
 <p>The fully qualified name of a class that implements the Login interface. For brokers, login config must be prefixed with listener prefix and SASL mechanism name in lower-case. For example, listener.name.sasl_ssl.scram-sha-256.sasl.login.class=com.example.CustomScramLogin</p>
@@ -326,8 +326,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.mechanism" href="#sasl.mechanism"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.mechanism" href="#sasl.mechanism"></a>
       sasl.mechanism
 </h4>
 <p>SASL mechanism used for client connections. This may be any mechanism for which a security provider is available. GSSAPI is the default mechanism.</p>
@@ -339,8 +339,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="security.protocol" href="#security.protocol"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="security.protocol" href="#security.protocol"></a>
       security.protocol
 </h4>
 <p>Protocol used to communicate with brokers. Valid values are: PLAINTEXT, SSL, SASL_PLAINTEXT, SASL_SSL.</p>
@@ -352,8 +352,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="send.buffer.bytes" href="#send.buffer.bytes"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="send.buffer.bytes" href="#send.buffer.bytes"></a>
       send.buffer.bytes
 </h4>
 <p>The size of the TCP send buffer (SO_SNDBUF) to use when sending data. If the value is -1, the OS default will be used.</p>
@@ -365,8 +365,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.enabled.protocols" href="#ssl.enabled.protocols"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.enabled.protocols" href="#ssl.enabled.protocols"></a>
       ssl.enabled.protocols
 </h4>
 <p>The list of protocols enabled for SSL connections.</p>
@@ -378,8 +378,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.keystore.type" href="#ssl.keystore.type"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.keystore.type" href="#ssl.keystore.type"></a>
       ssl.keystore.type
 </h4>
 <p>The file format of the key store file. This is optional for client.</p>
@@ -391,8 +391,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.protocol" href="#ssl.protocol"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.protocol" href="#ssl.protocol"></a>
       ssl.protocol
 </h4>
 <p>The SSL protocol used to generate the SSLContext. Default setting is TLSv1.2, which is fine for most cases. Allowed values in recent JVMs are TLSv1.2 and TLSv1.3. TLS, TLSv1.1, SSL, SSLv2 and SSLv3 may be supported in older JVMs, but their usage is discouraged due to known security vulnerabilities.</p>
@@ -404,8 +404,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.provider" href="#ssl.provider"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.provider" href="#ssl.provider"></a>
       ssl.provider
 </h4>
 <p>The name of the security provider used for SSL connections. Default value is the default security provider of the JVM.</p>
@@ -417,8 +417,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.truststore.type" href="#ssl.truststore.type"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.truststore.type" href="#ssl.truststore.type"></a>
       ssl.truststore.type
 </h4>
 <p>The file format of the trust store file.</p>
@@ -430,8 +430,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="worker.sync.timeout.ms" href="#worker.sync.timeout.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="worker.sync.timeout.ms" href="#worker.sync.timeout.ms"></a>
       worker.sync.timeout.ms
 </h4>
 <p>When the worker is out of sync with other workers and needs to resynchronize configurations, wait up to this amount of time before giving up, leaving the group, and waiting a backoff period before rejoining.</p>
@@ -443,8 +443,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="worker.unsync.backoff.ms" href="#worker.unsync.backoff.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="worker.unsync.backoff.ms" href="#worker.unsync.backoff.ms"></a>
       worker.unsync.backoff.ms
 </h4>
 <p>When the worker is out of sync with other workers and  fails to catch up within worker.sync.timeout.ms, leave the Connect cluster for this long before rejoining.</p>
@@ -456,8 +456,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="access.control.allow.methods" href="#access.control.allow.methods"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="access.control.allow.methods" href="#access.control.allow.methods"></a>
       access.control.allow.methods
 </h4>
 <p>Sets the methods supported for cross origin requests by setting the Access-Control-Allow-Methods header. The default value of the Access-Control-Allow-Methods header allows cross origin requests for GET, POST and HEAD.</p>
@@ -469,8 +469,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="access.control.allow.origin" href="#access.control.allow.origin"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="access.control.allow.origin" href="#access.control.allow.origin"></a>
       access.control.allow.origin
 </h4>
 <p>Value to set the Access-Control-Allow-Origin header to for REST API requests.To enable cross origin access, set this to the domain of the application that should be permitted to access the API, or '*' to allow access from any domain. The default value only allows access from the domain of the REST API.</p>
@@ -482,8 +482,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="admin.listeners" href="#admin.listeners"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="admin.listeners" href="#admin.listeners"></a>
       admin.listeners
 </h4>
 <p>List of comma-separated URIs the Admin REST API will listen on. The supported protocols are HTTP and HTTPS. An empty or blank string will disable this feature. The default behavior is to use the regular listener (specified by the 'listeners' property).</p>
@@ -495,8 +495,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="client.id" href="#client.id"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="client.id" href="#client.id"></a>
       client.id
 </h4>
 <p>An id string to pass to the server when making requests. The purpose of this is to be able to track the source of requests beyond just ip/port by allowing a logical application name to be included in server-side request logging.</p>
@@ -508,8 +508,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="config.providers" href="#config.providers"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="config.providers" href="#config.providers"></a>
       config.providers
 </h4>
 <p>Comma-separated names of <code>ConfigProvider</code> classes, loaded and used in the order specified. Implementing the interface  <code>ConfigProvider</code> allows you to replace variable references in connector configurations, such as for externalized secrets. </p>
@@ -521,8 +521,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="config.storage.replication.factor" href="#config.storage.replication.factor"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="config.storage.replication.factor" href="#config.storage.replication.factor"></a>
       config.storage.replication.factor
 </h4>
 <p>Replication factor used when creating the configuration storage topic</p>
@@ -534,8 +534,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="connect.protocol" href="#connect.protocol"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="connect.protocol" href="#connect.protocol"></a>
       connect.protocol
 </h4>
 <p>Compatibility mode for Kafka Connect Protocol</p>
@@ -547,8 +547,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="header.converter" href="#header.converter"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="header.converter" href="#header.converter"></a>
       header.converter
 </h4>
 <p>HeaderConverter class used to convert between Kafka Connect format and the serialized form that is written to Kafka. This controls the format of the header values in messages written to or read from Kafka, and since this is independent of connectors it allows any connector to work with any serialization format. Examples of common formats include JSON and Avro. By default, the SimpleHeaderConverter is used to serialize header values to strings and deserialize them by inferring the schemas.</p>
@@ -560,8 +560,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="inter.worker.key.generation.algorithm" href="#inter.worker.key.generation.algorithm"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="inter.worker.key.generation.algorithm" href="#inter.worker.key.generation.algorithm"></a>
       inter.worker.key.generation.algorithm
 </h4>
 <p>The algorithm to use for generating internal request keys</p>
@@ -573,8 +573,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="inter.worker.key.size" href="#inter.worker.key.size"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="inter.worker.key.size" href="#inter.worker.key.size"></a>
       inter.worker.key.size
 </h4>
 <p>The size of the key to use for signing internal requests, in bits. If null, the default key size for the key generation algorithm will be used.</p>
@@ -586,8 +586,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="inter.worker.key.ttl.ms" href="#inter.worker.key.ttl.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="inter.worker.key.ttl.ms" href="#inter.worker.key.ttl.ms"></a>
       inter.worker.key.ttl.ms
 </h4>
 <p>The TTL of generated session keys used for internal request validation (in milliseconds)</p>
@@ -599,8 +599,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="inter.worker.signature.algorithm" href="#inter.worker.signature.algorithm"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="inter.worker.signature.algorithm" href="#inter.worker.signature.algorithm"></a>
       inter.worker.signature.algorithm
 </h4>
 <p>The algorithm used to sign internal requests</p>
@@ -612,8 +612,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="inter.worker.verification.algorithms" href="#inter.worker.verification.algorithms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="inter.worker.verification.algorithms" href="#inter.worker.verification.algorithms"></a>
       inter.worker.verification.algorithms
 </h4>
 <p>A list of permitted algorithms for verifying internal requests</p>
@@ -625,8 +625,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="internal.key.converter" href="#internal.key.converter"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="internal.key.converter" href="#internal.key.converter"></a>
       internal.key.converter
 </h4>
 <p>Converter class used to convert between Kafka Connect format and the serialized form that is written to Kafka. This controls the format of the keys in messages written to or read from Kafka, and since this is independent of connectors it allows any connector to work with any serialization format. Examples of common formats include JSON and Avro. This setting controls the format used for internal bookkeeping data used by the framework, such as configs and offsets, so users can typically use any functioning Converter implementation. Deprecated; will be removed in an upcoming version.</p>
@@ -638,8 +638,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="internal.value.converter" href="#internal.value.converter"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="internal.value.converter" href="#internal.value.converter"></a>
       internal.value.converter
 </h4>
 <p>Converter class used to convert between Kafka Connect format and the serialized form that is written to Kafka. This controls the format of the values in messages written to or read from Kafka, and since this is independent of connectors it allows any connector to work with any serialization format. Examples of common formats include JSON and Avro. This setting controls the format used for internal bookkeeping data used by the framework, such as configs and offsets, so users can typically use any functioning Converter implementation. Deprecated; will be removed in an upcoming version.</p>
@@ -651,8 +651,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="listeners" href="#listeners"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="listeners" href="#listeners"></a>
 <a href="#listeners">listeners
 </a></h4>
 <p>List of comma-separated URIs the REST API will listen on. The supported protocols are HTTP and HTTPS.<br> Specify hostname as 0.0.0.0 to bind to all interfaces.<br> Leave hostname empty to bind to default interface.<br> Examples of legal listener lists: HTTP://myhost:8083,HTTPS://myhost:8084</p>
@@ -664,8 +664,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="metadata.max.age.ms" href="#metadata.max.age.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="metadata.max.age.ms" href="#metadata.max.age.ms"></a>
       metadata.max.age.ms
 </h4>
 <p>The period of time in milliseconds after which we force a refresh of metadata even if we haven't seen any partition leadership changes to proactively discover any new brokers or partitions.</p>
@@ -677,8 +677,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="metric.reporters" href="#metric.reporters"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="metric.reporters" href="#metric.reporters"></a>
       metric.reporters
 </h4>
 <p>A list of classes to use as metrics reporters. Implementing the <code>org.apache.kafka.common.metrics.MetricsReporter</code> interface allows plugging in classes that will be notified of new metric creation. The JmxReporter is always included to register JMX statistics.</p>
@@ -690,8 +690,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="metrics.num.samples" href="#metrics.num.samples"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="metrics.num.samples" href="#metrics.num.samples"></a>
       metrics.num.samples
 </h4>
 <p>The number of samples maintained to compute metrics.</p>
@@ -703,8 +703,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="metrics.recording.level" href="#metrics.recording.level"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="metrics.recording.level" href="#metrics.recording.level"></a>
       metrics.recording.level
 </h4>
 <p>The highest recording level for metrics.</p>
@@ -716,8 +716,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="metrics.sample.window.ms" href="#metrics.sample.window.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="metrics.sample.window.ms" href="#metrics.sample.window.ms"></a>
       metrics.sample.window.ms
 </h4>
 <p>The window of time a metrics sample is computed over.</p>
@@ -729,8 +729,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="offset.flush.interval.ms" href="#offset.flush.interval.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="offset.flush.interval.ms" href="#offset.flush.interval.ms"></a>
       offset.flush.interval.ms
 </h4>
 <p>Interval at which to try committing offsets for tasks.</p>
@@ -742,8 +742,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="offset.flush.timeout.ms" href="#offset.flush.timeout.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="offset.flush.timeout.ms" href="#offset.flush.timeout.ms"></a>
       offset.flush.timeout.ms
 </h4>
 <p>Maximum number of milliseconds to wait for records to flush and partition offset data to be committed to offset storage before cancelling the process and restoring the offset data to be committed in a future attempt.</p>
@@ -755,8 +755,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="offset.storage.partitions" href="#offset.storage.partitions"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="offset.storage.partitions" href="#offset.storage.partitions"></a>
       offset.storage.partitions
 </h4>
 <p>The number of partitions used when creating the offset storage topic</p>
@@ -768,8 +768,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="offset.storage.replication.factor" href="#offset.storage.replication.factor"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="offset.storage.replication.factor" href="#offset.storage.replication.factor"></a>
       offset.storage.replication.factor
 </h4>
 <p>Replication factor used when creating the offset storage topic</p>
@@ -781,8 +781,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="plugin.path" href="#plugin.path"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="plugin.path" href="#plugin.path"></a>
       plugin.path
 </h4>
 <p>List of paths separated by commas (,) that contain plugins (connectors, converters, transformations). The list should consist of top level directories that include any combination of: <br>a) directories immediately containing jars with plugins and their dependencies<br>b) uber-jars with plugins and their dependencies<br>c) directories immediately containing the package directory structure of classes of plugins and their dependencies<br>Note: symlinks will be followed to discover dependencies or plugins.<br>Examples: plugin.path=/usr/local/share/java,/usr/local/share/kafka/plugins,/opt/connectors</p>
@@ -794,8 +794,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="reconnect.backoff.max.ms" href="#reconnect.backoff.max.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="reconnect.backoff.max.ms" href="#reconnect.backoff.max.ms"></a>
       reconnect.backoff.max.ms
 </h4>
 <p>The maximum amount of time in milliseconds to wait when reconnecting to a broker that has repeatedly failed to connect. If provided, the backoff per host will increase exponentially for each consecutive connection failure, up to this maximum. After calculating the backoff increase, 20% random jitter is added to avoid connection storms.</p>
@@ -807,8 +807,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="reconnect.backoff.ms" href="#reconnect.backoff.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="reconnect.backoff.ms" href="#reconnect.backoff.ms"></a>
       reconnect.backoff.ms
 </h4>
 <p>The base amount of time to wait before attempting to reconnect to a given host. This avoids repeatedly connecting to a host in a tight loop. This backoff applies to all connection attempts by the client to a broker.</p>
@@ -820,8 +820,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="rest.advertised.host.name" href="#rest.advertised.host.name"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="rest.advertised.host.name" href="#rest.advertised.host.name"></a>
       rest.advertised.host.name
 </h4>
 <p>If this is set, this is the hostname that will be given out to other workers to connect to.</p>
@@ -833,8 +833,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="rest.advertised.listener" href="#rest.advertised.listener"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="rest.advertised.listener" href="#rest.advertised.listener"></a>
       rest.advertised.listener
 </h4>
 <p>Sets the advertised listener (HTTP or HTTPS) which will be given to other workers to use.</p>
@@ -846,8 +846,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="rest.advertised.port" href="#rest.advertised.port"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="rest.advertised.port" href="#rest.advertised.port"></a>
       rest.advertised.port
 </h4>
 <p>If this is set, this is the port that will be given out to other workers to connect to.</p>
@@ -859,8 +859,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="rest.extension.classes" href="#rest.extension.classes"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="rest.extension.classes" href="#rest.extension.classes"></a>
       rest.extension.classes
 </h4>
 <p>Comma-separated names of <code>ConnectRestExtension</code> classes, loaded and called in the order specified. Implementing the interface  <code>ConnectRestExtension</code> allows you to inject into Connect's REST API user defined resources like filters. Typically used to add custom capability like logging, security, etc. </p>
@@ -872,8 +872,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="rest.host.name" href="#rest.host.name"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="rest.host.name" href="#rest.host.name"></a>
       rest.host.name
 </h4>
 <p>Hostname for the REST API. If this is set, it will only bind to this interface.</p>
@@ -885,8 +885,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="rest.port" href="#rest.port"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="rest.port" href="#rest.port"></a>
       rest.port
 </h4>
 <p>Port for the REST API to listen on.</p>
@@ -898,8 +898,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="retry.backoff.ms" href="#retry.backoff.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="retry.backoff.ms" href="#retry.backoff.ms"></a>
       retry.backoff.ms
 </h4>
 <p>The amount of time to wait before attempting to retry a failed request to a given topic partition. This avoids repeatedly sending requests in a tight loop under some failure scenarios.</p>
@@ -911,8 +911,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.kerberos.kinit.cmd" href="#sasl.kerberos.kinit.cmd"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.kerberos.kinit.cmd" href="#sasl.kerberos.kinit.cmd"></a>
       sasl.kerberos.kinit.cmd
 </h4>
 <p>Kerberos kinit command path.</p>
@@ -924,8 +924,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.kerberos.min.time.before.relogin" href="#sasl.kerberos.min.time.before.relogin"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.kerberos.min.time.before.relogin" href="#sasl.kerberos.min.time.before.relogin"></a>
       sasl.kerberos.min.time.before.relogin
 </h4>
 <p>Login thread sleep time between refresh attempts.</p>
@@ -937,8 +937,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.kerberos.ticket.renew.jitter" href="#sasl.kerberos.ticket.renew.jitter"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.kerberos.ticket.renew.jitter" href="#sasl.kerberos.ticket.renew.jitter"></a>
       sasl.kerberos.ticket.renew.jitter
 </h4>
 <p>Percentage of random jitter added to the renewal time.</p>
@@ -950,8 +950,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.kerberos.ticket.renew.window.factor" href="#sasl.kerberos.ticket.renew.window.factor"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.kerberos.ticket.renew.window.factor" href="#sasl.kerberos.ticket.renew.window.factor"></a>
       sasl.kerberos.ticket.renew.window.factor
 </h4>
 <p>Login thread will sleep until the specified window factor of time from last refresh to ticket's expiry has been reached, at which time it will try to renew the ticket.</p>
@@ -963,8 +963,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.login.refresh.buffer.seconds" href="#sasl.login.refresh.buffer.seconds"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.login.refresh.buffer.seconds" href="#sasl.login.refresh.buffer.seconds"></a>
       sasl.login.refresh.buffer.seconds
 </h4>
 <p>The amount of buffer time before credential expiration to maintain when refreshing a credential, in seconds. If a refresh would otherwise occur closer to expiration than the number of buffer seconds then the refresh will be moved up to maintain as much of the buffer time as possible. Legal values are between 0 and 3600 (1 hour); a default value of  300 (5 minutes) is used if no value is specified. This value and sasl.login.refresh.min.period.seconds are both ignored if their sum exceeds the remaining lifetime of a credential. Currently applies only to OAUTHBEARER.</p>
@@ -976,8 +976,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.login.refresh.min.period.seconds" href="#sasl.login.refresh.min.period.seconds"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.login.refresh.min.period.seconds" href="#sasl.login.refresh.min.period.seconds"></a>
       sasl.login.refresh.min.period.seconds
 </h4>
 <p>The desired minimum time for the login refresh thread to wait before refreshing a credential, in seconds. Legal values are between 0 and 900 (15 minutes); a default value of 60 (1 minute) is used if no value is specified.  This value and  sasl.login.refresh.buffer.seconds are both ignored if their sum exceeds the remaining lifetime of a credential. Currently applies only to OAUTHBEARER.</p>
@@ -989,8 +989,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.login.refresh.window.factor" href="#sasl.login.refresh.window.factor"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.login.refresh.window.factor" href="#sasl.login.refresh.window.factor"></a>
       sasl.login.refresh.window.factor
 </h4>
 <p>Login refresh thread will sleep until the specified window factor relative to the credential's lifetime has been reached, at which time it will try to refresh the credential. Legal values are between 0.5 (50%) and 1.0 (100%) inclusive; a default value of 0.8 (80%) is used if no value is specified. Currently applies only to OAUTHBEARER.</p>
@@ -1002,8 +1002,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="sasl.login.refresh.window.jitter" href="#sasl.login.refresh.window.jitter"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="sasl.login.refresh.window.jitter" href="#sasl.login.refresh.window.jitter"></a>
       sasl.login.refresh.window.jitter
 </h4>
 <p>The maximum amount of random jitter relative to the credential's lifetime that is added to the login refresh thread's sleep time. Legal values are between 0 and 0.25 (25%) inclusive; a default value of 0.05 (5%) is used if no value is specified. Currently applies only to OAUTHBEARER.</p>
@@ -1015,8 +1015,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="scheduled.rebalance.max.delay.ms" href="#scheduled.rebalance.max.delay.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="scheduled.rebalance.max.delay.ms" href="#scheduled.rebalance.max.delay.ms"></a>
       scheduled.rebalance.max.delay.ms
 </h4>
 <p>The maximum delay that is scheduled in order to wait for the return of one or more departed workers before rebalancing and reassigning their connectors and tasks to the group. During this period the connectors and tasks of the departed workers remain unassigned</p>
@@ -1028,8 +1028,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.cipher.suites" href="#ssl.cipher.suites"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.cipher.suites" href="#ssl.cipher.suites"></a>
       ssl.cipher.suites
 </h4>
 <p>A list of cipher suites. This is a named combination of authentication, encryption, MAC and key exchange algorithm used to negotiate the security settings for a network connection using TLS or SSL network protocol. By default all the available cipher suites are supported.</p>
@@ -1041,8 +1041,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.client.auth" href="#ssl.client.auth"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.client.auth" href="#ssl.client.auth"></a>
       ssl.client.auth
 </h4>
 <p>Configures kafka broker to request client authentication. The following settings are common:  <ul> <li><code>ssl.client.auth=required</code> If set to required client authentication is required. <li><code>ssl.client.auth=requested</code> This means client authentication is optional. unlike requested , if this option is set client can choose not to provide authentication information about itself <li><code>ssl.client.auth=none</code> This means client authentication is not needed.</ul></p>
@@ -1054,8 +1054,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.endpoint.identification.algorithm" href="#ssl.endpoint.identification.algorithm"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.endpoint.identification.algorithm" href="#ssl.endpoint.identification.algorithm"></a>
       ssl.endpoint.identification.algorithm
 </h4>
 <p>The endpoint identification algorithm to validate server hostname using server certificate. </p>
@@ -1067,8 +1067,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.keymanager.algorithm" href="#ssl.keymanager.algorithm"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.keymanager.algorithm" href="#ssl.keymanager.algorithm"></a>
       ssl.keymanager.algorithm
 </h4>
 <p>The algorithm used by key manager factory for SSL connections. Default value is the key manager factory algorithm configured for the Java Virtual Machine.</p>
@@ -1080,8 +1080,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.secure.random.implementation" href="#ssl.secure.random.implementation"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.secure.random.implementation" href="#ssl.secure.random.implementation"></a>
       ssl.secure.random.implementation
 </h4>
 <p>The SecureRandom PRNG implementation to use for SSL cryptography operations. </p>
@@ -1093,8 +1093,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="ssl.trustmanager.algorithm" href="#ssl.trustmanager.algorithm"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="ssl.trustmanager.algorithm" href="#ssl.trustmanager.algorithm"></a>
       ssl.trustmanager.algorithm
 </h4>
 <p>The algorithm used by trust manager factory for SSL connections. Default value is the trust manager factory algorithm configured for the Java Virtual Machine.</p>
@@ -1106,8 +1106,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="status.storage.partitions" href="#status.storage.partitions"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="status.storage.partitions" href="#status.storage.partitions"></a>
       status.storage.partitions
 </h4>
 <p>The number of partitions used when creating the status storage topic</p>
@@ -1119,8 +1119,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="status.storage.replication.factor" href="#status.storage.replication.factor"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="status.storage.replication.factor" href="#status.storage.replication.factor"></a>
       status.storage.replication.factor
 </h4>
 <p>Replication factor used when creating the status storage topic</p>
@@ -1132,8 +1132,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="task.shutdown.graceful.timeout.ms" href="#task.shutdown.graceful.timeout.ms"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="task.shutdown.graceful.timeout.ms" href="#task.shutdown.graceful.timeout.ms"></a>
       task.shutdown.graceful.timeout.ms
 </h4>
 <p>Amount of time to wait for tasks to shutdown gracefully. This is the total amount of time, not per task. All task have shutdown triggered, then they are waited on sequentially.</p>
@@ -1145,8 +1145,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="topic.tracking.allow.reset" href="#topic.tracking.allow.reset"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="topic.tracking.allow.reset" href="#topic.tracking.allow.reset"></a>
       topic.tracking.allow.reset
 </h4>
 <p>If set to true, it allows user requests to reset the set of active topics per connector.</p>
@@ -1158,8 +1158,8 @@
 </tbody></table>
 </li>
 <li>
-<h4 class="docs-anchor-heading">
-  <a class="docs-anchor-link" id="topic.tracking.enable" href="#topic.tracking.enable"></a>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="topic.tracking.enable" href="#topic.tracking.enable"></a>
       topic.tracking.enable
 </h4>
 <p>Enable tracking the set of active topics per connector during runtime.</p>

@@ -18,15 +18,15 @@
 
   Here is some information on actually running Kafka as a production system based on usage and experience at LinkedIn. Please send us any additional tips you know of.
 
-  <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="basic_ops" href="#basic_ops"></a>
+  <h3 class="anchor-heading">
+      <a class="anchor-link" id="basic_ops" href="#basic_ops"></a>
 <a href="#basic_ops">6.1 Basic Kafka Operations
     </a></h3>
 
   This section will review the most common operations you will perform on your Kafka cluster. All of the tools reviewed in this section are available under the <code>bin/</code> directory of the Kafka distribution and each tool will print details on all possible commandline options if it is run with no arguments.
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="basic_ops_add_topic" href="#basic_ops_add_topic"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="basic_ops_add_topic" href="#basic_ops_add_topic"></a>
 <a href="#basic_ops_add_topic">Adding and removing topics
     </a></h4>
 
@@ -45,8 +45,8 @@
   <p>
   The configurations added on the command line override the default settings the server has for things like the length of time data should be retained. The complete set of per-topic configurations is documented <a href="#topicconfigs">here</a>.
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="basic_ops_modify_topic" href="#basic_ops_modify_topic"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="basic_ops_modify_topic" href="#basic_ops_modify_topic"></a>
 <a href="#basic_ops_modify_topic">Modifying topics
     </a></h4>
 
@@ -76,8 +76,8 @@
   <p>
   Instructions for changing the replication factor of a topic can be found <a href="#basic_ops_increase_replication_factor">here</a>.
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="basic_ops_restarting" href="#basic_ops_restarting"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="basic_ops_restarting" href="#basic_ops_restarting"></a>
 <a href="#basic_ops_restarting">Graceful shutdown
     </a></h4>
 
@@ -95,8 +95,8 @@
   </pre>
   Note that controlled shutdown will only succeed if <i>all</i> the partitions hosted on the broker have replicas (i.e. the replication factor is greater than 1 <i>and</i> at least one of these replicas is alive). This is generally what you want since shutting down the last replica would make that topic partition unavailable.
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="basic_ops_leader_balancing" href="#basic_ops_leader_balancing"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="basic_ops_leader_balancing" href="#basic_ops_leader_balancing"></a>
 <a href="#basic_ops_leader_balancing">Balancing leadership
     </a></h4>
 
@@ -112,8 +112,8 @@
   &gt; bin/kafka-preferred-replica-election.sh --zookeeper zk_host:port/chroot
   </pre>
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="basic_ops_racks" href="#basic_ops_racks"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="basic_ops_racks" href="#basic_ops_racks"></a>
 <a href="#basic_ops_racks">Balancing Replicas Across Racks
     </a></h4>
   The rack awareness feature spreads replicas of the same partition across different racks. This extends the guarantees Kafka provides for broker-failure to cover rack-failure, limiting the risk of data loss should all the brokers on a rack fail at once. The feature can also be applied to other broker groupings such as availability zones in EC2.
@@ -126,8 +126,8 @@
   <p></p>
   However if racks are assigned different numbers of brokers, the assignment of replicas will not be even. Racks with fewer brokers will get more replicas, meaning they will use more storage and put more resources into replication. Hence it is sensible to configure an equal number of brokers per rack.
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="basic_ops_mirror_maker" href="#basic_ops_mirror_maker"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="basic_ops_mirror_maker" href="#basic_ops_mirror_maker"></a>
 <a href="#basic_ops_mirror_maker">Mirroring data between clusters
     </a></h4>
 
@@ -151,8 +151,8 @@
 
   Combining mirroring with the configuration <code>auto.create.topics.enable=true</code> makes it possible to have a replica cluster that will automatically create and replicate all data in a source cluster even as new topics are added.
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="basic_ops_consumer_lag" href="#basic_ops_consumer_lag"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="basic_ops_consumer_lag" href="#basic_ops_consumer_lag"></a>
 <a href="#basic_ops_consumer_lag">Checking consumer position
     </a></h4>
   Sometimes it's useful to see the position of your consumers. We have a tool that will show the position of all consumers in a consumer group as well as how far behind the end of the log they are. To run this tool on a consumer group named <i>my-group</i> consuming a topic named <i>my-topic</i> would look like this:
@@ -165,8 +165,8 @@
   my-topic                       2          2               3               1          consumer-2-42c1abd4-e3b2-425d-a8bb-e1ea49b29bb2   /127.0.0.1                     consumer-2
   </pre>
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="basic_ops_consumer_group" href="#basic_ops_consumer_group"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="basic_ops_consumer_group" href="#basic_ops_consumer_group"></a>
 <a href="#basic_ops_consumer_group">Managing Consumer Groups
     </a></h4>
 
@@ -306,8 +306,8 @@
   &gt; bin/kafka-consumer-groups.sh --zookeeper localhost:2181 --list
   </pre>
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="basic_ops_cluster_expansion" href="#basic_ops_cluster_expansion"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="basic_ops_cluster_expansion" href="#basic_ops_cluster_expansion"></a>
 <a href="#basic_ops_cluster_expansion">Expanding your cluster
     </a></h4>
 
@@ -323,8 +323,8 @@
   <li>--execute: In this mode, the tool kicks off the reassignment of partitions based on the user provided reassignment plan. (using the --reassignment-json-file option). This can either be a custom reassignment plan hand crafted by the admin or provided by using the --generate option</li>
   <li>--verify: In this mode, the tool verifies the status of the reassignment for all partitions listed during the last --execute. The status can be either of successfully completed, failed or in progress</li>
   </ul>
-  <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="basic_ops_automigrate" href="#basic_ops_automigrate"></a>
+  <h5 class="anchor-heading">
+      <a class="anchor-link" id="basic_ops_automigrate" href="#basic_ops_automigrate"></a>
 <a href="#basic_ops_automigrate">Automatically migrating data to new machines
     </a></h5>
   The partition reassignment tool can be used to move some topics off of the current set of brokers to the newly added brokers. This is typically useful while expanding an existing cluster since it is easier to move entire topics to the new set of brokers, than moving one partition at a time. When used to do this, the user should provide a list of topics that should be moved to the new set of brokers and a target list of new brokers. The tool then evenly distributes all partitions for the given list of topics across the new set of brokers. During this move, the replication factor of the topic is kept constant. Effectively the replicas for all partitions for the input list of topics are moved from the old set of brokers to the newly added brokers.
@@ -403,8 +403,8 @@
   Reassignment of partition [foo2,2] completed successfully
   </pre>
 
-  <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="basic_ops_partitionassignment" href="#basic_ops_partitionassignment"></a>
+  <h5 class="anchor-heading">
+      <a class="anchor-link" id="basic_ops_partitionassignment" href="#basic_ops_partitionassignment"></a>
 <a href="#basic_ops_partitionassignment">Custom partition assignment and migration
     </a></h5>
   The partition reassignment tool can also be used to selectively move replicas of a partition to a specific set of brokers. When used in this manner, it is assumed that the user knows the reassignment plan and does not require the tool to generate a candidate reassignment, effectively skipping the --generate step and moving straight to the --execute step
@@ -442,14 +442,14 @@
   Reassignment of partition [foo2,1] completed successfully
   </pre>
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="basic_ops_decommissioning_brokers" href="#basic_ops_decommissioning_brokers"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="basic_ops_decommissioning_brokers" href="#basic_ops_decommissioning_brokers"></a>
 <a href="#basic_ops_decommissioning_brokers">Decommissioning brokers
     </a></h4>
   The partition reassignment tool does not have the ability to automatically generate a reassignment plan for decommissioning brokers yet. As such, the admin has to come up with a reassignment plan to move the replica for all partitions hosted on the broker to be decommissioned, to the rest of the brokers. This can be relatively tedious as the reassignment needs to ensure that all the replicas are not moved from the decommissioned broker to only one other broker. To make this process effortless, we plan to add tooling support for decommissioning brokers in the future.
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="basic_ops_increase_replication_factor" href="#basic_ops_increase_replication_factor"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="basic_ops_increase_replication_factor" href="#basic_ops_increase_replication_factor"></a>
 <a href="#basic_ops_increase_replication_factor">Increasing replication factor
     </a></h4>
   Increasing the replication factor of an existing partition is easy. Just specify the extra replicas in the custom reassignment json file and use it with the --execute option to increase the replication factor of the specified partitions.
@@ -489,8 +489,8 @@
     Topic: foo	Partition: 0	Leader: 5	Replicas: 5,6,7	Isr: 5,6,7
   </pre>
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="rep-throttle" href="#rep-throttle"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="rep-throttle" href="#rep-throttle"></a>
       Limiting Bandwidth Usage during Data Migration
     </h4>
   Kafka lets you apply a throttle to replication traffic, setting an upper bound on the bandwidth used to move replicas from machine to machine. This is useful when rebalancing a cluster, bootstrapping a new broker or adding or removing brokers, as it limits the impact these data-intensive operations will have on users.
@@ -589,8 +589,8 @@
       throttle throughput as described above. </p>
 
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="quotas" href="#quotas"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="quotas" href="#quotas"></a>
 <a href="#quotas">Setting quotas
     </a></h4>
   Quotas overrides and defaults may be configured at (user, client-id), user or client-id levels as described <a href="#design_quotas">here</a>.
@@ -671,8 +671,8 @@
   </pre>
   Note that these properties are being deprecated and may be removed in a future release. Defaults configured using kafka-configs.sh take precedence over these properties.
 
-  <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="datacenters" href="#datacenters"></a>
+  <h3 class="anchor-heading">
+      <a class="anchor-link" id="datacenters" href="#datacenters"></a>
 <a href="#datacenters">6.2 Datacenters
     </a></h3>
 
@@ -688,13 +688,13 @@
   <p>
   It is generally <i>not</i> advisable to run a <i>single</i> Kafka cluster that spans multiple datacenters over a high-latency link. This will incur very high replication latency both for Kafka writes and ZooKeeper writes, and neither Kafka nor ZooKeeper will remain available in all locations if the network between locations is unavailable.
 
-  <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="config" href="#config"></a>
+  <h3 class="anchor-heading">
+      <a class="anchor-link" id="config" href="#config"></a>
 <a href="#config">6.3 Kafka Configuration
     </a></h3>
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="clientconfig" href="#clientconfig"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="clientconfig" href="#clientconfig"></a>
 <a href="#clientconfig">Important Client Configurations
     </a></h4>
 
@@ -708,8 +708,8 @@
   <p>
   All configurations are documented in the <a href="#configuration">configuration</a> section.
   <p>
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="prodconfig" href="#prodconfig"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="prodconfig" href="#prodconfig"></a>
 <a href="#prodconfig">A Production Server Config
     </a></h4>
   Here is an example production server configuration:
@@ -732,8 +732,8 @@
 
   Our client configuration varies a fair amount between different use cases.
 
-  <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="java" href="#java"></a>
+  <h3 class="anchor-heading">
+      <a class="anchor-link" id="java" href="#java"></a>
 <a href="#java">6.4 Java Version
     </a></h3>
 
@@ -756,8 +756,8 @@
 
   The tuning looks fairly aggressive, but all of the brokers in that cluster have a 90% GC pause time of about 21ms, and they're doing less than 1 young GC per second.
 
-  <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="hwandos" href="#hwandos"></a>
+  <h3 class="anchor-heading">
+      <a class="anchor-link" id="hwandos" href="#hwandos"></a>
 <a href="#hwandos">6.5 Hardware and OS
     </a></h3>
   We are using dual quad-core Intel Xeon machines with 24GB of memory.
@@ -766,8 +766,8 @@
   <p>
   The disk throughput is important. We have 8x7200 rpm SATA drives. In general disk throughput is the performance bottleneck, and more disks is better. Depending on how you configure flush behavior you may or may not benefit from more expensive disks (if you force flush often then higher RPM SAS drives may be better).
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="os" href="#os"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="os" href="#os"></a>
 <a href="#os">OS
     </a></h4>
   Kafka should run well on any unix system and has been tested on Linux and Solaris.
@@ -782,8 +782,8 @@
   </ul>
   <p>
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="diskandfs" href="#diskandfs"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="diskandfs" href="#diskandfs"></a>
 <a href="#diskandfs">Disks and Filesystem
     </a></h4>
   We recommend using multiple drives to get good throughput and not sharing the same drives used for Kafka data with application logs or other OS filesystem activity to ensure good latency. You can either RAID these drives together into a single volume or format and mount each drive as its own directory. Since Kafka has replication the redundancy provided by RAID can also be provided at the application level. This choice has several tradeoffs.
@@ -794,8 +794,8 @@
   <p>
   Another potential benefit of RAID is the ability to tolerate disk failures. However our experience has been that rebuilding the RAID array is so I/O intensive that it effectively disables the server, so this does not provide much real availability improvement.
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="appvsosflush" href="#appvsosflush"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="appvsosflush" href="#appvsosflush"></a>
 <a href="#appvsosflush">Application vs. OS Flush Management
     </a></h4>
   Kafka always immediately writes all data to the filesystem and supports the ability to configure the flush policy that controls when data is forced out of the OS cache and onto disk using the flush. This flush policy can be controlled to force data to disk after a period of time or after a certain number of messages has been written. There are several choices in this configuration.
@@ -810,8 +810,8 @@
   <p>
   In general you don't need to do any low-level tuning of the filesystem, but in the next few sections we will go over some of this in case it is useful.
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="linuxflush" href="#linuxflush"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="linuxflush" href="#linuxflush"></a>
 <a href="#linuxflush">Understanding Linux OS Flush Behavior
     </a></h4>
 
@@ -832,22 +832,22 @@
     <li>It automatically uses all the free memory on the machine
   </ul>
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="filesystems" href="#filesystems"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="filesystems" href="#filesystems"></a>
 <a href="#filesystems">Filesystem Selection
     </a></h4>
   <p>Kafka uses regular files on disk, and as such it has no hard dependency on a specific filesystem. The two filesystems which have the most usage, however, are EXT4 and XFS. Historically, EXT4 has had more usage, but recent improvements to the XFS filesystem have shown it to have better performance characteristics for Kafka's workload with no compromise in stability.</p>
   <p>Comparison testing was performed on a cluster with significant message loads, using a variety of filesystem creation and mount options. The primary metric in Kafka that was monitored was the "Request Local Time", indicating the amount of time append operations were taking. XFS resulted in much better local times (160ms vs. 250ms+ for the best EXT4 configuration), as well as lower average wait times. The XFS performance also showed less variability in disk performance.</p>
-  <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="generalfs" href="#generalfs"></a>
+  <h5 class="anchor-heading">
+      <a class="anchor-link" id="generalfs" href="#generalfs"></a>
 <a href="#generalfs">General Filesystem Notes
     </a></h5>
   For any filesystem used for data directories, on Linux systems, the following options are recommended to be used at mount time:
   <ul>
     <li>noatime: This option disables updating of a file's atime (last access time) attribute when the file is read. This can eliminate a significant number of filesystem writes, especially in the case of bootstrapping consumers. Kafka does not rely on the atime attributes at all, so it is safe to disable this.</li>
   </ul>
-  <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="xfs" href="#xfs"></a>
+  <h5 class="anchor-heading">
+      <a class="anchor-link" id="xfs" href="#xfs"></a>
 <a href="#xfs">XFS Notes
     </a></h5>
   The XFS filesystem has a significant amount of auto-tuning in place, so it does not require any change in the default settings, either at filesystem creation time or at mount. The only tuning parameters worth considering are:
@@ -855,8 +855,8 @@
     <li>largeio: This affects the preferred I/O size reported by the stat call. While this can allow for higher performance on larger disk writes, in practice it had minimal or no effect on performance.</li>
     <li>nobarrier: For underlying devices that have battery-backed cache, this option can provide a little more performance by disabling periodic write flushes. However, if the underlying device is well-behaved, it will report to the filesystem that it does not require flushes, and this option will have no effect.</li>
   </ul>
-  <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="ext4" href="#ext4"></a>
+  <h5 class="anchor-heading">
+      <a class="anchor-link" id="ext4" href="#ext4"></a>
 <a href="#ext4">EXT4 Notes
     </a></h5>
   EXT4 is a serviceable choice of filesystem for the Kafka data directories, however getting the most performance out of it will require adjusting several mount options. In addition, these options are generally unsafe in a failure scenario, and will result in much more data loss and corruption. For a single broker failure, this is not much of a concern as the disk can be wiped and the replicas rebuilt from the cluster. In a multiple-failure scenario, such as a power outage, this can mean underlying filesystem (and therefore data) corruption that is not easily recoverable. The following options can be adjusted:
@@ -868,8 +868,8 @@
     <li>delalloc: Delayed allocation means that the filesystem avoid allocating any blocks until the physical write occurs. This allows ext4 to allocate a large extent instead of smaller pages and helps ensure the data is written sequentially. This feature is great for throughput. It does seem to involve some locking in the filesystem which adds a bit of latency variance.
   </ul>
 
-  <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="monitoring" href="#monitoring"></a>
+  <h3 class="anchor-heading">
+      <a class="anchor-link" id="monitoring" href="#monitoring"></a>
 <a href="#monitoring">6.6 Monitoring
     </a></h3>
 
@@ -880,8 +880,8 @@
   <p>
   The easiest way to see the available metrics is to fire up jconsole and point it at a running kafka client or server; this will allow browsing all metrics with JMX.
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="remote_jmx" href="#remote_jmx"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="remote_jmx" href="#remote_jmx"></a>
 <a href="#remote_jmx">Security Considerations for Remote Monitoring using JMX
     </a></h4>
   Apache Kafka disables remote JMX by default. You can enable remote monitoring using JMX by setting the environment variable
@@ -1202,8 +1202,8 @@
       </tr>
   </tbody></table>
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="selector_monitoring" href="#selector_monitoring"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="selector_monitoring" href="#selector_monitoring"></a>
 <a href="#selector_monitoring">Common monitoring metrics for producer</a>/consumer/connect/streams
     </h4>
 
@@ -1389,8 +1389,8 @@
     </tbody>
   </table>
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="common_node_monitoring" href="#common_node_monitoring"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="common_node_monitoring" href="#common_node_monitoring"></a>
 <a href="#common_node_monitoring">Common Per</a>-broker metrics for producer/consumer/connect/streams
     </h4>
 
@@ -1466,8 +1466,8 @@
     </tbody>
   </table>
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="producer_monitoring" href="#producer_monitoring"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="producer_monitoring" href="#producer_monitoring"></a>
 <a href="#producer_monitoring">Producer monitoring
     </a></h4>
 
@@ -1502,16 +1502,16 @@
 
   </tbody></table>
 
-  <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="producer_sender_monitoring" href="#producer_sender_monitoring"></a>
+  <h5 class="anchor-heading">
+      <a class="anchor-link" id="producer_sender_monitoring" href="#producer_sender_monitoring"></a>
 <a href="#producer_sender_monitoring">Producer Sender Metrics
     </a></h5>
 
   <!--#include virtual="generated/producer_metrics.html" -->
 
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="consumer_monitoring" href="#consumer_monitoring"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="consumer_monitoring" href="#consumer_monitoring"></a>
 <a href="#consumer_monitoring">consumer monitoring
     </a></h4>
 
@@ -1547,8 +1547,8 @@
     </tbody>
   </table>
 
-  <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="consumer_group_monitoring" href="#consumer_group_monitoring"></a>
+  <h5 class="anchor-heading">
+      <a class="anchor-link" id="consumer_group_monitoring" href="#consumer_group_monitoring"></a>
 <a href="#consumer_group_monitoring">Consumer Group Metrics
     </a></h5>
   <table class="data-table">
@@ -1716,15 +1716,15 @@
     </tbody>
   </table>
 
-  <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="consumer_fetch_monitoring" href="#consumer_fetch_monitoring"></a>
+  <h5 class="anchor-heading">
+      <a class="anchor-link" id="consumer_fetch_monitoring" href="#consumer_fetch_monitoring"></a>
 <a href="#consumer_fetch_monitoring">Consumer Fetch Metrics
     </a></h5>
 
   <!--#include virtual="generated/consumer_metrics.html" -->
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_monitoring" href="#connect_monitoring"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="connect_monitoring" href="#connect_monitoring"></a>
 <a href="#connect_monitoring">Connect Monitoring
     </a></h4>
 
@@ -1733,8 +1733,8 @@
 
   <!--#include virtual="generated/connect_metrics.html" -->
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="kafka_streams_monitoring" href="#kafka_streams_monitoring"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="kafka_streams_monitoring" href="#kafka_streams_monitoring"></a>
 <a href="#kafka_streams_monitoring">Streams Monitoring
     </a></h4>
 
@@ -1753,8 +1753,8 @@
 
 <pre>metrics.recording.level="info"</pre>
 
-<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="kafka_streams_client_monitoring" href="#kafka_streams_client_monitoring"></a>
+<h5 class="anchor-heading">
+      <a class="anchor-link" id="kafka_streams_client_monitoring" href="#kafka_streams_client_monitoring"></a>
 <a href="#kafka_streams_client_monitoring">Client Metrics
     </a></h5>
 All of the following metrics have a recording level of <code>info</code>:
@@ -1793,8 +1793,8 @@ All of the following metrics have a recording level of <code>info</code>:
   </tbody>
 </table>
 
-<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="kafka_streams_thread_monitoring" href="#kafka_streams_thread_monitoring"></a>
+<h5 class="anchor-heading">
+      <a class="anchor-link" id="kafka_streams_thread_monitoring" href="#kafka_streams_thread_monitoring"></a>
 <a href="#kafka_streams_thread_monitoring">Thread Metrics
     </a></h5>
 All of the following metrics have a recording level of <code>info</code>:
@@ -1908,8 +1908,8 @@ All of the following metrics have a recording level of <code>info</code>:
  </tbody>
 </table>
 
-<h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="kafka_streams_task_monitoring" href="#kafka_streams_task_monitoring"></a>
+<h5 class="anchor-heading">
+      <a class="anchor-link" id="kafka_streams_task_monitoring" href="#kafka_streams_task_monitoring"></a>
 <a href="#kafka_streams_task_monitoring">Task Metrics
     </a></h5>
 All of the following metrics have a recording level of <code>debug</code>, except for metrics
@@ -1994,8 +1994,8 @@ dropped-records-rate and dropped-records-total which have a recording level of <
  </tbody>
 </table>
 
- <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="kafka_streams_node_monitoring" href="#kafka_streams_node_monitoring"></a>
+ <h5 class="anchor-heading">
+      <a class="anchor-link" id="kafka_streams_node_monitoring" href="#kafka_streams_node_monitoring"></a>
 <a href="#kafka_streams_node_monitoring">Processor Node Metrics
     </a></h5>
  The following metrics are only available on certain types of nodes, i.e., process-rate and process-total are
@@ -2031,8 +2031,8 @@ dropped-records-rate and dropped-records-total which have a recording level of <
  </tbody>
  </table>
 
- <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="kafka_streams_store_monitoring" href="#kafka_streams_store_monitoring"></a>
+ <h5 class="anchor-heading">
+      <a class="anchor-link" id="kafka_streams_store_monitoring" href="#kafka_streams_store_monitoring"></a>
 <a href="#kafka_streams_store_monitoring">State Store Metrics
     </a></h5>
  All of the following metrics have a recording level of <code>debug</code>. Note that the <code>store-scope</code> value is specified in <code>StoreSupplier#metricsScope()</code> for user's customized
@@ -2214,8 +2214,8 @@ dropped-records-rate and dropped-records-total which have a recording level of <
     </tbody>
  </table>
 
-  <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="kafka_streams_rocksdb_monitoring" href="#kafka_streams_rocksdb_monitoring"></a>
+  <h5 class="anchor-heading">
+      <a class="anchor-link" id="kafka_streams_rocksdb_monitoring" href="#kafka_streams_rocksdb_monitoring"></a>
 <a href="#kafka_streams_rocksdb_monitoring">RocksDB Metrics
     </a></h5>
   All of the following metrics have a recording level of <code>debug</code>.
@@ -2319,8 +2319,8 @@ dropped-records-rate and dropped-records-total which have a recording level of <
     </tbody>
   </table>
 
-  <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="kafka_streams_cache_monitoring" href="#kafka_streams_cache_monitoring"></a>
+  <h5 class="anchor-heading">
+      <a class="anchor-link" id="kafka_streams_cache_monitoring" href="#kafka_streams_cache_monitoring"></a>
 <a href="#kafka_streams_cache_monitoring">Record Cache Metrics
     </a></h5>
   All of the following metrics have a recording level of <code>debug</code>:
@@ -2350,8 +2350,8 @@ dropped-records-rate and dropped-records-total which have a recording level of <
     </tbody>
  </table>
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="others_monitoring" href="#others_monitoring"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="others_monitoring" href="#others_monitoring"></a>
 <a href="#others_monitoring">Others
     </a></h4>
 
@@ -2359,19 +2359,19 @@ dropped-records-rate and dropped-records-total which have a recording level of <
 
   On the client side, we recommend monitoring the message/byte rate (global and per topic), request rate/size/time, and on the consumer side, max lag in messages among all partitions and min fetch request rate. For a consumer to keep up, max lag needs to be less than a threshold and min fetch rate needs to be larger than 0.
 
-  <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="zk" href="#zk"></a>
+  <h3 class="anchor-heading">
+      <a class="anchor-link" id="zk" href="#zk"></a>
 <a href="#zk">6.7 ZooKeeper
     </a></h3>
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="zkversion" href="#zkversion"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="zkversion" href="#zkversion"></a>
 <a href="#zkversion">Stable version
     </a></h4>
   The current stable branch is 3.5. Kafka is regularly updated to include the latest release in the 3.5 series.
 
-  <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="zkops" href="#zkops"></a>
+  <h4 class="anchor-heading">
+      <a class="anchor-link" id="zkops" href="#zkops"></a>
 <a href="#zkops">Operationalizing ZooKeeper
     </a></h4>
   Operationally, we do the following for a healthy ZooKeeper installation:

@@ -16,8 +16,8 @@
   ~-->
 
 <script id="connect-template" type="text/x-handlebars-template">
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_overview" href="#connect_overview"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="connect_overview" href="#connect_overview"></a>
 <a href="#connect_overview">8.1 Overview
     </a></h3>
 
@@ -33,15 +33,15 @@
         <li><b>Streaming/batch integration</b> - leveraging Kafka's existing capabilities, Kafka Connect is an ideal solution for bridging streaming and batch data systems</li>
     </ul>
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_user" href="#connect_user"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="connect_user" href="#connect_user"></a>
 <a href="#connect_user">8.2 User Guide
     </a></h3>
 
     <p>The quickstart provides a brief example of how to run a standalone version of Kafka Connect. This section describes how to configure, run, and manage Kafka Connect in more detail.</p>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_running" href="#connect_running"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="connect_running" href="#connect_running"></a>
 <a href="#connect_running">Running Kafka Connect
     </a></h4>
 
@@ -90,8 +90,8 @@
     <p>Note that in distributed mode the connector configurations are not passed on the command line. Instead, use the REST API described below to create, modify, and destroy connectors.</p>
 
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_configuring" href="#connect_configuring"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="connect_configuring" href="#connect_configuring"></a>
 <a href="#connect_configuring">Configuring Connectors
     </a></h4>
 
@@ -117,8 +117,8 @@
 
     <p>For any other options, you should consult the documentation for the connector.</p>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_transforms" href="#connect_transforms"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="connect_transforms" href="#connect_transforms"></a>
 <a href="#connect_transforms">Transformations
     </a></h4>
 
@@ -202,8 +202,8 @@
 
     <!--#include virtual="generated/connect_transforms.html" -->
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_rest" href="#connect_rest"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="connect_rest" href="#connect_rest"></a>
 <a href="#connect_rest">REST API
     </a></h4>
 
@@ -276,20 +276,20 @@
         <li><code>GET /</code>- return basic information about the Kafka Connect cluster such as the version of the Connect worker that serves the REST request (including git commit ID of the source code) and the Kafka cluster ID that is connected to.
     </ul>
 
-    <h3 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_development" href="#connect_development"></a>
+    <h3 class="anchor-heading">
+      <a class="anchor-link" id="connect_development" href="#connect_development"></a>
 <a href="#connect_development">8.3 Connector Development Guide
     </a></h3>
 
     <p>This guide describes how developers can write new connectors for Kafka Connect to move data between Kafka and other systems. It briefly reviews a few key concepts and then describes how to create a simple connector.</p>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_concepts" href="#connect_concepts"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="connect_concepts" href="#connect_concepts"></a>
 <a href="#connect_concepts">Core Concepts and APIs
     </a></h4>
 
-    <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_connectorsandtasks" href="#connect_connectorsandtasks"></a>
+    <h5 class="anchor-heading">
+      <a class="anchor-link" id="connect_connectorsandtasks" href="#connect_connectorsandtasks"></a>
 <a href="#connect_connectorsandtasks">Connectors and Tasks
     </a></h5>
 
@@ -300,8 +300,8 @@
     <p>With an assignment in hand, each <code>Task</code> must copy its subset of the data to or from Kafka. In Kafka Connect, it should always be possible to frame these assignments as a set of input and output streams consisting of records with consistent schemas. Sometimes this mapping is obvious: each file in a set of log files can be considered a stream with each parsed line forming a record using the same schema and offsets stored as byte offsets in the file. In other cases it may require more effort to map to this model: a JDBC connector can map each table to a stream, but the offset is less clear. One possible mapping uses a timestamp column to generate queries incrementally returning new data, and the last queried timestamp can be used as the offset.</p>
 
 
-    <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_streamsandrecords" href="#connect_streamsandrecords"></a>
+    <h5 class="anchor-heading">
+      <a class="anchor-link" id="connect_streamsandrecords" href="#connect_streamsandrecords"></a>
 <a href="#connect_streamsandrecords">Streams and Records
     </a></h5>
 
@@ -309,16 +309,16 @@
 
     <p>In addition to the key and value, records (both those generated by sources and those delivered to sinks) have associated stream IDs and offsets. These are used by the framework to periodically commit the offsets of data that have been processed so that in the event of failures, processing can resume from the last committed offsets, avoiding unnecessary reprocessing and duplication of events.</p>
 
-    <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_dynamicconnectors" href="#connect_dynamicconnectors"></a>
+    <h5 class="anchor-heading">
+      <a class="anchor-link" id="connect_dynamicconnectors" href="#connect_dynamicconnectors"></a>
 <a href="#connect_dynamicconnectors">Dynamic Connectors
     </a></h5>
 
     <p>Not all jobs are static, so <code>Connector</code> implementations are also responsible for monitoring the external system for any changes that might require reconfiguration. For example, in the <code>JDBCSourceConnector</code> example, the <code>Connector</code> might assign a set of tables to each <code>Task</code>. When a new table is created, it must discover this so it can assign the new table to one of the <code>Tasks</code> by updating its configuration. When it notices a change that requires reconfiguration (or a change in the number of <code>Tasks</code>), it notifies the framework and the framework updates any corresponding <code>Tasks</code>.</p>
 
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_developing" href="#connect_developing"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="connect_developing" href="#connect_developing"></a>
 <a href="#connect_developing">Developing a Simple Connector
     </a></h4>
 
@@ -326,8 +326,8 @@
 
     <p>The rest of this section will walk through some code to demonstrate the key steps in creating a connector, but developers should also refer to the full example source code as many details are omitted for brevity.</p>
 
-    <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_connectorexample" href="#connect_connectorexample"></a>
+    <h5 class="anchor-heading">
+      <a class="anchor-link" id="connect_connectorexample" href="#connect_connectorexample"></a>
 <a href="#connect_connectorexample">Connector Example
     </a></h5>
 
@@ -389,8 +389,8 @@
 
     <p>Note that this simple example does not include dynamic input. See the discussion in the next section for how to trigger updates to task configs.</p>
 
-    <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_taskexample" href="#connect_taskexample"></a>
+    <h5 class="anchor-heading">
+      <a class="anchor-link" id="connect_taskexample" href="#connect_taskexample"></a>
 <a href="#connect_taskexample">Task Example </a>- Source Task
     </h5>
 
@@ -450,8 +450,8 @@
 
     <p>Note that this implementation uses the normal Java <code>InputStream</code> interface and may sleep if data is not available. This is acceptable because Kafka Connect provides each task with a dedicated thread. While task implementations have to conform to the basic <code>poll()</code> interface, they have a lot of flexibility in how they are implemented. In this case, an NIO-based implementation would be more efficient, but this simple approach works, is quick to implement, and is compatible with older versions of Java.</p>
 
-    <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_sinktasks" href="#connect_sinktasks"></a>
+    <h5 class="anchor-heading">
+      <a class="anchor-link" id="connect_sinktasks" href="#connect_sinktasks"></a>
 <a href="#connect_sinktasks">Sink Tasks
     </a></h5>
 
@@ -475,8 +475,8 @@
     delivery. For example, an HDFS connector could do this and use atomic move operations to make sure the <code>flush()</code> operation atomically commits the data and offsets to a final location in HDFS.</p>
 
 
-    <h5 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_resuming" href="#connect_resuming"></a>
+    <h5 class="anchor-heading">
+      <a class="anchor-link" id="connect_resuming" href="#connect_resuming"></a>
 <a href="#connect_resuming">Resuming from Previous Offsets
     </a></h5>
 
@@ -496,8 +496,8 @@
 
     <p>Of course, you might need to read many keys for each of the input streams. The <code>OffsetStorageReader</code> interface also allows you to issue bulk reads to efficiently load all offsets, then apply them by seeking each input stream to the appropriate position.</p>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_dynamicio" href="#connect_dynamicio"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="connect_dynamicio" href="#connect_dynamicio"></a>
 <a href="#connect_dynamicio">Dynamic Input</a>/Output Streams
     </h4>
 
@@ -516,8 +516,8 @@
 
     <p><code>SinkConnectors</code> usually only have to handle the addition of streams, which may translate to new entries in their outputs (e.g., a new database table). The framework manages any changes to the Kafka input, such as when the set of input topics changes because of a regex subscription. <code>SinkTasks</code> should expect new input streams, which may require creating new resources in the downstream system, such as a new table in a database. The trickiest situation to handle in these cases may be conflicts between multiple <code>SinkTasks</code> seeing a new input stream for the first time and simultaneously trying to create the new resource. <code>SinkConnectors</code>, on the other hand, will generally require no special code for handling a dynamic set of streams.</p>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_configs" href="#connect_configs"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="connect_configs" href="#connect_configs"></a>
 <a href="#connect_configs">Connect Configuration Validation
     </a></h4>
 
@@ -539,8 +539,8 @@
 
     <p>Also, the <code>validate()</code> method in <code>Connector</code> provides a default validation implementation which returns a list of allowed configurations together with configuration errors and recommended values for each configuration. However, it does not use the recommended values for configuration validation. You may provide an override of the default implementation for customized configuration validation, which may use the recommended values.</p>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_schemas" href="#connect_schemas"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="connect_schemas" href="#connect_schemas"></a>
 <a href="#connect_schemas">Working with Schemas
     </a></h4>
 
@@ -568,8 +568,8 @@
 
     <p>Sink connectors are usually simpler because they are consuming data and therefore do not need to create schemas. However, they should take just as much care to validate that the schemas they receive have the expected format. When the schema does not match -- usually indicating the upstream producer is generating invalid data that cannot be correctly translated to the destination system -- sink connectors should throw an exception to indicate this error to the system.</p>
 
-    <h4 class="docs-anchor-heading">
-      <a class="docs-anchor-link" id="connect_administration" href="#connect_administration"></a>
+    <h4 class="anchor-heading">
+      <a class="anchor-link" id="connect_administration" href="#connect_administration"></a>
 <a href="#connect_administration">Kafka Connect Administration
     </a></h4>
 

@@ -31,6 +31,7 @@
 					'connect',
 					'streams',
 					'quickstart',
+					'quickstart-docker',
 					'toc',
 					'upgrade',
 					'content'
@@ -314,10 +315,22 @@
 							( navigator.msMaxTouchPoints > 0 ); 
 			}
 
+			function setupDocsNav() {
+				var docsContainer = document.querySelector('.documentation--current');
+				var docsHandle = document.querySelector('.toc-handle');
+
+				function toggleDocsWidth() {
+					docsContainer.classList.toggle('expanded');
+				}
+
+				docsHandle.addEventListener('click', toggleDocsWidth);
+			}
+
 			// jQuery free IIFE
 			(function() {
 				var navToggle = document.getElementById('top-nav-toggle');
 				var nav = document.getElementById('top-nav-container');
+				var docsNav = document.querySelector('.docs-nav');
 
 				navToggle.addEventListener('click', () => {
 					navToggle.classList.toggle('active');
@@ -334,6 +347,10 @@
 				document.addEventListener("DOMContentLoaded", function() { 
 					// anything to do on dom ready here
 					pageScroll();
+
+					if (docsNav) {
+						setupDocsNav();
+					}
 				});
 
 				window.addEventListener('scroll', pageScroll);
