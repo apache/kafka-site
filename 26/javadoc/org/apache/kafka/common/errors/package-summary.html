@@ -386,214 +386,223 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/NotLeaderForPartitionException.html" title="class in org.apache.kafka.common.errors">NotLeaderForPartitionException</a></td>
-<td class="colLast">
-<div class="block">This server is not the leader for the given partition</div>
+<td class="colLast">Deprecated
+<div class="block"><span class="deprecationComment">since 2.7.</span></div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/NotLeaderOrFollowerException.html" title="class in org.apache.kafka.common.errors">NotLeaderOrFollowerException</a></td>
+<td class="colLast">
+<div class="block">Broker returns this error if a request could not be processed because the broker is not the leader
+ or follower for a topic partition.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/OffsetMetadataTooLarge.html" title="class in org.apache.kafka.common.errors">OffsetMetadataTooLarge</a></td>
 <td class="colLast">
 <div class="block">The client has tried to save its offset with associated metadata larger than the maximum size allowed by the server.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/OffsetNotAvailableException.html" title="class in org.apache.kafka.common.errors">OffsetNotAvailableException</a></td>
 <td class="colLast">
 <div class="block">Indicates that the leader is not able to guarantee monotonically increasing offsets
  due to the high watermark lagging behind the epoch start offset after a recent leader election</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/OffsetOutOfRangeException.html" title="class in org.apache.kafka.common.errors">OffsetOutOfRangeException</a></td>
 <td class="colLast">
 <div class="block">No reset policy has been defined, and the offsets for these partitions are either larger or smaller
  than the range of offsets the server has for the given partition.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/OperationNotAttemptedException.html" title="class in org.apache.kafka.common.errors">OperationNotAttemptedException</a></td>
 <td class="colLast">
 <div class="block">Indicates that the broker did not attempt to execute this operation.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/OutOfOrderSequenceException.html" title="class in org.apache.kafka.common.errors">OutOfOrderSequenceException</a></td>
 <td class="colLast">
 <div class="block">This exception indicates that the broker received an unexpected sequence number from the producer,
  which means that data may have been lost.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/PolicyViolationException.html" title="class in org.apache.kafka.common.errors">PolicyViolationException</a></td>
 <td class="colLast">
 <div class="block">Exception thrown if a create topics request does not satisfy the configured policy for a topic.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/PreferredLeaderNotAvailableException.html" title="class in org.apache.kafka.common.errors">PreferredLeaderNotAvailableException</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></td>
 <td class="colLast">
 <div class="block">This fatal exception indicates that another producer with the same <code>transactional.id</code> has been
  started.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/ReassignmentInProgressException.html" title="class in org.apache.kafka.common.errors">ReassignmentInProgressException</a></td>
 <td class="colLast">
 <div class="block">Thrown if a request cannot be completed because a partition reassignment is in progress.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/RebalanceInProgressException.html" title="class in org.apache.kafka.common.errors">RebalanceInProgressException</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/RecordBatchTooLargeException.html" title="class in org.apache.kafka.common.errors">RecordBatchTooLargeException</a></td>
 <td class="colLast">
 <div class="block">This record batch is larger than the maximum allowable size</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/RecordTooLargeException.html" title="class in org.apache.kafka.common.errors">RecordTooLargeException</a></td>
 <td class="colLast">
 <div class="block">This record is larger than the maximum allowable size</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/ReplicaNotAvailableException.html" title="class in org.apache.kafka.common.errors">ReplicaNotAvailableException</a></td>
-<td class="colLast">&nbsp;</td>
-</tr>
 <tr class="rowColor">
+<td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/ReplicaNotAvailableException.html" title="class in org.apache.kafka.common.errors">ReplicaNotAvailableException</a></td>
+<td class="colLast">
+<div class="block">The replica is not available for the requested topic partition.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/RetriableException.html" title="class in org.apache.kafka.common.errors">RetriableException</a></td>
 <td class="colLast">
 <div class="block">A retryable exception is a transient exception that if retried may succeed.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/SaslAuthenticationException.html" title="class in org.apache.kafka.common.errors">SaslAuthenticationException</a></td>
 <td class="colLast">
 <div class="block">This exception indicates that SASL authentication has failed.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/SecurityDisabledException.html" title="class in org.apache.kafka.common.errors">SecurityDisabledException</a></td>
 <td class="colLast">
 <div class="block">An error indicating that security is disabled on the broker.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/SerializationException.html" title="class in org.apache.kafka.common.errors">SerializationException</a></td>
 <td class="colLast">
 <div class="block">Any exception during serialization in the producer</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/SslAuthenticationException.html" title="class in org.apache.kafka.common.errors">SslAuthenticationException</a></td>
 <td class="colLast">
 <div class="block">This exception indicates that SSL handshake has failed.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/StaleBrokerEpochException.html" title="class in org.apache.kafka.common.errors">StaleBrokerEpochException</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/TimeoutException.html" title="class in org.apache.kafka.common.errors">TimeoutException</a></td>
 <td class="colLast">
 <div class="block">Indicates that a request timed out.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/TopicAuthorizationException.html" title="class in org.apache.kafka.common.errors">TopicAuthorizationException</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/TopicDeletionDisabledException.html" title="class in org.apache.kafka.common.errors">TopicDeletionDisabledException</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/TopicExistsException.html" title="class in org.apache.kafka.common.errors">TopicExistsException</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/TransactionalIdAuthorizationException.html" title="class in org.apache.kafka.common.errors">TransactionalIdAuthorizationException</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/TransactionCoordinatorFencedException.html" title="class in org.apache.kafka.common.errors">TransactionCoordinatorFencedException</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/UnknownLeaderEpochException.html" title="class in org.apache.kafka.common.errors">UnknownLeaderEpochException</a></td>
 <td class="colLast">
 <div class="block">The request contained a leader epoch which is larger than that on the broker that received the
  request.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/UnknownMemberIdException.html" title="class in org.apache.kafka.common.errors">UnknownMemberIdException</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/UnknownProducerIdException.html" title="class in org.apache.kafka.common.errors">UnknownProducerIdException</a></td>
 <td class="colLast">
 <div class="block">This exception is raised by the broker if it could not locate the producer metadata associated with the producerId
  in question.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/UnknownServerException.html" title="class in org.apache.kafka.common.errors">UnknownServerException</a></td>
 <td class="colLast">
 <div class="block">An error occurred on the server for which the client doesn't have a corresponding error code.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/UnknownTopicOrPartitionException.html" title="class in org.apache.kafka.common.errors">UnknownTopicOrPartitionException</a></td>
 <td class="colLast">
 <div class="block">This topic/partition doesn't exist.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/UnstableOffsetCommitException.html" title="class in org.apache.kafka.common.errors">UnstableOffsetCommitException</a></td>
 <td class="colLast">
 <div class="block">Exception thrown when there are unstable offsets for the requested topic partitions.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/UnsupportedByAuthenticationException.html" title="class in org.apache.kafka.common.errors">UnsupportedByAuthenticationException</a></td>
 <td class="colLast">
 <div class="block">Authentication mechanism does not support the requested function.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/UnsupportedCompressionTypeException.html" title="class in org.apache.kafka.common.errors">UnsupportedCompressionTypeException</a></td>
 <td class="colLast">
 <div class="block">The requesting client does not support the compression type of given partition.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/UnsupportedForMessageFormatException.html" title="class in org.apache.kafka.common.errors">UnsupportedForMessageFormatException</a></td>
 <td class="colLast">
 <div class="block">The message format version does not support the requested function.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/UnsupportedSaslMechanismException.html" title="class in org.apache.kafka.common.errors">UnsupportedSaslMechanismException</a></td>
 <td class="colLast">
 <div class="block">This exception indicates that the SASL mechanism requested by the client
  is not enabled on the broker.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/UnsupportedVersionException.html" title="class in org.apache.kafka.common.errors">UnsupportedVersionException</a></td>
 <td class="colLast">
 <div class="block">Indicates that a request API or version needed by the client is not supported by the broker.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../org/apache/kafka/common/errors/WakeupException.html" title="class in org.apache.kafka.common.errors">WakeupException</a></td>
 <td class="colLast">
 <div class="block">Exception used to indicate preemption of a blocking operation by an external thread.</div>

@@ -8650,15 +8650,38 @@
 <dd>&nbsp;</dd>
 <dt><a href="org/apache/kafka/common/errors/NotLeaderForPartitionException.html" title="class in org.apache.kafka.common.errors"><span class="typeNameLink">NotLeaderForPartitionException</span></a> - Exception in <a href="org/apache/kafka/common/errors/package-summary.html">org.apache.kafka.common.errors</a></dt>
 <dd>
-<div class="block">This server is not the leader for the given partition</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="block"><span class="deprecationComment">since 2.7. Use <a href="org/apache/kafka/common/errors/NotLeaderOrFollowerException.html" title="class in org.apache.kafka.common.errors"><code>NotLeaderOrFollowerException</code></a>.</span></div>
+</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/apache/kafka/common/errors/NotLeaderForPartitionException.html#NotLeaderForPartitionException--">NotLeaderForPartitionException()</a></span> - Constructor for exception org.apache.kafka.common.errors.<a href="org/apache/kafka/common/errors/NotLeaderForPartitionException.html" title="class in org.apache.kafka.common.errors">NotLeaderForPartitionException</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
+&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/apache/kafka/common/errors/NotLeaderForPartitionException.html#NotLeaderForPartitionException-java.lang.String-">NotLeaderForPartitionException(String)</a></span> - Constructor for exception org.apache.kafka.common.errors.<a href="org/apache/kafka/common/errors/NotLeaderForPartitionException.html" title="class in org.apache.kafka.common.errors">NotLeaderForPartitionException</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
+&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/apache/kafka/common/errors/NotLeaderForPartitionException.html#NotLeaderForPartitionException-java.lang.Throwable-">NotLeaderForPartitionException(Throwable)</a></span> - Constructor for exception org.apache.kafka.common.errors.<a href="org/apache/kafka/common/errors/NotLeaderForPartitionException.html" title="class in org.apache.kafka.common.errors">NotLeaderForPartitionException</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
+&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/apache/kafka/common/errors/NotLeaderForPartitionException.html#NotLeaderForPartitionException-java.lang.String-java.lang.Throwable-">NotLeaderForPartitionException(String, Throwable)</a></span> - Constructor for exception org.apache.kafka.common.errors.<a href="org/apache/kafka/common/errors/NotLeaderForPartitionException.html" title="class in org.apache.kafka.common.errors">NotLeaderForPartitionException</a></dt>
+<dd>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
+&nbsp;</dd>
+<dt><a href="org/apache/kafka/common/errors/NotLeaderOrFollowerException.html" title="class in org.apache.kafka.common.errors"><span class="typeNameLink">NotLeaderOrFollowerException</span></a> - Exception in <a href="org/apache/kafka/common/errors/package-summary.html">org.apache.kafka.common.errors</a></dt>
+<dd>
+<div class="block">Broker returns this error if a request could not be processed because the broker is not the leader
+ or follower for a topic partition.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/apache/kafka/common/errors/NotLeaderOrFollowerException.html#NotLeaderOrFollowerException--">NotLeaderOrFollowerException()</a></span> - Constructor for exception org.apache.kafka.common.errors.<a href="org/apache/kafka/common/errors/NotLeaderOrFollowerException.html" title="class in org.apache.kafka.common.errors">NotLeaderOrFollowerException</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/apache/kafka/common/errors/NotLeaderOrFollowerException.html#NotLeaderOrFollowerException-java.lang.String-">NotLeaderOrFollowerException(String)</a></span> - Constructor for exception org.apache.kafka.common.errors.<a href="org/apache/kafka/common/errors/NotLeaderOrFollowerException.html" title="class in org.apache.kafka.common.errors">NotLeaderOrFollowerException</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/apache/kafka/common/errors/NotLeaderOrFollowerException.html#NotLeaderOrFollowerException-java.lang.Throwable-">NotLeaderOrFollowerException(Throwable)</a></span> - Constructor for exception org.apache.kafka.common.errors.<a href="org/apache/kafka/common/errors/NotLeaderOrFollowerException.html" title="class in org.apache.kafka.common.errors">NotLeaderOrFollowerException</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/apache/kafka/common/errors/NotLeaderOrFollowerException.html#NotLeaderOrFollowerException-java.lang.String-java.lang.Throwable-">NotLeaderOrFollowerException(String, Throwable)</a></span> - Constructor for exception org.apache.kafka.common.errors.<a href="org/apache/kafka/common/errors/NotLeaderOrFollowerException.html" title="class in org.apache.kafka.common.errors">NotLeaderOrFollowerException</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/apache/kafka/connect/data/SchemaAndValue.html#NULL">NULL</a></span> - Static variable in class org.apache.kafka.connect.data.<a href="org/apache/kafka/connect/data/SchemaAndValue.html" title="class in org.apache.kafka.connect.data">SchemaAndValue</a></dt>
 <dd>&nbsp;</dd>
@@ -10569,7 +10592,9 @@
 <dt><span class="memberNameLink"><a href="org/apache/kafka/streams/kstream/Repartitioned.html#Repartitioned-org.apache.kafka.streams.kstream.Repartitioned-">Repartitioned(Repartitioned&lt;K, V&gt;)</a></span> - Constructor for class org.apache.kafka.streams.kstream.<a href="org/apache/kafka/streams/kstream/Repartitioned.html" title="class in org.apache.kafka.streams.kstream">Repartitioned</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/apache/kafka/common/errors/ReplicaNotAvailableException.html" title="class in org.apache.kafka.common.errors"><span class="typeNameLink">ReplicaNotAvailableException</span></a> - Exception in <a href="org/apache/kafka/common/errors/package-summary.html">org.apache.kafka.common.errors</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The replica is not available for the requested topic partition.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/apache/kafka/common/errors/ReplicaNotAvailableException.html#ReplicaNotAvailableException-java.lang.String-">ReplicaNotAvailableException(String)</a></span> - Constructor for exception org.apache.kafka.common.errors.<a href="org/apache/kafka/common/errors/ReplicaNotAvailableException.html" title="class in org.apache.kafka.common.errors">ReplicaNotAvailableException</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/apache/kafka/common/errors/ReplicaNotAvailableException.html#ReplicaNotAvailableException-java.lang.String-java.lang.Throwable-">ReplicaNotAvailableException(String, Throwable)</a></span> - Constructor for exception org.apache.kafka.common.errors.<a href="org/apache/kafka/common/errors/ReplicaNotAvailableException.html" title="class in org.apache.kafka.common.errors">ReplicaNotAvailableException</a></dt>
