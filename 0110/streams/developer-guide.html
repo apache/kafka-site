@@ -54,7 +54,7 @@
         The following example <code>Processor</code> implementation defines a simple word-count algorithm:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
     public class MyProcessor implements Processor&lt;String, String&gt; {
     private ProcessorContext context;
     private KeyValueStore&lt;String, Long&gt; kvStore;
@@ -128,7 +128,7 @@
         by connecting these processors together:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
     TopologyBuilder builder = new TopologyBuilder();
 
     builder.addSource("SOURCE", "src-topic")
@@ -172,7 +172,7 @@
         In the following example, a persistent key-value store named "Counts" with key type <code>String</code> and value type <code>Long</code> is created.
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
     StateStoreSupplier countStore = Stores.create("Counts")
     .withKeys(Serdes.String())
     .withValues(Serdes.Long())
@@ -186,7 +186,7 @@
         state store with the existing processor nodes through <code>TopologyBuilder.connectProcessorAndStateStores</code>.
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
     TopologyBuilder builder = new TopologyBuilder();
 
     builder.addSource("SOURCE", "src-topic")
@@ -274,7 +274,7 @@
         from a single topic).
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
     KStreamBuilder builder = new KStreamBuilder();
 
     KStream&lt;String, GenericRecord&gt; source1 = builder.stream("topic1", "topic2");
@@ -354,7 +354,7 @@
 
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
     // written in Java 8+, using lambda expressions
     KStream&lt;String, GenericRecord&gt; mapped = source1.mapValue(record -> record.get("category"));
     </pre>
@@ -368,7 +368,7 @@
         based on them.
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
     // written in Java 8+, using lambda expressions
     KTable&lt;Windowed&lt;String&gt;, Long&gt; counts = source1.groupByKey().aggregate(
     () -> 0L,  // initial value
@@ -389,7 +389,7 @@
         <code>KStream.to</code> and <code>KTable.to</code>.
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
     joined.to("topic4");
     </pre>
 
@@ -397,7 +397,7 @@
     to a topic via <code>to</code> above, one option is to construct a new stream that reads from the output topic;
     Kafka Streams provides a convenience method called <code>through</code>:
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
     // equivalent to
     //
     // joined.to("topic4");
@@ -550,7 +550,7 @@
         To query a local key-value store, you must first create a topology with a key-value store:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
           StreamsConfig config = ...;
           KStreamBuilder builder = ...;
           KStream&lt;String, String&gt; textLines = ...;
@@ -574,7 +574,7 @@
         Once the application has started we can get access to "CountsKeyValueStore" and then query it via the <code>ReadOnlyKeyValueStore</code> API:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
           // Get the key-value store CountsKeyValueStore
           ReadOnlyKeyValueStore&lt;String, Long&gt; keyValueStore =
               streams.store("CountsKeyValueStore", QueryableStoreTypes.keyValueStore());
@@ -606,7 +606,7 @@
         To query a local window store, you must first create a topology with a window store:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
           StreamsConfig config = ...;
           KStreamBuilder builder = ...;
           KStream&lt;String, String&gt; textLines = ...;
@@ -625,7 +625,7 @@
         Once the application has started we can get access to "CountsWindowStore" and then query it via the <code>ReadOnlyWindowStore</code> API:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
           // Get the window store named "CountsWindowStore"
           ReadOnlyWindowStore&lt;String, Long&gt; windowStore =
               streams.store("CountsWindowStore", QueryableStoreTypes.windowStore());
@@ -659,7 +659,7 @@
         The class/interface hierarchy for your custom store might look something like:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
           public class MyCustomStore&lt;K,V&gt; implements StateStore, MyWriteableCustomStore&lt;K,V&gt; {
             // implementation of the actual store
           }
@@ -691,7 +691,7 @@
         Implementing <code>QueryableStoreType</code> is straight forward:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
 
           public class MyCustomStoreType&lt;K,V&gt; implements QueryableStoreType&lt;MyReadableCustomStore&lt;K,V&gt;&gt; {
 
@@ -721,7 +721,7 @@
         An example implemention of the wrapper follows (Java 8+):
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
           // We strongly recommended implementing a read-only interface
           // to restrict usage of the store to safe read operations!
           public class MyCustomStoreTypeWrapper&lt;K,V&gt; implements MyReadableCustomStore&lt;K,V&gt; {
@@ -754,7 +754,7 @@
         Putting it all together you can now find and query your custom store:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
           StreamsConfig config = ...;
           TopologyBuilder builder = ...;
           ProcessorSupplier processorSuppler = ...;
@@ -820,7 +820,7 @@
         Below is an example of configuring and running a Kafka Streams application that supports the discovery of its state stores.
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
 
           Properties props = new Properties();
           // Set the unique RPC endpoint of this application instance through which it
@@ -878,7 +878,7 @@
         For example, we can now find the <code>StreamsMetadata</code> for the state store named "word-count" that we defined in the code example shown in the previous section:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
 
           KafkaStreams streams = ...;
           // Find all the locations of local instances of the state store named "word-count"
@@ -972,7 +972,7 @@
         The cache size is specified through the <code>cache.max.bytes.buffering</code> parameter, which is a global setting per processing topology:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         // Enable record cache of size 10 MB.
         Properties streamsConfiguration = new Properties();
         streamsConfiguration.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 10 * 1024 * 1024L);
@@ -1001,7 +1001,7 @@
     </p>
 
     <p>To turn off caching the cache size can be set to zero:</p>
-    <pre class="brush: java;">
+    <pre class="language-java;">
         // Disable record cache
         Properties streamsConfiguration = new Properties();
         streamsConfiguration.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 0);
@@ -1020,7 +1020,7 @@
         To enable caching but still have an upper bound on how long records will be cached, the commit interval can be set
         appropriately (in this example, it is set to 1000 milliseconds):
     </p>
-    <pre class="brush: java;">
+    <pre class="language-java;">
         Properties streamsConfiguration = new Properties();
         // Enable record cache of size 10 MB.
         streamsConfiguration.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 10 * 1024 * 1024L);
@@ -1067,7 +1067,7 @@
         add the <code>enableCaching</code> call (note that caches are disabled by default and there is no explicit <code>disableCaching</code>
         call) :
     </p>
-    <pre class="brush: java;">
+    <pre class="language-java;">
         StateStoreSupplier countStoreSupplier =
             Stores.create("Counts")
                 .withKeys(Serdes.String())
@@ -1118,7 +1118,7 @@
         set the necessary parameters, and construct a <code>StreamsConfig</code> instance from the <code>Properties</code> instance.
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
     import java.util.Properties;
     import org.apache.kafka.streams.StreamsConfig;
 
@@ -1147,7 +1147,7 @@
         If you want to set different values for consumer and producer for such a parameter, you can prefix the parameter name with <code>consumer.</code> or <code>producer.</code>:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
     Properties settings = new Properties();
     // Example of a "normal" setting for Kafka Streams
     settings.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka-broker-01:9092");
@@ -1195,7 +1195,7 @@
         that is used to define a topology; The second argument is an instance of <code>StreamsConfig</code> mentioned above.
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
     import org.apache.kafka.streams.KafkaStreams;
     import org.apache.kafka.streams.StreamsConfig;
     import org.apache.kafka.streams.kstream.KStreamBuilder;
@@ -1223,7 +1223,7 @@
         At this point, internal structures have been initialized, but the processing is not started yet. You have to explicitly start the Kafka Streams thread by calling the <code>start()</code> method:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
     // Start the Kafka Streams instance
     streams.start();
     </pre>
@@ -1232,7 +1232,7 @@
         To catch any unexpected exceptions, you may set an <code>java.lang.Thread.UncaughtExceptionHandler</code> before you start the application. This handler is called whenever a stream thread is terminated by an unexpected exception:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
     streams.setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
     public uncaughtException(Thread t, throwable e) {
     // here you should examine the exception and perform an appropriate action!
@@ -1244,7 +1244,7 @@
         To stop the application instance call the <code>close()</code> method:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
     // Stop the Kafka Streams instance
     streams.close();
     </pre>
@@ -1252,7 +1252,7 @@
     Now it's time to execute your application that uses the Kafka Streams library, which can be run just like any other Java application - there is no special magic or requirement on the side of Kafka Streams.
     For example, you can package your Java application as a fat jar file and then start the application via:
 
-    <pre class="brush: bash;">
+    <pre class="language-bash;">
     # Start the application in class `com.example.MyStreamsApp`
     # from the fat jar named `path-to-app-fatjar.jar`.
     $ java -cp path-to-app-fatjar.jar com.example.MyStreamsApp

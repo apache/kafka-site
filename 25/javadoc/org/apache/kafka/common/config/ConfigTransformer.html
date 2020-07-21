@@ -123,8 +123,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  <a href="../../../../../org/apache/kafka/common/config/provider/FileConfigProvider.html" title="class in org.apache.kafka.common.config.provider"><code>FileConfigProvider</code></a> is passed to the <a href="../../../../../org/apache/kafka/common/config/ConfigTransformer.html#ConfigTransformer-java.util.Map-"><code>ConfigTransformer(Map)</code></a>, and a Properties
  file with contents
  <pre>
- fileKey=someValue
- </pre>
+ fileKey=someValue</pre>
  resides at the path "/tmp/properties.txt", then when a configuration Map which has an entry with a key "someKey" and
  a value "${file:/tmp/properties.txt:fileKey}" is passed to the <a href="../../../../../org/apache/kafka/common/config/ConfigTransformer.html#transform-java.util.Map-"><code>transform(Map)</code></a> method, then the transformed
  Map will have an entry with key "someKey" and a value "someValue".

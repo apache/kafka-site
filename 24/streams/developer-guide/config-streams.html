@@ -325,7 +325,7 @@
                 The drawback of this approach is that "manual" writes are side effects that are invisible to the Kafka Streams runtime library,
                 so they do not benefit from the end-to-end processing guarantees of the Streams API:</p>
 
-              <pre class="brush: java;">
+              <pre class="language-java;">
               public class SendToDeadLetterQueueExceptionHandler implements DeserializationExceptionHandler {
                   KafkaProducer&lt;byte[], byte[]&gt; dlqProducer;
                   String dlqTopic;
@@ -365,7 +365,7 @@
             <p>Each exception handler can return a <code>FAIL</code> or <code>CONTINUE</code> depending on the record and the exception thrown. Returning <code>FAIL</code> will signal that Streams should shut down and <code>CONTINUE</code> will signal that Streams
             should ignore the issue and continue processing. If you want to provide an exception handler that always ignores records that are too large, you could implement something like the following:</p>
 
-            <pre class="brush: java;">
+            <pre class="language-java;">
             import java.util.Properties;
             import org.apache.kafka.streams.StreamsConfig;
             import org.apache.kafka.common.errors.RecordTooLargeException;

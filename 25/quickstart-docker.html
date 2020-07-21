@@ -28,7 +28,7 @@
     This docker-compose file will run everything for you via <a href="https://www.docker.com/" rel="nofollow">Docker</a>.
     Copy and paste it into a file named <code>docker-compose.yml</code> on your local filesystem.
 </p>
-<pre class="brush: bash;">
+<pre class="language-bash;">
 ---
     version: '2'
     
@@ -38,8 +38,7 @@
         hostname: kafka-broker
         container_name: kafka-broker
     
-    # ...rest omitted...
-</pre>
+    # ...rest omitted...</pre>
 </div>
 
 <div class="quickstart-step">
@@ -52,7 +51,7 @@
     From the directory containing the <code>docker-compose.yml</code> file created in the previous step, run this
     command in order to start all services in the correct order:
 </p>
-<pre class="brush: bash;">$ docker-compose up</pre>
+<pre class="language-bash;">$ docker-compose up</pre>
 <p>
     Once all services have successfully launched, you will have a basic Kafka environment running and ready to use.
 </p>
@@ -71,16 +70,15 @@ from IoT devices or medical equipment, and much more.
 These events are organized and stored in <a href="https://kafka.apache.org/documentation/#intro_topics" rel="nofollow"><em>topics</em></a>.
 Very simplified, a topic is similar to a folder in a filesystem, and the events are the files in that folder.</p>
 <p>So before you can write your first events, you must create a topic:</p>
-<pre class="brush: bash;">$ docker exec -it kafka-broker kafka-topics.sh --create --topic quickstart-events</pre>
+<pre class="language-bash;">$ docker exec -it kafka-broker kafka-topics.sh --create --topic quickstart-events</pre>
 <p>All of Kafka's command line tools have additional options: run the <code>kafka-topics.sh</code> command without any
 arguments to display usage information.
 For example, it can also show you
 <a href="https://kafka.apache.org/documentation/#intro_topics" rel="nofollow">details such as the partition count</a> of the new topic:</p>
-<pre class="brush: bash;">
+<pre class="language-bash;">
 $ docker exec -it kafka-broker kafka-topics.sh --describe --topic quickstart-events
     Topic:quickstart-events  PartitionCount:1    ReplicationFactor:1 Configs:
-    Topic: quickstart-events Partition: 0    Leader: 0   Replicas: 0 Isr: 0
-</pre>
+    Topic: quickstart-events Partition: 0    Leader: 0   Replicas: 0 Isr: 0</pre>
 </div>
 
 <div class="quickstart-step">
@@ -93,11 +91,10 @@ Once received, the brokers will store the events in a durable and fault-tolerant
 need—even forever.</p>
 <p>Run the console producer client to write a few events into your topic.
 By default, each line you enter will result in a separate event being written to the topic.</p>
-<pre class="brush: bash;">
+<pre class="language-bash;">
 $ docker exec -it kafka-broker kafka-console-producer.sh --topic quickstart-events
 This is my first event
-This is my second event
-</pre>
+This is my second event</pre>
 <p>You can stop the producer client with <code>Ctrl-C</code> at any time.</p>
 </div>
 
@@ -107,11 +104,10 @@ This is my second event
     <a href="#step-5-read-the-events">Step 5: Read the events</a>
 </h4>
 <p>Open another terminal session and run the console consumer client to read the events you just created:</p>
-<pre class="brush: bash;">
+<pre class="language-bash;">
 $ docker exec -it kafka-broker kafka-console-consumer.sh --topic quickstart-events --from-beginning
 This is my first event
-This is my second event
-</pre>
+This is my second event</pre>
 <p>You can stop the consumer client with <code>Ctrl-C</code> at any time.</p>
 <p>Feel free to experiment: for example, switch back to your producer terminal (previous step) to write
 additional events, and see how the events immediately show up in your consumer terminal.</p>
@@ -150,7 +146,7 @@ applications on the client side with the benefits of Kafka's server-side cluster
 highly scalable, elastic, fault-tolerant, and distributed. The library supports exactly-once processing, stateful
 operations and aggregations, windowing, joins, processing based on event-time, and much more.</p>
 <p>To give you a first taste, here's how one would implement the popular <code>WordCount</code> algorithm:</p>
-<pre class="brush: java;">
+<pre class="language-java;">
 KStream<String, String> textLines = builder.stream("quickstart-events");
 
 KTable<String, Long> wordCounts = textLines
@@ -158,8 +154,7 @@ KTable<String, Long> wordCounts = textLines
             .groupBy((keyIgnored, word) -> word)
             .count();
 
-wordCounts.toStream().to("output-topic"), Produced.with(Serdes.String(), Serdes.Long()));
-</pre>
+wordCounts.toStream().to("output-topic"), Produced.with(Serdes.String(), Serdes.Long()));</pre>
 <p>The <a href="https://kafka.apache.org/25/documentation/streams/quickstart" rel="nofollow">Kafka Streams demo</a> and the
 <a href="https://kafka.apache.org/25/documentation/streams/tutorial" rel="nofollow">app development tutorial</a> demonstrate how to code and run
 such a streaming application from start to finish.</p>
@@ -173,7 +168,7 @@ such a streaming application from start to finish.</p>
 </h4>
 <p>Now that you reached the end of the quickstart, feel free to tear down the Kafka environment—or continue playing around.</p>
 <p>Run the following command to tear down the environment, which also deletes any events you have created along the way:</p>
-<pre class="brush: bash;">$ docker-compose down</pre>
+<pre class="language-bash;">$ docker-compose down</pre>
 
 </div>
 

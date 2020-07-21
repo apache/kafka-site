@@ -15,7 +15,6 @@
 		</div>
 
 		<!-- Script tags should be inside the body tag -- not inside the html tag -->
-		<script type="text/javascript" src="/js/syntaxhighlighter.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
 		<script>
 			$(function () {
@@ -54,6 +53,7 @@
 
 			// Let's start getting rid of jQuery...
 			function checkPageScroll() {
+				console.log(window.scrollY);
 				if (window.scrollY >= 80) {
 					document.getElementById('header').classList.add('scrolled');
 				} else {
@@ -351,6 +351,10 @@
 					if (docsNav) {
 						setupDocsNav();
 					}
+
+					document.querySelectorAll('[class^="language-"]').forEach((block) => {
+						hljs.highlightBlock(block);
+					});
 				});
 
 				window.addEventListener('scroll', pageScroll);

@@ -32,7 +32,7 @@
 
     <h4><a id="recordbatch" href="#recordbatch">5.3.1 Record Batch</a></h4>
 	<p> The following is the on-disk format of a RecordBatch. </p>
-	<p><pre class="brush: java;">
+	<p><pre class="language-java;">
 		baseOffset: int64
 		batchLength: int32
 		partitionLeaderEpoch: int32
@@ -73,7 +73,7 @@
     <h5><a id="controlbatch" href="#controlbatch">5.3.1.1 Control Batches</a></h5>
     <p>A control batch contains a single record called the control record. Control records should not be passed on to applications. Instead, they are used by consumers to filter out aborted transactional messages.</p>
     <p> The key of a control record conforms to the following schema: </p>
-    <p><pre class="brush: java">
+    <p><pre class="language-java">
        version: int16 (current version is 0)
        type: int16 (0 indicates an abort marker, 1 indicates a commit)
     </pre></p>
@@ -81,7 +81,7 @@
 
     <h4><a id="record" href="#record">5.3.2 Record</a></h4>
 	<p>Record level headers were introduced in Kafka 0.11.0. The on-disk format of a record with Headers is delineated below. </p>
-	<p><pre class="brush: java;">
+	<p><pre class="language-java;">
 		length: varint
 		attributes: int8
 			bit 0~7: unused
@@ -94,7 +94,7 @@
 		Headers => [Header]
 	</pre></p>
 	<h5><a id="recordheader" href="#recordheader">5.3.2.1 Record Header</a></h5>
-	<p><pre class="brush: java;">
+	<p><pre class="language-java;">
 		headerKeyLength: varint
 		headerKey: String
 		headerValueLength: varint
@@ -110,7 +110,7 @@
     </p>
 
     <b>Message Set:</b><br>
-    <p><pre class="brush: java;">
+    <p><pre class="language-java;">
     MessageSet (Version: 0) => [offset message_size message]
         offset => INT64
         message_size => INT32
@@ -126,7 +126,7 @@
             key => BYTES
             value => BYTES
     </pre></p>
-    <p><pre class="brush: java;">
+    <p><pre class="language-java;">
     MessageSet (Version: 1) => [offset message_size message]
         offset => INT64
         message_size => INT32
@@ -198,7 +198,7 @@
 
     <p> The following is the format of the results sent to the consumer.
 
-    <pre class="brush: text;">
+    <pre class="language-text;">
     MessageSetSend (fetch result)
 
     total length     : 4 bytes
@@ -208,7 +208,7 @@
     message n        : x bytes
     </pre>
 
-    <pre class="brush: text;">
+    <pre class="language-text;">
     MultiMessageSetSend (multiFetch result)
 
     total length       : 4 bytes
@@ -268,7 +268,7 @@
     </p>
 
     <h4><a id="impl_zkbroker" href="#impl_zkbroker">Broker Node Registry</a></h4>
-    <pre class="brush: json;">
+    <pre class="language-json;">
     /brokers/ids/[0...N] --> {"jmx_port":...,"timestamp":...,"endpoints":[...],"host":...,"version":...,"port":...} (ephemeral node)
     </pre>
     <p>
@@ -278,7 +278,7 @@
     Since the broker registers itself in ZooKeeper using ephemeral znodes, this registration is dynamic and will disappear if the broker is shutdown or dies (thus notifying consumers it is no longer available).
     </p>
     <h4><a id="impl_zktopic" href="#impl_zktopic">Broker Topic Registry</a></h4>
-    <pre class="brush: json;">
+    <pre class="language-json;">
     /brokers/topics/[topic]/partitions/[0...N]/state --> {"controller_epoch":...,"leader":...,"version":...,"leader_epoch":...,"isr":[...]} (ephemeral node)
     </pre>
 

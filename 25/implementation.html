@@ -44,7 +44,7 @@
 <a href="#recordbatch">5.3.1 Record Batch
     </a></h4>
 	<p> The following is the on-disk format of a RecordBatch. </p>
-	<p><pre class="brush: java;">
+	<p><pre class="language-java;">
 		baseOffset: int64
 		batchLength: int32
 		partitionLeaderEpoch: int32
@@ -67,8 +67,7 @@
 		producerId: int64
 		producerEpoch: int16
 		baseSequence: int32
-		records: [Record]
-	</pre></p>
+		records: [Record]</pre></p>
     <p> Note that when compression is enabled, the compressed record data is serialized directly following the count of the number of records. </p>
 
     <p>The CRC covers the data from the attributes to the end of the batch (i.e. all the bytes that follow the CRC). It is located after the magic byte, which
@@ -88,10 +87,9 @@
     </a></h5>
     <p>A control batch contains a single record called the control record. Control records should not be passed on to applications. Instead, they are used by consumers to filter out aborted transactional messages.</p>
     <p> The key of a control record conforms to the following schema: </p>
-    <p><pre class="brush: java">
+    <p><pre class="language-java">
        version: int16 (current version is 0)
-       type: int16 (0 indicates an abort marker, 1 indicates a commit)
-    </pre></p>
+       type: int16 (0 indicates an abort marker, 1 indicates a commit)</pre></p>
     <p>The schema for the value of a control record is dependent on the type. The value is opaque to clients.</p>
 
     <h4 class="anchor-heading">
@@ -99,7 +97,7 @@
 <a href="#record">5.3.2 Record
     </a></h4>
 	<p>Record level headers were introduced in Kafka 0.11.0. The on-disk format of a record with Headers is delineated below. </p>
-	<p><pre class="brush: java;">
+	<p><pre class="language-java;">
 		length: varint
 		attributes: int8
 			bit 0~7: unused
@@ -109,18 +107,16 @@
 		key: byte[]
 		valueLen: varint
 		value: byte[]
-		Headers => [Header]
-	</pre></p>
+		Headers => [Header]</pre></p>
 	<h5 class="anchor-heading">
       <a class="anchor-link" id="recordheader" href="#recordheader"></a>
 <a href="#recordheader">5.3.2.1 Record Header
     </a></h5>
-	<p><pre class="brush: java;">
+	<p><pre class="language-java;">
 		headerKeyLength: varint
 		headerKey: String
 		headerValueLength: varint
-		Value: byte[]
-	</pre></p>
+		Value: byte[]</pre></p>
     <p>We use the same varint encoding as Protobuf. More information on the latter can be found <a href="https://developers.google.com/protocol-buffers/docs/encoding#varints">here</a>. The count of headers in a record
     is also encoded as a varint.</p>
 
@@ -134,7 +130,7 @@
     </p>
 
     <b>Message Set:</b><br>
-    <p><pre class="brush: java;">
+    <p><pre class="language-java;">
     MessageSet (Version: 0) => [offset message_size message]
         offset => INT64
         message_size => INT32
@@ -148,9 +144,8 @@
                     2: snappy
                 bit 3~7: unused
             key => BYTES
-            value => BYTES
-    </pre></p>
-    <p><pre class="brush: java;">
+            value => BYTES</pre></p>
+    <p><pre class="language-java;">
     MessageSet (Version: 1) => [offset message_size message]
         offset => INT64
         message_size => INT32
@@ -169,8 +164,7 @@
                 bit 4~7: unused
             timestamp => INT64
             key => BYTES
-            value => BYTES
-    </pre></p>
+            value => BYTES</pre></p>
     <p>
         In versions prior to Kafka 0.10, the only supported message format version (which is indicated in the magic value) was 0. Message format version 1 was introduced with timestamp support in version 0.10.
     <ul>
@@ -231,25 +225,23 @@
 
     <p> The following is the format of the results sent to the consumer.
 
-    <pre class="brush: text;">
+    <pre class="language-text;">
     MessageSetSend (fetch result)
 
     total length     : 4 bytes
     error code       : 2 bytes
     message 1        : x bytes
     ...
-    message n        : x bytes
-    </pre>
+    message n        : x bytes</pre>
 
-    <pre class="brush: text;">
+    <pre class="language-text;">
     MultiMessageSetSend (multiFetch result)
 
     total length       : 4 bytes
     error code         : 2 bytes
     messageSetSend 1
     ...
-    messageSetSend n
-    </pre>
+    messageSetSend n</pre>
     <h4 class="anchor-heading">
       <a class="anchor-link" id="impl_deletes" href="#impl_deletes"></a>
 <a href="#impl_deletes">Deletes
@@ -330,9 +322,8 @@
       <a class="anchor-link" id="impl_zkbroker" href="#impl_zkbroker"></a>
 <a href="#impl_zkbroker">Broker Node Registry
     </a></h4>
-    <pre class="brush: json;">
-    /brokers/ids/[0...N] --> {"jmx_port":...,"timestamp":...,"endpoints":[...],"host":...,"version":...,"port":...} (ephemeral node)
-    </pre>
+    <pre class="language-json;">
+    /brokers/ids/[0...N] --> {"jmx_port":...,"timestamp":...,"endpoints":[...],"host":...,"version":...,"port":...} (ephemeral node)</pre>
     <p>
     This is a list of all present broker nodes, each of which provides a unique logical broker id which identifies it to consumers (which must be given as part of its configuration). On startup, a broker node registers itself by creating a znode with the logical broker id under /brokers/ids. The purpose of the logical broker id is to allow a broker to be moved to a different physical machine without affecting consumers. An attempt to register a broker id that is already in use (say because two servers are configured with the same broker id) results in an error.
     </p>
@@ -343,9 +334,8 @@
       <a class="anchor-link" id="impl_zktopic" href="#impl_zktopic"></a>
 <a href="#impl_zktopic">Broker Topic Registry
     </a></h4>
-    <pre class="brush: json;">
-    /brokers/topics/[topic]/partitions/[0...N]/state --> {"controller_epoch":...,"leader":...,"version":...,"leader_epoch":...,"isr":[...]} (ephemeral node)
-    </pre>
+    <pre class="language-json;">
+    /brokers/topics/[topic]/partitions/[0...N]/state --> {"controller_epoch":...,"leader":...,"version":...,"leader_epoch":...,"isr":[...]} (ephemeral node)</pre>
 
     <p>
     Each broker registers itself under the topics it maintains and stores the number of partitions for that topic.

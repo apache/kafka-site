@@ -32,7 +32,7 @@
 
     <h4><a id="recordbatch" href="#recordbatch">5.3.1 Record Batch</a></h4>
 	<p> The following is the on-disk format of a RecordBatch. </p>
-	<p><pre class="brush: java;">
+	<p><pre class="language-java;">
 		baseOffset: int64
 		batchLength: int32
 		partitionLeaderEpoch: int32
@@ -72,7 +72,7 @@
     <h5><a id="controlbatch" href="#controlbatch">5.3.1.1 Control Batches</a></h5>
     <p>A control batch contains a single record called the control record. Control records should not be passed on to applications. Instead, they are used by consumers to filter out aborted transactional messages.</p>
     <p> The key of a control record conforms to the following schema: </p>
-    <p><pre class="brush: java">
+    <p><pre class="language-java">
        version: int16 (current version is 0)
        type: int16 (0 indicates an abort marker, 1 indicates a commit)
     </pre></p>
@@ -80,7 +80,7 @@
 
     <h4><a id="record" href="#record">5.3.2 Record</a></h4>
 	<p>Record level headers were introduced in Kafka 0.11.0. The on-disk format of a record with Headers is delineated below. </p>
-	<p><pre class="brush: java;">
+	<p><pre class="language-java;">
 		length: varint
 		attributes: int8
 			bit 0~7: unused
@@ -93,7 +93,7 @@
 		Headers => [Header]
 	</pre></p>
 	<h5><a id="recordheader" href="#recordheader">5.3.2.1 Record Header</a></h5>
-	<p><pre class="brush: java;">
+	<p><pre class="language-java;">
 		headerKeyLength: varint
 		headerKey: String
 		headerValueLength: varint
@@ -109,7 +109,7 @@
     </p>
 
     <b>Message Set:</b><br>
-    <p><pre class="brush: java;">
+    <p><pre class="language-java;">
     MessageSet (Version: 0) => [offset message_size message]
         offset => INT64
         message_size => INT32
@@ -125,7 +125,7 @@
             key => BYTES
             value => BYTES
     </pre></p>
-    <p><pre class="brush: java;">
+    <p><pre class="language-java;">
     MessageSet (Version: 1) => [offset message_size message]
         offset => INT64
         message_size => INT32
@@ -197,7 +197,7 @@
 
     <p> The following is the format of the results sent to the consumer.
 
-    <pre class="brush: text;">
+    <pre class="language-text;">
     MessageSetSend (fetch result)
 
     total length     : 4 bytes
@@ -207,7 +207,7 @@
     message n        : x bytes
     </pre>
 
-    <pre class="brush: text;">
+    <pre class="language-text;">
     MultiMessageSetSend (multiFetch result)
 
     total length       : 4 bytes
@@ -269,7 +269,7 @@
     </p>
 
     <h4><a id="impl_zkbroker" href="#impl_zkbroker">Broker Node Registry</a></h4>
-    <pre class="brush: json;">
+    <pre class="language-json;">
     /brokers/ids/[0...N] --> {"jmx_port":...,"timestamp":...,"endpoints":[...],"host":...,"version":...,"port":...} (ephemeral node)
     </pre>
     <p>
@@ -279,7 +279,7 @@
     Since the broker registers itself in ZooKeeper using ephemeral znodes, this registration is dynamic and will disappear if the broker is shutdown or dies (thus notifying consumers it is no longer available).
     </p>
     <h4><a id="impl_zktopic" href="#impl_zktopic">Broker Topic Registry</a></h4>
-    <pre class="brush: json;">
+    <pre class="language-json;">
     /brokers/topics/[topic]/partitions/[0...N]/state --> {"controller_epoch":...,"leader":...,"version":...,"leader_epoch":...,"isr":[...]} (ephemeral node)
     </pre>
 
@@ -304,7 +304,7 @@
     <h4><a id="impl_zkconsumerid" href="#impl_zkconsumerid">Consumer Id Registry</a></h4>
     <p>
     In addition to the group_id which is shared by all consumers in a group, each consumer is given a transient, unique consumer_id (of the form hostname:uuid) for identification purposes. Consumer ids are registered in the following directory.
-    <pre class="brush: json;">
+    <pre class="language-json;">
     /consumers/[group_id]/ids/[consumer_id] --> {"version":...,"subscription":{...:...},"pattern":...,"timestamp":...} (ephemeral node)
     </pre>
     Each of the consumers in the group registers under its group and creates a znode with its consumer_id. The value of the znode contains a map of &lt;topic, #streams&gt;. This id is simply used to identify each of the consumers which is currently active within a group. This is an ephemeral node so it will disappear if the consumer process dies.
@@ -314,7 +314,7 @@
     <p>
     Consumers track the maximum offset they have consumed in each partition. This value is stored in a ZooKeeper directory if <code>offsets.storage=zookeeper</code>.
     </p>
-    <pre class="brush: json;">
+    <pre class="language-json;">
     /consumers/[group_id]/offsets/[topic]/[partition_id] --> offset_counter_value (persistent node)
     </pre>
 
@@ -324,7 +324,7 @@
     Each broker partition is consumed by a single consumer within a given consumer group. The consumer must establish its ownership of a given partition before any consumption can begin. To establish its ownership, a consumer writes its own id in an ephemeral node under the particular broker partition it is claiming.
     </p>
 
-    <pre class="brush: json;">
+    <pre class="language-json;">
     /consumers/[group_id]/owners/[topic]/[partition_id] --> consumer_node_id (ephemeral node)
     </pre>
 
@@ -366,7 +366,7 @@
     <p>
     Each consumer does the following during rebalancing:
     </p>
-    <pre class="brush: text;">
+    <pre class="language-text;">
     1. For each topic T that C<sub>i</sub> subscribes to
     2.   let P<sub>T</sub> be all partitions producing topic T
     3.   let C<sub>G</sub> be all consumers in the same group as C<sub>i</sub> that consume topic T

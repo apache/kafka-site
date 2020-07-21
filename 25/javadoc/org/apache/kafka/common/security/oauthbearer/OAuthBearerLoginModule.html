@@ -201,8 +201,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
  KafkaClient {
       org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule Required
       unsecuredLoginStringClaim_sub="thePrincipalName";
- };
- </pre>
+ };</pre>
 
  An implementation of the <a href="../../../../../../org/apache/kafka/common/security/auth/Login.html" title="interface in org.apache.kafka.common.security.auth"><code>Login</code></a> interface specific to the
  <code>OAUTHBEARER</code> mechanism is automatically applied; it periodically
@@ -276,8 +275,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
  KafkaServer {
       org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule Required
       unsecuredLoginStringClaim_sub="thePrincipalName";
- };
- </pre>
+ };</pre>
 
  Production use cases will require writing an implementation of
  <a href="../../../../../../org/apache/kafka/common/security/auth/AuthenticateCallbackHandler.html" title="interface in org.apache.kafka.common.security.auth"><code>AuthenticateCallbackHandler</code></a> that can handle an instance of

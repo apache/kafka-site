@@ -160,8 +160,7 @@ extends <a href="../../../../org/apache/kafka/common/config/AbstractConfig.html"
  When increasing <a href="../../../../org/apache/kafka/clients/producer/ProducerConfig.html#MAX_BLOCK_MS_CONFIG"><code>ProducerConfig.MAX_BLOCK_MS_CONFIG</code></a> to be more resilient to non-available brokers you should also
  increase <a href="../../../../org/apache/kafka/clients/consumer/ConsumerConfig.html#MAX_POLL_INTERVAL_MS_CONFIG"><code>ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG</code></a> using the following guidance:
  <pre>
-     max.poll.interval.ms &gt; max.block.ms
- </pre>
+     max.poll.interval.ms &gt; max.block.ms</pre>
 
 
  Kafka Streams requires at least the following properties to be set:

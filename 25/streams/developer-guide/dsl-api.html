@@ -256,8 +256,7 @@
     <span class="n">Consumed</span><span class="o">.</span><span class="na">with</span><span class="o">(</span>
       <span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">(),</span> <span class="cm">/* key serde */</span>
       <span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">()</span>   <span class="cm">/* value serde */</span>
-    <span class="o">);</span>
-</pre></div>
+    <span class="o">);</span></pre></div>
                         </div>
                         <p>If you do not specify SerDes explicitly, the default SerDes from the
                             <a class="reference internal" href="config-streams.html#streams-developer-guide-configuration"><span class="std std-ref">configuration</span></a> are used.</p>
@@ -319,8 +318,7 @@
       <span class="s">&quot;word-counts-global-store&quot;</span> <span class="cm">/* table/store name */</span><span class="o">)</span>
       <span class="o">.</span><span class="na">withKeySerde</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">())</span> <span class="cm">/* key serde */</span>
       <span class="o">.</span><span class="na">withValueSerde</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">())</span> <span class="cm">/* value serde */</span>
-    <span class="o">);</span>
-</pre></div>
+    <span class="o">);</span></pre></div>
                         </div>
                         <p>You <strong>must specify SerDes explicitly</strong> if the key or value types of the records in the Kafka input
                             topics do not match the configured default SerDes. For information about configuring default SerDes, available
@@ -387,8 +385,7 @@
 <span class="c1">// KStream branches[1] contains all records whose keys start with &quot;B&quot;</span>
 <span class="c1">// KStream branches[2] contains all other records</span>
 
-<span class="c1">// Java 7 example: cf. `filter` for how to create `Predicate` instances</span>
-</pre></div>
+<span class="c1">// Java 7 example: cf. `filter` for how to create `Predicate` instances</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -414,8 +411,7 @@
       <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">test</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">Long</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">;</span>
       <span class="o">}</span>
-    <span class="o">});</span>
-</pre></div>
+    <span class="o">});</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -441,8 +437,7 @@
       <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">test</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">Long</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">;</span>
       <span class="o">}</span>
-    <span class="o">});</span>
-</pre></div>
+    <span class="o">});</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -470,8 +465,7 @@
     <span class="o">}</span>
   <span class="o">);</span>
 
-<span class="c1">// Java 7 example: cf. `map` for how to create `KeyValueMapper` instances</span>
-</pre></div>
+<span class="c1">// Java 7 example: cf. `map` for how to create `KeyValueMapper` instances</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -489,8 +483,7 @@
 <span class="n">KStream</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[],</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">sentences</span> <span class="o">=</span> <span class="o">...;</span>
 <span class="n">KStream</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[],</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">words</span> <span class="o">=</span> <span class="n">sentences</span><span class="o">.</span><span class="na">flatMapValues</span><span class="o">(</span><span class="n">value</span> <span class="o">-&gt;</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">value</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;\\s+&quot;</span><span class="o">)));</span>
 
-<span class="c1">// Java 7 example: cf. `mapValues` for how to create `ValueMapper` instances</span>
-</pre></div>
+<span class="c1">// Java 7 example: cf. `mapValues` for how to create `ValueMapper` instances</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -520,8 +513,7 @@
       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">apply</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">Long</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">key</span> <span class="o">+</span> <span class="s">&quot; =&gt; &quot;</span> <span class="o">+</span> <span class="n">value</span><span class="o">);</span>
       <span class="o">}</span>
-    <span class="o">});</span>
-</pre></div>
+    <span class="o">});</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -562,8 +554,7 @@
     <span class="n">Grouped</span><span class="o">.</span><span class="na">with</span><span class="o">(</span>
       <span class="n">Serdes</span><span class="o">.</span><span class="na">ByteArray</span><span class="o">(),</span> <span class="cm">/* key */</span>
       <span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">())</span>     <span class="cm">/* value */</span>
-  <span class="o">);</span>
-</pre></div>
+  <span class="o">);</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -642,8 +633,7 @@
     <span class="n">Grouped</span><span class="o">.</span><span class="na">with</span><span class="o">(</span>
       <span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">(),</span> <span class="cm">/* key (note: type was modified) */</span>
       <span class="n">Serdes</span><span class="o">.</span><span class="na">Integer</span><span class="o">())</span> <span class="cm">/* value (note: type was modified) */</span>
-  <span class="o">);</span>
-                            </pre></div>
+  <span class="o">);</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -670,8 +660,7 @@
 
 <span class="n">KTable</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[],</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">cogroupedStream</span><span class="o">.</span><span class="na">aggregate</span><span class="o">(initializer);</span>
 
-<span class="n">KTable</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[],</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">table2</span> <span class="o">=</span> <span class="n">cogroupedStream</span><span class="o">.</span><span class="na">windowedBy</span><span class="o">(TimeWindows.duration(500ms))</span>.</span><span class="na">aggregate</span><span class="o">(initializer);</span>
-</pre></div>
+<span class="n">KTable</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[],</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">table2</span> <span class="o">=</span> <span class="n">cogroupedStream</span><span class="o">.</span><span class="na">windowedBy</span><span class="o">(TimeWindows.duration(500ms))</span>.</span><span class="na">aggregate</span><span class="o">(initializer);</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -700,8 +689,7 @@
       <span class="kd">public</span> <span class="n">KeyValue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">apply</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">key</span><span class="o">,</span> <span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="k">new</span> <span class="n">KeyValue</span><span class="o">&lt;&gt;(</span><span class="n">value</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">(),</span> <span class="n">value</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
       <span class="o">}</span>
-    <span class="o">});</span>
-</pre></div>
+    <span class="o">});</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -729,8 +717,7 @@
       <span class="kd">public</span> <span class="n">String</span> <span class="nf">apply</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">();</span>
       <span class="o">}</span>
-    <span class="o">});</span>
-</pre></div>
+    <span class="o">});</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -751,8 +738,7 @@
 
 <span class="n">KStream</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[],</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">stream2</span> <span class="o">=</span> <span class="o">...;</span>
 
-<span class="n">KStream</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[],</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">merged</span> <span class="o">=</span> <span class="n">stream1</span><span class="o">.</span><span class="na">merge</span><span class="o">(</span><span class="n">stream2</span><span class="o">);</span>
-                                </pre>
+<span class="n">KStream</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[],</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">merged</span> <span class="o">=</span> <span class="n">stream1</span><span class="o">.</span><span class="na">merge</span><span class="o">(</span><span class="n">stream2</span><span class="o">);</span></pre>
                               </div>
                             </div>
                         </td>
@@ -783,8 +769,7 @@
       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">apply</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">key</span><span class="o">,</span> <span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;key=&quot;</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s">&quot;, value=&quot;</span> <span class="o">+</span> <span class="n">value</span><span class="o">);</span>
       <span class="o">}</span>
-    <span class="o">});</span>
-</pre></div>
+    <span class="o">});</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -803,8 +788,7 @@
 <span class="n">stream</span><span class="o">.</span><span class="na">print</span><span class="o">();</span>
 
 <span class="c1">// print to file with a custom label</span>
-<span class="n">stream</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">Printed</span><span class="o">.</span><span class="na">toFile</span><span class="o">(</span><span class="s">&quot;streams.out&quot;</span><span class="o">).</span><span class="na">withLabel</span><span class="o">(</span><span class="s">&quot;streams&quot;</span><span class="o">));</span>
-</pre></div>
+<span class="n">stream</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">Printed</span><span class="o">.</span><span class="na">toFile</span><span class="o">(</span><span class="s">&quot;streams.out&quot;</span><span class="o">).</span><span class="na">withLabel</span><span class="o">(</span><span class="s">&quot;streams&quot;</span><span class="o">));</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -831,8 +815,7 @@
       <span class="kd">public</span> <span class="n">String</span> <span class="nf">apply</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">key</span><span class="o">,</span> <span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot; &quot;</span><span class="o">)[</span><span class="mi">0</span><span class="o">];</span>
       <span class="o">}</span>
-    <span class="o">});</span>
-</pre></div>
+    <span class="o">});</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -847,8 +830,7 @@
 
 <span class="c1">// Also, a variant of `toStream` exists that allows you</span>
 <span class="c1">// to select a new key for the resulting stream.</span>
-<span class="n">KStream</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[],</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="na">toStream</span><span class="o">();</span>
-</pre></div>
+<span class="n">KStream</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[],</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="na">toStream</span><span class="o">();</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -861,8 +843,7 @@
                             (<a class="reference external" href="/{{version}}/javadoc/org/apache/kafka/streams/kstream/KStream.html#toTable--">details</a>)</p>
                             <div class="last highlight-java"><div class="highlight"><pre><span></span><span class="n">KStream</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[],</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">stream</span> <span class="o">=</span> <span class="o">...;</span>
 
-<span class="n">KTable</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[],</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="na">toTable</span><span class="o">();</span>
-</pre></div>
+<span class="n">KTable</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[],</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="na">toTable</span><span class="o">();</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -909,8 +890,7 @@
     <span class="c1">// `KTable&lt;String, Long&gt;` (word -&gt; count).</span>
     <span class="o">.</span><span class="na">count</span><span class="o">()</span>
     <span class="c1">// Convert the `KTable&lt;String, Long&gt;` into a `KStream&lt;String, Long&gt;`.</span>
-    <span class="o">.</span><span class="na">toStream</span><span class="o">();</span>
-</pre></div>
+    <span class="o">.</span><span class="na">toStream</span><span class="o">();</span></pre></div>
                 </div>
                 <p>WordCount example in Java 7:</p>
                 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// Code below is equivalent to the previous Java 8+ example above.</span>
@@ -930,8 +910,7 @@
         <span class="o">}</span>
     <span class="o">})</span>
     <span class="o">.</span><span class="na">count</span><span class="o">()</span>
-    <span class="o">.</span><span class="na">toStream</span><span class="o">();</span>
-</pre></div>
+    <span class="o">.</span><span class="na">toStream</span><span class="o">();</span></pre></div>
                 </div>
                 <div class="section" id="aggregating">
                     <span id="streams-developer-guide-dsl-aggregating"></span><h4><a class="toc-backref" href="#id12">Aggregating</a><a class="headerlink" href="#aggregating" title="Permalink to this headline"></a></h4>
@@ -1030,8 +1009,7 @@
       <span class="o">}</span>
     <span class="o">},</span>
     <span class="n">Materialized</span><span class="o">.</span><span class="na">as</span><span class="o">(</span><span class="s">&quot;aggregated-stream-store&quot;</span><span class="o">)</span>
-        <span class="o">.</span><span class="na">withValueSerde</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">());</span>
-</pre></div>
+        <span class="o">.</span><span class="na">withValueSerde</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">());</span></pre></div>
                                 </div>
                                 <p>Detailed behavior of <code class="docutils literal"><span class="pre">KGroupedStream</span></code>:</p>
                                 <ul class="simple">
@@ -1138,8 +1116,7 @@
             <span class="o">}</span>
         <span class="o">},</span>
         <span class="n">Materialized</span><span class="o">.&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Long</span><span class="o">,</span> <span class="n">SessionStore</span><span class="o">&lt;</span><span class="n">Bytes</span><span class="o">,</span> <span class="kt">byte</span><span class="o">[]&gt;&gt;</span><span class="n">as</span><span class="o">(</span><span class="s">&quot;sessionized-aggregated-stream-store&quot;</span><span class="o">)</span>
-          <span class="o">.</span><span class="na">withValueSerde</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">()));</span>
-</pre></div>
+          <span class="o">.</span><span class="na">withValueSerde</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">()));</span></pre></div>
                                 </div>
                                 <p>Detailed behavior:</p>
                                 <ul class="simple">
@@ -1171,8 +1148,7 @@
 <span class="n">KTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="n">aggregatedStream</span> <span class="o">=</span> <span class="n">groupedStream</span><span class="o">.</span><span class="na">count</span><span class="o">();</span>
 
 <span class="c1">// Counting a KGroupedTable</span>
-<span class="n">KTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="n">aggregatedTable</span> <span class="o">=</span> <span class="n">groupedTable</span><span class="o">.</span><span class="na">count</span><span class="o">();</span>
-</pre></div>
+<span class="n">KTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="n">aggregatedTable</span> <span class="o">=</span> <span class="n">groupedTable</span><span class="o">.</span><span class="na">count</span><span class="o">();</span></pre></div>
                                 </div>
                                 <p>Detailed behavior for <code class="docutils literal"><span class="pre">KGroupedStream</span></code>:</p>
                                 <ul class="simple">
@@ -1208,8 +1184,7 @@
 <span class="c1">// Counting a KGroupedStream with session-based windowing (here: with 5-minute inactivity gaps)</span>
 <span class="n">KTable</span><span class="o">&lt;</span><span class="n">Windowed</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="n">aggregatedStream</span> <span class="o">=</span> <span class="n">groupedStream</span><span class="o">.</span><span class="na">windowedBy</span><span class="o">(</span>
     <span class="n">SessionWindows</span><span class="o">.</span><span class="na">with</span><span class="o">(</span><span class="n">Duration</span><span class="o">.</span><span class="na">ofMinutes</span><span class="o">(</span><span class="mi">5</span><span class="o">)))</span> <span class="cm">/* session window */</span>
-    <span class="o">.</span><span class="na">count</span><span class="o">();</span>
-</pre></div>
+    <span class="o">.</span><span class="na">count</span><span class="o">();</span></pre></div>
                                 </div>
                                 <p>Detailed behavior:</p>
                                 <ul class="last simple">
@@ -1271,8 +1246,7 @@
       <span class="kd">public</span> <span class="n">Long</span> <span class="nf">apply</span><span class="o">(</span><span class="n">Long</span> <span class="n">aggValue</span><span class="o">,</span> <span class="n">Long</span> <span class="n">oldValue</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">aggValue</span> <span class="o">-</span> <span class="n">oldValue</span><span class="o">;</span>
       <span class="o">}</span>
-    <span class="o">});</span>
-</pre></div>
+    <span class="o">});</span></pre></div>
                                 </div>
                                 <p>Detailed behavior for <code class="docutils literal"><span class="pre">KGroupedStream</span></code>:</p>
                                 <ul class="simple">
@@ -1357,8 +1331,7 @@
       <span class="kd">public</span> <span class="n">Long</span> <span class="nf">apply</span><span class="o">(</span><span class="n">Long</span> <span class="n">aggValue</span><span class="o">,</span> <span class="n">Long</span> <span class="n">newValue</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">aggValue</span> <span class="o">+</span> <span class="n">newValue</span><span class="o">;</span>
       <span class="o">}</span>
-    <span class="o">});</span>
-</pre></div>
+    <span class="o">});</span></pre></div>
                                 </div>
                                 <p>Detailed behavior:</p>
                                 <ul class="simple">
@@ -1390,8 +1363,7 @@
     <span class="o">(</span><span class="n">aggKey</span><span class="o">,</span> <span class="n">newValue</span><span class="o">,</span> <span class="n">aggValue</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">aggValue</span> <span class="o">+</span> <span class="n">newValue</span><span class="o">,</span> <span class="cm">/* adder */</span>
     <span class="n">Materialized</span><span class="o">.&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Long</span><span class="o">,</span> <span class="n">KeyValueStore</span><span class="o">&lt;</span><span class="n">Bytes</span><span class="o">,</span> <span class="kt">byte</span><span class="o">[]&gt;</span><span class="n">as</span><span class="o">(</span><span class="s">&quot;aggregated-stream-store&quot;</span> <span class="cm">/* state store name */</span><span class="o">)</span>
       <span class="o">.</span><span class="na">withKeySerde</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">())</span> <span class="cm">/* key serde */</span>
-      <span class="o">.</span><span class="na">withValueSerde</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">Integer</span><span class="o">());</span> <span class="cm">/* serde for aggregate value */</span>
-</pre></div>
+      <span class="o">.</span><span class="na">withValueSerde</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">Integer</span><span class="o">());</span> <span class="cm">/* serde for aggregate value */</span></pre></div>
                     </div>
                     <div class="admonition note">
                         <p><b>Note</b></p>
@@ -1512,8 +1484,7 @@
     <span class="o">(</span><span class="n">aggKey</span><span class="o">,</span> <span class="n">oldValue</span><span class="o">,</span> <span class="n">aggValue</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">aggValue</span> <span class="o">-</span> <span class="n">oldValue</span><span class="o">,</span> <span class="cm">/* subtractor */</span>
     <span class="n">Materialized</span><span class="o">.&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Long</span><span class="o">,</span> <span class="n">KeyValueStore</span><span class="o">&lt;</span><span class="n">Bytes</span><span class="o">,</span> <span class="kt">byte</span><span class="o">[]&gt;</span><span class="n">as</span><span class="o">(</span><span class="s">&quot;aggregated-table-store&quot;</span> <span class="cm">/* state store name */</span><span class="o">)</span>
       <span class="o">.</span><span class="na">withKeySerde</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">())</span> <span class="cm">/* key serde */</span>
-      <span class="o">.</span><span class="na">withValueSerde</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">Integer</span><span class="o">());</span> <span class="cm">/* serde for aggregate value */</span>
-</pre></div>
+      <span class="o">.</span><span class="na">withValueSerde</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">Integer</span><span class="o">());</span> <span class="cm">/* serde for aggregate value */</span></pre></div>
                     </div>
                     <div class="admonition note">
                         <p><b>Note</b></p>
@@ -1795,8 +1766,7 @@
 <span class="n">KeyValue</span><span class="o">&lt;</span><span class="n">K</span><span class="o">,</span> <span class="n">JV</span><span class="o">&gt;</span> <span class="n">joinOutputRecord</span> <span class="o">=</span> <span class="n">KeyValue</span><span class="o">.</span><span class="na">pair</span><span class="o">(</span>
     <span class="n">leftRecord</span><span class="o">.</span><span class="na">key</span><span class="o">,</span> <span class="cm">/* by definition, leftRecord.key == rightRecord.key */</span>
     <span class="n">joiner</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">leftRecord</span><span class="o">.</span><span class="na">value</span><span class="o">,</span> <span class="n">rightRecord</span><span class="o">.</span><span class="na">value</span><span class="o">)</span>
-  <span class="o">);</span>
-</pre></div>
+  <span class="o">);</span></pre></div>
                         </div>
                         <table border="1" class="non-scrolling-table width-100-percent docutils">
                             <colgroup>
@@ -1848,8 +1818,7 @@
       <span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">(),</span> <span class="cm">/* key */</span>
       <span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">(),</span>   <span class="cm">/* left value */</span>
       <span class="n">Serdes</span><span class="o">.</span><span class="na">Double</span><span class="o">())</span>  <span class="cm">/* right value */</span>
-  <span class="o">);</span>
-</pre></div>
+  <span class="o">);</span></pre></div>
                                     </div>
                                     <p>Detailed behavior:</p>
                                     <ul>
@@ -1907,8 +1876,7 @@
       <span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">(),</span> <span class="cm">/* key */</span>
       <span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">(),</span>   <span class="cm">/* left value */</span>
       <span class="n">Serdes</span><span class="o">.</span><span class="na">Double</span><span class="o">())</span>  <span class="cm">/* right value */</span>
-  <span class="o">);</span>
-</pre></div>
+  <span class="o">);</span></pre></div>
                                     </div>
                                     <p>Detailed behavior:</p>
                                     <ul>
@@ -1969,8 +1937,7 @@
       <span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">(),</span> <span class="cm">/* key */</span>
       <span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">(),</span>   <span class="cm">/* left value */</span>
       <span class="n">Serdes</span><span class="o">.</span><span class="na">Double</span><span class="o">())</span>  <span class="cm">/* right value */</span>
-  <span class="o">);</span>
-</pre></div>
+  <span class="o">);</span></pre></div>
                                     </div>
                                     <p>Detailed behavior:</p>
                                     <ul>
@@ -2135,8 +2102,7 @@
 <span class="n">KeyValue</span><span class="o">&lt;</span><span class="n">K</span><span class="o">,</span> <span class="n">JV</span><span class="o">&gt;</span> <span class="n">joinOutputRecord</span> <span class="o">=</span> <span class="n">KeyValue</span><span class="o">.</span><span class="na">pair</span><span class="o">(</span>
     <span class="n">leftRecord</span><span class="o">.</span><span class="na">key</span><span class="o">,</span> <span class="cm">/* by definition, leftRecord.key == rightRecord.key */</span>
     <span class="n">joiner</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">leftRecord</span><span class="o">.</span><span class="na">value</span><span class="o">,</span> <span class="n">rightRecord</span><span class="o">.</span><span class="na">value</span><span class="o">)</span>
-  <span class="o">);</span>
-</pre></div>
+  <span class="o">);</span></pre></div>
                         </div>
                         <table border="1" class="non-scrolling-table width-100-percent docutils">
                             <colgroup>
@@ -2174,8 +2140,7 @@
       <span class="kd">public</span> <span class="n">String</span> <span class="nf">apply</span><span class="o">(</span><span class="n">Long</span> <span class="n">leftValue</span><span class="o">,</span> <span class="n">Double</span> <span class="n">rightValue</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">&quot;left=&quot;</span> <span class="o">+</span> <span class="n">leftValue</span> <span class="o">+</span> <span class="s">&quot;, right=&quot;</span> <span class="o">+</span> <span class="n">rightValue</span><span class="o">;</span>
       <span class="o">}</span>
-    <span class="o">});</span>
-</pre></div>
+    <span class="o">});</span></pre></div>
                                     </div>
                                     <p>Detailed behavior:</p>
                                     <ul>
@@ -2220,8 +2185,7 @@
       <span class="kd">public</span> <span class="n">String</span> <span class="nf">apply</span><span class="o">(</span><span class="n">Long</span> <span class="n">leftValue</span><span class="o">,</span> <span class="n">Double</span> <span class="n">rightValue</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">&quot;left=&quot;</span> <span class="o">+</span> <span class="n">leftValue</span> <span class="o">+</span> <span class="s">&quot;, right=&quot;</span> <span class="o">+</span> <span class="n">rightValue</span><span class="o">;</span>
       <span class="o">}</span>
-    <span class="o">});</span>
-</pre></div>
+    <span class="o">});</span></pre></div>
                                     </div>
                                     <p>Detailed behavior:</p>
                                     <ul>
@@ -2269,8 +2233,7 @@
       <span class="kd">public</span> <span class="n">String</span> <span class="nf">apply</span><span class="o">(</span><span class="n">Long</span> <span class="n">leftValue</span><span class="o">,</span> <span class="n">Double</span> <span class="n">rightValue</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">&quot;left=&quot;</span> <span class="o">+</span> <span class="n">leftValue</span> <span class="o">+</span> <span class="s">&quot;, right=&quot;</span> <span class="o">+</span> <span class="n">rightValue</span><span class="o">;</span>
       <span class="o">}</span>
-    <span class="o">});</span>
-</pre></div>
+    <span class="o">});</span></pre></div>
                                     </div>
                                     <p>Detailed behavior:</p>
                                     <ul>
@@ -2489,8 +2452,7 @@
                 <span class="n">KTable</span><span class="o">&lt;Long</span><span class="o">,</span> <span class="n">Double</span><span class="o">&gt;</span> <span class="n">right</span> <span class="o">=</span> <span class="o">...;<br>//This </span><span class="o"><span class="o"><span class="n">foreignKeyExtractor</span></span> simply uses the left-value to map to the right-key.<br></span><span class="o"><span class="n">Function</span><span class="o">&lt;Long</span><span class="o">,</span> Long<span class="n"></span><span class="o">&gt;</span> <span class="n">foreignKeyExtractor</span> <span class="o">=</span> <span class="o">(x) -&gt; x;</span><br><br></span><span class="c1">// Java 8+ example, using lambda expressions</span>
                 <span class="n">KTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">joined</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">right</span><span class="o">,</span><br>    <span class="o"><span class="n">foreignKeyExtractor,</span></span>
                     <span class="o">(</span><span class="n">leftValue</span><span class="o">,</span> <span class="n">rightValue</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="s">"left="</span> <span class="o">+</span> <span class="n">leftValue</span> <span class="o">+</span> <span class="s">", right="</span> <span class="o">+</span> <span class="n">rightValue</span> <span class="cm">/* ValueJoiner */</span>
-                  <span class="o">);</span>
-                </pre>
+                  <span class="o">);</span></pre>
                                 </div>
                               </div>
                               <p>Detailed behavior:</p>
@@ -2549,8 +2511,7 @@
                 <span class="n">KTable</span><span class="o">&lt;Long</span><span class="o">,</span> <span class="n">Double</span><span class="o">&gt;</span> <span class="n">right</span> <span class="o">=</span> <span class="o">...;<br>//This </span><span class="o"><span class="o"><span class="n">foreignKeyExtractor</span></span> simply uses the left-value to map to the right-key.<br></span><span class="o"><span class="n">Function</span><span class="o">&lt;Long</span><span class="o">,</span> Long<span class="n"></span><span class="o">&gt;</span> <span class="n">foreignKeyExtractor</span> <span class="o">=</span> <span class="o">(x) -&gt; x;</span><br><br></span><span class="c1">// Java 8+ example, using lambda expressions</span>
                 <span class="n">KTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">joined</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">right</span><span class="o">,</span><br>    <span class="o"><span class="n">foreignKeyExtractor,</span></span>
                     <span class="o">(</span><span class="n">leftValue</span><span class="o">,</span> <span class="n">rightValue</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="s">"left="</span> <span class="o">+</span> <span class="n">leftValue</span> <span class="o">+</span> <span class="s">", right="</span> <span class="o">+</span> <span class="n">rightValue</span> <span class="cm">/* ValueJoiner */</span>
-                  <span class="o">);</span>
-                </pre>
+                  <span class="o">);</span></pre>
                                 </div>
                               </div>
                               <p>Detailed behavior:</p>
@@ -2747,8 +2708,7 @@
 <span class="n">KeyValue</span><span class="o">&lt;</span><span class="n">K</span><span class="o">,</span> <span class="n">JV</span><span class="o">&gt;</span> <span class="n">joinOutputRecord</span> <span class="o">=</span> <span class="n">KeyValue</span><span class="o">.</span><span class="na">pair</span><span class="o">(</span>
     <span class="n">leftRecord</span><span class="o">.</span><span class="na">key</span><span class="o">,</span> <span class="cm">/* by definition, leftRecord.key == rightRecord.key */</span>
     <span class="n">joiner</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">leftRecord</span><span class="o">.</span><span class="na">value</span><span class="o">,</span> <span class="n">rightRecord</span><span class="o">.</span><span class="na">value</span><span class="o">)</span>
-  <span class="o">);</span>
-</pre></div>
+  <span class="o">);</span></pre></div>
                         </div>
                         <table border="1" class="non-scrolling-table width-100-percent docutils">
                             <colgroup>
@@ -2792,8 +2752,7 @@
     <span class="o">},</span>
     <span class="n">Joined</span><span class="o">.</span><span class="na">keySerde</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">())</span> <span class="cm">/* key */</span>
       <span class="o">.</span><span class="na">withValueSerde</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">())</span> <span class="cm">/* left value */</span>
-  <span class="o">);</span>
-</pre></div>
+  <span class="o">);</span></pre></div>
                                     </div>
                                     <p>Detailed behavior:</p>
                                     <ul>
@@ -2845,8 +2804,7 @@
     <span class="o">},</span>
     <span class="n">Joined</span><span class="o">.</span><span class="na">keySerde</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">())</span> <span class="cm">/* key */</span>
       <span class="o">.</span><span class="na">withValueSerde</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">())</span> <span class="cm">/* left value */</span>
-  <span class="o">);</span>
-</pre></div>
+  <span class="o">);</span></pre></div>
                                     </div>
                                     <p>Detailed behavior:</p>
                                     <ul>
@@ -3018,8 +2976,7 @@
 <span class="n">KeyValue</span><span class="o">&lt;</span><span class="n">K</span><span class="o">,</span> <span class="n">JV</span><span class="o">&gt;</span> <span class="n">joinOutputRecord</span> <span class="o">=</span> <span class="n">KeyValue</span><span class="o">.</span><span class="na">pair</span><span class="o">(</span>
     <span class="n">leftRecord</span><span class="o">.</span><span class="na">key</span><span class="o">,</span> <span class="cm">/* by definition, leftRecord.key == rightRecord.key */</span>
     <span class="n">joiner</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">leftRecord</span><span class="o">.</span><span class="na">value</span><span class="o">,</span> <span class="n">rightRecord</span><span class="o">.</span><span class="na">value</span><span class="o">)</span>
-  <span class="o">);</span>
-</pre></div>
+  <span class="o">);</span></pre></div>
                         </div>
                         <table border="1" class="non-scrolling-table width-100-percent docutils">
                             <colgroup>
@@ -3065,8 +3022,7 @@
       <span class="kd">public</span> <span class="n">String</span> <span class="nf">apply</span><span class="o">(</span><span class="n">Long</span> <span class="n">leftValue</span><span class="o">,</span> <span class="n">Double</span> <span class="n">rightValue</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">&quot;left=&quot;</span> <span class="o">+</span> <span class="n">leftValue</span> <span class="o">+</span> <span class="s">&quot;, right=&quot;</span> <span class="o">+</span> <span class="n">rightValue</span><span class="o">;</span>
       <span class="o">}</span>
-    <span class="o">});</span>
-</pre></div>
+    <span class="o">});</span></pre></div>
                                     </div>
                                     <p>Detailed behavior:</p>
                                     <ul class="last">
@@ -3119,8 +3075,7 @@
       <span class="kd">public</span> <span class="n">String</span> <span class="nf">apply</span><span class="o">(</span><span class="n">Long</span> <span class="n">leftValue</span><span class="o">,</span> <span class="n">Double</span> <span class="n">rightValue</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">&quot;left=&quot;</span> <span class="o">+</span> <span class="n">leftValue</span> <span class="o">+</span> <span class="s">&quot;, right=&quot;</span> <span class="o">+</span> <span class="n">rightValue</span><span class="o">;</span>
       <span class="o">}</span>
-    <span class="o">});</span>
-</pre></div>
+    <span class="o">});</span></pre></div>
                                     </div>
                                     <p>Detailed behavior:</p>
                                     <ul class="last">
@@ -3221,8 +3176,7 @@
 <span class="c1">// The window&#39;s name -- the string parameter -- is used to e.g. name the backing state store.</span>
 <span class="kt">Duration</span> <span class="n">windowSizeMs</span> <span class="o">=</span> <span class="n">Duration</span><span class="o">.</span><span class="na">ofMinutes</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
 <span class="kt">Duration</span> <span class="n">advanceMs</span> <span class="o">=</span>    <span class="n">Duration</span><span class="o">.</span><span class="na">ofMinutes</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
-<span class="n">TimeWindows</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">windowSizeMs</span><span class="o">).</span><span class="na">advanceBy</span><span class="o">(</span><span class="n">advanceMs</span><span class="o">);</span>
-</pre></div>
+<span class="n">TimeWindows</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">windowSizeMs</span><span class="o">).</span><span class="na">advanceBy</span><span class="o">(</span><span class="n">advanceMs</span><span class="o">);</span></pre></div>
                         </div>
                         <div class="figure align-center" id="id4">
                             <img class="centered" src="/{{version}}/images/streams-time-windows-hopping.png">
@@ -3270,8 +3224,7 @@ become t=300,000).</span></p>
 <span class="n">TimeWindows</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">windowSizeMs</span><span class="o">);</span>
 
 <span class="c1">// The above is equivalent to the following code:</span>
-<span class="n">TimeWindows</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">windowSizeMs</span><span class="o">).</span><span class="na">advanceBy</span><span class="o">(</span><span class="n">windowSizeMs</span><span class="o">);</span>
-</pre></div>
+<span class="n">TimeWindows</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">windowSizeMs</span><span class="o">).</span><span class="na">advanceBy</span><span class="o">(</span><span class="n">windowSizeMs</span><span class="o">);</span></pre></div>
                         </div>
                     </div>
                     <div class="section" id="sliding-time-windows">
@@ -3305,8 +3258,7 @@ become t=300,000).</span></p>
 <span class="kn">import</span> <span class="nn">org.apache.kafka.streams.kstream.SessionWindows</span><span class="o">;</span>
 
 <span class="c1">// A session window with an inactivity gap of 5 minutes.</span>
-<span class="n">SessionWindows</span><span class="o">.</span><span class="na">with</span><span class="o">(</span><span class="n">Duration</span><span class="o">.</span><span class="na">ofMinutes</span><span class="o">(</span><span class="mi">5</span><span class="o">));</span>
-</pre></div>
+<span class="n">SessionWindows</span><span class="o">.</span><span class="na">with</span><span class="o">(</span><span class="n">Duration</span><span class="o">.</span><span class="na">ofMinutes</span><span class="o">(</span><span class="mi">5</span><span class="o">));</span></pre></div>
                         </div>
                         <p>Given the previous session window example, here&#8217;s what would happen on an input stream of six records.
                             When the first three records arrive (upper part of in the diagram below), we&#8217;d have three sessions (see lower part)
@@ -3360,8 +3312,7 @@ grouped
     .suppress(Suppressed.untilWindowCloses(unbounded()))
     .filter((windowedUserId, count) -&gt; count &lt; 3)
     .toStream()
-    .foreach((windowedUserId, count) -&gt; sendAlert(windowedUserId.window(), windowedUserId.key(), count));
-</pre>
+    .foreach((windowedUserId, count) -&gt; sendAlert(windowedUserId.window(), windowedUserId.key(), count));</pre>
 			    </div></div>
 			    <p>The key parts of this program are:
 			    <dl>
@@ -3518,8 +3469,7 @@ grouped
     <span class="c1">// Any code for clean up would go here.  This processor instance will not be used again after this call.</span>
   <span class="o">}</span>
 
-<span class="o">}</span>
-</pre></div>
+<span class="o">}</span></pre></div>
                 </div>
                 <div class="admonition tip">
                     <p><b>Tip</b></p>
@@ -3539,8 +3489,7 @@ grouped
          <span class="o">.</span><span class="na">filter</span><span class="o">((</span><span class="n">PageId</span> <span class="n">pageId</span><span class="o">,</span> <span class="n">Long</span> <span class="n">viewCount</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">viewCount</span> <span class="o">==</span> <span class="mi">1000</span><span class="o">)</span>
          <span class="c1">// PopularPageEmailAlert is your custom processor that implements the</span>
          <span class="c1">// `Processor` interface, see further down below.</span>
-         <span class="o">.</span><span class="na">process</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">PopularPageEmailAlert</span><span class="o">(</span><span class="s">&quot;alerts@yourcompany.com&quot;</span><span class="o">));</span>
-</pre></div>
+         <span class="o">.</span><span class="na">process</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">PopularPageEmailAlert</span><span class="o">(</span><span class="s">&quot;alerts@yourcompany.com&quot;</span><span class="o">));</span></pre></div>
                 </div>
                 <p>In Java 7:</p>
                 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// Send an email notification when the view count of a page reaches one thousand.</span>
@@ -3559,8 +3508,7 @@ grouped
                <span class="c1">// the `Processor` interface, see further down below.</span>
                <span class="k">return</span> <span class="k">new</span> <span class="n">PopularPageEmailAlert</span><span class="o">(</span><span class="s">&quot;alerts@yourcompany.com&quot;</span><span class="o">);</span>
              <span class="o">}</span>
-           <span class="o">});</span>
-</pre></div>
+           <span class="o">});</span></pre></div>
                 </div>
             </div>
         </div>
@@ -3592,8 +3540,7 @@ groupedTable
     .count()
     .suppress(untilTimeLimit(ofMinutes(5), maxBytes(1_000_000L).emitEarlyWhenFull()))
     .toStream()
-    .foreach((key, count) -&gt; updateCountsDatabase(key, count));
-</pre>
+    .foreach((key, count) -&gt; updateCountsDatabase(key, count));</pre>
 	    </div></div>
 	    <p>This configuration ensures that <code>updateCountsDatabase</code> gets events for each <code>key</code> no more than once every 5 minutes.
 	       Note that the latest state for each key has to be buffered in memory for that 5-minute period.
@@ -3660,8 +3607,7 @@ groupedTable
 
 <span class="c1">// Write the stream to the output topic, using explicit key and value serdes,</span>
 <span class="c1">// (thus overriding the defaults in the config properties).</span>
-<span class="n">stream</span><span class="o">.</span><span class="na">to</span><span class="o">(</span><span class="s">&quot;my-stream-output-topic&quot;</span><span class="o">,</span> <span class="n">Produced</span><span class="o">.</span><span class="na">with</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">(),</span> <span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">());</span>
-</pre></div>
+<span class="n">stream</span><span class="o">.</span><span class="na">to</span><span class="o">(</span><span class="s">&quot;my-stream-output-topic&quot;</span><span class="o">,</span> <span class="n">Produced</span><span class="o">.</span><span class="na">with</span><span class="o">(</span><span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">(),</span> <span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">());</span></pre></div>
                         </div>
                         <p><strong>Causes data re-partitioning if any of the following conditions is true:</strong></p>
                         <ol class="last arabic simple">
@@ -3712,8 +3658,7 @@ groupedTable
 <span class="n">KStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="n">newStream</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="na">through</span><span class="o">(</span><span class="s">&quot;user-clicks-topic&quot;</span><span class="o">).</span><span class="na">map</span><span class="o">(...);</span>
 
 <span class="c1">// ``through`` is also available for tables</span>
-<span class="n">KTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="n">newTable</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="na">through</span><span class="o">(</span><span class="s">&quot;my-table-output-topic&quot;</span><span class="o">).</span><span class="na">map</span><span class="o">(...);</span>
-</pre></div>
+<span class="n">KTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="n">newTable</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="na">through</span><span class="o">(</span><span class="s">&quot;my-table-output-topic&quot;</span><span class="o">).</span><span class="na">map</span><span class="o">(...);</span></pre></div>
                         </div>
                         <p><strong>Causes data re-partitioning if any of the following conditions is true:</strong></p>
                         <ol class="last arabic simple">
@@ -3779,24 +3724,22 @@ groupedTable
               <li><code class="docutils literal"><span class="pre">org.apache.kafka.streams.scala.Serdes</span></code>: Module that contains all primitive SerDes that can be imported as implicits and a helper to create custom SerDes.</li>
             </ul>
             <p>The library is cross-built with Scala 2.12 and 2.13. To reference the library compiled against Scala {{scalaVersion}} include the following in your maven <code>pom.xml</code> add the following:</p>
-            <pre class="brush: xml;">
+            <pre class="language-xml;">
               &lt;dependency&gt;
                 &lt;groupId&gt;org.apache.kafka&lt;/groupId&gt;
                 &lt;artifactId&gt;kafka-streams-scala_{{scalaVersion}}&lt;/artifactId&gt;
                 &lt;version&gt;{{fullDotVersion}}&lt;/version&gt;
-              &lt;/dependency&gt;
-            </pre>
+              &lt;/dependency&gt;</pre>
             <p>To use the library compiled against Scala 2.12 replace the <code class="docutils literal"><span class="pre">artifactId</span></code> with <code class="docutils literal"><span class="pre">kafka-streams-scala_2.12</span></code>.</p>
             <p>When using SBT then you can reference the correct library using the following:</p>
-            <pre class="brush: scala;">
-              libraryDependencies += "org.apache.kafka" %% "kafka-streams-scala" % "{{fullDotVersion}}"
-            </pre>
+            <pre class="language-scala;">
+              libraryDependencies += "org.apache.kafka" %% "kafka-streams-scala" % "{{fullDotVersion}}"</pre>
             <div class="section" id="scala-dsl-sample-usage">
               <span id="streams-developer-guide-dsl-sample-usage"></span><h3><a class="toc-backref" href="#id28">Sample Usage</a><a class="headerlink" href="#scala-dsl-sample-usage" title="Permalink to this headline"></a></h3>
               <p>The library works by wrapping the original Java abstractions of Kafka Streams within a Scala wrapper object and then using implicit conversions between them. All the Scala abstractions are named identically as the corresponding Java abstraction, but they reside in a different package of the library e.g. the Scala class <code class="docutils literal"><span class="pre">org.apache.kafka.streams.scala.StreamsBuilder</span></code> is a wrapper around <code class="docutils literal"><span class="pre">org.apache.kafka.streams.StreamsBuilder</span></code>, <code class="docutils literal"><span class="pre">org.apache.kafka.streams.scala.kstream.KStream</span></code> is a wrapper around <code class="docutils literal"><span class="pre">org.apache.kafka.streams.kstream.KStream</span></code>, and so on.</p>
               <p>Here's an example of the classic WordCount program that uses the Scala <code class="docutils literal"><span class="pre">StreamsBuilder</span></code> that builds an instance of <code class="docutils literal"><span class="pre">KStream</span></code> which is a wrapper around Java <code class="docutils literal"><span class="pre">KStream</span></code>. Then we reify to a table and get a <code class="docutils literal"><span class="pre">KTable</span></code>, which, again is a wrapper around Java <code class="docutils literal"><span class="pre">KTable</span></code>.</p>
               <p>The net result is that the following code is structured just like using the Java API, but with Scala and with far fewer type annotations compared to using the Java API directly from Scala. The difference in type annotation usage is more obvious when given an example.  Below is an example WordCount implementation that will be used to demonstrate the differences between the Scala and Java API.</p>
-              <pre class="brush: scala;">
+              <pre class="language-scala;">
 import java.time.Duration
 import java.util.Properties
 
@@ -3830,8 +3773,7 @@ object WordCountApplication extends App {
   sys.ShutdownHookThread {
      streams.close(Duration.ofSeconds(10))
   }
-}
-              </pre>
+}</pre>
               <p>In the above code snippet, we don't have to provide any SerDes, <code class="docutils literal"><span class="pre">Grouped</span></code>, <code class="docutils literal"><span class="pre">Produced</span></code>, <code class="docutils literal"><span class="pre">Consumed</span></code> or <code class="docutils literal"><span class="pre">Joined</span></code> explicitly. They will also not be dependent on any SerDes specified in the config.  <strong>In fact all SerDes specified in the config will be ignored by the Scala APIs</strong>. All SerDes and <code class="docutils literal"><span class="pre">Grouped</span></code>, <code class="docutils literal"><span class="pre">Produced</span></code>, <code class="docutils literal"><span class="pre">Consumed</span></code> or <code class="docutils literal"><span class="pre">Joined</span></code> will be handled through implicit SerDes as discussed later in the <a href="#scala-dsl-implicit-serdes">Implicit SerDes</a> section. The complete independence from configuration based SerDes is what makes this library completely typesafe.  Any missing instances of SerDes, <code class="docutils literal"><span class="pre">Grouped</span></code>, <code class="docutils literal"><span class="pre">Produced</span></code>, <code class="docutils literal"><span class="pre">Consumed</span></code> or <code class="docutils literal"><span class="pre">Joined</span></code> will be flagged as a compile time error.</p>
             </div>
             <div class="section" id="scala-dsl-implicit-serdes">
@@ -3840,7 +3782,7 @@ object WordCountApplication extends App {
               <p>The library uses the power of <a href="https://docs.scala-lang.org/tour/implicit-parameters.html">Scala implicit parameters</a> to alleviate this concern. As a user you can provide implicit SerDes or implicit values of <code class="docutils literal"><span class="pre">Grouped</span></code>, <code class="docutils literal"><span class="pre">Produced</span></code>, <code class="docutils literal"><span class="pre">Consumed</span></code> or <code class="docutils literal"><span class="pre">Joined</span></code> once and make your code less verbose. In fact you can just have the implicit SerDes in scope and the library will make the instances of <code class="docutils literal"><span class="pre">Grouped</span></code>, <code class="docutils literal"><span class="pre">Produced</span></code>, <code class="docutils literal"><span class="pre">Consumed</span></code> or <code class="docutils literal"><span class="pre">Joined</span></code> available in scope.</p>
               <p>The library also bundles all implicit SerDes of the commonly used primitive types in a Scala module - so just import the module vals and have all SerDes in scope.  A similar strategy of modular implicits can be adopted for any user-defined SerDes as well (User-defined SerDes are discussed in the next section).</p>
               <p>Here's an example:</p>
-              <pre class="brush: scala;">
+              <pre class="language-scala;">
 // DefaultSerdes brings into scope implicit SerDes (mostly for primitives)
 // that will set up all Grouped, Produced, Consumed and Joined instances.
 // So all APIs below that accept Grouped, Produced, Consumed or Joined will
@@ -3863,8 +3805,7 @@ val clicksPerRegion: KTable[String, Long] =
     .groupByKey
     .reduce(_ + _)
 
-clicksPerRegion.toStream.to(outputTopic)
-              </pre>
+clicksPerRegion.toStream.to(outputTopic)</pre>
               <p>Quite a few things are going on in the above code snippet that may warrant a few lines of elaboration:</p>
               <ol>
                 <li>The code snippet does not depend on any config defined SerDes. In fact any SerDes defined as part of the config will be ignored.</li>
@@ -3876,7 +3817,7 @@ clicksPerRegion.toStream.to(outputTopic)
             <div class="section" id="scala-dsl-user-defined-serdes">
               <span id="streams-developer-guide-dsl-scala-dsl-user-defined-serdes"></span><h3><a class="toc-backref" href="#id30">User-Defined SerDes</a><a class="headerlink" href="#scala-dsl-user-defined-serdes" title="Permalink to this headline"></a></h3>
               <p>When the default primitive SerDes are not enough and we need to define custom SerDes, the usage is exactly the same as above. Just define the implicit SerDes and start building the stream transformation. Here's an example with <code class="docutils literal"><span class="pre">AvroSerde</span></code>:</p>
-              <pre class="brush: scala;">
+              <pre class="language-scala;">
 // domain object as a case class
 case class UserClicks(clicks: Long)
 
@@ -3908,8 +3849,7 @@ val clicksPerRegion: KTable[String, Long] =
    .reduce(_ + _)
 
 // Write the (continuously updating) results to the output topic.
-clicksPerRegion.toStream.to(outputTopic)
-              </pre>
+clicksPerRegion.toStream.to(outputTopic)</pre>
               <p>A complete example of user-defined SerDes can be found in a test class within the library.</p>
             </div>
         </div>

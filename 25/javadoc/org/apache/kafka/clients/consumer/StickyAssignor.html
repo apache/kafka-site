@@ -222,8 +222,7 @@ extends org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor</pre>
      }
    }
  }
- </code>
- </pre>
+ </code></pre>
 
  As mentioned above, one advantage of the sticky assignor is that, in general, it reduces the number of partitions that
  actually move from one consumer to another during a reassignment. Therefore, it allows consumers to do their cleanup
@@ -254,8 +253,7 @@ extends org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor</pre>
      this.lastAssignment = assignment;
    }
  }
- </code>
- </pre>
+ </code></pre>
 
  Any consumer that uses sticky assignment can leverage this listener like this:
  <code>consumer.subscribe(topics, new TheNewRebalanceListener());</code>

@@ -42,7 +42,7 @@
         We are going to use a Kafka Streams Maven Archetype for creating a Streams project structure with the following commands:
     </p>
 
-    <pre class="brush: bash;">
+    <pre class="language-bash;">
         mvn archetype:generate \
             -DarchetypeGroupId=org.apache.kafka \
             -DarchetypeArtifactId=streams-quickstart-java \
@@ -58,7 +58,7 @@
         Assuming the above parameter values are used, this command will create a project structure that looks like this:
     </p>
 
-    <pre class="brush: bash;">
+    <pre class="language-bash;">
         &gt; tree streams.examples
         streams.examples
         |-- pom.xml
@@ -79,7 +79,7 @@
         Since we are going to start writing such programs from scratch, we can now delete these examples:
     </p>
 
-    <pre class="brush: bash;">
+    <pre class="language-bash;">
         &gt; cd streams.examples
         &gt; rm src/main/java/myapps/*.java
     </pre>
@@ -89,7 +89,7 @@
     It's coding time now! Feel free to open your favorite IDE and import this Maven project, or simply open a text editor and create a java file under <code>src/main/java</code>.
     Let's name it <code>Pipe.java</code>:
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         package myapps;
 
         public class Pipe {
@@ -111,7 +111,7 @@
         and <code>StreamsConfig.APPLICATION_ID_CONFIG</code>, which gives the unique identifier of your Streams application to distinguish itself with other applications talking to the same Kafka cluster:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         Properties props = new Properties();
         props.put(StreamsConfig.APPLICATION_ID_CONFIG, "streams-pipe");
         props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");    // assuming that the Kafka broker this application is talking to runs on local machine with port 9092
@@ -121,7 +121,7 @@
         In addition, you can customize other configurations in the same map, for example, default serialization and deserialization libraries for the record key-value pairs:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
     </pre>
@@ -136,7 +136,7 @@
         We can use a topology builder to construct such a topology,
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         final StreamsBuilder builder = new StreamsBuilder();
     </pre>
 
@@ -144,7 +144,7 @@
         And then create a source stream from a Kafka topic named <code>streams-plaintext-input</code> using this topology builder:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         KStream&lt;String, String&gt; source = builder.stream("streams-plaintext-input");
     </pre>
 
@@ -154,7 +154,7 @@
         The simplest thing we can do with this stream is to write it into another Kafka topic, say it's named <code>streams-pipe-output</code>:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         source.to("streams-pipe-output");
     </pre>
 
@@ -162,7 +162,7 @@
         Note that we can also concatenate the above two lines into a single line as:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         builder.stream("streams-plaintext-input").to("streams-pipe-output");
     </pre>
 
@@ -170,7 +170,7 @@
         We can inspect what kind of <code>topology</code> is created from this builder by doing the following:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         final Topology topology = builder.build();
     </pre>
 
@@ -178,7 +178,7 @@
         And print its description to standard output as:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         System.out.println(topology.describe());
     </pre>
 
@@ -186,7 +186,7 @@
         If we just stop here, compile and run the program, it will output the following information:
     </p>
 
-    <pre class="brush: bash;">
+    <pre class="language-bash;">
         &gt; mvn clean package
         &gt; mvn exec:java -Dexec.mainClass=myapps.Pipe
         Sub-topologies:
@@ -213,7 +213,7 @@
         <code>KafkaStreams</code> have overloaded constructor functions to takes either type).
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         final KafkaStreams streams = new KafkaStreams(topology, props);
     </pre>
 
@@ -223,7 +223,7 @@
         We can, for example, add a shutdown hook with a countdown latch to capture a user interrupt and close the client upon terminating this program:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         final CountDownLatch latch = new CountDownLatch(1);
 
         // attach shutdown handler to catch control-c
@@ -248,7 +248,7 @@
         The complete code so far looks like this:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         package myapps;
 
         import org.apache.kafka.common.serialization.Serdes;
@@ -304,7 +304,7 @@
         you can run this code in your IDE or on the command line, using Maven:
     </p>
 
-    <pre class="brush: brush;">
+    <pre class="language-brush;">
         &gt; mvn clean package
         &gt; mvn exec:java -Dexec.mainClass=myapps.Pipe
     </pre>
@@ -323,7 +323,7 @@
         We can first create another program by first copy the existing <code>Pipe.java</code> class:
     </p>
 
-    <pre class="brush: brush;">
+    <pre class="language-brush;">
         &gt; cp src/main/java/myapps/Pipe.java src/main/java/myapps/LineSplit.java
     </pre>
 
@@ -331,7 +331,7 @@
         And change its class name as well as the application id config to distinguish with the original program:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         public class LineSplit {
 
             public static void main(String[] args) throws Exception {
@@ -347,7 +347,7 @@
         let's treat the value string as a text line and split it into words with a <code>FlatMapValues</code> operator:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         KStream&lt;String, String&gt; source = builder.stream("streams-plaintext-input");
         KStream&lt;String, String&gt; words = source.flatMapValues(new ValueMapper&lt;String, Iterable&lt;String&gt;&gt;() {
                     @Override
@@ -365,7 +365,7 @@
         Note if you are using JDK 8 you can use lambda expression and simplify the above code as:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         KStream&lt;String, String&gt; source = builder.stream("streams-plaintext-input");
         KStream&lt;String, String&gt; words = source.flatMapValues(value -> Arrays.asList(value.split("\\W+")));
     </pre>
@@ -375,7 +375,7 @@
         Again, these two steps can be concatenated as the following (assuming lambda expression is used):
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         KStream&lt;String, String&gt; source = builder.stream("streams-plaintext-input");
         source.flatMapValues(value -> Arrays.asList(value.split("\\W+")))
               .to("streams-linesplit-output");
@@ -385,7 +385,7 @@
         If we now describe this augmented topology as <code>System.out.println(topology.describe())</code>, we will get the following:
     </p>
 
-    <pre class="brush: bash;">
+    <pre class="language-bash;">
         &gt; mvn clean package
         &gt; mvn exec:java -Dexec.mainClass=myapps.LineSplit
         Sub-topologies:
@@ -409,7 +409,7 @@
         The complete code looks like this (assuming lambda expression is used):
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         package myapps;
 
         import org.apache.kafka.common.serialization.Serdes;
@@ -454,7 +454,7 @@
         Following similar steps let's create another program based on the <code>LineSplit.java</code> class:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         public class WordCount {
 
             public static void main(String[] args) throws Exception {
@@ -469,7 +469,7 @@
         In order to count the words we can first modify the <code>flatMapValues</code> operator to treat all of them as lower case (assuming lambda expression is used):
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         source.flatMapValues(new ValueMapper&lt;String, Iterable&lt;String&gt;&gt;() {
                     @Override
                     public Iterable&lt;String&gt; apply(String value) {
@@ -483,7 +483,7 @@
         This operator generate a new grouped stream, which can then be aggregated by a <code>count</code> operator, which generates a running count on each of the grouped keys:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         KTable&lt;String, Long&gt; counts =
         source.flatMapValues(new ValueMapper&lt;String, Iterable&lt;String&gt;&gt;() {
                     @Override
@@ -515,7 +515,7 @@
         We need to provide overridden serialization methods for <code>Long</code> types, otherwise a runtime exception will be thrown:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         counts.toStream().to("streams-wordcount-output", Produced.with(Serdes.String(), Serdes.Long()));
     </pre>
 
@@ -526,7 +526,7 @@
         Assuming lambda expression from JDK 8 can be used, the above code can be simplified as:
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         KStream&lt;String, String&gt; source = builder.stream("streams-plaintext-input");
         source.flatMapValues(value -> Arrays.asList(value.toLowerCase(Locale.getDefault()).split("\\W+")))
               .groupBy((key, value) -> value)
@@ -539,7 +539,7 @@
         If we again describe this augmented topology as <code>System.out.println(topology.describe())</code>, we will get the following:
     </p>
 
-    <pre class="brush: bash;">
+    <pre class="language-bash;">
         &gt; mvn clean package
         &gt; mvn exec:java -Dexec.mainClass=myapps.WordCount
         Sub-topologies:
@@ -575,7 +575,7 @@
         The complete code looks like this (assuming lambda expression is used):
     </p>
 
-    <pre class="brush: java;">
+    <pre class="language-java;">
         package myapps;
 
         import org.apache.kafka.common.serialization.Serdes;
