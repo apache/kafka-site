@@ -114,7 +114,7 @@ var activeTableTab = "activeTableTab";
 <pre><a href="../../../../org/apache/kafka/common/annotation/InterfaceStability.Evolving.html" title="annotation in org.apache.kafka.common.annotation">@InterfaceStability.Evolving</a>
 public abstract class <span class="typeNameLabel">KafkaFuture&lt;T&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;T&gt;</pre>
+implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;T&gt;</code></pre>
 <div class="block">A flexible future which supports call chaining and other asynchronous programming patterns. This will
  eventually become a thin shim on top of Java 8's CompletableFuture.
 
@@ -308,7 +308,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurre
 <ul class="blockListLast">
 <li class="blockList">
 <h4>KafkaFuture</h4>
-<pre>public&nbsp;KafkaFuture()</pre>
+<pre>public&nbsp;KafkaFuture()</code></pre>
 </li>
 </ul>
 </li>
@@ -327,7 +327,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurre
 <ul class="blockList">
 <li class="blockList">
 <h4>completedFuture</h4>
-<pre>public static&nbsp;&lt;U&gt;&nbsp;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;U&gt;&nbsp;completedFuture(U&nbsp;value)</pre>
+<pre>public static&nbsp;&lt;U&gt;&nbsp;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;U&gt;&nbsp;completedFuture(U&nbsp;value)</code></pre>
 <div class="block">Returns a new KafkaFuture that is already completed with the given value.</div>
 </li>
 </ul>
@@ -337,7 +337,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurre
 <ul class="blockList">
 <li class="blockList">
 <h4>allOf</h4>
-<pre>public static&nbsp;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&nbsp;allOf(<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;?&gt;...&nbsp;futures)</pre>
+<pre>public static&nbsp;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&nbsp;allOf(<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;?&gt;...&nbsp;futures)</code></pre>
 <div class="block">Returns a new KafkaFuture that is completed when all the given futures have completed.  If
  any future throws an exception, the returned future returns it.  If multiple futures throw
  an exception, which one gets returned is arbitrarily chosen.</div>
@@ -349,7 +349,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurre
 <ul class="blockList">
 <li class="blockList">
 <h4>thenApply</h4>
-<pre>public abstract&nbsp;&lt;R&gt;&nbsp;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;R&gt;&nbsp;thenApply(<a href="../../../../org/apache/kafka/common/KafkaFuture.BaseFunction.html" title="interface in org.apache.kafka.common">KafkaFuture.BaseFunction</a>&lt;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="type parameter in KafkaFuture">T</a>,R&gt;&nbsp;function)</pre>
+<pre>public abstract&nbsp;&lt;R&gt;&nbsp;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;R&gt;&nbsp;thenApply(<a href="../../../../org/apache/kafka/common/KafkaFuture.BaseFunction.html" title="interface in org.apache.kafka.common">KafkaFuture.BaseFunction</a>&lt;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="type parameter in KafkaFuture">T</a>,R&gt;&nbsp;function)</code></pre>
 <div class="block">Returns a new KafkaFuture that, when this future completes normally, is executed with this
  futures's result as the argument to the supplied function.
 
@@ -363,7 +363,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurre
 <ul class="blockList">
 <li class="blockList">
 <h4>thenApply</h4>
-<pre>public abstract&nbsp;&lt;R&gt;&nbsp;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;R&gt;&nbsp;thenApply(<a href="../../../../org/apache/kafka/common/KafkaFuture.Function.html" title="class in org.apache.kafka.common">KafkaFuture.Function</a>&lt;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="type parameter in KafkaFuture">T</a>,R&gt;&nbsp;function)</pre>
+<pre>public abstract&nbsp;&lt;R&gt;&nbsp;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;R&gt;&nbsp;thenApply(<a href="../../../../org/apache/kafka/common/KafkaFuture.Function.html" title="class in org.apache.kafka.common">KafkaFuture.Function</a>&lt;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="type parameter in KafkaFuture">T</a>,R&gt;&nbsp;function)</code></pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../org/apache/kafka/common/KafkaFuture.html#thenApply-org.apache.kafka.common.KafkaFuture.BaseFunction-"><code>Prefer {@link KafkaFuture#thenApply(BaseFunction)} as this function is here for backwards compatibility reasons
@@ -377,7 +377,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurre
 <ul class="blockList">
 <li class="blockList">
 <h4>whenComplete</h4>
-<pre>public abstract&nbsp;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="type parameter in KafkaFuture">T</a>&gt;&nbsp;whenComplete(<a href="../../../../org/apache/kafka/common/KafkaFuture.BiConsumer.html" title="interface in org.apache.kafka.common">KafkaFuture.BiConsumer</a>&lt;? super <a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="type parameter in KafkaFuture">T</a>,? super <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a>&gt;&nbsp;action)</pre>
+<pre>public abstract&nbsp;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="type parameter in KafkaFuture">T</a>&gt;&nbsp;whenComplete(<a href="../../../../org/apache/kafka/common/KafkaFuture.BiConsumer.html" title="interface in org.apache.kafka.common">KafkaFuture.BiConsumer</a>&lt;? super <a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="type parameter in KafkaFuture">T</a>,? super <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a>&gt;&nbsp;action)</code></pre>
 <div class="block">Returns a new KafkaFuture with the same result or exception as this future, that executes the given action
  when this future completes.
 
@@ -407,7 +407,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurre
 <ul class="blockList">
 <li class="blockList">
 <h4>addWaiter</h4>
-<pre>protected abstract&nbsp;void&nbsp;addWaiter(<a href="../../../../org/apache/kafka/common/KafkaFuture.BiConsumer.html" title="interface in org.apache.kafka.common">KafkaFuture.BiConsumer</a>&lt;? super <a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="type parameter in KafkaFuture">T</a>,? super <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a>&gt;&nbsp;action)</pre>
+<pre>protected abstract&nbsp;void&nbsp;addWaiter(<a href="../../../../org/apache/kafka/common/KafkaFuture.BiConsumer.html" title="interface in org.apache.kafka.common">KafkaFuture.BiConsumer</a>&lt;? super <a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="type parameter in KafkaFuture">T</a>,? super <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a>&gt;&nbsp;action)</code></pre>
 </li>
 </ul>
 <a name="complete-java.lang.Object-">
@@ -418,7 +418,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurre
 <ul class="blockList">
 <li class="blockList">
 <h4>complete</h4>
-<pre>protected abstract&nbsp;boolean&nbsp;complete(<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="type parameter in KafkaFuture">T</a>&nbsp;newValue)</pre>
+<pre>protected abstract&nbsp;boolean&nbsp;complete(<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="type parameter in KafkaFuture">T</a>&nbsp;newValue)</code></pre>
 <div class="block">If not already completed, sets the value returned by get() and related methods to the given
  value.</div>
 </li>
@@ -429,7 +429,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurre
 <ul class="blockList">
 <li class="blockList">
 <h4>completeExceptionally</h4>
-<pre>protected abstract&nbsp;boolean&nbsp;completeExceptionally(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a>&nbsp;newException)</pre>
+<pre>protected abstract&nbsp;boolean&nbsp;completeExceptionally(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a>&nbsp;newException)</code></pre>
 <div class="block">If not already completed, causes invocations of get() and related methods to throw the given
  exception.</div>
 </li>
@@ -440,7 +440,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurre
 <ul class="blockList">
 <li class="blockList">
 <h4>cancel</h4>
-<pre>public abstract&nbsp;boolean&nbsp;cancel(boolean&nbsp;mayInterruptIfRunning)</pre>
+<pre>public abstract&nbsp;boolean&nbsp;cancel(boolean&nbsp;mayInterruptIfRunning)</code></pre>
 <div class="block">If not already completed, completes this future with a CancellationException.  Dependent
  futures that have not already completed will also complete exceptionally, with a
  CompletionException caused by this CancellationException.</div>
@@ -458,7 +458,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurre
 <h4>get</h4>
 <pre>public abstract&nbsp;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="type parameter in KafkaFuture">T</a>&nbsp;get()
                throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a>,
-                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></pre>
+                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></code></pre>
 <div class="block">Waits if necessary for this future to complete, and then returns its result.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -479,7 +479,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurre
                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</a>&nbsp;unit)
                throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a>,
                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a>,
-                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeoutException.html?is-external=true" title="class or interface in java.util.concurrent">TimeoutException</a></pre>
+                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeoutException.html?is-external=true" title="class or interface in java.util.concurrent">TimeoutException</a></code></pre>
 <div class="block">Waits if necessary for at most the given time for this future to complete, and then returns
  its result, if available.</div>
 <dl>
@@ -502,7 +502,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurre
 <h4>getNow</h4>
 <pre>public abstract&nbsp;<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="type parameter in KafkaFuture">T</a>&nbsp;getNow(<a href="../../../../org/apache/kafka/common/KafkaFuture.html" title="type parameter in KafkaFuture">T</a>&nbsp;valueIfAbsent)
                   throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a>,
-                         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></pre>
+                         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></code></pre>
 <div class="block">Returns the result value (or throws any encountered exception) if completed, else returns
  the given valueIfAbsent.</div>
 <dl>
@@ -518,7 +518,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurre
 <ul class="blockList">
 <li class="blockList">
 <h4>isCancelled</h4>
-<pre>public abstract&nbsp;boolean&nbsp;isCancelled()</pre>
+<pre>public abstract&nbsp;boolean&nbsp;isCancelled()</code></pre>
 <div class="block">Returns true if this CompletableFuture was cancelled before it completed normally.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -532,7 +532,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurre
 <ul class="blockList">
 <li class="blockList">
 <h4>isCompletedExceptionally</h4>
-<pre>public abstract&nbsp;boolean&nbsp;isCompletedExceptionally()</pre>
+<pre>public abstract&nbsp;boolean&nbsp;isCompletedExceptionally()</code></pre>
 <div class="block">Returns true if this CompletableFuture completed exceptionally, in any way.</div>
 </li>
 </ul>
@@ -542,7 +542,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurre
 <ul class="blockListLast">
 <li class="blockList">
 <h4>isDone</h4>
-<pre>public abstract&nbsp;boolean&nbsp;isDone()</pre>
+<pre>public abstract&nbsp;boolean&nbsp;isDone()</code></pre>
 <div class="block">Returns true if completed in any fashion: normally, exceptionally, or via cancellation.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>

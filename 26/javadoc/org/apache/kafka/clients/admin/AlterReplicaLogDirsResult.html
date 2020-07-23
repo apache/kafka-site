@@ -109,7 +109,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre><a href="../../../../../org/apache/kafka/common/annotation/InterfaceStability.Evolving.html" title="annotation in org.apache.kafka.common.annotation">@InterfaceStability.Evolving</a>
 public class <span class="typeNameLabel">AlterReplicaLogDirsResult</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">The result of <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#alterReplicaLogDirs-java.util.Map-org.apache.kafka.clients.admin.AlterReplicaLogDirsOptions-"><code>Admin.alterReplicaLogDirs(Map, AlterReplicaLogDirsOptions)</code></a>.
 
  To retrieve the detailed result per specified <a href="../../../../../org/apache/kafka/common/TopicPartitionReplica.html" title="class in org.apache.kafka.common"><code>TopicPartitionReplica</code></a>, use <a href="../../../../../org/apache/kafka/clients/admin/AlterReplicaLogDirsResult.html#values--"><code>values()</code></a>. To retrieve the
@@ -173,7 +173,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>values</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartitionReplica.html" title="class in org.apache.kafka.common">TopicPartitionReplica</a>,<a href="../../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&gt;&nbsp;values()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartitionReplica.html" title="class in org.apache.kafka.common">TopicPartitionReplica</a>,<a href="../../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&gt;&nbsp;values()</code></pre>
 <div class="block">Return a map from <a href="../../../../../org/apache/kafka/common/TopicPartitionReplica.html" title="class in org.apache.kafka.common"><code>TopicPartitionReplica</code></a> to <a href="../../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common"><code>KafkaFuture</code></a> which holds the status of individual
  replica movement.
 
@@ -202,7 +202,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>all</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&nbsp;all()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&nbsp;all()</code></pre>
 <div class="block">Return a <a href="../../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common"><code>KafkaFuture</code></a> which succeeds on <a href="../../../../../org/apache/kafka/common/KafkaFuture.html#get--"><code>KafkaFuture.get()</code></a> if all the replica movement have succeeded.
  if not, it throws an <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang"><code>Exception</code></a> described in <a href="../../../../../org/apache/kafka/clients/admin/AlterReplicaLogDirsResult.html#values--"><code>values()</code></a> method.</div>
 </li>

@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">KafkaPrincipal</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="https://docs.oracle.com/javase/8/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a></pre>
+implements <a href="https://docs.oracle.com/javase/8/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a></code></pre>
 <div class="block"><p>Principals in Kafka are defined by a type and a name. The principal type will always be <code>"User"</code>
  for the simple authorizer that is enabled by default, but custom authorizers can leverage different
  principal types (such as to enable group or role-based ACLs). The <a href="../../../../../../org/apache/kafka/common/security/auth/KafkaPrincipalBuilder.html" title="interface in org.apache.kafka.common.security.auth"><code>KafkaPrincipalBuilder</code></a> interface
@@ -262,7 +262,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/security/Prin
 <ul class="blockList">
 <li class="blockList">
 <h4>USER_TYPE</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> USER_TYPE</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> USER_TYPE</code></pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../../constant-values.html#org.apache.kafka.common.security.auth.KafkaPrincipal.USER_TYPE">Constant Field Values</a></dd>
@@ -275,7 +275,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/security/Prin
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ANONYMOUS</h4>
-<pre>public static final&nbsp;<a href="../../../../../../org/apache/kafka/common/security/auth/KafkaPrincipal.html" title="class in org.apache.kafka.common.security.auth">KafkaPrincipal</a> ANONYMOUS</pre>
+<pre>public static final&nbsp;<a href="../../../../../../org/apache/kafka/common/security/auth/KafkaPrincipal.html" title="class in org.apache.kafka.common.security.auth">KafkaPrincipal</a> ANONYMOUS</code></pre>
 </li>
 </ul>
 </li>
@@ -293,7 +293,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/security/Prin
 <li class="blockList">
 <h4>KafkaPrincipal</h4>
 <pre>public&nbsp;KafkaPrincipal(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;principalType,
-                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code></pre>
 </li>
 </ul>
 </li>
@@ -311,7 +311,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/security/Prin
 <li class="blockList">
 <h4>fromString</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public static&nbsp;<a href="../../../../../../org/apache/kafka/common/security/auth/KafkaPrincipal.html" title="class in org.apache.kafka.common.security.auth">KafkaPrincipal</a>&nbsp;fromString(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;str)</pre>
+public static&nbsp;<a href="../../../../../../org/apache/kafka/common/security/auth/KafkaPrincipal.html" title="class in org.apache.kafka.common.security.auth">KafkaPrincipal</a>&nbsp;fromString(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;str)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">As of 1.0.0. This method will be removed in a future major release.</span></div>
 <div class="block">Parse a <a href="../../../../../../org/apache/kafka/common/security/auth/KafkaPrincipal.html" title="class in org.apache.kafka.common.security.auth"><code>KafkaPrincipal</code></a> instance from a string. This method cannot be used for <a href="../../../../../../org/apache/kafka/common/security/auth/KafkaPrincipal.html" title="class in org.apache.kafka.common.security.auth"><code>KafkaPrincipal</code></a>
  extensions.</div>
@@ -329,7 +329,7 @@ public static&nbsp;<a href="../../../../../../org/apache/kafka/common/security/a
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/Principal.html?is-external=true#toString--" title="class or interface in java.security">toString</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a></code></dd>
@@ -344,7 +344,7 @@ public static&nbsp;<a href="../../../../../../org/apache/kafka/common/security/a
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/Principal.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.security">equals</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a></code></dd>
@@ -359,7 +359,7 @@ public static&nbsp;<a href="../../../../../../org/apache/kafka/common/security/a
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/Principal.html?is-external=true#hashCode--" title="class or interface in java.security">hashCode</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a></code></dd>
@@ -374,7 +374,7 @@ public static&nbsp;<a href="../../../../../../org/apache/kafka/common/security/a
 <ul class="blockList">
 <li class="blockList">
 <h4>getName</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/Principal.html?is-external=true#getName--" title="class or interface in java.security">getName</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a></code></dd>
@@ -387,7 +387,7 @@ public static&nbsp;<a href="../../../../../../org/apache/kafka/common/security/a
 <ul class="blockList">
 <li class="blockList">
 <h4>getPrincipalType</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getPrincipalType()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getPrincipalType()</code></pre>
 </li>
 </ul>
 <a name="tokenAuthenticated-boolean-">
@@ -396,7 +396,7 @@ public static&nbsp;<a href="../../../../../../org/apache/kafka/common/security/a
 <ul class="blockList">
 <li class="blockList">
 <h4>tokenAuthenticated</h4>
-<pre>public&nbsp;void&nbsp;tokenAuthenticated(boolean&nbsp;tokenAuthenticated)</pre>
+<pre>public&nbsp;void&nbsp;tokenAuthenticated(boolean&nbsp;tokenAuthenticated)</code></pre>
 </li>
 </ul>
 <a name="tokenAuthenticated--">
@@ -405,7 +405,7 @@ public static&nbsp;<a href="../../../../../../org/apache/kafka/common/security/a
 <ul class="blockListLast">
 <li class="blockList">
 <h4>tokenAuthenticated</h4>
-<pre>public&nbsp;boolean&nbsp;tokenAuthenticated()</pre>
+<pre>public&nbsp;boolean&nbsp;tokenAuthenticated()</code></pre>
 </li>
 </ul>
 </li>

@@ -108,17 +108,15 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">Values</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">Utility for converting from one Connect value to a different form. This is useful when the caller expects a value of a particular type
  but is uncertain whether the actual value is one that isn't directly that type but can be converted into that type.
 
  <p>For example, a caller might expects a particular <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> to contain an <a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html#INT64"><code>Schema.Type.INT64</code></a>
  value, when in fact that header contains a string representation of a 32-bit integer. Here, the caller can use the methods in this
  class to convert the value to the desired type:
- <pre>
-     Header header = ...
-     long value = Values.convertToLong(header.schema(), header.value());
- </pre>
+ <pre class="line-numbers"><code class="language-text">     Header header = ...
+     long value = Values.convertToLong(header.schema(), header.value());</code></pre>
 
  <p>This class is able to convert any value to a string representation as well as parse those string representations back into most of
  the types. The only exception is <a href="../../../../../org/apache/kafka/connect/data/Struct.html" title="class in org.apache.kafka.connect.data"><code>Struct</code></a> values that require a schema and thus cannot be parsed from a simple string.</div>
@@ -400,7 +398,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Values</h4>
-<pre>public&nbsp;Values()</pre>
+<pre>public&nbsp;Values()</code></pre>
 </li>
 </ul>
 </li>
@@ -419,7 +417,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>convertToBoolean</h4>
 <pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;convertToBoolean(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)
-                                throws <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors">DataException</a></pre>
+                                throws <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors">DataException</a></code></pre>
 <div class="block">Convert the specified value to an <a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html#BOOLEAN"><code>Schema.Type.BOOLEAN</code></a> value. The supplied schema is required if the value is a logical
  type when the schema contains critical information that might be necessary for converting to a boolean.</div>
 <dl>
@@ -441,7 +439,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>convertToByte</h4>
 <pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Byte.html?is-external=true" title="class or interface in java.lang">Byte</a>&nbsp;convertToByte(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)
-                          throws <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors">DataException</a></pre>
+                          throws <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors">DataException</a></code></pre>
 <div class="block">Convert the specified value to an <a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html#INT8"><code>Schema.Type.INT8</code></a> byte value. The supplied schema is required if the value is a logical
  type when the schema contains critical information that might be necessary for converting to a byte.</div>
 <dl>
@@ -463,7 +461,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>convertToShort</h4>
 <pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Short.html?is-external=true" title="class or interface in java.lang">Short</a>&nbsp;convertToShort(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)
-                            throws <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors">DataException</a></pre>
+                            throws <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors">DataException</a></code></pre>
 <div class="block">Convert the specified value to an <a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html#INT16"><code>Schema.Type.INT16</code></a> short value. The supplied schema is required if the value is a logical
  type when the schema contains critical information that might be necessary for converting to a short.</div>
 <dl>
@@ -485,7 +483,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>convertToInteger</h4>
 <pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&nbsp;convertToInteger(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)
-                                throws <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors">DataException</a></pre>
+                                throws <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors">DataException</a></code></pre>
 <div class="block">Convert the specified value to an <a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html#INT32"><code>Schema.Type.INT32</code></a> int value. The supplied schema is required if the value is a logical
  type when the schema contains critical information that might be necessary for converting to an integer.</div>
 <dl>
@@ -507,7 +505,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>convertToLong</h4>
 <pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;convertToLong(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)
-                          throws <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors">DataException</a></pre>
+                          throws <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors">DataException</a></code></pre>
 <div class="block">Convert the specified value to an <a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html#INT64"><code>Schema.Type.INT64</code></a> long value. The supplied schema is required if the value is a logical
  type when the schema contains critical information that might be necessary for converting to a long.</div>
 <dl>
@@ -529,7 +527,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>convertToFloat</h4>
 <pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html?is-external=true" title="class or interface in java.lang">Float</a>&nbsp;convertToFloat(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)
-                            throws <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors">DataException</a></pre>
+                            throws <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors">DataException</a></code></pre>
 <div class="block">Convert the specified value to an <a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html#FLOAT32"><code>Schema.Type.FLOAT32</code></a> float value. The supplied schema is required if the value is a logical
  type when the schema contains critical information that might be necessary for converting to a floating point number.</div>
 <dl>
@@ -551,7 +549,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>convertToDouble</h4>
 <pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&nbsp;convertToDouble(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)
-                              throws <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors">DataException</a></pre>
+                              throws <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors">DataException</a></code></pre>
 <div class="block">Convert the specified value to an <a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html#FLOAT64"><code>Schema.Type.FLOAT64</code></a> double value. The supplied schema is required if the value is a logical
  type when the schema contains critical information that might be necessary for converting to a floating point number.</div>
 <dl>
@@ -572,7 +570,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>convertToString</h4>
 <pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;convertToString(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
-                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 <div class="block">Convert the specified value to an <a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html#STRING"><code>Schema.Type.STRING</code></a> value.
  Not supplying a schema may limit the ability to convert to the desired type.</div>
 <dl>
@@ -591,7 +589,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>convertToList</h4>
 <pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;?&gt;&nbsp;convertToList(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
-                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 <div class="block">Convert the specified value to an <a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html#ARRAY"><code>Schema.Type.ARRAY</code></a> value. If the value is a string representation of an array, this method
  will parse the string and its elements to infer the schemas for those elements. Thus, this method supports
  arrays of other primitives and structured types. If the value is already an array (or list), this method simply casts and
@@ -616,7 +614,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>convertToMap</h4>
 <pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;?,?&gt;&nbsp;convertToMap(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
-                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 <div class="block">Convert the specified value to an <a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html#MAP"><code>Schema.Type.MAP</code></a> value. If the value is a string representation of a map, this method
  will parse the string and its entries to infer the schemas for those entries. Thus, this method supports
  maps with primitives and structured keys and values. If the value is already a map, this method simply casts and returns it.
@@ -640,7 +638,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>convertToStruct</h4>
 <pre>public static&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Struct.html" title="class in org.apache.kafka.connect.data">Struct</a>&nbsp;convertToStruct(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
-                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 <div class="block">Convert the specified value to an <a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html#STRUCT"><code>Schema.Type.STRUCT</code></a> value. Structs cannot be converted from other types, so this method returns
  a struct only if the supplied value is a struct. If not a struct, this method throws an exception.
 
@@ -663,7 +661,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>convertToTime</h4>
 <pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;convertToTime(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
-                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 <div class="block">Convert the specified value to an <a href="../../../../../org/apache/kafka/connect/data/Time.html#SCHEMA"><code>time</code></a> value.
  Not supplying a schema may limit the ability to convert to the desired type.</div>
 <dl>
@@ -684,7 +682,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>convertToDate</h4>
 <pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;convertToDate(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
-                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 <div class="block">Convert the specified value to an <a href="../../../../../org/apache/kafka/connect/data/Date.html#SCHEMA"><code>date</code></a> value.
  Not supplying a schema may limit the ability to convert to the desired type.</div>
 <dl>
@@ -705,7 +703,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>convertToTimestamp</h4>
 <pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;convertToTimestamp(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
-                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 <div class="block">Convert the specified value to an <a href="../../../../../org/apache/kafka/connect/data/Timestamp.html#SCHEMA"><code>timestamp</code></a> value.
  Not supplying a schema may limit the ability to convert to the desired type.</div>
 <dl>
@@ -727,7 +725,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>convertToDecimal</h4>
 <pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html?is-external=true" title="class or interface in java.math">BigDecimal</a>&nbsp;convertToDecimal(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
-                                          int&nbsp;scale)</pre>
+                                          int&nbsp;scale)</code></pre>
 <div class="block">Convert the specified value to an <a href="../../../../../org/apache/kafka/connect/data/Decimal.html" title="class in org.apache.kafka.connect.data"><code>decimal</code></a> value.
  Not supplying a schema may limit the ability to convert to the desired type.</div>
 <dl>
@@ -747,7 +745,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>inferSchema</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;inferSchema(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;inferSchema(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 <div class="block">If possible infer a schema for the given value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -763,7 +761,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>parseString</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/connect/data/SchemaAndValue.html" title="class in org.apache.kafka.connect.data">SchemaAndValue</a>&nbsp;parseString(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/connect/data/SchemaAndValue.html" title="class in org.apache.kafka.connect.data">SchemaAndValue</a>&nbsp;parseString(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code></pre>
 <div class="block">Parse the specified string representation of a value into its schema and value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -784,7 +782,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <pre>protected static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;convertTo(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;toSchema,
                                   <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;fromSchema,
                                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)
-                           throws <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors">DataException</a></pre>
+                           throws <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors">DataException</a></code></pre>
 <div class="block">Convert the value to the desired type.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -805,7 +803,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>asLong</h4>
 <pre>protected static&nbsp;long&nbsp;asLong(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
                              <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;fromSchema,
-                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a>&nbsp;error)</pre>
+                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a>&nbsp;error)</code></pre>
 <div class="block">Convert the specified value to the desired scalar value type.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -827,7 +825,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>asDouble</h4>
 <pre>protected static&nbsp;double&nbsp;asDouble(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
                                  <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
-                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a>&nbsp;error)</pre>
+                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a>&nbsp;error)</code></pre>
 <div class="block">Convert the specified value with the desired floating point type.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -849,7 +847,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>append</h4>
 <pre>protected static&nbsp;void&nbsp;append(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html?is-external=true" title="class or interface in java.lang">StringBuilder</a>&nbsp;sb,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
-                             boolean&nbsp;embedded)</pre>
+                             boolean&nbsp;embedded)</code></pre>
 </li>
 </ul>
 <a name="appendIterable-java.lang.StringBuilder-java.util.Iterator-">
@@ -859,7 +857,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>appendIterable</h4>
 <pre>protected static&nbsp;void&nbsp;appendIterable(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html?is-external=true" title="class or interface in java.lang">StringBuilder</a>&nbsp;sb,
-                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;?&gt;&nbsp;iter)</pre>
+                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;?&gt;&nbsp;iter)</code></pre>
 </li>
 </ul>
 <a name="escape-java.lang.String-">
@@ -868,7 +866,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>escape</h4>
-<pre>protected static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;escape(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
+<pre>protected static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;escape(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code></pre>
 </li>
 </ul>
 <a name="dateFormatFor-java.util.Date-">
@@ -877,7 +875,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>dateFormatFor</h4>
-<pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/text/DateFormat.html?is-external=true" title="class or interface in java.text">DateFormat</a>&nbsp;dateFormatFor(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value)</pre>
+<pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/text/DateFormat.html?is-external=true" title="class or interface in java.text">DateFormat</a>&nbsp;dateFormatFor(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value)</code></pre>
 </li>
 </ul>
 <a name="canParseSingleTokenLiteral-org.apache.kafka.connect.data.Values.Parser-boolean-java.lang.String-">
@@ -888,7 +886,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>canParseSingleTokenLiteral</h4>
 <pre>protected static&nbsp;boolean&nbsp;canParseSingleTokenLiteral(<a href="../../../../../org/apache/kafka/connect/data/Values.Parser.html" title="class in org.apache.kafka.connect.data">Values.Parser</a>&nbsp;parser,
                                                     boolean&nbsp;embedded,
-                                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tokenLiteral)</pre>
+                                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tokenLiteral)</code></pre>
 </li>
 </ul>
 <a name="parse-org.apache.kafka.connect.data.Values.Parser-boolean-">
@@ -899,7 +897,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>parse</h4>
 <pre>protected static&nbsp;<a href="../../../../../org/apache/kafka/connect/data/SchemaAndValue.html" title="class in org.apache.kafka.connect.data">SchemaAndValue</a>&nbsp;parse(<a href="../../../../../org/apache/kafka/connect/data/Values.Parser.html" title="class in org.apache.kafka.connect.data">Values.Parser</a>&nbsp;parser,
                                       boolean&nbsp;embedded)
-                               throws <a href="https://docs.oracle.com/javase/8/docs/api/java/util/NoSuchElementException.html?is-external=true" title="class or interface in java.util">NoSuchElementException</a></pre>
+                               throws <a href="https://docs.oracle.com/javase/8/docs/api/java/util/NoSuchElementException.html?is-external=true" title="class or interface in java.util">NoSuchElementException</a></code></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/NoSuchElementException.html?is-external=true" title="class or interface in java.util">NoSuchElementException</a></code></dd>
@@ -913,7 +911,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>commonSchemaFor</h4>
 <pre>protected static&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;commonSchemaFor(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;previous,
-                                        <a href="../../../../../org/apache/kafka/connect/data/SchemaAndValue.html" title="class in org.apache.kafka.connect.data">SchemaAndValue</a>&nbsp;latest)</pre>
+                                        <a href="../../../../../org/apache/kafka/connect/data/SchemaAndValue.html" title="class in org.apache.kafka.connect.data">SchemaAndValue</a>&nbsp;latest)</code></pre>
 </li>
 </ul>
 <a name="alignListEntriesWithSchema-org.apache.kafka.connect.data.Schema-java.util.List-">
@@ -923,7 +921,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>alignListEntriesWithSchema</h4>
 <pre>protected static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;alignListEntriesWithSchema(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
-                                                         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;input)</pre>
+                                                         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;input)</code></pre>
 </li>
 </ul>
 <a name="alignMapKeysAndValuesWithSchema-org.apache.kafka.connect.data.Schema-java.util.Map-">
@@ -933,7 +931,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>alignMapKeysAndValuesWithSchema</h4>
 <pre>protected static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;alignMapKeysAndValuesWithSchema(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;mapSchema,
-                                                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;input)</pre>
+                                                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;input)</code></pre>
 </li>
 </ul>
 <a name="alignMapKeysWithSchema-org.apache.kafka.connect.data.Schema-java.util.Map-">
@@ -943,7 +941,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>alignMapKeysWithSchema</h4>
 <pre>protected static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;alignMapKeysWithSchema(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;mapSchema,
-                                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;input)</pre>
+                                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;input)</code></pre>
 </li>
 </ul>
 </li>

@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public final class <span class="typeNameLabel">QueryableStoreTypes</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">Provides access to the <a href="../../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state"><code>QueryableStoreType</code></a>s provided with <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html" title="class in org.apache.kafka.streams"><code>KafkaStreams</code></a>.
  These can be used with <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams.store(StoreQueryParameters)</code></a>.
  To access and query the <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a>s that are part of a <a href="../../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams"><code>Topology</code></a>.</div>
@@ -232,7 +232,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>QueryableStoreTypes</h4>
-<pre>public&nbsp;QueryableStoreTypes()</pre>
+<pre>public&nbsp;QueryableStoreTypes()</code></pre>
 </li>
 </ul>
 </li>
@@ -249,7 +249,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>keyValueStore</h4>
-<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state">QueryableStoreType</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="interface in org.apache.kafka.streams.state">ReadOnlyKeyValueStore</a>&lt;K,V&gt;&gt;&nbsp;keyValueStore()</pre>
+<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state">QueryableStoreType</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="interface in org.apache.kafka.streams.state">ReadOnlyKeyValueStore</a>&lt;K,V&gt;&gt;&nbsp;keyValueStore()</code></pre>
 <div class="block">A <a href="../../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state"><code>QueryableStoreType</code></a> that accepts <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>ReadOnlyKeyValueStore</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -266,7 +266,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>timestampedKeyValueStore</h4>
-<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state">QueryableStoreType</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="interface in org.apache.kafka.streams.state">ReadOnlyKeyValueStore</a>&lt;K,<a href="../../../../../org/apache/kafka/streams/state/ValueAndTimestamp.html" title="class in org.apache.kafka.streams.state">ValueAndTimestamp</a>&lt;V&gt;&gt;&gt;&nbsp;timestampedKeyValueStore()</pre>
+<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state">QueryableStoreType</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="interface in org.apache.kafka.streams.state">ReadOnlyKeyValueStore</a>&lt;K,<a href="../../../../../org/apache/kafka/streams/state/ValueAndTimestamp.html" title="class in org.apache.kafka.streams.state">ValueAndTimestamp</a>&lt;V&gt;&gt;&gt;&nbsp;timestampedKeyValueStore()</code></pre>
 <div class="block">A <a href="../../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state"><code>QueryableStoreType</code></a> that accepts <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>ReadOnlyKeyValueStore<K, ValueAndTimestamp<V>></code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -283,7 +283,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>windowStore</h4>
-<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state">QueryableStoreType</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="interface in org.apache.kafka.streams.state">ReadOnlyWindowStore</a>&lt;K,V&gt;&gt;&nbsp;windowStore()</pre>
+<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state">QueryableStoreType</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="interface in org.apache.kafka.streams.state">ReadOnlyWindowStore</a>&lt;K,V&gt;&gt;&nbsp;windowStore()</code></pre>
 <div class="block">A <a href="../../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state"><code>QueryableStoreType</code></a> that accepts <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="interface in org.apache.kafka.streams.state"><code>ReadOnlyWindowStore</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -300,7 +300,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>timestampedWindowStore</h4>
-<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state">QueryableStoreType</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="interface in org.apache.kafka.streams.state">ReadOnlyWindowStore</a>&lt;K,<a href="../../../../../org/apache/kafka/streams/state/ValueAndTimestamp.html" title="class in org.apache.kafka.streams.state">ValueAndTimestamp</a>&lt;V&gt;&gt;&gt;&nbsp;timestampedWindowStore()</pre>
+<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state">QueryableStoreType</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="interface in org.apache.kafka.streams.state">ReadOnlyWindowStore</a>&lt;K,<a href="../../../../../org/apache/kafka/streams/state/ValueAndTimestamp.html" title="class in org.apache.kafka.streams.state">ValueAndTimestamp</a>&lt;V&gt;&gt;&gt;&nbsp;timestampedWindowStore()</code></pre>
 <div class="block">A <a href="../../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state"><code>QueryableStoreType</code></a> that accepts <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="interface in org.apache.kafka.streams.state"><code>ReadOnlyWindowStore<K, ValueAndTimestamp<V>></code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -317,7 +317,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>sessionStore</h4>
-<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state">QueryableStoreType</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlySessionStore.html" title="interface in org.apache.kafka.streams.state">ReadOnlySessionStore</a>&lt;K,V&gt;&gt;&nbsp;sessionStore()</pre>
+<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state">QueryableStoreType</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlySessionStore.html" title="interface in org.apache.kafka.streams.state">ReadOnlySessionStore</a>&lt;K,V&gt;&gt;&nbsp;sessionStore()</code></pre>
 <div class="block">A <a href="../../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state"><code>QueryableStoreType</code></a> that accepts <a href="../../../../../org/apache/kafka/streams/state/ReadOnlySessionStore.html" title="interface in org.apache.kafka.streams.state"><code>ReadOnlySessionStore</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>

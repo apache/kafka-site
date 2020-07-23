@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">SimpleHeaderConverter</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../org/apache/kafka/connect/storage/HeaderConverter.html" title="interface in org.apache.kafka.connect.storage">HeaderConverter</a></pre>
+implements <a href="../../../../../org/apache/kafka/connect/storage/HeaderConverter.html" title="interface in org.apache.kafka.connect.storage">HeaderConverter</a></code></pre>
 <div class="block">A <a href="../../../../../org/apache/kafka/connect/storage/HeaderConverter.html" title="interface in org.apache.kafka.connect.storage"><code>HeaderConverter</code></a> that serializes header values as strings and that deserializes header values to the most appropriate
  numeric, boolean, array, or map representation. Schemas are not serialized, but are inferred upon deserialization when possible.</div>
 </li>
@@ -212,7 +212,7 @@ implements <a href="../../../../../org/apache/kafka/connect/storage/HeaderConver
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SimpleHeaderConverter</h4>
-<pre>public&nbsp;SimpleHeaderConverter()</pre>
+<pre>public&nbsp;SimpleHeaderConverter()</code></pre>
 </li>
 </ul>
 </li>
@@ -229,7 +229,7 @@ implements <a href="../../../../../org/apache/kafka/connect/storage/HeaderConver
 <ul class="blockList">
 <li class="blockList">
 <h4>config</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/config/ConfigDef.html" title="class in org.apache.kafka.common.config">ConfigDef</a>&nbsp;config()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/config/ConfigDef.html" title="class in org.apache.kafka.common.config">ConfigDef</a>&nbsp;config()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/connect/storage/HeaderConverter.html#config--">HeaderConverter</a></code></span></div>
 <div class="block">Configuration specification for this set of header converters.</div>
 <dl>
@@ -246,7 +246,7 @@ implements <a href="../../../../../org/apache/kafka/connect/storage/HeaderConver
 <ul class="blockList">
 <li class="blockList">
 <h4>configure</h4>
-<pre>public&nbsp;void&nbsp;configure(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;configs)</pre>
+<pre>public&nbsp;void&nbsp;configure(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;configs)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/common/Configurable.html#configure-java.util.Map-">Configurable</a></code></span></div>
 <div class="block">Configure this class with the given key-value pairs</div>
 <dl>
@@ -263,7 +263,7 @@ implements <a href="../../../../../org/apache/kafka/connect/storage/HeaderConver
 <h4>toConnectHeader</h4>
 <pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/SchemaAndValue.html" title="class in org.apache.kafka.connect.data">SchemaAndValue</a>&nbsp;toConnectHeader(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;headerKey,
-                                      byte[]&nbsp;value)</pre>
+                                      byte[]&nbsp;value)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/connect/storage/HeaderConverter.html#toConnectHeader-java.lang.String-java.lang.String-byte:A-">HeaderConverter</a></code></span></div>
 <div class="block">Convert the header name and byte array value into a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> object.</div>
 <dl>
@@ -287,7 +287,7 @@ implements <a href="../../../../../org/apache/kafka/connect/storage/HeaderConver
 <pre>public&nbsp;byte[]&nbsp;fromConnectHeader(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;headerKey,
                                 <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
-                                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+                                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/connect/storage/HeaderConverter.html#fromConnectHeader-java.lang.String-java.lang.String-org.apache.kafka.connect.data.Schema-java.lang.Object-">HeaderConverter</a></code></span></div>
 <div class="block">Convert the <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a>'s <a href="../../../../../org/apache/kafka/connect/header/Header.html#value--"><code>value</code></a> into its byte array representation.</div>
 <dl>
@@ -310,7 +310,7 @@ implements <a href="../../../../../org/apache/kafka/connect/storage/HeaderConver
 <li class="blockList">
 <h4>close</h4>
 <pre>public&nbsp;void&nbsp;close()
-           throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+           throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true#close--" title="class or interface in java.io">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></code></dd>

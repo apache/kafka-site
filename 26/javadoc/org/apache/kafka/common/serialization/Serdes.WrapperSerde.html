@@ -121,7 +121,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public static class <span class="typeNameLabel">Serdes.WrapperSerde&lt;T&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;T&gt;</pre>
+implements <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;T&gt;</code></pre>
 </li>
 </ul>
 </div>
@@ -208,7 +208,7 @@ implements <a href="../../../../../org/apache/kafka/common/serialization/Serde.h
 <li class="blockList">
 <h4>WrapperSerde</h4>
 <pre>public&nbsp;WrapperSerde(<a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="../../../../../org/apache/kafka/common/serialization/Serdes.WrapperSerde.html" title="type parameter in Serdes.WrapperSerde">T</a>&gt;&nbsp;serializer,
-                    <a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;<a href="../../../../../org/apache/kafka/common/serialization/Serdes.WrapperSerde.html" title="type parameter in Serdes.WrapperSerde">T</a>&gt;&nbsp;deserializer)</pre>
+                    <a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;<a href="../../../../../org/apache/kafka/common/serialization/Serdes.WrapperSerde.html" title="type parameter in Serdes.WrapperSerde">T</a>&gt;&nbsp;deserializer)</code></pre>
 </li>
 </ul>
 </li>
@@ -226,7 +226,7 @@ implements <a href="../../../../../org/apache/kafka/common/serialization/Serde.h
 <li class="blockList">
 <h4>configure</h4>
 <pre>public&nbsp;void&nbsp;configure(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;configs,
-                      boolean&nbsp;isKey)</pre>
+                      boolean&nbsp;isKey)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/common/serialization/Serde.html#configure-java.util.Map-boolean-">Serde</a></code></span></div>
 <div class="block">Configure this class, which will configure the underlying serializer and deserializer.</div>
 <dl>
@@ -244,7 +244,7 @@ implements <a href="../../../../../org/apache/kafka/common/serialization/Serde.h
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>public&nbsp;void&nbsp;close()</pre>
+<pre>public&nbsp;void&nbsp;close()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/common/serialization/Serde.html#close--">Serde</a></code></span></div>
 <div class="block">Close this serde class, which will close the underlying serializer and deserializer.
  <p>
@@ -265,7 +265,7 @@ implements <a href="../../../../../org/apache/kafka/common/serialization/Serde.h
 <ul class="blockList">
 <li class="blockList">
 <h4>serializer</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="../../../../../org/apache/kafka/common/serialization/Serdes.WrapperSerde.html" title="type parameter in Serdes.WrapperSerde">T</a>&gt;&nbsp;serializer()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="../../../../../org/apache/kafka/common/serialization/Serdes.WrapperSerde.html" title="type parameter in Serdes.WrapperSerde">T</a>&gt;&nbsp;serializer()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/common/serialization/Serde.html#serializer--">serializer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/common/serialization/Serdes.WrapperSerde.html" title="type parameter in Serdes.WrapperSerde">T</a>&gt;</code></dd>
@@ -278,7 +278,7 @@ implements <a href="../../../../../org/apache/kafka/common/serialization/Serde.h
 <ul class="blockListLast">
 <li class="blockList">
 <h4>deserializer</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;<a href="../../../../../org/apache/kafka/common/serialization/Serdes.WrapperSerde.html" title="type parameter in Serdes.WrapperSerde">T</a>&gt;&nbsp;deserializer()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;<a href="../../../../../org/apache/kafka/common/serialization/Serdes.WrapperSerde.html" title="type parameter in Serdes.WrapperSerde">T</a>&gt;&nbsp;deserializer()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/common/serialization/Serde.html#deserializer--">deserializer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/common/serialization/Serdes.WrapperSerde.html" title="type parameter in Serdes.WrapperSerde">T</a>&gt;</code></dd>

@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <pre><a href="../../../../../org/apache/kafka/common/annotation/InterfaceStability.Evolving.html" title="annotation in org.apache.kafka.common.annotation">@InterfaceStability.Evolving</a>
  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public class <span class="typeNameLabel">ElectPreferredLeadersResult</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">The result of <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#electPreferredLeaders-java.util.Collection-org.apache.kafka.clients.admin.ElectPreferredLeadersOptions-"><code>Admin.electPreferredLeaders(Collection, ElectPreferredLeadersOptions)</code></a>
 
  The API of this class is evolving, see <a href="../../../../../org/apache/kafka/clients/admin/Admin.html" title="interface in org.apache.kafka.clients.admin"><code>Admin</code></a> for details.</div>
@@ -185,7 +185,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>partitionResult</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&nbsp;partitionResult(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&nbsp;partitionResult(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Get the result of the election for the given <code>partition</code>.
  If there was not an election triggered for the given <code>partition</code>, the
@@ -198,7 +198,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>partitions</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&gt;&nbsp;partitions()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&gt;&nbsp;partitions()</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block"><p>Get a future for the topic partitions for which a leader election
  was attempted. A partition will be present in this result if
@@ -215,7 +215,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>all</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&nbsp;all()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&nbsp;all()</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Return a future which succeeds if all the topic elections succeed.</div>
 </li>

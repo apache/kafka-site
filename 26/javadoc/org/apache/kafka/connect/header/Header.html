@@ -99,7 +99,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">Header</span></pre>
+<pre>public interface <span class="typeNameLabel">Header</span></code></pre>
 <div class="block">A <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> is a key-value pair, and multiple headers can be included with the key, value, and timestamp in each Kafka message.
  If the value contains schema information, then the header will have a non-null <a href="../../../../../org/apache/kafka/connect/header/Header.html#schema--"><code>schema</code></a>.
  <p>
@@ -174,7 +174,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>key</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key()</code></pre>
 <div class="block">The header's key, which is not necessarily unique within the set of headers on a Kafka message.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -188,7 +188,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>schema</h4>
-<pre><a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema()</pre>
+<pre><a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema()</code></pre>
 <div class="block">Return the <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data"><code>Schema</code></a> associated with this header, if there is one. Not all headers will have schemas.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -202,7 +202,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>value</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value()</code></pre>
 <div class="block">Get the header's value as deserialized by Connect's header converter.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -217,7 +217,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>with</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header">Header</a>&nbsp;with(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 <div class="block">Return a new <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> object that has the same key but with the supplied value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -234,7 +234,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>rename</h4>
-<pre><a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header">Header</a>&nbsp;rename(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</pre>
+<pre><a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header">Header</a>&nbsp;rename(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</code></pre>
 <div class="block">Return a new <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> object that has the same schema and value but with the supplied key.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

@@ -154,8 +154,7 @@
            </div>
 
            <div class="code-example__snippet b-java-8 selected">
-               <pre class="brush: java;">
-                   import org.apache.kafka.common.serialization.Serdes;
+               <pre class="line-numbers"><code class="language-java">                   import org.apache.kafka.common.serialization.Serdes;
                    import org.apache.kafka.common.utils.Bytes;
                    import org.apache.kafka.streams.KafkaStreams;
                    import org.apache.kafka.streams.StreamsBuilder;
@@ -190,13 +189,11 @@
                            streams.start();
                        }
 
-                   }
-               </pre>
+                   }</code></pre>
            </div>
 
            <div class="code-example__snippet b-java-7">
-               <pre class="brush: java;">
-                   import org.apache.kafka.common.serialization.Serdes;
+               <pre class="line-numbers"><code class="language-java">                   import org.apache.kafka.common.serialization.Serdes;
                    import org.apache.kafka.common.utils.Bytes;
                    import org.apache.kafka.streams.KafkaStreams;
                    import org.apache.kafka.streams.StreamsBuilder;
@@ -245,13 +242,11 @@
                            streams.start();
                        }
 
-                   }
-               </pre>
+                   }</code></pre>
            </div>
 
            <div class="code-example__snippet b-scala">
-               <pre class="brush: scala;">
-import java.util.Properties
+               <pre class="line-numbers"><code class="language-scala">import java.util.Properties
 import java.util.concurrent.TimeUnit
 
 import org.apache.kafka.streams.kstream.Materialized
@@ -284,8 +279,7 @@ object WordCountApplication extends App {
   sys.ShutdownHookThread {
      streams.close(10, TimeUnit.SECONDS)
   }
-}
-               </pre>
+}</code></pre>
            </div>
        </div>
 

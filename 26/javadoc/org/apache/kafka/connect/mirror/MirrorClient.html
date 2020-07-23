@@ -113,17 +113,15 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">MirrorClient</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a></pre>
+implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a></code></pre>
 <div class="block">Interprets MM2's internal topics (checkpoints, heartbeats) on a given cluster.
   <p> 
   Given a top-level "mm2.properties" configuration file, MirrorClients can be constructed
   for individual clusters as follows:
   </p> 
-  <pre>
-    MirrorMakerConfig mmConfig = new MirrorMakerConfig(props);
+  <pre class="line-numbers"><code class="language-text">    MirrorMakerConfig mmConfig = new MirrorMakerConfig(props);
     MirrorClientConfig mmClientConfig = mmConfig.clientConfig("some-cluster");
-    MirrorClient mmClient = new Mirrorclient(mmClientConfig);
-  </pre></div>
+    MirrorClient mmClient = new Mirrorclient(mmClientConfig);</code></pre></div>
 </li>
 </ul>
 </div>
@@ -246,7 +244,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <ul class="blockList">
 <li class="blockList">
 <h4>MirrorClient</h4>
-<pre>public&nbsp;MirrorClient(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;props)</pre>
+<pre>public&nbsp;MirrorClient(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;props)</code></pre>
 </li>
 </ul>
 <a name="MirrorClient-org.apache.kafka.connect.mirror.MirrorClientConfig-">
@@ -255,7 +253,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <ul class="blockListLast">
 <li class="blockList">
 <h4>MirrorClient</h4>
-<pre>public&nbsp;MirrorClient(<a href="../../../../../org/apache/kafka/connect/mirror/MirrorClientConfig.html" title="class in org.apache.kafka.connect.mirror">MirrorClientConfig</a>&nbsp;config)</pre>
+<pre>public&nbsp;MirrorClient(<a href="../../../../../org/apache/kafka/connect/mirror/MirrorClientConfig.html" title="class in org.apache.kafka.connect.mirror">MirrorClientConfig</a>&nbsp;config)</code></pre>
 </li>
 </ul>
 </li>
@@ -272,7 +270,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>public&nbsp;void&nbsp;close()</pre>
+<pre>public&nbsp;void&nbsp;close()</code></pre>
 <div class="block">Close internal clients.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -286,7 +284,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <ul class="blockList">
 <li class="blockList">
 <h4>replicationPolicy</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/mirror/ReplicationPolicy.html" title="interface in org.apache.kafka.connect.mirror">ReplicationPolicy</a>&nbsp;replicationPolicy()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/mirror/ReplicationPolicy.html" title="interface in org.apache.kafka.connect.mirror">ReplicationPolicy</a>&nbsp;replicationPolicy()</code></pre>
 <div class="block">Get the ReplicationPolicy instance used to interpret remote topics. This instance is constructed based on
   relevant configuration properties, including <code>replication.policy.class</code>.</div>
 </li>
@@ -298,7 +296,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <li class="blockList">
 <h4>replicationHops</h4>
 <pre>public&nbsp;int&nbsp;replicationHops(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;upstreamClusterAlias)
-                    throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></pre>
+                    throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></pre>
 <div class="block">Compute shortest number of hops from an upstream source cluster.
   For example, given replication flow A-&gt;B-&gt;C, there are two hops from A to C.
   Returns -1 if upstream cluster is unreachable.</div>
@@ -315,7 +313,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <li class="blockList">
 <h4>heartbeatTopics</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;heartbeatTopics()
-                            throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></pre>
+                            throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></pre>
 <div class="block">Find all heartbeat topics on this cluster. Heartbeat topics are replicated from other clusters.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -330,7 +328,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <li class="blockList">
 <h4>checkpointTopics</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;checkpointTopics()
-                             throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></pre>
+                             throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></pre>
 <div class="block">Find all checkpoint topics on this cluster.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -345,7 +343,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <li class="blockList">
 <h4>upstreamClusters</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;upstreamClusters()
-                             throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></pre>
+                             throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></pre>
 <div class="block">Find upstream clusters, which may be multiple hops away, based on incoming heartbeats.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -360,7 +358,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <li class="blockList">
 <h4>remoteTopics</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;remoteTopics()
-                         throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></pre>
+                         throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></pre>
 <div class="block">Find all remote topics on this cluster. This does not include internal topics (heartbeats, checkpoints).</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -375,7 +373,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <li class="blockList">
 <h4>remoteTopics</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;remoteTopics(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)
-                         throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></pre>
+                         throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></pre>
 <div class="block">Find all remote topics that have been replicated directly from the given source cluster.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -391,7 +389,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <h4>remoteConsumerOffsets</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;remoteConsumerOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;consumerGroupId,
                                                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;remoteClusterAlias,
-                                                                   <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                                                                   <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block">Translate a remote consumer group's offsets into corresponding local offsets. Topics are automatically
   renamed according to the ReplicationPolicy.</div>
 <dl>

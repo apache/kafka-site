@@ -109,7 +109,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">SessionStore&lt;K,AGG&gt;</span>
-extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>, <a href="../../../../../org/apache/kafka/streams/state/ReadOnlySessionStore.html" title="interface in org.apache.kafka.streams.state">ReadOnlySessionStore</a>&lt;K,AGG&gt;</pre>
+extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>, <a href="../../../../../org/apache/kafka/streams/state/ReadOnlySessionStore.html" title="interface in org.apache.kafka.streams.state">ReadOnlySessionStore</a>&lt;K,AGG&gt;</code></pre>
 <div class="block">Interface for storing the aggregated values of sessions.
  <p>
  The key is internally represented as <a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream"><code>Windowed&lt;K&gt;</code></a> that comprises the plain key
@@ -218,7 +218,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.ht
 <h4>findSessions</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/state/KeyValueIterator.html" title="interface in org.apache.kafka.streams.state">KeyValueIterator</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="type parameter in SessionStore">K</a>&gt;,<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="type parameter in SessionStore">AGG</a>&gt;&nbsp;findSessions(<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="type parameter in SessionStore">K</a>&nbsp;key,
                                                long&nbsp;earliestSessionEndTime,
-                                               long&nbsp;latestSessionStartTime)</pre>
+                                               long&nbsp;latestSessionStartTime)</code></pre>
 <div class="block">Fetch any sessions with the matching key and the sessions end is &ge; earliestSessionEndTime and the sessions
  start is &le; latestSessionStartTime
 
@@ -246,7 +246,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.ht
 <pre><a href="../../../../../org/apache/kafka/streams/state/KeyValueIterator.html" title="interface in org.apache.kafka.streams.state">KeyValueIterator</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="type parameter in SessionStore">K</a>&gt;,<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="type parameter in SessionStore">AGG</a>&gt;&nbsp;findSessions(<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="type parameter in SessionStore">K</a>&nbsp;keyFrom,
                                                <a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="type parameter in SessionStore">K</a>&nbsp;keyTo,
                                                long&nbsp;earliestSessionEndTime,
-                                               long&nbsp;latestSessionStartTime)</pre>
+                                               long&nbsp;latestSessionStartTime)</code></pre>
 <div class="block">Fetch any sessions in the given range of keys and the sessions end is &ge; earliestSessionEndTime and the sessions
  start is &le; latestSessionStartTime
 
@@ -274,7 +274,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.ht
 <h4>fetchSession</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="type parameter in SessionStore">AGG</a>&nbsp;fetchSession(<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="type parameter in SessionStore">K</a>&nbsp;key,
                  long&nbsp;startTime,
-                 long&nbsp;endTime)</pre>
+                 long&nbsp;endTime)</code></pre>
 <div class="block">Get the value of key from a single session.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -294,7 +294,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>remove</h4>
-<pre>void&nbsp;remove(<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="type parameter in SessionStore">K</a>&gt;&nbsp;sessionKey)</pre>
+<pre>void&nbsp;remove(<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="type parameter in SessionStore">K</a>&gt;&nbsp;sessionKey)</code></pre>
 <div class="block">Remove the session aggregated with provided <a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream"><code>Windowed</code></a> key from the store</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -313,7 +313,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.ht
 <li class="blockList">
 <h4>put</h4>
 <pre>void&nbsp;put(<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="type parameter in SessionStore">K</a>&gt;&nbsp;sessionKey,
-         <a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="type parameter in SessionStore">AGG</a>&nbsp;aggregate)</pre>
+         <a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="type parameter in SessionStore">AGG</a>&nbsp;aggregate)</code></pre>
 <div class="block">Write the aggregated value for the provided key to the store</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

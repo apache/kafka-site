@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">WindowBytesStoreSupplier</span>
-extends <a href="../../../../../org/apache/kafka/streams/state/StoreSupplier.html" title="interface in org.apache.kafka.streams.state">StoreSupplier</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state">WindowStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;</pre>
+extends <a href="../../../../../org/apache/kafka/streams/state/StoreSupplier.html" title="interface in org.apache.kafka.streams.state">StoreSupplier</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state">WindowStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;</code></pre>
 <div class="block">A store supplier that can be used to create one or more <a href="../../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state"><code>WindowStore&lt;Byte, byte[]&gt;</code></a> instances of type &lt;Byte, byte[]&gt;.
 
  For any stores implementing the <a href="../../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state"><code>WindowStore&lt;Byte, byte[]&gt;</code></a> interface, null value bytes are considered as "not exist". This means:
@@ -190,7 +190,7 @@ extends <a href="../../../../../org/apache/kafka/streams/state/StoreSupplier.htm
 <li class="blockList">
 <h4>segments</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-int&nbsp;segments()</pre>
+int&nbsp;segments()</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.1. Use <a href="../../../../../org/apache/kafka/streams/state/WindowBytesStoreSupplier.html#segmentIntervalMs--"><code>segmentIntervalMs()</code></a> instead.</span></div>
 <div class="block">The number of segments the store has. If your store is segmented then this should be the number of segments
  in the underlying store.
@@ -207,7 +207,7 @@ int&nbsp;segments()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>segmentIntervalMs</h4>
-<pre>long&nbsp;segmentIntervalMs()</pre>
+<pre>long&nbsp;segmentIntervalMs()</code></pre>
 <div class="block">The size of the segments (in milliseconds) the store has.
  If your store is segmented then this should be the size of segments in the underlying store.
  It is also used to reduce the amount of data that is scanned when caching is enabled.</div>
@@ -223,7 +223,7 @@ int&nbsp;segments()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>windowSize</h4>
-<pre>long&nbsp;windowSize()</pre>
+<pre>long&nbsp;windowSize()</code></pre>
 <div class="block">The size of the windows (in milliseconds) any store created from this supplier is creating.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -237,7 +237,7 @@ int&nbsp;segments()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>retainDuplicates</h4>
-<pre>boolean&nbsp;retainDuplicates()</pre>
+<pre>boolean&nbsp;retainDuplicates()</code></pre>
 <div class="block">Whether or not this store is retaining duplicate keys.
  Usually only true if the store is being used for joins.
  Note this should return false if caching is enabled.</div>
@@ -253,7 +253,7 @@ int&nbsp;segments()</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>retentionPeriod</h4>
-<pre>long&nbsp;retentionPeriod()</pre>
+<pre>long&nbsp;retentionPeriod()</code></pre>
 <div class="block">The time period for which the <a href="../../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state"><code>WindowStore</code></a> will retain historic data.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>

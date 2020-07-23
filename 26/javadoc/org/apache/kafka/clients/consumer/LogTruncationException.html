@@ -142,7 +142,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">LogTruncationException</span>
-extends <a href="../../../../../org/apache/kafka/clients/consumer/OffsetOutOfRangeException.html" title="class in org.apache.kafka.clients.consumer">OffsetOutOfRangeException</a></pre>
+extends <a href="../../../../../org/apache/kafka/clients/consumer/OffsetOutOfRangeException.html" title="class in org.apache.kafka.clients.consumer">OffsetOutOfRangeException</a></code></pre>
 <div class="block">In the event of an unclean leader election, the log will be truncated,
  previously committed data will be lost, and new data will be written
  over these offsets. When this happens, the consumer will detect the
@@ -240,7 +240,7 @@ extends <a href="../../../../../org/apache/kafka/clients/consumer/OffsetOutOfRan
 <h4>LogTruncationException</h4>
 <pre>public&nbsp;LogTruncationException(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;message,
                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;fetchOffsets,
-                              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;divergentOffsets)</pre>
+                              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;divergentOffsets)</code></pre>
 </li>
 </ul>
 </li>
@@ -257,7 +257,7 @@ extends <a href="../../../../../org/apache/kafka/clients/consumer/OffsetOutOfRan
 <ul class="blockListLast">
 <li class="blockList">
 <h4>divergentOffsets</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;divergentOffsets()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;divergentOffsets()</code></pre>
 <div class="block">Get the divergent offsets for the partitions which were truncated. For each
  partition, this is the first offset which is known to diverge from what the
  consumer read.

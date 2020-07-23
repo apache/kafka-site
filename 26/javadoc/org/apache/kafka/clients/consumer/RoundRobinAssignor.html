@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">RoundRobinAssignor</span>
-extends org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignor</pre>
+extends org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignor</code></pre>
 <div class="block"><p>The round robin assignor lays out all the available partitions and all the available consumers. It
  then proceeds to do a round robin assignment from partition to consumer. If the subscriptions of all consumer
  instances are identical, then the partitions will be uniformly distributed. (i.e., the partition ownership counts
@@ -295,7 +295,7 @@ extends org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignor</p
 <ul class="blockListLast">
 <li class="blockList">
 <h4>RoundRobinAssignor</h4>
-<pre>public&nbsp;RoundRobinAssignor()</pre>
+<pre>public&nbsp;RoundRobinAssignor()</code></pre>
 </li>
 </ul>
 </li>
@@ -313,7 +313,7 @@ extends org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignor</p
 <li class="blockList">
 <h4>assign</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&gt;&nbsp;assign(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;partitionsPerTopic,
-                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.Subscription.html" title="class in org.apache.kafka.clients.consumer">ConsumerPartitionAssignor.Subscription</a>&gt;&nbsp;subscriptions)</pre>
+                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.Subscription.html" title="class in org.apache.kafka.clients.consumer">ConsumerPartitionAssignor.Subscription</a>&gt;&nbsp;subscriptions)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>assign</code>&nbsp;in class&nbsp;<code>org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignor</code></dd>
@@ -326,7 +326,7 @@ extends org.apache.kafka.clients.consumer.internals.AbstractPartitionAssignor</p
 <ul class="blockListLast">
 <li class="blockList">
 <h4>name</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.html#name--">ConsumerPartitionAssignor</a></code></span></div>
 <div class="block">Unique name for this assignor (e.g. "range" or "roundrobin" or "sticky"). Note, this is not required
  to be the same as the class name specified in <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerConfig.html#PARTITION_ASSIGNMENT_STRATEGY_CONFIG"><code>ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG</code></a></div>

@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public final class <span class="typeNameLabel">SessionWindows</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">A session based window specification used for aggregating events into sessions.
  <p>
  Sessions represent a period of activity separated by a defined gap of inactivity.
@@ -116,8 +116,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  If the event falls outside of the session gap then a new session will be created.
  <p>
  For example, if we have a session gap of 5 and the following data arrives:
- <pre>
- +--------------------------------------+
+ <pre class="line-numbers"><code class="language-text"> +--------------------------------------+
  |    key    |    value    |    time    |
  +-----------+-------------+------------+
  |    A      |     1       |     10     |
@@ -125,21 +124,18 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  |    A      |     2       |     12     |
  +-----------+-------------+------------+
  |    A      |     3       |     20     |
- +-----------+-------------+------------+
- </pre>
+ +-----------+-------------+------------+</code></pre>
  We'd have 2 sessions for key A.
  One starting from time 10 and ending at time 12 and another starting and ending at time 20.
  The length of the session is driven by the timestamps of the data within the session.
  Thus, session windows are no fixed-size windows (c.f. <a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows.html" title="class in org.apache.kafka.streams.kstream"><code>TimeWindows</code></a> and <a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows.html" title="class in org.apache.kafka.streams.kstream"><code>JoinWindows</code></a>).
  <p>
  If we then received another record:
- <pre>
- +--------------------------------------+
+ <pre class="line-numbers"><code class="language-text"> +--------------------------------------+
  |    key    |    value    |    time    |
  +-----------+-------------+------------+
  |    A      |     4       |     16     |
- +-----------+-------------+------------+
- </pre>
+ +-----------+-------------+------------+</code></pre>
  The previous 2 sessions would be merged into a single session with start time 10 and end time 20.
  The aggregate value for this session would be the result of aggregating all 4 values.
  <p>
@@ -260,7 +256,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>with</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindows.html" title="class in org.apache.kafka.streams.kstream">SessionWindows</a>&nbsp;with(long&nbsp;inactivityGapMs)</pre>
+public static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindows.html" title="class in org.apache.kafka.streams.kstream">SessionWindows</a>&nbsp;with(long&nbsp;inactivityGapMs)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../../org/apache/kafka/streams/kstream/SessionWindows.html#with-java.time.Duration-"><code>with(Duration)</code></a> instead.</span></div>
 <div class="block">Create a new window specification with the specified inactivity gap in milliseconds.</div>
 <dl>
@@ -279,7 +275,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Sess
 <ul class="blockList">
 <li class="blockList">
 <h4>with</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindows.html" title="class in org.apache.kafka.streams.kstream">SessionWindows</a>&nbsp;with(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;inactivityGap)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindows.html" title="class in org.apache.kafka.streams.kstream">SessionWindows</a>&nbsp;with(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;inactivityGap)</code></pre>
 <div class="block">Create a new window specification with the specified inactivity gap.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -299,7 +295,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Sess
 <h4>until</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindows.html" title="class in org.apache.kafka.streams.kstream">SessionWindows</a>&nbsp;until(long&nbsp;durationMs)
-                                 throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                                 throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.1. Use <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#retention"><code>Materialized.retention</code></a>
              or directly configure the retention in a store supplier and use
              <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#as-org.apache.kafka.streams.state.SessionBytesStoreSupplier-"><code>Materialized.as(SessionBytesStoreSupplier)</code></a>.</span></div>
@@ -320,7 +316,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWind
 <li class="blockList">
 <h4>grace</h4>
 <pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindows.html" title="class in org.apache.kafka.streams.kstream">SessionWindows</a>&nbsp;grace(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;afterWindowEnd)
-                     throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                     throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block">Reject out-of-order events that arrive more than <code>afterWindowEnd</code>
  after the end of its window.
  <p>
@@ -343,7 +339,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWind
 <ul class="blockList">
 <li class="blockList">
 <h4>gracePeriodMs</h4>
-<pre>public&nbsp;long&nbsp;gracePeriodMs()</pre>
+<pre>public&nbsp;long&nbsp;gracePeriodMs()</code></pre>
 </li>
 </ul>
 <a name="inactivityGap--">
@@ -352,7 +348,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWind
 <ul class="blockList">
 <li class="blockList">
 <h4>inactivityGap</h4>
-<pre>public&nbsp;long&nbsp;inactivityGap()</pre>
+<pre>public&nbsp;long&nbsp;inactivityGap()</code></pre>
 <div class="block">Return the specified gap for the session windows in milliseconds.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -367,7 +363,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWind
 <li class="blockList">
 <h4>maintainMs</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;long&nbsp;maintainMs()</pre>
+public&nbsp;long&nbsp;maintainMs()</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.1. Use <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#retention"><code>Materialized.retention</code></a> instead.</span></div>
 <div class="block">Return the window maintain duration (retention time) in milliseconds.
  <p>
@@ -384,7 +380,7 @@ public&nbsp;long&nbsp;maintainMs()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -397,7 +393,7 @@ public&nbsp;long&nbsp;maintainMs()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -410,7 +406,7 @@ public&nbsp;long&nbsp;maintainMs()</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>

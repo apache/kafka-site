@@ -118,7 +118,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public abstract class <span class="typeNameLabel">AbstractProcessor&lt;K,V&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../org/apache/kafka/streams/processor/Processor.html" title="interface in org.apache.kafka.streams.processor">Processor</a>&lt;K,V&gt;</pre>
+implements <a href="../../../../../org/apache/kafka/streams/processor/Processor.html" title="interface in org.apache.kafka.streams.processor">Processor</a>&lt;K,V&gt;</code></pre>
 <div class="block">An abstract implementation of <a href="../../../../../org/apache/kafka/streams/processor/Processor.html" title="interface in org.apache.kafka.streams.processor"><code>Processor</code></a> that manages the <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor"><code>ProcessorContext</code></a> instance and provides default no-op
  implementation of <a href="../../../../../org/apache/kafka/streams/processor/AbstractProcessor.html#close--"><code>close()</code></a>.</div>
 </li>
@@ -211,7 +211,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/Processor.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>AbstractProcessor</h4>
-<pre>protected&nbsp;AbstractProcessor()</pre>
+<pre>protected&nbsp;AbstractProcessor()</code></pre>
 </li>
 </ul>
 </li>
@@ -228,7 +228,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/Processor.
 <ul class="blockList">
 <li class="blockList">
 <h4>init</h4>
-<pre>public&nbsp;void&nbsp;init(<a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor">ProcessorContext</a>&nbsp;context)</pre>
+<pre>public&nbsp;void&nbsp;init(<a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor">ProcessorContext</a>&nbsp;context)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/Processor.html#init-org.apache.kafka.streams.processor.ProcessorContext-">Processor</a></code></span></div>
 <div class="block">Initialize this processor with the given context. The framework ensures this is called once per processor when the topology
  that contains it is initialized. When the framework is done with the processor, <a href="../../../../../org/apache/kafka/streams/processor/Processor.html#close--"><code>Processor.close()</code></a> will be called on it; the
@@ -251,7 +251,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/Processor.
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>public&nbsp;void&nbsp;close()</pre>
+<pre>public&nbsp;void&nbsp;close()</code></pre>
 <div class="block">Close this processor and clean up any resources.
  <p>
  This method does nothing by default; if desired, subclasses should override it with custom functionality.
@@ -268,7 +268,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/Processor.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>context</h4>
-<pre>protected final&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor">ProcessorContext</a>&nbsp;context()</pre>
+<pre>protected final&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor">ProcessorContext</a>&nbsp;context()</code></pre>
 <div class="block">Get the processor's context set during <a href="../../../../../org/apache/kafka/streams/processor/AbstractProcessor.html#init-org.apache.kafka.streams.processor.ProcessorContext-"><code>initialization</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>

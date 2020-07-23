@@ -109,7 +109,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre><a href="../../../../../org/apache/kafka/common/annotation/InterfaceStability.Evolving.html" title="annotation in org.apache.kafka.common.annotation">@InterfaceStability.Evolving</a>
 public class <span class="typeNameLabel">NewPartitions</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">Describes new partitions for a particular topic in a call to <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#createPartitions-java.util.Map-"><code>Admin.createPartitions(Map)</code></a>.
 
  The API of this class is evolving, see <a href="../../../../../org/apache/kafka/clients/admin/Admin.html" title="interface in org.apache.kafka.clients.admin"><code>Admin</code></a> for details.</div>
@@ -189,7 +189,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>increaseTo</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/NewPartitions.html" title="class in org.apache.kafka.clients.admin">NewPartitions</a>&nbsp;increaseTo(int&nbsp;totalCount)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/NewPartitions.html" title="class in org.apache.kafka.clients.admin">NewPartitions</a>&nbsp;increaseTo(int&nbsp;totalCount)</code></pre>
 <div class="block">Increase the partition count for a topic to the given <code>totalCount</code>.
  The assignment of new replicas to brokers will be decided by the broker.</div>
 <dl>
@@ -205,7 +205,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>increaseTo</h4>
 <pre>public static&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/NewPartitions.html" title="class in org.apache.kafka.clients.admin">NewPartitions</a>&nbsp;increaseTo(int&nbsp;totalCount,
-                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&gt;&nbsp;newAssignments)</pre>
+                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&gt;&nbsp;newAssignments)</code></pre>
 <div class="block"><p>Increase the partition count for a topic to the given <code>totalCount</code>
  assigning the new partitions according to the given <code>newAssignments</code>.
  The length of the given <code>newAssignments</code> should equal <code>totalCount - oldCount</code>, since
@@ -222,7 +222,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  NewPartitions.increaseTo(6, asList(asList(1, 2),
                                     asList(2, 3),
                                     asList(3, 1)))
- </code></pre>
+ </code></code></pre>
  <p>In this example partition 3's preferred leader will be broker 1, partition 4's preferred leader will be
  broker 2 and partition 5's preferred leader will be broker 3.</p></div>
 <dl>
@@ -238,7 +238,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>totalCount</h4>
-<pre>public&nbsp;int&nbsp;totalCount()</pre>
+<pre>public&nbsp;int&nbsp;totalCount()</code></pre>
 <div class="block">The total number of partitions after the operation succeeds.</div>
 </li>
 </ul>
@@ -248,7 +248,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>assignments</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&gt;&nbsp;assignments()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&gt;&nbsp;assignments()</code></pre>
 <div class="block">The replica assignments for the new partitions, or null if the assignment will be done by the controller.</div>
 </li>
 </ul>
@@ -258,7 +258,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>

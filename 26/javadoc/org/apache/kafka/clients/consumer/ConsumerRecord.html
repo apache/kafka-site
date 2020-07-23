@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">ConsumerRecord&lt;K,V&gt;</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">A key/value pair to be received from Kafka. This also consists of a topic name and 
  a partition number from which the record is being received, an offset that points 
  to the record in a Kafka partition, and a timestamp as marked by the corresponding ProducerRecord.</div>
@@ -340,7 +340,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>NO_TIMESTAMP</h4>
-<pre>public static final&nbsp;long NO_TIMESTAMP</pre>
+<pre>public static final&nbsp;long NO_TIMESTAMP</code></pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.apache.kafka.clients.consumer.ConsumerRecord.NO_TIMESTAMP">Constant Field Values</a></dd>
@@ -353,7 +353,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>NULL_SIZE</h4>
-<pre>public static final&nbsp;int NULL_SIZE</pre>
+<pre>public static final&nbsp;int NULL_SIZE</code></pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.apache.kafka.clients.consumer.ConsumerRecord.NULL_SIZE">Constant Field Values</a></dd>
@@ -366,7 +366,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>NULL_CHECKSUM</h4>
-<pre>public static final&nbsp;int NULL_CHECKSUM</pre>
+<pre>public static final&nbsp;int NULL_CHECKSUM</code></pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.apache.kafka.clients.consumer.ConsumerRecord.NULL_CHECKSUM">Constant Field Values</a></dd>
@@ -393,7 +393,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                       int&nbsp;partition,
                       long&nbsp;offset,
                       <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="type parameter in ConsumerRecord">K</a>&nbsp;key,
-                      <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="type parameter in ConsumerRecord">V</a>&nbsp;value)</pre>
+                      <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="type parameter in ConsumerRecord">V</a>&nbsp;value)</code></pre>
 <div class="block">Creates a record to be received from a specified topic and partition (provided for
  compatibility with Kafka 0.9 before the message format supported timestamps and before
  serialized metadata were exposed).</div>
@@ -424,7 +424,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                       int&nbsp;serializedKeySize,
                       int&nbsp;serializedValueSize,
                       <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="type parameter in ConsumerRecord">K</a>&nbsp;key,
-                      <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="type parameter in ConsumerRecord">V</a>&nbsp;value)</pre>
+                      <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="type parameter in ConsumerRecord">V</a>&nbsp;value)</code></pre>
 <div class="block">Creates a record to be received from a specified topic and partition (provided for
  compatibility with Kafka 0.10 before the message format supported headers).</div>
 <dl>
@@ -460,7 +460,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                       int&nbsp;serializedValueSize,
                       <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="type parameter in ConsumerRecord">K</a>&nbsp;key,
                       <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="type parameter in ConsumerRecord">V</a>&nbsp;value,
-                      <a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;headers)</pre>
+                      <a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;headers)</code></pre>
 <div class="block">Creates a record to be received from a specified topic and partition</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -497,7 +497,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                       <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="type parameter in ConsumerRecord">K</a>&nbsp;key,
                       <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="type parameter in ConsumerRecord">V</a>&nbsp;value,
                       <a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;headers,
-                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;leaderEpoch)</pre>
+                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;leaderEpoch)</code></pre>
 <div class="block">Creates a record to be received from a specified topic and partition</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -530,7 +530,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>topic</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic()</code></pre>
 <div class="block">The topic this record is received from (never null)</div>
 </li>
 </ul>
@@ -540,7 +540,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>partition</h4>
-<pre>public&nbsp;int&nbsp;partition()</pre>
+<pre>public&nbsp;int&nbsp;partition()</code></pre>
 <div class="block">The partition from which this record is received</div>
 </li>
 </ul>
@@ -550,7 +550,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>headers</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;headers()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;headers()</code></pre>
 <div class="block">The headers (never null)</div>
 </li>
 </ul>
@@ -560,7 +560,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>key</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="type parameter in ConsumerRecord">K</a>&nbsp;key()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="type parameter in ConsumerRecord">K</a>&nbsp;key()</code></pre>
 <div class="block">The key (or null if no key is specified)</div>
 </li>
 </ul>
@@ -570,7 +570,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>value</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="type parameter in ConsumerRecord">V</a>&nbsp;value()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="type parameter in ConsumerRecord">V</a>&nbsp;value()</code></pre>
 <div class="block">The value</div>
 </li>
 </ul>
@@ -580,7 +580,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>offset</h4>
-<pre>public&nbsp;long&nbsp;offset()</pre>
+<pre>public&nbsp;long&nbsp;offset()</code></pre>
 <div class="block">The position of this record in the corresponding Kafka partition.</div>
 </li>
 </ul>
@@ -590,7 +590,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>timestamp</h4>
-<pre>public&nbsp;long&nbsp;timestamp()</pre>
+<pre>public&nbsp;long&nbsp;timestamp()</code></pre>
 <div class="block">The timestamp of this record</div>
 </li>
 </ul>
@@ -600,7 +600,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>timestampType</h4>
-<pre>public&nbsp;org.apache.kafka.common.record.TimestampType&nbsp;timestampType()</pre>
+<pre>public&nbsp;org.apache.kafka.common.record.TimestampType&nbsp;timestampType()</code></pre>
 <div class="block">The timestamp type of this record</div>
 </li>
 </ul>
@@ -611,7 +611,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>checksum</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;long&nbsp;checksum()</pre>
+public&nbsp;long&nbsp;checksum()</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">As of Kafka 0.11.0. Because of the potential for message format conversion on the broker, the
              checksum returned by the broker may not match what was computed by the producer.
              It is therefore unsafe to depend on this checksum for end-to-end delivery guarantees. Additionally,
@@ -628,7 +628,7 @@ public&nbsp;long&nbsp;checksum()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>serializedKeySize</h4>
-<pre>public&nbsp;int&nbsp;serializedKeySize()</pre>
+<pre>public&nbsp;int&nbsp;serializedKeySize()</code></pre>
 <div class="block">The size of the serialized, uncompressed key in bytes. If key is null, the returned size
  is -1.</div>
 </li>
@@ -639,7 +639,7 @@ public&nbsp;long&nbsp;checksum()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>serializedValueSize</h4>
-<pre>public&nbsp;int&nbsp;serializedValueSize()</pre>
+<pre>public&nbsp;int&nbsp;serializedValueSize()</code></pre>
 <div class="block">The size of the serialized, uncompressed value in bytes. If value is null, the
  returned size is -1.</div>
 </li>
@@ -650,7 +650,7 @@ public&nbsp;long&nbsp;checksum()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>leaderEpoch</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;leaderEpoch()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;leaderEpoch()</code></pre>
 <div class="block">Get the leader epoch for the record if available</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -664,7 +664,7 @@ public&nbsp;long&nbsp;checksum()</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>

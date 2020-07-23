@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public final class <span class="typeNameLabel">TimeWindows</span>
-extends <a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" title="class in org.apache.kafka.streams.kstream">Windows</a>&lt;org.apache.kafka.streams.kstream.internals.TimeWindow&gt;</pre>
+extends <a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" title="class in org.apache.kafka.streams.kstream">Windows</a>&lt;org.apache.kafka.streams.kstream.internals.TimeWindow&gt;</code></pre>
 <div class="block">The fixed-size time-based window specifications used for aggregations.
  <p>
  The semantics of time-based aggregation windows are: Every T1 (advance) milliseconds, compute the aggregate total for
@@ -315,7 +315,7 @@ extends <a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>sizeMs</h4>
-<pre>public final&nbsp;long sizeMs</pre>
+<pre>public final&nbsp;long sizeMs</code></pre>
 <div class="block">The size of the windows in milliseconds.</div>
 </li>
 </ul>
@@ -325,7 +325,7 @@ extends <a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" t
 <ul class="blockListLast">
 <li class="blockList">
 <h4>advanceMs</h4>
-<pre>public final&nbsp;long advanceMs</pre>
+<pre>public final&nbsp;long advanceMs</code></pre>
 <div class="block">The size of the window's advance interval in milliseconds, i.e., by how much a window moves forward relative to
  the previous one.</div>
 </li>
@@ -346,7 +346,7 @@ extends <a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" t
 <h4>of</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows.html" title="class in org.apache.kafka.streams.kstream">TimeWindows</a>&nbsp;of(long&nbsp;sizeMs)
-                                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows.html#of-java.time.Duration-"><code>of(Duration)</code></a> instead</span></div>
 <div class="block">Return a window definition with the given window size, and with the advance interval being equal to the window
  size.
@@ -371,7 +371,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Time
 <li class="blockList">
 <h4>of</h4>
 <pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows.html" title="class in org.apache.kafka.streams.kstream">TimeWindows</a>&nbsp;of(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;size)
-                      throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                      throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block">Return a window definition with the given window size, and with the advance interval being equal to the window
  size.
  The time interval represented by the N-th window is: <code>[N * size, N * size + size)</code>.
@@ -395,7 +395,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Time
 <li class="blockList">
 <h4>advanceBy</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows.html" title="class in org.apache.kafka.streams.kstream">TimeWindows</a>&nbsp;advanceBy(long&nbsp;advanceMs)</pre>
+public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows.html" title="class in org.apache.kafka.streams.kstream">TimeWindows</a>&nbsp;advanceBy(long&nbsp;advanceMs)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows.html#advanceBy-java.time.Duration-"><code>advanceBy(Duration)</code></a> instead</span></div>
 <div class="block">Return a window definition with the original size, but advance ("hop") the window by the given interval, which
  specifies by how much a window moves forward relative to the previous one.
@@ -418,7 +418,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows
 <ul class="blockList">
 <li class="blockList">
 <h4>advanceBy</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows.html" title="class in org.apache.kafka.streams.kstream">TimeWindows</a>&nbsp;advanceBy(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;advance)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows.html" title="class in org.apache.kafka.streams.kstream">TimeWindows</a>&nbsp;advanceBy(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;advance)</code></pre>
 <div class="block">Return a window definition with the original size, but advance ("hop") the window by the given interval, which
  specifies by how much a window moves forward relative to the previous one.
  The time interval represented by the N-th window is: <code>[N * advance, N * advance + size)</code>.
@@ -440,7 +440,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows
 <ul class="blockList">
 <li class="blockList">
 <h4>windowsFor</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,org.apache.kafka.streams.kstream.internals.TimeWindow&gt;&nbsp;windowsFor(long&nbsp;timestamp)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,org.apache.kafka.streams.kstream.internals.TimeWindow&gt;&nbsp;windowsFor(long&nbsp;timestamp)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/kstream/Windows.html#windowsFor-long-">Windows</a></code></span></div>
 <div class="block">Create all windows that contain the provided timestamp, indexed by non-negative window start timestamps.</div>
 <dl>
@@ -459,7 +459,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows
 <ul class="blockList">
 <li class="blockList">
 <h4>size</h4>
-<pre>public&nbsp;long&nbsp;size()</pre>
+<pre>public&nbsp;long&nbsp;size()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/kstream/Windows.html#size--">Windows</a></code></span></div>
 <div class="block">Return the size of the specified windows in milliseconds.</div>
 <dl>
@@ -477,7 +477,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows
 <li class="blockList">
 <h4>grace</h4>
 <pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows.html" title="class in org.apache.kafka.streams.kstream">TimeWindows</a>&nbsp;grace(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;afterWindowEnd)
-                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block">Reject out-of-order events that arrive more than <code>millisAfterWindowEnd</code>
  after the end of its window.
  <p>
@@ -498,7 +498,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows
 <ul class="blockList">
 <li class="blockList">
 <h4>gracePeriodMs</h4>
-<pre>public&nbsp;long&nbsp;gracePeriodMs()</pre>
+<pre>public&nbsp;long&nbsp;gracePeriodMs()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/kstream/Windows.html#gracePeriodMs--">Windows</a></code></span></div>
 <div class="block">Return the window grace period (the time to admit
  out-of-order events after the end of the window.)
@@ -518,7 +518,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows
 <h4>until</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows.html" title="class in org.apache.kafka.streams.kstream">TimeWindows</a>&nbsp;until(long&nbsp;durationMs)
-                              throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                              throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.1. Use <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#retention"><code>Materialized.retention</code></a> or directly configure the retention in a store supplier
              and use <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#as-org.apache.kafka.streams.state.WindowBytesStoreSupplier-"><code>Materialized.as(WindowBytesStoreSupplier)</code></a>.</span></div>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/kstream/Windows.html#until-long-">Windows</a></code></span></div>
@@ -543,7 +543,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindows
 <li class="blockList">
 <h4>maintainMs</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;long&nbsp;maintainMs()</pre>
+public&nbsp;long&nbsp;maintainMs()</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.1. Use <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#retention"><code>Materialized.retention</code></a> instead.</span></div>
 <div class="block">Return the window maintain duration (retention time) in milliseconds.
  <p>
@@ -562,7 +562,7 @@ public&nbsp;long&nbsp;maintainMs()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -575,7 +575,7 @@ public&nbsp;long&nbsp;maintainMs()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -588,7 +588,7 @@ public&nbsp;long&nbsp;maintainMs()</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>

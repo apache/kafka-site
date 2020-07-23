@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">SinkRecord</span>
-extends <a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord.html" title="class in org.apache.kafka.connect.connector">ConnectRecord</a>&lt;<a href="../../../../../org/apache/kafka/connect/sink/SinkRecord.html" title="class in org.apache.kafka.connect.sink">SinkRecord</a>&gt;</pre>
+extends <a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord.html" title="class in org.apache.kafka.connect.connector">ConnectRecord</a>&lt;<a href="../../../../../org/apache/kafka/connect/sink/SinkRecord.html" title="class in org.apache.kafka.connect.sink">SinkRecord</a>&gt;</code></pre>
 <div class="block">SinkRecord is a <a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord.html" title="class in org.apache.kafka.connect.connector"><code>ConnectRecord</code></a> that has been read from Kafka and includes the kafkaOffset of
  the record in the Kafka topic-partition in addition to the standard fields. This information
  should be used by the SinkTask to coordinate kafkaOffset commits.
@@ -270,7 +270,7 @@ extends <a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord
                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;key,
                   <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;valueSchema,
                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
-                  long&nbsp;kafkaOffset)</pre>
+                  long&nbsp;kafkaOffset)</code></pre>
 </li>
 </ul>
 <a name="SinkRecord-java.lang.String-int-org.apache.kafka.connect.data.Schema-java.lang.Object-org.apache.kafka.connect.data.Schema-java.lang.Object-long-java.lang.Long-org.apache.kafka.common.record.TimestampType-">
@@ -287,7 +287,7 @@ extends <a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord
                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
                   long&nbsp;kafkaOffset,
                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;timestamp,
-                  org.apache.kafka.common.record.TimestampType&nbsp;timestampType)</pre>
+                  org.apache.kafka.common.record.TimestampType&nbsp;timestampType)</code></pre>
 </li>
 </ul>
 <a name="SinkRecord-java.lang.String-int-org.apache.kafka.connect.data.Schema-java.lang.Object-org.apache.kafka.connect.data.Schema-java.lang.Object-long-java.lang.Long-org.apache.kafka.common.record.TimestampType-java.lang.Iterable-">
@@ -305,7 +305,7 @@ extends <a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord
                   long&nbsp;kafkaOffset,
                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;timestamp,
                   org.apache.kafka.common.record.TimestampType&nbsp;timestampType,
-                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header">Header</a>&gt;&nbsp;headers)</pre>
+                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header">Header</a>&gt;&nbsp;headers)</code></pre>
 </li>
 </ul>
 </li>
@@ -322,7 +322,7 @@ extends <a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord
 <ul class="blockList">
 <li class="blockList">
 <h4>kafkaOffset</h4>
-<pre>public&nbsp;long&nbsp;kafkaOffset()</pre>
+<pre>public&nbsp;long&nbsp;kafkaOffset()</code></pre>
 </li>
 </ul>
 <a name="timestampType--">
@@ -331,7 +331,7 @@ extends <a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord
 <ul class="blockList">
 <li class="blockList">
 <h4>timestampType</h4>
-<pre>public&nbsp;org.apache.kafka.common.record.TimestampType&nbsp;timestampType()</pre>
+<pre>public&nbsp;org.apache.kafka.common.record.TimestampType&nbsp;timestampType()</code></pre>
 </li>
 </ul>
 <a name="newRecord-java.lang.String-java.lang.Integer-org.apache.kafka.connect.data.Schema-java.lang.Object-org.apache.kafka.connect.data.Schema-java.lang.Object-java.lang.Long-">
@@ -346,7 +346,7 @@ extends <a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;key,
                             <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;valueSchema,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
-                            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;timestamp)</pre>
+                            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;timestamp)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord.html#newRecord-java.lang.String-java.lang.Integer-org.apache.kafka.connect.data.Schema-java.lang.Object-org.apache.kafka.connect.data.Schema-java.lang.Object-java.lang.Long-">ConnectRecord</a></code></span></div>
 <div class="block">Create a new record of the same type as itself, with the specified parameter values. All other fields in this record will be copied
  over to the new record. Since the headers are mutable, the resulting record will have a copy of this record's headers.</div>
@@ -379,7 +379,7 @@ extends <a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord
                             <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;valueSchema,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;timestamp,
-                            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header">Header</a>&gt;&nbsp;headers)</pre>
+                            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header">Header</a>&gt;&nbsp;headers)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord.html#newRecord-java.lang.String-java.lang.Integer-org.apache.kafka.connect.data.Schema-java.lang.Object-org.apache.kafka.connect.data.Schema-java.lang.Object-java.lang.Long-java.lang.Iterable-">ConnectRecord</a></code></span></div>
 <div class="block">Create a new record of the same type as itself, with the specified parameter values. All other fields in this record will be copied
  over to the new record.</div>
@@ -406,7 +406,7 @@ extends <a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord.html#equals-java.lang.Object-">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord.html" title="class in org.apache.kafka.connect.connector">ConnectRecord</a>&lt;<a href="../../../../../org/apache/kafka/connect/sink/SinkRecord.html" title="class in org.apache.kafka.connect.sink">SinkRecord</a>&gt;</code></dd>
@@ -419,7 +419,7 @@ extends <a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord.html#hashCode--">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord.html" title="class in org.apache.kafka.connect.connector">ConnectRecord</a>&lt;<a href="../../../../../org/apache/kafka/connect/sink/SinkRecord.html" title="class in org.apache.kafka.connect.sink">SinkRecord</a>&gt;</code></dd>
@@ -432,7 +432,7 @@ extends <a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord.html#toString--">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/kafka/connect/connector/ConnectRecord.html" title="class in org.apache.kafka.connect.connector">ConnectRecord</a>&lt;<a href="../../../../../org/apache/kafka/connect/sink/SinkRecord.html" title="class in org.apache.kafka.connect.sink">SinkRecord</a>&gt;</code></dd>

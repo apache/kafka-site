@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">MockConsumer&lt;K,V&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;K,V&gt;</pre>
+implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;K,V&gt;</code></pre>
 <div class="block">A mock of the <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer"><code>Consumer</code></a> interface you can use for testing code that uses Kafka. This class is <i> not
  threadsafe </i>. However, you can use the <a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html#schedulePollTask-java.lang.Runnable-"><code>schedulePollTask(Runnable)</code></a> method to write multithreaded tests
  where a driver thread waits for <a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html#poll-java.time.Duration-"><code>poll(Duration)</code></a> to be called by a background thread and then can safely perform
@@ -456,7 +456,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <ul class="blockListLast">
 <li class="blockList">
 <h4>MockConsumer</h4>
-<pre>public&nbsp;MockConsumer(<a href="../../../../../org/apache/kafka/clients/consumer/OffsetResetStrategy.html" title="enum in org.apache.kafka.clients.consumer">OffsetResetStrategy</a>&nbsp;offsetResetStrategy)</pre>
+<pre>public&nbsp;MockConsumer(<a href="../../../../../org/apache/kafka/clients/consumer/OffsetResetStrategy.html" title="enum in org.apache.kafka.clients.consumer">OffsetResetStrategy</a>&nbsp;offsetResetStrategy)</code></pre>
 </li>
 </ul>
 </li>
@@ -473,7 +473,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>assignment</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;assignment()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;assignment()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#assignment--">assignment</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -488,7 +488,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>rebalance</h4>
-<pre>public&nbsp;void&nbsp;rebalance(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;newAssignment)</pre>
+<pre>public&nbsp;void&nbsp;rebalance(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;newAssignment)</code></pre>
 <div class="block">Simulate a rebalance event.</div>
 </li>
 </ul>
@@ -498,7 +498,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>subscription</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;subscription()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;subscription()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#subscription--">subscription</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -513,7 +513,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>subscribe</h4>
-<pre>public&nbsp;void&nbsp;subscribe(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topics)</pre>
+<pre>public&nbsp;void&nbsp;subscribe(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topics)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#subscribe-java.util.Collection-">subscribe</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -529,7 +529,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <li class="blockList">
 <h4>subscribe</h4>
 <pre>public&nbsp;void&nbsp;subscribe(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a>&nbsp;pattern,
-                      <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRebalanceListener.html" title="interface in org.apache.kafka.clients.consumer">ConsumerRebalanceListener</a>&nbsp;listener)</pre>
+                      <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRebalanceListener.html" title="interface in org.apache.kafka.clients.consumer">ConsumerRebalanceListener</a>&nbsp;listener)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#subscribe-java.util.regex.Pattern-org.apache.kafka.clients.consumer.ConsumerRebalanceListener-">subscribe</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -544,7 +544,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>subscribe</h4>
-<pre>public&nbsp;void&nbsp;subscribe(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a>&nbsp;pattern)</pre>
+<pre>public&nbsp;void&nbsp;subscribe(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a>&nbsp;pattern)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#subscribe-java.util.regex.Pattern-">subscribe</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -560,7 +560,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <li class="blockList">
 <h4>subscribe</h4>
 <pre>public&nbsp;void&nbsp;subscribe(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topics,
-                      <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRebalanceListener.html" title="interface in org.apache.kafka.clients.consumer">ConsumerRebalanceListener</a>&nbsp;listener)</pre>
+                      <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRebalanceListener.html" title="interface in org.apache.kafka.clients.consumer">ConsumerRebalanceListener</a>&nbsp;listener)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#subscribe-java.util.Collection-org.apache.kafka.clients.consumer.ConsumerRebalanceListener-">subscribe</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -575,7 +575,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>assign</h4>
-<pre>public&nbsp;void&nbsp;assign(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;void&nbsp;assign(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#assign-java.util.Collection-">assign</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -590,7 +590,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>unsubscribe</h4>
-<pre>public&nbsp;void&nbsp;unsubscribe()</pre>
+<pre>public&nbsp;void&nbsp;unsubscribe()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#unsubscribe--">unsubscribe</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -606,7 +606,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <li class="blockList">
 <h4>poll</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecords</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;&nbsp;poll(long&nbsp;timeout)</pre>
+public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecords</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;&nbsp;poll(long&nbsp;timeout)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -622,7 +622,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <ul class="blockList">
 <li class="blockList">
 <h4>poll</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecords</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;&nbsp;poll(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecords</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;&nbsp;poll(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#poll-java.time.Duration-">poll</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -637,7 +637,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <ul class="blockList">
 <li class="blockList">
 <h4>addRecord</h4>
-<pre>public&nbsp;void&nbsp;addRecord(<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;&nbsp;record)</pre>
+<pre>public&nbsp;void&nbsp;addRecord(<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;&nbsp;record)</code></pre>
 </li>
 </ul>
 <a name="setException-org.apache.kafka.common.KafkaException-">
@@ -647,7 +647,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <li class="blockList">
 <h4>setException</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;void&nbsp;setException(<a href="../../../../../org/apache/kafka/common/KafkaException.html" title="class in org.apache.kafka.common">KafkaException</a>&nbsp;exception)</pre>
+public&nbsp;void&nbsp;setException(<a href="../../../../../org/apache/kafka/common/KafkaException.html" title="class in org.apache.kafka.common">KafkaException</a>&nbsp;exception)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html#setPollException-org.apache.kafka.common.KafkaException-"><code>setPollException(KafkaException)</code></a> instead</span></div>
 </li>
 </ul>
@@ -657,7 +657,7 @@ public&nbsp;void&nbsp;setException(<a href="../../../../../org/apache/kafka/comm
 <ul class="blockList">
 <li class="blockList">
 <h4>setPollException</h4>
-<pre>public&nbsp;void&nbsp;setPollException(<a href="../../../../../org/apache/kafka/common/KafkaException.html" title="class in org.apache.kafka.common">KafkaException</a>&nbsp;exception)</pre>
+<pre>public&nbsp;void&nbsp;setPollException(<a href="../../../../../org/apache/kafka/common/KafkaException.html" title="class in org.apache.kafka.common">KafkaException</a>&nbsp;exception)</code></pre>
 </li>
 </ul>
 <a name="setOffsetsException-org.apache.kafka.common.KafkaException-">
@@ -666,7 +666,7 @@ public&nbsp;void&nbsp;setException(<a href="../../../../../org/apache/kafka/comm
 <ul class="blockList">
 <li class="blockList">
 <h4>setOffsetsException</h4>
-<pre>public&nbsp;void&nbsp;setOffsetsException(<a href="../../../../../org/apache/kafka/common/KafkaException.html" title="class in org.apache.kafka.common">KafkaException</a>&nbsp;exception)</pre>
+<pre>public&nbsp;void&nbsp;setOffsetsException(<a href="../../../../../org/apache/kafka/common/KafkaException.html" title="class in org.apache.kafka.common">KafkaException</a>&nbsp;exception)</code></pre>
 </li>
 </ul>
 <a name="commitAsync-java.util.Map-org.apache.kafka.clients.consumer.OffsetCommitCallback-">
@@ -676,7 +676,7 @@ public&nbsp;void&nbsp;setException(<a href="../../../../../org/apache/kafka/comm
 <li class="blockList">
 <h4>commitAsync</h4>
 <pre>public&nbsp;void&nbsp;commitAsync(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets,
-                        <a href="../../../../../org/apache/kafka/clients/consumer/OffsetCommitCallback.html" title="interface in org.apache.kafka.clients.consumer">OffsetCommitCallback</a>&nbsp;callback)</pre>
+                        <a href="../../../../../org/apache/kafka/clients/consumer/OffsetCommitCallback.html" title="interface in org.apache.kafka.clients.consumer">OffsetCommitCallback</a>&nbsp;callback)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#commitAsync-java.util.Map-org.apache.kafka.clients.consumer.OffsetCommitCallback-">commitAsync</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -691,7 +691,7 @@ public&nbsp;void&nbsp;setException(<a href="../../../../../org/apache/kafka/comm
 <ul class="blockList">
 <li class="blockList">
 <h4>commitSync</h4>
-<pre>public&nbsp;void&nbsp;commitSync(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets)</pre>
+<pre>public&nbsp;void&nbsp;commitSync(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#commitSync-java.util.Map-">commitSync</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -706,7 +706,7 @@ public&nbsp;void&nbsp;setException(<a href="../../../../../org/apache/kafka/comm
 <ul class="blockList">
 <li class="blockList">
 <h4>commitAsync</h4>
-<pre>public&nbsp;void&nbsp;commitAsync()</pre>
+<pre>public&nbsp;void&nbsp;commitAsync()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#commitAsync--">commitAsync</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -721,7 +721,7 @@ public&nbsp;void&nbsp;setException(<a href="../../../../../org/apache/kafka/comm
 <ul class="blockList">
 <li class="blockList">
 <h4>commitAsync</h4>
-<pre>public&nbsp;void&nbsp;commitAsync(<a href="../../../../../org/apache/kafka/clients/consumer/OffsetCommitCallback.html" title="interface in org.apache.kafka.clients.consumer">OffsetCommitCallback</a>&nbsp;callback)</pre>
+<pre>public&nbsp;void&nbsp;commitAsync(<a href="../../../../../org/apache/kafka/clients/consumer/OffsetCommitCallback.html" title="interface in org.apache.kafka.clients.consumer">OffsetCommitCallback</a>&nbsp;callback)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#commitAsync-org.apache.kafka.clients.consumer.OffsetCommitCallback-">commitAsync</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -736,7 +736,7 @@ public&nbsp;void&nbsp;setException(<a href="../../../../../org/apache/kafka/comm
 <ul class="blockList">
 <li class="blockList">
 <h4>commitSync</h4>
-<pre>public&nbsp;void&nbsp;commitSync()</pre>
+<pre>public&nbsp;void&nbsp;commitSync()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#commitSync--">commitSync</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -751,7 +751,7 @@ public&nbsp;void&nbsp;setException(<a href="../../../../../org/apache/kafka/comm
 <ul class="blockList">
 <li class="blockList">
 <h4>commitSync</h4>
-<pre>public&nbsp;void&nbsp;commitSync(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+<pre>public&nbsp;void&nbsp;commitSync(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#commitSync-java.time.Duration-">commitSync</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -767,7 +767,7 @@ public&nbsp;void&nbsp;setException(<a href="../../../../../org/apache/kafka/comm
 <li class="blockList">
 <h4>commitSync</h4>
 <pre>public&nbsp;void&nbsp;commitSync(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets,
-                       <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                       <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#commitSync-java.util.Map-java.time.Duration-">commitSync</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -783,7 +783,7 @@ public&nbsp;void&nbsp;setException(<a href="../../../../../org/apache/kafka/comm
 <li class="blockList">
 <h4>seek</h4>
 <pre>public&nbsp;void&nbsp;seek(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition,
-                 long&nbsp;offset)</pre>
+                 long&nbsp;offset)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#seek-org.apache.kafka.common.TopicPartition-long-">seek</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -799,7 +799,7 @@ public&nbsp;void&nbsp;setException(<a href="../../../../../org/apache/kafka/comm
 <li class="blockList">
 <h4>seek</h4>
 <pre>public&nbsp;void&nbsp;seek(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition,
-                 <a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&nbsp;offsetAndMetadata)</pre>
+                 <a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&nbsp;offsetAndMetadata)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#seek-org.apache.kafka.common.TopicPartition-org.apache.kafka.clients.consumer.OffsetAndMetadata-">seek</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -815,7 +815,7 @@ public&nbsp;void&nbsp;setException(<a href="../../../../../org/apache/kafka/comm
 <li class="blockList">
 <h4>committed</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&nbsp;committed(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition)</pre>
+public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&nbsp;committed(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -833,7 +833,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <h4>committed</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&nbsp;committed(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition,
-                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -849,7 +849,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>committed</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;committed(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;committed(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#committed-java.util.Set-">committed</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -865,7 +865,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <li class="blockList">
 <h4>committed</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;committed(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions,
-                                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#committed-java.util.Set-java.time.Duration-">committed</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -880,7 +880,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>position</h4>
-<pre>public&nbsp;long&nbsp;position(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition)</pre>
+<pre>public&nbsp;long&nbsp;position(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#position-org.apache.kafka.common.TopicPartition-">position</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -896,7 +896,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <li class="blockList">
 <h4>position</h4>
 <pre>public&nbsp;long&nbsp;position(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#position-org.apache.kafka.common.TopicPartition-java.time.Duration-">position</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -911,7 +911,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>seekToBeginning</h4>
-<pre>public&nbsp;void&nbsp;seekToBeginning(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;void&nbsp;seekToBeginning(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#seekToBeginning-java.util.Collection-">seekToBeginning</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -926,7 +926,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>updateBeginningOffsets</h4>
-<pre>public&nbsp;void&nbsp;updateBeginningOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;newOffsets)</pre>
+<pre>public&nbsp;void&nbsp;updateBeginningOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;newOffsets)</code></pre>
 </li>
 </ul>
 <a name="seekToEnd-java.util.Collection-">
@@ -935,7 +935,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>seekToEnd</h4>
-<pre>public&nbsp;void&nbsp;seekToEnd(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;void&nbsp;seekToEnd(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#seekToEnd-java.util.Collection-">seekToEnd</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -950,7 +950,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>updateEndOffsets</h4>
-<pre>public&nbsp;void&nbsp;updateEndOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;newOffsets)</pre>
+<pre>public&nbsp;void&nbsp;updateEndOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;newOffsets)</code></pre>
 </li>
 </ul>
 <a name="metrics--">
@@ -959,7 +959,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>metrics</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/MetricName.html" title="class in org.apache.kafka.common">MetricName</a>,? extends <a href="../../../../../org/apache/kafka/common/Metric.html" title="interface in org.apache.kafka.common">Metric</a>&gt;&nbsp;metrics()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/MetricName.html" title="class in org.apache.kafka.common">MetricName</a>,? extends <a href="../../../../../org/apache/kafka/common/Metric.html" title="interface in org.apache.kafka.common">Metric</a>&gt;&nbsp;metrics()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#metrics--">metrics</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -974,7 +974,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>partitionsFor</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&nbsp;partitionsFor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&nbsp;partitionsFor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#partitionsFor-java.lang.String-">partitionsFor</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -989,7 +989,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>listTopics</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&gt;&nbsp;listTopics()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&gt;&nbsp;listTopics()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#listTopics--">listTopics</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -1005,7 +1005,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <li class="blockList">
 <h4>updatePartitions</h4>
 <pre>public&nbsp;void&nbsp;updatePartitions(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
-                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&nbsp;partitions)</pre>
+                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&nbsp;partitions)</code></pre>
 </li>
 </ul>
 <a name="pause-java.util.Collection-">
@@ -1014,7 +1014,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>pause</h4>
-<pre>public&nbsp;void&nbsp;pause(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;void&nbsp;pause(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#pause-java.util.Collection-">pause</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -1029,7 +1029,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>resume</h4>
-<pre>public&nbsp;void&nbsp;resume(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;void&nbsp;resume(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#resume-java.util.Collection-">resume</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -1044,7 +1044,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>offsetsForTimes</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndTimestamp.html" title="class in org.apache.kafka.clients.consumer">OffsetAndTimestamp</a>&gt;&nbsp;offsetsForTimes(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;timestampsToSearch)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndTimestamp.html" title="class in org.apache.kafka.clients.consumer">OffsetAndTimestamp</a>&gt;&nbsp;offsetsForTimes(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;timestampsToSearch)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#offsetsForTimes-java.util.Map-">offsetsForTimes</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -1059,7 +1059,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>beginningOffsets</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;beginningOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;beginningOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#beginningOffsets-java.util.Collection-">beginningOffsets</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -1074,7 +1074,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>endOffsets</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;endOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;endOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#endOffsets-java.util.Collection-">endOffsets</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -1089,7 +1089,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>public&nbsp;void&nbsp;close()</pre>
+<pre>public&nbsp;void&nbsp;close()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true#close--" title="class or interface in java.io">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></code></dd>
@@ -1110,7 +1110,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <h4>close</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;void&nbsp;close(long&nbsp;timeout,
-                              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</a>&nbsp;unit)</pre>
+                              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</a>&nbsp;unit)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -1126,7 +1126,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <ul class="blockList">
 <li class="blockList">
 <h4>closed</h4>
-<pre>public&nbsp;boolean&nbsp;closed()</pre>
+<pre>public&nbsp;boolean&nbsp;closed()</code></pre>
 </li>
 </ul>
 <a name="wakeup--">
@@ -1135,7 +1135,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <ul class="blockList">
 <li class="blockList">
 <h4>wakeup</h4>
-<pre>public&nbsp;void&nbsp;wakeup()</pre>
+<pre>public&nbsp;void&nbsp;wakeup()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#wakeup--">wakeup</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -1150,7 +1150,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <ul class="blockList">
 <li class="blockList">
 <h4>schedulePollTask</h4>
-<pre>public&nbsp;void&nbsp;schedulePollTask(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a>&nbsp;task)</pre>
+<pre>public&nbsp;void&nbsp;schedulePollTask(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a>&nbsp;task)</code></pre>
 <div class="block">Schedule a task to be executed during a poll(). One enqueued task will be executed per <a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html#poll-java.time.Duration-"><code>poll(Duration)</code></a>
  invocation. You can use this repeatedly to mock out multiple responses to poll invocations.</div>
 <dl>
@@ -1165,7 +1165,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <ul class="blockList">
 <li class="blockList">
 <h4>scheduleNopPollTask</h4>
-<pre>public&nbsp;void&nbsp;scheduleNopPollTask()</pre>
+<pre>public&nbsp;void&nbsp;scheduleNopPollTask()</code></pre>
 </li>
 </ul>
 <a name="paused--">
@@ -1174,7 +1174,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <ul class="blockList">
 <li class="blockList">
 <h4>paused</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;paused()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;paused()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#paused--">paused</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -1190,7 +1190,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <li class="blockList">
 <h4>partitionsFor</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&nbsp;partitionsFor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
-                                         <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                                         <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#partitionsFor-java.lang.String-java.time.Duration-">partitionsFor</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -1205,7 +1205,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <ul class="blockList">
 <li class="blockList">
 <h4>listTopics</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&gt;&nbsp;listTopics(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&gt;&nbsp;listTopics(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#listTopics-java.time.Duration-">listTopics</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -1221,7 +1221,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <li class="blockList">
 <h4>offsetsForTimes</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndTimestamp.html" title="class in org.apache.kafka.clients.consumer">OffsetAndTimestamp</a>&gt;&nbsp;offsetsForTimes(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;timestampsToSearch,
-                                                              <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                                                              <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#offsetsForTimes-java.util.Map-java.time.Duration-">offsetsForTimes</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -1237,7 +1237,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <li class="blockList">
 <h4>beginningOffsets</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;beginningOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions,
-                                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#beginningOffsets-java.util.Collection-java.time.Duration-">beginningOffsets</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -1253,7 +1253,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <li class="blockList">
 <h4>endOffsets</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;endOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions,
-                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#endOffsets-java.util.Collection-java.time.Duration-">endOffsets</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -1268,7 +1268,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <ul class="blockList">
 <li class="blockList">
 <h4>groupMetadata</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerGroupMetadata.html" title="class in org.apache.kafka.clients.consumer">ConsumerGroupMetadata</a>&nbsp;groupMetadata()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerGroupMetadata.html" title="class in org.apache.kafka.clients.consumer">ConsumerGroupMetadata</a>&nbsp;groupMetadata()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#groupMetadata--">groupMetadata</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -1283,7 +1283,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <ul class="blockList">
 <li class="blockList">
 <h4>enforceRebalance</h4>
-<pre>public&nbsp;void&nbsp;enforceRebalance()</pre>
+<pre>public&nbsp;void&nbsp;enforceRebalance()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#enforceRebalance--">enforceRebalance</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>
@@ -1298,7 +1298,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <ul class="blockList">
 <li class="blockList">
 <h4>shouldRebalance</h4>
-<pre>public&nbsp;boolean&nbsp;shouldRebalance()</pre>
+<pre>public&nbsp;boolean&nbsp;shouldRebalance()</code></pre>
 </li>
 </ul>
 <a name="resetShouldRebalance--">
@@ -1307,7 +1307,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <ul class="blockList">
 <li class="blockList">
 <h4>resetShouldRebalance</h4>
-<pre>public&nbsp;void&nbsp;resetShouldRebalance()</pre>
+<pre>public&nbsp;void&nbsp;resetShouldRebalance()</code></pre>
 </li>
 </ul>
 <a name="lastPollTimeout--">
@@ -1316,7 +1316,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <ul class="blockList">
 <li class="blockList">
 <h4>lastPollTimeout</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;lastPollTimeout()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;lastPollTimeout()</code></pre>
 </li>
 </ul>
 <a name="close-java.time.Duration-">
@@ -1325,7 +1325,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <ul class="blockListLast">
 <li class="blockList">
 <h4>close</h4>
-<pre>public&nbsp;void&nbsp;close(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+<pre>public&nbsp;void&nbsp;close(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#close-java.time.Duration-">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/MockConsumer.html" title="type parameter in MockConsumer">V</a>&gt;</code></dd>

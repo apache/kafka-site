@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">Partitioner</span>
-extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></pre>
+extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></code></pre>
 <div class="block">Partitioner Interface</div>
 </li>
 </ul>
@@ -186,7 +186,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
               byte[]&nbsp;keyBytes,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
               byte[]&nbsp;valueBytes,
-              <a href="../../../../../org/apache/kafka/common/Cluster.html" title="class in org.apache.kafka.common">Cluster</a>&nbsp;cluster)</pre>
+              <a href="../../../../../org/apache/kafka/common/Cluster.html" title="class in org.apache.kafka.common">Cluster</a>&nbsp;cluster)</code></pre>
 <div class="block">Compute the partition for the given record.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -205,7 +205,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>void&nbsp;close()</pre>
+<pre>void&nbsp;close()</code></pre>
 <div class="block">This is called when partitioner is closed.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -223,7 +223,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
 <h4>onNewBatch</h4>
 <pre>default&nbsp;void&nbsp;onNewBatch(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
                         <a href="../../../../../org/apache/kafka/common/Cluster.html" title="class in org.apache.kafka.common">Cluster</a>&nbsp;cluster,
-                        int&nbsp;prevPartition)</pre>
+                        int&nbsp;prevPartition)</code></pre>
 <div class="block">Notifies the partitioner a new batch is about to be created. When using the sticky partitioner,
  this method can change the chosen sticky partition for the new batch.</div>
 <dl>

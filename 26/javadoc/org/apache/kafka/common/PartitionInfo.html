@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">PartitionInfo</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">This is used to describe per-partition state in the MetadataResponse.</div>
 </li>
 </ul>
@@ -230,7 +230,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                      int&nbsp;partition,
                      <a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>&nbsp;leader,
                      <a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>[]&nbsp;replicas,
-                     <a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>[]&nbsp;inSyncReplicas)</pre>
+                     <a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>[]&nbsp;inSyncReplicas)</code></pre>
 </li>
 </ul>
 <a name="PartitionInfo-java.lang.String-int-org.apache.kafka.common.Node-org.apache.kafka.common.Node:A-org.apache.kafka.common.Node:A-org.apache.kafka.common.Node:A-">
@@ -244,7 +244,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                      <a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>&nbsp;leader,
                      <a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>[]&nbsp;replicas,
                      <a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>[]&nbsp;inSyncReplicas,
-                     <a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>[]&nbsp;offlineReplicas)</pre>
+                     <a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>[]&nbsp;offlineReplicas)</code></pre>
 </li>
 </ul>
 </li>
@@ -261,7 +261,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>topic</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic()</code></pre>
 <div class="block">The topic name</div>
 </li>
 </ul>
@@ -271,7 +271,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>partition</h4>
-<pre>public&nbsp;int&nbsp;partition()</pre>
+<pre>public&nbsp;int&nbsp;partition()</code></pre>
 <div class="block">The partition id</div>
 </li>
 </ul>
@@ -281,7 +281,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>leader</h4>
-<pre>public&nbsp;<a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>&nbsp;leader()</pre>
+<pre>public&nbsp;<a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>&nbsp;leader()</code></pre>
 <div class="block">The node id of the node currently acting as a leader for this partition or null if there is no leader</div>
 </li>
 </ul>
@@ -291,7 +291,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>replicas</h4>
-<pre>public&nbsp;<a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>[]&nbsp;replicas()</pre>
+<pre>public&nbsp;<a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>[]&nbsp;replicas()</code></pre>
 <div class="block">The complete set of replicas for this partition regardless of whether they are alive or up-to-date</div>
 </li>
 </ul>
@@ -301,7 +301,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>inSyncReplicas</h4>
-<pre>public&nbsp;<a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>[]&nbsp;inSyncReplicas()</pre>
+<pre>public&nbsp;<a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>[]&nbsp;inSyncReplicas()</code></pre>
 <div class="block">The subset of the replicas that are in sync, that is caught-up to the leader and ready to take over as leader if
  the leader should fail</div>
 </li>
@@ -312,7 +312,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>offlineReplicas</h4>
-<pre>public&nbsp;<a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>[]&nbsp;offlineReplicas()</pre>
+<pre>public&nbsp;<a href="../../../../org/apache/kafka/common/Node.html" title="class in org.apache.kafka.common">Node</a>[]&nbsp;offlineReplicas()</code></pre>
 <div class="block">The subset of the replicas that are offline</div>
 </li>
 </ul>
@@ -322,7 +322,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>

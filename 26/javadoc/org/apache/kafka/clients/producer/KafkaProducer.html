@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">KafkaProducer&lt;K,V&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.html" title="interface in org.apache.kafka.clients.producer">Producer</a>&lt;K,V&gt;</pre>
+implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.html" title="interface in org.apache.kafka.clients.producer">Producer</a>&lt;K,V&gt;</code></pre>
 <div class="block">A Kafka client that publishes records to the Kafka cluster.
  <P>
  The producer is <i>thread safe</i> and sharing a single producer instance across threads will generally be faster than
@@ -121,8 +121,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
  <p>
  Here is a simple example of using the producer to send records with strings containing sequential numbers as the key/value
  pairs.
- <pre>
- <code>
+ <pre class="line-numbers"><code class="language-text"> <code>
  Properties props = new Properties();
  props.put("bootstrap.servers", "localhost:9092");
  props.put("acks", "all");
@@ -134,7 +133,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
      producer.send(new ProducerRecord&lt;String, String&gt;("my-topic", Integer.toString(i), Integer.toString(i)));
 
  producer.close();
- </code></pre>
+ </code></code></pre>
  <p>
  The producer consists of a pool of buffer space that holds records that haven't yet been transmitted to the server
  as well as a background I/O thread that is responsible for turning these records into requests and transmitting them
@@ -209,8 +208,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
  100 messages are part of a single transaction.
  </p>
  <p>
- <pre>
- <code>
+ <pre class="line-numbers"><code class="language-text"> <code>
  Properties props = new Properties();
  props.put("bootstrap.servers", "localhost:9092");
  props.put("transactional.id", "my-transactional-id");
@@ -231,7 +229,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
      producer.abortTransaction();
  }
  producer.close();
- </code> </pre>
+ </code> </code></pre>
  </p>
  <p>
  As is hinted at in the example, there can be only one open transaction per producer. All messages sent between the
@@ -452,7 +450,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>NETWORK_THREAD_PREFIX</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> NETWORK_THREAD_PREFIX</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> NETWORK_THREAD_PREFIX</code></pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.apache.kafka.clients.producer.KafkaProducer.NETWORK_THREAD_PREFIX">Constant Field Values</a></dd>
@@ -465,7 +463,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <ul class="blockListLast">
 <li class="blockList">
 <h4>PRODUCER_METRIC_GROUP_NAME</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PRODUCER_METRIC_GROUP_NAME</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PRODUCER_METRIC_GROUP_NAME</code></pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.apache.kafka.clients.producer.KafkaProducer.PRODUCER_METRIC_GROUP_NAME">Constant Field Values</a></dd>
@@ -486,7 +484,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>KafkaProducer</h4>
-<pre>public&nbsp;KafkaProducer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;configs)</pre>
+<pre>public&nbsp;KafkaProducer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;configs)</code></pre>
 <div class="block">A producer is instantiated by providing a set of key-value pairs as configuration. Valid configuration strings
  are documented <a href="http://kafka.apache.org/documentation.html#producerconfigs">here</a>. Values can be
  either strings or Objects of the appropriate type (for example a numeric configuration would accept either the
@@ -507,7 +505,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <h4>KafkaProducer</h4>
 <pre>public&nbsp;KafkaProducer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;configs,
                      <a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html" title="type parameter in KafkaProducer">K</a>&gt;&nbsp;keySerializer,
-                     <a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html" title="type parameter in KafkaProducer">V</a>&gt;&nbsp;valueSerializer)</pre>
+                     <a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html" title="type parameter in KafkaProducer">V</a>&gt;&nbsp;valueSerializer)</code></pre>
 <div class="block">A producer is instantiated by providing a set of key-value pairs as configuration, a key and a value <a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization"><code>Serializer</code></a>.
  Valid configuration strings are documented <a href="http://kafka.apache.org/documentation.html#producerconfigs">here</a>.
  Values can be either strings or Objects of the appropriate type (for example a numeric configuration would accept
@@ -530,7 +528,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>KafkaProducer</h4>
-<pre>public&nbsp;KafkaProducer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;properties)</pre>
+<pre>public&nbsp;KafkaProducer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;properties)</code></pre>
 <div class="block">A producer is instantiated by providing a set of key-value pairs as configuration. Valid configuration strings
  are documented <a href="http://kafka.apache.org/documentation.html#producerconfigs">here</a>.
  <p>
@@ -549,7 +547,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <h4>KafkaProducer</h4>
 <pre>public&nbsp;KafkaProducer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;properties,
                      <a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html" title="type parameter in KafkaProducer">K</a>&gt;&nbsp;keySerializer,
-                     <a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html" title="type parameter in KafkaProducer">V</a>&gt;&nbsp;valueSerializer)</pre>
+                     <a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html" title="type parameter in KafkaProducer">V</a>&gt;&nbsp;valueSerializer)</code></pre>
 <div class="block">A producer is instantiated by providing a set of key-value pairs as configuration, a key and a value <a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization"><code>Serializer</code></a>.
  Valid configuration strings are documented <a href="http://kafka.apache.org/documentation.html#producerconfigs">here</a>.
  <p>
@@ -578,7 +576,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>initTransactions</h4>
-<pre>public&nbsp;void&nbsp;initTransactions()</pre>
+<pre>public&nbsp;void&nbsp;initTransactions()</code></pre>
 <div class="block">Needs to be called before any other methods when the transactional.id is set in the configuration.
 
  This method does the following:
@@ -615,7 +613,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <li class="blockList">
 <h4>beginTransaction</h4>
 <pre>public&nbsp;void&nbsp;beginTransaction()
-                      throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></pre>
+                      throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></code></pre>
 <div class="block">Should be called before the start of each new transaction. Note that prior to the first invocation
  of this method, you must invoke <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#initTransactions--"><code>initTransactions()</code></a> exactly one time.</div>
 <dl>
@@ -641,7 +639,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <h4>sendOffsetsToTransaction</h4>
 <pre>public&nbsp;void&nbsp;sendOffsetsToTransaction(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets,
                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;consumerGroupId)
-                              throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></pre>
+                              throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></code></pre>
 <div class="block">Sends a list of specified offsets to the consumer group coordinator, and also marks
  those offsets as part of the current transaction. These offsets will be considered
  committed only if the transaction is committed successfully. The committed offset should
@@ -678,7 +676,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <h4>sendOffsetsToTransaction</h4>
 <pre>public&nbsp;void&nbsp;sendOffsetsToTransaction(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets,
                                      <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerGroupMetadata.html" title="class in org.apache.kafka.clients.consumer">ConsumerGroupMetadata</a>&nbsp;groupMetadata)
-                              throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></pre>
+                              throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></code></pre>
 <div class="block">Sends a list of specified offsets to the consumer group coordinator, and also marks
  those offsets as part of the current transaction. These offsets will be considered
  committed only if the transaction is committed successfully. The committed offset should
@@ -724,7 +722,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <li class="blockList">
 <h4>commitTransaction</h4>
 <pre>public&nbsp;void&nbsp;commitTransaction()
-                       throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></pre>
+                       throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></code></pre>
 <div class="block">Commits the ongoing transaction. This method will flush any unsent records before actually committing the transaction.
 
  Further, if any of the <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#send-org.apache.kafka.clients.producer.ProducerRecord-"><code>send(ProducerRecord)</code></a> calls which were part of the transaction hit irrecoverable
@@ -759,7 +757,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <li class="blockList">
 <h4>abortTransaction</h4>
 <pre>public&nbsp;void&nbsp;abortTransaction()
-                      throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></pre>
+                      throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></code></pre>
 <div class="block">Aborts the ongoing transaction. Any unflushed produce messages will be aborted when this call is made.
  This call will throw an exception immediately if any prior <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#send-org.apache.kafka.clients.producer.ProducerRecord-"><code>send(ProducerRecord)</code></a> calls failed with a
  <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors"><code>ProducerFencedException</code></a> or an instance of <a href="../../../../../org/apache/kafka/common/errors/AuthorizationException.html" title="class in org.apache.kafka.common.errors"><code>AuthorizationException</code></a>.
@@ -790,7 +788,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>send</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/RecordMetadata.html" title="class in org.apache.kafka.clients.producer">RecordMetadata</a>&gt;&nbsp;send(<a href="../../../../../org/apache/kafka/clients/producer/ProducerRecord.html" title="class in org.apache.kafka.clients.producer">ProducerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html" title="type parameter in KafkaProducer">K</a>,<a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html" title="type parameter in KafkaProducer">V</a>&gt;&nbsp;record)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/RecordMetadata.html" title="class in org.apache.kafka.clients.producer">RecordMetadata</a>&gt;&nbsp;send(<a href="../../../../../org/apache/kafka/clients/producer/ProducerRecord.html" title="class in org.apache.kafka.clients.producer">ProducerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html" title="type parameter in KafkaProducer">K</a>,<a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html" title="type parameter in KafkaProducer">V</a>&gt;&nbsp;record)</code></pre>
 <div class="block">Asynchronously send a record to a topic. Equivalent to <code>send(record, null)</code>.
  See <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#send-org.apache.kafka.clients.producer.ProducerRecord-org.apache.kafka.clients.producer.Callback-"><code>send(ProducerRecord, Callback)</code></a> for details.</div>
 <dl>
@@ -806,7 +804,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <li class="blockList">
 <h4>send</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/RecordMetadata.html" title="class in org.apache.kafka.clients.producer">RecordMetadata</a>&gt;&nbsp;send(<a href="../../../../../org/apache/kafka/clients/producer/ProducerRecord.html" title="class in org.apache.kafka.clients.producer">ProducerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html" title="type parameter in KafkaProducer">K</a>,<a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html" title="type parameter in KafkaProducer">V</a>&gt;&nbsp;record,
-                                   <a href="../../../../../org/apache/kafka/clients/producer/Callback.html" title="interface in org.apache.kafka.clients.producer">Callback</a>&nbsp;callback)</pre>
+                                   <a href="../../../../../org/apache/kafka/clients/producer/Callback.html" title="interface in org.apache.kafka.clients.producer">Callback</a>&nbsp;callback)</code></pre>
 <div class="block">Asynchronously send a record to a topic and invoke the provided callback when the send has been acknowledged.
  <p>
  The send is asynchronous and this method will return immediately once the record has been stored in the buffer of
@@ -826,19 +824,17 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
  <p>
  If you want to simulate a simple blocking call you can call the <code>get()</code> method immediately:
 
- <pre>
- <code>
+ <pre class="line-numbers"><code class="language-text"> <code>
  byte[] key = "key".getBytes();
  byte[] value = "value".getBytes();
  ProducerRecord&lt;byte[],byte[]&gt; record = new ProducerRecord&lt;byte[],byte[]&gt;("my-topic", key, value)
  producer.send(record).get();
- </code></pre>
+ </code></code></pre>
  <p>
  Fully non-blocking usage can make use of the <a href="../../../../../org/apache/kafka/clients/producer/Callback.html" title="interface in org.apache.kafka.clients.producer"><code>Callback</code></a> parameter to provide a callback that
  will be invoked when the request is complete.
 
- <pre>
- <code>
+ <pre class="line-numbers"><code class="language-text"> <code>
  ProducerRecord&lt;byte[],byte[]&gt; record = new ProducerRecord&lt;byte[],byte[]&gt;("the-topic", key, value);
  producer.send(myRecord,
                new Callback() {
@@ -850,18 +846,15 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
                        }
                    }
                });
- </code>
- </pre>
+ </code></code></pre>
 
  Callbacks for records being sent to the same partition are guaranteed to execute in order. That is, in the
  following example <code>callback1</code> is guaranteed to execute before <code>callback2</code>:
 
- <pre>
- <code>
+ <pre class="line-numbers"><code class="language-text"> <code>
  producer.send(new ProducerRecord&lt;byte[],byte[]&gt;(topic, partition, key1, value1), callback1);
  producer.send(new ProducerRecord&lt;byte[],byte[]&gt;(topic, partition, key2, value2), callback2);
- </code>
- </pre>
+ </code></code></pre>
  <p>
  When used as part of a transaction, it is not necessary to define a callback or check the result of the future
  in order to detect errors from <code>send</code>. If any of the send calls failed with an irrecoverable error,
@@ -921,7 +914,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>flush</h4>
-<pre>public&nbsp;void&nbsp;flush()</pre>
+<pre>public&nbsp;void&nbsp;flush()</code></pre>
 <div class="block">Invoking this method makes all buffered records immediately available to send (even if <code>linger.ms</code> is
  greater than 0) and blocks on the completion of the requests associated with these records. The post-condition
  of <code>flush()</code> is that any previously sent record will have completed (e.g. <code>Future.isDone() == true</code>).
@@ -935,14 +928,12 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
  gives a convenient way to ensure all previously sent messages have actually completed.
  <p>
  This example shows how to consume from one Kafka topic and produce to another Kafka topic:
- <pre>
- <code>
+ <pre class="line-numbers"><code class="language-text"> <code>
  for(ConsumerRecord&lt;String, String&gt; record: consumer.poll(100))
      producer.send(new ProducerRecord("my-topic", record.key(), record.value());
  producer.flush();
  consumer.commit();
- </code>
- </pre>
+ </code></code></pre>
 
  Note that the above example may drop records if the produce request fails. If we want to ensure that this does not occur
  we need to set <code>retries=&lt;large_number&gt;</code> in our config.
@@ -966,7 +957,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>partitionsFor</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&nbsp;partitionsFor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&nbsp;partitionsFor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</code></pre>
 <div class="block">Get the partition metadata for the given topic. This can be used for custom partitioning.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -986,7 +977,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>metrics</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/MetricName.html" title="class in org.apache.kafka.common">MetricName</a>,? extends <a href="../../../../../org/apache/kafka/common/Metric.html" title="interface in org.apache.kafka.common">Metric</a>&gt;&nbsp;metrics()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/MetricName.html" title="class in org.apache.kafka.common">MetricName</a>,? extends <a href="../../../../../org/apache/kafka/common/Metric.html" title="interface in org.apache.kafka.common">Metric</a>&gt;&nbsp;metrics()</code></pre>
 <div class="block">Get the full set of internal metrics maintained by the producer.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -1000,7 +991,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>public&nbsp;void&nbsp;close()</pre>
+<pre>public&nbsp;void&nbsp;close()</code></pre>
 <div class="block">Close this producer. This method blocks until all previously sent requests complete.
  This method is equivalent to <code>close(Long.MAX_VALUE, TimeUnit.MILLISECONDS)</code>.
  <p>
@@ -1028,7 +1019,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <ul class="blockListLast">
 <li class="blockList">
 <h4>close</h4>
-<pre>public&nbsp;void&nbsp;close(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+<pre>public&nbsp;void&nbsp;close(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block">This method waits up to <code>timeout</code> for the producer to complete the sending of all incomplete requests.
  <p>
  If the producer is unable to complete all requests before the timeout expires, this method will fail

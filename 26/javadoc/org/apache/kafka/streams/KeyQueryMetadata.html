@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">KeyQueryMetadata</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">Represents all the metadata related to a key, where a particular key resides in a <a href="../../../../org/apache/kafka/streams/KafkaStreams.html" title="class in org.apache.kafka.streams"><code>KafkaStreams</code></a> application.
  It contains the active <a href="../../../../org/apache/kafka/streams/state/HostInfo.html" title="class in org.apache.kafka.streams.state"><code>HostInfo</code></a> and a set of standby <a href="../../../../org/apache/kafka/streams/state/HostInfo.html" title="class in org.apache.kafka.streams.state"><code>HostInfo</code></a>s, denoting the instances where the key resides.
  It also contains the partition number where the key belongs, which could be useful when used in conjunction with other APIs.
@@ -230,7 +230,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>NOT_AVAILABLE</h4>
-<pre>public static final&nbsp;<a href="../../../../org/apache/kafka/streams/KeyQueryMetadata.html" title="class in org.apache.kafka.streams">KeyQueryMetadata</a> NOT_AVAILABLE</pre>
+<pre>public static final&nbsp;<a href="../../../../org/apache/kafka/streams/KeyQueryMetadata.html" title="class in org.apache.kafka.streams">KeyQueryMetadata</a> NOT_AVAILABLE</code></pre>
 <div class="block">Sentinel to indicate that the KeyQueryMetadata is currently unavailable. This can occur during rebalance
  operations.</div>
 </li>
@@ -251,7 +251,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>KeyQueryMetadata</h4>
 <pre>public&nbsp;KeyQueryMetadata(<a href="../../../../org/apache/kafka/streams/state/HostInfo.html" title="class in org.apache.kafka.streams.state">HostInfo</a>&nbsp;activeHost,
                         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/apache/kafka/streams/state/HostInfo.html" title="class in org.apache.kafka.streams.state">HostInfo</a>&gt;&nbsp;standbyHosts,
-                        int&nbsp;partition)</pre>
+                        int&nbsp;partition)</code></pre>
 </li>
 </ul>
 </li>
@@ -268,7 +268,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getActiveHost</h4>
-<pre>public&nbsp;<a href="../../../../org/apache/kafka/streams/state/HostInfo.html" title="class in org.apache.kafka.streams.state">HostInfo</a>&nbsp;getActiveHost()</pre>
+<pre>public&nbsp;<a href="../../../../org/apache/kafka/streams/state/HostInfo.html" title="class in org.apache.kafka.streams.state">HostInfo</a>&nbsp;getActiveHost()</code></pre>
 <div class="block">Get the Active streams instance for given key</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -282,7 +282,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getStandbyHosts</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/apache/kafka/streams/state/HostInfo.html" title="class in org.apache.kafka.streams.state">HostInfo</a>&gt;&nbsp;getStandbyHosts()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/apache/kafka/streams/state/HostInfo.html" title="class in org.apache.kafka.streams.state">HostInfo</a>&gt;&nbsp;getStandbyHosts()</code></pre>
 <div class="block">Get the Streams instances that host the key as standbys</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -296,7 +296,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getPartition</h4>
-<pre>public&nbsp;int&nbsp;getPartition()</pre>
+<pre>public&nbsp;int&nbsp;getPartition()</code></pre>
 <div class="block">Get the Store partition corresponding to the key.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -310,7 +310,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;obj)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;obj)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -323,7 +323,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -336,7 +336,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>

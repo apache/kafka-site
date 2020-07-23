@@ -109,7 +109,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre><a href="../../../../../org/apache/kafka/common/annotation/InterfaceStability.Evolving.html" title="annotation in org.apache.kafka.common.annotation">@InterfaceStability.Evolving</a>
 public class <span class="typeNameLabel">AccessControlEntry</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">Represents an access control entry.  ACEs are a tuple of principal, host, operation, and permissionType.
 
  The API for this class is still evolving and we may break compatibility in minor releases, if necessary.</div>
@@ -232,7 +232,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <pre>public&nbsp;AccessControlEntry(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;principal,
                           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;host,
                           <a href="../../../../../org/apache/kafka/common/acl/AclOperation.html" title="enum in org.apache.kafka.common.acl">AclOperation</a>&nbsp;operation,
-                          <a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a>&nbsp;permissionType)</pre>
+                          <a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a>&nbsp;permissionType)</code></pre>
 <div class="block">Create an instance of an access control entry with the provided parameters.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -257,7 +257,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>principal</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;principal()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;principal()</code></pre>
 <div class="block">Return the principal for this entry.</div>
 </li>
 </ul>
@@ -267,7 +267,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>host</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;host()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;host()</code></pre>
 <div class="block">Return the host or `*` for all hosts.</div>
 </li>
 </ul>
@@ -277,7 +277,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>operation</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclOperation.html" title="enum in org.apache.kafka.common.acl">AclOperation</a>&nbsp;operation()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclOperation.html" title="enum in org.apache.kafka.common.acl">AclOperation</a>&nbsp;operation()</code></pre>
 <div class="block">Return the AclOperation. This method will never return AclOperation.ANY.</div>
 </li>
 </ul>
@@ -287,7 +287,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>permissionType</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a>&nbsp;permissionType()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a>&nbsp;permissionType()</code></pre>
 <div class="block">Return the AclPermissionType. This method will never return AclPermissionType.ANY.</div>
 </li>
 </ul>
@@ -297,7 +297,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>toFilter</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AccessControlEntryFilter.html" title="class in org.apache.kafka.common.acl">AccessControlEntryFilter</a>&nbsp;toFilter()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AccessControlEntryFilter.html" title="class in org.apache.kafka.common.acl">AccessControlEntryFilter</a>&nbsp;toFilter()</code></pre>
 <div class="block">Create a filter which matches only this AccessControlEntry.</div>
 </li>
 </ul>
@@ -307,7 +307,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -320,7 +320,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>isUnknown</h4>
-<pre>public&nbsp;boolean&nbsp;isUnknown()</pre>
+<pre>public&nbsp;boolean&nbsp;isUnknown()</code></pre>
 <div class="block">Return true if this AclResource has any UNKNOWN components.</div>
 </li>
 </ul>
@@ -330,7 +330,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -343,7 +343,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>

@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">UUIDSerializer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&gt;</pre>
+implements <a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&gt;</code></pre>
 <div class="block">We are converting UUID to String before serializing. String encoding defaults to UTF8 and can be customized by setting
   the property key.deserializer.encoding, value.deserializer.encoding or deserializer.encoding. The first two take precedence over the last.</div>
 </li>
@@ -200,7 +200,7 @@ implements <a href="../../../../../org/apache/kafka/common/serialization/Seriali
 <ul class="blockListLast">
 <li class="blockList">
 <h4>UUIDSerializer</h4>
-<pre>public&nbsp;UUIDSerializer()</pre>
+<pre>public&nbsp;UUIDSerializer()</code></pre>
 </li>
 </ul>
 </li>
@@ -218,7 +218,7 @@ implements <a href="../../../../../org/apache/kafka/common/serialization/Seriali
 <li class="blockList">
 <h4>configure</h4>
 <pre>public&nbsp;void&nbsp;configure(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;configs,
-                      boolean&nbsp;isKey)</pre>
+                      boolean&nbsp;isKey)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/common/serialization/Serializer.html#configure-java.util.Map-boolean-">Serializer</a></code></span></div>
 <div class="block">Configure this class.</div>
 <dl>
@@ -237,7 +237,7 @@ implements <a href="../../../../../org/apache/kafka/common/serialization/Seriali
 <li class="blockList">
 <h4>serialize</h4>
 <pre>public&nbsp;byte[]&nbsp;serialize(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
-                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;data)</pre>
+                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;data)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/common/serialization/Serializer.html#serialize-java.lang.String-T-">Serializer</a></code></span></div>
 <div class="block">Convert <code>data</code> into a byte array.</div>
 <dl>

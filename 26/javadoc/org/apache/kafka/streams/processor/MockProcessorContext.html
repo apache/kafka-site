@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">MockProcessorContext</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor">ProcessorContext</a>, org.apache.kafka.streams.processor.internals.RecordCollector.Supplier</pre>
+implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor">ProcessorContext</a>, org.apache.kafka.streams.processor.internals.RecordCollector.Supplier</code></pre>
 <div class="block"><a href="../../../../../org/apache/kafka/streams/processor/MockProcessorContext.html" title="class in org.apache.kafka.streams.processor"><code>MockProcessorContext</code></a> is a mock of <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor"><code>ProcessorContext</code></a> for users to test their <a href="../../../../../org/apache/kafka/streams/processor/Processor.html" title="interface in org.apache.kafka.streams.processor"><code>Processor</code></a>,
  <a href="../../../../../org/apache/kafka/streams/kstream/Transformer.html" title="interface in org.apache.kafka.streams.kstream"><code>Transformer</code></a>, and <a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformer.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueTransformer</code></a> implementations.
  <p>
@@ -455,7 +455,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>MockProcessorContext</h4>
-<pre>public&nbsp;MockProcessorContext()</pre>
+<pre>public&nbsp;MockProcessorContext()</code></pre>
 <div class="block">Create a <a href="../../../../../org/apache/kafka/streams/processor/MockProcessorContext.html" title="class in org.apache.kafka.streams.processor"><code>MockProcessorContext</code></a> with dummy <code>config</code> and <code>taskId</code> and <code>null</code> <code>stateDir</code>.
  Most unit tests using this mock won't need to know the taskId,
  and most unit tests should be able to get by with the
@@ -468,7 +468,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>MockProcessorContext</h4>
-<pre>public&nbsp;MockProcessorContext(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;config)</pre>
+<pre>public&nbsp;MockProcessorContext(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;config)</code></pre>
 <div class="block">Create a <a href="../../../../../org/apache/kafka/streams/processor/MockProcessorContext.html" title="class in org.apache.kafka.streams.processor"><code>MockProcessorContext</code></a> with dummy <code>taskId</code> and <code>null</code> <code>stateDir</code>.
  Most unit tests using this mock won't need to know the taskId,
  and most unit tests should be able to get by with the
@@ -487,7 +487,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <h4>MockProcessorContext</h4>
 <pre>public&nbsp;MockProcessorContext(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;config,
                             <a href="../../../../../org/apache/kafka/streams/processor/TaskId.html" title="class in org.apache.kafka.streams.processor">TaskId</a>&nbsp;taskId,
-                            <a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;stateDir)</pre>
+                            <a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;stateDir)</code></pre>
 <div class="block">Create a <a href="../../../../../org/apache/kafka/streams/processor/MockProcessorContext.html" title="class in org.apache.kafka.streams.processor"><code>MockProcessorContext</code></a> with a specified taskId and null stateDir.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -511,7 +511,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>applicationId</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;applicationId()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;applicationId()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#applicationId--">ProcessorContext</a></code></span></div>
 <div class="block">Returns the application id.</div>
 <dl>
@@ -528,7 +528,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>taskId</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/TaskId.html" title="class in org.apache.kafka.streams.processor">TaskId</a>&nbsp;taskId()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/TaskId.html" title="class in org.apache.kafka.streams.processor">TaskId</a>&nbsp;taskId()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#taskId--">ProcessorContext</a></code></span></div>
 <div class="block">Returns the task id.</div>
 <dl>
@@ -545,7 +545,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>appConfigs</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;appConfigs()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;appConfigs()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#appConfigs--">ProcessorContext</a></code></span></div>
 <div class="block">Returns all the application config properties as key/value pairs.
 
@@ -570,7 +570,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>appConfigsWithPrefix</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;appConfigsWithPrefix(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;prefix)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;appConfigsWithPrefix(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;prefix)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#appConfigsWithPrefix-java.lang.String-">ProcessorContext</a></code></span></div>
 <div class="block">Returns all the application config properties with the given key prefix, as key/value pairs
  stripping the prefix.
@@ -593,7 +593,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>keySerde</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;?&gt;&nbsp;keySerde()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;?&gt;&nbsp;keySerde()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#keySerde--">ProcessorContext</a></code></span></div>
 <div class="block">Returns the default key serde.</div>
 <dl>
@@ -610,7 +610,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>valueSerde</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;?&gt;&nbsp;valueSerde()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;?&gt;&nbsp;valueSerde()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#valueSerde--">ProcessorContext</a></code></span></div>
 <div class="block">Returns the default value serde.</div>
 <dl>
@@ -627,7 +627,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>stateDir</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;stateDir()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;stateDir()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#stateDir--">ProcessorContext</a></code></span></div>
 <div class="block">Returns the state directory for the partition.</div>
 <dl>
@@ -644,7 +644,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>metrics</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/StreamsMetrics.html" title="interface in org.apache.kafka.streams">StreamsMetrics</a>&nbsp;metrics()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/StreamsMetrics.html" title="interface in org.apache.kafka.streams">StreamsMetrics</a>&nbsp;metrics()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#metrics--">ProcessorContext</a></code></span></div>
 <div class="block">Returns Metrics instance.</div>
 <dl>
@@ -665,7 +665,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
                               int&nbsp;partition,
                               long&nbsp;offset,
                               <a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;headers,
-                              long&nbsp;timestamp)</pre>
+                              long&nbsp;timestamp)</code></pre>
 <div class="block">The context exposes these metadata for use in the processor. Normally, they are set by the Kafka Streams framework,
  but for the purpose of driving unit tests, you can set them directly.</div>
 <dl>
@@ -683,7 +683,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>setTopic</h4>
-<pre>public&nbsp;void&nbsp;setTopic(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</pre>
+<pre>public&nbsp;void&nbsp;setTopic(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</code></pre>
 <div class="block">The context exposes this metadata for use in the processor. Normally, they are set by the Kafka Streams framework,
  but for the purpose of driving unit tests, you can set it directly. Setting this attribute doesn't affect the others.</div>
 <dl>
@@ -698,7 +698,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>setPartition</h4>
-<pre>public&nbsp;void&nbsp;setPartition(int&nbsp;partition)</pre>
+<pre>public&nbsp;void&nbsp;setPartition(int&nbsp;partition)</code></pre>
 <div class="block">The context exposes this metadata for use in the processor. Normally, they are set by the Kafka Streams framework,
  but for the purpose of driving unit tests, you can set it directly. Setting this attribute doesn't affect the others.</div>
 <dl>
@@ -713,7 +713,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>setOffset</h4>
-<pre>public&nbsp;void&nbsp;setOffset(long&nbsp;offset)</pre>
+<pre>public&nbsp;void&nbsp;setOffset(long&nbsp;offset)</code></pre>
 <div class="block">The context exposes this metadata for use in the processor. Normally, they are set by the Kafka Streams framework,
  but for the purpose of driving unit tests, you can set it directly. Setting this attribute doesn't affect the others.</div>
 <dl>
@@ -728,7 +728,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>setHeaders</h4>
-<pre>public&nbsp;void&nbsp;setHeaders(<a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;headers)</pre>
+<pre>public&nbsp;void&nbsp;setHeaders(<a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;headers)</code></pre>
 <div class="block">The context exposes this metadata for use in the processor. Normally, they are set by the Kafka Streams framework,
  but for the purpose of driving unit tests, you can set it directly. Setting this attribute doesn't affect the others.</div>
 <dl>
@@ -743,7 +743,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>setTimestamp</h4>
-<pre>public&nbsp;void&nbsp;setTimestamp(long&nbsp;timestamp)</pre>
+<pre>public&nbsp;void&nbsp;setTimestamp(long&nbsp;timestamp)</code></pre>
 <div class="block">The context exposes this metadata for use in the processor. Normally, they are set by the Kafka Streams framework,
  but for the purpose of driving unit tests, you can set it directly. Setting this attribute doesn't affect the others.</div>
 <dl>
@@ -758,7 +758,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>topic</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#topic--">ProcessorContext</a></code></span></div>
 <div class="block">Returns the topic name of the current input record; could be null if it is not
  available (for example, if this method is invoked from the punctuate call).</div>
@@ -776,7 +776,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>partition</h4>
-<pre>public&nbsp;int&nbsp;partition()</pre>
+<pre>public&nbsp;int&nbsp;partition()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#partition--">ProcessorContext</a></code></span></div>
 <div class="block">Returns the partition id of the current input record; could be -1 if it is not
  available (for example, if this method is invoked from the punctuate call).</div>
@@ -794,7 +794,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>offset</h4>
-<pre>public&nbsp;long&nbsp;offset()</pre>
+<pre>public&nbsp;long&nbsp;offset()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#offset--">ProcessorContext</a></code></span></div>
 <div class="block">Returns the offset of the current input record; could be -1 if it is not
  available (for example, if this method is invoked from the punctuate call).</div>
@@ -812,7 +812,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>headers</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;headers()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;headers()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#headers--">ProcessorContext</a></code></span></div>
 <div class="block">Returns the headers of the current input record; could be null if it is not
  available (for example, if this method is invoked from the punctuate call).</div>
@@ -830,7 +830,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>timestamp</h4>
-<pre>public&nbsp;long&nbsp;timestamp()</pre>
+<pre>public&nbsp;long&nbsp;timestamp()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#timestamp--">ProcessorContext</a></code></span></div>
 <div class="block">Returns the current timestamp.
 
@@ -856,7 +856,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <li class="blockList">
 <h4>register</h4>
 <pre>public&nbsp;void&nbsp;register(<a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>&nbsp;store,
-                     <a href="../../../../../org/apache/kafka/streams/processor/StateRestoreCallback.html" title="interface in org.apache.kafka.streams.processor">StateRestoreCallback</a>&nbsp;stateRestoreCallbackIsIgnoredInMock)</pre>
+                     <a href="../../../../../org/apache/kafka/streams/processor/StateRestoreCallback.html" title="interface in org.apache.kafka.streams.processor">StateRestoreCallback</a>&nbsp;stateRestoreCallbackIsIgnoredInMock)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#register-org.apache.kafka.streams.processor.StateStore-org.apache.kafka.streams.processor.StateRestoreCallback-">ProcessorContext</a></code></span></div>
 <div class="block">Registers and possibly restores the specified storage engine.</div>
 <dl>
@@ -874,7 +874,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <ul class="blockList">
 <li class="blockList">
 <h4>getStateStore</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>&nbsp;getStateStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>&nbsp;getStateStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#getStateStore-java.lang.String-">ProcessorContext</a></code></span></div>
 <div class="block">Get the state store given the store name.</div>
 <dl>
@@ -896,7 +896,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/ProcessorC
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/Cancellable.html" title="interface in org.apache.kafka.streams.processor">Cancellable</a>&nbsp;schedule(long&nbsp;intervalMs,
                                         <a href="../../../../../org/apache/kafka/streams/processor/PunctuationType.html" title="enum in org.apache.kafka.streams.processor">PunctuationType</a>&nbsp;type,
-                                        <a href="../../../../../org/apache/kafka/streams/processor/Punctuator.html" title="interface in org.apache.kafka.streams.processor">Punctuator</a>&nbsp;callback)</pre>
+                                        <a href="../../../../../org/apache/kafka/streams/processor/Punctuator.html" title="interface in org.apache.kafka.streams.processor">Punctuator</a>&nbsp;callback)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#schedule-long-org.apache.kafka.streams.processor.PunctuationType-org.apache.kafka.streams.processor.Punctuator-">ProcessorContext</a></code></span></div>
 <div class="block">Schedules a periodic operation for processors. A processor may call this method during
@@ -944,7 +944,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/Cancellab
 <pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/Cancellable.html" title="interface in org.apache.kafka.streams.processor">Cancellable</a>&nbsp;schedule(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;interval,
                             <a href="../../../../../org/apache/kafka/streams/processor/PunctuationType.html" title="enum in org.apache.kafka.streams.processor">PunctuationType</a>&nbsp;type,
                             <a href="../../../../../org/apache/kafka/streams/processor/Punctuator.html" title="interface in org.apache.kafka.streams.processor">Punctuator</a>&nbsp;callback)
-                     throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                     throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#schedule-java.time.Duration-org.apache.kafka.streams.processor.PunctuationType-org.apache.kafka.streams.processor.Punctuator-">ProcessorContext</a></code></span></div>
 <div class="block">Schedules a periodic operation for processors. A processor may call this method during
  <a href="../../../../../org/apache/kafka/streams/processor/Processor.html#init-org.apache.kafka.streams.processor.ProcessorContext-"><code>initialization</code></a> or
@@ -990,7 +990,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/Cancellab
 <ul class="blockList">
 <li class="blockList">
 <h4>scheduledPunctuators</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/streams/processor/MockProcessorContext.CapturedPunctuator.html" title="class in org.apache.kafka.streams.processor">MockProcessorContext.CapturedPunctuator</a>&gt;&nbsp;scheduledPunctuators()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/streams/processor/MockProcessorContext.CapturedPunctuator.html" title="class in org.apache.kafka.streams.processor">MockProcessorContext.CapturedPunctuator</a>&gt;&nbsp;scheduledPunctuators()</code></pre>
 <div class="block">Get the punctuators scheduled so far. The returned list is not affected by subsequent calls to <code>schedule(...)</code>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1007,7 +1007,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/Cancellab
 <li class="blockList">
 <h4>forward</h4>
 <pre>public&nbsp;&lt;K,V&gt;&nbsp;void&nbsp;forward(K&nbsp;key,
-                          V&nbsp;value)</pre>
+                          V&nbsp;value)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#forward-K-V-">ProcessorContext</a></code></span></div>
 <div class="block">Forwards a key/value pair to all downstream processors.
  Used the input record's timestamp as timestamp for the output record.</div>
@@ -1030,7 +1030,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/Cancellab
 <h4>forward</h4>
 <pre>public&nbsp;&lt;K,V&gt;&nbsp;void&nbsp;forward(K&nbsp;key,
                           V&nbsp;value,
-                          <a href="../../../../../org/apache/kafka/streams/processor/To.html" title="class in org.apache.kafka.streams.processor">To</a>&nbsp;to)</pre>
+                          <a href="../../../../../org/apache/kafka/streams/processor/To.html" title="class in org.apache.kafka.streams.processor">To</a>&nbsp;to)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#forward-K-V-org.apache.kafka.streams.processor.To-">ProcessorContext</a></code></span></div>
 <div class="block">Forwards a key/value pair to the specified downstream processors.
  Can be used to set the timestamp of the output record.</div>
@@ -1055,7 +1055,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/Cancellab
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;&lt;K,V&gt;&nbsp;void&nbsp;forward(K&nbsp;key,
                                       V&nbsp;value,
-                                      int&nbsp;childIndex)</pre>
+                                      int&nbsp;childIndex)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#forward-K-V-int-">ProcessorContext</a></code></span></div>
 <div class="block">Forwards a key/value pair to one of the downstream processors designated by childIndex.</div>
@@ -1080,7 +1080,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;void&nbsp;forward(K&nbsp;key,
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;&lt;K,V&gt;&nbsp;void&nbsp;forward(K&nbsp;key,
                                       V&nbsp;value,
-                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;childName)</pre>
+                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;childName)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#forward-K-V-java.lang.String-">ProcessorContext</a></code></span></div>
 <div class="block">Forwards a key/value pair to one of the downstream processors designated by the downstream processor name.</div>
@@ -1100,7 +1100,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;void&nbsp;forward(K&nbsp;key,
 <ul class="blockList">
 <li class="blockList">
 <h4>forwarded</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/streams/processor/MockProcessorContext.CapturedForward.html" title="class in org.apache.kafka.streams.processor">MockProcessorContext.CapturedForward</a>&gt;&nbsp;forwarded()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/streams/processor/MockProcessorContext.CapturedForward.html" title="class in org.apache.kafka.streams.processor">MockProcessorContext.CapturedForward</a>&gt;&nbsp;forwarded()</code></pre>
 <div class="block">Get all the forwarded data this context has observed. The returned list will not be
  affected by subsequent interactions with the context. The data in the list is in the same order as the calls to
  <code>forward(...)</code>.</div>
@@ -1116,7 +1116,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;void&nbsp;forward(K&nbsp;key,
 <ul class="blockList">
 <li class="blockList">
 <h4>forwarded</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/streams/processor/MockProcessorContext.CapturedForward.html" title="class in org.apache.kafka.streams.processor">MockProcessorContext.CapturedForward</a>&gt;&nbsp;forwarded(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;childName)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/streams/processor/MockProcessorContext.CapturedForward.html" title="class in org.apache.kafka.streams.processor">MockProcessorContext.CapturedForward</a>&gt;&nbsp;forwarded(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;childName)</code></pre>
 <div class="block">Get all the forwarded data this context has observed for a specific child by name.
  The returned list will not be affected by subsequent interactions with the context.
  The data in the list is in the same order as the calls to <code>forward(...)</code>.</div>
@@ -1134,7 +1134,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;void&nbsp;forward(K&nbsp;key,
 <ul class="blockList">
 <li class="blockList">
 <h4>resetForwards</h4>
-<pre>public&nbsp;void&nbsp;resetForwards()</pre>
+<pre>public&nbsp;void&nbsp;resetForwards()</code></pre>
 <div class="block">Clear the captured forwarded data.</div>
 </li>
 </ul>
@@ -1144,7 +1144,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;void&nbsp;forward(K&nbsp;key,
 <ul class="blockList">
 <li class="blockList">
 <h4>commit</h4>
-<pre>public&nbsp;void&nbsp;commit()</pre>
+<pre>public&nbsp;void&nbsp;commit()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#commit--">ProcessorContext</a></code></span></div>
 <div class="block">Requests a commit.</div>
 <dl>
@@ -1159,7 +1159,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;void&nbsp;forward(K&nbsp;key,
 <ul class="blockList">
 <li class="blockList">
 <h4>committed</h4>
-<pre>public&nbsp;boolean&nbsp;committed()</pre>
+<pre>public&nbsp;boolean&nbsp;committed()</code></pre>
 <div class="block">Whether <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#commit--"><code>ProcessorContext.commit()</code></a> has been called in this context.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1173,7 +1173,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;void&nbsp;forward(K&nbsp;key,
 <ul class="blockList">
 <li class="blockList">
 <h4>resetCommit</h4>
-<pre>public&nbsp;void&nbsp;resetCommit()</pre>
+<pre>public&nbsp;void&nbsp;resetCommit()</code></pre>
 <div class="block">Reset the commit capture to <code>false</code> (whether or not it was previously <code>true</code>).</div>
 </li>
 </ul>
@@ -1183,7 +1183,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;void&nbsp;forward(K&nbsp;key,
 <ul class="blockListLast">
 <li class="blockList">
 <h4>recordCollector</h4>
-<pre>public&nbsp;org.apache.kafka.streams.processor.internals.RecordCollector&nbsp;recordCollector()</pre>
+<pre>public&nbsp;org.apache.kafka.streams.processor.internals.RecordCollector&nbsp;recordCollector()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>recordCollector</code>&nbsp;in interface&nbsp;<code>org.apache.kafka.streams.processor.internals.RecordCollector.Supplier</code></dd>

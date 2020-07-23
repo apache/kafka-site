@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public static class <span class="typeNameLabel">ExtendedDeserializer.Wrapper&lt;T&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../org/apache/kafka/common/serialization/ExtendedDeserializer.html" title="interface in org.apache.kafka.common.serialization">ExtendedDeserializer</a>&lt;T&gt;</pre>
+implements <a href="../../../../../org/apache/kafka/common/serialization/ExtendedDeserializer.html" title="interface in org.apache.kafka.common.serialization">ExtendedDeserializer</a>&lt;T&gt;</code></pre>
 </li>
 </ul>
 </div>
@@ -228,7 +228,7 @@ implements <a href="../../../../../org/apache/kafka/common/serialization/Extende
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Wrapper</h4>
-<pre>public&nbsp;Wrapper(<a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;<a href="../../../../../org/apache/kafka/common/serialization/ExtendedDeserializer.Wrapper.html" title="type parameter in ExtendedDeserializer.Wrapper">T</a>&gt;&nbsp;deserializer)</pre>
+<pre>public&nbsp;Wrapper(<a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;<a href="../../../../../org/apache/kafka/common/serialization/ExtendedDeserializer.Wrapper.html" title="type parameter in ExtendedDeserializer.Wrapper">T</a>&gt;&nbsp;deserializer)</code></pre>
 </li>
 </ul>
 </li>
@@ -247,7 +247,7 @@ implements <a href="../../../../../org/apache/kafka/common/serialization/Extende
 <h4>deserialize</h4>
 <pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/ExtendedDeserializer.Wrapper.html" title="type parameter in ExtendedDeserializer.Wrapper">T</a>&nbsp;deserialize(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
                      <a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;headers,
-                     byte[]&nbsp;data)</pre>
+                     byte[]&nbsp;data)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/common/serialization/ExtendedDeserializer.html#deserialize-java.lang.String-org.apache.kafka.common.header.Headers-byte:A-">ExtendedDeserializer</a></code></span></div>
 <div class="block">Deserialize a record value from a byte array into a value or object.</div>
 <dl>
@@ -271,7 +271,7 @@ implements <a href="../../../../../org/apache/kafka/common/serialization/Extende
 <li class="blockList">
 <h4>configure</h4>
 <pre>public&nbsp;void&nbsp;configure(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;configs,
-                      boolean&nbsp;isKey)</pre>
+                      boolean&nbsp;isKey)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html#configure-java.util.Map-boolean-">Deserializer</a></code></span></div>
 <div class="block">Configure this class.</div>
 <dl>
@@ -290,7 +290,7 @@ implements <a href="../../../../../org/apache/kafka/common/serialization/Extende
 <li class="blockList">
 <h4>deserialize</h4>
 <pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/ExtendedDeserializer.Wrapper.html" title="type parameter in ExtendedDeserializer.Wrapper">T</a>&nbsp;deserialize(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
-                     byte[]&nbsp;data)</pre>
+                     byte[]&nbsp;data)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html#deserialize-java.lang.String-byte:A-">Deserializer</a></code></span></div>
 <div class="block">Deserialize a record value from a byte array into a value or object.</div>
 <dl>
@@ -310,7 +310,7 @@ implements <a href="../../../../../org/apache/kafka/common/serialization/Extende
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>public&nbsp;void&nbsp;close()</pre>
+<pre>public&nbsp;void&nbsp;close()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html#close--">Deserializer</a></code></span></div>
 <div class="block">Close this deserializer.
  <p>
@@ -331,7 +331,7 @@ implements <a href="../../../../../org/apache/kafka/common/serialization/Extende
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ensureExtended</h4>
-<pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/ExtendedDeserializer.html" title="interface in org.apache.kafka.common.serialization">ExtendedDeserializer</a>&lt;T&gt;&nbsp;ensureExtended(<a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;T&gt;&nbsp;deserializer)</pre>
+<pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/ExtendedDeserializer.html" title="interface in org.apache.kafka.common.serialization">ExtendedDeserializer</a>&lt;T&gt;&nbsp;ensureExtended(<a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;T&gt;&nbsp;deserializer)</code></pre>
 </li>
 </ul>
 </li>

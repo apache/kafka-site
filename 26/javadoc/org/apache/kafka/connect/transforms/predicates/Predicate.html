@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">Predicate&lt;R extends <a href="../../../../../../org/apache/kafka/connect/connector/ConnectRecord.html" title="class in org.apache.kafka.connect.connector">ConnectRecord</a>&lt;R&gt;&gt;</span>
-extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a></pre>
+extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a></code></pre>
 <div class="block"><p>A predicate on records.
  Predicates can be used to conditionally apply a <a href="../../../../../../org/apache/kafka/connect/transforms/Transformation.html" title="interface in org.apache.kafka.connect.transforms"><code>Transformation</code></a>
  by configuring the transformation's <code>predicate</code> (and <code>negate</code>) configuration parameters.
@@ -178,7 +178,7 @@ extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>config</h4>
-<pre><a href="../../../../../../org/apache/kafka/common/config/ConfigDef.html" title="class in org.apache.kafka.common.config">ConfigDef</a>&nbsp;config()</pre>
+<pre><a href="../../../../../../org/apache/kafka/common/config/ConfigDef.html" title="class in org.apache.kafka.common.config">ConfigDef</a>&nbsp;config()</code></pre>
 <div class="block">Configuration specification for this predicate.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -194,7 +194,7 @@ extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>test</h4>
-<pre>boolean&nbsp;test(<a href="../../../../../../org/apache/kafka/connect/transforms/predicates/Predicate.html" title="type parameter in Predicate">R</a>&nbsp;record)</pre>
+<pre>boolean&nbsp;test(<a href="../../../../../../org/apache/kafka/connect/transforms/predicates/Predicate.html" title="type parameter in Predicate">R</a>&nbsp;record)</code></pre>
 <div class="block">Returns whether the given record satisfies this predicate.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -210,7 +210,7 @@ extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" ti
 <ul class="blockListLast">
 <li class="blockList">
 <h4>close</h4>
-<pre>void&nbsp;close()</pre>
+<pre>void&nbsp;close()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true#close--" title="class or interface in java.lang">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a></code></dd>

@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public final class <span class="typeNameLabel">StateSerdes&lt;K,V&gt;</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">Factory for creating serializers / deserializers for state stores in Kafka Streams.</div>
 </li>
 </ul>
@@ -261,7 +261,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>StateSerdes</h4>
 <pre>public&nbsp;StateSerdes(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
                    <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">K</a>&gt;&nbsp;keySerde,
-                   <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">V</a>&gt;&nbsp;valueSerde)</pre>
+                   <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">V</a>&gt;&nbsp;valueSerde)</code></pre>
 <div class="block">Create a context for serialization using the specified serializers and deserializers which
  <em>must</em> match the key and value types used as parameters for this object; the state changelog topic
  is provided to bind this serde factory to, so that future calls for serialize / deserialize do not
@@ -292,7 +292,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>withBuiltinTypes</h4>
 <pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="class in org.apache.kafka.streams.state">StateSerdes</a>&lt;K,V&gt;&nbsp;withBuiltinTypes(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
                                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;K&gt;&nbsp;keyClass,
-                                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;V&gt;&nbsp;valueClass)</pre>
+                                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;V&gt;&nbsp;valueClass)</code></pre>
 <div class="block">Create a new instance of <a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="class in org.apache.kafka.streams.state"><code>StateSerdes</code></a> for the given state name and key-/value-type classes.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -313,7 +313,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>keySerde</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">K</a>&gt;&nbsp;keySerde()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">K</a>&gt;&nbsp;keySerde()</code></pre>
 <div class="block">Return the key serde.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -327,7 +327,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>valueSerde</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">V</a>&gt;&nbsp;valueSerde()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">V</a>&gt;&nbsp;valueSerde()</code></pre>
 <div class="block">Return the value serde.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -341,7 +341,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>keyDeserializer</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">K</a>&gt;&nbsp;keyDeserializer()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">K</a>&gt;&nbsp;keyDeserializer()</code></pre>
 <div class="block">Return the key deserializer.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -355,7 +355,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>keySerializer</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">K</a>&gt;&nbsp;keySerializer()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">K</a>&gt;&nbsp;keySerializer()</code></pre>
 <div class="block">Return the key serializer.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -369,7 +369,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>valueDeserializer</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">V</a>&gt;&nbsp;valueDeserializer()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">V</a>&gt;&nbsp;valueDeserializer()</code></pre>
 <div class="block">Return the value deserializer.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -383,7 +383,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>valueSerializer</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">V</a>&gt;&nbsp;valueSerializer()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">V</a>&gt;&nbsp;valueSerializer()</code></pre>
 <div class="block">Return the value serializer.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -397,7 +397,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>topic</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic()</code></pre>
 <div class="block">Return the topic.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -411,7 +411,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>keyFrom</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">K</a>&nbsp;keyFrom(byte[]&nbsp;rawKey)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">K</a>&nbsp;keyFrom(byte[]&nbsp;rawKey)</code></pre>
 <div class="block">Deserialize the key from raw bytes.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -427,7 +427,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>valueFrom</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">V</a>&nbsp;valueFrom(byte[]&nbsp;rawValue)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">V</a>&nbsp;valueFrom(byte[]&nbsp;rawValue)</code></pre>
 <div class="block">Deserialize the value from raw bytes.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -445,7 +445,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>rawKey</h4>
-<pre>public&nbsp;byte[]&nbsp;rawKey(<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">K</a>&nbsp;key)</pre>
+<pre>public&nbsp;byte[]&nbsp;rawKey(<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">K</a>&nbsp;key)</code></pre>
 <div class="block">Serialize the given key.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -463,7 +463,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>rawValue</h4>
-<pre>public&nbsp;byte[]&nbsp;rawValue(<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">V</a>&nbsp;value)</pre>
+<pre>public&nbsp;byte[]&nbsp;rawValue(<a href="../../../../../org/apache/kafka/streams/state/StateSerdes.html" title="type parameter in StateSerdes">V</a>&nbsp;value)</code></pre>
 <div class="block">Serialize the given value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

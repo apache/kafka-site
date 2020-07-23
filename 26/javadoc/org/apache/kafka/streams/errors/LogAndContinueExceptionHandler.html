@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">LogAndContinueExceptionHandler</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../org/apache/kafka/streams/errors/DeserializationExceptionHandler.html" title="interface in org.apache.kafka.streams.errors">DeserializationExceptionHandler</a></pre>
+implements <a href="../../../../../org/apache/kafka/streams/errors/DeserializationExceptionHandler.html" title="interface in org.apache.kafka.streams.errors">DeserializationExceptionHandler</a></code></pre>
 <div class="block">Deserialization handler that logs a deserialization exception and then
  signals the processing pipeline to continue processing more records.</div>
 </li>
@@ -208,7 +208,7 @@ implements <a href="../../../../../org/apache/kafka/streams/errors/Deserializati
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LogAndContinueExceptionHandler</h4>
-<pre>public&nbsp;LogAndContinueExceptionHandler()</pre>
+<pre>public&nbsp;LogAndContinueExceptionHandler()</code></pre>
 </li>
 </ul>
 </li>
@@ -227,7 +227,7 @@ implements <a href="../../../../../org/apache/kafka/streams/errors/Deserializati
 <h4>handle</h4>
 <pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/errors/DeserializationExceptionHandler.DeserializationHandlerResponse.html" title="enum in org.apache.kafka.streams.errors">DeserializationExceptionHandler.DeserializationHandlerResponse</a>&nbsp;handle(<a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor">ProcessorContext</a>&nbsp;context,
                                                                              <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;byte[],byte[]&gt;&nbsp;record,
-                                                                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a>&nbsp;exception)</pre>
+                                                                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a>&nbsp;exception)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/errors/DeserializationExceptionHandler.html#handle-org.apache.kafka.streams.processor.ProcessorContext-org.apache.kafka.clients.consumer.ConsumerRecord-java.lang.Exception-">DeserializationExceptionHandler</a></code></span></div>
 <div class="block">Inspect a record and the exception received.</div>
 <dl>
@@ -246,7 +246,7 @@ implements <a href="../../../../../org/apache/kafka/streams/errors/Deserializati
 <ul class="blockListLast">
 <li class="blockList">
 <h4>configure</h4>
-<pre>public&nbsp;void&nbsp;configure(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;configs)</pre>
+<pre>public&nbsp;void&nbsp;configure(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;configs)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/common/Configurable.html#configure-java.util.Map-">Configurable</a></code></span></div>
 <div class="block">Configure this class with the given key-value pairs</div>
 <dl>

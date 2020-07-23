@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public interface <span class="typeNameLabel">ExtendedSerializer&lt;T&gt;</span>
-extends <a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;T&gt;</pre>
+extends <a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;T&gt;</code></pre>
 <div class="block">A Serializer that has access to the headers associated with the record.
 
  Prefer <a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization"><code>Serializer</code></a> if access to the headers is not required. Once Kafka drops support for Java 7, the
@@ -204,7 +204,7 @@ extends <a href="../../../../../org/apache/kafka/common/serialization/Serializer
 <h4>serialize</h4>
 <pre>byte[]&nbsp;serialize(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
                  <a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;headers,
-                 <a href="../../../../../org/apache/kafka/common/serialization/ExtendedSerializer.html" title="type parameter in ExtendedSerializer">T</a>&nbsp;data)</pre>
+                 <a href="../../../../../org/apache/kafka/common/serialization/ExtendedSerializer.html" title="type parameter in ExtendedSerializer">T</a>&nbsp;data)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Convert <code>data</code> into a byte array.</div>
 <dl>

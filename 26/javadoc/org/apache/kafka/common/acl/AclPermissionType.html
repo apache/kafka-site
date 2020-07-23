@@ -118,7 +118,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre><a href="../../../../../org/apache/kafka/common/annotation/InterfaceStability.Evolving.html" title="annotation in org.apache.kafka.common.annotation">@InterfaceStability.Evolving</a>
 public enum <span class="typeNameLabel">AclPermissionType</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Enum.html?is-external=true" title="class or interface in java.lang">Enum</a>&lt;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a>&gt;</pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Enum.html?is-external=true" title="class or interface in java.lang">Enum</a>&lt;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a>&gt;</code></pre>
 <div class="block">Represents whether an ACL grants or denies permissions.
 
  The API for this class is still evolving and we may break compatibility in minor releases, if necessary.</div>
@@ -247,7 +247,7 @@ the order they are declared.</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>UNKNOWN</h4>
-<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a> UNKNOWN</pre>
+<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a> UNKNOWN</code></pre>
 <div class="block">Represents any AclPermissionType which this client cannot understand,
  perhaps because this client is too old.</div>
 </li>
@@ -258,7 +258,7 @@ the order they are declared.</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>ANY</h4>
-<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a> ANY</pre>
+<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a> ANY</code></pre>
 <div class="block">In a filter, matches any AclPermissionType.</div>
 </li>
 </ul>
@@ -268,7 +268,7 @@ the order they are declared.</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>DENY</h4>
-<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a> DENY</pre>
+<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a> DENY</code></pre>
 <div class="block">Disallows access.</div>
 </li>
 </ul>
@@ -278,7 +278,7 @@ the order they are declared.</div>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ALLOW</h4>
-<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a> ALLOW</pre>
+<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a> ALLOW</code></pre>
 <div class="block">Grants access.</div>
 </li>
 </ul>
@@ -296,14 +296,12 @@ the order they are declared.</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>values</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a>[]&nbsp;values()</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a>[]&nbsp;values()</code></pre>
 <div class="block">Returns an array containing the constants of this enum type, in
 the order they are declared.  This method may be used to iterate
 over the constants as follows:
-<pre>
-for (AclPermissionType c : AclPermissionType.values())
-&nbsp;   System.out.println(c);
-</pre></div>
+<pre class="line-numbers"><code class="language-text">for (AclPermissionType c : AclPermissionType.values())
+&nbsp;   System.out.println(c);</code></pre></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>an array containing the constants of this enum type, in the order they are declared</dd>
@@ -316,7 +314,7 @@ for (AclPermissionType c : AclPermissionType.values())
 <ul class="blockList">
 <li class="blockList">
 <h4>valueOf</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a>&nbsp;valueOf(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a>&nbsp;valueOf(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code></pre>
 <div class="block">Returns the enum constant of this type with the specified name.
 The string must match <i>exactly</i> an identifier used to declare an
 enum constant in this type.  (Extraneous whitespace characters are 
@@ -338,7 +336,7 @@ not permitted.)</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>fromString</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a>&nbsp;fromString(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;str)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a>&nbsp;fromString(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;str)</code></pre>
 <div class="block">Parse the given string as an ACL permission.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -354,7 +352,7 @@ not permitted.)</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>fromCode</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a>&nbsp;fromCode(byte&nbsp;code)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclPermissionType.html" title="enum in org.apache.kafka.common.acl">AclPermissionType</a>&nbsp;fromCode(byte&nbsp;code)</code></pre>
 <div class="block">Return the AclPermissionType with the provided code or `AclPermissionType.UNKNOWN` if one cannot be found.</div>
 </li>
 </ul>
@@ -364,7 +362,7 @@ not permitted.)</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>code</h4>
-<pre>public&nbsp;byte&nbsp;code()</pre>
+<pre>public&nbsp;byte&nbsp;code()</code></pre>
 <div class="block">Return the code of this permission type.</div>
 </li>
 </ul>
@@ -374,7 +372,7 @@ not permitted.)</div>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>isUnknown</h4>
-<pre>public&nbsp;boolean&nbsp;isUnknown()</pre>
+<pre>public&nbsp;boolean&nbsp;isUnknown()</code></pre>
 <div class="block">Return true if this permission type is UNKNOWN.</div>
 </li>
 </ul>

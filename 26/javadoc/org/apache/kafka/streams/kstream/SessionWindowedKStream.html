@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">SessionWindowedKStream&lt;K,V&gt;</span></pre>
+<pre>public interface <span class="typeNameLabel">SessionWindowedKStream&lt;K,V&gt;</span></code></pre>
 <div class="block"><code>SessionWindowedKStream</code> is an abstraction of a <i>windowed</i> record stream of <a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a> pairs.
  It is an intermediate representation after a grouping and windowing of a <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a> before an aggregation is
  applied to the new (partitioned) windows resulting in a windowed <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream"><code>KTable</code></a> (a <emph>windowed</emph>
@@ -255,7 +255,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>count</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;count()</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;count()</code></pre>
 <div class="block">Count the number of records in this stream by the grouped key and defined sessions.
  Note that sessions are generated on a per-key basis and records with different keys create independent sessions.
  Records with <code>null</code> key or value are ignored.
@@ -292,7 +292,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>count</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;count(<a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;count(<a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</code></pre>
 <div class="block">Count the number of records in this stream by the grouped key and defined sessions.
  Note that sessions are generated on a per-key basis and records with different keys create independent sessions.
  Records with <code>null</code> key or value are ignored.
@@ -331,7 +331,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>count</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;count(<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;count(<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Count the number of records in this stream by the grouped key and defined sessions.
  Note that sessions are generated on a per-key basis and records with different keys create independent sessions.
  Records with <code>null</code> key or value are ignored.
@@ -355,7 +355,7 @@ var activeTableTab = "activeTableTab";
  ReadOnlySessionStore&lt;String,Long&gt; localWindowStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;ReadOnlySessionStore&lt;String, Long&gt;);
  String key = "some-key";
  KeyValueIterator&lt;Windowed&lt;String&gt;, Long&gt; sumForKeyForWindows = localWindowStore.fetch(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.
  <p>
@@ -386,7 +386,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>count</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;count(<a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                               <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                               <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Count the number of records in this stream by the grouped key and defined sessions.
  Note that sessions are generated on a per-key basis and records with different keys create independent sessions.
  Records with <code>null</code> key or value are ignored.
@@ -410,7 +410,7 @@ var activeTableTab = "activeTableTab";
  ReadOnlySessionStore&lt;String,Long&gt; localWindowStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;ReadOnlySessionStore&lt;String, Long&gt;);
  String key = "some-key";
  KeyValueIterator&lt;Windowed&lt;String&gt;, Long&gt; sumForKeyForWindows = localWindowStore.fetch(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.
  <p>
@@ -443,7 +443,7 @@ var activeTableTab = "activeTableTab";
 <h4>aggregate</h4>
 <pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>&gt;,VR&gt;&nbsp;aggregate(<a href="../../../../../org/apache/kafka/streams/kstream/Initializer.html" title="interface in org.apache.kafka.streams.kstream">Initializer</a>&lt;VR&gt;&nbsp;initializer,
                                       <a href="../../../../../org/apache/kafka/streams/kstream/Aggregator.html" title="interface in org.apache.kafka.streams.kstream">Aggregator</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>,VR&gt;&nbsp;aggregator,
-                                      <a href="../../../../../org/apache/kafka/streams/kstream/Merger.html" title="interface in org.apache.kafka.streams.kstream">Merger</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,VR&gt;&nbsp;sessionMerger)</pre>
+                                      <a href="../../../../../org/apache/kafka/streams/kstream/Merger.html" title="interface in org.apache.kafka.streams.kstream">Merger</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,VR&gt;&nbsp;sessionMerger)</code></pre>
 <div class="block">Aggregate the values of records in this stream by the grouped key and defined sessions.
  Note that sessions are generated on a per-key basis and records with different keys create independent sessions.
  Records with <code>null</code> key or value are ignored.
@@ -502,7 +502,7 @@ var activeTableTab = "activeTableTab";
 <pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>&gt;,VR&gt;&nbsp;aggregate(<a href="../../../../../org/apache/kafka/streams/kstream/Initializer.html" title="interface in org.apache.kafka.streams.kstream">Initializer</a>&lt;VR&gt;&nbsp;initializer,
                                       <a href="../../../../../org/apache/kafka/streams/kstream/Aggregator.html" title="interface in org.apache.kafka.streams.kstream">Aggregator</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>,VR&gt;&nbsp;aggregator,
                                       <a href="../../../../../org/apache/kafka/streams/kstream/Merger.html" title="interface in org.apache.kafka.streams.kstream">Merger</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,VR&gt;&nbsp;sessionMerger,
-                                      <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</pre>
+                                      <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</code></pre>
 <div class="block">Aggregate the values of records in this stream by the grouped key and defined sessions.
  Note that sessions are generated on a per-key basis and records with different keys create independent sessions.
  Records with <code>null</code> key or value are ignored.
@@ -562,7 +562,7 @@ var activeTableTab = "activeTableTab";
 <pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>&gt;,VR&gt;&nbsp;aggregate(<a href="../../../../../org/apache/kafka/streams/kstream/Initializer.html" title="interface in org.apache.kafka.streams.kstream">Initializer</a>&lt;VR&gt;&nbsp;initializer,
                                       <a href="../../../../../org/apache/kafka/streams/kstream/Aggregator.html" title="interface in org.apache.kafka.streams.kstream">Aggregator</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>,VR&gt;&nbsp;aggregator,
                                       <a href="../../../../../org/apache/kafka/streams/kstream/Merger.html" title="interface in org.apache.kafka.streams.kstream">Merger</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,VR&gt;&nbsp;sessionMerger,
-                                      <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                                      <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Aggregate the values of records in this stream by the grouped key and defined sessions.
  Note that sessions are generated on a per-key basis and records with different keys create independent sessions.
  Records with <code>null</code> key or value are ignored.
@@ -596,7 +596,7 @@ var activeTableTab = "activeTableTab";
  ReadOnlySessionStore&lt;String, Long&gt; sessionStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;sessionStore());
  String key = "some-key";
  KeyValueIterator&lt;Windowed&lt;String&gt;, Long&gt; aggForKeyForSession = localWindowStore.fetch(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.
  <p>
@@ -633,7 +633,7 @@ var activeTableTab = "activeTableTab";
                                       <a href="../../../../../org/apache/kafka/streams/kstream/Aggregator.html" title="interface in org.apache.kafka.streams.kstream">Aggregator</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>,VR&gt;&nbsp;aggregator,
                                       <a href="../../../../../org/apache/kafka/streams/kstream/Merger.html" title="interface in org.apache.kafka.streams.kstream">Merger</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,VR&gt;&nbsp;sessionMerger,
                                       <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                                      <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                                      <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Aggregate the values of records in this stream by the grouped key and defined sessions.
  Note that sessions are generated on a per-key basis and records with different keys create independent sessions.
  Records with <code>null</code> key or value are ignored.
@@ -667,7 +667,7 @@ var activeTableTab = "activeTableTab";
  ReadOnlySessionStore&lt;String, Long&gt; sessionStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;sessionStore());
  String key = "some-key";
  KeyValueIterator&lt;Windowed&lt;String&gt;, Long&gt; aggForKeyForSession = localWindowStore.fetch(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.
  <p>
@@ -701,7 +701,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>reduce</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>&gt;,<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>&gt;&nbsp;reduce(<a href="../../../../../org/apache/kafka/streams/kstream/Reducer.html" title="interface in org.apache.kafka.streams.kstream">Reducer</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>&gt;&nbsp;reducer)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>&gt;,<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>&gt;&nbsp;reduce(<a href="../../../../../org/apache/kafka/streams/kstream/Reducer.html" title="interface in org.apache.kafka.streams.kstream">Reducer</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>&gt;&nbsp;reducer)</code></pre>
 <div class="block">Combine the values of records in this stream by the grouped key and defined sessions.
  Note that sessions are generated on a per-key basis and records with different keys create independent sessions.
  Records with <code>null</code> key or value are ignored.
@@ -722,7 +722,7 @@ var activeTableTab = "activeTableTab";
      return aggValue + currValue;
    }
  }
- </code></pre>
+ </code></code></pre>
  Thus, <code>reduce()</code> can be used to compute aggregate functions like sum, min, or max.
  <p>
  Not all updates might get sent downstream, as an internal cache is used to deduplicate consecutive updates to
@@ -755,7 +755,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>reduce</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>&gt;,<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>&gt;&nbsp;reduce(<a href="../../../../../org/apache/kafka/streams/kstream/Reducer.html" title="interface in org.apache.kafka.streams.kstream">Reducer</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>&gt;&nbsp;reducer,
-                             <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</pre>
+                             <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</code></pre>
 <div class="block">Combine the values of records in this stream by the grouped key and defined sessions.
  Note that sessions are generated on a per-key basis and records with different keys create independent sessions.
  Records with <code>null</code> key or value are ignored.
@@ -776,7 +776,7 @@ var activeTableTab = "activeTableTab";
      return aggValue + currValue;
    }
  }
- </code></pre>
+ </code></code></pre>
  Thus, <code>reduce()</code> can be used to compute aggregate functions like sum, min, or max.
  <p>
  Not all updates might get sent downstream, as an internal cache is used to deduplicate consecutive updates to
@@ -810,7 +810,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>reduce</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>&gt;,<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>&gt;&nbsp;reduce(<a href="../../../../../org/apache/kafka/streams/kstream/Reducer.html" title="interface in org.apache.kafka.streams.kstream">Reducer</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>&gt;&nbsp;reducer,
-                             <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>,<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                             <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>,<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Combine the values of records in this stream by the grouped key and defined sessions.
  Note that sessions are generated on a per-key basis and records with different keys create independent sessions.
  Records with <code>null</code> key or value are ignored.
@@ -830,7 +830,7 @@ var activeTableTab = "activeTableTab";
      return aggValue + currValue;
    }
  }
- </code></pre>
+ </code></code></pre>
  Thus, <code>reduce()</code> can be used to compute aggregate functions like sum, min, or max.
  <p>
  Not all updates might get sent downstream, as an internal cache will be used to deduplicate consecutive updates
@@ -848,7 +848,7 @@ var activeTableTab = "activeTableTab";
  ReadOnlySessionStore&lt;String,Long&gt; localWindowStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;ReadOnlySessionStore&lt;String, Long&gt;);
  String key = "some-key";
  KeyValueIterator&lt;Windowed&lt;String&gt;, Long&gt; sumForKeyForWindows = localWindowStore.fetch(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.
  <p>
@@ -879,7 +879,7 @@ var activeTableTab = "activeTableTab";
 <h4>reduce</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>&gt;,<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>&gt;&nbsp;reduce(<a href="../../../../../org/apache/kafka/streams/kstream/Reducer.html" title="interface in org.apache.kafka.streams.kstream">Reducer</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>&gt;&nbsp;reducer,
                              <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                             <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>,<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                             <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="type parameter in SessionWindowedKStream">V</a>,<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Combine the values of records in this stream by the grouped key and defined sessions.
  Note that sessions are generated on a per-key basis and records with different keys create independent sessions.
  Records with <code>null</code> key or value are ignored.
@@ -899,7 +899,7 @@ var activeTableTab = "activeTableTab";
      return aggValue + currValue;
    }
  }
- </code></pre>
+ </code></code></pre>
  Thus, <code>reduce()</code> can be used to compute aggregate functions like sum, min, or max.
  <p>
  Not all updates might get sent downstream, as an internal cache will be used to deduplicate consecutive updates
@@ -917,7 +917,7 @@ var activeTableTab = "activeTableTab";
  ReadOnlySessionStore&lt;String,Long&gt; localWindowStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;ReadOnlySessionStore&lt;String, Long&gt;);
  String key = "some-key";
  KeyValueIterator&lt;Windowed&lt;String&gt;, Long&gt; sumForKeyForWindows = localWindowStore.fetch(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.
  <p>

@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">OAuthBearerLoginModule</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/spi/LoginModule.html?is-external=true" title="class or interface in javax.security.auth.spi">LoginModule</a></pre>
+implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/spi/LoginModule.html?is-external=true" title="class or interface in javax.security.auth.spi">LoginModule</a></code></pre>
 <div class="block">The <code>LoginModule</code> for the SASL/OAUTHBEARER mechanism. When a client
  (whether a non-broker client or a broker when SASL/OAUTHBEARER is the
  inter-broker protocol) connects to Kafka the <code>OAuthBearerLoginModule</code>
@@ -196,12 +196,10 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
  Here is a typical, basic JAAS configuration for a client leveraging unsecured
  SASL/OAUTHBEARER authentication:
 
- <pre>
- KafkaClient {
+ <pre class="line-numbers"><code class="language-text"> KafkaClient {
       org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule Required
       unsecuredLoginStringClaim_sub="thePrincipalName";
- };
- </pre>
+ };</code></pre>
 
  An implementation of the <a href="../../../../../../org/apache/kafka/common/security/auth/Login.html" title="interface in org.apache.kafka.common.security.auth"><code>Login</code></a> interface specific to the
  <code>OAUTHBEARER</code> mechanism is automatically applied; it periodically
@@ -271,12 +269,10 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
  Here is a typical, basic JAAS configuration for a broker leveraging unsecured
  SASL/OAUTHBEARER validation:
 
- <pre>
- KafkaServer {
+ <pre class="line-numbers"><code class="language-text"> KafkaServer {
       org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule Required
       unsecuredLoginStringClaim_sub="thePrincipalName";
- };
- </pre>
+ };</code></pre>
 
  Production use cases will require writing an implementation of
  <a href="../../../../../../org/apache/kafka/common/security/auth/AuthenticateCallbackHandler.html" title="interface in org.apache.kafka.common.security.auth"><code>AuthenticateCallbackHandler</code></a> that can handle an instance of
@@ -417,7 +413,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockListLast">
 <li class="blockList">
 <h4>OAUTHBEARER_MECHANISM</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> OAUTHBEARER_MECHANISM</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> OAUTHBEARER_MECHANISM</code></pre>
 <div class="block">The SASL Mechanism name for OAuth 2: <code>OAUTHBEARER</code></div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -439,7 +435,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockListLast">
 <li class="blockList">
 <h4>OAuthBearerLoginModule</h4>
-<pre>public&nbsp;OAuthBearerLoginModule()</pre>
+<pre>public&nbsp;OAuthBearerLoginModule()</code></pre>
 </li>
 </ul>
 </li>
@@ -459,7 +455,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <pre>public&nbsp;void&nbsp;initialize(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
                        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/callback/CallbackHandler.html?is-external=true" title="class or interface in javax.security.auth.callback">CallbackHandler</a>&nbsp;callbackHandler,
                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;sharedState,
-                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;options)</pre>
+                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;options)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/spi/LoginModule.html?is-external=true#initialize-javax.security.auth.Subject-javax.security.auth.callback.CallbackHandler-java.util.Map-java.util.Map-" title="class or interface in javax.security.auth.spi">initialize</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/spi/LoginModule.html?is-external=true" title="class or interface in javax.security.auth.spi">LoginModule</a></code></dd>
@@ -473,7 +469,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <li class="blockList">
 <h4>login</h4>
 <pre>public&nbsp;boolean&nbsp;login()
-              throws <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/login/LoginException.html?is-external=true" title="class or interface in javax.security.auth.login">LoginException</a></pre>
+              throws <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/login/LoginException.html?is-external=true" title="class or interface in javax.security.auth.login">LoginException</a></code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/spi/LoginModule.html?is-external=true#login--" title="class or interface in javax.security.auth.spi">login</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/spi/LoginModule.html?is-external=true" title="class or interface in javax.security.auth.spi">LoginModule</a></code></dd>
@@ -488,7 +484,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockList">
 <li class="blockList">
 <h4>logout</h4>
-<pre>public&nbsp;boolean&nbsp;logout()</pre>
+<pre>public&nbsp;boolean&nbsp;logout()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/spi/LoginModule.html?is-external=true#logout--" title="class or interface in javax.security.auth.spi">logout</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/spi/LoginModule.html?is-external=true" title="class or interface in javax.security.auth.spi">LoginModule</a></code></dd>
@@ -501,7 +497,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockList">
 <li class="blockList">
 <h4>commit</h4>
-<pre>public&nbsp;boolean&nbsp;commit()</pre>
+<pre>public&nbsp;boolean&nbsp;commit()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/spi/LoginModule.html?is-external=true#commit--" title="class or interface in javax.security.auth.spi">commit</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/spi/LoginModule.html?is-external=true" title="class or interface in javax.security.auth.spi">LoginModule</a></code></dd>
@@ -514,7 +510,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockListLast">
 <li class="blockList">
 <h4>abort</h4>
-<pre>public&nbsp;boolean&nbsp;abort()</pre>
+<pre>public&nbsp;boolean&nbsp;abort()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/spi/LoginModule.html?is-external=true#abort--" title="class or interface in javax.security.auth.spi">abort</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/spi/LoginModule.html?is-external=true" title="class or interface in javax.security.auth.spi">LoginModule</a></code></dd>

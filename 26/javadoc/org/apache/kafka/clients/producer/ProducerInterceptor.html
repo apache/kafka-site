@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">ProducerInterceptor&lt;K,V&gt;</span>
-extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a></pre>
+extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a></code></pre>
 <div class="block">A plugin interface that allows you to intercept (and possibly mutate) the records received by the producer before
  they are published to the Kafka cluster.
  <p>
@@ -187,7 +187,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>onSend</h4>
-<pre><a href="../../../../../org/apache/kafka/clients/producer/ProducerRecord.html" title="class in org.apache.kafka.clients.producer">ProducerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/ProducerInterceptor.html" title="type parameter in ProducerInterceptor">K</a>,<a href="../../../../../org/apache/kafka/clients/producer/ProducerInterceptor.html" title="type parameter in ProducerInterceptor">V</a>&gt;&nbsp;onSend(<a href="../../../../../org/apache/kafka/clients/producer/ProducerRecord.html" title="class in org.apache.kafka.clients.producer">ProducerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/ProducerInterceptor.html" title="type parameter in ProducerInterceptor">K</a>,<a href="../../../../../org/apache/kafka/clients/producer/ProducerInterceptor.html" title="type parameter in ProducerInterceptor">V</a>&gt;&nbsp;record)</pre>
+<pre><a href="../../../../../org/apache/kafka/clients/producer/ProducerRecord.html" title="class in org.apache.kafka.clients.producer">ProducerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/ProducerInterceptor.html" title="type parameter in ProducerInterceptor">K</a>,<a href="../../../../../org/apache/kafka/clients/producer/ProducerInterceptor.html" title="type parameter in ProducerInterceptor">V</a>&gt;&nbsp;onSend(<a href="../../../../../org/apache/kafka/clients/producer/ProducerRecord.html" title="class in org.apache.kafka.clients.producer">ProducerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/ProducerInterceptor.html" title="type parameter in ProducerInterceptor">K</a>,<a href="../../../../../org/apache/kafka/clients/producer/ProducerInterceptor.html" title="type parameter in ProducerInterceptor">V</a>&gt;&nbsp;record)</code></pre>
 <div class="block">This is called from <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#send-org.apache.kafka.clients.producer.ProducerRecord-"><code>KafkaProducer.send(ProducerRecord)</code></a> and
  <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#send-org.apache.kafka.clients.producer.ProducerRecord-org.apache.kafka.clients.producer.Callback-"><code>KafkaProducer.send(ProducerRecord, Callback)</code></a> methods, before key and value
  get serialized and partition is assigned (if partition is not specified in ProducerRecord).
@@ -227,7 +227,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
 <li class="blockList">
 <h4>onAcknowledgement</h4>
 <pre>void&nbsp;onAcknowledgement(<a href="../../../../../org/apache/kafka/clients/producer/RecordMetadata.html" title="class in org.apache.kafka.clients.producer">RecordMetadata</a>&nbsp;metadata,
-                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a>&nbsp;exception)</pre>
+                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a>&nbsp;exception)</code></pre>
 <div class="block">This method is called when the record sent to the server has been acknowledged, or when sending the record fails before
  it gets sent to the server.
  <p>
@@ -256,7 +256,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
 <ul class="blockListLast">
 <li class="blockList">
 <h4>close</h4>
-<pre>void&nbsp;close()</pre>
+<pre>void&nbsp;close()</code></pre>
 <div class="block">This is called when interceptor is closed</div>
 </li>
 </ul>

@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">SslEngineFactory</span>
-extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></pre>
+extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></code></pre>
 <div class="block">Plugin interface for allowing creation of SSLEngine object in a custom way.
  Example: You want to use custom way to load your key material and trust material needed for SSLContext.
  However, keep in mind that this is complementary to the existing Java Security Provider's mechanism and not a competing
@@ -203,7 +203,7 @@ extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" ti
 <h4>createClientSslEngine</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/net/ssl/SSLEngine.html?is-external=true" title="class or interface in javax.net.ssl">SSLEngine</a>&nbsp;createClientSslEngine(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;peerHost,
                                 int&nbsp;peerPort,
-                                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;endpointIdentification)</pre>
+                                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;endpointIdentification)</code></pre>
 <div class="block">Create a new SSLEngine object to be used by the client.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -222,7 +222,7 @@ extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" ti
 <li class="blockList">
 <h4>createServerSslEngine</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/net/ssl/SSLEngine.html?is-external=true" title="class or interface in javax.net.ssl">SSLEngine</a>&nbsp;createServerSslEngine(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;peerHost,
-                                int&nbsp;peerPort)</pre>
+                                int&nbsp;peerPort)</code></pre>
 <div class="block">Create a new SSLEngine object to be used by the server.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -239,7 +239,7 @@ extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>shouldBeRebuilt</h4>
-<pre>boolean&nbsp;shouldBeRebuilt(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;nextConfigs)</pre>
+<pre>boolean&nbsp;shouldBeRebuilt(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;nextConfigs)</code></pre>
 <div class="block">Returns true if SSLEngine needs to be rebuilt. This method will be called when reconfiguration is triggered on
  <code>org.apache.kafka.common.security.ssl.SslFactory</code>. Based on the <i>nextConfigs</i>, this method will
  decide whether underlying SSLEngine object needs to be rebuilt. If this method returns true, the
@@ -247,10 +247,8 @@ extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" ti
  checks before deciding to use the new object for the <i>new incoming connection</i> requests.The existing connections
  are not impacted by this and will not see any changes done as part of reconfiguration.
 
- <pre>
-     Example: If the implementation depends on the file based key material it can check if the file is updated
-     compared to the previous/last-loaded timestamp and return true.
- </pre></div>
+ <pre class="line-numbers"><code class="language-text">     Example: If the implementation depends on the file based key material it can check if the file is updated
+     compared to the previous/last-loaded timestamp and return true.</code></pre></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>nextConfigs</code> - The configuration we want to use.</dd>
@@ -265,7 +263,7 @@ extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>reconfigurableConfigs</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;reconfigurableConfigs()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;reconfigurableConfigs()</code></pre>
 <div class="block">Returns the names of configs that may be reconfigured.</div>
 </li>
 </ul>
@@ -275,7 +273,7 @@ extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>keystore</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/security/KeyStore.html?is-external=true" title="class or interface in java.security">KeyStore</a>&nbsp;keystore()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/security/KeyStore.html?is-external=true" title="class or interface in java.security">KeyStore</a>&nbsp;keystore()</code></pre>
 <div class="block">Returns keystore.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -288,7 +286,7 @@ extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" ti
 <ul class="blockListLast">
 <li class="blockList">
 <h4>truststore</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/security/KeyStore.html?is-external=true" title="class or interface in java.security">KeyStore</a>&nbsp;truststore()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/security/KeyStore.html?is-external=true" title="class or interface in java.security">KeyStore</a>&nbsp;truststore()</code></pre>
 <div class="block">Returns truststore.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>

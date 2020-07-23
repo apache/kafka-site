@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">Processor&lt;K,V&gt;</span></pre>
+<pre>public interface <span class="typeNameLabel">Processor&lt;K,V&gt;</span></code></pre>
 <div class="block">A processor of key-value pair records.</div>
 </li>
 </ul>
@@ -168,7 +168,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>init</h4>
-<pre>void&nbsp;init(<a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor">ProcessorContext</a>&nbsp;context)</pre>
+<pre>void&nbsp;init(<a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor">ProcessorContext</a>&nbsp;context)</code></pre>
 <div class="block">Initialize this processor with the given context. The framework ensures this is called once per processor when the topology
  that contains it is initialized. When the framework is done with the processor, <a href="../../../../../org/apache/kafka/streams/processor/Processor.html#close--"><code>close()</code></a> will be called on it; the
  framework may later re-use the processor by calling <code>#init()</code> again.
@@ -191,7 +191,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>process</h4>
 <pre>void&nbsp;process(<a href="../../../../../org/apache/kafka/streams/processor/Processor.html" title="type parameter in Processor">K</a>&nbsp;key,
-             <a href="../../../../../org/apache/kafka/streams/processor/Processor.html" title="type parameter in Processor">V</a>&nbsp;value)</pre>
+             <a href="../../../../../org/apache/kafka/streams/processor/Processor.html" title="type parameter in Processor">V</a>&nbsp;value)</code></pre>
 <div class="block">Process the record with the given key and value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -206,7 +206,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>close</h4>
-<pre>void&nbsp;close()</pre>
+<pre>void&nbsp;close()</code></pre>
 <div class="block">Close this processor and clean up any resources. Be aware that <code>#close()</code> is called after an internal cleanup.
  Thus, it is not possible to write anything to Kafka as underlying clients are already closed. The framework may
  later re-use this processor by calling <code>#init()</code> on it again.

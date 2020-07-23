@@ -114,7 +114,7 @@ var activeTableTab = "activeTableTab";
 <pre><a href="../../../../../../org/apache/kafka/common/annotation/InterfaceStability.Evolving.html" title="annotation in org.apache.kafka.common.annotation">@InterfaceStability.Evolving</a>
 public class <span class="typeNameLabel">OAuthBearerValidatorCallback</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/callback/Callback.html?is-external=true" title="class or interface in javax.security.auth.callback">Callback</a></pre>
+implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/callback/Callback.html?is-external=true" title="class or interface in javax.security.auth.callback">Callback</a></code></pre>
 <div class="block">A <code>Callback</code> for use by the <code>SaslServer</code> implementation when it
  needs to provide an OAuth 2 bearer token compact serialization for
  validation. Callback handlers should use the
@@ -251,7 +251,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockListLast">
 <li class="blockList">
 <h4>OAuthBearerValidatorCallback</h4>
-<pre>public&nbsp;OAuthBearerValidatorCallback(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tokenValue)</pre>
+<pre>public&nbsp;OAuthBearerValidatorCallback(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tokenValue)</code></pre>
 <div class="block">Constructor</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -273,7 +273,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockList">
 <li class="blockList">
 <h4>tokenValue</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tokenValue()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tokenValue()</code></pre>
 <div class="block">Return the (always non-null) token value</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -287,7 +287,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockList">
 <li class="blockList">
 <h4>token</h4>
-<pre>public&nbsp;<a href="../../../../../../org/apache/kafka/common/security/oauthbearer/OAuthBearerToken.html" title="interface in org.apache.kafka.common.security.oauthbearer">OAuthBearerToken</a>&nbsp;token()</pre>
+<pre>public&nbsp;<a href="../../../../../../org/apache/kafka/common/security/oauthbearer/OAuthBearerToken.html" title="interface in org.apache.kafka.common.security.oauthbearer">OAuthBearerToken</a>&nbsp;token()</code></pre>
 <div class="block">Return the (potentially null) token</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -301,7 +301,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockList">
 <li class="blockList">
 <h4>errorStatus</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;errorStatus()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;errorStatus()</code></pre>
 <div class="block">Return the (potentially null) error status value as per
  <a href="https://tools.ietf.org/html/rfc7628#section-3.2.2">RFC 7628: A Set
  of Simple Authentication and Security Layer (SASL) Mechanisms for OAuth</a>
@@ -320,7 +320,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockList">
 <li class="blockList">
 <h4>errorScope</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;errorScope()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;errorScope()</code></pre>
 <div class="block">Return the (potentially null) error scope value as per
  <a href="https://tools.ietf.org/html/rfc7628#section-3.2.2">RFC 7628: A Set
  of Simple Authentication and Security Layer (SASL) Mechanisms for OAuth</a>.</div>
@@ -336,7 +336,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockList">
 <li class="blockList">
 <h4>errorOpenIDConfiguration</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;errorOpenIDConfiguration()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;errorOpenIDConfiguration()</code></pre>
 <div class="block">Return the (potentially null) error openid-configuration value as per
  <a href="https://tools.ietf.org/html/rfc7628#section-3.2.2">RFC 7628: A Set
  of Simple Authentication and Security Layer (SASL) Mechanisms for OAuth</a>.</div>
@@ -352,7 +352,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockList">
 <li class="blockList">
 <h4>token</h4>
-<pre>public&nbsp;void&nbsp;token(<a href="../../../../../../org/apache/kafka/common/security/oauthbearer/OAuthBearerToken.html" title="interface in org.apache.kafka.common.security.oauthbearer">OAuthBearerToken</a>&nbsp;token)</pre>
+<pre>public&nbsp;void&nbsp;token(<a href="../../../../../../org/apache/kafka/common/security/oauthbearer/OAuthBearerToken.html" title="interface in org.apache.kafka.common.security.oauthbearer">OAuthBearerToken</a>&nbsp;token)</code></pre>
 <div class="block">Set the token. The token value is unchanged and is expected to match the
  provided token's value. All error values are cleared.</div>
 <dl>
@@ -369,7 +369,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <h4>error</h4>
 <pre>public&nbsp;void&nbsp;error(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;errorStatus,
                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;errorScope,
-                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;errorOpenIDConfiguration)</pre>
+                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;errorOpenIDConfiguration)</code></pre>
 <div class="block">Set the error values as per
  <a href="https://tools.ietf.org/html/rfc7628#section-3.2.2">RFC 7628: A Set
  of Simple Authentication and Security Layer (SASL) Mechanisms for OAuth</a>.

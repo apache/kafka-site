@@ -109,7 +109,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre><a href="../../../../../org/apache/kafka/common/annotation/InterfaceStability.Evolving.html" title="annotation in org.apache.kafka.common.annotation">@InterfaceStability.Evolving</a>
 public class <span class="typeNameLabel">Action</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 </li>
 </ul>
 </div>
@@ -225,7 +225,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
               <a href="../../../../../org/apache/kafka/common/resource/ResourcePattern.html" title="class in org.apache.kafka.common.resource">ResourcePattern</a>&nbsp;resourcePattern,
               int&nbsp;resourceReferenceCount,
               boolean&nbsp;logIfAllowed,
-              boolean&nbsp;logIfDenied)</pre>
+              boolean&nbsp;logIfDenied)</code></pre>
 </li>
 </ul>
 </li>
@@ -242,7 +242,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>resourcePattern</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/resource/ResourcePattern.html" title="class in org.apache.kafka.common.resource">ResourcePattern</a>&nbsp;resourcePattern()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/resource/ResourcePattern.html" title="class in org.apache.kafka.common.resource">ResourcePattern</a>&nbsp;resourcePattern()</code></pre>
 <div class="block">Resource on which action is being performed.</div>
 </li>
 </ul>
@@ -252,7 +252,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>operation</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclOperation.html" title="enum in org.apache.kafka.common.acl">AclOperation</a>&nbsp;operation()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclOperation.html" title="enum in org.apache.kafka.common.acl">AclOperation</a>&nbsp;operation()</code></pre>
 <div class="block">Operation being performed.</div>
 </li>
 </ul>
@@ -262,7 +262,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>logIfAllowed</h4>
-<pre>public&nbsp;boolean&nbsp;logIfAllowed()</pre>
+<pre>public&nbsp;boolean&nbsp;logIfAllowed()</code></pre>
 <div class="block">Indicates if audit logs tracking ALLOWED access should include this action if result is
  ALLOWED. The flag is true if access to a resource is granted while processing the request as a
  result of this authorization. The flag is false only for requests used to describe access where
@@ -275,7 +275,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>logIfDenied</h4>
-<pre>public&nbsp;boolean&nbsp;logIfDenied()</pre>
+<pre>public&nbsp;boolean&nbsp;logIfDenied()</code></pre>
 <div class="block">Indicates if audit logs tracking DENIED access should include this action if result is
  DENIED. The flag is true if access to a resource was explicitly requested and request
  is denied as a result of this authorization request. The flag is false if request was
@@ -290,7 +290,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>resourceReferenceCount</h4>
-<pre>public&nbsp;int&nbsp;resourceReferenceCount()</pre>
+<pre>public&nbsp;int&nbsp;resourceReferenceCount()</code></pre>
 <div class="block">Number of times the resource being authorized is referenced within the request. For example, a single
  request may reference `n` topic partitions of the same topic. Brokers will authorize the topic once
  with `resourceReferenceCount=n`. Authorizers may include the count in audit logs.</div>
@@ -302,7 +302,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -315,7 +315,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -328,7 +328,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>

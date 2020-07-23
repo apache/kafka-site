@@ -107,7 +107,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public static interface <span class="typeNameLabel">Suppressed.BufferConfig&lt;BC extends Suppressed.BufferConfig&lt;BC&gt;&gt;</span></pre>
+<pre>public static interface <span class="typeNameLabel">Suppressed.BufferConfig&lt;BC extends Suppressed.BufferConfig&lt;BC&gt;&gt;</span></code></pre>
 </li>
 </ul>
 </div>
@@ -210,7 +210,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>maxRecords</h4>
-<pre>static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.EagerBufferConfig.html" title="interface in org.apache.kafka.streams.kstream">Suppressed.EagerBufferConfig</a>&nbsp;maxRecords(long&nbsp;recordLimit)</pre>
+<pre>static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.EagerBufferConfig.html" title="interface in org.apache.kafka.streams.kstream">Suppressed.EagerBufferConfig</a>&nbsp;maxRecords(long&nbsp;recordLimit)</code></pre>
 <div class="block">Create a size-constrained buffer in terms of the maximum number of keys it will store.</div>
 </li>
 </ul>
@@ -220,7 +220,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>withMaxRecords</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.BufferConfig.html" title="type parameter in Suppressed.BufferConfig">BC</a>&nbsp;withMaxRecords(long&nbsp;recordLimit)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.BufferConfig.html" title="type parameter in Suppressed.BufferConfig">BC</a>&nbsp;withMaxRecords(long&nbsp;recordLimit)</code></pre>
 <div class="block">Set a size constraint on the buffer in terms of the maximum number of keys it will store.</div>
 </li>
 </ul>
@@ -230,7 +230,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>maxBytes</h4>
-<pre>static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.EagerBufferConfig.html" title="interface in org.apache.kafka.streams.kstream">Suppressed.EagerBufferConfig</a>&nbsp;maxBytes(long&nbsp;byteLimit)</pre>
+<pre>static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.EagerBufferConfig.html" title="interface in org.apache.kafka.streams.kstream">Suppressed.EagerBufferConfig</a>&nbsp;maxBytes(long&nbsp;byteLimit)</code></pre>
 <div class="block">Create a size-constrained buffer in terms of the maximum number of bytes it will use.</div>
 </li>
 </ul>
@@ -240,7 +240,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>withMaxBytes</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.BufferConfig.html" title="type parameter in Suppressed.BufferConfig">BC</a>&nbsp;withMaxBytes(long&nbsp;byteLimit)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.BufferConfig.html" title="type parameter in Suppressed.BufferConfig">BC</a>&nbsp;withMaxBytes(long&nbsp;byteLimit)</code></pre>
 <div class="block">Set a size constraint on the buffer, the maximum number of bytes it will use.</div>
 </li>
 </ul>
@@ -250,7 +250,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>unbounded</h4>
-<pre>static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.StrictBufferConfig.html" title="interface in org.apache.kafka.streams.kstream">Suppressed.StrictBufferConfig</a>&nbsp;unbounded()</pre>
+<pre>static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.StrictBufferConfig.html" title="interface in org.apache.kafka.streams.kstream">Suppressed.StrictBufferConfig</a>&nbsp;unbounded()</code></pre>
 <div class="block">Create a buffer unconstrained by size (either keys or bytes).
 
  As a result, the buffer will consume as much memory as it needs, dictated by the time bound.
@@ -272,7 +272,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>withNoBound</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.StrictBufferConfig.html" title="interface in org.apache.kafka.streams.kstream">Suppressed.StrictBufferConfig</a>&nbsp;withNoBound()</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.StrictBufferConfig.html" title="interface in org.apache.kafka.streams.kstream">Suppressed.StrictBufferConfig</a>&nbsp;withNoBound()</code></pre>
 <div class="block">Set the buffer to be unconstrained by size (either keys or bytes).
 
  As a result, the buffer will consume as much memory as it needs, dictated by the time bound.
@@ -294,7 +294,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>shutDownWhenFull</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.StrictBufferConfig.html" title="interface in org.apache.kafka.streams.kstream">Suppressed.StrictBufferConfig</a>&nbsp;shutDownWhenFull()</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.StrictBufferConfig.html" title="interface in org.apache.kafka.streams.kstream">Suppressed.StrictBufferConfig</a>&nbsp;shutDownWhenFull()</code></pre>
 <div class="block">Set the buffer to gracefully shut down the application when any of its constraints are violated
 
  This buffer is "strict" in the sense that it will enforce the time bound or shut down.
@@ -307,7 +307,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>emitEarlyWhenFull</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.EagerBufferConfig.html" title="interface in org.apache.kafka.streams.kstream">Suppressed.EagerBufferConfig</a>&nbsp;emitEarlyWhenFull()</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.EagerBufferConfig.html" title="interface in org.apache.kafka.streams.kstream">Suppressed.EagerBufferConfig</a>&nbsp;emitEarlyWhenFull()</code></pre>
 <div class="block">Set the buffer to just emit the oldest records when any of its constraints are violated.
 
  This buffer is "not strict" in the sense that it may emit early, so it is suitable for reducing
@@ -320,7 +320,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>withLoggingDisabled</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.BufferConfig.html" title="type parameter in Suppressed.BufferConfig">BC</a>&nbsp;withLoggingDisabled()</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.BufferConfig.html" title="type parameter in Suppressed.BufferConfig">BC</a>&nbsp;withLoggingDisabled()</code></pre>
 <div class="block">Disable the changelog for this suppression's internal buffer.
  This will turn off fault-tolerance for the suppression, and will result in data loss in the event of a rebalance.
  By default the changelog is enabled.</div>
@@ -336,7 +336,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>withLoggingEnabled</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.BufferConfig.html" title="type parameter in Suppressed.BufferConfig">BC</a>&nbsp;withLoggingEnabled(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;config)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.BufferConfig.html" title="type parameter in Suppressed.BufferConfig">BC</a>&nbsp;withLoggingEnabled(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;config)</code></pre>
 <div class="block">Indicates that a changelog topic should be created containing the currently suppressed
  records. Due to the short-lived nature of records in this topic it is likely more
  compactable than changelog topics for KTables.</div>

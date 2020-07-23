@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public abstract class <span class="typeNameLabel">SourceTask</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html" title="interface in org.apache.kafka.connect.connector">Task</a></pre>
+implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html" title="interface in org.apache.kafka.connect.connector">Task</a></code></pre>
 <div class="block">SourceTask is a Task that pulls records from another system for storage in Kafka.</div>
 </li>
 </ul>
@@ -252,7 +252,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <ul class="blockListLast">
 <li class="blockList">
 <h4>context</h4>
-<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/connect/source/SourceTaskContext.html" title="interface in org.apache.kafka.connect.source">SourceTaskContext</a> context</pre>
+<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/connect/source/SourceTaskContext.html" title="interface in org.apache.kafka.connect.source">SourceTaskContext</a> context</code></pre>
 </li>
 </ul>
 </li>
@@ -269,7 +269,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SourceTask</h4>
-<pre>public&nbsp;SourceTask()</pre>
+<pre>public&nbsp;SourceTask()</code></pre>
 </li>
 </ul>
 </li>
@@ -286,7 +286,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>initialize</h4>
-<pre>public&nbsp;void&nbsp;initialize(<a href="../../../../../org/apache/kafka/connect/source/SourceTaskContext.html" title="interface in org.apache.kafka.connect.source">SourceTaskContext</a>&nbsp;context)</pre>
+<pre>public&nbsp;void&nbsp;initialize(<a href="../../../../../org/apache/kafka/connect/source/SourceTaskContext.html" title="interface in org.apache.kafka.connect.source">SourceTaskContext</a>&nbsp;context)</code></pre>
 <div class="block">Initialize this SourceTask with the specified context object.</div>
 </li>
 </ul>
@@ -296,7 +296,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>start</h4>
-<pre>public abstract&nbsp;void&nbsp;start(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;props)</pre>
+<pre>public abstract&nbsp;void&nbsp;start(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;props)</code></pre>
 <div class="block">Start the Task. This should handle any configuration parsing and one-time setup of the task.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -313,7 +313,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <li class="blockList">
 <h4>poll</h4>
 <pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/connect/source/SourceRecord.html" title="class in org.apache.kafka.connect.source">SourceRecord</a>&gt;&nbsp;poll()
-                                 throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></pre>
+                                 throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></pre>
 <div class="block"><p>
  Poll this source task for new records. If no data is currently available, this method
  should block but return control to the caller regularly (by returning <code>null</code>) in
@@ -339,7 +339,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <li class="blockList">
 <h4>commit</h4>
 <pre>public&nbsp;void&nbsp;commit()
-            throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></pre>
+            throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></pre>
 <div class="block"><p>
  Commit the offsets, up to the offsets that have been returned by <a href="../../../../../org/apache/kafka/connect/source/SourceTask.html#poll--"><code>poll()</code></a>. This
  method should block until the commit is complete.
@@ -361,7 +361,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>stop</h4>
-<pre>public abstract&nbsp;void&nbsp;stop()</pre>
+<pre>public abstract&nbsp;void&nbsp;stop()</code></pre>
 <div class="block">Signal this SourceTask to stop. In SourceTasks, this method only needs to signal to the task that it should stop
  trying to poll for new data and interrupt any outstanding poll() requests. It is not required that the task has
  fully stopped. Note that this method necessarily may be invoked from a different thread than <a href="../../../../../org/apache/kafka/connect/source/SourceTask.html#poll--"><code>poll()</code></a> and
@@ -384,7 +384,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <h4>commitRecord</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;void&nbsp;commitRecord(<a href="../../../../../org/apache/kafka/connect/source/SourceRecord.html" title="class in org.apache.kafka.connect.source">SourceRecord</a>&nbsp;record)
-                              throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></pre>
+                              throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../../org/apache/kafka/connect/source/SourceTask.html#commitRecord-org.apache.kafka.connect.source.SourceRecord-org.apache.kafka.clients.producer.RecordMetadata-"><code>commitRecord(SourceRecord, RecordMetadata)</code></a> instead.</span></div>
 <div class="block"><p>
  Commit an individual <a href="../../../../../org/apache/kafka/connect/source/SourceRecord.html" title="class in org.apache.kafka.connect.source"><code>SourceRecord</code></a> when the callback from the producer client is received. This method is
@@ -416,7 +416,7 @@ public&nbsp;void&nbsp;commitRecord(<a href="../../../../../org/apache/kafka/conn
 <h4>commitRecord</h4>
 <pre>public&nbsp;void&nbsp;commitRecord(<a href="../../../../../org/apache/kafka/connect/source/SourceRecord.html" title="class in org.apache.kafka.connect.source">SourceRecord</a>&nbsp;record,
                          <a href="../../../../../org/apache/kafka/clients/producer/RecordMetadata.html" title="class in org.apache.kafka.clients.producer">RecordMetadata</a>&nbsp;metadata)
-                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></pre>
+                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></pre>
 <div class="block"><p>
  Commit an individual <a href="../../../../../org/apache/kafka/connect/source/SourceRecord.html" title="class in org.apache.kafka.connect.source"><code>SourceRecord</code></a> when the callback from the producer client is received. This method is
  also called when a record is filtered by a transformation, and thus will never be ACK'd by a broker. In this case

@@ -99,7 +99,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">ConsumerRebalanceListener</span></pre>
+<pre>public interface <span class="typeNameLabel">ConsumerRebalanceListener</span></code></pre>
 <div class="block">A callback interface that the user can implement to trigger custom actions when the set of partitions assigned to the
  consumer changes.
  <p>
@@ -166,8 +166,7 @@ var activeTableTab = "activeTableTab";
  <p>
 
  Here is pseudo-code for a callback implementation for saving offsets:
- <pre>
- <code>
+ <pre class="line-numbers"><code class="language-text"> <code>
    public class SaveOffsetsOnRebalance implements ConsumerRebalanceListener {
        private Consumer&lt;?,?&gt; consumer;
 
@@ -191,8 +190,7 @@ var activeTableTab = "activeTableTab";
               consumer.seek(partition, readOffsetFromExternalStore(partition));
        }
    }
- </code>
- </pre></div>
+ </code></code></pre></div>
 </li>
 </ul>
 </div>
@@ -252,7 +250,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>onPartitionsRevoked</h4>
-<pre>void&nbsp;onPartitionsRevoked(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>void&nbsp;onPartitionsRevoked(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block">A callback method the user can implement to provide handling of offset commits to a customized store.
  This method will be called during a rebalance operation when the consumer has to give up some partitions.
  It can also be called when consumer is being closed (<a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#close-java.time.Duration-"><code>KafkaConsumer.close(Duration)</code></a>)
@@ -285,7 +283,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>onPartitionsAssigned</h4>
-<pre>void&nbsp;onPartitionsAssigned(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>void&nbsp;onPartitionsAssigned(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block">A callback method the user can implement to provide handling of customized offsets on completion of a successful
  partition re-assignment. This method will be called after the partition re-assignment completes and before the
  consumer starts fetching data, and only as the result of a <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#poll-java.time.Duration-"><code>poll(long)</code></a> call.
@@ -318,7 +316,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>onPartitionsLost</h4>
-<pre>default&nbsp;void&nbsp;onPartitionsLost(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>default&nbsp;void&nbsp;onPartitionsLost(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block">A callback method you can implement to provide handling of cleaning up resources for partitions that have already
  been reassigned to other consumers. This method will not be called during normal execution as the owned partitions would
  first be revoked by calling the <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRebalanceListener.html#onPartitionsRevoked-java.util.Collection-"><code>onPartitionsRevoked(java.util.Collection&lt;org.apache.kafka.common.TopicPartition&gt;)</code></a>, before being reassigned

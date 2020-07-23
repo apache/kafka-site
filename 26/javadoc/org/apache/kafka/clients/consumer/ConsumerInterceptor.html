@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">ConsumerInterceptor&lt;K,V&gt;</span>
-extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a></pre>
+extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a></code></pre>
 <div class="block">A plugin interface that allows you to intercept (and possibly mutate) records received by the consumer. A primary use-case
  is for third-party components to hook into the consumer applications for custom monitoring, logging, etc.
 
@@ -186,7 +186,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>onConsume</h4>
-<pre><a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecords</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerInterceptor.html" title="type parameter in ConsumerInterceptor">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerInterceptor.html" title="type parameter in ConsumerInterceptor">V</a>&gt;&nbsp;onConsume(<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecords</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerInterceptor.html" title="type parameter in ConsumerInterceptor">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerInterceptor.html" title="type parameter in ConsumerInterceptor">V</a>&gt;&nbsp;records)</pre>
+<pre><a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecords</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerInterceptor.html" title="type parameter in ConsumerInterceptor">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerInterceptor.html" title="type parameter in ConsumerInterceptor">V</a>&gt;&nbsp;onConsume(<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecords</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerInterceptor.html" title="type parameter in ConsumerInterceptor">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerInterceptor.html" title="type parameter in ConsumerInterceptor">V</a>&gt;&nbsp;records)</code></pre>
 <div class="block">This is called just before the records are returned by
  <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#poll-java.time.Duration-"><code>KafkaConsumer.poll(java.time.Duration)</code></a>
  <p>
@@ -219,7 +219,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>onCommit</h4>
-<pre>void&nbsp;onCommit(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets)</pre>
+<pre>void&nbsp;onCommit(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets)</code></pre>
 <div class="block">This is called when offsets get committed.
  <p>
  Any exception thrown by this method will be ignored by the caller.</div>
@@ -235,7 +235,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
 <ul class="blockListLast">
 <li class="blockList">
 <h4>close</h4>
-<pre>void&nbsp;close()</pre>
+<pre>void&nbsp;close()</code></pre>
 <div class="block">This is called when interceptor is closed</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>

@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">Producer&lt;K,V&gt;</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></code></pre>
 <div class="block">The interface for the <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html" title="class in org.apache.kafka.clients.producer"><code>KafkaProducer</code></a></div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -242,7 +242,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>initTransactions</h4>
-<pre>void&nbsp;initTransactions()</pre>
+<pre>void&nbsp;initTransactions()</code></pre>
 <div class="block">See <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#initTransactions--"><code>KafkaProducer.initTransactions()</code></a></div>
 </li>
 </ul>
@@ -253,7 +253,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <li class="blockList">
 <h4>beginTransaction</h4>
 <pre>void&nbsp;beginTransaction()
-               throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></pre>
+               throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></code></pre>
 <div class="block">See <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#beginTransaction--"><code>KafkaProducer.beginTransaction()</code></a></div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -269,7 +269,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <h4>sendOffsetsToTransaction</h4>
 <pre>void&nbsp;sendOffsetsToTransaction(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets,
                               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;consumerGroupId)
-                       throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></pre>
+                       throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></code></pre>
 <div class="block">See <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#sendOffsetsToTransaction-java.util.Map-java.lang.String-"><code>KafkaProducer.sendOffsetsToTransaction(Map, String)</code></a></div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -285,7 +285,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <h4>sendOffsetsToTransaction</h4>
 <pre>void&nbsp;sendOffsetsToTransaction(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets,
                               <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerGroupMetadata.html" title="class in org.apache.kafka.clients.consumer">ConsumerGroupMetadata</a>&nbsp;groupMetadata)
-                       throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></pre>
+                       throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></code></pre>
 <div class="block">See <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#sendOffsetsToTransaction-java.util.Map-org.apache.kafka.clients.consumer.ConsumerGroupMetadata-"><code>KafkaProducer.sendOffsetsToTransaction(Map, ConsumerGroupMetadata)</code></a></div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -300,7 +300,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <li class="blockList">
 <h4>commitTransaction</h4>
 <pre>void&nbsp;commitTransaction()
-                throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></pre>
+                throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></code></pre>
 <div class="block">See <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#commitTransaction--"><code>KafkaProducer.commitTransaction()</code></a></div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -315,7 +315,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <li class="blockList">
 <h4>abortTransaction</h4>
 <pre>void&nbsp;abortTransaction()
-               throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></pre>
+               throws <a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></code></pre>
 <div class="block">See <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#abortTransaction--"><code>KafkaProducer.abortTransaction()</code></a></div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -329,7 +329,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>send</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/RecordMetadata.html" title="class in org.apache.kafka.clients.producer">RecordMetadata</a>&gt;&nbsp;send(<a href="../../../../../org/apache/kafka/clients/producer/ProducerRecord.html" title="class in org.apache.kafka.clients.producer">ProducerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/Producer.html" title="type parameter in Producer">K</a>,<a href="../../../../../org/apache/kafka/clients/producer/Producer.html" title="type parameter in Producer">V</a>&gt;&nbsp;record)</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/RecordMetadata.html" title="class in org.apache.kafka.clients.producer">RecordMetadata</a>&gt;&nbsp;send(<a href="../../../../../org/apache/kafka/clients/producer/ProducerRecord.html" title="class in org.apache.kafka.clients.producer">ProducerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/Producer.html" title="type parameter in Producer">K</a>,<a href="../../../../../org/apache/kafka/clients/producer/Producer.html" title="type parameter in Producer">V</a>&gt;&nbsp;record)</code></pre>
 <div class="block">See <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#send-org.apache.kafka.clients.producer.ProducerRecord-"><code>KafkaProducer.send(ProducerRecord)</code></a></div>
 </li>
 </ul>
@@ -340,7 +340,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <li class="blockList">
 <h4>send</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/RecordMetadata.html" title="class in org.apache.kafka.clients.producer">RecordMetadata</a>&gt;&nbsp;send(<a href="../../../../../org/apache/kafka/clients/producer/ProducerRecord.html" title="class in org.apache.kafka.clients.producer">ProducerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/producer/Producer.html" title="type parameter in Producer">K</a>,<a href="../../../../../org/apache/kafka/clients/producer/Producer.html" title="type parameter in Producer">V</a>&gt;&nbsp;record,
-                            <a href="../../../../../org/apache/kafka/clients/producer/Callback.html" title="interface in org.apache.kafka.clients.producer">Callback</a>&nbsp;callback)</pre>
+                            <a href="../../../../../org/apache/kafka/clients/producer/Callback.html" title="interface in org.apache.kafka.clients.producer">Callback</a>&nbsp;callback)</code></pre>
 <div class="block">See <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#send-org.apache.kafka.clients.producer.ProducerRecord-org.apache.kafka.clients.producer.Callback-"><code>KafkaProducer.send(ProducerRecord, Callback)</code></a></div>
 </li>
 </ul>
@@ -350,7 +350,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>flush</h4>
-<pre>void&nbsp;flush()</pre>
+<pre>void&nbsp;flush()</code></pre>
 <div class="block">See <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#flush--"><code>KafkaProducer.flush()</code></a></div>
 </li>
 </ul>
@@ -360,7 +360,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>partitionsFor</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&nbsp;partitionsFor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&nbsp;partitionsFor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</code></pre>
 <div class="block">See <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#partitionsFor-java.lang.String-"><code>KafkaProducer.partitionsFor(String)</code></a></div>
 </li>
 </ul>
@@ -370,7 +370,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>metrics</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/MetricName.html" title="class in org.apache.kafka.common">MetricName</a>,? extends <a href="../../../../../org/apache/kafka/common/Metric.html" title="interface in org.apache.kafka.common">Metric</a>&gt;&nbsp;metrics()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/MetricName.html" title="class in org.apache.kafka.common">MetricName</a>,? extends <a href="../../../../../org/apache/kafka/common/Metric.html" title="interface in org.apache.kafka.common">Metric</a>&gt;&nbsp;metrics()</code></pre>
 <div class="block">See <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#metrics--"><code>KafkaProducer.metrics()</code></a></div>
 </li>
 </ul>
@@ -380,7 +380,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>void&nbsp;close()</pre>
+<pre>void&nbsp;close()</code></pre>
 <div class="block">See <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#close--"><code>KafkaProducer.close()</code></a></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -398,7 +398,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <h4>close</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 default&nbsp;void&nbsp;close(long&nbsp;timeout,
-                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</a>&nbsp;unit)</pre>
+                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</a>&nbsp;unit)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
@@ -408,7 +408,7 @@ default&nbsp;void&nbsp;close(long&nbsp;timeout,
 <ul class="blockListLast">
 <li class="blockList">
 <h4>close</h4>
-<pre>void&nbsp;close(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+<pre>void&nbsp;close(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block">See <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#close-java.time.Duration-"><code>KafkaProducer.close(Duration)</code></a></div>
 </li>
 </ul>

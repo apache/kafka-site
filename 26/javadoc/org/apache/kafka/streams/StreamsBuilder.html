@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">StreamsBuilder</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block"><code>StreamsBuilder</code> provide the high-level Kafka Streams DSL to specify a Kafka Streams topology.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -316,7 +316,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>StreamsBuilder</h4>
-<pre>public&nbsp;StreamsBuilder()</pre>
+<pre>public&nbsp;StreamsBuilder()</code></pre>
 </li>
 </ul>
 </li>
@@ -333,7 +333,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>stream</h4>
-<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream">KStream</a>&lt;K,V&gt;&nbsp;stream(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</pre>
+<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream">KStream</a>&lt;K,V&gt;&nbsp;stream(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a> from the specified topic.
  The default <code>"auto.offset.reset"</code> strategy, default <a href="../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor"><code>TimestampExtractor</code></a>, and default key and value
  deserializers as specified in the <a href="../../../../org/apache/kafka/streams/StreamsConfig.html" title="class in org.apache.kafka.streams"><code>config</code></a> are used.
@@ -358,7 +358,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>stream</h4>
 <pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream">KStream</a>&lt;K,V&gt;&nbsp;stream(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
-                                 <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;consumed)</pre>
+                                 <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;consumed)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a> from the specified topic.
  The <code>"auto.offset.reset"</code> strategy, <a href="../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor"><code>TimestampExtractor</code></a>, key and value deserializers
  are defined by the options in <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a> are used.
@@ -381,7 +381,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>stream</h4>
-<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream">KStream</a>&lt;K,V&gt;&nbsp;stream(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topics)</pre>
+<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream">KStream</a>&lt;K,V&gt;&nbsp;stream(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topics)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a> from the specified topics.
  The default <code>"auto.offset.reset"</code> strategy, default <a href="../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor"><code>TimestampExtractor</code></a>, and default key and value
  deserializers as specified in the <a href="../../../../org/apache/kafka/streams/StreamsConfig.html" title="class in org.apache.kafka.streams"><code>config</code></a> are used.
@@ -406,7 +406,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>stream</h4>
 <pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream">KStream</a>&lt;K,V&gt;&nbsp;stream(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topics,
-                                 <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;consumed)</pre>
+                                 <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;consumed)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a> from the specified topics.
  The <code>"auto.offset.reset"</code> strategy, <a href="../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor"><code>TimestampExtractor</code></a>, key and value deserializers
  are defined by the options in <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a> are used.
@@ -431,7 +431,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>stream</h4>
-<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream">KStream</a>&lt;K,V&gt;&nbsp;stream(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a>&nbsp;topicPattern)</pre>
+<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream">KStream</a>&lt;K,V&gt;&nbsp;stream(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a>&nbsp;topicPattern)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a> from the specified topic pattern.
  The default <code>"auto.offset.reset"</code> strategy, default <a href="../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor"><code>TimestampExtractor</code></a>, and default key and value
  deserializers as specified in the <a href="../../../../org/apache/kafka/streams/StreamsConfig.html" title="class in org.apache.kafka.streams"><code>config</code></a> are used.
@@ -459,7 +459,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>stream</h4>
 <pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream">KStream</a>&lt;K,V&gt;&nbsp;stream(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a>&nbsp;topicPattern,
-                                 <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;consumed)</pre>
+                                 <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;consumed)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a> from the specified topic pattern.
  The <code>"auto.offset.reset"</code> strategy, <a href="../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor"><code>TimestampExtractor</code></a>, key and value deserializers
  are defined by the options in <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a> are used.
@@ -489,7 +489,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>table</h4>
 <pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;K,V&gt;&nbsp;table(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
                                <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;consumed,
-                               <a href="../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,<a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                               <a href="../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,<a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream"><code>KTable</code></a> for the specified topic.
  The <code>"auto.offset.reset"</code> strategy, <a href="../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor"><code>TimestampExtractor</code></a>, key and value deserializers
  are defined by the options in <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a> are used.
@@ -508,8 +508,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  serdes in <a href="../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a>, i.e.,
  <pre> <code>
  streamBuilder.table(topic, Consumed.with(Serde.String(), Serde.String()), Materialized.&lt;String, String, KeyValueStore&lt;Bytes, byte[]&gt;as(storeName))
- </code>
- </pre>
+ </code></code></pre>
  To query the local <a href="../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>ReadOnlyKeyValueStore</code></a> it must be obtained via
  <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams#store(...)</code></a>:
  <pre><code>
@@ -517,7 +516,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  ReadOnlyKeyValueStore&lt;K, ValueAndTimestamp&lt;V&gt;&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;K, ValueAndTimestamp&lt;V&gt;&gt;timestampedKeyValueStore());
  K key = "some-key";
  ValueAndTimestamp&lt;V&gt; valueForKey = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.</div>
 <dl>
@@ -536,7 +535,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>table</h4>
-<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;K,V&gt;&nbsp;table(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</pre>
+<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;K,V&gt;&nbsp;table(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream"><code>KTable</code></a> for the specified topic.
  The default <code>"auto.offset.reset"</code> strategy and default key and value deserializers as specified in the
  <a href="../../../../org/apache/kafka/streams/StreamsConfig.html" title="class in org.apache.kafka.streams"><code>config</code></a> are used.
@@ -565,7 +564,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>table</h4>
 <pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;K,V&gt;&nbsp;table(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
-                               <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;consumed)</pre>
+                               <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;consumed)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream"><code>KTable</code></a> for the specified topic.
  The <code>"auto.offset.reset"</code> strategy, <a href="../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor"><code>TimestampExtractor</code></a>, key and value deserializers
  are defined by the options in <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a> are used.
@@ -595,7 +594,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>table</h4>
 <pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;K,V&gt;&nbsp;table(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
-                               <a href="../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,<a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                               <a href="../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,<a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream"><code>KTable</code></a> for the specified topic.
  The default <code>"auto.offset.reset"</code> strategy as specified in the <a href="../../../../org/apache/kafka/streams/StreamsConfig.html" title="class in org.apache.kafka.streams"><code>config</code></a> are used.
  Key and value deserializers as defined by the options in <a href="../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a> are used.
@@ -624,7 +623,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>globalTable</h4>
 <pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/GlobalKTable.html" title="interface in org.apache.kafka.streams.kstream">GlobalKTable</a>&lt;K,V&gt;&nbsp;globalTable(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
-                                           <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;consumed)</pre>
+                                           <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;consumed)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/streams/kstream/GlobalKTable.html" title="interface in org.apache.kafka.streams.kstream"><code>GlobalKTable</code></a> for the specified topic.
  Input <a href="../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>records</code></a> with <code>null</code> key will be dropped.
  <p>
@@ -650,7 +649,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>globalTable</h4>
-<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/GlobalKTable.html" title="interface in org.apache.kafka.streams.kstream">GlobalKTable</a>&lt;K,V&gt;&nbsp;globalTable(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</pre>
+<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/GlobalKTable.html" title="interface in org.apache.kafka.streams.kstream">GlobalKTable</a>&lt;K,V&gt;&nbsp;globalTable(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/streams/kstream/GlobalKTable.html" title="interface in org.apache.kafka.streams.kstream"><code>GlobalKTable</code></a> for the specified topic.
  The default key and value deserializers as specified in the <a href="../../../../org/apache/kafka/streams/StreamsConfig.html" title="class in org.apache.kafka.streams"><code>config</code></a> are used.
  Input <a href="../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>records</code></a> with <code>null</code> key will be dropped.
@@ -678,7 +677,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>globalTable</h4>
 <pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/GlobalKTable.html" title="interface in org.apache.kafka.streams.kstream">GlobalKTable</a>&lt;K,V&gt;&nbsp;globalTable(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
                                            <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;consumed,
-                                           <a href="../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,<a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                                           <a href="../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,<a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/streams/kstream/GlobalKTable.html" title="interface in org.apache.kafka.streams.kstream"><code>GlobalKTable</code></a> for the specified topic.
 
  Input <a href="../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a> pairs with <code>null</code> key will be dropped.
@@ -692,8 +691,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  serdes in <a href="../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a>, i.e.,
  <pre> <code>
  streamBuilder.globalTable(topic, Consumed.with(Serde.String(), Serde.String()), Materialized.&lt;String, String, KeyValueStore&lt;Bytes, byte[]&gt;as(storeName))
- </code>
- </pre>
+ </code></code></pre>
  To query the local <a href="../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>ReadOnlyKeyValueStore</code></a> it must be obtained via
  <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams#store(...)</code></a>:
  <pre><code>
@@ -701,7 +699,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  ReadOnlyKeyValueStore&lt;K, ValueAndTimestamp&lt;V&gt;&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;K, ValueAndTimestamp&lt;V&gt;&gt;timestampedKeyValueStore());
  K key = "some-key";
  ValueAndTimestamp&lt;V&gt; valueForKey = localStore.get(key);
- </code></pre>
+ </code></code></pre>
  Note that <a href="../../../../org/apache/kafka/streams/kstream/GlobalKTable.html" title="interface in org.apache.kafka.streams.kstream"><code>GlobalKTable</code></a> always applies <code>"auto.offset.reset"</code> strategy <code>"earliest"</code>
  regardless of the specified value in <a href="../../../../org/apache/kafka/streams/StreamsConfig.html" title="class in org.apache.kafka.streams"><code>StreamsConfig</code></a> or <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a>.</div>
 <dl>
@@ -721,7 +719,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>globalTable</h4>
 <pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/kstream/GlobalKTable.html" title="interface in org.apache.kafka.streams.kstream">GlobalKTable</a>&lt;K,V&gt;&nbsp;globalTable(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
-                                           <a href="../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,<a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                                           <a href="../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,<a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/streams/kstream/GlobalKTable.html" title="interface in org.apache.kafka.streams.kstream"><code>GlobalKTable</code></a> for the specified topic.
 
  Input <a href="../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a> pairs with <code>null</code> key will be dropped.
@@ -738,7 +736,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  ReadOnlyKeyValueStore&lt;K, ValueAndTimestamp&lt;V&gt;&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;K, ValueAndTimestamp&lt;V&gt;&gt;timestampedKeyValueStore());
  K key = "some-key";
  ValueAndTimestamp&lt;V&gt; valueForKey = localStore.get(key);
- </code></pre>
+ </code></code></pre>
  Note that <a href="../../../../org/apache/kafka/streams/kstream/GlobalKTable.html" title="interface in org.apache.kafka.streams.kstream"><code>GlobalKTable</code></a> always applies <code>"auto.offset.reset"</code> strategy <code>"earliest"</code>
  regardless of the specified value in <a href="../../../../org/apache/kafka/streams/StreamsConfig.html" title="class in org.apache.kafka.streams"><code>StreamsConfig</code></a>.</div>
 <dl>
@@ -756,7 +754,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>addStateStore</h4>
-<pre>public&nbsp;<a href="../../../../org/apache/kafka/streams/StreamsBuilder.html" title="class in org.apache.kafka.streams">StreamsBuilder</a>&nbsp;addStateStore(<a href="../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state">StoreBuilder</a>&lt;?&gt;&nbsp;builder)</pre>
+<pre>public&nbsp;<a href="../../../../org/apache/kafka/streams/StreamsBuilder.html" title="class in org.apache.kafka.streams">StreamsBuilder</a>&nbsp;addStateStore(<a href="../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state">StoreBuilder</a>&lt;?&gt;&nbsp;builder)</code></pre>
 <div class="block">Adds a state store to the underlying <a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams"><code>Topology</code></a>.
  <p>
  It is required to connect state stores to <a href="../../../../org/apache/kafka/streams/processor/Processor.html" title="interface in org.apache.kafka.streams.processor"><code>Processors</code></a>, <a href="../../../../org/apache/kafka/streams/kstream/Transformer.html" title="interface in org.apache.kafka.streams.kstream"><code>Transformers</code></a>,
@@ -783,7 +781,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/Strea
                                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sourceName,
                                                        <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;consumed,
                                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;processorName,
-                                                       <a href="../../../../org/apache/kafka/streams/processor/ProcessorSupplier.html" title="interface in org.apache.kafka.streams.processor">ProcessorSupplier</a>&lt;K,V&gt;&nbsp;stateUpdateSupplier)</pre>
+                                                       <a href="../../../../org/apache/kafka/streams/processor/ProcessorSupplier.html" title="interface in org.apache.kafka.streams.processor">ProcessorSupplier</a>&lt;K,V&gt;&nbsp;stateUpdateSupplier)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">use <a href="../../../../org/apache/kafka/streams/StreamsBuilder.html#addGlobalStore-org.apache.kafka.streams.state.StoreBuilder-java.lang.String-org.apache.kafka.streams.kstream.Consumed-org.apache.kafka.streams.processor.ProcessorSupplier-"><code>addGlobalStore(StoreBuilder, String, Consumed, ProcessorSupplier)</code></a> instead</span></div>
 </li>
 </ul>
@@ -796,7 +794,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/Strea
 <pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/StreamsBuilder.html" title="class in org.apache.kafka.streams">StreamsBuilder</a>&nbsp;addGlobalStore(<a href="../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state">StoreBuilder</a>&lt;?&gt;&nbsp;storeBuilder,
                                            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
                                            <a href="../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;consumed,
-                                           <a href="../../../../org/apache/kafka/streams/processor/ProcessorSupplier.html" title="interface in org.apache.kafka.streams.processor">ProcessorSupplier</a>&lt;K,V&gt;&nbsp;stateUpdateSupplier)</pre>
+                                           <a href="../../../../org/apache/kafka/streams/processor/ProcessorSupplier.html" title="interface in org.apache.kafka.streams.processor">ProcessorSupplier</a>&lt;K,V&gt;&nbsp;stateUpdateSupplier)</code></pre>
 <div class="block">Adds a global <a href="../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> to the topology.
  The <a href="../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> sources its data from all partitions of the provided input topic.
  There will be exactly one instance of this <a href="../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> per Kafka Streams instance.
@@ -832,7 +830,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/Strea
 <ul class="blockList">
 <li class="blockList">
 <h4>build</h4>
-<pre>public&nbsp;<a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams">Topology</a>&nbsp;build()</pre>
+<pre>public&nbsp;<a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams">Topology</a>&nbsp;build()</code></pre>
 <div class="block">Returns the <a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams"><code>Topology</code></a> that represents the specified processing logic.
  Note that using this method means no optimizations are performed.</div>
 <dl>
@@ -847,7 +845,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/Strea
 <ul class="blockListLast">
 <li class="blockList">
 <h4>build</h4>
-<pre>public&nbsp;<a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams">Topology</a>&nbsp;build(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;props)</pre>
+<pre>public&nbsp;<a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams">Topology</a>&nbsp;build(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;props)</code></pre>
 <div class="block">Returns the <a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams"><code>Topology</code></a> that represents the specified processing logic and accepts
  a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util"><code>Properties</code></a> instance used to indicate whether to optimize topology or not.</div>
 <dl>

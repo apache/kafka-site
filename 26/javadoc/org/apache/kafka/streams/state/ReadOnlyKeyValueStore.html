@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">ReadOnlyKeyValueStore&lt;K,V&gt;</span></pre>
+<pre>public interface <span class="typeNameLabel">ReadOnlyKeyValueStore&lt;K,V&gt;</span></code></pre>
 <div class="block">A key-value store that only supports read operations.
  Implementations should be thread-safe as concurrent reads and writes are expected.
 
@@ -183,7 +183,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="type parameter in ReadOnlyKeyValueStore">V</a>&nbsp;get(<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="type parameter in ReadOnlyKeyValueStore">K</a>&nbsp;key)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="type parameter in ReadOnlyKeyValueStore">V</a>&nbsp;get(<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="type parameter in ReadOnlyKeyValueStore">K</a>&nbsp;key)</code></pre>
 <div class="block">Get the value corresponding to this key.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -205,7 +205,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>range</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/state/KeyValueIterator.html" title="interface in org.apache.kafka.streams.state">KeyValueIterator</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="type parameter in ReadOnlyKeyValueStore">K</a>,<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="type parameter in ReadOnlyKeyValueStore">V</a>&gt;&nbsp;range(<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="type parameter in ReadOnlyKeyValueStore">K</a>&nbsp;from,
-                            <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="type parameter in ReadOnlyKeyValueStore">K</a>&nbsp;to)</pre>
+                            <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="type parameter in ReadOnlyKeyValueStore">K</a>&nbsp;to)</code></pre>
 <div class="block">Get an iterator over a given range of keys. This iterator must be closed after use.
  The returned iterator must be safe from <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ConcurrentModificationException.html?is-external=true" title="class or interface in java.util"><code>ConcurrentModificationException</code></a>s
  and must not return null values. No ordering guarantees are provided.</div>
@@ -227,7 +227,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>all</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/state/KeyValueIterator.html" title="interface in org.apache.kafka.streams.state">KeyValueIterator</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="type parameter in ReadOnlyKeyValueStore">K</a>,<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="type parameter in ReadOnlyKeyValueStore">V</a>&gt;&nbsp;all()</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/state/KeyValueIterator.html" title="interface in org.apache.kafka.streams.state">KeyValueIterator</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="type parameter in ReadOnlyKeyValueStore">K</a>,<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="type parameter in ReadOnlyKeyValueStore">V</a>&gt;&nbsp;all()</code></pre>
 <div class="block">Return an iterator over all keys in this store. This iterator must be closed after use.
  The returned iterator must be safe from <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ConcurrentModificationException.html?is-external=true" title="class or interface in java.util"><code>ConcurrentModificationException</code></a>s
  and must not return null values. No ordering guarantees are provided.</div>
@@ -245,7 +245,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>approximateNumEntries</h4>
-<pre>long&nbsp;approximateNumEntries()</pre>
+<pre>long&nbsp;approximateNumEntries()</code></pre>
 <div class="block">Return an approximate count of key-value mappings in this store.
 
  The count is not guaranteed to be exact in order to accommodate stores

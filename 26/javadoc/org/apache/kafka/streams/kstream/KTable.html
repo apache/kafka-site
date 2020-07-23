@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">KTable&lt;K,V&gt;</span></pre>
+<pre>public interface <span class="typeNameLabel">KTable&lt;K,V&gt;</span></code></pre>
 <div class="block"><code>KTable</code> is an abstraction of a <i>changelog stream</i> from a primary-keyed table.
  Each record in this changelog stream is an update on the primary-keyed table with the record key as the primary key.
  <p>
@@ -127,7 +127,7 @@ var activeTableTab = "activeTableTab";
      final String queryableStoreName = table.queryableStoreName(); // returns null if KTable is not queryable
      ReadOnlyKeyValueStore view = streams.store(queryableStoreName, QueryableStoreTypes.timestampedKeyValueStore());
      view.get(key);
-</code></pre>
+</code></code></pre>
 <p>
  Records from the source topic that have null keys are dropped.</div>
 <dl>
@@ -601,7 +601,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>filter</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;filter(<a href="../../../../../org/apache/kafka/streams/kstream/Predicate.html" title="interface in org.apache.kafka.streams.kstream">Predicate</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;predicate)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;filter(<a href="../../../../../org/apache/kafka/streams/kstream/Predicate.html" title="interface in org.apache.kafka.streams.kstream">Predicate</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;predicate)</code></pre>
 <div class="block">Create a new <code>KTable</code> that consists of all records of this <code>KTable</code> which satisfy the given
  predicate, with default serializers, deserializers, and state store.
  All records that do not satisfy the predicate are dropped.
@@ -632,7 +632,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>filter</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;filter(<a href="../../../../../org/apache/kafka/streams/kstream/Predicate.html" title="interface in org.apache.kafka.streams.kstream">Predicate</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;predicate,
-                   <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</pre>
+                   <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</code></pre>
 <div class="block">Create a new <code>KTable</code> that consists of all records of this <code>KTable</code> which satisfy the given
  predicate, with default serializers, deserializers, and state store.
  All records that do not satisfy the predicate are dropped.
@@ -664,7 +664,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>filter</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;filter(<a href="../../../../../org/apache/kafka/streams/kstream/Predicate.html" title="interface in org.apache.kafka.streams.kstream">Predicate</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;predicate,
-                   <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                   <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Create a new <code>KTable</code> that consists of all records of this <code>KTable</code> which satisfy the given
  predicate, with the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>key serde</code></a>, <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>value serde</code></a>, and the underlying
  <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>materialized state storage</code></a> configured in the <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a> instance.
@@ -687,7 +687,7 @@ var activeTableTab = "activeTableTab";
  ReadOnlyKeyValueStore&lt;K, ValueAndTimestamp&lt;V&gt;&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;K, ValueAndTimestamp&lt;V&gt;&gt;timestampedKeyValueStore());
  K key = "some-word";
  ValueAndTimestamp&lt;V&gt; valueForKey = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.
  The store name to query with is specified by <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#as-java.lang.String-"><code>Materialized.as(String)</code></a> or <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#as-org.apache.kafka.streams.state.KeyValueBytesStoreSupplier-"><code>Materialized.as(KeyValueBytesStoreSupplier)</code></a>.
@@ -712,7 +712,7 @@ var activeTableTab = "activeTableTab";
 <h4>filter</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;filter(<a href="../../../../../org/apache/kafka/streams/kstream/Predicate.html" title="interface in org.apache.kafka.streams.kstream">Predicate</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;predicate,
                    <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                   <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                   <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Create a new <code>KTable</code> that consists of all records of this <code>KTable</code> which satisfy the given
  predicate, with the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>key serde</code></a>, <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>value serde</code></a>, and the underlying
  <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>materialized state storage</code></a> configured in the <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a> instance.
@@ -735,7 +735,7 @@ var activeTableTab = "activeTableTab";
  ReadOnlyKeyValueStore&lt;K, ValueAndTimestamp&lt;V&gt;&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;K, ValueAndTimestamp&lt;V&gt;&gt;timestampedKeyValueStore());
  K key = "some-word";
  ValueAndTimestamp&lt;V&gt; valueForKey = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.
  The store name to query with is specified by <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#as-java.lang.String-"><code>Materialized.as(String)</code></a> or <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#as-org.apache.kafka.streams.state.KeyValueBytesStoreSupplier-"><code>Materialized.as(KeyValueBytesStoreSupplier)</code></a>.
@@ -759,7 +759,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>filterNot</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;filterNot(<a href="../../../../../org/apache/kafka/streams/kstream/Predicate.html" title="interface in org.apache.kafka.streams.kstream">Predicate</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;predicate)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;filterNot(<a href="../../../../../org/apache/kafka/streams/kstream/Predicate.html" title="interface in org.apache.kafka.streams.kstream">Predicate</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;predicate)</code></pre>
 <div class="block">Create a new <code>KTable</code> that consists all records of this <code>KTable</code> which do <em>not</em> satisfy the
  given predicate, with default serializers, deserializers, and state store.
  All records that <em>do</em> satisfy the predicate are dropped.
@@ -790,7 +790,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>filterNot</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;filterNot(<a href="../../../../../org/apache/kafka/streams/kstream/Predicate.html" title="interface in org.apache.kafka.streams.kstream">Predicate</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;predicate,
-                      <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</pre>
+                      <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</code></pre>
 <div class="block">Create a new <code>KTable</code> that consists all records of this <code>KTable</code> which do <em>not</em> satisfy the
  given predicate, with default serializers, deserializers, and state store.
  All records that <em>do</em> satisfy the predicate are dropped.
@@ -822,7 +822,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>filterNot</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;filterNot(<a href="../../../../../org/apache/kafka/streams/kstream/Predicate.html" title="interface in org.apache.kafka.streams.kstream">Predicate</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;predicate,
-                      <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                      <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Create a new <code>KTable</code> that consists all records of this <code>KTable</code> which do <em>not</em> satisfy the
  given predicate, with the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>key serde</code></a>, <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>value serde</code></a>, and the underlying
  <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>materialized state storage</code></a> configured in the <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a> instance.
@@ -845,7 +845,7 @@ var activeTableTab = "activeTableTab";
  ReadOnlyKeyValueStore&lt;K, ValueAndTimestamp&lt;V&gt;&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;K, ValueAndTimestamp&lt;V&gt;&gt;timestampedKeyValueStore());
  K key = "some-word";
  ValueAndTimestamp&lt;V&gt; valueForKey = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.
  The store name to query with is specified by <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#as-java.lang.String-"><code>Materialized.as(String)</code></a> or <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#as-org.apache.kafka.streams.state.KeyValueBytesStoreSupplier-"><code>Materialized.as(KeyValueBytesStoreSupplier)</code></a>.
@@ -870,7 +870,7 @@ var activeTableTab = "activeTableTab";
 <h4>filterNot</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;filterNot(<a href="../../../../../org/apache/kafka/streams/kstream/Predicate.html" title="interface in org.apache.kafka.streams.kstream">Predicate</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;predicate,
                       <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                      <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                      <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Create a new <code>KTable</code> that consists all records of this <code>KTable</code> which do <em>not</em> satisfy the
  given predicate, with the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>key serde</code></a>, <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>value serde</code></a>, and the underlying
  <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>materialized state storage</code></a> configured in the <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a> instance.
@@ -893,7 +893,7 @@ var activeTableTab = "activeTableTab";
  ReadOnlyKeyValueStore&lt;K, ValueAndTimestamp&lt;V&gt;&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;K, ValueAndTimestamp&lt;V&gt;&gt;timestampedKeyValueStore());
  K key = "some-word";
  ValueAndTimestamp&lt;V&gt; valueForKey = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.
  The store name to query with is specified by <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#as-java.lang.String-"><code>Materialized.as(String)</code></a> or <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#as-org.apache.kafka.streams.state.KeyValueBytesStoreSupplier-"><code>Materialized.as(KeyValueBytesStoreSupplier)</code></a>.
@@ -917,7 +917,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>mapValues</h4>
-<pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;mapValues(<a href="../../../../../org/apache/kafka/streams/kstream/ValueMapper.html" title="interface in org.apache.kafka.streams.kstream">ValueMapper</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends VR&gt;&nbsp;mapper)</pre>
+<pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;mapValues(<a href="../../../../../org/apache/kafka/streams/kstream/ValueMapper.html" title="interface in org.apache.kafka.streams.kstream">ValueMapper</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends VR&gt;&nbsp;mapper)</code></pre>
 <div class="block">Create a new <code>KTable</code> by transforming the value of each record in this <code>KTable</code> into a new value
  (with possibly a new type) in the new <code>KTable</code>, with default serializers, deserializers, and state store.
  For each <code>KTable</code> update the provided <a href="../../../../../org/apache/kafka/streams/kstream/ValueMapper.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueMapper</code></a> is applied to the value of the updated record and
@@ -929,7 +929,7 @@ var activeTableTab = "activeTableTab";
  <pre><code>
  KTable&lt;String, String&gt; inputTable = builder.table("topic");
  KTable&lt;String, Integer&gt; outputTable = inputTable.mapValues(value -&gt; value.split(" ").length);
- </code></pre>
+ </code></code></pre>
  <p>
  This operation preserves data co-location with respect to the key.
  Thus, <em>no</em> internal data redistribution is required if a key based operator (like a join) is applied to
@@ -956,7 +956,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>mapValues</h4>
 <pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;mapValues(<a href="../../../../../org/apache/kafka/streams/kstream/ValueMapper.html" title="interface in org.apache.kafka.streams.kstream">ValueMapper</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends VR&gt;&nbsp;mapper,
-                            <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</pre>
+                            <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</code></pre>
 <div class="block">Create a new <code>KTable</code> by transforming the value of each record in this <code>KTable</code> into a new value
  (with possibly a new type) in the new <code>KTable</code>, with default serializers, deserializers, and state store.
  For each <code>KTable</code> update the provided <a href="../../../../../org/apache/kafka/streams/kstream/ValueMapper.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueMapper</code></a> is applied to the value of the updated record and
@@ -968,7 +968,7 @@ var activeTableTab = "activeTableTab";
  <pre><code>
  KTable&lt;String, String&gt; inputTable = builder.table("topic");
  KTable&lt;String, Integer&gt; outputTable = inputTable.mapValues(value -&gt; value.split(" ").length, Named.as("countTokenValue"));
- </code></pre>
+ </code></code></pre>
  <p>
  This operation preserves data co-location with respect to the key.
  Thus, <em>no</em> internal data redistribution is required if a key based operator (like a join) is applied to
@@ -995,7 +995,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>mapValues</h4>
-<pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;mapValues(<a href="../../../../../org/apache/kafka/streams/kstream/ValueMapperWithKey.html" title="interface in org.apache.kafka.streams.kstream">ValueMapperWithKey</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends VR&gt;&nbsp;mapper)</pre>
+<pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;mapValues(<a href="../../../../../org/apache/kafka/streams/kstream/ValueMapperWithKey.html" title="interface in org.apache.kafka.streams.kstream">ValueMapperWithKey</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends VR&gt;&nbsp;mapper)</code></pre>
 <div class="block">Create a new <code>KTable</code> by transforming the value of each record in this <code>KTable</code> into a new value
  (with possibly a new type) in the new <code>KTable</code>, with default serializers, deserializers, and state store.
  For each <code>KTable</code> update the provided <a href="../../../../../org/apache/kafka/streams/kstream/ValueMapperWithKey.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueMapperWithKey</code></a> is applied to the value of the update
@@ -1008,7 +1008,7 @@ var activeTableTab = "activeTableTab";
  KTable&lt;String, String&gt; inputTable = builder.table("topic");
  KTable&lt;String, Integer&gt; outputTable =
   inputTable.mapValues((readOnlyKey, value) -&gt; readOnlyKey.split(" ").length + value.split(" ").length);
- </code></pre>
+ </code></code></pre>
  <p>
  Note that the key is read-only and should not be modified, as this can lead to corrupt partitioning.
  This operation preserves data co-location with respect to the key.
@@ -1036,7 +1036,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>mapValues</h4>
 <pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;mapValues(<a href="../../../../../org/apache/kafka/streams/kstream/ValueMapperWithKey.html" title="interface in org.apache.kafka.streams.kstream">ValueMapperWithKey</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends VR&gt;&nbsp;mapper,
-                            <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</pre>
+                            <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</code></pre>
 <div class="block">Create a new <code>KTable</code> by transforming the value of each record in this <code>KTable</code> into a new value
  (with possibly a new type) in the new <code>KTable</code>, with default serializers, deserializers, and state store.
  For each <code>KTable</code> update the provided <a href="../../../../../org/apache/kafka/streams/kstream/ValueMapperWithKey.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueMapperWithKey</code></a> is applied to the value of the update
@@ -1049,7 +1049,7 @@ var activeTableTab = "activeTableTab";
  KTable&lt;String, String&gt; inputTable = builder.table("topic");
  KTable&lt;String, Integer&gt; outputTable =
   inputTable.mapValues((readOnlyKey, value) -&gt; readOnlyKey.split(" ").length + value.split(" ").length, Named.as("countTokenValueAndKey"));
- </code></pre>
+ </code></code></pre>
  <p>
  Note that the key is read-only and should not be modified, as this can lead to corrupt partitioning.
  This operation preserves data co-location with respect to the key.
@@ -1078,7 +1078,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>mapValues</h4>
 <pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;mapValues(<a href="../../../../../org/apache/kafka/streams/kstream/ValueMapper.html" title="interface in org.apache.kafka.streams.kstream">ValueMapper</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends VR&gt;&nbsp;mapper,
-                            <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                            <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Create a new <code>KTable</code> by transforming the value of each record in this <code>KTable</code> into a new value
  (with possibly a new type) in the new <code>KTable</code>, with the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>key serde</code></a>, <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>value serde</code></a>,
  and the underlying <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>materialized state storage</code></a> configured in the <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a>
@@ -1096,7 +1096,7 @@ var activeTableTab = "activeTableTab";
          return value.split(" ").length;
      }
  });
- </code></pre>
+ </code></code></pre>
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> representing outputTable above it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams#store(...)</code></a>:
@@ -1132,7 +1132,7 @@ var activeTableTab = "activeTableTab";
 <h4>mapValues</h4>
 <pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;mapValues(<a href="../../../../../org/apache/kafka/streams/kstream/ValueMapper.html" title="interface in org.apache.kafka.streams.kstream">ValueMapper</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends VR&gt;&nbsp;mapper,
                             <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                            <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                            <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Create a new <code>KTable</code> by transforming the value of each record in this <code>KTable</code> into a new value
  (with possibly a new type) in the new <code>KTable</code>, with the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>key serde</code></a>, <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>value serde</code></a>,
  and the underlying <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>materialized state storage</code></a> configured in the <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a>
@@ -1150,7 +1150,7 @@ var activeTableTab = "activeTableTab";
          return value.split(" ").length;
      }
  });
- </code></pre>
+ </code></code></pre>
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> representing outputTable above it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams#store(...)</code></a>:
@@ -1186,7 +1186,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>mapValues</h4>
 <pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;mapValues(<a href="../../../../../org/apache/kafka/streams/kstream/ValueMapperWithKey.html" title="interface in org.apache.kafka.streams.kstream">ValueMapperWithKey</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends VR&gt;&nbsp;mapper,
-                            <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                            <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Create a new <code>KTable</code> by transforming the value of each record in this <code>KTable</code> into a new value
  (with possibly a new type) in the new <code>KTable</code>, with the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>key serde</code></a>, <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>value serde</code></a>,
  and the underlying <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>materialized state storage</code></a> configured in the <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a>
@@ -1204,7 +1204,7 @@ var activeTableTab = "activeTableTab";
           return readOnlyKey.split(" ").length + value.split(" ").length;
      }
  });
- </code></pre>
+ </code></code></pre>
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> representing outputTable above it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams.store(StoreQueryParameters)</code></a>  KafkaStreams#store(...)}:
@@ -1241,7 +1241,7 @@ var activeTableTab = "activeTableTab";
 <h4>mapValues</h4>
 <pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;mapValues(<a href="../../../../../org/apache/kafka/streams/kstream/ValueMapperWithKey.html" title="interface in org.apache.kafka.streams.kstream">ValueMapperWithKey</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends VR&gt;&nbsp;mapper,
                             <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                            <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                            <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Create a new <code>KTable</code> by transforming the value of each record in this <code>KTable</code> into a new value
  (with possibly a new type) in the new <code>KTable</code>, with the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>key serde</code></a>, <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>value serde</code></a>,
  and the underlying <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>materialized state storage</code></a> configured in the <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a>
@@ -1259,7 +1259,7 @@ var activeTableTab = "activeTableTab";
           return readOnlyKey.split(" ").length + value.split(" ").length;
      }
  });
- </code></pre>
+ </code></code></pre>
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> representing outputTable above it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams#store(...)</code></a>:
@@ -1295,7 +1295,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>toStream</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream">KStream</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;toStream()</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream">KStream</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;toStream()</code></pre>
 <div class="block">Convert this changelog stream to a <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a>.
  <p>
  Note that this is a logical operation and only changes the "interpretation" of the stream, i.e., each record of
@@ -1312,7 +1312,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>toStream</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream">KStream</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;toStream(<a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream">KStream</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;toStream(<a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</code></pre>
 <div class="block">Convert this changelog stream to a <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a>.
  <p>
  Note that this is a logical operation and only changes the "interpretation" of the stream, i.e., each record of
@@ -1331,7 +1331,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>toStream</h4>
-<pre>&lt;KR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream">KStream</a>&lt;KR,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;toStream(<a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream">KeyValueMapper</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends KR&gt;&nbsp;mapper)</pre>
+<pre>&lt;KR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream">KStream</a>&lt;KR,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;toStream(<a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream">KeyValueMapper</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends KR&gt;&nbsp;mapper)</code></pre>
 <div class="block">Convert this changelog stream to a <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a> using the given <a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream"><code>KeyValueMapper</code></a> to select the new key.
  <p>
  For example, you can compute the new key as the length of the value string.
@@ -1342,7 +1342,7 @@ var activeTableTab = "activeTableTab";
          return value.length();
      }
  });
- </code></pre>
+ </code></code></pre>
  Setting a new key might result in an internal data redistribution if a key based operator (like an aggregation or
  join) is applied to the result <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a>.
  <p>
@@ -1368,7 +1368,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>toStream</h4>
 <pre>&lt;KR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream">KStream</a>&lt;KR,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;toStream(<a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream">KeyValueMapper</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends KR&gt;&nbsp;mapper,
-                            <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</pre>
+                            <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</code></pre>
 <div class="block">Convert this changelog stream to a <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a> using the given <a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream"><code>KeyValueMapper</code></a> to select the new key.
  <p>
  For example, you can compute the new key as the length of the value string.
@@ -1379,7 +1379,7 @@ var activeTableTab = "activeTableTab";
          return value.length();
      }
  });
- </code></pre>
+ </code></code></pre>
  Setting a new key might result in an internal data redistribution if a key based operator (like an aggregation or
  join) is applied to the result <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a>.
  <p>
@@ -1405,7 +1405,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>suppress</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;suppress(<a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.html" title="interface in org.apache.kafka.streams.kstream">Suppressed</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>&gt;&nbsp;suppressed)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>&gt;&nbsp;suppress(<a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.html" title="interface in org.apache.kafka.streams.kstream">Suppressed</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>&gt;&nbsp;suppressed)</code></pre>
 <div class="block">Suppress some updates from this changelog stream, determined by the supplied <a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.html" title="interface in org.apache.kafka.streams.kstream"><code>Suppressed</code></a> configuration.
 
  This controls what updates downstream table and stream operations will receive.</div>
@@ -1424,7 +1424,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>transformValues</h4>
 <pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;transformValues(<a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKeySupplier.html" title="interface in org.apache.kafka.streams.kstream">ValueTransformerWithKeySupplier</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends VR&gt;&nbsp;transformerSupplier,
-                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;stateStoreNames)</pre>
+                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;stateStoreNames)</code></pre>
 <div class="block">Create a new <code>KTable</code> by transforming the value of each record in this <code>KTable</code> into a new value
  (with possibly a new type), with default serializers, deserializers, and state store.
  A <a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKey.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueTransformerWithKey</code></a> (provided by the given <a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKeySupplier.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueTransformerWithKeySupplier</code></a>) is applied to each input
@@ -1451,7 +1451,7 @@ var activeTableTab = "activeTableTab";
  builder.addStateStore(keyValueStoreBuilder);
 
  KTable outputTable = inputTable.transformValues(new ValueTransformerWithKeySupplier() { ... }, "myValueTransformState");
- </code></pre>
+ </code></code></pre>
  <p>
  Within the <a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKey.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueTransformerWithKey</code></a>, the state is obtained via the
  <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor"><code>ProcessorContext</code></a>.
@@ -1479,7 +1479,7 @@ var activeTableTab = "activeTableTab";
          }
      }
  }
- </code></pre>
+ </code></code></pre>
  <p>
  Note that the key is read-only and should not be modified, as this can lead to corrupt partitioning.
  Setting a new value preserves data co-location with respect to the key.</div>
@@ -1508,7 +1508,7 @@ var activeTableTab = "activeTableTab";
 <h4>transformValues</h4>
 <pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;transformValues(<a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKeySupplier.html" title="interface in org.apache.kafka.streams.kstream">ValueTransformerWithKeySupplier</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends VR&gt;&nbsp;transformerSupplier,
                                   <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;stateStoreNames)</pre>
+                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;stateStoreNames)</code></pre>
 <div class="block">Create a new <code>KTable</code> by transforming the value of each record in this <code>KTable</code> into a new value
  (with possibly a new type), with default serializers, deserializers, and state store.
  A <a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKey.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueTransformerWithKey</code></a> (provided by the given <a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKeySupplier.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueTransformerWithKeySupplier</code></a>) is applied to each input
@@ -1535,7 +1535,7 @@ var activeTableTab = "activeTableTab";
  builder.addStateStore(keyValueStoreBuilder);
 
  KTable outputTable = inputTable.transformValues(new ValueTransformerWithKeySupplier() { ... }, "myValueTransformState");
- </code></pre>
+ </code></code></pre>
  <p>
  Within the <a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKey.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueTransformerWithKey</code></a>, the state is obtained via the
  <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor"><code>ProcessorContext</code></a>.
@@ -1563,7 +1563,7 @@ var activeTableTab = "activeTableTab";
          }
      }
  }
- </code></pre>
+ </code></code></pre>
  <p>
  Note that the key is read-only and should not be modified, as this can lead to corrupt partitioning.
  Setting a new value preserves data co-location with respect to the key.</div>
@@ -1593,7 +1593,7 @@ var activeTableTab = "activeTableTab";
 <h4>transformValues</h4>
 <pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;transformValues(<a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKeySupplier.html" title="interface in org.apache.kafka.streams.kstream">ValueTransformerWithKeySupplier</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends VR&gt;&nbsp;transformerSupplier,
                                   <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized,
-                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;stateStoreNames)</pre>
+                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;stateStoreNames)</code></pre>
 <div class="block">Create a new <code>KTable</code> by transforming the value of each record in this <code>KTable</code> into a new value
  (with possibly a new type), with the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>key serde</code></a>, <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>value serde</code></a>, and the underlying
  <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>materialized state storage</code></a> configured in the <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a> instance.
@@ -1622,7 +1622,7 @@ var activeTableTab = "activeTableTab";
                                  .withKeySerde(Serdes.String())
                                  .withValueSerde(Serdes.String()),
      "myValueTransformState");
- </code></pre>
+ </code></code></pre>
  <p>
  Within the <a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKey.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueTransformerWithKey</code></a>, the state is obtained via the
  <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor"><code>ProcessorContext</code></a>.
@@ -1650,7 +1650,7 @@ var activeTableTab = "activeTableTab";
          }
      }
  }
- </code></pre>
+ </code></code></pre>
  <p>
  Note that the key is read-only and should not be modified, as this can lead to corrupt partitioning.
  Setting a new value preserves data co-location with respect to the key.</div>
@@ -1683,7 +1683,7 @@ var activeTableTab = "activeTableTab";
 <pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;transformValues(<a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKeySupplier.html" title="interface in org.apache.kafka.streams.kstream">ValueTransformerWithKeySupplier</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? extends VR&gt;&nbsp;transformerSupplier,
                                   <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized,
                                   <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;stateStoreNames)</pre>
+                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;stateStoreNames)</code></pre>
 <div class="block">Create a new <code>KTable</code> by transforming the value of each record in this <code>KTable</code> into a new value
  (with possibly a new type), with the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>key serde</code></a>, <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>value serde</code></a>, and the underlying
  <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>materialized state storage</code></a> configured in the <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a> instance.
@@ -1712,7 +1712,7 @@ var activeTableTab = "activeTableTab";
                                  .withKeySerde(Serdes.String())
                                  .withValueSerde(Serdes.String()),
      "myValueTransformState");
- </code></pre>
+ </code></code></pre>
  <p>
  Within the <a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKey.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueTransformerWithKey</code></a>, the state is obtained via the
  <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor"><code>ProcessorContext</code></a>.
@@ -1740,7 +1740,7 @@ var activeTableTab = "activeTableTab";
          }
      }
  }
- </code></pre>
+ </code></code></pre>
  <p>
  Note that the key is read-only and should not be modified, as this can lead to corrupt partitioning.
  Setting a new value preserves data co-location with respect to the key.</div>
@@ -1771,7 +1771,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>groupBy</h4>
-<pre>&lt;KR,VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedTable.html" title="interface in org.apache.kafka.streams.kstream">KGroupedTable</a>&lt;KR,VR&gt;&nbsp;groupBy(<a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream">KeyValueMapper</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,<a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams">KeyValue</a>&lt;KR,VR&gt;&gt;&nbsp;selector)</pre>
+<pre>&lt;KR,VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedTable.html" title="interface in org.apache.kafka.streams.kstream">KGroupedTable</a>&lt;KR,VR&gt;&nbsp;groupBy(<a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream">KeyValueMapper</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,<a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams">KeyValue</a>&lt;KR,VR&gt;&gt;&nbsp;selector)</code></pre>
 <div class="block">Re-groups the records of this <code>KTable</code> using the provided <a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream"><code>KeyValueMapper</code></a> and default serializers
  and deserializers.
  Each <a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a> pair of this <code>KTable</code> is mapped to a new <a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a> pair by applying the
@@ -1814,7 +1814,7 @@ var activeTableTab = "activeTableTab";
 <h4>groupBy</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 &lt;KR,VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedTable.html" title="interface in org.apache.kafka.streams.kstream">KGroupedTable</a>&lt;KR,VR&gt;&nbsp;groupBy(<a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream">KeyValueMapper</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,<a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams">KeyValue</a>&lt;KR,VR&gt;&gt;&nbsp;selector,
-                                                 <a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="class in org.apache.kafka.streams.kstream">Serialized</a>&lt;KR,VR&gt;&nbsp;serialized)</pre>
+                                                 <a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="class in org.apache.kafka.streams.kstream">Serialized</a>&lt;KR,VR&gt;&nbsp;serialized)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.1. Use <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html#groupBy-org.apache.kafka.streams.kstream.KeyValueMapper-org.apache.kafka.streams.kstream.Grouped-"><code>groupBy(KeyValueMapper, Grouped)</code></a> instead</span></div>
 <div class="block">Re-groups the records of this <code>KTable</code> using the provided <a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream"><code>KeyValueMapper</code></a>
  and <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>Serde</code></a>s as specified by <a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="class in org.apache.kafka.streams.kstream"><code>Serialized</code></a>.
@@ -1855,7 +1855,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>groupBy</h4>
 <pre>&lt;KR,VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedTable.html" title="interface in org.apache.kafka.streams.kstream">KGroupedTable</a>&lt;KR,VR&gt;&nbsp;groupBy(<a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream">KeyValueMapper</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,<a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams">KeyValue</a>&lt;KR,VR&gt;&gt;&nbsp;selector,
-                                     <a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;KR,VR&gt;&nbsp;grouped)</pre>
+                                     <a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;KR,VR&gt;&nbsp;grouped)</code></pre>
 <div class="block">Re-groups the records of this <code>KTable</code> using the provided <a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream"><code>KeyValueMapper</code></a>
  and <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>Serde</code></a>s as specified by <a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream"><code>Grouped</code></a>.
  Each <a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a> pair of this <code>KTable</code> is mapped to a new <a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a> pair by applying the
@@ -1897,7 +1897,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>join</h4>
 <pre>&lt;VO,VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;join(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VO&gt;&nbsp;other,
-                          <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? super VO,? extends VR&gt;&nbsp;joiner)</pre>
+                          <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? super VO,? extends VR&gt;&nbsp;joiner)</code></pre>
 <div class="block">Join records of this <code>KTable</code> with another <code>KTable</code>'s records using non-windowed inner equi join,
  with default serializers, deserializers, and state store.
  The join is a primary key join with join attribute <code>thisKTable.key == otherKTable.key</code>.
@@ -1983,7 +1983,7 @@ var activeTableTab = "activeTableTab";
 <h4>join</h4>
 <pre>&lt;VO,VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;join(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VO&gt;&nbsp;other,
                           <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? super VO,? extends VR&gt;&nbsp;joiner,
-                          <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</pre>
+                          <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</code></pre>
 <div class="block">Join records of this <code>KTable</code> with another <code>KTable</code>'s records using non-windowed inner equi join,
  with default serializers, deserializers, and state store.
  The join is a primary key join with join attribute <code>thisKTable.key == otherKTable.key</code>.
@@ -2070,7 +2070,7 @@ var activeTableTab = "activeTableTab";
 <h4>join</h4>
 <pre>&lt;VO,VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;join(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VO&gt;&nbsp;other,
                           <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? super VO,? extends VR&gt;&nbsp;joiner,
-                          <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                          <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Join records of this <code>KTable</code> with another <code>KTable</code>'s records using non-windowed inner equi join,
  with the <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a> instance for configuration of the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>key serde</code></a>,
  <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>the result table's value serde</code></a>, and <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>state store</code></a>.
@@ -2160,7 +2160,7 @@ var activeTableTab = "activeTableTab";
 <pre>&lt;VO,VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;join(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VO&gt;&nbsp;other,
                           <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? super VO,? extends VR&gt;&nbsp;joiner,
                           <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                          <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                          <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Join records of this <code>KTable</code> with another <code>KTable</code>'s records using non-windowed inner equi join,
  with the <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a> instance for configuration of the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>key serde</code></a>,
  <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>the result table's value serde</code></a>, and <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>state store</code></a>.
@@ -2249,7 +2249,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>leftJoin</h4>
 <pre>&lt;VO,VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;leftJoin(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VO&gt;&nbsp;other,
-                              <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? super VO,? extends VR&gt;&nbsp;joiner)</pre>
+                              <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? super VO,? extends VR&gt;&nbsp;joiner)</code></pre>
 <div class="block">Join records of this <code>KTable</code> (left input) with another <code>KTable</code>'s (right input) records using
  non-windowed left equi join, with default serializers, deserializers, and state store.
  The join is a primary key join with join attribute <code>thisKTable.key == otherKTable.key</code>.
@@ -2342,7 +2342,7 @@ var activeTableTab = "activeTableTab";
 <h4>leftJoin</h4>
 <pre>&lt;VO,VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;leftJoin(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VO&gt;&nbsp;other,
                               <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? super VO,? extends VR&gt;&nbsp;joiner,
-                              <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</pre>
+                              <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</code></pre>
 <div class="block">Join records of this <code>KTable</code> (left input) with another <code>KTable</code>'s (right input) records using
  non-windowed left equi join, with default serializers, deserializers, and state store.
  The join is a primary key join with join attribute <code>thisKTable.key == otherKTable.key</code>.
@@ -2436,7 +2436,7 @@ var activeTableTab = "activeTableTab";
 <h4>leftJoin</h4>
 <pre>&lt;VO,VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;leftJoin(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VO&gt;&nbsp;other,
                               <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? super VO,? extends VR&gt;&nbsp;joiner,
-                              <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                              <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Join records of this <code>KTable</code> (left input) with another <code>KTable</code>'s (right input) records using
  non-windowed left equi join, with the <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a> instance for configuration of the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>key serde</code></a>,
  <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>the result table's value serde</code></a>, and <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>state store</code></a>.
@@ -2533,7 +2533,7 @@ var activeTableTab = "activeTableTab";
 <pre>&lt;VO,VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;leftJoin(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VO&gt;&nbsp;other,
                               <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? super VO,? extends VR&gt;&nbsp;joiner,
                               <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                              <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                              <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Join records of this <code>KTable</code> (left input) with another <code>KTable</code>'s (right input) records using
  non-windowed left equi join, with the <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a> instance for configuration of the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>key serde</code></a>,
  <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>the result table's value serde</code></a>, and <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>state store</code></a>.
@@ -2629,7 +2629,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>outerJoin</h4>
 <pre>&lt;VO,VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;outerJoin(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VO&gt;&nbsp;other,
-                               <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? super VO,? extends VR&gt;&nbsp;joiner)</pre>
+                               <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? super VO,? extends VR&gt;&nbsp;joiner)</code></pre>
 <div class="block">Join records of this <code>KTable</code> (left input) with another <code>KTable</code>'s (right input) records using
  non-windowed outer equi join, with default serializers, deserializers, and state store.
  The join is a primary key join with join attribute <code>thisKTable.key == otherKTable.key</code>.
@@ -2721,7 +2721,7 @@ var activeTableTab = "activeTableTab";
 <h4>outerJoin</h4>
 <pre>&lt;VO,VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;outerJoin(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VO&gt;&nbsp;other,
                                <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? super VO,? extends VR&gt;&nbsp;joiner,
-                               <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</pre>
+                               <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</code></pre>
 <div class="block">Join records of this <code>KTable</code> (left input) with another <code>KTable</code>'s (right input) records using
  non-windowed outer equi join, with default serializers, deserializers, and state store.
  The join is a primary key join with join attribute <code>thisKTable.key == otherKTable.key</code>.
@@ -2814,7 +2814,7 @@ var activeTableTab = "activeTableTab";
 <h4>outerJoin</h4>
 <pre>&lt;VO,VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;outerJoin(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VO&gt;&nbsp;other,
                                <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? super VO,? extends VR&gt;&nbsp;joiner,
-                               <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                               <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Join records of this <code>KTable</code> (left input) with another <code>KTable</code>'s (right input) records using
  non-windowed outer equi join, with the <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a> instance for configuration of the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>key serde</code></a>,
  <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>the result table's value serde</code></a>, and <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>state store</code></a>.
@@ -2910,7 +2910,7 @@ var activeTableTab = "activeTableTab";
 <pre>&lt;VO,VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;outerJoin(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VO&gt;&nbsp;other,
                                <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,? super VO,? extends VR&gt;&nbsp;joiner,
                                <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                               <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                               <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Join records of this <code>KTable</code> (left input) with another <code>KTable</code>'s (right input) records using
  non-windowed outer equi join, with the <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a> instance for configuration of the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>key serde</code></a>,
  <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>the result table's value serde</code></a>, and <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>state store</code></a>.
@@ -3006,7 +3006,7 @@ var activeTableTab = "activeTableTab";
 <h4>join</h4>
 <pre>&lt;VR,KO,VO&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;join(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;KO,VO&gt;&nbsp;other,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,KO&gt;&nbsp;foreignKeyExtractor,
-                             <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,VO,VR&gt;&nbsp;joiner)</pre>
+                             <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,VO,VR&gt;&nbsp;joiner)</code></pre>
 <div class="block">Join records of this <code>KTable</code> with another <code>KTable</code> using non-windowed inner join.
  <p>
  This is a foreign key join, where the joining key is determined by the <code>foreignKeyExtractor</code>.</div>
@@ -3034,7 +3034,7 @@ var activeTableTab = "activeTableTab";
 <pre>&lt;VR,KO,VO&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;join(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;KO,VO&gt;&nbsp;other,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,KO&gt;&nbsp;foreignKeyExtractor,
                              <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,VO,VR&gt;&nbsp;joiner,
-                             <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</pre>
+                             <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</code></pre>
 <div class="block">Join records of this <code>KTable</code> with another <code>KTable</code> using non-windowed inner join.
  <p>
  This is a foreign key join, where the joining key is determined by the <code>foreignKeyExtractor</code>.</div>
@@ -3063,7 +3063,7 @@ var activeTableTab = "activeTableTab";
 <pre>&lt;VR,KO,VO&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;join(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;KO,VO&gt;&nbsp;other,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,KO&gt;&nbsp;foreignKeyExtractor,
                              <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,VO,VR&gt;&nbsp;joiner,
-                             <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                             <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Join records of this <code>KTable</code> with another <code>KTable</code> using non-windowed inner join.
  <p>
  This is a foreign key join, where the joining key is determined by the <code>foreignKeyExtractor</code>.</div>
@@ -3094,7 +3094,7 @@ var activeTableTab = "activeTableTab";
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,KO&gt;&nbsp;foreignKeyExtractor,
                              <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,VO,VR&gt;&nbsp;joiner,
                              <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                             <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                             <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Join records of this <code>KTable</code> with another <code>KTable</code> using non-windowed inner join.
  <p>
  This is a foreign key join, where the joining key is determined by the <code>foreignKeyExtractor</code>.</div>
@@ -3124,7 +3124,7 @@ var activeTableTab = "activeTableTab";
 <h4>leftJoin</h4>
 <pre>&lt;VR,KO,VO&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;leftJoin(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;KO,VO&gt;&nbsp;other,
                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,KO&gt;&nbsp;foreignKeyExtractor,
-                                 <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,VO,VR&gt;&nbsp;joiner)</pre>
+                                 <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,VO,VR&gt;&nbsp;joiner)</code></pre>
 <div class="block">Join records of this <code>KTable</code> with another <code>KTable</code> using non-windowed left join.
  <p>
  This is a foreign key join, where the joining key is determined by the <code>foreignKeyExtractor</code>.</div>
@@ -3152,7 +3152,7 @@ var activeTableTab = "activeTableTab";
 <pre>&lt;VR,KO,VO&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;leftJoin(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;KO,VO&gt;&nbsp;other,
                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,KO&gt;&nbsp;foreignKeyExtractor,
                                  <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,VO,VR&gt;&nbsp;joiner,
-                                 <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</pre>
+                                 <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</code></pre>
 <div class="block">Join records of this <code>KTable</code> with another <code>KTable</code> using non-windowed left join.
  <p>
  This is a foreign key join, where the joining key is determined by the <code>foreignKeyExtractor</code>.</div>
@@ -3181,7 +3181,7 @@ var activeTableTab = "activeTableTab";
 <pre>&lt;VR,KO,VO&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR&gt;&nbsp;leftJoin(<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;KO,VO&gt;&nbsp;other,
                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,KO&gt;&nbsp;foreignKeyExtractor,
                                  <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,VO,VR&gt;&nbsp;joiner,
-                                 <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                                 <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Join records of this <code>KTable</code> with another <code>KTable</code> using non-windowed left join.
  <p>
  This is a foreign key join, where the joining key is determined by the <code>foreignKeyExtractor</code>.</div>
@@ -3212,7 +3212,7 @@ var activeTableTab = "activeTableTab";
                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,KO&gt;&nbsp;foreignKeyExtractor,
                                  <a href="../../../../../org/apache/kafka/streams/kstream/ValueJoiner.html" title="interface in org.apache.kafka.streams.kstream">ValueJoiner</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">V</a>,VO,VR&gt;&nbsp;joiner,
                                  <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                                 <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                                 <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="type parameter in KTable">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Join records of this <code>KTable</code> with another <code>KTable</code> using non-windowed left join.
  <p>
  This is a foreign key join, where the joining key is determined by the <code>foreignKeyExtractor</code>.</div>
@@ -3240,7 +3240,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>queryableStoreName</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryableStoreName()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryableStoreName()</code></pre>
 <div class="block">Get the name of the local state store used that can be used to query this <code>KTable</code>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>

@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">ConfigTransformer</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">This class wraps a set of <a href="../../../../../org/apache/kafka/common/config/provider/ConfigProvider.html" title="interface in org.apache.kafka.common.config.provider"><code>ConfigProvider</code></a> instances and uses them to perform
  transformations.
 
@@ -121,9 +121,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  <p>For example, if a Map consisting of an entry with a provider name "file" and provider instance
  <a href="../../../../../org/apache/kafka/common/config/provider/FileConfigProvider.html" title="class in org.apache.kafka.common.config.provider"><code>FileConfigProvider</code></a> is passed to the <a href="../../../../../org/apache/kafka/common/config/ConfigTransformer.html#ConfigTransformer-java.util.Map-"><code>ConfigTransformer(Map)</code></a>, and a Properties
  file with contents
- <pre>
- fileKey=someValue
- </pre>
+ <pre class="line-numbers"><code class="language-text"> fileKey=someValue</code></pre>
  resides at the path "/tmp/properties.txt", then when a configuration Map which has an entry with a key "someKey" and
  a value "${file:/tmp/properties.txt:fileKey}" is passed to the <a href="../../../../../org/apache/kafka/common/config/ConfigTransformer.html#transform-java.util.Map-"><code>transform(Map)</code></a> method, then the transformed
  Map will have an entry with key "someKey" and a value "someValue".
@@ -222,7 +220,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>DEFAULT_PATTERN</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a> DEFAULT_PATTERN</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a> DEFAULT_PATTERN</code></pre>
 </li>
 </ul>
 </li>
@@ -239,7 +237,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ConfigTransformer</h4>
-<pre>public&nbsp;ConfigTransformer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../org/apache/kafka/common/config/provider/ConfigProvider.html" title="interface in org.apache.kafka.common.config.provider">ConfigProvider</a>&gt;&nbsp;configProviders)</pre>
+<pre>public&nbsp;ConfigTransformer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../org/apache/kafka/common/config/provider/ConfigProvider.html" title="interface in org.apache.kafka.common.config.provider">ConfigProvider</a>&gt;&nbsp;configProviders)</code></pre>
 <div class="block">Creates a ConfigTransformer with the default pattern, of the form <code>${provider:[path:]key}</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -261,7 +259,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>transform</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/config/ConfigTransformerResult.html" title="class in org.apache.kafka.common.config">ConfigTransformerResult</a>&nbsp;transform(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;configs)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/config/ConfigTransformerResult.html" title="class in org.apache.kafka.common.config">ConfigTransformerResult</a>&nbsp;transform(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;configs)</code></pre>
 <div class="block">Transforms the given configuration data by using the <a href="../../../../../org/apache/kafka/common/config/provider/ConfigProvider.html" title="interface in org.apache.kafka.common.config.provider"><code>ConfigProvider</code></a> instances to
  look up values to replace the variables in the pattern.</div>
 <dl>

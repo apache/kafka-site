@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">ConnectRestExtension</span>
-extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a>, <a href="../../../../../org/apache/kafka/connect/components/Versioned.html" title="interface in org.apache.kafka.connect.components">Versioned</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></pre>
+extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a>, <a href="../../../../../org/apache/kafka/connect/components/Versioned.html" title="interface in org.apache.kafka.connect.components">Versioned</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></code></pre>
 <div class="block">A plugin interface to allow registration of new JAX-RS resources like Filters, REST endpoints, providers, etc. The implementations will
  be discovered using the standard Java <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html?is-external=true" title="class or interface in java.util"><code>ServiceLoader</code></a> mechanism by  Connect's plugin class loading mechanism.
 
@@ -188,7 +188,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
 <ul class="blockListLast">
 <li class="blockList">
 <h4>register</h4>
-<pre>void&nbsp;register(<a href="../../../../../org/apache/kafka/connect/rest/ConnectRestExtensionContext.html" title="interface in org.apache.kafka.connect.rest">ConnectRestExtensionContext</a>&nbsp;restPluginContext)</pre>
+<pre>void&nbsp;register(<a href="../../../../../org/apache/kafka/connect/rest/ConnectRestExtensionContext.html" title="interface in org.apache.kafka.connect.rest">ConnectRestExtensionContext</a>&nbsp;restPluginContext)</code></pre>
 <div class="block">ConnectRestExtension implementations can register custom JAX-RS resources via the <a href="../../../../../org/apache/kafka/connect/rest/ConnectRestExtension.html#register-org.apache.kafka.connect.rest.ConnectRestExtensionContext-"><code>register(ConnectRestExtensionContext)</code></a>
  method. The Connect framework will invoke this method after registering the default Connect resources. If the implementations attempt
  to re-register any of the Connect resources, it will be be ignored and will be logged.</div>
