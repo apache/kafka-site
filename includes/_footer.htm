@@ -51,16 +51,26 @@
 		<script src="/js/jquery.sticky-kit.min.js"></script>
 		<script>
 
+			let mobileScrolling = false;
+			let mobileTimeout;
+
 			// Let's start getting rid of jQuery...
 			function checkPageScroll() {
-				if (window.scrollY >= 80) {
+				console.log('called');
+				if (window.scrollY >= 80 || document.body.scrollTop >= 100) {
 					document.getElementById('header').classList.add('scrolled');
 				} else {
 					document.getElementById('header').classList.remove('scrolled');
 				}
 			}
 
-			function pageScroll() {
+			function mobilePageScroll() {
+				mobileScrolling = true;
+				mobileTimeout = null;
+				mobileTimeout = setTimeout(checkPageScroll, 200);
+			}
+
+			function pageScroll(e) {
 				requestAnimationFrame(checkPageScroll);
 			};
 
@@ -337,9 +347,11 @@
 
 				// skip this for touch devices
 				if (is_touch_enabled()) {
-					nav.querySelectorAll('a').forEach(anchor => anchor.removeAttribute('tabindex'))
+					nav.querySelectorAll('a').forEach(anchor => anchor.removeAttribute('tabindex'));
+					window.addEventListener('touchmove', mobilePageScroll, false);
 				} else {
 					setUpA11yMenus(nav);
+					window.addEventListener('scroll', pageScroll, false);
 				}
 
 				// jQuery free document ready
@@ -355,8 +367,6 @@
 					// 	hljs.highlightBlock(block);
 					// });
 				});
-
-				window.addEventListener('scroll', pageScroll);
 			}());
 		</script>
 
