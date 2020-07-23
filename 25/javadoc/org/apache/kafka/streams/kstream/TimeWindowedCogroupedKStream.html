@@ -317,7 +317,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state"><code>WindowStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // counting words
  Store queryableStoreName = ... // the queryableStoreName should be the name of the store as defined by the Materialized instance
  ReadOnlyWindowStore&lt;String,Long&gt; localWindowStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;windowStore());
@@ -382,7 +382,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state"><code>WindowStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // counting words
  Store queryableStoreName = ... // the queryableStoreName should be the name of the store as defined by the Materialized instance
  ReadOnlyWindowStore&lt;String,Long&gt; localWindowStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;windowStore());

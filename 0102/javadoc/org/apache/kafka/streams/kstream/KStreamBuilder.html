@@ -528,7 +528,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/TopologyBuild
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ...
+ <pre class="line-numbers"><code>KafkaStreams streams = ...
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-key";
  Long valueForKey = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
@@ -562,7 +562,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/TopologyBuild
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ...
+ <pre class="line-numbers"><code>KafkaStreams streams = ...
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-key";
  Long valueForKey = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
@@ -598,7 +598,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/TopologyBuild
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ...
+ <pre class="line-numbers"><code>KafkaStreams streams = ...
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-key";
  Long valueForKey = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
@@ -635,7 +635,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/TopologyBuild
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ...
+ <pre class="line-numbers"><code>KafkaStreams streams = ...
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-key";
  Long valueForKey = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
@@ -668,7 +668,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/TopologyBuild
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ...
+ <pre class="line-numbers"><code>KafkaStreams streams = ...
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-key";
  Long valueForKey = localStore.get(key);
@@ -700,7 +700,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/TopologyBuild
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ...
+ <pre class="line-numbers"><code>KafkaStreams streams = ...
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-key";
  Long valueForKey = localStore.get(key);

@@ -53,7 +53,6 @@
 
 			// Let's start getting rid of jQuery...
 			function checkPageScroll() {
-				console.log(window.scrollY);
 				if (window.scrollY >= 80) {
 					document.getElementById('header').classList.add('scrolled');
 				} else {
@@ -352,9 +351,9 @@
 						setupDocsNav();
 					}
 
-					document.querySelectorAll('[class^="language-"]').forEach((block) => {
-						hljs.highlightBlock(block);
-					});
+					// document.querySelectorAll('[class^="language-"]').forEach((block) => {
+					// 	hljs.highlightBlock(block);
+					// });
 				});
 
 				window.addEventListener('scroll', pageScroll);

@@ -562,7 +562,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  For example, you can use this transformation to set a key for a key-less input record <code>&lt;null,V&gt;</code> by
  extracting a key from the value within your <a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream"><code>KeyValueMapper</code></a>. The example below computes the new key as the
  length of the value string.
- <pre><code>
+ <pre class="line-numbers"><code>
  KStream&lt;Byte[], String&gt; keyLessStream = builder.stream("key-less-topic");
  KStream&lt;Integer, String&gt; keyedStream = keyLessStream.selectKey(new KeyValueMapper&lt;Byte[], String, Integer&gt; {
      Integer apply(Byte[] key, String value) {
@@ -604,7 +604,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  stateful record transformation).
  <p>
  The example below normalizes the String key to upper-case letters and counts the number of token of the value string.
- <pre><code>
+ <pre class="line-numbers"><code>
  KStream&lt;String, String&gt; inputStream = builder.stream("topic");
  KStream&lt;String, Integer&gt; outputStream = inputStream.map(new KeyValueMapper&lt;String, String, KeyValue&lt;String, Integer&gt;&gt; {
      KeyValue&lt;String, Integer&gt; apply(String key, String value) {
@@ -651,7 +651,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html#transformValues-org.apache.kafka.streams.kstream.ValueTransformerSupplier-java.lang.String...-"><code>transformValues(ValueTransformerSupplier, String...)</code></a> for stateful value transformation).
  <p>
  The example below counts the number of token of the value string.
- <pre><code>
+ <pre class="line-numbers"><code>
  KStream&lt;String, String&gt; inputStream = builder.stream("topic");
  KStream&lt;String, Integer&gt; outputStream = inputStream.mapValues(new ValueMapper&lt;String, Integer&gt; {
      Integer apply(String value) {
@@ -695,7 +695,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html#transformValues-org.apache.kafka.streams.kstream.ValueTransformerWithKeySupplier-java.lang.String...-"><code>transformValues(ValueTransformerWithKeySupplier, String...)</code></a> for stateful value transformation).
  <p>
  The example below counts the number of tokens of key and value strings.
- <pre><code>
+ <pre class="line-numbers"><code>
  KStream&lt;String, String&gt; inputStream = builder.stream("topic");
  KStream&lt;String, Integer&gt; outputStream = inputStream.mapValues(new ValueMapperWithKey&lt;String, String, Integer&gt; {
      Integer apply(String readOnlyKey, String value) {
@@ -742,7 +742,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  <p>
  The example below splits input records <code>&lt;null:String&gt;</code> containing sentences as values into their words
  and emit a record <code>&lt;word:1&gt;</code> for each word.
- <pre><code>
+ <pre class="line-numbers"><code>
  KStream&lt;byte[], String&gt; inputStream = builder.stream("topic");
  KStream&lt;String, Integer&gt; outputStream = inputStream.flatMap(
      new KeyValueMapper&lt;byte[], String, Iterable&lt;KeyValue&lt;String, Integer&gt;&gt;&gt; {
@@ -804,7 +804,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  for stateful value transformation).
  <p>
  The example below splits input records <code>&lt;null:String&gt;</code> containing sentences as values into their words.
- <pre><code>
+ <pre class="line-numbers"><code>
  KStream&lt;byte[], String&gt; inputStream = builder.stream("topic");
  KStream&lt;byte[], String&gt; outputStream = inputStream.flatMapValues(new ValueMapper&lt;String, Iterable&lt;String&gt;&gt; {
      Iterable&lt;String&gt; apply(String value) {
@@ -858,7 +858,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  <p>
  The example below splits input records <code>&lt;Integer:String&gt;</code>, with key=1, containing sentences as values
  into their words.
- <pre><code>
+ <pre class="line-numbers"><code>
  KStream&lt;Integer, String&gt; inputStream = builder.stream("topic");
  KStream&lt;Integer, String&gt; outputStream = inputStream.flatMapValues(new ValueMapper&lt;Integer, String, Iterable&lt;String&gt;&gt; {
      Iterable&lt;Integer, String&gt; apply(Integer readOnlyKey, String value) {
@@ -1137,7 +1137,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  <p>
  In order to assign a state, the state must be created and registered beforehand (it's not required to connect
  global state stores; read-only access to global state stores is available by default):
- <pre><code>
+ <pre class="line-numbers"><code>
  // create store
  StoreBuilder&lt;KeyValueStore&lt;String,String&gt;&gt; keyValueStoreBuilder =
          Stores.keyValueStoreBuilder(Stores.persistentKeyValueStore("myTransformState"),
@@ -1154,7 +1154,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  The <a href="../../../../../org/apache/kafka/streams/kstream/Transformer.html" title="interface in org.apache.kafka.streams.kstream"><code>Transformer</code></a> must return a <a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a> type in <a href="../../../../../org/apache/kafka/streams/kstream/Transformer.html#transform-K-V-"><code>transform()</code></a>.
  The return value of <a href="../../../../../org/apache/kafka/streams/kstream/Transformer.html#transform-K-V-"><code>Transformer#transform()</code></a> may be <code>null</code>,
  in which case no record is emitted.
- <pre><code>
+ <pre class="line-numbers"><code>
  new TransformerSupplier() {
      Transformer get() {
          return new Transformer() {
@@ -1237,7 +1237,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  <p>
  In order to assign a state, the state must be created and registered beforehand (it's not required to connect
  global state stores; read-only access to global state stores is available by default):
- <pre><code>
+ <pre class="line-numbers"><code>
  // create store
  StoreBuilder&lt;KeyValueStore&lt;String,String&gt;&gt; keyValueStoreBuilder =
          Stores.keyValueStoreBuilder(Stores.persistentKeyValueStore("myTransformState"),
@@ -1254,7 +1254,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  type) in <a href="../../../../../org/apache/kafka/streams/kstream/Transformer.html#transform-K-V-"><code>transform()</code></a>.
  The return value of <a href="../../../../../org/apache/kafka/streams/kstream/Transformer.html#transform-K-V-"><code>Transformer#transform()</code></a> may be <code>null</code>,
  which is equal to returning an empty <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang"><code>Iterable</code></a>, i.e., no records are emitted.
- <pre><code>
+ <pre class="line-numbers"><code>
  new TransformerSupplier() {
      Transformer get() {
          return new Transformer() {
@@ -1335,7 +1335,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  <p>
  In order to assign a state store, the state store must be created and registered beforehand (it's not required to
  connect global state stores; read-only access to global state stores is available by default):
- <pre><code>
+ <pre class="line-numbers"><code>
  // create store
  StoreBuilder&lt;KeyValueStore&lt;String,String&gt;&gt; keyValueStoreBuilder =
          Stores.keyValueStoreBuilder(Stores.persistentKeyValueStore("myValueTransformState"),
@@ -1356,7 +1356,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  pairs can be emitted via <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#forward-K-V-"><code>ProcessorContext.forward()</code></a>.
  A <a href="../../../../../org/apache/kafka/streams/errors/StreamsException.html" title="class in org.apache.kafka.streams.errors"><code>StreamsException</code></a> is thrown if the <a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformer.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueTransformer</code></a> tries to
  emit a <a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a> pair.
- <pre><code>
+ <pre class="line-numbers"><code>
  new ValueTransformerSupplier() {
      ValueTransformer get() {
          return new ValueTransformer() {
@@ -1421,7 +1421,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  <p>
  In order to assign a state store, the state store must be created and registered beforehand (it's not required to
  connect global state stores; read-only access to global state stores is available by default):
- <pre><code>
+ <pre class="line-numbers"><code>
  // create store
  StoreBuilder&lt;KeyValueStore&lt;String,String&gt;&gt; keyValueStoreBuilder =
          Stores.keyValueStoreBuilder(Stores.persistentKeyValueStore("myValueTransformState"),
@@ -1444,7 +1444,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  can be emitted via <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#forward-K-V-"><code>ProcessorContext.forward()</code></a>.
  A <a href="../../../../../org/apache/kafka/streams/errors/StreamsException.html" title="class in org.apache.kafka.streams.errors"><code>StreamsException</code></a> is thrown if the <a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKey.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueTransformerWithKey</code></a> tries
  to emit a <a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a> pair.
- <pre><code>
+ <pre class="line-numbers"><code>
  new ValueTransformerWithKeySupplier() {
      ValueTransformerWithKey get() {
          return new ValueTransformerWithKey() {
@@ -1510,7 +1510,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  the processing progress can be observed and additional periodic actions can be performed.
  <p>
  In order to assign a state store, the state store must be created and registered beforehand:
- <pre><code>
+ <pre class="line-numbers"><code>
  // create store
  StoreBuilder&lt;KeyValueStore&lt;String,String&gt;&gt; keyValueStoreBuilder =
          Stores.keyValueStoreBuilder(Stores.persistentKeyValueStore("myValueTransformState"),
@@ -1533,7 +1533,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  can be emitted via <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#forward-K-V-"><code>ProcessorContext.forward()</code></a>.
  A <a href="../../../../../org/apache/kafka/streams/errors/StreamsException.html" title="class in org.apache.kafka.streams.errors"><code>StreamsException</code></a> is thrown if the <a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformer.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueTransformer</code></a> tries to
  emit a <a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a> pair.
- <pre><code>
+ <pre class="line-numbers"><code>
  new ValueTransformerSupplier() {
      ValueTransformer get() {
          return new ValueTransformer() {
@@ -1604,7 +1604,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  progress can be observed and additional periodic actions can be performed.
  <p>
  In order to assign a state store, the state store must be created and registered beforehand:
- <pre><code>
+ <pre class="line-numbers"><code>
  // create store
  StoreBuilder&lt;KeyValueStore&lt;String,String&gt;&gt; keyValueStoreBuilder =
          Stores.keyValueStoreBuilder(Stores.persistentKeyValueStore("myValueTransformState"),
@@ -1627,7 +1627,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  can be emitted via <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#forward-K-V-"><code>ProcessorContext.forward()</code></a>.
  A <a href="../../../../../org/apache/kafka/streams/errors/StreamsException.html" title="class in org.apache.kafka.streams.errors"><code>StreamsException</code></a> is thrown if the <a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKey.html" title="interface in org.apache.kafka.streams.kstream"><code>ValueTransformerWithKey</code></a> tries
  to emit a <a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a> pair.
- <pre><code>
+ <pre class="line-numbers"><code>
  new ValueTransformerWithKeySupplier() {
      ValueTransformerWithKey get() {
          return new ValueTransformerWithKey() {
@@ -1698,7 +1698,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  <p>
  In order to assign a state, the state must be created and registered beforehand (it's not required to connect
  global state stores; read-only access to global state stores is available by default):
- <pre><code>
+ <pre class="line-numbers"><code>
  // create store
  StoreBuilder&lt;KeyValueStore&lt;String,String&gt;&gt; keyValueStoreBuilder =
          Stores.keyValueStoreBuilder(Stores.persistentKeyValueStore("myProcessorState"),
@@ -1713,7 +1713,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor"><code>ProcessorContext</code></a>.
  To trigger periodic actions via <a href="../../../../../org/apache/kafka/streams/processor/Punctuator.html#punctuate-long-"><code>punctuate()</code></a>,
  a schedule must be registered.
- <pre><code>
+ <pre class="line-numbers"><code>
  new ProcessorSupplier() {
      Processor get() {
          return new Processor() {

@@ -30,8 +30,7 @@
         We are going to use a Kafka Streams Maven Archetype for creating a Streams project structure with the following commands:
     </p>
 
-    <pre class="language-bash;">
-        mvn archetype:generate \
+    <pre class="line-numbers"><code class="language-bash">        mvn archetype:generate \
             -DarchetypeGroupId=org.apache.kafka \
             -DarchetypeArtifactId=streams-quickstart-java \
             -DarchetypeVersion={{fullDotVersion}} \
@@ -39,15 +38,14 @@
             -DartifactId=streams.examples \
             -Dversion=0.1 \
             -Dpackage=myapps
-    </pre>
+    </code></pre>
 
     <p>
         You can use a different value for <code>groupId</code>, <code>artifactId</code> and <code>package</code> parameters if you like.
         Assuming the above parameter values are used, this command will create a project structure that looks like this:
     </p>
 
-    <pre class="language-bash;">
-        &gt; tree streams.examples
+    <pre class="line-numbers"><code class="language-bash">        &gt; tree streams.examples
         streams-quickstart
         |-- pom.xml
         |-- src
@@ -59,25 +57,23 @@
                 |       |-- WordCount.java
                 |-- resources
                     |-- log4j.properties
-    </pre>
+    </code></pre>
 
     <p>
         There are already several example programs written with Streams library under <code>src/main/java</code>.
         Since we are going to start writing such programs from scratch, we can now delete these examples:
     </p>
 
-    <pre class="language-bash;">
-        &gt; cd streams-quickstart
+    <pre class="line-numbers"><code class="language-bash">        &gt; cd streams-quickstart
         &gt; rm src/main/java/myapps/*.java
-    </pre>
+    </code></pre>
 
     <h4><a id="tutorial_code_pipe" href="#tutorial_code_pipe">Writing a first Streams application: Pipe</a></h4>
 
     It's coding time now! Feel free to open your favorite IDE and import this Maven project, or simply open a text editor and create a java file under <code>src/main/java</code>.
     Let's name it <code>Pipe.java</code>:
 
-    <pre class="language-java;">
-        package myapps;
+    <pre class="line-numbers"><code class="language-java">        package myapps;
 
         public class Pipe {
 
@@ -85,7 +81,7 @@
 
             }
         }
-    </pre>
+    </code></pre>
 
     <p>
         We are going to fill in the <code>main</code> function to write this pipe program. Note that we will not list the import statements as we go since IDEs can usually add them automatically.
@@ -98,20 +94,18 @@
         and <code>StreamsConfig.APPLICATION_ID_CONFIG</code>, which gives the unique identifier of your Streams application to distinguish itself with other applications talking to the same Kafka cluster:
     </p>
 
-    <pre class="language-java;">
-        Properties props = new Properties();
+    <pre class="line-numbers"><code class="language-java">        Properties props = new Properties();
         props.put(StreamsConfig.APPLICATION_ID_CONFIG, "streams-pipe");
         props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");    // assuming that the Kafka broker this application is talking to runs on local machine with port 9092
-    </pre>
+    </code></pre>
 
     <p>
         In addition, you can customize other configurations in the same map, for example, default serialization and deserialization libraries for the record key-value pairs:
     </p>
 
-    <pre class="language-java;">
-        props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
+    <pre class="line-numbers"><code class="language-java">        props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
-    </pre>
+    </code></pre>
 
     <p>
         For a full list of configurations of Kafka Streams please refer to this <a href="/{{version}}/documentation/#streamsconfigs">table</a>.
@@ -123,17 +117,15 @@
         We can use a topology builder to construct such a topology,
     </p>
 
-    <pre class="language-java;">
-        final KStreamBuilder builder = new KStreamBuilder();
-    </pre>
+    <pre class="line-numbers"><code class="language-java">        final KStreamBuilder builder = new KStreamBuilder();
+    </code></pre>
 
     <p>
         And then create a source stream from a Kafka topic named <code>streams-plaintext-input</code> using this topology builder:
     </p>
 
-    <pre class="language-java;">
-        KStream&lt;String, String&gt; source = builder.stream("streams-plaintext-input");
-    </pre>
+    <pre class="line-numbers"><code class="language-java">        KStream&lt;String, String&gt; source = builder.stream("streams-plaintext-input");
+    </code></pre>
 
     <p>
         Now we get a <code>KStream</code> that is continuously generating records from its source Kafka topic <code>streams-plaintext-input</code>.
@@ -141,17 +133,15 @@
         The simplest thing we can do with this stream is to write it into another Kafka topic, say it's named <code>streams-pipe-output</code>:
     </p>
 
-    <pre class="language-java;">
-        source.to("streams-pipe-output");
-    </pre>
+    <pre class="line-numbers"><code class="language-java">        source.to("streams-pipe-output");
+    </code></pre>
 
     <p>
         Note that we can also concatenate the above two lines into a single line as:
     </p>
 
-    <pre class="language-java;">
-        builder.stream("streams-plaintext-input").to("streams-pipe-output");
-    </pre>
+    <pre class="line-numbers"><code class="language-java">        builder.stream("streams-plaintext-input").to("streams-pipe-output");
+    </code></pre>
 
     <p>
         we can now construct the Streams client with the two components we have just constructed above: the configuration map and the topology builder object
@@ -159,9 +149,8 @@
         <code>KafkaStreams</code> have overloaded constructor functions to takes either type).
     </p>
 
-    <pre class="language-java;">
-        final KafkaStreams streams = new KafkaStreams(builder, props);
-    </pre>
+    <pre class="line-numbers"><code class="language-java">        final KafkaStreams streams = new KafkaStreams(builder, props);
+    </code></pre>
 
     <p>
         By calling its <code>start()</code> function we can trigger the execution of this client.
@@ -169,8 +158,7 @@
         We can, for example, add a shutdown hook with a countdown latch to capture a user interrupt and close the client upon terminating this program:
     </p>
 
-    <pre class="language-java;">
-        final CountDownLatch latch = new CountDownLatch(1);
+    <pre class="line-numbers"><code class="language-java">        final CountDownLatch latch = new CountDownLatch(1);
 
         // attach shutdown handler to catch control-c
         Runtime.getRuntime().addShutdownHook(new Thread("streams-shutdown-hook") {
@@ -188,14 +176,13 @@
             System.exit(1);
         }
         System.exit(0);
-    </pre>
+    </code></pre>
 
     <p>
         The complete code so far looks like this:
     </p>
 
-    <pre class="language-java;">
-        package myapps;
+    <pre class="line-numbers"><code class="language-java">        package myapps;
 
         import org.apache.kafka.common.serialization.Serdes;
         import org.apache.kafka.streams.KafkaStreams;
@@ -239,7 +226,7 @@
                 System.exit(0);
             }
         }
-    </pre>
+    </code></pre>
 
     <p>
         If you already have the Kafka broker up and running at <code>localhost:9092</code>,
@@ -247,10 +234,9 @@
         you can run this code in your IDE or on the command line, using Maven:
     </p>
 
-    <pre class="language-brush;">
-        &gt; mvn clean package
+    <pre class="line-numbers"><code class="language-brush">        &gt; mvn clean package
         &gt; mvn exec:java -Dexec.mainClass=myapps.Pipe
-    </pre>
+    </code></pre>
 
     <p>
         For detailed instructions on how to run a Streams application and observe its computing results,
@@ -266,16 +252,14 @@
         We can first create another program by first copy the existing <code>Pipe.java</code> class:
     </p>
 
-    <pre class="language-brush;">
-        &gt; cp src/main/java/myapps/Pipe.java src/main/java/myapps/LineSplit.java
-    </pre>
+    <pre class="line-numbers"><code class="language-brush">        &gt; cp src/main/java/myapps/Pipe.java src/main/java/myapps/LineSplit.java
+    </code></pre>
 
     <p>
         And change its class name as well as the application id config to distinguish with the original program:
     </p>
 
-    <pre class="language-java;">
-        public class Pipe {
+    <pre class="line-numbers"><code class="language-java">        public class Pipe {
 
             public static void main(String[] args) throws Exception {
                 Properties props = new Properties();
@@ -283,22 +267,21 @@
                 // ...
             }
         }
-    </pre>
+    </code></pre>
 
     <p>
         Since each of the source stream's record is a <code>String</code> typed key-value pair,
         let's treat the value string as a text line and split it into words with a <code>FlatMapValues</code> operator:
     </p>
 
-    <pre class="language-java;">
-        KStream&lt;String, String&gt; source = builder.stream("streams-plaintext-input");
+    <pre class="line-numbers"><code class="language-java">        KStream&lt;String, String&gt; source = builder.stream("streams-plaintext-input");
         KStream&lt;String, String&gt; words = builder.flatMapValues(new ValueMapper&lt;String, Iterable&lt;String&gt;&gt;() {
                     @Override
                     public Iterable&lt;String&gt; apply(String value) {
                         return Arrays.asList(value.split("\\W+"));
                     }
                 });
-    </pre>
+    </code></pre>
 
     <p>
         The operator will take the <code>source</code> stream as its input, and generate a new stream named <code>words</code>
@@ -308,28 +291,25 @@
         Note if you are using JDK 8 you can use lambda expression and simplify the above code as:
     </p>
 
-    <pre class="language-java;">
-        KStream&lt;String, String&gt; source = builder.stream("streams-plaintext-input");
+    <pre class="line-numbers"><code class="language-java">        KStream&lt;String, String&gt; source = builder.stream("streams-plaintext-input");
         KStream&lt;String, String&gt; words = source.flatMapValues(value -> Arrays.asList(value.split("\\W+")));
-    </pre>
+    </code></pre>
 
     <p>
         And finally we can write the word stream back into another Kafka topic, say <code>streams-linesplit-output</code>.
         Again, these two steps can be concatenated as the following (assuming lambda expression is used):
     </p>
 
-    <pre class="language-java;">
-        KStream&lt;String, String&gt; source = builder.stream("streams-plaintext-input");
+    <pre class="line-numbers"><code class="language-java">        KStream&lt;String, String&gt; source = builder.stream("streams-plaintext-input");
         source.flatMapValues(value -> Arrays.asList(value.split("\\W+")))
               .to("streams-linesplit-output");
-    </pre>
+    </code></pre>
 
     <p>
         The complete code looks like this (assuming lambda expression is used):
     </p>
 
-    <pre class="language-java;">
-        package myapps;
+    <pre class="line-numbers"><code class="language-java">        package myapps;
 
         import org.apache.kafka.common.serialization.Serdes;
         import org.apache.kafka.streams.KafkaStreams;
@@ -362,7 +342,7 @@
                 // ... same as Pipe.java below
             }
         }
-    </pre>
+    </code></pre>
 
     <h4><a id="tutorial_code_wordcount" href="#tutorial_code_wordcount">Writing a third Streams application: Wordcount</a></h4>
 
@@ -371,8 +351,7 @@
         Following similar steps let's create another program based on the <code>LineSplit.java</code> class:
     </p>
 
-    <pre class="language-java;">
-        public class WordCount {
+    <pre class="line-numbers"><code class="language-java">        public class WordCount {
 
             public static void main(String[] args) throws Exception {
                 Properties props = new Properties();
@@ -380,28 +359,26 @@
                 // ...
             }
         }
-    </pre>
+    </code></pre>
 
     <p>
         In order to count the words we can first modify the <code>flatMapValues</code> operator to treat all of them as lower case (assuming lambda expression is used):
     </p>
 
-    <pre class="language-java;">
-        source.flatMapValues(new ValueMapper&lt;String, Iterable&lt;String&gt;&gt;() {
+    <pre class="line-numbers"><code class="language-java">        source.flatMapValues(new ValueMapper&lt;String, Iterable&lt;String&gt;&gt;() {
                     @Override
                     public Iterable&lt;String&gt; apply(String value) {
                         return Arrays.asList(value.toLowerCase(Locale.getDefault()).split("\\W+"));
                     }
                 });
-    </pre>
+    </code></pre>
 
     <p>
         In order to do the counting aggregation we have to first specify that we want to key the stream on the value string, i.e. the lower cased word, with a <code>groupBy</code> operator.
         This operator generate a new grouped stream, which can then be aggregated by a <code>count</code> operator, which generates a running count on each of the grouped keys:
     </p>
 
-    <pre class="language-java;">
-        KTable&lt;String, Long&gt; counts =
+    <pre class="line-numbers"><code class="language-java">        KTable&lt;String, Long&gt; counts =
         source.flatMapValues(new ValueMapper&lt;String, Iterable&lt;String&gt;&gt;() {
                     @Override
                     public Iterable&lt;String&gt; apply(String value) {
@@ -415,7 +392,7 @@
                    }
                 })
               .count("Counts");
-    </pre>
+    </code></pre>
 
     <p>
         Note that the <code>count</code> operator has a <code>String</code> typed parameter <code>Counts</code>,
@@ -429,9 +406,8 @@
         We need to provide overridden serialization methods for <code>Long</code> types, otherwise a runtime exception will be thrown:
     </p>
 
-    <pre class="language-java;">
-        counts.to(Serdes.String(), Serdes.Long(), "streams-wordcount-output");
-    </pre>
+    <pre class="line-numbers"><code class="language-java">        counts.to(Serdes.String(), Serdes.Long(), "streams-wordcount-output");
+    </code></pre>
 
     <p>
         Note that in order to read the changelog stream from topic <code>streams-wordcount-output</code>,
@@ -440,20 +416,18 @@
         Assuming lambda expression from JDK 8 can be used, the above code can be simplified as:
     </p>
 
-    <pre class="language-java;">
-        KStream&lt;String, String&gt; source = builder.stream("streams-plaintext-input");
+    <pre class="line-numbers"><code class="language-java">        KStream&lt;String, String&gt; source = builder.stream("streams-plaintext-input");
         source.flatMapValues(value -> Arrays.asList(value.toLowerCase(Locale.getDefault()).split("\\W+")))
               .groupBy((key, value) -> value)
               .count("Counts")
               .to(Serdes.String(), Serdes.Long(), "streams-wordcount-output");
-    </pre>
+    </code></pre>
 
     <p>
         The complete code looks like this (assuming lambda expression is used):
     </p>
 
-    <pre class="language-java;">
-        package myapps;
+    <pre class="line-numbers"><code class="language-java">        package myapps;
 
         import org.apache.kafka.common.serialization.Serdes;
         import org.apache.kafka.streams.KafkaStreams;
@@ -490,7 +464,7 @@
                 // ... same as Pipe.java below
             }
         }
-    </pre>
+    </code></pre>
 
     <div class="pagination">
         <a href="/{{version}}/documentation/streams/quickstart" class="pagination__btn pagination__btn__prev">Previous</a>

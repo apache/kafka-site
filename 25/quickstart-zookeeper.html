@@ -32,9 +32,8 @@
           the latest Kafka release and extract it:
       </p>
 
-<pre class="language-bash;">
-$ tar -xzf kafka_2.12-2.5.0.tgz
-$ cd kafka_2.12-2.5.0</pre>
+<pre class="line-numbers"><code class="language-bash">$ tar -xzf kafka_2.12-2.5.0.tgz
+$ cd kafka_2.12-2.5.0</code></pre>
   </div>
 
   <div class="quickstart-step">
@@ -51,18 +50,16 @@ $ cd kafka_2.12-2.5.0</pre>
           Run the following commands in order to start all services in the correct order:
       </p>
 
-<pre class="language-bash;">
-# Start the ZooKeeper service
+<pre class="line-numbers"><code class="language-bash"># Start the ZooKeeper service
 # Note: Soon, ZooKeeper will no longer be required by Apache Kafka.
-$ bin/zookeeper-server-start.sh config/zookeeper.properties</pre>
+$ bin/zookeeper-server-start.sh config/zookeeper.properties</code></pre>
 
       <p>
           Open another terminal session and run:
       </p>
 
-<pre class="language-bash;">
-# Start the Kafka broker service
-$ bin/kafka-server-start.sh config/server.properties</pre>
+<pre class="line-numbers"><code class="language-bash"># Start the Kafka broker service
+$ bin/kafka-server-start.sh config/server.properties</code></pre>
 
       <p>
           Once all services have successfully launched, you will have a basic Kafka environment running and ready to use.
@@ -93,8 +90,7 @@ $ bin/kafka-server-start.sh config/server.properties</pre>
           So before you can write your first events, you must create a topic.  Open another terminal session and run:
       </p>
 
-<pre class="language-bash;">
-$ bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092</pre>
+<pre class="line-numbers"><code class="language-bash">$ bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092</code></pre>
 
       <p>
           All of Kafka's command line tools have additional options: run the <code>kafka-topics.sh</code> command without any
@@ -103,10 +99,9 @@ $ bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server loca
           of the new topic:
       </p>
 
-<pre class="language-bash;">
-$ bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
+<pre class="line-numbers"><code class="language-bash">$ bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
 Topic:quickstart-events  PartitionCount:1    ReplicationFactor:1 Configs:
-    Topic: quickstart-events Partition: 0    Leader: 0   Replicas: 0 Isr: 0</pre>
+    Topic: quickstart-events Partition: 0    Leader: 0   Replicas: 0 Isr: 0</code></pre>
   </div>
 
   <div class="quickstart-step">
@@ -126,10 +121,9 @@ Topic:quickstart-events  PartitionCount:1    ReplicationFactor:1 Configs:
           By default, each line you enter will result in a separate event being written to the topic.
       </p>
 
-<pre class="language-bash;">
-$ bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+<pre class="line-numbers"><code class="language-bash">$ bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
 This is my first event
-This is my second event</pre>
+This is my second event</code></pre>
 
       <p>
           You can stop the producer client with <code>Ctrl-C</code> at any time.
@@ -144,10 +138,9 @@ This is my second event</pre>
 
   <p>Open another terminal session and run the console consumer client to read the events you just created:</p>
 
-<pre class="language-bash;">
-$ bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
+<pre class="line-numbers"><code class="language-bash">$ bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
 This is my first event
-This is my second event</pre>
+This is my second event</code></pre>
 
   <p>You can stop the consumer client with <code>Ctrl-C</code> at any time.</p>
 
@@ -196,15 +189,14 @@ This is my second event</pre>
 
   <p>To give you a first taste, here's how one would implement the popular <code>WordCount</code> algorithm:</p>
 
-<pre class="language-bash;">
-KStream&lt;String, String> textLines = builder.stream("quickstart-events");
+<pre class="line-numbers"><code class="language-bash">KStream&lt;String, String&gt; textLines = builder.stream("quickstart-events");
 
-KTable&lt;String, Long> wordCounts = textLines
-            .flatMapValues(line -> Arrays.asList(line.toLowerCase().split(" ")))
-            .groupBy((keyIgnored, word) -> word)
+KTable&lt;String, Long&gt; wordCounts = textLines
+            .flatMapValues(line -&gt; Arrays.asList(line.toLowerCase().split(" ")))
+            .groupBy((keyIgnored, word) -&gt; word)
             .count();
 
-wordCounts.toStream().to("output-topic"), Produced.with(Serdes.String(), Serdes.Long()));</pre>
+wordCounts.toStream().to("output-topic"), Produced.with(Serdes.String(), Serdes.Long()));</code></pre>
 
   <p>
       The <a href="https://kafka.apache.org/25/documentation/streams/quickstart">Kafka Streams demo</a>
@@ -242,8 +234,7 @@ wordCounts.toStream().to("output-topic"), Produced.with(Serdes.String(), Serdes.
       along the way, run the command:
   </p>
 
-<pre class="language-bash;">
-$ rm -rf /tmp/kafka-logs /tmp/zookeeper</pre>
+<pre class="line-numbers"><code class="language-bash">$ rm -rf /tmp/kafka-logs /tmp/zookeeper</code></pre>
 
   </div>
 

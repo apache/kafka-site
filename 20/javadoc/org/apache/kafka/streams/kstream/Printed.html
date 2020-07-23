@@ -389,7 +389,7 @@ extends java.lang.Object</pre>
  The provided KeyValueMapper's mapped value type must be <code>String</code>.
  <p>
  The example below shows how to customize output data.
- <pre><code>
+ <pre class="line-numbers"><code>
  final KeyValueMapper&lt;Integer, String, String&gt; mapper = new KeyValueMapper&lt;Integer, String, String&gt;() {
      public String apply(Integer key, String value) {
          return String.format("(%d, %s)", key, value);
