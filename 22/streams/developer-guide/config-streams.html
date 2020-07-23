@@ -778,7 +778,7 @@
                 <li><code class="docutils literal"><span class="pre">acks=1</span></code> The leader writes the record to its local log and responds without waiting for full acknowledgement from all followers. If the leader immediately fails after acknowledging the record, but before the followers have replicated it, then the record will be lost.</li>
                 <li><code class="docutils literal"><span class="pre">acks=all</span></code> The leader waits for the full set of in-sync replicas to acknowledge the record. This guarantees that the record will not be lost if there is at least one in-sync replica alive. This is the strongest available guarantee.</li>
               </ul>
-              <p>For more information, see the <a class="reference external" href="https://kafka.apache.org/documentation/#producerconfigs">Kafka Producer documentation</a>.</p>
+              <p>For more information, see the <a class="reference external" href="/documentation/#producerconfigs">Kafka Producer documentation</a>.</p>
             </div></blockquote>
         </div>
         <div class="section" id="id2">

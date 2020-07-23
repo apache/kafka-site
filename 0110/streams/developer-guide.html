@@ -967,7 +967,7 @@
         Records are evicted using a simple LRU scheme once the cache size is reached.
         The first time a keyed record <code>R1 = &lt;K1, V1&gt;</code> finishes processing at a node, it is marked as dirty in the cache.
         Any other keyed record <code>R2 = &lt;K1, V2&gt;</code> with the same key <code>K1</code> that is processed on that node during that time will overwrite <code>&lt;K1, V1&gt;</code>, which we also refer to as "being compacted".
-        Note that this has the same effect as <a href="https://kafka.apache.org/documentation.html#compaction">Kafka's log compaction</a>, but happens (a) earlier, while the
+        Note that this has the same effect as <a href="/documentation.html#compaction">Kafka's log compaction</a>, but happens (a) earlier, while the
         records are still in memory, and (b) within your client-side application rather than on the server-side aka the Kafka broker.
         Upon flushing <code>R2</code> is (1) forwarded to the next processing node and (2) written to the local state store.
     </p>

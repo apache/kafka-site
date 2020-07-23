@@ -1,10 +1,10 @@
 <h5>Headers:</h5>
-<pre>Request Header => api_key api_version correlation_id client_id 
+<pre class="line-numbers"><code class="language-java">Request Header => api_key api_version correlation_id client_id 
   api_key => INT16
   api_version => INT16
   correlation_id => INT32
   client_id => NULLABLE_STRING
-</pre>
+</code></pre>
 <table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
@@ -17,9 +17,9 @@
 <tr>
 <td>client_id</td><td>A user specified identifier for the client making the request.</td></tr>
 </table>
-<pre>Response Header => correlation_id 
+<pre class="line-numbers"><code class="language-java">Response Header => correlation_id 
   correlation_id => INT32
-</pre>
+</code></pre>
 <table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
@@ -29,7 +29,7 @@
 <h5>Produce API (Key: 0):</h5>
 
 <b>Requests:</b><br>
-<p><pre>Produce Request (Version: 0) => acks timeout [topic_data] 
+<p><pre class="line-numbers"><code class="language-java">Produce Request (Version: 0) => acks timeout [topic_data] 
   acks => INT16
   timeout => INT32
   topic_data => topic [data] 
@@ -37,7 +37,7 @@
     data => partition record_set 
       partition => INT32
       record_set => BYTES
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -56,7 +56,7 @@
 <td>record_set</td><td></td></tr>
 </table>
 </p>
-<p><pre>Produce Request (Version: 1) => acks timeout [topic_data] 
+<p><pre class="line-numbers"><code class="language-java">Produce Request (Version: 1) => acks timeout [topic_data] 
   acks => INT16
   timeout => INT32
   topic_data => topic [data] 
@@ -64,7 +64,7 @@
     data => partition record_set 
       partition => INT32
       record_set => BYTES
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -83,7 +83,7 @@
 <td>record_set</td><td></td></tr>
 </table>
 </p>
-<p><pre>Produce Request (Version: 2) => acks timeout [topic_data] 
+<p><pre class="line-numbers"><code class="language-java">Produce Request (Version: 2) => acks timeout [topic_data] 
   acks => INT16
   timeout => INT32
   topic_data => topic [data] 
@@ -91,7 +91,7 @@
     data => partition record_set 
       partition => INT32
       record_set => BYTES
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -111,14 +111,14 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>Produce Response (Version: 0) => [responses] 
+<p><pre class="line-numbers"><code class="language-java">Produce Response (Version: 0) => [responses] 
   responses => topic [partition_responses] 
     topic => STRING
     partition_responses => partition error_code base_offset 
       partition => INT32
       error_code => INT16
       base_offset => INT64
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -135,7 +135,7 @@
 <td>base_offset</td><td></td></tr>
 </table>
 </p>
-<p><pre>Produce Response (Version: 1) => [responses] throttle_time_ms 
+<p><pre class="line-numbers"><code class="language-java">Produce Response (Version: 1) => [responses] throttle_time_ms 
   responses => topic [partition_responses] 
     topic => STRING
     partition_responses => partition error_code base_offset 
@@ -143,7 +143,7 @@
       error_code => INT16
       base_offset => INT64
   throttle_time_ms => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -162,7 +162,7 @@
 <td>throttle_time_ms</td><td>Duration in milliseconds for which the request was throttled due to quota violation. (Zero if the request did not violate any quota.)</td></tr>
 </table>
 </p>
-<p><pre>Produce Response (Version: 2) => [responses] throttle_time_ms 
+<p><pre class="line-numbers"><code class="language-java">Produce Response (Version: 2) => [responses] throttle_time_ms 
   responses => topic [partition_responses] 
     topic => STRING
     partition_responses => partition error_code base_offset timestamp 
@@ -171,7 +171,7 @@
       base_offset => INT64
       timestamp => INT64
   throttle_time_ms => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -195,7 +195,7 @@
 <h5>Fetch API (Key: 1):</h5>
 
 <b>Requests:</b><br>
-<p><pre>Fetch Request (Version: 0) => replica_id max_wait_time min_bytes [topics] 
+<p><pre class="line-numbers"><code class="language-java">Fetch Request (Version: 0) => replica_id max_wait_time min_bytes [topics] 
   replica_id => INT32
   max_wait_time => INT32
   min_bytes => INT32
@@ -205,7 +205,7 @@
       partition => INT32
       fetch_offset => INT64
       max_bytes => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -228,7 +228,7 @@
 <td>max_bytes</td><td>Maximum bytes to fetch.</td></tr>
 </table>
 </p>
-<p><pre>Fetch Request (Version: 1) => replica_id max_wait_time min_bytes [topics] 
+<p><pre class="line-numbers"><code class="language-java">Fetch Request (Version: 1) => replica_id max_wait_time min_bytes [topics] 
   replica_id => INT32
   max_wait_time => INT32
   min_bytes => INT32
@@ -238,7 +238,7 @@
       partition => INT32
       fetch_offset => INT64
       max_bytes => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -261,7 +261,7 @@
 <td>max_bytes</td><td>Maximum bytes to fetch.</td></tr>
 </table>
 </p>
-<p><pre>Fetch Request (Version: 2) => replica_id max_wait_time min_bytes [topics] 
+<p><pre class="line-numbers"><code class="language-java">Fetch Request (Version: 2) => replica_id max_wait_time min_bytes [topics] 
   replica_id => INT32
   max_wait_time => INT32
   min_bytes => INT32
@@ -271,7 +271,7 @@
       partition => INT32
       fetch_offset => INT64
       max_bytes => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -294,7 +294,7 @@
 <td>max_bytes</td><td>Maximum bytes to fetch.</td></tr>
 </table>
 </p>
-<p><pre>Fetch Request (Version: 3) => replica_id max_wait_time min_bytes max_bytes [topics] 
+<p><pre class="line-numbers"><code class="language-java">Fetch Request (Version: 3) => replica_id max_wait_time min_bytes max_bytes [topics] 
   replica_id => INT32
   max_wait_time => INT32
   min_bytes => INT32
@@ -305,7 +305,7 @@
       partition => INT32
       fetch_offset => INT64
       max_bytes => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -331,7 +331,7 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>Fetch Response (Version: 0) => [responses] 
+<p><pre class="line-numbers"><code class="language-java">Fetch Response (Version: 0) => [responses] 
   responses => topic [partition_responses] 
     topic => STRING
     partition_responses => partition error_code high_watermark record_set 
@@ -339,7 +339,7 @@
       error_code => INT16
       high_watermark => INT64
       record_set => BYTES
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -358,7 +358,7 @@
 <td>record_set</td><td></td></tr>
 </table>
 </p>
-<p><pre>Fetch Response (Version: 1) => throttle_time_ms [responses] 
+<p><pre class="line-numbers"><code class="language-java">Fetch Response (Version: 1) => throttle_time_ms [responses] 
   throttle_time_ms => INT32
   responses => topic [partition_responses] 
     topic => STRING
@@ -367,37 +367,7 @@
       error_code => INT16
       high_watermark => INT64
       record_set => BYTES
-</pre><table class="data-table"><tbody>
-<tr><th>Field</th>
-<th>Description</th>
-</tr><tr>
-<td>throttle_time_ms</td><td>Duration in milliseconds for which the request was throttled due to quota violation. (Zero if the request did not violate any quota.)</td></tr>
-<tr>
-<td>responses</td><td></td></tr>
-<tr>
-<td>topic</td><td></td></tr>
-<tr>
-<td>partition_responses</td><td></td></tr>
-<tr>
-<td>partition</td><td>Topic partition id.</td></tr>
-<tr>
-<td>error_code</td><td></td></tr>
-<tr>
-<td>high_watermark</td><td>Last committed offset.</td></tr>
-<tr>
-<td>record_set</td><td></td></tr>
-</table>
-</p>
-<p><pre>Fetch Response (Version: 2) => throttle_time_ms [responses] 
-  throttle_time_ms => INT32
-  responses => topic [partition_responses] 
-    topic => STRING
-    partition_responses => partition error_code high_watermark record_set 
-      partition => INT32
-      error_code => INT16
-      high_watermark => INT64
-      record_set => BYTES
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -418,7 +388,7 @@
 <td>record_set</td><td></td></tr>
 </table>
 </p>
-<p><pre>Fetch Response (Version: 3) => throttle_time_ms [responses] 
+<p><pre class="line-numbers"><code class="language-java">Fetch Response (Version: 2) => throttle_time_ms [responses] 
   throttle_time_ms => INT32
   responses => topic [partition_responses] 
     topic => STRING
@@ -427,7 +397,37 @@
       error_code => INT16
       high_watermark => INT64
       record_set => BYTES
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>Duration in milliseconds for which the request was throttled due to quota violation. (Zero if the request did not violate any quota.)</td></tr>
+<tr>
+<td>responses</td><td></td></tr>
+<tr>
+<td>topic</td><td></td></tr>
+<tr>
+<td>partition_responses</td><td></td></tr>
+<tr>
+<td>partition</td><td>Topic partition id.</td></tr>
+<tr>
+<td>error_code</td><td></td></tr>
+<tr>
+<td>high_watermark</td><td>Last committed offset.</td></tr>
+<tr>
+<td>record_set</td><td></td></tr>
+</table>
+</p>
+<p><pre class="line-numbers"><code class="language-java">Fetch Response (Version: 3) => throttle_time_ms [responses] 
+  throttle_time_ms => INT32
+  responses => topic [partition_responses] 
+    topic => STRING
+    partition_responses => partition error_code high_watermark record_set 
+      partition => INT32
+      error_code => INT16
+      high_watermark => INT64
+      record_set => BYTES
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -451,7 +451,7 @@
 <h5>Offsets API (Key: 2):</h5>
 
 <b>Requests:</b><br>
-<p><pre>Offsets Request (Version: 0) => replica_id [topics] 
+<p><pre class="line-numbers"><code class="language-java">Offsets Request (Version: 0) => replica_id [topics] 
   replica_id => INT32
   topics => topic [partitions] 
     topic => STRING
@@ -459,7 +459,7 @@
       partition => INT32
       timestamp => INT64
       max_num_offsets => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -478,14 +478,14 @@
 <td>max_num_offsets</td><td>Maximum offsets to return.</td></tr>
 </table>
 </p>
-<p><pre>Offsets Request (Version: 1) => replica_id [topics] 
+<p><pre class="line-numbers"><code class="language-java">Offsets Request (Version: 1) => replica_id [topics] 
   replica_id => INT32
   topics => topic [partitions] 
     topic => STRING
     partitions => partition timestamp 
       partition => INT32
       timestamp => INT64
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -503,14 +503,14 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>Offsets Response (Version: 0) => [responses] 
+<p><pre class="line-numbers"><code class="language-java">Offsets Response (Version: 0) => [responses] 
   responses => topic [partition_responses] 
     topic => STRING
     partition_responses => partition error_code [offsets] 
       partition => INT32
       error_code => INT16
       offsets => INT64
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -527,7 +527,7 @@
 <td>offsets</td><td>A list of offsets.</td></tr>
 </table>
 </p>
-<p><pre>Offsets Response (Version: 1) => [responses] 
+<p><pre class="line-numbers"><code class="language-java">Offsets Response (Version: 1) => [responses] 
   responses => topic [partition_responses] 
     topic => STRING
     partition_responses => partition error_code timestamp offset 
@@ -535,7 +535,7 @@
       error_code => INT16
       timestamp => INT64
       offset => INT64
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -557,27 +557,27 @@
 <h5>Metadata API (Key: 3):</h5>
 
 <b>Requests:</b><br>
-<p><pre>Metadata Request (Version: 0) => [topics] 
+<p><pre class="line-numbers"><code class="language-java">Metadata Request (Version: 0) => [topics] 
   topics => STRING
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
 <td>topics</td><td>An array of topics to fetch metadata for. If no topics are specified fetch metadata for all topics.</td></tr>
 </table>
 </p>
-<p><pre>Metadata Request (Version: 1) => [topics] 
+<p><pre class="line-numbers"><code class="language-java">Metadata Request (Version: 1) => [topics] 
   topics => STRING
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
 <td>topics</td><td>An array of topics to fetch metadata for. If the topics array is null fetch metadata for all topics.</td></tr>
 </table>
 </p>
-<p><pre>Metadata Request (Version: 2) => [topics] 
+<p><pre class="line-numbers"><code class="language-java">Metadata Request (Version: 2) => [topics] 
   topics => STRING
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -585,7 +585,7 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>Metadata Response (Version: 0) => [brokers] [topic_metadata] 
+<p><pre class="line-numbers"><code class="language-java">Metadata Response (Version: 0) => [brokers] [topic_metadata] 
   brokers => node_id host port 
     node_id => INT32
     host => STRING
@@ -599,7 +599,7 @@
       leader => INT32
       replicas => INT32
       isr => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -630,7 +630,7 @@
 <td>isr</td><td>The set of nodes that are in sync with the leader for this partition.</td></tr>
 </table>
 </p>
-<p><pre>Metadata Response (Version: 1) => [brokers] controller_id [topic_metadata] 
+<p><pre class="line-numbers"><code class="language-java">Metadata Response (Version: 1) => [brokers] controller_id [topic_metadata] 
   brokers => node_id host port rack 
     node_id => INT32
     host => STRING
@@ -647,7 +647,7 @@
       leader => INT32
       replicas => INT32
       isr => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -684,7 +684,7 @@
 <td>isr</td><td>The set of nodes that are in sync with the leader for this partition.</td></tr>
 </table>
 </p>
-<p><pre>Metadata Response (Version: 2) => [brokers] cluster_id controller_id [topic_metadata] 
+<p><pre class="line-numbers"><code class="language-java">Metadata Response (Version: 2) => [brokers] cluster_id controller_id [topic_metadata] 
   brokers => node_id host port rack 
     node_id => INT32
     host => STRING
@@ -702,7 +702,7 @@
       leader => INT32
       replicas => INT32
       isr => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -744,7 +744,7 @@
 <h5>LeaderAndIsr API (Key: 4):</h5>
 
 <b>Requests:</b><br>
-<p><pre>LeaderAndIsr Request (Version: 0) => controller_id controller_epoch [partition_states] [live_leaders] 
+<p><pre class="line-numbers"><code class="language-java">LeaderAndIsr Request (Version: 0) => controller_id controller_epoch [partition_states] [live_leaders] 
   controller_id => INT32
   controller_epoch => INT32
   partition_states => topic partition controller_epoch leader leader_epoch [isr] zk_version [replicas] 
@@ -760,7 +760,7 @@
     id => INT32
     host => STRING
     port => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -796,13 +796,13 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>LeaderAndIsr Response (Version: 0) => error_code [partitions] 
+<p><pre class="line-numbers"><code class="language-java">LeaderAndIsr Response (Version: 0) => error_code [partitions] 
   error_code => INT16
   partitions => topic partition error_code 
     topic => STRING
     partition => INT32
     error_code => INT16
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -820,14 +820,14 @@
 <h5>StopReplica API (Key: 5):</h5>
 
 <b>Requests:</b><br>
-<p><pre>StopReplica Request (Version: 0) => controller_id controller_epoch delete_partitions [partitions] 
+<p><pre class="line-numbers"><code class="language-java">StopReplica Request (Version: 0) => controller_id controller_epoch delete_partitions [partitions] 
   controller_id => INT32
   controller_epoch => INT32
   delete_partitions => BOOLEAN
   partitions => topic partition 
     topic => STRING
     partition => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -845,13 +845,13 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>StopReplica Response (Version: 0) => error_code [partitions] 
+<p><pre class="line-numbers"><code class="language-java">StopReplica Response (Version: 0) => error_code [partitions] 
   error_code => INT16
   partitions => topic partition error_code 
     topic => STRING
     partition => INT32
     error_code => INT16
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -869,7 +869,7 @@
 <h5>UpdateMetadata API (Key: 6):</h5>
 
 <b>Requests:</b><br>
-<p><pre>UpdateMetadata Request (Version: 0) => controller_id controller_epoch [partition_states] [live_brokers] 
+<p><pre class="line-numbers"><code class="language-java">UpdateMetadata Request (Version: 0) => controller_id controller_epoch [partition_states] [live_brokers] 
   controller_id => INT32
   controller_epoch => INT32
   partition_states => topic partition controller_epoch leader leader_epoch [isr] zk_version [replicas] 
@@ -885,7 +885,7 @@
     id => INT32
     host => STRING
     port => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -920,7 +920,7 @@
 <td>port</td><td>The port on which the broker accepts requests.</td></tr>
 </table>
 </p>
-<p><pre>UpdateMetadata Request (Version: 1) => controller_id controller_epoch [partition_states] [live_brokers] 
+<p><pre class="line-numbers"><code class="language-java">UpdateMetadata Request (Version: 1) => controller_id controller_epoch [partition_states] [live_brokers] 
   controller_id => INT32
   controller_epoch => INT32
   partition_states => topic partition controller_epoch leader leader_epoch [isr] zk_version [replicas] 
@@ -938,7 +938,7 @@
       port => INT32
       host => STRING
       security_protocol_type => INT16
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -977,7 +977,7 @@
 <td>security_protocol_type</td><td>The security protocol type.</td></tr>
 </table>
 </p>
-<p><pre>UpdateMetadata Request (Version: 2) => controller_id controller_epoch [partition_states] [live_brokers] 
+<p><pre class="line-numbers"><code class="language-java">UpdateMetadata Request (Version: 2) => controller_id controller_epoch [partition_states] [live_brokers] 
   controller_id => INT32
   controller_epoch => INT32
   partition_states => topic partition controller_epoch leader leader_epoch [isr] zk_version [replicas] 
@@ -996,7 +996,7 @@
       host => STRING
       security_protocol_type => INT16
     rack => NULLABLE_STRING
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1038,27 +1038,27 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>UpdateMetadata Response (Version: 0) => error_code 
+<p><pre class="line-numbers"><code class="language-java">UpdateMetadata Response (Version: 0) => error_code 
   error_code => INT16
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
 <td>error_code</td><td>Error code.</td></tr>
 </table>
 </p>
-<p><pre>UpdateMetadata Response (Version: 1) => error_code 
+<p><pre class="line-numbers"><code class="language-java">UpdateMetadata Response (Version: 1) => error_code 
   error_code => INT16
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
 <td>error_code</td><td>Error code.</td></tr>
 </table>
 </p>
-<p><pre>UpdateMetadata Response (Version: 2) => error_code 
+<p><pre class="line-numbers"><code class="language-java">UpdateMetadata Response (Version: 2) => error_code 
   error_code => INT16
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1069,9 +1069,9 @@
 
 <b>Requests:</b><br>
 </p>
-<p><pre>ControlledShutdown Request (Version: 1) => broker_id 
+<p><pre class="line-numbers"><code class="language-java">ControlledShutdown Request (Version: 1) => broker_id 
   broker_id => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1080,12 +1080,12 @@
 </p>
 <b>Responses:</b><br>
 </p>
-<p><pre>ControlledShutdown Response (Version: 1) => error_code [partitions_remaining] 
+<p><pre class="line-numbers"><code class="language-java">ControlledShutdown Response (Version: 1) => error_code [partitions_remaining] 
   error_code => INT16
   partitions_remaining => topic partition 
     topic => STRING
     partition => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1101,7 +1101,7 @@
 <h5>OffsetCommit API (Key: 8):</h5>
 
 <b>Requests:</b><br>
-<p><pre>OffsetCommit Request (Version: 0) => group_id [topics] 
+<p><pre class="line-numbers"><code class="language-java">OffsetCommit Request (Version: 0) => group_id [topics] 
   group_id => STRING
   topics => topic [partitions] 
     topic => STRING
@@ -1109,7 +1109,7 @@
       partition => INT32
       offset => INT64
       metadata => NULLABLE_STRING
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1128,7 +1128,7 @@
 <td>metadata</td><td>Any associated metadata the client wants to keep.</td></tr>
 </table>
 </p>
-<p><pre>OffsetCommit Request (Version: 1) => group_id group_generation_id member_id [topics] 
+<p><pre class="line-numbers"><code class="language-java">OffsetCommit Request (Version: 1) => group_id group_generation_id member_id [topics] 
   group_id => STRING
   group_generation_id => INT32
   member_id => STRING
@@ -1139,7 +1139,7 @@
       offset => INT64
       timestamp => INT64
       metadata => NULLABLE_STRING
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1164,7 +1164,7 @@
 <td>metadata</td><td>Any associated metadata the client wants to keep.</td></tr>
 </table>
 </p>
-<p><pre>OffsetCommit Request (Version: 2) => group_id group_generation_id member_id retention_time [topics] 
+<p><pre class="line-numbers"><code class="language-java">OffsetCommit Request (Version: 2) => group_id group_generation_id member_id retention_time [topics] 
   group_id => STRING
   group_generation_id => INT32
   member_id => STRING
@@ -1175,7 +1175,7 @@
       partition => INT32
       offset => INT64
       metadata => NULLABLE_STRING
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1201,13 +1201,13 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>OffsetCommit Response (Version: 0) => [responses] 
+<p><pre class="line-numbers"><code class="language-java">OffsetCommit Response (Version: 0) => [responses] 
   responses => topic [partition_responses] 
     topic => STRING
     partition_responses => partition error_code 
       partition => INT32
       error_code => INT16
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1222,13 +1222,13 @@
 <td>error_code</td><td></td></tr>
 </table>
 </p>
-<p><pre>OffsetCommit Response (Version: 1) => [responses] 
+<p><pre class="line-numbers"><code class="language-java">OffsetCommit Response (Version: 1) => [responses] 
   responses => topic [partition_responses] 
     topic => STRING
     partition_responses => partition error_code 
       partition => INT32
       error_code => INT16
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1243,13 +1243,13 @@
 <td>error_code</td><td></td></tr>
 </table>
 </p>
-<p><pre>OffsetCommit Response (Version: 2) => [responses] 
+<p><pre class="line-numbers"><code class="language-java">OffsetCommit Response (Version: 2) => [responses] 
   responses => topic [partition_responses] 
     topic => STRING
     partition_responses => partition error_code 
       partition => INT32
       error_code => INT16
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1267,13 +1267,13 @@
 <h5>OffsetFetch API (Key: 9):</h5>
 
 <b>Requests:</b><br>
-<p><pre>OffsetFetch Request (Version: 0) => group_id [topics] 
+<p><pre class="line-numbers"><code class="language-java">OffsetFetch Request (Version: 0) => group_id [topics] 
   group_id => STRING
   topics => topic [partitions] 
     topic => STRING
     partitions => partition 
       partition => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1288,13 +1288,13 @@
 <td>partition</td><td>Topic partition id.</td></tr>
 </table>
 </p>
-<p><pre>OffsetFetch Request (Version: 1) => group_id [topics] 
+<p><pre class="line-numbers"><code class="language-java">OffsetFetch Request (Version: 1) => group_id [topics] 
   group_id => STRING
   topics => topic [partitions] 
     topic => STRING
     partitions => partition 
       partition => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1310,7 +1310,7 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>OffsetFetch Response (Version: 0) => [responses] 
+<p><pre class="line-numbers"><code class="language-java">OffsetFetch Response (Version: 0) => [responses] 
   responses => topic [partition_responses] 
     topic => STRING
     partition_responses => partition offset metadata error_code 
@@ -1318,7 +1318,7 @@
       offset => INT64
       metadata => NULLABLE_STRING
       error_code => INT16
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1337,7 +1337,7 @@
 <td>error_code</td><td></td></tr>
 </table>
 </p>
-<p><pre>OffsetFetch Response (Version: 1) => [responses] 
+<p><pre class="line-numbers"><code class="language-java">OffsetFetch Response (Version: 1) => [responses] 
   responses => topic [partition_responses] 
     topic => STRING
     partition_responses => partition offset metadata error_code 
@@ -1345,7 +1345,7 @@
       offset => INT64
       metadata => NULLABLE_STRING
       error_code => INT16
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1367,9 +1367,9 @@
 <h5>GroupCoordinator API (Key: 10):</h5>
 
 <b>Requests:</b><br>
-<p><pre>GroupCoordinator Request (Version: 0) => group_id 
+<p><pre class="line-numbers"><code class="language-java">GroupCoordinator Request (Version: 0) => group_id 
   group_id => STRING
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1377,13 +1377,13 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>GroupCoordinator Response (Version: 0) => error_code coordinator 
+<p><pre class="line-numbers"><code class="language-java">GroupCoordinator Response (Version: 0) => error_code coordinator 
   error_code => INT16
   coordinator => node_id host port 
     node_id => INT32
     host => STRING
     port => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1401,7 +1401,7 @@
 <h5>JoinGroup API (Key: 11):</h5>
 
 <b>Requests:</b><br>
-<p><pre>JoinGroup Request (Version: 0) => group_id session_timeout member_id protocol_type [group_protocols] 
+<p><pre class="line-numbers"><code class="language-java">JoinGroup Request (Version: 0) => group_id session_timeout member_id protocol_type [group_protocols] 
   group_id => STRING
   session_timeout => INT32
   member_id => STRING
@@ -1409,7 +1409,7 @@
   group_protocols => protocol_name protocol_metadata 
     protocol_name => STRING
     protocol_metadata => BYTES
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1428,7 +1428,7 @@
 <td>protocol_metadata</td><td></td></tr>
 </table>
 </p>
-<p><pre>JoinGroup Request (Version: 1) => group_id session_timeout rebalance_timeout member_id protocol_type [group_protocols] 
+<p><pre class="line-numbers"><code class="language-java">JoinGroup Request (Version: 1) => group_id session_timeout rebalance_timeout member_id protocol_type [group_protocols] 
   group_id => STRING
   session_timeout => INT32
   rebalance_timeout => INT32
@@ -1437,7 +1437,7 @@
   group_protocols => protocol_name protocol_metadata 
     protocol_name => STRING
     protocol_metadata => BYTES
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1459,7 +1459,7 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>JoinGroup Response (Version: 0) => error_code generation_id group_protocol leader_id member_id [members] 
+<p><pre class="line-numbers"><code class="language-java">JoinGroup Response (Version: 0) => error_code generation_id group_protocol leader_id member_id [members] 
   error_code => INT16
   generation_id => INT32
   group_protocol => STRING
@@ -1468,7 +1468,7 @@
   members => member_id member_metadata 
     member_id => STRING
     member_metadata => BYTES
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1489,7 +1489,7 @@
 <td>member_metadata</td><td></td></tr>
 </table>
 </p>
-<p><pre>JoinGroup Response (Version: 1) => error_code generation_id group_protocol leader_id member_id [members] 
+<p><pre class="line-numbers"><code class="language-java">JoinGroup Response (Version: 1) => error_code generation_id group_protocol leader_id member_id [members] 
   error_code => INT16
   generation_id => INT32
   group_protocol => STRING
@@ -1498,7 +1498,7 @@
   members => member_id member_metadata 
     member_id => STRING
     member_metadata => BYTES
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1522,11 +1522,11 @@
 <h5>Heartbeat API (Key: 12):</h5>
 
 <b>Requests:</b><br>
-<p><pre>Heartbeat Request (Version: 0) => group_id group_generation_id member_id 
+<p><pre class="line-numbers"><code class="language-java">Heartbeat Request (Version: 0) => group_id group_generation_id member_id 
   group_id => STRING
   group_generation_id => INT32
   member_id => STRING
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1538,9 +1538,9 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>Heartbeat Response (Version: 0) => error_code 
+<p><pre class="line-numbers"><code class="language-java">Heartbeat Response (Version: 0) => error_code 
   error_code => INT16
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1550,10 +1550,10 @@
 <h5>LeaveGroup API (Key: 13):</h5>
 
 <b>Requests:</b><br>
-<p><pre>LeaveGroup Request (Version: 0) => group_id member_id 
+<p><pre class="line-numbers"><code class="language-java">LeaveGroup Request (Version: 0) => group_id member_id 
   group_id => STRING
   member_id => STRING
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1563,9 +1563,9 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>LeaveGroup Response (Version: 0) => error_code 
+<p><pre class="line-numbers"><code class="language-java">LeaveGroup Response (Version: 0) => error_code 
   error_code => INT16
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1575,14 +1575,14 @@
 <h5>SyncGroup API (Key: 14):</h5>
 
 <b>Requests:</b><br>
-<p><pre>SyncGroup Request (Version: 0) => group_id generation_id member_id [group_assignment] 
+<p><pre class="line-numbers"><code class="language-java">SyncGroup Request (Version: 0) => group_id generation_id member_id [group_assignment] 
   group_id => STRING
   generation_id => INT32
   member_id => STRING
   group_assignment => member_id member_assignment 
     member_id => STRING
     member_assignment => BYTES
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1600,10 +1600,10 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>SyncGroup Response (Version: 0) => error_code member_assignment 
+<p><pre class="line-numbers"><code class="language-java">SyncGroup Response (Version: 0) => error_code member_assignment 
   error_code => INT16
   member_assignment => BYTES
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1615,9 +1615,9 @@
 <h5>DescribeGroups API (Key: 15):</h5>
 
 <b>Requests:</b><br>
-<p><pre>DescribeGroups Request (Version: 0) => [group_ids] 
+<p><pre class="line-numbers"><code class="language-java">DescribeGroups Request (Version: 0) => [group_ids] 
   group_ids => STRING
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1625,7 +1625,7 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>DescribeGroups Response (Version: 0) => [groups] 
+<p><pre class="line-numbers"><code class="language-java">DescribeGroups Response (Version: 0) => [groups] 
   groups => error_code group_id state protocol_type protocol [members] 
     error_code => INT16
     group_id => STRING
@@ -1638,7 +1638,7 @@
       client_host => STRING
       member_metadata => BYTES
       member_assignment => BYTES
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1670,19 +1670,19 @@
 <h5>ListGroups API (Key: 16):</h5>
 
 <b>Requests:</b><br>
-<p><pre>ListGroups Request (Version: 0) => 
-</pre><table class="data-table"><tbody>
+<p><pre class="line-numbers"><code class="language-java">ListGroups Request (Version: 0) => 
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr></table>
 </p>
 <b>Responses:</b><br>
-<p><pre>ListGroups Response (Version: 0) => error_code [groups] 
+<p><pre class="line-numbers"><code class="language-java">ListGroups Response (Version: 0) => error_code [groups] 
   error_code => INT16
   groups => group_id protocol_type 
     group_id => STRING
     protocol_type => STRING
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1698,9 +1698,9 @@
 <h5>SaslHandshake API (Key: 17):</h5>
 
 <b>Requests:</b><br>
-<p><pre>SaslHandshake Request (Version: 0) => mechanism 
+<p><pre class="line-numbers"><code class="language-java">SaslHandshake Request (Version: 0) => mechanism 
   mechanism => STRING
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1708,10 +1708,10 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>SaslHandshake Response (Version: 0) => error_code [enabled_mechanisms] 
+<p><pre class="line-numbers"><code class="language-java">SaslHandshake Response (Version: 0) => error_code [enabled_mechanisms] 
   error_code => INT16
   enabled_mechanisms => STRING
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1723,20 +1723,20 @@
 <h5>ApiVersions API (Key: 18):</h5>
 
 <b>Requests:</b><br>
-<p><pre>ApiVersions Request (Version: 0) => 
-</pre><table class="data-table"><tbody>
+<p><pre class="line-numbers"><code class="language-java">ApiVersions Request (Version: 0) => 
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr></table>
 </p>
 <b>Responses:</b><br>
-<p><pre>ApiVersions Response (Version: 0) => error_code [api_versions] 
+<p><pre class="line-numbers"><code class="language-java">ApiVersions Response (Version: 0) => error_code [api_versions] 
   error_code => INT16
   api_versions => api_key min_version max_version 
     api_key => INT16
     min_version => INT16
     max_version => INT16
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1754,7 +1754,7 @@
 <h5>CreateTopics API (Key: 19):</h5>
 
 <b>Requests:</b><br>
-<p><pre>CreateTopics Request (Version: 0) => [create_topic_requests] timeout 
+<p><pre class="line-numbers"><code class="language-java">CreateTopics Request (Version: 0) => [create_topic_requests] timeout 
   create_topic_requests => topic num_partitions replication_factor [replica_assignment] [configs] 
     topic => STRING
     num_partitions => INT32
@@ -1766,7 +1766,7 @@
       config_key => STRING
       config_value => STRING
   timeout => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1794,11 +1794,11 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>CreateTopics Response (Version: 0) => [topic_error_codes] 
+<p><pre class="line-numbers"><code class="language-java">CreateTopics Response (Version: 0) => [topic_error_codes] 
   topic_error_codes => topic error_code 
     topic => STRING
     error_code => INT16
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1812,10 +1812,10 @@
 <h5>DeleteTopics API (Key: 20):</h5>
 
 <b>Requests:</b><br>
-<p><pre>DeleteTopics Request (Version: 0) => [topics] timeout 
+<p><pre class="line-numbers"><code class="language-java">DeleteTopics Request (Version: 0) => [topics] timeout 
   topics => STRING
   timeout => INT32
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>
@@ -1825,11 +1825,11 @@
 </table>
 </p>
 <b>Responses:</b><br>
-<p><pre>DeleteTopics Response (Version: 0) => [topic_error_codes] 
+<p><pre class="line-numbers"><code class="language-java">DeleteTopics Response (Version: 0) => [topic_error_codes] 
   topic_error_codes => topic error_code 
     topic => STRING
     error_code => INT16
-</pre><table class="data-table"><tbody>
+</code></pre><table class="data-table"><tbody>
 <tr><th>Field</th>
 <th>Description</th>
 </tr><tr>

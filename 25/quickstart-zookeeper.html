@@ -74,7 +74,7 @@ $ bin/kafka-server-start.sh config/server.properties</code></pre>
 
       <p>
           Kafka is a distributed <em>event streaming platform</em> that lets you read, write, store, and process
-          <a href="https://kafka.apache.org/documentation/#messages"><em>events</em></a> (also called <em>records</em> or
+          <a href="/documentation/#messages"><em>events</em></a> (also called <em>records</em> or
           <em>messages</em> in the documentation)
           across many machines.
       </p>
@@ -82,7 +82,7 @@ $ bin/kafka-server-start.sh config/server.properties</code></pre>
       <p>
           Example events are payment transactions, geolocation updates from mobile phones, shipping orders, sensor measurements
           from IoT devices or medical equipment, and much more. These events are organized and stored in
-          <a href="https://kafka.apache.org/documentation/#intro_topics"><em>topics</em></a>.
+          <a href="/documentation/#intro_topics"><em>topics</em></a>.
           Very simplified, a topic is similar to a folder in a filesystem, and the events are the files in that folder.
       </p>
 
@@ -95,7 +95,7 @@ $ bin/kafka-server-start.sh config/server.properties</code></pre>
       <p>
           All of Kafka's command line tools have additional options: run the <code>kafka-topics.sh</code> command without any
           arguments to display usage information. For example, it can also show you
-          <a href="https://kafka.apache.org/documentation/#intro_topics">details such as the partition count</a>
+          <a href="/documentation/#intro_topics">details such as the partition count</a>
           of the new topic:
       </p>
 
@@ -160,12 +160,12 @@ This is my second event</code></pre>
   <p>
       You probably have lots of data in existing systems like relational databases or traditional messaging systems,
       along with many applications that already use these systems.
-      <a href="https://kafka.apache.org/documentation/#connect">Kafka Connect</a> allows you to continuously ingest
+      <a href="/documentation/#connect">Kafka Connect</a> allows you to continuously ingest
       data from external systems into Kafka, and vice versa.  It is thus very easy to integrate existing systems with
       Kafka. To make this process even easier, there are hundreds of such connectors readily available.
   </p>
 
-  <p>Take a look at the <a href="https://kafka.apache.org/documentation/#connect">Kafka Connect section</a>
+  <p>Take a look at the <a href="/documentation/#connect">Kafka Connect section</a>
   learn more about how to continuously import/export your data into and out of Kafka.</p>
 
   </div>
@@ -178,7 +178,7 @@ This is my second event</code></pre>
 
   <p>
       Once your data is stored in Kafka as events, you can process the data with the
-      <a href="https://kafka.apache.org/documentation/streams">Kafka Streams</a> client library for Java/Scala.
+      <a href="/documentation/streams">Kafka Streams</a> client library for Java/Scala.
       It allows you to implement mission-critical real-time applications and microservices, where the input
       and/or output data is stored in Kafka topics.  Kafka Streams combines the simplicity of writing and deploying
       standard Java and Scala applications on the client side with the benefits of Kafka's server-side cluster
@@ -199,8 +199,8 @@ KTable&lt;String, Long&gt; wordCounts = textLines
 wordCounts.toStream().to("output-topic"), Produced.with(Serdes.String(), Serdes.Long()));</code></pre>
 
   <p>
-      The <a href="https://kafka.apache.org/25/documentation/streams/quickstart">Kafka Streams demo</a>
-      and the <a href="https://kafka.apache.org/25/documentation/streams/tutorial">app development tutorial</a> 
+      The <a href="/25/documentation/streams/quickstart">Kafka Streams demo</a>
+      and the <a href="/25/documentation/streams/tutorial">app development tutorial</a> 
       demonstrate how to code and run such a streaming application from start to finish.
   </p>
 
@@ -250,13 +250,13 @@ wordCounts.toStream().to("output-topic"), Produced.with(Serdes.String(), Serdes.
 
     <ul>
         <li>
-            Read through the brief <a href="https://kafka.apache.org/intro">Introduction</a>
+            Read through the brief <a href="/intro">Introduction</a>
             to learn how Kafka works at a high level, its main concepts, and how it compares to other
             technologies. To understand Kafka in more detail, head over to the
-            <a href="https://kafka.apache.org/documentation/">Documentation</a>.
+            <a href="/documentation/">Documentation</a>.
         </li>
         <li>
-            Browse through the <a href="https://kafka.apache.org/powered-by">Use Cases</a> to learn how 
+            Browse through the <a href="/powered-by">Use Cases</a> to learn how 
             other users in our world-wide community are getting value out of Kafka.
         </li>
         <!--
@@ -266,8 +266,8 @@ wordCounts.toStream().to("output-topic"), Produced.with(Serdes.String(), Serdes.
         </li>
         -->
         <li>
-            Join a <a href="https://kafka.apache.org/events">local Kafka meetup group</a> and
-            <a href="https://kafka-summit.org/past-events/">watch talks from Kafka Summit</a>,
+            Join a <a href="/events">local Kafka meetup group</a> and
+            <a href="/past-events">watch talks from Kafka Summit</a>,
             the main conference of the Kafka community.
         </li>
     </ul>

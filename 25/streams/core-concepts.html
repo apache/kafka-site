@@ -229,7 +229,7 @@
         In fact, even for those stream processing systems that claim to support exactly-once processing, as long as they are reading from / writing to Kafka as the source / sink, their applications cannot actually guarantee that
         no duplicates will be generated throughout the pipeline.
 
-        Since the 0.11.0.0 release, Kafka has added support to allow its producers to send messages to different topic partitions in a <a href="https://kafka.apache.org/documentation/#semantics">transactional and idempotent manner</a>,
+        Since the 0.11.0.0 release, Kafka has added support to allow its producers to send messages to different topic partitions in a <a href="/documentation/#semantics">transactional and idempotent manner</a>,
         and Kafka Streams has hence added the end-to-end exactly-once processing semantics by leveraging these features.
         More specifically, it guarantees that for any record read from the source Kafka topics, its processing results will be reflected exactly once in the output Kafka topic as well as in the state stores for stateful operations.
         Note the key difference between Kafka Streams end-to-end exactly-once guarantee with other stream processing frameworks' claimed guarantees is that Kafka Streams tightly integrates with the underlying Kafka storage system and ensure that
