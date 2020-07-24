@@ -2154,11 +2154,11 @@ ul.video-list {
     color: #d8d8d8;
     text-transform: capitalize;
 }
-.video__list .active .number {
+.video__list .active .video-number {
     background-color: #000;
     color: #fff;
 }
-.page-dark .video__list .active .number {
+.page-dark .video__list .active .video-number {
     background-color: white;
     color: black;
 }
