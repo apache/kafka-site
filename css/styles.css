@@ -507,7 +507,8 @@ tr:nth-child(odd) {
 .page-dark .anchor-heading {
     position: relative;
 }
-.anchor-link {
+.anchor-link,
+.header-link {
     position: relative;
     top: -12rem;
     left: 0;
@@ -2571,7 +2572,8 @@ ul.video-list {
     .documentation--current .toc-handle-container {
         display: none;
     }
-    .anchor-link {
+    .anchor-link,
+    .headerlink {
         top: -10rem;
     }
     .quickstart-step {
