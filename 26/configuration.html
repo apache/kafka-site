@@ -18,7 +18,7 @@
 <script id="configuration-template" type="text/x-handlebars-template">
   Kafka uses key-value pairs in the <a href="http://en.wikipedia.org/wiki/.properties">property file format</a> for configuration. These values can be supplied either from a file or programmatically.
 
-  <h3><a id="brokerconfigs" href="#brokerconfigs">3.1 Broker Configs</a></h3>
+  <h3 class="anchor-heading"><a id="brokerconfigs" class="anchor-link"></a><a href="#brokerconfigs">3.1 Broker Configs</a></h3>
 
   The essential configurations are the following:
   <ul>
@@ -33,7 +33,7 @@
 
   <p>More details about broker configuration can be found in the scala class <code>kafka.server.KafkaConfig</code>.</p>
 
-  <h4><a id="dynamicbrokerconfigs" href="#dynamicbrokerconfigs">3.1.1 Updating Broker Configs</a></h4>
+  <h4 class="anchor-heading"><a id="dynamicbrokerconfigs" class="anchor-link"></a><a href="#dynamicbrokerconfigs">3.1.1 Updating Broker Configs</a></h4>
   From Kafka version 1.1 onwards, some of the broker configs can be updated without restarting the broker. See the
   <code>Dynamic Update Mode</code> column in <a href="#brokerconfigs">Broker Configs</a> for the update mode of each broker config.
   <ul>
@@ -217,7 +217,7 @@
   Inter-broker listener must be configured using the static broker configuration <code>inter.broker.listener.name</code>
   or <code>inter.broker.security.protocol</code>.
 
-  <h3><a id="topicconfigs" href="#topicconfigs">3.2 Topic-Level Configs</a></h3>
+  <h3 class="anchor-heading"><a id="topicconfigs" class="anchor-link"></a><a href="#topicconfigs">3.2 Topic-Level Configs</a></h3>
 
   Configurations pertinent to topics have both a server default as well an optional per-topic override. If no per-topic configuration is given the server default is used. The override can be set at topic creation time by giving one or more <code>--config</code> options. This example creates a topic named <i>my-topic</i> with a custom max message size and flush rate:
   <pre class="line-numbers"><code class="language-bash">  &gt; bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic my-topic --partitions 1 \
@@ -237,33 +237,33 @@
 
   <!--#include virtual="generated/topic_config.html" -->
 
-  <h3><a id="producerconfigs" href="#producerconfigs">3.3 Producer Configs</a></h3>
+  <h3 class="anchor-heading"><a id="producerconfigs" class="anchor-link"></a><a href="#producerconfigs">3.3 Producer Configs</a></h3>
 
   Below is the configuration of the producer:
   <!--#include virtual="generated/producer_config.html" -->
 
-  <h3><a id="consumerconfigs" href="#consumerconfigs">3.4 Consumer Configs</a></h3>
+  <h3 class="anchor-heading"><a id="consumerconfigs" class="anchor-link"></a><a href="#consumerconfigs">3.4 Consumer Configs</a></h3>
 
   Below is the configuration for the consumer:
   <!--#include virtual="generated/consumer_config.html" -->
 
-  <h3><a id="connectconfigs" href="#connectconfigs">3.5 Kafka Connect Configs</a></h3>
+  <h3 class="anchor-heading"><a id="connectconfigs" class="anchor-link"></a><a href="#connectconfigs">3.5 Kafka Connect Configs</a></h3>
   Below is the configuration of the Kafka Connect framework.
   <!--#include virtual="generated/connect_config.html" -->
 
-  <h4><a id="sourceconnectconfigs" href="#sourceconnectconfigs">3.5.1 Source Connector Configs</a></h4>
+  <h4 class="anchor-heading"><a id="sourceconnectconfigs" class="anchor-link"></a><a href="#sourceconnectconfigs">3.5.1 Source Connector Configs</a></h4>
   Below is the configuration of a source connector.
   <!--#include virtual="generated/source_connector_config.html" -->
 
-  <h4><a id="sinkconnectconfigs" href="#sinkconnectconfigs">3.5.2 Sink Connector Configs</a></h4>
+  <h4 class="anchor-heading"><a id="sinkconnectconfigs" class="anchor-link"></a><a href="#sinkconnectconfigs">3.5.2 Sink Connector Configs</a></h4>
   Below is the configuration of a sink connector.
   <!--#include virtual="generated/sink_connector_config.html" -->
 
-  <h3><a id="streamsconfigs" href="#streamsconfigs">3.6 Kafka Streams Configs</a></h3>
+  <h3 class="anchor-heading"><a id="streamsconfigs" class="anchor-link"></a><a href="#streamsconfigs">3.6 Kafka Streams Configs</a></h3>
   Below is the configuration of the Kafka Streams client library.
   <!--#include virtual="generated/streams_config.html" -->
 
-  <h3><a id="adminclientconfigs" href="#adminclientconfigs">3.7 Admin Configs</a></h3>
+  <h3 class="anchor-heading"><a id="adminclientconfigs" class="anchor-link"></a><a href="#adminclientconfigs">3.7 Admin Configs</a></h3>
   Below is the configuration of the Kafka Admin client library.
   <!--#include virtual="generated/admin_client_config.html" -->
 </script>
