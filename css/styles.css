@@ -2784,6 +2784,9 @@ ul.video-list {
         -moz-column-count: 2;
         column-count: 2;
     }
+    .customer__item {
+        break-inside: avoid;
+    }
     .sticky-top{
         overflow-x:hidden;
     }
