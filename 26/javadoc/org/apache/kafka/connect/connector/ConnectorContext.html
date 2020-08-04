@@ -103,7 +103,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">ConnectorContext</span></pre>
+<pre>public interface <span class="typeNameLabel">ConnectorContext</span></code></pre>
 <div class="block">ConnectorContext allows Connectors to proactively interact with the Kafka Connect runtime.</div>
 </li>
 </ul>
@@ -156,7 +156,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>requestTaskReconfiguration</h4>
-<pre>void&nbsp;requestTaskReconfiguration()</pre>
+<pre>void&nbsp;requestTaskReconfiguration()</code></pre>
 <div class="block">Requests that the runtime reconfigure the Tasks for this source. This should be used to
  indicate to the runtime that something about the input/output has changed (e.g. partitions
  added/removed) and the running Tasks will need to be modified.</div>
@@ -168,7 +168,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>raiseError</h4>
-<pre>void&nbsp;raiseError(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a>&nbsp;e)</pre>
+<pre>void&nbsp;raiseError(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a>&nbsp;e)</code></pre>
 <div class="block">Raise an unrecoverable exception to the Connect framework. This will cause the status of the
  connector to transition to FAILED.</div>
 <dl>

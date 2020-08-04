@@ -51,7 +51,7 @@
   <p>
   In Kafka the communication between the clients and the servers is done with a simple, high-performance, language agnostic <a href="https://kafka.apache.org/protocol.html">TCP protocol</a>. This protocol is versioned and maintains backwards compatibility with older versions. We provide a Java client for Kafka, but clients are available in <a href="https://cwiki.apache.org/confluence/display/KAFKA/Clients">many languages</a>.</p>
 
-  <h4><a id="intro_topics" href="#intro_topics">Topics and Logs</a></h4>
+  <h4 class="anchor-heading"><a id="intro_topics" class="anchor-link"></a><a href="#intro_topics">Topics and Logs</a></h4>
   <p>Let's first dive into the core abstraction Kafka provides for a stream of records&mdash;the topic.</p>
   <p>A topic is a category or feed name to which records are published. Topics in Kafka are always multi-subscriber; that is, a topic can have zero, one, or many consumers that subscribe to the data written to it.</p>
   <p> For each topic, the Kafka cluster maintains a partitioned log that looks like this: </p>
@@ -73,7 +73,7 @@
   The partitions in the log serve several purposes. First, they allow the log to scale beyond a size that will fit on a single server. Each individual partition must fit on the servers that host it, but a topic may have many partitions so it can handle an arbitrary amount of data. Second they act as the unit of parallelism&mdash;more on that in a bit.
   </p>
 
-  <h4><a id="intro_distribution" href="#intro_distribution">Distribution</a></h4>
+  <h4 class="anchor-heading"><a id="intro_distribution" class="anchor-link"></a><a href="#intro_distribution">Distribution</a></h4>
 
   <p>
   The partitions of the log are distributed over the servers in the Kafka cluster with each server handling data and requests for a share of the partitions. Each partition is replicated across a configurable number of servers for fault tolerance.
@@ -82,16 +82,16 @@
   Each partition has one server which acts as the "leader" and zero or more servers which act as "followers". The leader handles all read and write requests for the partition while the followers passively replicate the leader. If the leader fails, one of the followers will automatically become the new leader. Each server acts as a leader for some of its partitions and a follower for others so load is well balanced within the cluster.
   </p>
 
-  <h4><a id="intro_geo-replication" href="#intro_geo-replication">Geo-Replication</a></h4>
+  <h4 class="anchor-heading"><a id="intro_geo-replication" class="anchor-link"></a><a href="#intro_geo-replication">Geo-Replication</a></h4>
 
   <p>Kafka MirrorMaker provides geo-replication support for your clusters. With MirrorMaker, messages are replicated across multiple datacenters or cloud regions. You can use this in active/passive scenarios for backup and recovery; or in active/active scenarios to place data closer to your users, or support data locality requirements. </p>
 
-  <h4><a id="intro_producers" href="#intro_producers">Producers</a></h4>
+  <h4 class="anchor-heading"><a id="intro_producers" class="anchor-link"></a><a href="#intro_producers">Producers</a></h4>
   <p>
   Producers publish data to the topics of their choice. The producer is responsible for choosing which record to assign to which partition within the topic. This can be done in a round-robin fashion simply to balance load or it can be done according to some semantic partition function (say based on some key in the record). More on the use of partitioning in a second!
   </p>
 
-  <h4><a id="intro_consumers" href="#intro_consumers">Consumers</a></h4>
+  <h4 class="anchor-heading"><a id="intro_consumers" class="anchor-link"></a><a href="#intro_consumers">Consumers</a></h4>
 
   <p>
   Consumers label themselves with a <i>consumer group</i> name, and each record published to a topic is delivered to one consumer instance within each subscribing consumer group. Consumer instances can be in separate processes or on separate machines.
@@ -115,9 +115,9 @@
   <p>
   Kafka only provides a total order over records <i>within</i> a partition, not between different partitions in a topic. Per-partition ordering combined with the ability to partition data by key is sufficient for most applications. However, if you require a total order over records this can be achieved with a topic that has only one partition, though this will mean only one consumer process per consumer group.
   </p>
-  <h4><a id="intro_multi-tenancy" href="#intro_multi-tenancy">Multi-tenancy</a></h4>
+  <h4 class="anchor-heading"><a id="intro_multi-tenancy" class="anchor-link"></a><a href="#intro_multi-tenancy">Multi-tenancy</a></h4>
   <p>You can deploy Kafka as a multi-tenant solution. Multi-tenancy is enabled by configuring which topics can produce or consume data. There is also operations support for quotas.  Administrators can define and enforce quotas on requests to control the broker resources that are used by clients.  For more information, see the <a href="https://kafka.apache.org/documentation/#security">security documentation</a>. </p>
-  <h4><a id="intro_guarantees" href="#intro_guarantees">Guarantees</a></h4>
+  <h4 class="anchor-heading"><a id="intro_guarantees" class="anchor-link"></a><a href="#intro_guarantees">Guarantees</a></h4>
   <p>
   At a high-level Kafka gives the following guarantees:
   </p>
@@ -129,7 +129,7 @@
   <p>
   More details on these guarantees are given in the design section of the documentation.
   </p>
-  <h4><a id="kafka_mq" href="#kafka_mq">Kafka as a Messaging System</a></h4>
+  <h4 class="anchor-heading"><a id="kafka_mq" class="anchor-link"></a><a href="#kafka_mq">Kafka as a Messaging System</a></h4>
   <p>
   How does Kafka's notion of streams compare to a traditional enterprise messaging system?
   </p>

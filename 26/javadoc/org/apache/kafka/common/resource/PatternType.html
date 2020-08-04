@@ -118,7 +118,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre><a href="../../../../../org/apache/kafka/common/annotation/InterfaceStability.Evolving.html" title="annotation in org.apache.kafka.common.annotation">@InterfaceStability.Evolving</a>
 public enum <span class="typeNameLabel">PatternType</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Enum.html?is-external=true" title="class or interface in java.lang">Enum</a>&lt;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a>&gt;</pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Enum.html?is-external=true" title="class or interface in java.lang">Enum</a>&lt;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a>&gt;</code></pre>
 <div class="block">Resource pattern type.</div>
 </li>
 </ul>
@@ -249,7 +249,7 @@ the order they are declared.</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>UNKNOWN</h4>
-<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a> UNKNOWN</pre>
+<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a> UNKNOWN</code></pre>
 <div class="block">Represents any PatternType which this client cannot understand, perhaps because this client is too old.</div>
 </li>
 </ul>
@@ -259,7 +259,7 @@ the order they are declared.</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>ANY</h4>
-<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a> ANY</pre>
+<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a> ANY</code></pre>
 <div class="block">In a filter, matches any resource pattern type.</div>
 </li>
 </ul>
@@ -269,7 +269,7 @@ the order they are declared.</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>MATCH</h4>
-<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a> MATCH</pre>
+<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a> MATCH</code></pre>
 <div class="block">In a filter, will perform pattern matching.
 
  e.g. Given a filter of <code>ResourcePatternFilter(TOPIC, "payments.received", MATCH)`</code>, the filter match
@@ -287,7 +287,7 @@ the order they are declared.</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>LITERAL</h4>
-<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a> LITERAL</pre>
+<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a> LITERAL</code></pre>
 <div class="block">A literal resource name.
 
  A literal name defines the full name of a resource, e.g. topic with name 'foo', or group with name 'bob'.
@@ -301,7 +301,7 @@ the order they are declared.</div>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>PREFIXED</h4>
-<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a> PREFIXED</pre>
+<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a> PREFIXED</code></pre>
 <div class="block">A prefixed resource name.
 
  A prefixed name defines a prefix for a resource, e.g. topics with names that start with 'foo'.</div>
@@ -321,14 +321,12 @@ the order they are declared.</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>values</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a>[]&nbsp;values()</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a>[]&nbsp;values()</code></pre>
 <div class="block">Returns an array containing the constants of this enum type, in
 the order they are declared.  This method may be used to iterate
 over the constants as follows:
-<pre>
-for (PatternType c : PatternType.values())
-&nbsp;   System.out.println(c);
-</pre></div>
+<pre class="line-numbers"><code class="language-text">for (PatternType c : PatternType.values())
+&nbsp;   System.out.println(c);</code></pre></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>an array containing the constants of this enum type, in the order they are declared</dd>
@@ -341,7 +339,7 @@ for (PatternType c : PatternType.values())
 <ul class="blockList">
 <li class="blockList">
 <h4>valueOf</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a>&nbsp;valueOf(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a>&nbsp;valueOf(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code></pre>
 <div class="block">Returns the enum constant of this type with the specified name.
 The string must match <i>exactly</i> an identifier used to declare an
 enum constant in this type.  (Extraneous whitespace characters are 
@@ -363,7 +361,7 @@ not permitted.)</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>code</h4>
-<pre>public&nbsp;byte&nbsp;code()</pre>
+<pre>public&nbsp;byte&nbsp;code()</code></pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the code of this resource.</dd>
@@ -376,7 +374,7 @@ not permitted.)</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>isUnknown</h4>
-<pre>public&nbsp;boolean&nbsp;isUnknown()</pre>
+<pre>public&nbsp;boolean&nbsp;isUnknown()</code></pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>whether this resource pattern type is UNKNOWN.</dd>
@@ -389,7 +387,7 @@ not permitted.)</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>isSpecific</h4>
-<pre>public&nbsp;boolean&nbsp;isSpecific()</pre>
+<pre>public&nbsp;boolean&nbsp;isSpecific()</code></pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>whether this resource pattern type is a concrete type, rather than UNKNOWN or one of the filter types.</dd>
@@ -402,7 +400,7 @@ not permitted.)</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>fromCode</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a>&nbsp;fromCode(byte&nbsp;code)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a>&nbsp;fromCode(byte&nbsp;code)</code></pre>
 <div class="block">Return the PatternType with the provided code or <a href="../../../../../org/apache/kafka/common/resource/PatternType.html#UNKNOWN"><code>UNKNOWN</code></a> if one cannot be found.</div>
 </li>
 </ul>
@@ -412,7 +410,7 @@ not permitted.)</div>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>fromString</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a>&nbsp;fromString(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/common/resource/PatternType.html" title="enum in org.apache.kafka.common.resource">PatternType</a>&nbsp;fromString(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code></pre>
 <div class="block">Return the PatternType with the provided name or <a href="../../../../../org/apache/kafka/common/resource/PatternType.html#UNKNOWN"><code>UNKNOWN</code></a> if one cannot be found.</div>
 </li>
 </ul>

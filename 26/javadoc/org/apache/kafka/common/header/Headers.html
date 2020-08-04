@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">Headers</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../org/apache/kafka/common/header/Header.html" title="interface in org.apache.kafka.common.header">Header</a>&gt;</pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../org/apache/kafka/common/header/Header.html" title="interface in org.apache.kafka.common.header">Header</a>&gt;</code></pre>
 </li>
 </ul>
 </div>
@@ -189,7 +189,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>add</h4>
 <pre><a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;add(<a href="../../../../../org/apache/kafka/common/header/Header.html" title="interface in org.apache.kafka.common.header">Header</a>&nbsp;header)
-     throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></pre>
+     throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code></pre>
 <div class="block">Adds a header (key inside), to the end, returning if the operation succeeded.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -209,7 +209,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <h4>add</h4>
 <pre><a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;add(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
             byte[]&nbsp;value)
-     throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></pre>
+     throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code></pre>
 <div class="block">Creates and adds a header, to the end, returning if the operation succeeded.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -229,7 +229,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>remove</h4>
 <pre><a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;remove(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)
-        throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></pre>
+        throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code></pre>
 <div class="block">Removes all headers for the given key returning if the operation succeeded.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -247,7 +247,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>lastHeader</h4>
-<pre><a href="../../../../../org/apache/kafka/common/header/Header.html" title="interface in org.apache.kafka.common.header">Header</a>&nbsp;lastHeader(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</pre>
+<pre><a href="../../../../../org/apache/kafka/common/header/Header.html" title="interface in org.apache.kafka.common.header">Header</a>&nbsp;lastHeader(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</code></pre>
 <div class="block">Returns just one (the very last) header for the given key, if present.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -263,7 +263,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>headers</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../org/apache/kafka/common/header/Header.html" title="interface in org.apache.kafka.common.header">Header</a>&gt;&nbsp;headers(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../org/apache/kafka/common/header/Header.html" title="interface in org.apache.kafka.common.header">Header</a>&gt;&nbsp;headers(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</code></pre>
 <div class="block">Returns all headers for the given key, in the order they were added in, if present.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -279,7 +279,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toArray</h4>
-<pre><a href="../../../../../org/apache/kafka/common/header/Header.html" title="interface in org.apache.kafka.common.header">Header</a>[]&nbsp;toArray()</pre>
+<pre><a href="../../../../../org/apache/kafka/common/header/Header.html" title="interface in org.apache.kafka.common.header">Header</a>[]&nbsp;toArray()</code></pre>
 <div class="block">Returns all headers as an array, in the order they were added in.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>

@@ -103,7 +103,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">ConsumerPartitionAssignor</span></pre>
+<pre>public interface <span class="typeNameLabel">ConsumerPartitionAssignor</span></code></pre>
 <div class="block">This interface is used to define custom partition assignment for use in
  <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html" title="class in org.apache.kafka.clients.consumer"><code>KafkaConsumer</code></a>. Members of the consumer group subscribe
  to the topics they are interested in and forward their subscriptions to a Kafka broker serving
@@ -232,7 +232,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>subscriptionUserData</h4>
-<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/ByteBuffer.html?is-external=true" title="class or interface in java.nio">ByteBuffer</a>&nbsp;subscriptionUserData(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topics)</pre>
+<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/ByteBuffer.html?is-external=true" title="class or interface in java.nio">ByteBuffer</a>&nbsp;subscriptionUserData(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topics)</code></pre>
 <div class="block">Return serialized data that will be included in the <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.Subscription.html" title="class in org.apache.kafka.clients.consumer"><code>ConsumerPartitionAssignor.Subscription</code></a> sent to the leader
  and can be leveraged in <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.html#assign-org.apache.kafka.common.Cluster-org.apache.kafka.clients.consumer.ConsumerPartitionAssignor.GroupSubscription-"><code>assign(Cluster, GroupSubscription)</code></a> ((e.g. local host/rack information)</div>
 <dl>
@@ -251,7 +251,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>assign</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.GroupAssignment.html" title="class in org.apache.kafka.clients.consumer">ConsumerPartitionAssignor.GroupAssignment</a>&nbsp;assign(<a href="../../../../../org/apache/kafka/common/Cluster.html" title="class in org.apache.kafka.common">Cluster</a>&nbsp;metadata,
-                                                 <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.GroupSubscription.html" title="class in org.apache.kafka.clients.consumer">ConsumerPartitionAssignor.GroupSubscription</a>&nbsp;groupSubscription)</pre>
+                                                 <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.GroupSubscription.html" title="class in org.apache.kafka.clients.consumer">ConsumerPartitionAssignor.GroupSubscription</a>&nbsp;groupSubscription)</code></pre>
 <div class="block">Perform the group assignment given the member subscriptions and current cluster metadata.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -270,7 +270,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>onAssignment</h4>
 <pre>default&nbsp;void&nbsp;onAssignment(<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.Assignment.html" title="class in org.apache.kafka.clients.consumer">ConsumerPartitionAssignor.Assignment</a>&nbsp;assignment,
-                          <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerGroupMetadata.html" title="class in org.apache.kafka.clients.consumer">ConsumerGroupMetadata</a>&nbsp;metadata)</pre>
+                          <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerGroupMetadata.html" title="class in org.apache.kafka.clients.consumer">ConsumerGroupMetadata</a>&nbsp;metadata)</code></pre>
 <div class="block">Callback which is invoked when a group member receives its assignment from the leader.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -285,7 +285,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>supportedProtocols</h4>
-<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.RebalanceProtocol.html" title="enum in org.apache.kafka.clients.consumer">ConsumerPartitionAssignor.RebalanceProtocol</a>&gt;&nbsp;supportedProtocols()</pre>
+<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.RebalanceProtocol.html" title="enum in org.apache.kafka.clients.consumer">ConsumerPartitionAssignor.RebalanceProtocol</a>&gt;&nbsp;supportedProtocols()</code></pre>
 <div class="block">Indicate which rebalance protocol this assignor works with;
  By default it should always work with <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.RebalanceProtocol.html#EAGER"><code>ConsumerPartitionAssignor.RebalanceProtocol.EAGER</code></a>.</div>
 </li>
@@ -296,7 +296,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>version</h4>
-<pre>default&nbsp;short&nbsp;version()</pre>
+<pre>default&nbsp;short&nbsp;version()</code></pre>
 <div class="block">Return the version of the assignor which indicates how the user metadata encodings
  and the assignment algorithm gets evolved.</div>
 </li>
@@ -307,7 +307,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>name</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name()</code></pre>
 <div class="block">Unique name for this assignor (e.g. "range" or "roundrobin" or "sticky"). Note, this is not required
  to be the same as the class name specified in <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerConfig.html#PARTITION_ASSIGNMENT_STRATEGY_CONFIG"><code>ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG</code></a></div>
 <dl>

@@ -121,7 +121,7 @@ extends <a href="../../../../org/apache/kafka/common/config/AbstractConfig.html"
  <a href="../../../../org/apache/kafka/streams/StreamsConfig.html#consumerPrefix-java.lang.String-"><code>consumerPrefix(String)</code></a>, <a href="../../../../org/apache/kafka/streams/StreamsConfig.html#producerPrefix-java.lang.String-"><code>producerPrefix(String)</code></a> and <a href="../../../../org/apache/kafka/streams/StreamsConfig.html#adminClientPrefix-java.lang.String-"><code>adminClientPrefix(String)</code></a>, respectively.
  <p>
  Example:
- <pre><code>
+ <pre class="line-numbers"><code>
  // potentially wrong: sets "metadata.max.age.ms" to 1 minute for producer AND consumer
  Properties streamsProperties = new Properties();
  streamsProperties.put(ConsumerConfig.METADATA_MAX_AGE_CONFIG, 60000);
@@ -141,7 +141,7 @@ extends <a href="../../../../org/apache/kafka/common/config/AbstractConfig.html"
  This instance can also be used to pass in custom configurations to different modules (e.g. passing a special config in your customized serde class).
  The consumer/producer/admin prefix can also be used to distinguish these custom config values passed to different clients with the same config name.
  * Example:
- <pre><code>
+ <pre class="line-numbers"><code>
  Properties streamsProperties = new Properties();
  // sets "my.custom.config" to "foo" for consumer only
  streamsProperties.put(StreamsConfig.consumerPrefix("my.custom.config"), "foo");

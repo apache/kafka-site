@@ -106,7 +106,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">Transformer&lt;K,V,R&gt;</span></pre>
+<pre>public interface <span class="typeNameLabel">Transformer&lt;K,V,R&gt;</span></code></pre>
 <div class="block">The <code>Transformer</code> interface is for stateful mapping of an input record to zero, one, or multiple new output
  records (both key and value type can be altered arbitrarily).
  This is a stateful record-by-record operation, i.e, <a href="../../../../../org/apache/kafka/streams/kstream/Transformer.html#transform-K-V-"><code>transform(Object, Object)</code></a> is invoked individually for
@@ -184,7 +184,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>init</h4>
-<pre>void&nbsp;init(<a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor">ProcessorContext</a>&nbsp;context)</pre>
+<pre>void&nbsp;init(<a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor">ProcessorContext</a>&nbsp;context)</code></pre>
 <div class="block">Initialize this transformer.
  This is called once per instance when the topology gets initialized.
  When the framework is done with the transformer, <a href="../../../../../org/apache/kafka/streams/kstream/Transformer.html#close--"><code>close()</code></a> will be called on it; the
@@ -211,7 +211,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>transform</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/kstream/Transformer.html" title="type parameter in Transformer">R</a>&nbsp;transform(<a href="../../../../../org/apache/kafka/streams/kstream/Transformer.html" title="type parameter in Transformer">K</a>&nbsp;key,
-            <a href="../../../../../org/apache/kafka/streams/kstream/Transformer.html" title="type parameter in Transformer">V</a>&nbsp;value)</pre>
+            <a href="../../../../../org/apache/kafka/streams/kstream/Transformer.html" title="type parameter in Transformer">V</a>&nbsp;value)</code></pre>
 <div class="block">Transform the record with the given key and value.
  Additionally, any <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>state</code></a> that is <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html#transform-org.apache.kafka.streams.kstream.TransformerSupplier-java.lang.String...-"><code>attached</code></a> to this operator can be accessed and modified
  arbitrarily (cf. <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#getStateStore-java.lang.String-"><code>ProcessorContext.getStateStore(String)</code></a>).
@@ -239,7 +239,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>close</h4>
-<pre>void&nbsp;close()</pre>
+<pre>void&nbsp;close()</code></pre>
 <div class="block">Close this transformer and clean up any resources. The framework may
  later re-use this transformer by calling <a href="../../../../../org/apache/kafka/streams/kstream/Transformer.html#init-org.apache.kafka.streams.processor.ProcessorContext-"><code>init(ProcessorContext)</code></a> on it again.
  <p>

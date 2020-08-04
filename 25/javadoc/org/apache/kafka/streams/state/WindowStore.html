@@ -311,8 +311,7 @@ void&nbsp;put(<a href="../../../../../org/apache/kafka/streams/state/WindowStore
  |   A   |     20     |    30    |
  +-------+------------+----------+
  |   A   |     25     |    35    |
- +--------------------------------
- </pre>
+ +--------------------------------</pre>
  And we call <code>store.fetch("A", 10, 20)</code> then the results will contain the first
  three windows from the table above, i.e., all those where 10 &lt;= start time &lt;= 20.
  <p>
@@ -362,8 +361,7 @@ void&nbsp;put(<a href="../../../../../org/apache/kafka/streams/state/WindowStore
  |   A   |     20     |    30    |
  +-------+------------+----------+
  |   A   |     25     |    35    |
- +--------------------------------
- </pre>
+ +--------------------------------</pre>
  And we call <code>store.fetch("A", Instant.ofEpochMilli(10), Instant.ofEpochMilli(20))</code> then the results will contain the first
  three windows from the table above, i.e., all those where 10 &lt;= start time &lt;= 20.
  <p>

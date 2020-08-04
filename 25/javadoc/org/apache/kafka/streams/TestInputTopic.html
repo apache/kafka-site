@@ -122,7 +122,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  If you have multiple source topics, you need to create a <code>TestInputTopic</code> for each.
 
  <h2>Processing messages</h2>
- <pre><code>
+ <pre class="line-numbers"><code>
      private TestInputTopic&lt;Long, String&gt; inputTopic;
      ...
      inputTopic = testDriver.createInputTopic(INPUT_TOPIC, longSerializer, stringSerializer);

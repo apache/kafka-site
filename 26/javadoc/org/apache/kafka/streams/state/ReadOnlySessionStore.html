@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">ReadOnlySessionStore&lt;K,AGG&gt;</span></pre>
+<pre>public interface <span class="typeNameLabel">ReadOnlySessionStore&lt;K,AGG&gt;</span></code></pre>
 <div class="block">A session store that only supports read operations.
  Implementations should be thread-safe as concurrent reads and writes
  are expected.</div>
@@ -166,7 +166,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>fetch</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/state/KeyValueIterator.html" title="interface in org.apache.kafka.streams.state">KeyValueIterator</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlySessionStore.html" title="type parameter in ReadOnlySessionStore">K</a>&gt;,<a href="../../../../../org/apache/kafka/streams/state/ReadOnlySessionStore.html" title="type parameter in ReadOnlySessionStore">AGG</a>&gt;&nbsp;fetch(<a href="../../../../../org/apache/kafka/streams/state/ReadOnlySessionStore.html" title="type parameter in ReadOnlySessionStore">K</a>&nbsp;key)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/state/KeyValueIterator.html" title="interface in org.apache.kafka.streams.state">KeyValueIterator</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlySessionStore.html" title="type parameter in ReadOnlySessionStore">K</a>&gt;,<a href="../../../../../org/apache/kafka/streams/state/ReadOnlySessionStore.html" title="type parameter in ReadOnlySessionStore">AGG</a>&gt;&nbsp;fetch(<a href="../../../../../org/apache/kafka/streams/state/ReadOnlySessionStore.html" title="type parameter in ReadOnlySessionStore">K</a>&nbsp;key)</code></pre>
 <div class="block">Retrieve all aggregated sessions for the provided key.
  This iterator must be closed after use.
 
@@ -191,7 +191,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>fetch</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/state/KeyValueIterator.html" title="interface in org.apache.kafka.streams.state">KeyValueIterator</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlySessionStore.html" title="type parameter in ReadOnlySessionStore">K</a>&gt;,<a href="../../../../../org/apache/kafka/streams/state/ReadOnlySessionStore.html" title="type parameter in ReadOnlySessionStore">AGG</a>&gt;&nbsp;fetch(<a href="../../../../../org/apache/kafka/streams/state/ReadOnlySessionStore.html" title="type parameter in ReadOnlySessionStore">K</a>&nbsp;from,
-                                        <a href="../../../../../org/apache/kafka/streams/state/ReadOnlySessionStore.html" title="type parameter in ReadOnlySessionStore">K</a>&nbsp;to)</pre>
+                                        <a href="../../../../../org/apache/kafka/streams/state/ReadOnlySessionStore.html" title="type parameter in ReadOnlySessionStore">K</a>&nbsp;to)</code></pre>
 <div class="block">Retrieve all aggregated sessions for the given range of keys.
  This iterator must be closed after use.
 

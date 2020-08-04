@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">ClientQuotaCallback</span>
-extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a></pre>
+extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a></code></pre>
 <div class="block">Quota callback interface for brokers that enables customization of client quota computation.</div>
 </li>
 </ul>
@@ -206,7 +206,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
 <h4>quotaMetricTags</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;quotaMetricTags(<a href="../../../../../org/apache/kafka/server/quota/ClientQuotaType.html" title="enum in org.apache.kafka.server.quota">ClientQuotaType</a>&nbsp;quotaType,
                                    <a href="../../../../../org/apache/kafka/common/security/auth/KafkaPrincipal.html" title="class in org.apache.kafka.common.security.auth">KafkaPrincipal</a>&nbsp;principal,
-                                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;clientId)</pre>
+                                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;clientId)</code></pre>
 <div class="block">Quota callback invoked to determine the quota metric tags to be applied for a request.
  Quota limits are associated with quota metrics and all clients which use the same
  metric tags share the quota limit.</div>
@@ -227,7 +227,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
 <li class="blockList">
 <h4>quotaLimit</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&nbsp;quotaLimit(<a href="../../../../../org/apache/kafka/server/quota/ClientQuotaType.html" title="enum in org.apache.kafka.server.quota">ClientQuotaType</a>&nbsp;quotaType,
-                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;metricTags)</pre>
+                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;metricTags)</code></pre>
 <div class="block">Returns the quota limit associated with the provided metric tags. These tags were returned from
  a previous call to <a href="../../../../../org/apache/kafka/server/quota/ClientQuotaCallback.html#quotaMetricTags-org.apache.kafka.server.quota.ClientQuotaType-org.apache.kafka.common.security.auth.KafkaPrincipal-java.lang.String-"><code>quotaMetricTags(ClientQuotaType, KafkaPrincipal, String)</code></a>. This method is
  invoked by quota managers to obtain the current quota limit applied to a metric when the first request
@@ -251,7 +251,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
 <h4>updateQuota</h4>
 <pre>void&nbsp;updateQuota(<a href="../../../../../org/apache/kafka/server/quota/ClientQuotaType.html" title="enum in org.apache.kafka.server.quota">ClientQuotaType</a>&nbsp;quotaType,
                  <a href="../../../../../org/apache/kafka/server/quota/ClientQuotaEntity.html" title="interface in org.apache.kafka.server.quota">ClientQuotaEntity</a>&nbsp;quotaEntity,
-                 double&nbsp;newValue)</pre>
+                 double&nbsp;newValue)</code></pre>
 <div class="block">Quota configuration update callback that is invoked when quota configuration for an entity is
  updated in ZooKeeper. This is useful to track configured quotas if built-in quota configuration
  tools are used for quota management.</div>
@@ -270,7 +270,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
 <li class="blockList">
 <h4>removeQuota</h4>
 <pre>void&nbsp;removeQuota(<a href="../../../../../org/apache/kafka/server/quota/ClientQuotaType.html" title="enum in org.apache.kafka.server.quota">ClientQuotaType</a>&nbsp;quotaType,
-                 <a href="../../../../../org/apache/kafka/server/quota/ClientQuotaEntity.html" title="interface in org.apache.kafka.server.quota">ClientQuotaEntity</a>&nbsp;quotaEntity)</pre>
+                 <a href="../../../../../org/apache/kafka/server/quota/ClientQuotaEntity.html" title="interface in org.apache.kafka.server.quota">ClientQuotaEntity</a>&nbsp;quotaEntity)</code></pre>
 <div class="block">Quota configuration removal callback that is invoked when quota configuration for an entity is
  removed in ZooKeeper. This is useful to track configured quotas if built-in quota configuration
  tools are used for quota management.</div>
@@ -287,7 +287,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>quotaResetRequired</h4>
-<pre>boolean&nbsp;quotaResetRequired(<a href="../../../../../org/apache/kafka/server/quota/ClientQuotaType.html" title="enum in org.apache.kafka.server.quota">ClientQuotaType</a>&nbsp;quotaType)</pre>
+<pre>boolean&nbsp;quotaResetRequired(<a href="../../../../../org/apache/kafka/server/quota/ClientQuotaType.html" title="enum in org.apache.kafka.server.quota">ClientQuotaType</a>&nbsp;quotaType)</code></pre>
 <div class="block">Returns true if any of the existing quota configs may have been updated since the last call
  to this method for the provided quota type. Quota updates as a result of calls to
  <a href="../../../../../org/apache/kafka/server/quota/ClientQuotaCallback.html#updateClusterMetadata-org.apache.kafka.common.Cluster-"><code>updateClusterMetadata(Cluster)</code></a>, <a href="../../../../../org/apache/kafka/server/quota/ClientQuotaCallback.html#updateQuota-org.apache.kafka.server.quota.ClientQuotaType-org.apache.kafka.server.quota.ClientQuotaEntity-double-"><code>updateQuota(ClientQuotaType, ClientQuotaEntity, double)</code></a>
@@ -308,7 +308,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>updateClusterMetadata</h4>
-<pre>boolean&nbsp;updateClusterMetadata(<a href="../../../../../org/apache/kafka/common/Cluster.html" title="class in org.apache.kafka.common">Cluster</a>&nbsp;cluster)</pre>
+<pre>boolean&nbsp;updateClusterMetadata(<a href="../../../../../org/apache/kafka/common/Cluster.html" title="class in org.apache.kafka.common">Cluster</a>&nbsp;cluster)</code></pre>
 <div class="block">Metadata update callback that is invoked whenever UpdateMetadata request is received from
  the controller. This is useful if quota computation takes partitions into account.
  Topics that are being deleted will not be included in `cluster`.</div>
@@ -326,7 +326,7 @@ extends <a href="../../../../../org/apache/kafka/common/Configurable.html" title
 <ul class="blockListLast">
 <li class="blockList">
 <h4>close</h4>
-<pre>void&nbsp;close()</pre>
+<pre>void&nbsp;close()</code></pre>
 <div class="block">Closes this instance.</div>
 </li>
 </ul>

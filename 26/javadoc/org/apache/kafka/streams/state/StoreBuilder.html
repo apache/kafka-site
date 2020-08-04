@@ -103,7 +103,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">StoreBuilder&lt;T extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>&gt;</span></pre>
+<pre>public interface <span class="typeNameLabel">StoreBuilder&lt;T extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>&gt;</span></code></pre>
 <div class="block">Build a <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> wrapped with optional caching and logging.</div>
 </li>
 </ul>
@@ -190,7 +190,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>withCachingEnabled</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state">StoreBuilder</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="type parameter in StoreBuilder">T</a>&gt;&nbsp;withCachingEnabled()</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state">StoreBuilder</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="type parameter in StoreBuilder">T</a>&gt;&nbsp;withCachingEnabled()</code></pre>
 <div class="block">Enable caching on the store.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -204,7 +204,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>withCachingDisabled</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state">StoreBuilder</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="type parameter in StoreBuilder">T</a>&gt;&nbsp;withCachingDisabled()</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state">StoreBuilder</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="type parameter in StoreBuilder">T</a>&gt;&nbsp;withCachingDisabled()</code></pre>
 <div class="block">Disable caching on the store.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -218,7 +218,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>withLoggingEnabled</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state">StoreBuilder</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="type parameter in StoreBuilder">T</a>&gt;&nbsp;withLoggingEnabled(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;config)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state">StoreBuilder</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="type parameter in StoreBuilder">T</a>&gt;&nbsp;withLoggingEnabled(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;config)</code></pre>
 <div class="block">Maintain a changelog for any changes made to the store.
  Use the provided config to set the config of the changelog topic.</div>
 <dl>
@@ -235,7 +235,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>withLoggingDisabled</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state">StoreBuilder</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="type parameter in StoreBuilder">T</a>&gt;&nbsp;withLoggingDisabled()</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state">StoreBuilder</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="type parameter in StoreBuilder">T</a>&gt;&nbsp;withLoggingDisabled()</code></pre>
 <div class="block">Disable the changelog for store built by this <a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state"><code>StoreBuilder</code></a>.
  This will turn off fault-tolerance for your store.
  By default the changelog is enabled.</div>
@@ -251,7 +251,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>build</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="type parameter in StoreBuilder">T</a>&nbsp;build()</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="type parameter in StoreBuilder">T</a>&nbsp;build()</code></pre>
 <div class="block">Build the store as defined by the builder.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -265,7 +265,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>logConfig</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logConfig()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logConfig()</code></pre>
 <div class="block">Returns a Map containing any log configs that will be used when creating the changelog for the <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a>.
  <p>
  Note: any unrecognized configs will be ignored by the Kafka brokers.</div>
@@ -282,7 +282,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>loggingEnabled</h4>
-<pre>boolean&nbsp;loggingEnabled()</pre>
+<pre>boolean&nbsp;loggingEnabled()</code></pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>true</code> if the <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> should have logging enabled</dd>
@@ -295,7 +295,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>name</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name()</code></pre>
 <div class="block">Return the name of this state store builder.
  This must be a valid Kafka topic name; valid characters are ASCII alphanumerics, '.', '_' and '-'.</div>
 <dl>

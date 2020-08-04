@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">Struct</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block"><p>
      A structured record containing a set of named fields with values, each field using an independent <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data"><code>Schema</code></a>.
      Struct objects must specify a complete <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data"><code>Schema</code></a> up front, and only fields specified in the Schema may be set.
@@ -116,11 +116,9 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  <p>
      The Struct's <a href="../../../../../org/apache/kafka/connect/data/Struct.html#put-java.lang.String-java.lang.Object-"><code>put(String, Object)</code></a> method returns the Struct itself to provide a fluent API for constructing
      complete objects:
-     <pre>
-         Schema schema = SchemaBuilder.struct().name("com.example.Person")
+     <pre class="line-numbers"><code class="language-text">         Schema schema = SchemaBuilder.struct().name("com.example.Person")
              .field("name", Schema.STRING_SCHEMA).field("age", Schema.INT32_SCHEMA).build()
-         Struct struct = new Struct(schema).put("name", "Bobby McGee").put("age", 21)
-     </pre>
+         Struct struct = new Struct(schema).put("name", "Bobby McGee").put("age", 21)</code></pre>
  </p></div>
 </li>
 </ul>
@@ -317,7 +315,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Struct</h4>
-<pre>public&nbsp;Struct(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema)</pre>
+<pre>public&nbsp;Struct(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema)</code></pre>
 <div class="block">Create a new Struct for this <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data"><code>Schema</code></a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -339,7 +337,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>schema</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema()</code></pre>
 <div class="block">Get the schema for this Struct.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -353,7 +351,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;get(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;get(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code></pre>
 <div class="block">Get the value of a field, returning the default value if no value has been set yet and a default value is specified
  in the field's schema. Because this handles fields of all types, the value is returned as an <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang"><code>Object</code></a> and
  must be cast to a more specific type.</div>
@@ -371,7 +369,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;get(<a href="../../../../../org/apache/kafka/connect/data/Field.html" title="class in org.apache.kafka.connect.data">Field</a>&nbsp;field)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;get(<a href="../../../../../org/apache/kafka/connect/data/Field.html" title="class in org.apache.kafka.connect.data">Field</a>&nbsp;field)</code></pre>
 <div class="block">Get the value of a field, returning the default value if no value has been set yet and a default value is specified
  in the field's schema. Because this handles fields of all types, the value is returned as an <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang"><code>Object</code></a> and
  must be cast to a more specific type.</div>
@@ -389,7 +387,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getWithoutDefault</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;getWithoutDefault(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;getWithoutDefault(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code></pre>
 <div class="block">Get the underlying raw value for the field without accounting for default values.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -405,7 +403,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getInt8</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Byte.html?is-external=true" title="class or interface in java.lang">Byte</a>&nbsp;getInt8(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Byte.html?is-external=true" title="class or interface in java.lang">Byte</a>&nbsp;getInt8(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code></pre>
 <div class="block">Equivalent to calling <a href="../../../../../org/apache/kafka/connect/data/Struct.html#get-java.lang.String-"><code>get(String)</code></a> and casting the result to a Byte.</div>
 </li>
 </ul>
@@ -415,7 +413,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getInt16</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Short.html?is-external=true" title="class or interface in java.lang">Short</a>&nbsp;getInt16(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Short.html?is-external=true" title="class or interface in java.lang">Short</a>&nbsp;getInt16(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code></pre>
 <div class="block">Equivalent to calling <a href="../../../../../org/apache/kafka/connect/data/Struct.html#get-java.lang.String-"><code>get(String)</code></a> and casting the result to a Short.</div>
 </li>
 </ul>
@@ -425,7 +423,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getInt32</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&nbsp;getInt32(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&nbsp;getInt32(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code></pre>
 <div class="block">Equivalent to calling <a href="../../../../../org/apache/kafka/connect/data/Struct.html#get-java.lang.String-"><code>get(String)</code></a> and casting the result to a Integer.</div>
 </li>
 </ul>
@@ -435,7 +433,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getInt64</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;getInt64(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;getInt64(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code></pre>
 <div class="block">Equivalent to calling <a href="../../../../../org/apache/kafka/connect/data/Struct.html#get-java.lang.String-"><code>get(String)</code></a> and casting the result to a Long.</div>
 </li>
 </ul>
@@ -445,7 +443,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getFloat32</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html?is-external=true" title="class or interface in java.lang">Float</a>&nbsp;getFloat32(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html?is-external=true" title="class or interface in java.lang">Float</a>&nbsp;getFloat32(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code></pre>
 <div class="block">Equivalent to calling <a href="../../../../../org/apache/kafka/connect/data/Struct.html#get-java.lang.String-"><code>get(String)</code></a> and casting the result to a Float.</div>
 </li>
 </ul>
@@ -455,7 +453,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getFloat64</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&nbsp;getFloat64(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&nbsp;getFloat64(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code></pre>
 <div class="block">Equivalent to calling <a href="../../../../../org/apache/kafka/connect/data/Struct.html#get-java.lang.String-"><code>get(String)</code></a> and casting the result to a Double.</div>
 </li>
 </ul>
@@ -465,7 +463,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getBoolean</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;getBoolean(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;getBoolean(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code></pre>
 <div class="block">Equivalent to calling <a href="../../../../../org/apache/kafka/connect/data/Struct.html#get-java.lang.String-"><code>get(String)</code></a> and casting the result to a Boolean.</div>
 </li>
 </ul>
@@ -475,7 +473,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getString(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getString(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code></pre>
 <div class="block">Equivalent to calling <a href="../../../../../org/apache/kafka/connect/data/Struct.html#get-java.lang.String-"><code>get(String)</code></a> and casting the result to a String.</div>
 </li>
 </ul>
@@ -485,7 +483,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getBytes</h4>
-<pre>public&nbsp;byte[]&nbsp;getBytes(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;byte[]&nbsp;getBytes(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code></pre>
 <div class="block">Equivalent to calling <a href="../../../../../org/apache/kafka/connect/data/Struct.html#get-java.lang.String-"><code>get(String)</code></a> and casting the result to a byte[].</div>
 </li>
 </ul>
@@ -495,7 +493,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getArray</h4>
-<pre>public&nbsp;&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;T&gt;&nbsp;getArray(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;T&gt;&nbsp;getArray(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code></pre>
 <div class="block">Equivalent to calling <a href="../../../../../org/apache/kafka/connect/data/Struct.html#get-java.lang.String-"><code>get(String)</code></a> and casting the result to a List.</div>
 </li>
 </ul>
@@ -505,7 +503,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getMap</h4>
-<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;K,V&gt;&nbsp;getMap(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;K,V&gt;&nbsp;getMap(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code></pre>
 <div class="block">Equivalent to calling <a href="../../../../../org/apache/kafka/connect/data/Struct.html#get-java.lang.String-"><code>get(String)</code></a> and casting the result to a Map.</div>
 </li>
 </ul>
@@ -515,7 +513,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getStruct</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Struct.html" title="class in org.apache.kafka.connect.data">Struct</a>&nbsp;getStruct(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Struct.html" title="class in org.apache.kafka.connect.data">Struct</a>&nbsp;getStruct(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code></pre>
 <div class="block">Equivalent to calling <a href="../../../../../org/apache/kafka/connect/data/Struct.html#get-java.lang.String-"><code>get(String)</code></a> and casting the result to a Struct.</div>
 </li>
 </ul>
@@ -526,7 +524,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>put</h4>
 <pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Struct.html" title="class in org.apache.kafka.connect.data">Struct</a>&nbsp;put(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
-                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 <div class="block">Set the value of a field. Validates the value, throwing a <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors"><code>DataException</code></a> if it does not match the field's
  <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data"><code>Schema</code></a>.</div>
 <dl>
@@ -545,7 +543,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>put</h4>
 <pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Struct.html" title="class in org.apache.kafka.connect.data">Struct</a>&nbsp;put(<a href="../../../../../org/apache/kafka/connect/data/Field.html" title="class in org.apache.kafka.connect.data">Field</a>&nbsp;field,
-                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 <div class="block">Set the value of a field. Validates the value, throwing a <a href="../../../../../org/apache/kafka/connect/errors/DataException.html" title="class in org.apache.kafka.connect.errors"><code>DataException</code></a> if it does not match the field's
  <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data"><code>Schema</code></a>.</div>
 <dl>
@@ -563,7 +561,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>validate</h4>
-<pre>public&nbsp;void&nbsp;validate()</pre>
+<pre>public&nbsp;void&nbsp;validate()</code></pre>
 <div class="block">Validates that this struct has filled in all the necessary data with valid values. For required fields
  without defaults, this validates that a value has been set and has matching types/schemas. If any validation
  fails, throws a DataException.</div>
@@ -575,7 +573,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -588,7 +586,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -601,7 +599,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>

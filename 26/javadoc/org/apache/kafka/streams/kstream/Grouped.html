@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">Grouped&lt;K,V&gt;</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">The class that is used to capture the key and value <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>Serde</code></a>s and set the part of name used for
  repartition topics when performing <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html#groupBy-org.apache.kafka.streams.kstream.KeyValueMapper-org.apache.kafka.streams.kstream.Grouped-"><code>KStream.groupBy(KeyValueMapper, Grouped)</code></a>, <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html#groupByKey-org.apache.kafka.streams.kstream.Grouped-"><code>KStream.groupByKey(Grouped)</code></a>, or <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html#groupBy-org.apache.kafka.streams.kstream.KeyValueMapper-org.apache.kafka.streams.kstream.Grouped-"><code>KTable.groupBy(KeyValueMapper, Grouped)</code></a> operations.  Note
  that Kafka Streams does not always create repartition topics for grouping operations.</div>
@@ -260,7 +260,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>keySerde</h4>
-<pre>protected final&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">K</a>&gt; keySerde</pre>
+<pre>protected final&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">K</a>&gt; keySerde</code></pre>
 </li>
 </ul>
 <a name="valueSerde">
@@ -269,7 +269,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>valueSerde</h4>
-<pre>protected final&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">V</a>&gt; valueSerde</pre>
+<pre>protected final&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">V</a>&gt; valueSerde</code></pre>
 </li>
 </ul>
 <a name="name">
@@ -278,7 +278,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>name</h4>
-<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> name</pre>
+<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> name</code></pre>
 </li>
 </ul>
 </li>
@@ -295,7 +295,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Grouped</h4>
-<pre>protected&nbsp;Grouped(<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">V</a>&gt;&nbsp;grouped)</pre>
+<pre>protected&nbsp;Grouped(<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">V</a>&gt;&nbsp;grouped)</code></pre>
 </li>
 </ul>
 </li>
@@ -312,7 +312,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>as</h4>
-<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;K,V&gt;&nbsp;as(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;K,V&gt;&nbsp;as(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code></pre>
 <div class="block">Create a <a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream"><code>Grouped</code></a> instance with the provided name used as part of the repartition topic if required.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -332,7 +332,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>keySerde</h4>
-<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;K,V&gt;&nbsp;keySerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;K&gt;&nbsp;keySerde)</pre>
+<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;K,V&gt;&nbsp;keySerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;K&gt;&nbsp;keySerde)</code></pre>
 <div class="block">Create a <a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream"><code>Grouped</code></a> instance with the provided keySerde. If <code>null</code> the default key serde from config will be used.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -352,7 +352,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>valueSerde</h4>
-<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;K,V&gt;&nbsp;valueSerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</pre>
+<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;K,V&gt;&nbsp;valueSerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</code></pre>
 <div class="block">Create a <a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream"><code>Grouped</code></a> instance with the provided valueSerde.  If <code>null</code> the default value serde from config will be used.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -374,7 +374,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>with</h4>
 <pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;K,V&gt;&nbsp;with(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                                       <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;K&gt;&nbsp;keySerde,
-                                      <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</pre>
+                                      <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</code></pre>
 <div class="block">Create a <a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream"><code>Grouped</code></a> instance with the provided  name, keySerde, and valueSerde. If the keySerde and/or the valueSerde is
  <code>null</code> the default value for the respective serde from config will be used.</div>
 <dl>
@@ -398,7 +398,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>with</h4>
 <pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;K,V&gt;&nbsp;with(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;K&gt;&nbsp;keySerde,
-                                      <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</pre>
+                                      <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</code></pre>
 <div class="block">Create a <a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream"><code>Grouped</code></a> instance with the provided keySerde and valueSerde.  If the keySerde and/or the valueSerde is
  <code>null</code> the default value for the respective serde from config will be used.</div>
 <dl>
@@ -420,7 +420,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>withName</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">V</a>&gt;&nbsp;withName(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">V</a>&gt;&nbsp;withName(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code></pre>
 <div class="block">Perform the grouping operation with the name for a repartition topic if required.  Note
  that Kafka Streams does not always create repartition topics for grouping operations.</div>
 <dl>
@@ -437,7 +437,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>withKeySerde</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">V</a>&gt;&nbsp;withKeySerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">K</a>&gt;&nbsp;keySerde)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">V</a>&gt;&nbsp;withKeySerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">K</a>&gt;&nbsp;keySerde)</code></pre>
 <div class="block">Perform the grouping operation using the provided keySerde for serializing the key.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -453,7 +453,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>withValueSerde</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">V</a>&gt;&nbsp;withValueSerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">V</a>&gt;&nbsp;valueSerde)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="class in org.apache.kafka.streams.kstream">Grouped</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">V</a>&gt;&nbsp;withValueSerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Grouped.html" title="type parameter in Grouped">V</a>&gt;&nbsp;valueSerde)</code></pre>
 <div class="block">Perform the grouping operation using the provided valueSerde for serializing the value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

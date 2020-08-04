@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">Headers</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header">Header</a>&gt;</pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header">Header</a>&gt;</code></pre>
 <div class="block">A mutable ordered collection of <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> objects. Note that multiple headers may have the same <a href="../../../../../org/apache/kafka/connect/header/Header.html#key--"><code>key</code></a>.</div>
 </li>
 </ul>
@@ -379,7 +379,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>size</h4>
-<pre>int&nbsp;size()</pre>
+<pre>int&nbsp;size()</code></pre>
 <div class="block">Get the number of headers in this object.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -393,7 +393,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>isEmpty</h4>
-<pre>boolean&nbsp;isEmpty()</pre>
+<pre>boolean&nbsp;isEmpty()</code></pre>
 <div class="block">Determine whether this object has no headers.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -407,7 +407,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>allWithName</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header">Header</a>&gt;&nbsp;allWithName(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header">Header</a>&gt;&nbsp;allWithName(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</code></pre>
 <div class="block">Get the collection of <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> objects whose <a href="../../../../../org/apache/kafka/connect/header/Header.html#key--"><code>keys</code></a> all match the specified key.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -423,7 +423,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>lastWithName</h4>
-<pre><a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header">Header</a>&nbsp;lastWithName(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</pre>
+<pre><a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header">Header</a>&nbsp;lastWithName(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</code></pre>
 <div class="block">Return the last <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the specified key.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -439,7 +439,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>add</h4>
-<pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;add(<a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header">Header</a>&nbsp;header)</pre>
+<pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;add(<a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header">Header</a>&nbsp;header)</code></pre>
 <div class="block">Add the given <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> to this collection.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -456,7 +456,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>add</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;add(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-            <a href="../../../../../org/apache/kafka/connect/data/SchemaAndValue.html" title="class in org.apache.kafka.connect.data">SchemaAndValue</a>&nbsp;schemaAndValue)</pre>
+            <a href="../../../../../org/apache/kafka/connect/data/SchemaAndValue.html" title="class in org.apache.kafka.connect.data">SchemaAndValue</a>&nbsp;schemaAndValue)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -475,7 +475,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <h4>add</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;add(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
-            <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema)</pre>
+            <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -494,7 +494,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>addString</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;addString(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
+                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -512,7 +512,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>addBoolean</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;addBoolean(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                   boolean&nbsp;value)</pre>
+                   boolean&nbsp;value)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -530,7 +530,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>addByte</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;addByte(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                byte&nbsp;value)</pre>
+                byte&nbsp;value)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -548,7 +548,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>addShort</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;addShort(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                 short&nbsp;value)</pre>
+                 short&nbsp;value)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -566,7 +566,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>addInt</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;addInt(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-               int&nbsp;value)</pre>
+               int&nbsp;value)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -584,7 +584,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>addLong</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;addLong(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                long&nbsp;value)</pre>
+                long&nbsp;value)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -602,7 +602,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>addFloat</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;addFloat(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                 float&nbsp;value)</pre>
+                 float&nbsp;value)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -620,7 +620,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>addDouble</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;addDouble(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                  double&nbsp;value)</pre>
+                  double&nbsp;value)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -638,7 +638,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>addBytes</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;addBytes(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                 byte[]&nbsp;value)</pre>
+                 byte[]&nbsp;value)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -657,7 +657,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <h4>addList</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;addList(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;?&gt;&nbsp;value,
-                <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema)</pre>
+                <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -679,7 +679,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <h4>addMap</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;addMap(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;?,?&gt;&nbsp;value,
-               <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema)</pre>
+               <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -700,7 +700,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>addStruct</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;addStruct(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                  <a href="../../../../../org/apache/kafka/connect/data/Struct.html" title="class in org.apache.kafka.connect.data">Struct</a>&nbsp;value)</pre>
+                  <a href="../../../../../org/apache/kafka/connect/data/Struct.html" title="class in org.apache.kafka.connect.data">Struct</a>&nbsp;value)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -720,7 +720,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>addDecimal</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;addDecimal(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                   <a href="https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html?is-external=true" title="class or interface in java.math">BigDecimal</a>&nbsp;value)</pre>
+                   <a href="https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html?is-external=true" title="class or interface in java.math">BigDecimal</a>&nbsp;value)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and <a href="../../../../../org/apache/kafka/connect/data/Decimal.html" title="class in org.apache.kafka.connect.data"><code>Decimal</code></a> value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -738,7 +738,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>addDate</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;addDate(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value)</pre>
+                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and <a href="../../../../../org/apache/kafka/connect/data/Date.html" title="class in org.apache.kafka.connect.data"><code>Date</code></a> value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -756,7 +756,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>addTime</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;addTime(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value)</pre>
+                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and <a href="../../../../../org/apache/kafka/connect/data/Time.html" title="class in org.apache.kafka.connect.data"><code>Time</code></a> value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -774,7 +774,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>addTimestamp</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;addTimestamp(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value)</pre>
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value)</code></pre>
 <div class="block">Add to this collection a <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> with the given key and <a href="../../../../../org/apache/kafka/connect/data/Timestamp.html" title="class in org.apache.kafka.connect.data"><code>Timestamp</code></a> value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -791,7 +791,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>remove</h4>
-<pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;remove(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</pre>
+<pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;remove(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</code></pre>
 <div class="block">Removes all <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> objects whose <a href="../../../../../org/apache/kafka/connect/header/Header.html#key--"><code>key</code></a> matches the specified key.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -807,7 +807,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>retainLatest</h4>
-<pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;retainLatest(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</pre>
+<pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;retainLatest(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</code></pre>
 <div class="block">Removes all but the latest <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> objects whose <a href="../../../../../org/apache/kafka/connect/header/Header.html#key--"><code>key</code></a> matches the specified key.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -823,7 +823,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>retainLatest</h4>
-<pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;retainLatest()</pre>
+<pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;retainLatest()</code></pre>
 <div class="block">Removes all but the last <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> object with each key.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -837,7 +837,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>clear</h4>
-<pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;clear()</pre>
+<pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;clear()</code></pre>
 <div class="block">Removes all headers from this object.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -851,7 +851,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>duplicate</h4>
-<pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;duplicate()</pre>
+<pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;duplicate()</code></pre>
 <div class="block">Create a copy of this <a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header"><code>Headers</code></a> object. The new copy will contain all of the same <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a> objects as this object.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -865,7 +865,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>apply</h4>
-<pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;apply(<a href="../../../../../org/apache/kafka/connect/header/Headers.HeaderTransform.html" title="interface in org.apache.kafka.connect.header">Headers.HeaderTransform</a>&nbsp;transform)</pre>
+<pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;apply(<a href="../../../../../org/apache/kafka/connect/header/Headers.HeaderTransform.html" title="interface in org.apache.kafka.connect.header">Headers.HeaderTransform</a>&nbsp;transform)</code></pre>
 <div class="block">Get all <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a>s, apply the transform to each and store the result in place of the original.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -884,7 +884,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList">
 <h4>apply</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/header/Headers.html" title="interface in org.apache.kafka.connect.header">Headers</a>&nbsp;apply(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-              <a href="../../../../../org/apache/kafka/connect/header/Headers.HeaderTransform.html" title="interface in org.apache.kafka.connect.header">Headers.HeaderTransform</a>&nbsp;transform)</pre>
+              <a href="../../../../../org/apache/kafka/connect/header/Headers.HeaderTransform.html" title="interface in org.apache.kafka.connect.header">Headers.HeaderTransform</a>&nbsp;transform)</code></pre>
 <div class="block">Get all <a href="../../../../../org/apache/kafka/connect/header/Header.html" title="interface in org.apache.kafka.connect.header"><code>Header</code></a>s with the given key, apply the transform to each and store the result in place of the original.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

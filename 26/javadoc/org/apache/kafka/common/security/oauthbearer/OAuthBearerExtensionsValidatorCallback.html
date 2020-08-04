@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">OAuthBearerExtensionsValidatorCallback</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/callback/Callback.html?is-external=true" title="class or interface in javax.security.auth.callback">Callback</a></pre>
+implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/callback/Callback.html?is-external=true" title="class or interface in javax.security.auth.callback">Callback</a></code></pre>
 <div class="block">A <code>Callback</code> for use by the <code>SaslServer</code> implementation when it
  needs to validate the SASL extensions for the OAUTHBEARER mechanism
  Callback handlers should use the <a href="../../../../../../org/apache/kafka/common/security/oauthbearer/OAuthBearerExtensionsValidatorCallback.html#valid-java.lang.String-"><code>valid(String)</code></a>
@@ -227,7 +227,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <li class="blockList">
 <h4>OAuthBearerExtensionsValidatorCallback</h4>
 <pre>public&nbsp;OAuthBearerExtensionsValidatorCallback(<a href="../../../../../../org/apache/kafka/common/security/oauthbearer/OAuthBearerToken.html" title="interface in org.apache.kafka.common.security.oauthbearer">OAuthBearerToken</a>&nbsp;token,
-                                              <a href="../../../../../../org/apache/kafka/common/security/auth/SaslExtensions.html" title="class in org.apache.kafka.common.security.auth">SaslExtensions</a>&nbsp;extensions)</pre>
+                                              <a href="../../../../../../org/apache/kafka/common/security/auth/SaslExtensions.html" title="class in org.apache.kafka.common.security.auth">SaslExtensions</a>&nbsp;extensions)</code></pre>
 </li>
 </ul>
 </li>
@@ -244,7 +244,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockList">
 <li class="blockList">
 <h4>token</h4>
-<pre>public&nbsp;<a href="../../../../../../org/apache/kafka/common/security/oauthbearer/OAuthBearerToken.html" title="interface in org.apache.kafka.common.security.oauthbearer">OAuthBearerToken</a>&nbsp;token()</pre>
+<pre>public&nbsp;<a href="../../../../../../org/apache/kafka/common/security/oauthbearer/OAuthBearerToken.html" title="interface in org.apache.kafka.common.security.oauthbearer">OAuthBearerToken</a>&nbsp;token()</code></pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><a href="../../../../../../org/apache/kafka/common/security/oauthbearer/OAuthBearerToken.html" title="interface in org.apache.kafka.common.security.oauthbearer"><code>OAuthBearerToken</code></a> the OAuth bearer token of the client</dd>
@@ -257,7 +257,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockList">
 <li class="blockList">
 <h4>inputExtensions</h4>
-<pre>public&nbsp;<a href="../../../../../../org/apache/kafka/common/security/auth/SaslExtensions.html" title="class in org.apache.kafka.common.security.auth">SaslExtensions</a>&nbsp;inputExtensions()</pre>
+<pre>public&nbsp;<a href="../../../../../../org/apache/kafka/common/security/auth/SaslExtensions.html" title="class in org.apache.kafka.common.security.auth">SaslExtensions</a>&nbsp;inputExtensions()</code></pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><a href="../../../../../../org/apache/kafka/common/security/auth/SaslExtensions.html" title="class in org.apache.kafka.common.security.auth"><code>SaslExtensions</code></a> consisting of the unvalidated extension names and values that were sent by the client</dd>
@@ -270,7 +270,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockList">
 <li class="blockList">
 <h4>validatedExtensions</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;validatedExtensions()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;validatedExtensions()</code></pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>an unmodifiable <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a> consisting of the validated and recognized by the server extension names and values</dd>
@@ -283,7 +283,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockList">
 <li class="blockList">
 <h4>invalidExtensions</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;invalidExtensions()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;invalidExtensions()</code></pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>An immutable <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a> consisting of the name-&gt;error messages of extensions which failed validation</dd>
@@ -296,7 +296,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockList">
 <li class="blockList">
 <h4>ignoredExtensions</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;ignoredExtensions()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;ignoredExtensions()</code></pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>An immutable <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a> consisting of the extensions that have neither been validated nor invalidated</dd>
@@ -309,7 +309,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <ul class="blockList">
 <li class="blockList">
 <h4>valid</h4>
-<pre>public&nbsp;void&nbsp;valid(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;extensionName)</pre>
+<pre>public&nbsp;void&nbsp;valid(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;extensionName)</code></pre>
 <div class="block">Validates a specific extension in the original <code>inputExtensions</code> map</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -324,7 +324,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
 <li class="blockList">
 <h4>error</h4>
 <pre>public&nbsp;void&nbsp;error(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;invalidExtensionName,
-                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;errorMessage)</pre>
+                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;errorMessage)</code></pre>
 <div class="block">Set the error value for a specific extension key-value pair if validation has failed</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

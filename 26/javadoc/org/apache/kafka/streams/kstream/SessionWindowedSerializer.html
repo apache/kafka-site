@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">SessionWindowedSerializer&lt;T&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements org.apache.kafka.streams.kstream.internals.WindowedSerializer&lt;T&gt;</pre>
+implements org.apache.kafka.streams.kstream.internals.WindowedSerializer&lt;T&gt;</code></pre>
 <div class="block">The inner serde class can be specified by setting the property
   <a href="../../../../../org/apache/kafka/streams/StreamsConfig.html#DEFAULT_WINDOWED_KEY_SERDE_INNER_CLASS"><code>StreamsConfig.DEFAULT_WINDOWED_KEY_SERDE_INNER_CLASS</code></a> or
   <a href="../../../../../org/apache/kafka/streams/StreamsConfig.html#DEFAULT_WINDOWED_VALUE_SERDE_INNER_CLASS"><code>StreamsConfig.DEFAULT_WINDOWED_VALUE_SERDE_INNER_CLASS</code></a>
@@ -216,7 +216,7 @@ implements org.apache.kafka.streams.kstream.internals.WindowedSerializer&lt;T&gt
 <ul class="blockList">
 <li class="blockList">
 <h4>SessionWindowedSerializer</h4>
-<pre>public&nbsp;SessionWindowedSerializer()</pre>
+<pre>public&nbsp;SessionWindowedSerializer()</code></pre>
 </li>
 </ul>
 <a name="SessionWindowedSerializer-org.apache.kafka.common.serialization.Serializer-">
@@ -225,7 +225,7 @@ implements org.apache.kafka.streams.kstream.internals.WindowedSerializer&lt;T&gt
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SessionWindowedSerializer</h4>
-<pre>public&nbsp;SessionWindowedSerializer(<a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedSerializer.html" title="type parameter in SessionWindowedSerializer">T</a>&gt;&nbsp;inner)</pre>
+<pre>public&nbsp;SessionWindowedSerializer(<a href="../../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedSerializer.html" title="type parameter in SessionWindowedSerializer">T</a>&gt;&nbsp;inner)</code></pre>
 </li>
 </ul>
 </li>
@@ -243,7 +243,7 @@ implements org.apache.kafka.streams.kstream.internals.WindowedSerializer&lt;T&gt
 <li class="blockList">
 <h4>configure</h4>
 <pre>public&nbsp;void&nbsp;configure(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;configs,
-                      boolean&nbsp;isKey)</pre>
+                      boolean&nbsp;isKey)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/common/serialization/Serializer.html#configure-java.util.Map-boolean-">Serializer</a></code></span></div>
 <div class="block">Configure this class.</div>
 <dl>
@@ -262,7 +262,7 @@ implements org.apache.kafka.streams.kstream.internals.WindowedSerializer&lt;T&gt
 <li class="blockList">
 <h4>serialize</h4>
 <pre>public&nbsp;byte[]&nbsp;serialize(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
-                        <a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedSerializer.html" title="type parameter in SessionWindowedSerializer">T</a>&gt;&nbsp;data)</pre>
+                        <a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedSerializer.html" title="type parameter in SessionWindowedSerializer">T</a>&gt;&nbsp;data)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/common/serialization/Serializer.html#serialize-java.lang.String-T-">Serializer</a></code></span></div>
 <div class="block">Convert <code>data</code> into a byte array.</div>
 <dl>
@@ -282,7 +282,7 @@ implements org.apache.kafka.streams.kstream.internals.WindowedSerializer&lt;T&gt
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>public&nbsp;void&nbsp;close()</pre>
+<pre>public&nbsp;void&nbsp;close()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/common/serialization/Serializer.html#close--">Serializer</a></code></span></div>
 <div class="block">Close this serializer.
  <p>
@@ -304,7 +304,7 @@ implements org.apache.kafka.streams.kstream.internals.WindowedSerializer&lt;T&gt
 <li class="blockList">
 <h4>serializeBaseKey</h4>
 <pre>public&nbsp;byte[]&nbsp;serializeBaseKey(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
-                               <a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedSerializer.html" title="type parameter in SessionWindowedSerializer">T</a>&gt;&nbsp;data)</pre>
+                               <a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedSerializer.html" title="type parameter in SessionWindowedSerializer">T</a>&gt;&nbsp;data)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>serializeBaseKey</code>&nbsp;in interface&nbsp;<code>org.apache.kafka.streams.kstream.internals.WindowedSerializer&lt;<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedSerializer.html" title="type parameter in SessionWindowedSerializer">T</a>&gt;</code></dd>

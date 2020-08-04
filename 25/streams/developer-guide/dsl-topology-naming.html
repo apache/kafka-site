@@ -33,7 +33,7 @@
 
 	<div class="section" id="naming">
         <span id="streams-developer-guide-dsl-topology-naming"></span>
-        <h1>Naming Operators in a Kafka Streams DSL Application<a class="headerlink" href="#naming" title="Permalink to this headline"></a></h1>
+        <h1 class="docs-title">Naming Operators in a Kafka Streams DSL Application<a class="headerlink" href="#naming" title="Permalink to this headline"></a></h1>
 
         <p>
 		   You now can give names to processors when using the Kafka Streams DSL.
@@ -75,8 +75,7 @@
 		KStream&lt;String,String&gt; stream = builder.stream("input");
 		stream.filter((k,v) -> !v.equals("invalid_txn"))
 		      .mapValues((v) -> v.substring(0,5))
-		      .to("output")
-	    </pre>
+		      .to("output")</pre>
 
 		</p>
 
@@ -95,8 +94,7 @@
 		      --> KSTREAM-SINK-0000000003
 		      <-- KSTREAM-FILTER-0000000001
 		    Sink: KSTREAM-SINK-0000000003 (topic: output)
-		      <-- KSTREAM-MAPVALUES-0000000002
-		 </pre>
+		      <-- KSTREAM-MAPVALUES-0000000002</pre>
 
 		 From this report, you can see what the different operators are, but what is the broader context here?
 		 For example, consider <code>KSTREAM-FILTER-0000000001</code>, we can see that it's a
@@ -121,8 +119,7 @@
 		builder.stream("input", Consumed.as("Customer_transactions_input_topic"));
 		stream.filter((k,v) -> !v.equals("invalid_txn"), Named.as("filter_out_invalid_txns"))
 		      .mapValues((v) -> v.substring(0,5), Named.as("Map_values_to_first_6_characters"))
-		      .to("output", Produced.as("Mapped_transactions_output_topic"));
-	     </pre>
+		      .to("output", Produced.as("Mapped_transactions_output_topic"));</pre>
 
 		 <pre>
 		 Topologies:
@@ -136,8 +133,7 @@
 		      --> Mapped_transactions_output_topic
 		      <-- filter_out_invalid_txns
 		    Sink: Mapped_transactions_output_topic (topic: output)
-		      <-- Map_values_to_first_6_characters
-		 </pre>
+		      <-- Map_values_to_first_6_characters</pre>
 
 		Now you can look at the topology description and easily understand what role each processor
 		plays in the topology. But there's another reason for naming your processor nodes when you
@@ -164,8 +160,7 @@
 		 stream.groupByKey()
 		       .count()
 		       .toStream()
-		       .to("output");
-		 </pre>
+		       .to("output");</pre>
 		This topology description yields the following:
 		 <pre>
 			 Topologies:
@@ -179,8 +174,7 @@
 			     --> KSTREAM-SINK-0000000004
 			     <-- KSTREAM-AGGREGATE-0000000002
 			    Sink: KSTREAM-SINK-0000000004 (topic: output)
-			     <-- KTABLE-TOSTREAM-0000000003
-		 </pre>
+			     <-- KTABLE-TOSTREAM-0000000003</pre>
 		 </p>
 		 <p>
 		  You can see from the topology description above that the state store is named
@@ -192,8 +186,7 @@
 		         .groupByKey()
 		         .count()
 		         .toStream()
-		         .to("output");
-		  </pre>
+		         .to("output");</pre>
 
 		  And the corresponding topology:
 		  <pre>
@@ -211,8 +204,7 @@
 			       --> KSTREAM-SINK-0000000005
 			       <-- KSTREAM-AGGREGATE-0000000003
 			      Sink: KSTREAM-SINK-0000000005 (topic: output)
-			       <-- KTABLE-TOSTREAM-0000000004
-		  </pre>
+			       <-- KTABLE-TOSTREAM-0000000004</pre>
 		 </p>
 		<p>
 		Notice that since you've added an operation <em>before</em> the <code>count</code> operation, the state
@@ -238,8 +230,7 @@
 		        .groupByKey()
 		        .count(Materialized.as("Purchase_count_store"))
 		        .toStream()
-		        .to("output");
-		  </pre>
+		        .to("output");</pre>
 
 		  And here's the topology 
 
@@ -258,8 +249,7 @@
 		      --> KSTREAM-SINK-0000000004
 		      <-- KSTREAM-AGGREGATE-0000000002
 		    Sink: KSTREAM-SINK-0000000004 (topic: output)
-		      <-- KTABLE-TOSTREAM-0000000003
-		  </pre>
+		      <-- KTABLE-TOSTREAM-0000000003</pre>
 		</p>
 		<p>
 		  Now, even though you've added processors before your state store, the store name and its changelog
@@ -297,7 +287,7 @@
 		  Here's a quick reference on naming the critical parts of
 		  your Kafka Streams application to prevent topology name changes from breaking your application:
 
-		  <table>
+		  <table class="data-table">
 		      <tr>
 		          <th>Operation</th><th>Naming Class</th>
 		      </tr>
@@ -326,8 +316,9 @@
 </script>
 
 <!--#include virtual="../../../includes/_header.htm" -->
+<body class="page-topology-naming">
 <!--#include virtual="../../../includes/_top.htm" -->
-<div class="content documentation documentation--current">
+<div class="content documentation ">
 	<!--#include virtual="../../../includes/_nav.htm" -->
 	<div class="right">
 		<!--#include virtual="../../../includes/_docs_banner.htm" -->

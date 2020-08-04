@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">ConnectSchema</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a></pre>
+implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a></code></pre>
 </li>
 </ul>
 </div>
@@ -341,7 +341,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;parameters,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/connect/data/Field.html" title="class in org.apache.kafka.connect.data">Field</a>&gt;&nbsp;fields,
                      <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;keySchema,
-                     <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;valueSchema)</pre>
+                     <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;valueSchema)</code></pre>
 <div class="block">Construct a Schema. Most users should not construct schemas manually, preferring <a href="../../../../../org/apache/kafka/connect/data/SchemaBuilder.html" title="class in org.apache.kafka.connect.data"><code>SchemaBuilder</code></a> instead.</div>
 </li>
 </ul>
@@ -356,7 +356,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;defaultValue,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&nbsp;version,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;doc)</pre>
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;doc)</code></pre>
 <div class="block">Construct a Schema for a primitive type, setting schema parameters, struct fields, and key and value schemas to null.</div>
 </li>
 </ul>
@@ -366,7 +366,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ConnectSchema</h4>
-<pre>public&nbsp;ConnectSchema(<a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html" title="enum in org.apache.kafka.connect.data">Schema.Type</a>&nbsp;type)</pre>
+<pre>public&nbsp;ConnectSchema(<a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html" title="enum in org.apache.kafka.connect.data">Schema.Type</a>&nbsp;type)</code></pre>
 <div class="block">Construct a default schema for a primitive type. The schema is required, has no default value, name, version,
  or documentation.</div>
 </li>
@@ -385,7 +385,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>type</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html" title="enum in org.apache.kafka.connect.data">Schema.Type</a>&nbsp;type()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html" title="enum in org.apache.kafka.connect.data">Schema.Type</a>&nbsp;type()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/connect/data/Schema.html#type--">type</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a></code></dd>
@@ -400,7 +400,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>isOptional</h4>
-<pre>public&nbsp;boolean&nbsp;isOptional()</pre>
+<pre>public&nbsp;boolean&nbsp;isOptional()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/connect/data/Schema.html#isOptional--">isOptional</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a></code></dd>
@@ -415,7 +415,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>defaultValue</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;defaultValue()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;defaultValue()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/connect/data/Schema.html#defaultValue--">defaultValue</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a></code></dd>
@@ -430,7 +430,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>name</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/connect/data/Schema.html#name--">name</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a></code></dd>
@@ -445,7 +445,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>version</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&nbsp;version()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&nbsp;version()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/connect/data/Schema.html#version--">Schema</a></code></span></div>
 <div class="block">Get the optional version of the schema. If a version is included, newer versions *must* be larger than older ones.</div>
 <dl>
@@ -462,7 +462,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>doc</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;doc()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;doc()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/connect/data/Schema.html#doc--">doc</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a></code></dd>
@@ -477,7 +477,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>parameters</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;parameters()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;parameters()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/connect/data/Schema.html#parameters--">Schema</a></code></span></div>
 <div class="block">Get a map of schema parameters.</div>
 <dl>
@@ -494,7 +494,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>fields</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/connect/data/Field.html" title="class in org.apache.kafka.connect.data">Field</a>&gt;&nbsp;fields()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/connect/data/Field.html" title="class in org.apache.kafka.connect.data">Field</a>&gt;&nbsp;fields()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/connect/data/Schema.html#fields--">Schema</a></code></span></div>
 <div class="block">Get the list of fields for this Schema. Throws a DataException if this schema is not a struct.</div>
 <dl>
@@ -511,7 +511,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>field</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Field.html" title="class in org.apache.kafka.connect.data">Field</a>&nbsp;field(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Field.html" title="class in org.apache.kafka.connect.data">Field</a>&nbsp;field(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/connect/data/Schema.html#field-java.lang.String-">Schema</a></code></span></div>
 <div class="block">Get a field for this Schema by name. Throws a DataException if this schema is not a struct.</div>
 <dl>
@@ -530,7 +530,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>keySchema</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;keySchema()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;keySchema()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/connect/data/Schema.html#keySchema--">Schema</a></code></span></div>
 <div class="block">Get the key schema for this map schema. Throws a DataException if this schema is not a map.</div>
 <dl>
@@ -547,7 +547,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>valueSchema</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;valueSchema()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;valueSchema()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/connect/data/Schema.html#valueSchema--">Schema</a></code></span></div>
 <div class="block">Get the value schema for this map or array schema. Throws a DataException if this schema is not a map or array.</div>
 <dl>
@@ -565,7 +565,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <li class="blockList">
 <h4>validateValue</h4>
 <pre>public static&nbsp;void&nbsp;validateValue(<a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
-                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 <div class="block">Validate that the value can be used with the schema, i.e. that its type matches the schema type and nullability
  requirements. Throws a DataException if the value is invalid.</div>
 <dl>
@@ -583,7 +583,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <h4>validateValue</h4>
 <pre>public static&nbsp;void&nbsp;validateValue(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                                  <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
-                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 </li>
 </ul>
 <a name="validateValue-java.lang.Object-">
@@ -592,7 +592,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>validateValue</h4>
-<pre>public&nbsp;void&nbsp;validateValue(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+<pre>public&nbsp;void&nbsp;validateValue(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 <div class="block">Validate that the value can be used for this schema, i.e. that its type matches the schema type and optional
  requirements. Throws a DataException if the value is invalid.</div>
 <dl>
@@ -607,7 +607,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>schema</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/ConnectSchema.html" title="class in org.apache.kafka.connect.data">ConnectSchema</a>&nbsp;schema()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/data/ConnectSchema.html" title="class in org.apache.kafka.connect.data">ConnectSchema</a>&nbsp;schema()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/connect/data/Schema.html#schema--">Schema</a></code></span></div>
 <div class="block">Return a concrete instance of the <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data"><code>Schema</code></a></div>
 <dl>
@@ -624,7 +624,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -637,7 +637,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -650,7 +650,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -663,7 +663,7 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
 <ul class="blockListLast">
 <li class="blockList">
 <h4>schemaType</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html" title="enum in org.apache.kafka.connect.data">Schema.Type</a>&nbsp;schemaType(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;klass)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html" title="enum in org.apache.kafka.connect.data">Schema.Type</a>&nbsp;schemaType(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;klass)</code></pre>
 <div class="block">Get the <a href="../../../../../org/apache/kafka/connect/data/Schema.Type.html" title="enum in org.apache.kafka.connect.data"><code>Schema.Type</code></a> associated with the given class.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

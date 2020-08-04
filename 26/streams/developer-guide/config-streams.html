@@ -47,8 +47,7 @@
 <span class="n">settings</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">StreamsConfig</span><span class="o">.</span><span class="na">APPLICATION_ID_CONFIG</span><span class="o">,</span> <span class="s">&quot;my-first-streams-application&quot;</span><span class="o">);</span>
 <span class="n">settings</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">StreamsConfig</span><span class="o">.</span><span class="na">BOOTSTRAP_SERVERS_CONFIG</span><span class="o">,</span> <span class="s">&quot;kafka-broker1:9092&quot;</span><span class="o">);</span>
 <span class="c1">// Any further settings</span>
-<span class="n">settings</span><span class="o">.</span><span class="na">put</span><span class="o">(...</span> <span class="o">,</span> <span class="o">...);</span>
-</pre></div>
+<span class="n">settings</span><span class="o">.</span><span class="na">put</span><span class="o">(...</span> <span class="o">,</span> <span class="o">...);</span></code></pre></div>
         </div>
       </li>
     </ol>
@@ -331,8 +330,7 @@
                 The drawback of this approach is that "manual" writes are side effects that are invisible to the Kafka Streams runtime library,
                 so they do not benefit from the end-to-end processing guarantees of the Streams API:</p>
 
-              <pre class="brush: java;">
-              public class SendToDeadLetterQueueExceptionHandler implements DeserializationExceptionHandler {
+              <pre class="line-numbers"><code class="language-java">              public class SendToDeadLetterQueueExceptionHandler implements DeserializationExceptionHandler {
                   KafkaProducer&lt;byte[], byte[]&gt; dlqProducer;
                   String dlqTopic;
 
@@ -356,8 +354,7 @@
                       dlqProducer = .. // get a producer from the configs map
                       dlqTopic = .. // get the topic name from the configs map
                   }
-              }
-              </pre>
+              }</code></pre>
 
             </div></blockquote>
         </div>
@@ -371,7 +368,7 @@
             <p>Each exception handler can return a <code>FAIL</code> or <code>CONTINUE</code> depending on the record and the exception thrown. Returning <code>FAIL</code> will signal that Streams should shut down and <code>CONTINUE</code> will signal that Streams
             should ignore the issue and continue processing. If you want to provide an exception handler that always ignores records that are too large, you could implement something like the following:</p>
 
-            <pre class="brush: java;">
+            <pre class="line-numbers"><code class="language-java">
             import java.util.Properties;
             import org.apache.kafka.streams.StreamsConfig;
             import org.apache.kafka.common.errors.RecordTooLargeException;
@@ -396,7 +393,7 @@
             // other various kafka streams settings, e.g. bootstrap servers, application id, etc
 
             settings.put(StreamsConfig.DEFAULT_PRODUCTION_EXCEPTION_HANDLER_CLASS_CONFIG,
-                         IgnoreRecordTooLargeHandler.class);</pre></div>
+                         IgnoreRecordTooLargeHandler.class);</code></pre></div>
           </blockquote>
         </div>
         <div class="section" id="default-key-serde">
@@ -846,8 +843,7 @@
           <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Properties</span> <span class="n">streamsSettings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Properties</span><span class="o">();</span>
 <span class="n">streamsSettings</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">StreamsConfig</span><span class="o">.</span><span class="na">REPLICATION_FACTOR_CONFIG</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
 <span class="n">streamsSettings</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">StreamsConfig</span><span class="o">.</span><span class="na">topicPrefix</span><span class="o">(</span><span class="n">TopicConfig</span><span class="o">.</span><span class="na">MIN_IN_SYNC_REPLICAS_CONFIG</span><span class="o">),</span> <span class="mi">2</span><span class="o">);</span>
-<span class="n">streamsSettings</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">StreamsConfig</span><span class="o">.</span><span class="na">producerPrefix</span><span class="o">(</span><span class="n">ProducerConfig</span><span class="o">.</span><span class="na">ACKS_CONFIG</span><span class="o">),</span> <span class="s">&quot;all&quot;</span><span class="o">);</span>
-</pre></div>
+<span class="n">streamsSettings</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">StreamsConfig</span><span class="o">.</span><span class="na">producerPrefix</span><span class="o">(</span><span class="n">ProducerConfig</span><span class="o">.</span><span class="na">ACKS_CONFIG</span><span class="o">),</span> <span class="s">&quot;all&quot;</span><span class="o">);</span></code></pre></div>
           </div>
 </div>
 </div>
@@ -865,7 +861,7 @@
 
                 <!--#include virtual="../../../includes/_header.htm" -->
                 <!--#include virtual="../../../includes/_top.htm" -->
-                    <div class="content documentation documentation--current">
+                    <div class="content documentation">
                     <!--#include virtual="../../../includes/_nav.htm" -->
                     <div class="right">
                     <!--#include virtual="../../../includes/_docs_banner.htm" -->

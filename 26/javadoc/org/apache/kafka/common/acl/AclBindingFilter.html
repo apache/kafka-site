@@ -109,7 +109,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre><a href="../../../../../org/apache/kafka/common/annotation/InterfaceStability.Evolving.html" title="annotation in org.apache.kafka.common.annotation">@InterfaceStability.Evolving</a>
 public class <span class="typeNameLabel">AclBindingFilter</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">A filter which can match AclBinding objects.
 
  The API for this class is still evolving and we may break compatibility in minor releases, if necessary.</div>
@@ -250,7 +250,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ANY</h4>
-<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclBindingFilter.html" title="class in org.apache.kafka.common.acl">AclBindingFilter</a> ANY</pre>
+<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclBindingFilter.html" title="class in org.apache.kafka.common.acl">AclBindingFilter</a> ANY</code></pre>
 <div class="block">A filter which matches any ACL binding.</div>
 </li>
 </ul>
@@ -269,7 +269,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>AclBindingFilter</h4>
 <pre>public&nbsp;AclBindingFilter(<a href="../../../../../org/apache/kafka/common/resource/ResourcePatternFilter.html" title="class in org.apache.kafka.common.resource">ResourcePatternFilter</a>&nbsp;patternFilter,
-                        <a href="../../../../../org/apache/kafka/common/acl/AccessControlEntryFilter.html" title="class in org.apache.kafka.common.acl">AccessControlEntryFilter</a>&nbsp;entryFilter)</pre>
+                        <a href="../../../../../org/apache/kafka/common/acl/AccessControlEntryFilter.html" title="class in org.apache.kafka.common.acl">AccessControlEntryFilter</a>&nbsp;entryFilter)</code></pre>
 <div class="block">Create an instance of this filter with the provided parameters.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -286,7 +286,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>AclBindingFilter</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;AclBindingFilter(<a href="../../../../../org/apache/kafka/common/resource/ResourceFilter.html" title="class in org.apache.kafka.common.resource">ResourceFilter</a>&nbsp;resourceFilter,
-                                    <a href="../../../../../org/apache/kafka/common/acl/AccessControlEntryFilter.html" title="class in org.apache.kafka.common.acl">AccessControlEntryFilter</a>&nbsp;entryFilter)</pre>
+                                    <a href="../../../../../org/apache/kafka/common/acl/AccessControlEntryFilter.html" title="class in org.apache.kafka.common.acl">AccessControlEntryFilter</a>&nbsp;entryFilter)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.0. Use <a href="../../../../../org/apache/kafka/common/acl/AclBindingFilter.html#AclBindingFilter-org.apache.kafka.common.resource.ResourcePatternFilter-org.apache.kafka.common.acl.AccessControlEntryFilter-"><code>AclBindingFilter(ResourcePatternFilter, AccessControlEntryFilter)</code></a></span></div>
 <div class="block">Create an instance of this filter with the provided parameters.</div>
 <dl>
@@ -310,7 +310,7 @@ public&nbsp;AclBindingFilter(<a href="../../../../../org/apache/kafka/common/res
 <ul class="blockList">
 <li class="blockList">
 <h4>isUnknown</h4>
-<pre>public&nbsp;boolean&nbsp;isUnknown()</pre>
+<pre>public&nbsp;boolean&nbsp;isUnknown()</code></pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>true</code> if this filter has any UNKNOWN components.</dd>
@@ -323,7 +323,7 @@ public&nbsp;AclBindingFilter(<a href="../../../../../org/apache/kafka/common/res
 <ul class="blockList">
 <li class="blockList">
 <h4>patternFilter</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/resource/ResourcePatternFilter.html" title="class in org.apache.kafka.common.resource">ResourcePatternFilter</a>&nbsp;patternFilter()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/resource/ResourcePatternFilter.html" title="class in org.apache.kafka.common.resource">ResourcePatternFilter</a>&nbsp;patternFilter()</code></pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the resource pattern filter.</dd>
@@ -336,7 +336,7 @@ public&nbsp;AclBindingFilter(<a href="../../../../../org/apache/kafka/common/res
 <ul class="blockList">
 <li class="blockList">
 <h4>entryFilter</h4>
-<pre>public final&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AccessControlEntryFilter.html" title="class in org.apache.kafka.common.acl">AccessControlEntryFilter</a>&nbsp;entryFilter()</pre>
+<pre>public final&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AccessControlEntryFilter.html" title="class in org.apache.kafka.common.acl">AccessControlEntryFilter</a>&nbsp;entryFilter()</code></pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the access control entry filter.</dd>
@@ -349,7 +349,7 @@ public&nbsp;AclBindingFilter(<a href="../../../../../org/apache/kafka/common/res
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -362,7 +362,7 @@ public&nbsp;AclBindingFilter(<a href="../../../../../org/apache/kafka/common/res
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -375,7 +375,7 @@ public&nbsp;AclBindingFilter(<a href="../../../../../org/apache/kafka/common/res
 <ul class="blockList">
 <li class="blockList">
 <h4>matchesAtMostOne</h4>
-<pre>public&nbsp;boolean&nbsp;matchesAtMostOne()</pre>
+<pre>public&nbsp;boolean&nbsp;matchesAtMostOne()</code></pre>
 <div class="block">Return true if the resource and entry filters can only match one ACE. In other words, if
  there are no ANY or UNKNOWN fields.</div>
 </li>
@@ -386,7 +386,7 @@ public&nbsp;AclBindingFilter(<a href="../../../../../org/apache/kafka/common/res
 <ul class="blockList">
 <li class="blockList">
 <h4>findIndefiniteField</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;findIndefiniteField()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;findIndefiniteField()</code></pre>
 <div class="block">Return a string describing an ANY or UNKNOWN field, or null if there is no such field.</div>
 </li>
 </ul>
@@ -396,7 +396,7 @@ public&nbsp;AclBindingFilter(<a href="../../../../../org/apache/kafka/common/res
 <ul class="blockList">
 <li class="blockList">
 <h4>matches</h4>
-<pre>public&nbsp;boolean&nbsp;matches(<a href="../../../../../org/apache/kafka/common/acl/AclBinding.html" title="class in org.apache.kafka.common.acl">AclBinding</a>&nbsp;binding)</pre>
+<pre>public&nbsp;boolean&nbsp;matches(<a href="../../../../../org/apache/kafka/common/acl/AclBinding.html" title="class in org.apache.kafka.common.acl">AclBinding</a>&nbsp;binding)</code></pre>
 <div class="block">Return true if the resource filter matches the binding's resource and the entry filter matches binding's entry.</div>
 </li>
 </ul>
@@ -406,7 +406,7 @@ public&nbsp;AclBindingFilter(<a href="../../../../../org/apache/kafka/common/res
 <ul class="blockListLast">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>

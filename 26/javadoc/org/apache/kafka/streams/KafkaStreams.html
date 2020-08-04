@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">KafkaStreams</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a></pre>
+implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a></code></pre>
 <div class="block">A Kafka client that allows for performing continuous computation on input coming from one or more input topics and
  sends output to zero, one, or more output topics.
  <p>
@@ -147,7 +147,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 
  KafkaStreams streams = new KafkaStreams(builder.build(), props);
  streams.start();
- </code></pre></div>
+ </code></code></pre></div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../org/apache/kafka/streams/StreamsBuilder.html" title="class in org.apache.kafka.streams"><code>StreamsBuilder</code></a>, 
@@ -468,7 +468,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <ul class="blockList">
 <li class="blockList">
 <h4>threads</h4>
-<pre>protected final&nbsp;org.apache.kafka.streams.processor.internals.StreamThread[] threads</pre>
+<pre>protected final&nbsp;org.apache.kafka.streams.processor.internals.StreamThread[] threads</code></pre>
 </li>
 </ul>
 <a name="state">
@@ -477,7 +477,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <ul class="blockListLast">
 <li class="blockList">
 <h4>state</h4>
-<pre>protected volatile&nbsp;<a href="../../../../org/apache/kafka/streams/KafkaStreams.State.html" title="enum in org.apache.kafka.streams">KafkaStreams.State</a> state</pre>
+<pre>protected volatile&nbsp;<a href="../../../../org/apache/kafka/streams/KafkaStreams.State.html" title="enum in org.apache.kafka.streams">KafkaStreams.State</a> state</code></pre>
 </li>
 </ul>
 </li>
@@ -495,7 +495,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <li class="blockList">
 <h4>KafkaStreams</h4>
 <pre>public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams">Topology</a>&nbsp;topology,
-                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;props)</pre>
+                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;props)</code></pre>
 <div class="block">Create a <code>KafkaStreams</code> instance.
  <p>
  Note: even if you never call <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#start--"><code>start()</code></a> on a <code>KafkaStreams</code> instance,
@@ -517,7 +517,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <h4>KafkaStreams</h4>
 <pre>public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams">Topology</a>&nbsp;topology,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;props,
-                    <a href="../../../../org/apache/kafka/streams/KafkaClientSupplier.html" title="interface in org.apache.kafka.streams">KafkaClientSupplier</a>&nbsp;clientSupplier)</pre>
+                    <a href="../../../../org/apache/kafka/streams/KafkaClientSupplier.html" title="interface in org.apache.kafka.streams">KafkaClientSupplier</a>&nbsp;clientSupplier)</code></pre>
 <div class="block">Create a <code>KafkaStreams</code> instance.
  <p>
  Note: even if you never call <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#start--"><code>start()</code></a> on a <code>KafkaStreams</code> instance,
@@ -541,7 +541,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <h4>KafkaStreams</h4>
 <pre>public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams">Topology</a>&nbsp;topology,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;props,
-                    org.apache.kafka.common.utils.Time&nbsp;time)</pre>
+                    org.apache.kafka.common.utils.Time&nbsp;time)</code></pre>
 <div class="block">Create a <code>KafkaStreams</code> instance.
  <p>
  Note: even if you never call <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#start--"><code>start()</code></a> on a <code>KafkaStreams</code> instance,
@@ -565,7 +565,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <pre>public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams">Topology</a>&nbsp;topology,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;props,
                     <a href="../../../../org/apache/kafka/streams/KafkaClientSupplier.html" title="interface in org.apache.kafka.streams">KafkaClientSupplier</a>&nbsp;clientSupplier,
-                    org.apache.kafka.common.utils.Time&nbsp;time)</pre>
+                    org.apache.kafka.common.utils.Time&nbsp;time)</code></pre>
 <div class="block">Create a <code>KafkaStreams</code> instance.
  <p>
  Note: even if you never call <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#start--"><code>start()</code></a> on a <code>KafkaStreams</code> instance,
@@ -590,7 +590,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoClos
 <h4>KafkaStreams</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams">Topology</a>&nbsp;topology,
-                                <a href="../../../../org/apache/kafka/streams/StreamsConfig.html" title="class in org.apache.kafka.streams">StreamsConfig</a>&nbsp;config)</pre>
+                                <a href="../../../../org/apache/kafka/streams/StreamsConfig.html" title="class in org.apache.kafka.streams">StreamsConfig</a>&nbsp;config)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">use <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#KafkaStreams-org.apache.kafka.streams.Topology-java.util.Properties-"><code>KafkaStreams(Topology, Properties)</code></a> instead</span></div>
 </li>
 </ul>
@@ -603,7 +603,7 @@ public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams">Topology</a>&nbsp;topology,
                                 <a href="../../../../org/apache/kafka/streams/StreamsConfig.html" title="class in org.apache.kafka.streams">StreamsConfig</a>&nbsp;config,
-                                <a href="../../../../org/apache/kafka/streams/KafkaClientSupplier.html" title="interface in org.apache.kafka.streams">KafkaClientSupplier</a>&nbsp;clientSupplier)</pre>
+                                <a href="../../../../org/apache/kafka/streams/KafkaClientSupplier.html" title="interface in org.apache.kafka.streams">KafkaClientSupplier</a>&nbsp;clientSupplier)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">use <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#KafkaStreams-org.apache.kafka.streams.Topology-java.util.Properties-org.apache.kafka.streams.KafkaClientSupplier-"><code>KafkaStreams(Topology, Properties, KafkaClientSupplier)</code></a> instead</span></div>
 </li>
 </ul>
@@ -616,7 +616,7 @@ public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams">Topology</a>&nbsp;topology,
                                 <a href="../../../../org/apache/kafka/streams/StreamsConfig.html" title="class in org.apache.kafka.streams">StreamsConfig</a>&nbsp;config,
-                                org.apache.kafka.common.utils.Time&nbsp;time)</pre>
+                                org.apache.kafka.common.utils.Time&nbsp;time)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">use <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#KafkaStreams-org.apache.kafka.streams.Topology-java.util.Properties-org.apache.kafka.common.utils.Time-"><code>KafkaStreams(Topology, Properties, Time)</code></a> instead</span></div>
 </li>
 </ul>
@@ -634,7 +634,7 @@ public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.
 <ul class="blockList">
 <li class="blockList">
 <h4>state</h4>
-<pre>public&nbsp;<a href="../../../../org/apache/kafka/streams/KafkaStreams.State.html" title="enum in org.apache.kafka.streams">KafkaStreams.State</a>&nbsp;state()</pre>
+<pre>public&nbsp;<a href="../../../../org/apache/kafka/streams/KafkaStreams.State.html" title="enum in org.apache.kafka.streams">KafkaStreams.State</a>&nbsp;state()</code></pre>
 <div class="block">Return the current <a href="../../../../org/apache/kafka/streams/KafkaStreams.State.html" title="enum in org.apache.kafka.streams"><code>KafkaStreams.State</code></a> of this <code>KafkaStreams</code> instance.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -648,7 +648,7 @@ public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.
 <ul class="blockList">
 <li class="blockList">
 <h4>setStateListener</h4>
-<pre>public&nbsp;void&nbsp;setStateListener(<a href="../../../../org/apache/kafka/streams/KafkaStreams.StateListener.html" title="interface in org.apache.kafka.streams">KafkaStreams.StateListener</a>&nbsp;listener)</pre>
+<pre>public&nbsp;void&nbsp;setStateListener(<a href="../../../../org/apache/kafka/streams/KafkaStreams.StateListener.html" title="interface in org.apache.kafka.streams">KafkaStreams.StateListener</a>&nbsp;listener)</code></pre>
 <div class="block">An app can set a single <a href="../../../../org/apache/kafka/streams/KafkaStreams.StateListener.html" title="interface in org.apache.kafka.streams"><code>KafkaStreams.StateListener</code></a> so that the app is notified when state changes.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -664,7 +664,7 @@ public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.
 <ul class="blockList">
 <li class="blockList">
 <h4>setUncaughtExceptionHandler</h4>
-<pre>public&nbsp;void&nbsp;setUncaughtExceptionHandler(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.UncaughtExceptionHandler.html?is-external=true" title="class or interface in java.lang">Thread.UncaughtExceptionHandler</a>&nbsp;eh)</pre>
+<pre>public&nbsp;void&nbsp;setUncaughtExceptionHandler(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.UncaughtExceptionHandler.html?is-external=true" title="class or interface in java.lang">Thread.UncaughtExceptionHandler</a>&nbsp;eh)</code></pre>
 <div class="block">Set the handler invoked when a <a href="../../../../org/apache/kafka/streams/StreamsConfig.html#NUM_STREAM_THREADS_CONFIG"><code>internal thread</code></a> abruptly
  terminates due to an uncaught exception.</div>
 <dl>
@@ -681,7 +681,7 @@ public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.
 <ul class="blockList">
 <li class="blockList">
 <h4>setGlobalStateRestoreListener</h4>
-<pre>public&nbsp;void&nbsp;setGlobalStateRestoreListener(<a href="../../../../org/apache/kafka/streams/processor/StateRestoreListener.html" title="interface in org.apache.kafka.streams.processor">StateRestoreListener</a>&nbsp;globalStateRestoreListener)</pre>
+<pre>public&nbsp;void&nbsp;setGlobalStateRestoreListener(<a href="../../../../org/apache/kafka/streams/processor/StateRestoreListener.html" title="interface in org.apache.kafka.streams.processor">StateRestoreListener</a>&nbsp;globalStateRestoreListener)</code></pre>
 <div class="block">Set the listener which is triggered whenever a <a href="../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> is being restored in order to resume
  processing.</div>
 <dl>
@@ -698,7 +698,7 @@ public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.
 <ul class="blockList">
 <li class="blockList">
 <h4>metrics</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/apache/kafka/common/MetricName.html" title="class in org.apache.kafka.common">MetricName</a>,? extends <a href="../../../../org/apache/kafka/common/Metric.html" title="interface in org.apache.kafka.common">Metric</a>&gt;&nbsp;metrics()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/apache/kafka/common/MetricName.html" title="class in org.apache.kafka.common">MetricName</a>,? extends <a href="../../../../org/apache/kafka/common/Metric.html" title="interface in org.apache.kafka.common">Metric</a>&gt;&nbsp;metrics()</code></pre>
 <div class="block">Get read-only handle on global metrics registry, including streams client's own metrics plus
  its embedded producer, consumer and admin clients' metrics.</div>
 <dl>
@@ -715,7 +715,7 @@ public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.
 <h4>start</h4>
 <pre>public&nbsp;void&nbsp;start()
            throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a>,
-                  <a href="../../../../org/apache/kafka/streams/errors/StreamsException.html" title="class in org.apache.kafka.streams.errors">StreamsException</a></pre>
+                  <a href="../../../../org/apache/kafka/streams/errors/StreamsException.html" title="class in org.apache.kafka.streams.errors">StreamsException</a></code></pre>
 <div class="block">Start the <code>KafkaStreams</code> instance by starting all its threads.
  This function is expected to be called only once during the life cycle of the client.
  <p>
@@ -743,7 +743,7 @@ public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>public&nbsp;void&nbsp;close()</pre>
+<pre>public&nbsp;void&nbsp;close()</code></pre>
 <div class="block">Shutdown this <code>KafkaStreams</code> instance by signaling all the threads to stop, and then wait for them to join.
  This will block until all threads have stopped.</div>
 <dl>
@@ -760,7 +760,7 @@ public&nbsp;KafkaStreams(<a href="../../../../org/apache/kafka/streams/Topology.
 <h4>close</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;boolean&nbsp;close(long&nbsp;timeout,
-                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</a>&nbsp;timeUnit)</pre>
+                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</a>&nbsp;timeUnit)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#close-java.time.Duration-"><code>close(Duration)</code></a> instead; note, that <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#close-java.time.Duration-"><code>close(Duration)</code></a> has different semantics and does not block on zero, e.g., `Duration.ofMillis(0)`.</span></div>
 <div class="block">Shutdown this <code>KafkaStreams</code> by signaling all the threads to stop, and then wait up to the timeout for the
  threads to join.
@@ -783,7 +783,7 @@ public&nbsp;boolean&nbsp;close(long&nbsp;timeout,
 <li class="blockList">
 <h4>close</h4>
 <pre>public&nbsp;boolean&nbsp;close(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)
-              throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+              throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block">Shutdown this <code>KafkaStreams</code> by signaling all the threads to stop, and then wait up to the timeout for the
  threads to join.
  A <code>timeout</code> of Duration.ZERO (or any other zero duration) makes the close operation asynchronous.
@@ -806,7 +806,7 @@ public&nbsp;boolean&nbsp;close(long&nbsp;timeout,
 <ul class="blockList">
 <li class="blockList">
 <h4>cleanUp</h4>
-<pre>public&nbsp;void&nbsp;cleanUp()</pre>
+<pre>public&nbsp;void&nbsp;cleanUp()</code></pre>
 <div class="block">Do a clean up of the local <a href="../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> directory (<a href="../../../../org/apache/kafka/streams/StreamsConfig.html#STATE_DIR_CONFIG"><code>StreamsConfig.STATE_DIR_CONFIG</code></a>) by deleting all
  data with regard to the <a href="../../../../org/apache/kafka/streams/StreamsConfig.html#APPLICATION_ID_CONFIG"><code>application ID</code></a>.
  <p>
@@ -827,7 +827,7 @@ public&nbsp;boolean&nbsp;close(long&nbsp;timeout,
 <ul class="blockList">
 <li class="blockList">
 <h4>allMetadata</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../org/apache/kafka/streams/state/StreamsMetadata.html" title="class in org.apache.kafka.streams.state">StreamsMetadata</a>&gt;&nbsp;allMetadata()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../org/apache/kafka/streams/state/StreamsMetadata.html" title="class in org.apache.kafka.streams.state">StreamsMetadata</a>&gt;&nbsp;allMetadata()</code></pre>
 <div class="block">Find all currently running <code>KafkaStreams</code> instances (potentially remotely) that use the same
  <a href="../../../../org/apache/kafka/streams/StreamsConfig.html#APPLICATION_ID_CONFIG"><code>application ID</code></a> as this instance (i.e., all instances that belong to
  the same Kafka Streams application) and return <a href="../../../../org/apache/kafka/streams/state/StreamsMetadata.html" title="class in org.apache.kafka.streams.state"><code>StreamsMetadata</code></a> for each discovered instance.
@@ -845,7 +845,7 @@ public&nbsp;boolean&nbsp;close(long&nbsp;timeout,
 <ul class="blockList">
 <li class="blockList">
 <h4>allMetadataForStore</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../org/apache/kafka/streams/state/StreamsMetadata.html" title="class in org.apache.kafka.streams.state">StreamsMetadata</a>&gt;&nbsp;allMetadataForStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;storeName)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../org/apache/kafka/streams/state/StreamsMetadata.html" title="class in org.apache.kafka.streams.state">StreamsMetadata</a>&gt;&nbsp;allMetadataForStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;storeName)</code></pre>
 <div class="block">Find all currently running <code>KafkaStreams</code> instances (potentially remotely) that
  <ul>
    <li>use the same <a href="../../../../org/apache/kafka/streams/StreamsConfig.html#APPLICATION_ID_CONFIG"><code>application ID</code></a> as this instance (i.e., all
@@ -875,7 +875,7 @@ public&nbsp;boolean&nbsp;close(long&nbsp;timeout,
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;&lt;K&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/state/StreamsMetadata.html" title="class in org.apache.kafka.streams.state">StreamsMetadata</a>&nbsp;metadataForKey(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;storeName,
                                                       K&nbsp;key,
-                                                      <a href="../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;K&gt;&nbsp;keySerializer)</pre>
+                                                      <a href="../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;K&gt;&nbsp;keySerializer)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.5. Use <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#queryMetadataForKey-java.lang.String-K-org.apache.kafka.common.serialization.Serializer-"><code>queryMetadataForKey(String, Object, Serializer)</code></a> instead.</span></div>
 <div class="block">Find the currently running <code>KafkaStreams</code> instance (potentially remotely) that
  <ul>
@@ -926,7 +926,7 @@ public&nbsp;&lt;K&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/state/S
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;&lt;K&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/state/StreamsMetadata.html" title="class in org.apache.kafka.streams.state">StreamsMetadata</a>&nbsp;metadataForKey(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;storeName,
                                                       K&nbsp;key,
-                                                      <a href="../../../../org/apache/kafka/streams/processor/StreamPartitioner.html" title="interface in org.apache.kafka.streams.processor">StreamPartitioner</a>&lt;? super K,?&gt;&nbsp;partitioner)</pre>
+                                                      <a href="../../../../org/apache/kafka/streams/processor/StreamPartitioner.html" title="interface in org.apache.kafka.streams.processor">StreamPartitioner</a>&lt;? super K,?&gt;&nbsp;partitioner)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.5. Use <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#queryMetadataForKey-java.lang.String-K-org.apache.kafka.streams.processor.StreamPartitioner-"><code>queryMetadataForKey(String, Object, StreamPartitioner)</code></a> instead.</span></div>
 <div class="block">Find the currently running <code>KafkaStreams</code> instance (potentially remotely) that
  <ul>
@@ -967,7 +967,7 @@ public&nbsp;&lt;K&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/state/S
 <h4>queryMetadataForKey</h4>
 <pre>public&nbsp;&lt;K&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/KeyQueryMetadata.html" title="class in org.apache.kafka.streams">KeyQueryMetadata</a>&nbsp;queryMetadataForKey(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;storeName,
                                                 K&nbsp;key,
-                                                <a href="../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;K&gt;&nbsp;keySerializer)</pre>
+                                                <a href="../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;K&gt;&nbsp;keySerializer)</code></pre>
 <div class="block">Finds the metadata containing the active hosts and standby hosts where the key being queried would reside.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -991,7 +991,7 @@ public&nbsp;&lt;K&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/state/S
 <h4>queryMetadataForKey</h4>
 <pre>public&nbsp;&lt;K&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/KeyQueryMetadata.html" title="class in org.apache.kafka.streams">KeyQueryMetadata</a>&nbsp;queryMetadataForKey(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;storeName,
                                                 K&nbsp;key,
-                                                <a href="../../../../org/apache/kafka/streams/processor/StreamPartitioner.html" title="interface in org.apache.kafka.streams.processor">StreamPartitioner</a>&lt;? super K,?&gt;&nbsp;partitioner)</pre>
+                                                <a href="../../../../org/apache/kafka/streams/processor/StreamPartitioner.html" title="interface in org.apache.kafka.streams.processor">StreamPartitioner</a>&lt;? super K,?&gt;&nbsp;partitioner)</code></pre>
 <div class="block">Finds the metadata containing the active hosts and standby hosts where the key being queried would reside.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -1013,7 +1013,7 @@ public&nbsp;&lt;K&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/state/S
 <h4>store</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;&lt;T&gt;&nbsp;T&nbsp;store(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;storeName,
-                               <a href="../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state">QueryableStoreType</a>&lt;T&gt;&nbsp;queryableStoreType)</pre>
+                               <a href="../../../../org/apache/kafka/streams/state/QueryableStoreType.html" title="interface in org.apache.kafka.streams.state">QueryableStoreType</a>&lt;T&gt;&nbsp;queryableStoreType)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.5 release; use <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>store(StoreQueryParameters)</code></a>  instead</span></div>
 </li>
 </ul>
@@ -1023,7 +1023,7 @@ public&nbsp;&lt;T&gt;&nbsp;T&nbsp;store(<a href="https://docs.oracle.com/javase/
 <ul class="blockList">
 <li class="blockList">
 <h4>store</h4>
-<pre>public&nbsp;&lt;T&gt;&nbsp;T&nbsp;store(<a href="../../../../org/apache/kafka/streams/StoreQueryParameters.html" title="class in org.apache.kafka.streams">StoreQueryParameters</a>&lt;T&gt;&nbsp;storeQueryParameters)</pre>
+<pre>public&nbsp;&lt;T&gt;&nbsp;T&nbsp;store(<a href="../../../../org/apache/kafka/streams/StoreQueryParameters.html" title="class in org.apache.kafka.streams">StoreQueryParameters</a>&lt;T&gt;&nbsp;storeQueryParameters)</code></pre>
 <div class="block">Get a facade wrapping the local <a href="../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> instances with the provided <a href="../../../../org/apache/kafka/streams/StoreQueryParameters.html" title="class in org.apache.kafka.streams"><code>StoreQueryParameters</code></a>.
  The returned object can be used to query the <a href="../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> instances.</div>
 <dl>
@@ -1043,7 +1043,7 @@ public&nbsp;&lt;T&gt;&nbsp;T&nbsp;store(<a href="https://docs.oracle.com/javase/
 <ul class="blockList">
 <li class="blockList">
 <h4>localThreadsMetadata</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/apache/kafka/streams/processor/ThreadMetadata.html" title="class in org.apache.kafka.streams.processor">ThreadMetadata</a>&gt;&nbsp;localThreadsMetadata()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/apache/kafka/streams/processor/ThreadMetadata.html" title="class in org.apache.kafka.streams.processor">ThreadMetadata</a>&gt;&nbsp;localThreadsMetadata()</code></pre>
 <div class="block">Returns runtime information about the local threads of this <a href="../../../../org/apache/kafka/streams/KafkaStreams.html" title="class in org.apache.kafka.streams"><code>KafkaStreams</code></a> instance.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1057,7 +1057,7 @@ public&nbsp;&lt;T&gt;&nbsp;T&nbsp;store(<a href="https://docs.oracle.com/javase/
 <ul class="blockListLast">
 <li class="blockList">
 <h4>allLocalStorePartitionLags</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="../../../../org/apache/kafka/streams/LagInfo.html" title="class in org.apache.kafka.streams">LagInfo</a>&gt;&gt;&nbsp;allLocalStorePartitionLags()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="../../../../org/apache/kafka/streams/LagInfo.html" title="class in org.apache.kafka.streams">LagInfo</a>&gt;&gt;&nbsp;allLocalStorePartitionLags()</code></pre>
 <div class="block">Returns <a href="../../../../org/apache/kafka/streams/LagInfo.html" title="class in org.apache.kafka.streams"><code>LagInfo</code></a>, for all store partitions (active or standby) local to this Streams instance. Note that the
  values returned are just estimates and meant to be used for making soft decisions on whether the data in the store
  partition is fresh enough for querying.

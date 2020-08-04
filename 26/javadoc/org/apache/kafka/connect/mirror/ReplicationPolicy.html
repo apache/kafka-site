@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre><a href="../../../../../org/apache/kafka/common/annotation/InterfaceStability.Evolving.html" title="annotation in org.apache.kafka.common.annotation">@InterfaceStability.Evolving</a>
-public interface <span class="typeNameLabel">ReplicationPolicy</span></pre>
+public interface <span class="typeNameLabel">ReplicationPolicy</span></code></pre>
 <div class="block">Defines which topics are "remote topics". e.g. "us-west.topic1".</div>
 </li>
 </ul>
@@ -177,7 +177,7 @@ public interface <span class="typeNameLabel">ReplicationPolicy</span></pre>
 <li class="blockList">
 <h4>formatRemoteTopic</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;formatRemoteTopic(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sourceClusterAlias,
-                         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</pre>
+                         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</code></pre>
 <div class="block">How to rename remote topics; generally should be like us-west.topic1.</div>
 </li>
 </ul>
@@ -187,7 +187,7 @@ public interface <span class="typeNameLabel">ReplicationPolicy</span></pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>topicSource</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topicSource(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topicSource(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</code></pre>
 <div class="block">Source cluster alias of given remote topic, e.g. "us-west" for "us-west.topic1".
   Returns null if not a remote topic.</div>
 </li>
@@ -198,7 +198,7 @@ public interface <span class="typeNameLabel">ReplicationPolicy</span></pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>upstreamTopic</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;upstreamTopic(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;upstreamTopic(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</code></pre>
 <div class="block">Name of topic on the source cluster, e.g. "topic1" for "us-west.topic1".
 
   Topics may be replicated multiple hops, so the immediately upstream topic
@@ -213,7 +213,7 @@ public interface <span class="typeNameLabel">ReplicationPolicy</span></pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>originalTopic</h4>
-<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;originalTopic(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</pre>
+<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;originalTopic(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</code></pre>
 <div class="block">The name of the original source-topic, which may have been replicated multiple hops.
   Returns the topic if it is not a remote topic.</div>
 </li>
@@ -224,7 +224,7 @@ public interface <span class="typeNameLabel">ReplicationPolicy</span></pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>isInternalTopic</h4>
-<pre>default&nbsp;boolean&nbsp;isInternalTopic(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</pre>
+<pre>default&nbsp;boolean&nbsp;isInternalTopic(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</code></pre>
 <div class="block">Internal topics are never replicated.</div>
 </li>
 </ul>

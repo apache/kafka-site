@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public abstract class <span class="typeNameLabel">Windows&lt;W extends <a href="../../../../../org/apache/kafka/streams/kstream/Window.html" title="class in org.apache.kafka.streams.kstream">Window</a>&gt;</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">The window specification for fixed size windows that is used to define window boundaries and grace period.
  <p>
  Grace period defines how long to wait on out-of-order events. That is, windows will continue to accept new records until <code>stream_time &gt;= window_end + grace_period</code>.
@@ -265,7 +265,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>segments</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;int segments</pre>
+public&nbsp;int segments</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
@@ -283,7 +283,7 @@ public&nbsp;int segments</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Windows</h4>
-<pre>protected&nbsp;Windows()</pre>
+<pre>protected&nbsp;Windows()</code></pre>
 </li>
 </ul>
 </li>
@@ -302,7 +302,7 @@ public&nbsp;int segments</pre>
 <h4>until</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" title="class in org.apache.kafka.streams.kstream">Windows</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" title="type parameter in Windows">W</a>&gt;&nbsp;until(long&nbsp;durationMs)
-                             throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                             throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.1. Use <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#withRetention-java.time.Duration-"><code>Materialized.withRetention(Duration)</code></a>
              or directly configure the retention in a store supplier and use <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#as-org.apache.kafka.streams.state.WindowBytesStoreSupplier-"><code>Materialized.as(WindowBytesStoreSupplier)</code></a>.</span></div>
 <div class="block">Set the window maintain duration (retention time) in milliseconds.
@@ -324,7 +324,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Windows.htm
 <li class="blockList">
 <h4>maintainMs</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;long&nbsp;maintainMs()</pre>
+public&nbsp;long&nbsp;maintainMs()</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.1. Use <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html#retention"><code>Materialized.retention</code></a> instead.</span></div>
 <div class="block">Return the window maintain duration (retention time) in milliseconds.</div>
 <dl>
@@ -341,7 +341,7 @@ public&nbsp;long&nbsp;maintainMs()</pre>
 <h4>segments</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 protected&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" title="class in org.apache.kafka.streams.kstream">Windows</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" title="type parameter in Windows">W</a>&gt;&nbsp;segments(int&nbsp;segments)
-                                   throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                                   throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.1 Override segmentInterval() instead.</span></div>
 <div class="block">Set the number of segments to be used for rolling the window store.
  This function is not exposed to users but can be called by developers that extend this class.</div>
@@ -361,7 +361,7 @@ protected&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Windows.
 <ul class="blockList">
 <li class="blockList">
 <h4>windowsFor</h4>
-<pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" title="type parameter in Windows">W</a>&gt;&nbsp;windowsFor(long&nbsp;timestamp)</pre>
+<pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" title="type parameter in Windows">W</a>&gt;&nbsp;windowsFor(long&nbsp;timestamp)</code></pre>
 <div class="block">Create all windows that contain the provided timestamp, indexed by non-negative window start timestamps.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -377,7 +377,7 @@ protected&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Windows.
 <ul class="blockList">
 <li class="blockList">
 <h4>size</h4>
-<pre>public abstract&nbsp;long&nbsp;size()</pre>
+<pre>public abstract&nbsp;long&nbsp;size()</code></pre>
 <div class="block">Return the size of the specified windows in milliseconds.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -391,7 +391,7 @@ protected&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Windows.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>gracePeriodMs</h4>
-<pre>public abstract&nbsp;long&nbsp;gracePeriodMs()</pre>
+<pre>public abstract&nbsp;long&nbsp;gracePeriodMs()</code></pre>
 <div class="block">Return the window grace period (the time to admit
  out-of-order events after the end of the window.)
 

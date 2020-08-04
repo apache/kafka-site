@@ -290,7 +290,7 @@
                     <a class="reference internal" href="#streams-developer-guide-state-store-enable-disable-fault-tolerance"><span class="std std-ref">enable or disable this backup feature</span></a> for a
                     state store.</p>
                 <p>By default, persistent key-value stores are fault-tolerant.  They are backed by a
-                    <a class="reference external" href="https://kafka.apache.org/documentation.html#compaction">compacted</a> changelog topic.  The purpose of compacting this
+                    <a class="reference external" href="/documentation.html#compaction">compacted</a> changelog topic.  The purpose of compacting this
                     topic is to prevent the topic from growing indefinitely, to reduce the storage consumed in the associated Kafka cluster,
                     and to minimize recovery time if a state store needs to be restored from its changelog topic.</p>
                 <p>Similarly, persistent window stores are fault-tolerant.  They are backed by a topic that uses both compaction and

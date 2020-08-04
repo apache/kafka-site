@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">GlobalKTable&lt;K,V&gt;</span></pre>
+<pre>public interface <span class="typeNameLabel">GlobalKTable&lt;K,V&gt;</span></code></pre>
 <div class="block"><code>GlobalKTable</code> is an abstraction of a <i>changelog stream</i> from a primary-keyed table.
  Each record in this changelog stream is an update on the primary-keyed table with the record key as the primary key.
  <p>
@@ -121,7 +121,7 @@ var activeTableTab = "activeTableTab";
  A <code>GlobalKTable</code> is created via a <a href="../../../../../org/apache/kafka/streams/StreamsBuilder.html" title="class in org.apache.kafka.streams"><code>StreamsBuilder</code></a>. For example:
  <pre><code>
  builder.globalTable("topic-name", "queryable-store-name");
- </code></pre>
+ </code></code></pre>
  all <code>GlobalKTable</code>s are backed by a <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>ReadOnlyKeyValueStore</code></a> and are therefore queryable via the
  interactive queries API.
  For example:
@@ -134,7 +134,7 @@ var activeTableTab = "activeTableTab";
  ...
  ReadOnlyKeyValueStore view = streams.store("g1-store", QueryableStoreTypes.timestampedKeyValueStore());
  view.get(key); // can be done on any key, as all keys are present
-</code></pre>
+</code></code></pre>
  Note that in contrast to <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream"><code>KTable</code></a> a <code>GlobalKTable</code>'s state holds a full copy of the underlying topic,
  thus all keys can be queried locally.
  <p>
@@ -191,7 +191,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>queryableStoreName</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryableStoreName()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryableStoreName()</code></pre>
 <div class="block">Get the name of the local state store that can be used to query this <code>GlobalKTable</code>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>

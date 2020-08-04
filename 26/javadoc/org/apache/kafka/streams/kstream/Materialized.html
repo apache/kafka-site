@@ -114,7 +114,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">Materialized&lt;K,V,S extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>&gt;</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">Used to describe how a <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> should be materialized.
  You can either provide a custom <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> backend through one of the provided methods accepting a supplier
  or use the default RocksDB backends by providing just a store name.
@@ -126,7 +126,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  KTable&lt;Integer, Integer&gt; table = builder.table(
    "topicName",
    Materialized.as("queryable-store-name"));
- </code></pre></div>
+ </code></code></pre></div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../org/apache/kafka/streams/state/Stores.html" title="class in org.apache.kafka.streams.state"><code>Stores</code></a></dd>
@@ -318,7 +318,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>storeSupplier</h4>
-<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/streams/state/StoreSupplier.html" title="interface in org.apache.kafka.streams.state">StoreSupplier</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a> extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>&gt; storeSupplier</pre>
+<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/streams/state/StoreSupplier.html" title="interface in org.apache.kafka.streams.state">StoreSupplier</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a> extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>&gt; storeSupplier</code></pre>
 </li>
 </ul>
 <a name="storeName">
@@ -327,7 +327,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>storeName</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> storeName</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> storeName</code></pre>
 </li>
 </ul>
 <a name="valueSerde">
@@ -336,7 +336,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>valueSerde</h4>
-<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>&gt; valueSerde</pre>
+<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>&gt; valueSerde</code></pre>
 </li>
 </ul>
 <a name="keySerde">
@@ -345,7 +345,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>keySerde</h4>
-<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>&gt; keySerde</pre>
+<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>&gt; keySerde</code></pre>
 </li>
 </ul>
 <a name="loggingEnabled">
@@ -354,7 +354,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>loggingEnabled</h4>
-<pre>protected&nbsp;boolean loggingEnabled</pre>
+<pre>protected&nbsp;boolean loggingEnabled</code></pre>
 </li>
 </ul>
 <a name="cachingEnabled">
@@ -363,7 +363,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>cachingEnabled</h4>
-<pre>protected&nbsp;boolean cachingEnabled</pre>
+<pre>protected&nbsp;boolean cachingEnabled</code></pre>
 </li>
 </ul>
 <a name="topicConfig">
@@ -372,7 +372,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>topicConfig</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt; topicConfig</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt; topicConfig</code></pre>
 </li>
 </ul>
 <a name="retention">
@@ -381,7 +381,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>retention</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a> retention</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a> retention</code></pre>
 </li>
 </ul>
 </li>
@@ -398,7 +398,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Materialized</h4>
-<pre>protected&nbsp;Materialized(<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a>&gt;&nbsp;materialized)</pre>
+<pre>protected&nbsp;Materialized(<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a>&gt;&nbsp;materialized)</code></pre>
 <div class="block">Copy constructor.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -420,7 +420,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>as</h4>
-<pre>public static&nbsp;&lt;K,V,S extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,S&gt;&nbsp;as(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;storeName)</pre>
+<pre>public static&nbsp;&lt;K,V,S extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,S&gt;&nbsp;as(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;storeName)</code></pre>
 <div class="block">Materialize a <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> with the given name.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -441,7 +441,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>as</h4>
-<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,<a href="../../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state">WindowStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;as(<a href="../../../../../org/apache/kafka/streams/state/WindowBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">WindowBytesStoreSupplier</a>&nbsp;supplier)</pre>
+<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,<a href="../../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state">WindowStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;as(<a href="../../../../../org/apache/kafka/streams/state/WindowBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">WindowBytesStoreSupplier</a>&nbsp;supplier)</code></pre>
 <div class="block">Materialize a <a href="../../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state"><code>WindowStore</code></a> using the provided <a href="../../../../../org/apache/kafka/streams/state/WindowBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state"><code>WindowBytesStoreSupplier</code></a>.
 
  Important: Custom subclasses are allowed here, but they should respect the retention contract:
@@ -464,7 +464,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>as</h4>
-<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;as(<a href="../../../../../org/apache/kafka/streams/state/SessionBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">SessionBytesStoreSupplier</a>&nbsp;supplier)</pre>
+<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;as(<a href="../../../../../org/apache/kafka/streams/state/SessionBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">SessionBytesStoreSupplier</a>&nbsp;supplier)</code></pre>
 <div class="block">Materialize a <a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state"><code>SessionStore</code></a> using the provided <a href="../../../../../org/apache/kafka/streams/state/SessionBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state"><code>SessionBytesStoreSupplier</code></a>.
 
  Important: Custom subclasses are allowed here, but they should respect the retention contract:
@@ -488,7 +488,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>as</h4>
-<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;as(<a href="../../../../../org/apache/kafka/streams/state/KeyValueBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">KeyValueBytesStoreSupplier</a>&nbsp;supplier)</pre>
+<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;as(<a href="../../../../../org/apache/kafka/streams/state/KeyValueBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">KeyValueBytesStoreSupplier</a>&nbsp;supplier)</code></pre>
 <div class="block">Materialize a <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> using the provided <a href="../../../../../org/apache/kafka/streams/state/KeyValueBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueBytesStoreSupplier</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -508,7 +508,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>with</h4>
 <pre>public static&nbsp;&lt;K,V,S extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;K,V,S&gt;&nbsp;with(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;K&gt;&nbsp;keySerde,
-                                                                  <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</pre>
+                                                                  <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</code></pre>
 <div class="block">Materialize a <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> with the provided key and value <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>Serde</code></a>s.
  An internal name will be used for the store.</div>
 <dl>
@@ -532,7 +532,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>withValueSerde</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a>&gt;&nbsp;withValueSerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>&gt;&nbsp;valueSerde)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a>&gt;&nbsp;withValueSerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>&gt;&nbsp;valueSerde)</code></pre>
 <div class="block">Set the valueSerde the materialized <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> will use.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -550,7 +550,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>withKeySerde</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a>&gt;&nbsp;withKeySerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>&gt;&nbsp;keySerde)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a>&gt;&nbsp;withKeySerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>&gt;&nbsp;keySerde)</code></pre>
 <div class="block">Set the keySerde the materialize <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> will use.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -567,7 +567,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>withLoggingEnabled</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a>&gt;&nbsp;withLoggingEnabled(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;config)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a>&gt;&nbsp;withLoggingEnabled(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;config)</code></pre>
 <div class="block">Indicates that a changelog should be created for the store. The changelog will be created
  with the provided configs.
  <p>
@@ -586,7 +586,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>withLoggingDisabled</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a>&gt;&nbsp;withLoggingDisabled()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a>&gt;&nbsp;withLoggingDisabled()</code></pre>
 <div class="block">Disable change logging for the materialized <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -600,7 +600,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>withCachingEnabled</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a>&gt;&nbsp;withCachingEnabled()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a>&gt;&nbsp;withCachingEnabled()</code></pre>
 <div class="block">Enable caching for the materialized <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -614,7 +614,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>withCachingDisabled</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a>&gt;&nbsp;withCachingDisabled()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a>&gt;&nbsp;withCachingDisabled()</code></pre>
 <div class="block">Disable caching for the materialized <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -629,7 +629,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>withRetention</h4>
 <pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">V</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="type parameter in Materialized">S</a>&gt;&nbsp;withRetention(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;retention)
-                                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block">Configure retention period for window and session stores. Ignored for key/value stores.
 
  Overridden by pre-configured store suppliers

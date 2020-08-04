@@ -99,7 +99,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">SinkTaskContext</span></pre>
+<pre>public interface <span class="typeNameLabel">SinkTaskContext</span></code></pre>
 <div class="block">Context passed to SinkTasks, allowing them to access utilities in the Kafka Connect runtime.</div>
 </li>
 </ul>
@@ -196,7 +196,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>configs</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;configs()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;configs()</code></pre>
 <div class="block">Get the Task configuration.  This is the latest configuration and may differ from that passed on startup.
 
  For example, this method can be used to obtain the latest configuration if an external secret has changed,
@@ -210,7 +210,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>offset</h4>
-<pre>void&nbsp;offset(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;offsets)</pre>
+<pre>void&nbsp;offset(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;offsets)</code></pre>
 <div class="block">Reset the consumer offsets for the given topic partitions. SinkTasks should use this if they manage offsets
  in the sink data store rather than using Kafka consumer offsets. For example, an HDFS connector might record
  offsets in HDFS to provide exactly once delivery. When the SinkTask is started or a rebalance occurs, the task
@@ -230,7 +230,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>offset</h4>
 <pre>void&nbsp;offset(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;tp,
-            long&nbsp;offset)</pre>
+            long&nbsp;offset)</code></pre>
 <div class="block">Reset the consumer offsets for the given topic partition. SinkTasks should use if they manage offsets
  in the sink data store rather than using Kafka consumer offsets. For example, an HDFS connector might record
  offsets in HDFS to provide exactly once delivery. When the topic partition is recovered the task
@@ -250,7 +250,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>timeout</h4>
-<pre>void&nbsp;timeout(long&nbsp;timeoutMs)</pre>
+<pre>void&nbsp;timeout(long&nbsp;timeoutMs)</code></pre>
 <div class="block">Set the timeout in milliseconds. SinkTasks should use this to indicate that they need to retry certain
  operations after the timeout. SinkTasks may have certain operations on external systems that may need
  to retry in case of failures. For example, append a record to an HDFS file may fail due to temporary network
@@ -267,7 +267,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>assignment</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;assignment()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;assignment()</code></pre>
 <div class="block">Get the current set of assigned TopicPartitions for this task.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -281,7 +281,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>pause</h4>
-<pre>void&nbsp;pause(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>...&nbsp;partitions)</pre>
+<pre>void&nbsp;pause(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>...&nbsp;partitions)</code></pre>
 <div class="block">Pause consumption of messages from the specified TopicPartitions.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -295,7 +295,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>resume</h4>
-<pre>void&nbsp;resume(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>...&nbsp;partitions)</pre>
+<pre>void&nbsp;resume(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>...&nbsp;partitions)</code></pre>
 <div class="block">Resume consumption of messages from previously paused TopicPartitions.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -309,7 +309,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>requestCommit</h4>
-<pre>void&nbsp;requestCommit()</pre>
+<pre>void&nbsp;requestCommit()</code></pre>
 <div class="block">Request an offset commit. Sink tasks can use this to minimize the potential for redelivery
  by requesting an offset commit as soon as they flush data to the destination system.
 
@@ -322,7 +322,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>errantRecordReporter</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/connect/sink/ErrantRecordReporter.html" title="interface in org.apache.kafka.connect.sink">ErrantRecordReporter</a>&nbsp;errantRecordReporter()</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/connect/sink/ErrantRecordReporter.html" title="interface in org.apache.kafka.connect.sink">ErrantRecordReporter</a>&nbsp;errantRecordReporter()</code></pre>
 <div class="block">Get the reporter to which the sink task can report problematic or failed <a href="../../../../../org/apache/kafka/connect/sink/SinkRecord.html" title="class in org.apache.kafka.connect.sink"><code>records</code></a>
  passed to the <a href="../../../../../org/apache/kafka/connect/sink/SinkTask.html#put-java.util.Collection-"><code>SinkTask.put(java.util.Collection)</code></a> method. When reporting a failed record,
  the sink task will receive a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent"><code>Future</code></a> that the task can optionally use to wait until
@@ -334,14 +334,12 @@ var activeTableTab = "activeTableTab";
  should guard the call to this method with a try-catch block, since calling this method will result in a
  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang"><code>NoSuchMethodException</code></a> or <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NoClassDefFoundError.html?is-external=true" title="class or interface in java.lang"><code>NoClassDefFoundError</code></a> when the sink connector is deployed to
  Connect runtimes older than Kafka 2.6. For example:
- <pre>
-     ErrantRecordReporter reporter;
+ <pre class="line-numbers"><code class="language-text">     ErrantRecordReporter reporter;
      try {
          reporter = context.errantRecordReporter();
      } catch (NoSuchMethodError | NoClassDefFoundError e) {
          reporter = null;
-     }
- </pre></div>
+     }</code></pre></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the reporter; null if no error reporter has been configured for the connector</dd>

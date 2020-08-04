@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">BatchingStateRestoreCallback</span>
-extends <a href="../../../../../org/apache/kafka/streams/processor/StateRestoreCallback.html" title="interface in org.apache.kafka.streams.processor">StateRestoreCallback</a></pre>
+extends <a href="../../../../../org/apache/kafka/streams/processor/StateRestoreCallback.html" title="interface in org.apache.kafka.streams.processor">StateRestoreCallback</a></code></pre>
 <div class="block">Interface for batching restoration of a <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a>
 
  It is expected that implementations of this class will not call the <a href="../../../../../org/apache/kafka/streams/processor/StateRestoreCallback.html#restore-byte:A-byte:A-"><code>StateRestoreCallback.restore(byte[],
@@ -159,7 +159,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/StateRestoreC
 <ul class="blockList">
 <li class="blockList">
 <h4>restoreAll</h4>
-<pre>void&nbsp;restoreAll(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams">KeyValue</a>&lt;byte[],byte[]&gt;&gt;&nbsp;records)</pre>
+<pre>void&nbsp;restoreAll(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams">KeyValue</a>&lt;byte[],byte[]&gt;&gt;&nbsp;records)</code></pre>
 <div class="block">Called to restore a number of records.  This method is called repeatedly until the <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> is fulled
  restored.</div>
 <dl>
@@ -175,7 +175,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/StateRestoreC
 <li class="blockList">
 <h4>restore</h4>
 <pre>default&nbsp;void&nbsp;restore(byte[]&nbsp;key,
-                     byte[]&nbsp;value)</pre>
+                     byte[]&nbsp;value)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/streams/processor/StateRestoreCallback.html#restore-byte:A-byte:A-">restore</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/kafka/streams/processor/StateRestoreCallback.html" title="interface in org.apache.kafka.streams.processor">StateRestoreCallback</a></code></dd>

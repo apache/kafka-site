@@ -889,7 +889,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  For example, you can use this transformation to set a key for a key-less input record <code>&lt;null,V&gt;</code> by
  extracting a key from the value within your <a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream"><code>KeyValueMapper</code></a>. The example below computes the new key as the
  length of the value string.
- <pre><code>
+ <pre class="line-numbers"><code>
  KStream&lt;Byte[], String&gt; keyLessStream = builder.stream("key-less-topic");
  KStream&lt;Integer, String&gt; keyedStream = keyLessStream.selectKey(new KeyValueMapper&lt;Byte[], String, Integer&gt; {
      Integer apply(Byte[] key, String value) {
@@ -932,7 +932,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  stateful record transformation).
  <p>
  The example below normalizes the String key to upper-case letters and counts the number of token of the value string.
- <pre><code>
+ <pre class="line-numbers"><code>
  KStream&lt;String, String&gt; inputStream = builder.stream("topic");
  KStream&lt;String, Integer&gt; outputStream = inputStream.map(new KeyValueMapper&lt;String, String, KeyValue&lt;String, Integer&gt;&gt; {
      KeyValue&lt;String, Integer&gt; apply(String key, String value) {
@@ -980,7 +980,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html#transformValues-org.apache.kafka.streams.kstream.ValueTransformerSupplier-java.lang.String...-"><code>transformValues(ValueTransformerSupplier, String...)</code></a> for stateful value transformation).
  <p>
  The example below counts the number of token of the value string.
- <pre><code>
+ <pre class="line-numbers"><code>
  KStream&lt;String, String&gt; inputStream = builder.stream("topic");
  KStream&lt;String, Integer&gt; outputStream = inputStream.mapValues(new ValueMapper&lt;String, Integer&gt; {
      Integer apply(String value) {
@@ -1025,7 +1025,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html#transformValues-org.apache.kafka.streams.kstream.ValueTransformerSupplier-java.lang.String...-"><code>transformValues(ValueTransformerSupplier, String...)</code></a> for stateful value transformation).
  <p>
  The example below counts the number of tokens of key and value strings.
- <pre><code>
+ <pre class="line-numbers"><code>
  KStream&lt;String, String&gt; inputStream = builder.stream("topic");
  KStream&lt;String, Integer&gt; outputStream = inputStream.mapValues(new ValueMapperWithKey&lt;String, String, Integer&gt; {
      Integer apply(String readOnlyKey, String value) {
@@ -1073,7 +1073,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  <p>
  The example below splits input records <code>&lt;null:String&gt;</code> containing sentences as values into their words
  and emit a record <code>&lt;word:1&gt;</code> for each word.
- <pre><code>
+ <pre class="line-numbers"><code>
  KStream&lt;byte[], String&gt; inputStream = builder.stream("topic");
  KStream&lt;String, Integer&gt; outputStream = inputStream.flatMap(new KeyValueMapper&lt;byte[], String, Iterable&lt;KeyValue&lt;String, Integer&gt;&gt;&gt; {
      Iterable&lt;KeyValue&lt;String, Integer&gt;&gt; apply(byte[] key, String value) {
@@ -1132,7 +1132,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  for stateful value transformation).
  <p>
  The example below splits input records <code>&lt;null:String&gt;</code> containing sentences as values into their words.
- <pre><code>
+ <pre class="line-numbers"><code>
  KStream&lt;byte[], String&gt; inputStream = builder.stream("topic");
  KStream&lt;byte[], String&gt; outputStream = inputStream.flatMapValues(new ValueMapper&lt;String, Iterable&lt;String&gt;&gt; {
      Iterable&lt;String&gt; apply(String value) {
@@ -1184,7 +1184,7 @@ public interface <span class="typeNameLabel">KStream&lt;K,V&gt;</span></pre>
  <p>
  The example below splits input records <code>&lt;Integer:String&gt;</code>, with key=1, containing sentences as values
  into their words.
- <pre><code>
+ <pre class="line-numbers"><code>
  KStream&lt;Integer, String&gt; inputStream = builder.stream("topic");
  KStream&lt;Integer, String&gt; outputStream = inputStream.flatMapValues(new ValueMapper&lt;Integer, String, Iterable&lt;String&gt;&gt; {
      Iterable&lt;Integer, String&gt; apply(Integer readOnlyKey, String value) {
@@ -1333,7 +1333,7 @@ void&nbsp;print&#8203;(<a href="../../../../../org/apache/kafka/streams/kstream/
  The user provided <a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream"><code>KeyValueMapper</code></a> which customizes output is used to print with <code>System.out</code>
  <p>
  The example below shows the way to customize output data.
- <pre><code>
+ <pre class="line-numbers"><code>
  final KeyValueMapper&lt;Integer, String, String&gt; mapper = new KeyValueMapper&lt;Integer, String, String&gt;() {
      public String apply(Integer key, String value) {
          return String.format("(%d, %s)", key, value);
@@ -1364,7 +1364,7 @@ void&nbsp;print&#8203;(<a href="../../../../../org/apache/kafka/streams/kstream/
  The user provided <a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream"><code>KeyValueMapper</code></a> which customizes output is used to print with <code>System.out</code>
  <p>
  The example below shows the way to customize output data.
- <pre><code>
+ <pre class="line-numbers"><code>
  final KeyValueMapper&lt;Integer, String, String&gt; mapper = new KeyValueMapper&lt;Integer, String, String&gt;() {
      public String apply(Integer key, String value) {
          return String.format("(%d, %s)", key, value);
@@ -1397,7 +1397,7 @@ void&nbsp;print&#8203;(<a href="../../../../../org/apache/kafka/streams/kstream/
  The provided serde will be use to deserialize key or value if type is <code>byte[]</code>.
  <p>
  The example below shows the way to customize output data.
- <pre><code>
+ <pre class="line-numbers"><code>
  final KeyValueMapper&lt;Integer, String, String&gt; mapper = new KeyValueMapper&lt;Integer, String, String&gt;() {
      public String apply(Integer key, String value) {
          return String.format("(%d, %s)", key, value);
@@ -1435,7 +1435,7 @@ void&nbsp;print&#8203;(<a href="../../../../../org/apache/kafka/streams/kstream/
  The provided serde will be use to deserialize key or value if type is <code>byte[]</code>.
  <p>
  The example below shows the way to customize output data.
- <pre><code>
+ <pre class="line-numbers"><code>
  final KeyValueMapper&lt;Integer, String, String&gt; mapper = new KeyValueMapper&lt;Integer, String, String&gt;() {
      public String apply(Integer key, String value) {
          return String.format("(%d, %s)", key, value);
@@ -1615,7 +1615,7 @@ void&nbsp;writeAsText&#8203;(java.lang.String&nbsp;filePath,
  The default key and value serde will used to deserialize <code>byte[]</code> records before calling <code>toString()</code>.
  <p>
  The example below shows the way to customize output data.
- <pre><code>
+ <pre class="line-numbers"><code>
  final KeyValueMapper&lt;Integer, String, String&gt; mapper = new KeyValueMapper&lt;Integer, String, String&gt;() {
      public String apply(Integer key, String value) {
          return String.format("(%d, %s)", key, value);
@@ -1650,7 +1650,7 @@ void&nbsp;writeAsText&#8203;(java.lang.String&nbsp;filePath,
  The default key and value serde will used to deserialize <code>byte[]</code> records before calling <code>toString()</code>.
  <p>
  The example below shows the way to customize output data.
- <pre><code>
+ <pre class="line-numbers"><code>
  final KeyValueMapper&lt;Integer, String, String&gt; mapper = new KeyValueMapper&lt;Integer, String, String&gt;() {
      public String apply(Integer key, String value) {
          return String.format("(%d, %s)", key, value);
@@ -1687,7 +1687,7 @@ void&nbsp;writeAsText&#8203;(java.lang.String&nbsp;filePath,
  The given key and value serde will be used to deserialize <code>byte[]</code> records before calling <code>toString()</code>.
  <p>
  The example below shows the way to customize output data.
- <pre><code>
+ <pre class="line-numbers"><code>
  final KeyValueMapper&lt;Integer, String, String&gt; mapper = new KeyValueMapper&lt;Integer, String, String&gt;() {
      public String apply(Integer key, String value) {
          return String.format("(%d, %s)", key, value);
@@ -1729,7 +1729,7 @@ void&nbsp;writeAsText&#8203;(java.lang.String&nbsp;filePath,
  The given key and value serde will be used to deserialize <code>byte[]</code> records before calling <code>toString()</code>.
  <p>
  The example below shows the way to customize output data.
- <pre><code>
+ <pre class="line-numbers"><code>
  final KeyValueMapper&lt;Integer, String, String&gt; mapper = new KeyValueMapper&lt;Integer, String, String&gt;() {
      public String apply(Integer key, String value) {
          return String.format("(%d, %s)", key, value);
@@ -2086,7 +2086,7 @@ void&nbsp;to&#8203;(<a href="../../../../../org/apache/kafka/common/serializatio
  periodic actions can be performed.
  <p>
  In order to assign a state, the state must be created and registered beforehand:
- <pre><code>
+ <pre class="line-numbers"><code>
  // create store
  StoreBuilder&lt;KeyValueStore&lt;String,String&gt;&gt; keyValueStoreBuilder =
          Stores.keyValueStoreBuilder(Stores.persistentKeyValueStore("myTransformState"),
@@ -2102,7 +2102,7 @@ void&nbsp;to&#8203;(<a href="../../../../../org/apache/kafka/common/serializatio
  <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor"><code>ProcessorContext</code></a>.
  To trigger periodic actions via <a href="../../../../../org/apache/kafka/streams/processor/Punctuator.html#punctuate-long-"><code>punctuate()</code></a>, a schedule must be registered.
  The <a href="../../../../../org/apache/kafka/streams/kstream/Transformer.html" title="interface in org.apache.kafka.streams.kstream"><code>Transformer</code></a> must return a <a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a> type in <a href="../../../../../org/apache/kafka/streams/kstream/Transformer.html#transform-K-V-"><code>transform()</code></a> and <a href="../../../../../org/apache/kafka/streams/processor/Punctuator.html#punctuate-long-"><code>punctuate()</code></a>.
- <pre><code>
+ <pre class="line-numbers"><code>
  new TransformerSupplier() {
      Transformer get() {
          return new Transformer() {
@@ -2169,7 +2169,7 @@ void&nbsp;to&#8203;(<a href="../../../../../org/apache/kafka/common/serializatio
  periodic actions get be performed.
  <p>
  In order to assign a state, the state must be created and registered beforehand:
- <pre><code>
+ <pre class="line-numbers"><code>
  // create store
  StoreBuilder&lt;KeyValueStore&lt;String,String&gt;&gt; keyValueStoreBuilder =
          Stores.keyValueStoreBuilder(Stores.persistentKeyValueStore("myValueTransformState"),
@@ -2187,7 +2187,7 @@ void&nbsp;to&#8203;(<a href="../../../../../org/apache/kafka/common/serializatio
  registered.
  In contrast to <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html#transform-org.apache.kafka.streams.kstream.TransformerSupplier-java.lang.String...-"><code>transform()</code></a>, no additional <a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a>
  pairs should be emitted via <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#forward-K-V-"><code>ProcessorContext.forward()</code></a>.
- <pre><code>
+ <pre class="line-numbers"><code>
  new ValueTransformerSupplier() {
      ValueTransformer get() {
          return new ValueTransformer() {
@@ -2247,7 +2247,7 @@ void&nbsp;to&#8203;(<a href="../../../../../org/apache/kafka/common/serializatio
  periodic actions get be performed.
  <p>
  In order to assign a state, the state must be created and registered beforehand:
- <pre><code>
+ <pre class="line-numbers"><code>
  // create store
  StoreBuilder&lt;KeyValueStore&lt;String,String&gt;&gt; keyValueStoreBuilder =
          Stores.keyValueStoreBuilder(Stores.persistentKeyValueStore("myValueTransformState"),
@@ -2265,7 +2265,7 @@ void&nbsp;to&#8203;(<a href="../../../../../org/apache/kafka/common/serializatio
  a schedule must be registered.
  In contrast to <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html#transform-org.apache.kafka.streams.kstream.TransformerSupplier-java.lang.String...-"><code>transform()</code></a>, no additional <a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a>
  pairs should be emitted via <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#forward-K-V-"><code>ProcessorContext.forward()</code></a>.
- <pre><code>
+ <pre class="line-numbers"><code>
  new ValueTransformerWithKeySupplier() {
      ValueTransformerWithKey get() {
          return new ValueTransformerWithKey() {
@@ -2325,7 +2325,7 @@ void&nbsp;to&#8203;(<a href="../../../../../org/apache/kafka/common/serializatio
  Note that this is a terminal operation that returns void.
  <p>
  In order to assign a state, the state must be created and registered beforehand:
- <pre><code>
+ <pre class="line-numbers"><code>
  // create store
  StoreBuilder&lt;KeyValueStore&lt;String,String&gt;&gt; keyValueStoreBuilder =
          Stores.keyValueStoreBuilder(Stores.persistentKeyValueStore("myProcessorState"),
@@ -2341,7 +2341,7 @@ void&nbsp;to&#8203;(<a href="../../../../../org/apache/kafka/common/serializatio
  <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor"><code>ProcessorContext</code></a>.
  To trigger periodic actions via <a href="../../../../../org/apache/kafka/streams/processor/Punctuator.html#punctuate-long-"><code>punctuate()</code></a>,
  a schedule must be registered.
- <pre><code>
+ <pre class="line-numbers"><code>
  new ProcessorSupplier() {
      Processor get() {
          return new Processor() {

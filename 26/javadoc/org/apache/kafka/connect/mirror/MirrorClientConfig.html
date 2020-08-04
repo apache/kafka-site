@@ -113,25 +113,21 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">MirrorClientConfig</span>
-extends <a href="../../../../../org/apache/kafka/common/config/AbstractConfig.html" title="class in org.apache.kafka.common.config">AbstractConfig</a></pre>
+extends <a href="../../../../../org/apache/kafka/common/config/AbstractConfig.html" title="class in org.apache.kafka.common.config">AbstractConfig</a></code></pre>
 <div class="block">Configuration required for MirrorClient to talk to a given target cluster.
   <p>
   Generally, these properties come from an mm2.properties configuration file
   (@see MirrorMakerConfig.clientConfig):
   </p>
-  <pre>
-    MirrorMakerConfig mmConfig = new MirrorMakerConfig(props);
-    MirrorClientConfig mmClientConfig = mmConfig.clientConfig("some-cluster");
-  </pre>
+  <pre class="line-numbers"><code class="language-text">    MirrorMakerConfig mmConfig = new MirrorMakerConfig(props);
+    MirrorClientConfig mmClientConfig = mmConfig.clientConfig("some-cluster");</code></pre>
   <p>
   In addition to the properties defined here, sub-configs are supported for Admin, Consumer, and Producer clients.
   For example:
   </p>
-  <pre>
-      bootstrap.servers = host1:9092
+  <pre class="line-numbers"><code class="language-text">      bootstrap.servers = host1:9092
       consumer.client.id = mm2-client
-      replication.policy.separator = __
-  </pre></div>
+      replication.policy.separator = __</code></pre></div>
 </li>
 </ul>
 </div>
@@ -257,7 +253,7 @@ extends <a href="../../../../../org/apache/kafka/common/config/AbstractConfig.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>REPLICATION_POLICY_CLASS</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> REPLICATION_POLICY_CLASS</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> REPLICATION_POLICY_CLASS</code></pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.apache.kafka.connect.mirror.MirrorClientConfig.REPLICATION_POLICY_CLASS">Constant Field Values</a></dd>
@@ -270,7 +266,7 @@ extends <a href="../../../../../org/apache/kafka/common/config/AbstractConfig.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>REPLICATION_POLICY_CLASS_DEFAULT</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt; REPLICATION_POLICY_CLASS_DEFAULT</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt; REPLICATION_POLICY_CLASS_DEFAULT</code></pre>
 </li>
 </ul>
 <a name="REPLICATION_POLICY_SEPARATOR">
@@ -279,7 +275,7 @@ extends <a href="../../../../../org/apache/kafka/common/config/AbstractConfig.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>REPLICATION_POLICY_SEPARATOR</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> REPLICATION_POLICY_SEPARATOR</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> REPLICATION_POLICY_SEPARATOR</code></pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.apache.kafka.connect.mirror.MirrorClientConfig.REPLICATION_POLICY_SEPARATOR">Constant Field Values</a></dd>
@@ -292,7 +288,7 @@ extends <a href="../../../../../org/apache/kafka/common/config/AbstractConfig.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>REPLICATION_POLICY_SEPARATOR_DEFAULT</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> REPLICATION_POLICY_SEPARATOR_DEFAULT</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> REPLICATION_POLICY_SEPARATOR_DEFAULT</code></pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.apache.kafka.connect.mirror.MirrorClientConfig.REPLICATION_POLICY_SEPARATOR_DEFAULT">Constant Field Values</a></dd>
@@ -305,7 +301,7 @@ extends <a href="../../../../../org/apache/kafka/common/config/AbstractConfig.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>ADMIN_CLIENT_PREFIX</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> ADMIN_CLIENT_PREFIX</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> ADMIN_CLIENT_PREFIX</code></pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.apache.kafka.connect.mirror.MirrorClientConfig.ADMIN_CLIENT_PREFIX">Constant Field Values</a></dd>
@@ -318,7 +314,7 @@ extends <a href="../../../../../org/apache/kafka/common/config/AbstractConfig.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>CONSUMER_CLIENT_PREFIX</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> CONSUMER_CLIENT_PREFIX</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> CONSUMER_CLIENT_PREFIX</code></pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.apache.kafka.connect.mirror.MirrorClientConfig.CONSUMER_CLIENT_PREFIX">Constant Field Values</a></dd>
@@ -331,7 +327,7 @@ extends <a href="../../../../../org/apache/kafka/common/config/AbstractConfig.ht
 <ul class="blockListLast">
 <li class="blockList">
 <h4>PRODUCER_CLIENT_PREFIX</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PRODUCER_CLIENT_PREFIX</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PRODUCER_CLIENT_PREFIX</code></pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.apache.kafka.connect.mirror.MirrorClientConfig.PRODUCER_CLIENT_PREFIX">Constant Field Values</a></dd>
@@ -352,7 +348,7 @@ extends <a href="../../../../../org/apache/kafka/common/config/AbstractConfig.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>replicationPolicy</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/mirror/ReplicationPolicy.html" title="interface in org.apache.kafka.connect.mirror">ReplicationPolicy</a>&nbsp;replicationPolicy()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/connect/mirror/ReplicationPolicy.html" title="interface in org.apache.kafka.connect.mirror">ReplicationPolicy</a>&nbsp;replicationPolicy()</code></pre>
 </li>
 </ul>
 <a name="adminConfig--">
@@ -361,7 +357,7 @@ extends <a href="../../../../../org/apache/kafka/common/config/AbstractConfig.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>adminConfig</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;adminConfig()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;adminConfig()</code></pre>
 <div class="block">Sub-config for Admin clients.</div>
 </li>
 </ul>
@@ -371,7 +367,7 @@ extends <a href="../../../../../org/apache/kafka/common/config/AbstractConfig.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>consumerConfig</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;consumerConfig()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;consumerConfig()</code></pre>
 <div class="block">Sub-config for Consumer clients.</div>
 </li>
 </ul>
@@ -381,7 +377,7 @@ extends <a href="../../../../../org/apache/kafka/common/config/AbstractConfig.ht
 <ul class="blockListLast">
 <li class="blockList">
 <h4>producerConfig</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;producerConfig()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;producerConfig()</code></pre>
 <div class="block">Sub-config for Producer clients.</div>
 </li>
 </ul>

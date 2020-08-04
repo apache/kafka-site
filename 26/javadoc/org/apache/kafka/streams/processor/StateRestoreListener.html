@@ -99,7 +99,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">StateRestoreListener</span></pre>
+<pre>public interface <span class="typeNameLabel">StateRestoreListener</span></code></pre>
 <div class="block">Class for listening to various states of the restoration process of a StateStore.
 
  When calling <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#setGlobalStateRestoreListener-org.apache.kafka.streams.processor.StateRestoreListener-"><code>KafkaStreams.setGlobalStateRestoreListener(StateRestoreListener)</code></a>
@@ -185,7 +185,7 @@ var activeTableTab = "activeTableTab";
 <pre>void&nbsp;onRestoreStart(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;topicPartition,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;storeName,
                     long&nbsp;startingOffset,
-                    long&nbsp;endingOffset)</pre>
+                    long&nbsp;endingOffset)</code></pre>
 <div class="block">Method called at the very beginning of <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> restoration.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -205,7 +205,7 @@ var activeTableTab = "activeTableTab";
 <pre>void&nbsp;onBatchRestored(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;topicPartition,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;storeName,
                      long&nbsp;batchEndOffset,
-                     long&nbsp;numRestored)</pre>
+                     long&nbsp;numRestored)</code></pre>
 <div class="block">Method called after restoring a batch of records.  In this case the maximum size of the batch is whatever
  the value of the MAX_POLL_RECORDS is set to.
 
@@ -231,7 +231,7 @@ var activeTableTab = "activeTableTab";
 <h4>onRestoreEnd</h4>
 <pre>void&nbsp;onRestoreEnd(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;topicPartition,
                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;storeName,
-                  long&nbsp;totalRestored)</pre>
+                  long&nbsp;totalRestored)</code></pre>
 <div class="block">Method called when restoring the <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> is complete.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

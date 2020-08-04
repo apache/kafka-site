@@ -105,7 +105,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">ValueTransformerWithKey&lt;K,V,VR&gt;</span></pre>
+<pre>public interface <span class="typeNameLabel">ValueTransformerWithKey&lt;K,V,VR&gt;</span></code></pre>
 <div class="block">The <code>ValueTransformerWithKey</code> interface for stateful mapping of a value to a new value (with possible new type).
  This is a stateful record-by-record operation, i.e, <a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKey.html#transform-K-V-"><code>transform(Object, Object)</code></a> is invoked individually for each
  record of a stream and can access and modify a state that is available beyond a single call of
@@ -186,7 +186,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>init</h4>
-<pre>void&nbsp;init(<a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor">ProcessorContext</a>&nbsp;context)</pre>
+<pre>void&nbsp;init(<a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor">ProcessorContext</a>&nbsp;context)</code></pre>
 <div class="block">Initialize this transformer.
  This is called once per instance when the topology gets initialized.
  <p>
@@ -218,7 +218,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>transform</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKey.html" title="type parameter in ValueTransformerWithKey">VR</a>&nbsp;transform(<a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKey.html" title="type parameter in ValueTransformerWithKey">K</a>&nbsp;readOnlyKey,
-             <a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKey.html" title="type parameter in ValueTransformerWithKey">V</a>&nbsp;value)</pre>
+             <a href="../../../../../org/apache/kafka/streams/kstream/ValueTransformerWithKey.html" title="type parameter in ValueTransformerWithKey">V</a>&nbsp;value)</code></pre>
 <div class="block">Transform the given [key and ]value to a new value.
  Additionally, any <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> that is <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html#transformValues-org.apache.kafka.streams.kstream.ValueTransformerWithKeySupplier-java.lang.String...-"><code>attached</code></a> to this operator can be accessed and modified arbitrarily (cf.
  <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html#getStateStore-java.lang.String-"><code>ProcessorContext.getStateStore(String)</code></a>).
@@ -241,7 +241,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>close</h4>
-<pre>void&nbsp;close()</pre>
+<pre>void&nbsp;close()</code></pre>
 <div class="block">Close this processor and clean up any resources.
  <p>
  It is not possible to return any new output records within <code>close()</code>.

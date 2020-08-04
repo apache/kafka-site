@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">LogAndSkipOnInvalidTimestamp</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">Retrieves embedded metadata timestamps from Kafka messages.
  If a record has a negative (invalid) timestamp value the timestamp is returned as-is;
  in addition, a WARN message is logged in your application.
@@ -217,7 +217,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LogAndSkipOnInvalidTimestamp</h4>
-<pre>public&nbsp;LogAndSkipOnInvalidTimestamp()</pre>
+<pre>public&nbsp;LogAndSkipOnInvalidTimestamp()</code></pre>
 </li>
 </ul>
 </li>
@@ -236,7 +236,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>onInvalidTimestamp</h4>
 <pre>public&nbsp;long&nbsp;onInvalidTimestamp(<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;record,
                                long&nbsp;recordTimestamp,
-                               long&nbsp;partitionTime)</pre>
+                               long&nbsp;partitionTime)</code></pre>
 <div class="block">Writes a log WARN message when the extracted timestamp is invalid (negative) but returns the invalid timestamp as-is,
  which ultimately causes the record to be skipped and not to be processed.</div>
 <dl>
@@ -256,7 +256,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>extract</h4>
 <pre>public&nbsp;long&nbsp;extract(<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;record,
-                    long&nbsp;partitionTime)</pre>
+                    long&nbsp;partitionTime)</code></pre>
 <div class="block">Extracts the embedded metadata timestamp from the given <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer"><code>ConsumerRecord</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>

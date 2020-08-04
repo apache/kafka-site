@@ -139,7 +139,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.
  For example, the following code fragment creates a configuration that specifies a local Kafka broker list (which is
  needed but not used), a timestamp extractor, and default serializers and deserializers for string keys and values:
 
- <pre><code>
+ <pre class="line-numbers"><code>
  Properties props = new Properties();
  props.setProperty(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9091");
  props.setProperty(StreamsConfig.DEFAULT_TIMESTAMP_EXTRACTOR_CLASS_CONFIG, CustomTimestampExtractor.class.getName());
@@ -155,7 +155,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.
  This test driver simulates single-partitioned input topics.
  Here's an example of an input message on the topic named <code>input-topic</code>:
 
- <pre><code>
+ <pre class="line-numbers"><code>
  TestInputTopic&lt;String, String&gt; inputTopic = driver.createInputTopic("input-topic", stringSerdeSerializer, stringSerializer);
  inputTopic.pipeInput("key1", "value1");
  </code></pre>
@@ -168,7 +168,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.
  <code>output-topic-2</code>, then our test can obtain these messages using the
  <a href="../../../../org/apache/kafka/streams/TestOutputTopic.html#readKeyValue--"><code>TestOutputTopic.readKeyValue()</code></a>  method:
 
- <pre><code>
+ <pre class="line-numbers"><code>
  TestOutputTopic&lt;String, String&gt; outputTopic1 = driver.createOutputTopic("output-topic-1", stringDeserializer, stringDeserializer);
  TestOutputTopic&lt;String, String&gt; outputTopic2 = driver.createOutputTopic("output-topic-2", stringDeserializer, stringDeserializer);
 

@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">SessionBytesStoreSupplier</span>
-extends <a href="../../../../../org/apache/kafka/streams/state/StoreSupplier.html" title="interface in org.apache.kafka.streams.state">StoreSupplier</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;</pre>
+extends <a href="../../../../../org/apache/kafka/streams/state/StoreSupplier.html" title="interface in org.apache.kafka.streams.state">StoreSupplier</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;</code></pre>
 <div class="block">A store supplier that can be used to create one or more <a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state"><code>SessionStore&lt;Byte, byte[]&gt;</code></a> instances.
 
  For any stores implementing the <a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state"><code>SessionStore&lt;Byte, byte[]&gt;</code></a> interface, <code>null</code> value
@@ -171,7 +171,7 @@ extends <a href="../../../../../org/apache/kafka/streams/state/StoreSupplier.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>segmentIntervalMs</h4>
-<pre>long&nbsp;segmentIntervalMs()</pre>
+<pre>long&nbsp;segmentIntervalMs()</code></pre>
 <div class="block">The size of a segment, in milliseconds. Used when caching is enabled to segment the cache
  and reduce the amount of data that needs to be scanned when performing range queries.</div>
 <dl>
@@ -186,7 +186,7 @@ extends <a href="../../../../../org/apache/kafka/streams/state/StoreSupplier.htm
 <ul class="blockListLast">
 <li class="blockList">
 <h4>retentionPeriod</h4>
-<pre>long&nbsp;retentionPeriod()</pre>
+<pre>long&nbsp;retentionPeriod()</code></pre>
 <div class="block">The time period for which the <a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state"><code>SessionStore</code></a> will retain historic data.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>

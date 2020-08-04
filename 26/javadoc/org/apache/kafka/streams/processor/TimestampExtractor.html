@@ -103,7 +103,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">TimestampExtractor</span></pre>
+<pre>public interface <span class="typeNameLabel">TimestampExtractor</span></code></pre>
 <div class="block">An interface that allows the Kafka Streams framework to extract a timestamp from an instance of <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer"><code>ConsumerRecord</code></a>.
  The extracted timestamp is defined as milliseconds.</div>
 </li>
@@ -153,7 +153,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>extract</h4>
 <pre>long&nbsp;extract(<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;record,
-             long&nbsp;partitionTime)</pre>
+             long&nbsp;partitionTime)</code></pre>
 <div class="block">Extracts a timestamp from a record. The timestamp must be positive to be considered a valid timestamp.
  Returning a negative timestamp will cause the record not to be processed but rather silently skipped.
  In case the record contains a negative timestamp and this is considered a fatal error for the application,

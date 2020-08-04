@@ -109,7 +109,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre><a href="../../../../../org/apache/kafka/common/annotation/InterfaceStability.Evolving.html" title="annotation in org.apache.kafka.common.annotation">@InterfaceStability.Evolving</a>
 public class <span class="typeNameLabel">AclBinding</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">Represents a binding between a resource pattern and an access control entry.
 
  The API for this class is still evolving and we may break compatibility in minor releases, if necessary.</div>
@@ -218,7 +218,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>AclBinding</h4>
 <pre>public&nbsp;AclBinding(<a href="../../../../../org/apache/kafka/common/resource/ResourcePattern.html" title="class in org.apache.kafka.common.resource">ResourcePattern</a>&nbsp;pattern,
-                  <a href="../../../../../org/apache/kafka/common/acl/AccessControlEntry.html" title="class in org.apache.kafka.common.acl">AccessControlEntry</a>&nbsp;entry)</pre>
+                  <a href="../../../../../org/apache/kafka/common/acl/AccessControlEntry.html" title="class in org.apache.kafka.common.acl">AccessControlEntry</a>&nbsp;entry)</code></pre>
 <div class="block">Create an instance of this class with the provided parameters.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -235,7 +235,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>AclBinding</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;AclBinding(<a href="../../../../../org/apache/kafka/common/resource/Resource.html" title="class in org.apache.kafka.common.resource">Resource</a>&nbsp;resource,
-                              <a href="../../../../../org/apache/kafka/common/acl/AccessControlEntry.html" title="class in org.apache.kafka.common.acl">AccessControlEntry</a>&nbsp;entry)</pre>
+                              <a href="../../../../../org/apache/kafka/common/acl/AccessControlEntry.html" title="class in org.apache.kafka.common.acl">AccessControlEntry</a>&nbsp;entry)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.0. Use <a href="../../../../../org/apache/kafka/common/acl/AclBinding.html#AclBinding-org.apache.kafka.common.resource.ResourcePattern-org.apache.kafka.common.acl.AccessControlEntry-"><code>AclBinding(ResourcePattern, AccessControlEntry)</code></a></span></div>
 <div class="block">Create an instance of this class with the provided parameters.</div>
 <dl>
@@ -259,7 +259,7 @@ public&nbsp;AclBinding(<a href="../../../../../org/apache/kafka/common/resource/
 <ul class="blockList">
 <li class="blockList">
 <h4>isUnknown</h4>
-<pre>public&nbsp;boolean&nbsp;isUnknown()</pre>
+<pre>public&nbsp;boolean&nbsp;isUnknown()</code></pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if this binding has any UNKNOWN components.</dd>
@@ -272,7 +272,7 @@ public&nbsp;AclBinding(<a href="../../../../../org/apache/kafka/common/resource/
 <ul class="blockList">
 <li class="blockList">
 <h4>pattern</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/resource/ResourcePattern.html" title="class in org.apache.kafka.common.resource">ResourcePattern</a>&nbsp;pattern()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/resource/ResourcePattern.html" title="class in org.apache.kafka.common.resource">ResourcePattern</a>&nbsp;pattern()</code></pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the resource pattern for this binding.</dd>
@@ -285,7 +285,7 @@ public&nbsp;AclBinding(<a href="../../../../../org/apache/kafka/common/resource/
 <ul class="blockList">
 <li class="blockList">
 <h4>entry</h4>
-<pre>public final&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AccessControlEntry.html" title="class in org.apache.kafka.common.acl">AccessControlEntry</a>&nbsp;entry()</pre>
+<pre>public final&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AccessControlEntry.html" title="class in org.apache.kafka.common.acl">AccessControlEntry</a>&nbsp;entry()</code></pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the access control entry for this binding.</dd>
@@ -298,7 +298,7 @@ public&nbsp;AclBinding(<a href="../../../../../org/apache/kafka/common/resource/
 <ul class="blockList">
 <li class="blockList">
 <h4>toFilter</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclBindingFilter.html" title="class in org.apache.kafka.common.acl">AclBindingFilter</a>&nbsp;toFilter()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/acl/AclBindingFilter.html" title="class in org.apache.kafka.common.acl">AclBindingFilter</a>&nbsp;toFilter()</code></pre>
 <div class="block">Create a filter which matches only this AclBinding.</div>
 </li>
 </ul>
@@ -308,7 +308,7 @@ public&nbsp;AclBinding(<a href="../../../../../org/apache/kafka/common/resource/
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -321,7 +321,7 @@ public&nbsp;AclBinding(<a href="../../../../../org/apache/kafka/common/resource/
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -334,7 +334,7 @@ public&nbsp;AclBinding(<a href="../../../../../org/apache/kafka/common/resource/
 <ul class="blockListLast">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>

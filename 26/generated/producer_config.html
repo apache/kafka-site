@@ -20,7 +20,7 @@
 </tbody></table>
 </li>
 <li>
-<h4><a id="acks" href="#acks">acks</a></h4>
+<h4 class="anchor-heading"><a id="acks" class="anchor-link"></a><a href="#acks">acks</a></h4>
 <p>The number of acknowledgments the producer requires the leader to have received before considering a request complete. This controls the  durability of records that are sent. The following settings are allowed:  <ul> <li><code>acks=0</code> If set to zero then the producer will not wait for any acknowledgment from the server at all. The record will be immediately added to the socket buffer and considered sent. No guarantee can be made that the server has received the record in this case, and the <code>retries</code> configuration will not take effect (as the client won't generally know of any failures). The offset given back for each record will always be set to <code>-1</code>. <li><code>acks=1</code> This will mean the leader will write the record to its local log but will respond without awaiting full acknowledgement from all followers. In this case should the leader fail immediately after acknowledging the record but before the followers have replicated it then the record will be lost. <li><code>acks=all</code> This means the leader will wait for the full set of in-sync replicas to acknowledge the record. This guarantees that the record will not be lost as long as at least one in-sync replica remains alive. This is the strongest available guarantee. This is equivalent to the acks=-1 setting.</ul></p>
 <table><tbody>
 <tr><th>Type:</th><td>string</td></tr>
@@ -60,7 +60,7 @@
 </tbody></table>
 </li>
 <li>
-<h4><a id="retries" href="#retries">retries</a></h4>
+<h4 class="anchor-heading"><a id="retries" class="anchor-link"></a><a href="#retries">retries</a></h4>
 <p>Setting a value greater than zero will cause the client to resend any record whose send fails with a potentially transient error. Note that this retry is no different than if the client resent the record upon receiving the error. Allowing retries without setting <code>max.in.flight.requests.per.connection</code> to 1 will potentially change the ordering of records because if two batches are sent to a single partition, and the first fails and is retried but the second succeeds, then the records in the second batch may appear first. Note additionally that produce requests will be failed before the number of retries has been exhausted if the timeout configured by <code>delivery.timeout.ms</code> expires first before successful acknowledgement. Users should generally prefer to leave this config unset and instead use <code>delivery.timeout.ms</code> to control retry behavior.</p>
 <table><tbody>
 <tr><th>Type:</th><td>int</td></tr>

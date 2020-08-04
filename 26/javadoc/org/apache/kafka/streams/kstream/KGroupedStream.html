@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">KGroupedStream&lt;K,V&gt;</span></pre>
+<pre>public interface <span class="typeNameLabel">KGroupedStream&lt;K,V&gt;</span></code></pre>
 <div class="block"><code>KGroupedStream</code> is an abstraction of a <i>grouped</i> record stream of <a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a> pairs.
  It is an intermediate representation of a <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a> in order to apply an aggregation operation on the original
  <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a> records.
@@ -246,7 +246,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>count</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;count()</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;count()</code></pre>
 <div class="block">Count the number of records in this stream by the grouped key.
  Records with <code>null</code> key or value are ignored.
  The result is written into a local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> (which is basically an ever-updating materialized view).
@@ -280,7 +280,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>count</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;count(<a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;count(<a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named)</code></pre>
 <div class="block">Count the number of records in this stream by the grouped key.
  Records with <code>null</code> key or value are ignored.
  The result is written into a local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> (which is basically an ever-updating materialized view).
@@ -316,7 +316,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>count</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;count(<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;count(<a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Count the number of records in this stream by the grouped key.
  Records with <code>null</code> key or value are ignored.
  The result is written into a local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> (which is basically an ever-updating materialized view)
@@ -338,7 +338,7 @@ var activeTableTab = "activeTableTab";
  ReadOnlyKeyValueStore&lt;K, ValueAndTimestamp&lt;Long&gt;&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;K, ValueAndTimestamp&lt;Long&gt;&gt;timestampedKeyValueStore());
  K key = "some-word";
  ValueAndTimestamp&lt;Long&gt; countForWord = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.
 
@@ -370,7 +370,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>count</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;count(<a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                     <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                     <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Count the number of records in this stream by the grouped key.
  Records with <code>null</code> key or value are ignored.
  The result is written into a local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> (which is basically an ever-updating materialized view)
@@ -392,7 +392,7 @@ var activeTableTab = "activeTableTab";
  ReadOnlyKeyValueStore&lt;K, ValueAndTimestamp&lt;Long&gt;&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;K, ValueAndTimestamp&lt;Long&gt;&gt;timestampedKeyValueStore());
  K key = "some-word";
  ValueAndTimestamp&lt;Long&gt; countForWord = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.
 
@@ -424,7 +424,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>reduce</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>&gt;&nbsp;reduce(<a href="../../../../../org/apache/kafka/streams/kstream/Reducer.html" title="interface in org.apache.kafka.streams.kstream">Reducer</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>&gt;&nbsp;reducer)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>&gt;&nbsp;reduce(<a href="../../../../../org/apache/kafka/streams/kstream/Reducer.html" title="interface in org.apache.kafka.streams.kstream">Reducer</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>&gt;&nbsp;reducer)</code></pre>
 <div class="block">Combine the values of records in this stream by the grouped key.
  Records with <code>null</code> key or value are ignored.
  Combining implies that the type of the aggregate result is the same as the type of the input value
@@ -470,7 +470,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>reduce</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>&gt;&nbsp;reduce(<a href="../../../../../org/apache/kafka/streams/kstream/Reducer.html" title="interface in org.apache.kafka.streams.kstream">Reducer</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>&gt;&nbsp;reducer,
-                   <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                   <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Combine the value of records in this stream by the grouped key.
  Records with <code>null</code> key or value are ignored.
  Combining implies that the type of the aggregate result is the same as the type of the input value
@@ -488,7 +488,7 @@ var activeTableTab = "activeTableTab";
      return aggValue + currValue;
    }
  }
- </code></pre>
+ </code></code></pre>
  <p>
  If there is no current aggregate the <a href="../../../../../org/apache/kafka/streams/kstream/Reducer.html" title="interface in org.apache.kafka.streams.kstream"><code>Reducer</code></a> is not applied and the new aggregate will be the record's
  value as-is.
@@ -510,7 +510,7 @@ var activeTableTab = "activeTableTab";
  ReadOnlyKeyValueStore&lt;K, ValueAndTimestamp&lt;V&gt;&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;K, ValueAndTimestamp&lt;V&gt;&gt;timestampedKeyValueStore());
  K key = "some-key";
  ValueAndTimestamp&lt;V&gt; reduceForKey = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.
 
@@ -541,7 +541,7 @@ var activeTableTab = "activeTableTab";
 <h4>reduce</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>&gt;&nbsp;reduce(<a href="../../../../../org/apache/kafka/streams/kstream/Reducer.html" title="interface in org.apache.kafka.streams.kstream">Reducer</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>&gt;&nbsp;reducer,
                    <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                   <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                   <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Combine the value of records in this stream by the grouped key.
  Records with <code>null</code> key or value are ignored.
  Combining implies that the type of the aggregate result is the same as the type of the input value
@@ -559,7 +559,7 @@ var activeTableTab = "activeTableTab";
      return aggValue + currValue;
    }
  }
- </code></pre>
+ </code></code></pre>
  <p>
  If there is no current aggregate the <a href="../../../../../org/apache/kafka/streams/kstream/Reducer.html" title="interface in org.apache.kafka.streams.kstream"><code>Reducer</code></a> is not applied and the new aggregate will be the record's
  value as-is.
@@ -581,7 +581,7 @@ var activeTableTab = "activeTableTab";
  ReadOnlyKeyValueStore&lt;K, ValueAndTimestamp&lt;V&gt;&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;K, ValueAndTimestamp&lt;V&gt;&gt;timestampedKeyValueStore());
  K key = "some-key";
  ValueAndTimestamp&lt;V&gt; reduceForKey = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.
 
@@ -614,7 +614,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>aggregate</h4>
 <pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,VR&gt;&nbsp;aggregate(<a href="../../../../../org/apache/kafka/streams/kstream/Initializer.html" title="interface in org.apache.kafka.streams.kstream">Initializer</a>&lt;VR&gt;&nbsp;initializer,
-                            <a href="../../../../../org/apache/kafka/streams/kstream/Aggregator.html" title="interface in org.apache.kafka.streams.kstream">Aggregator</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>,VR&gt;&nbsp;aggregator)</pre>
+                            <a href="../../../../../org/apache/kafka/streams/kstream/Aggregator.html" title="interface in org.apache.kafka.streams.kstream">Aggregator</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>,VR&gt;&nbsp;aggregator)</code></pre>
 <div class="block">Aggregate the values of records in this stream by the grouped key.
  Records with <code>null</code> key or value are ignored.
  Aggregating is a generalization of <a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html#reduce-org.apache.kafka.streams.kstream.Reducer-"><code>combining via reduce(...)</code></a> as it, for example,
@@ -669,7 +669,7 @@ var activeTableTab = "activeTableTab";
 <h4>aggregate</h4>
 <pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,VR&gt;&nbsp;aggregate(<a href="../../../../../org/apache/kafka/streams/kstream/Initializer.html" title="interface in org.apache.kafka.streams.kstream">Initializer</a>&lt;VR&gt;&nbsp;initializer,
                             <a href="../../../../../org/apache/kafka/streams/kstream/Aggregator.html" title="interface in org.apache.kafka.streams.kstream">Aggregator</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>,VR&gt;&nbsp;aggregator,
-                            <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                            <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Aggregate the values of records in this stream by the grouped key.
  Records with <code>null</code> key or value are ignored.
  Aggregating is a generalization of <a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html#reduce-org.apache.kafka.streams.kstream.Reducer-"><code>combining via reduce(...)</code></a> as it, for example,
@@ -701,7 +701,7 @@ var activeTableTab = "activeTableTab";
  ReadOnlyKeyValueStore&lt;K, ValueAndTimestamp&lt;VR&gt;&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;K, ValueAndTimestamp&lt;VR&gt;&gt;timestampedKeyValueStore());
  K key = "some-key";
  ValueAndTimestamp&lt;VR&gt; aggForKey = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.
 
@@ -737,7 +737,7 @@ var activeTableTab = "activeTableTab";
 <pre>&lt;VR&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream">KTable</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,VR&gt;&nbsp;aggregate(<a href="../../../../../org/apache/kafka/streams/kstream/Initializer.html" title="interface in org.apache.kafka.streams.kstream">Initializer</a>&lt;VR&gt;&nbsp;initializer,
                             <a href="../../../../../org/apache/kafka/streams/kstream/Aggregator.html" title="interface in org.apache.kafka.streams.kstream">Aggregator</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>,VR&gt;&nbsp;aggregator,
                             <a href="../../../../../org/apache/kafka/streams/kstream/Named.html" title="class in org.apache.kafka.streams.kstream">Named</a>&nbsp;named,
-                            <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</pre>
+                            <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream">Materialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,VR,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;org.apache.kafka.common.utils.Bytes,byte[]&gt;&gt;&nbsp;materialized)</code></pre>
 <div class="block">Aggregate the values of records in this stream by the grouped key.
  Records with <code>null</code> key or value are ignored.
  Aggregating is a generalization of <a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html#reduce-org.apache.kafka.streams.kstream.Reducer-"><code>combining via reduce(...)</code></a> as it, for example,
@@ -769,7 +769,7 @@ var activeTableTab = "activeTableTab";
  ReadOnlyKeyValueStore&lt;K, ValueAndTimestamp&lt;VR&gt;&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, ValueAndTimestamp&lt;VR&gt;&gt;timestampedKeyValueStore());
  K key = "some-key";
  ValueAndTimestamp&lt;VR&gt; aggForKey = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
- </code></pre>
+ </code></code></pre>
  For non-local keys, a custom RPC mechanism must be implemented using <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#allMetadata--"><code>KafkaStreams.allMetadata()</code></a> to
  query the value of the key on a parallel running instance of your Kafka Streams application.
 
@@ -805,7 +805,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>windowedBy</h4>
-<pre>&lt;W extends <a href="../../../../../org/apache/kafka/streams/kstream/Window.html" title="class in org.apache.kafka.streams.kstream">Window</a>&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindowedKStream.html" title="interface in org.apache.kafka.streams.kstream">TimeWindowedKStream</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>&gt;&nbsp;windowedBy(<a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" title="class in org.apache.kafka.streams.kstream">Windows</a>&lt;W&gt;&nbsp;windows)</pre>
+<pre>&lt;W extends <a href="../../../../../org/apache/kafka/streams/kstream/Window.html" title="class in org.apache.kafka.streams.kstream">Window</a>&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/TimeWindowedKStream.html" title="interface in org.apache.kafka.streams.kstream">TimeWindowedKStream</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>&gt;&nbsp;windowedBy(<a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" title="class in org.apache.kafka.streams.kstream">Windows</a>&lt;W&gt;&nbsp;windows)</code></pre>
 <div class="block">Create a new <a href="../../../../../org/apache/kafka/streams/kstream/TimeWindowedKStream.html" title="interface in org.apache.kafka.streams.kstream"><code>TimeWindowedKStream</code></a> instance that can be used to perform windowed aggregations.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -823,7 +823,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>windowedBy</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="interface in org.apache.kafka.streams.kstream">SessionWindowedKStream</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>&gt;&nbsp;windowedBy(<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindows.html" title="class in org.apache.kafka.streams.kstream">SessionWindows</a>&nbsp;windows)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="interface in org.apache.kafka.streams.kstream">SessionWindowedKStream</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>&gt;&nbsp;windowedBy(<a href="../../../../../org/apache/kafka/streams/kstream/SessionWindows.html" title="class in org.apache.kafka.streams.kstream">SessionWindows</a>&nbsp;windows)</code></pre>
 <div class="block">Create a new <a href="../../../../../org/apache/kafka/streams/kstream/SessionWindowedKStream.html" title="interface in org.apache.kafka.streams.kstream"><code>SessionWindowedKStream</code></a> instance that can be used to perform session windowed aggregations.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -839,7 +839,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>cogroup</h4>
-<pre>&lt;Vout&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/CogroupedKStream.html" title="interface in org.apache.kafka.streams.kstream">CogroupedKStream</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,Vout&gt;&nbsp;cogroup(<a href="../../../../../org/apache/kafka/streams/kstream/Aggregator.html" title="interface in org.apache.kafka.streams.kstream">Aggregator</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>,Vout&gt;&nbsp;aggregator)</pre>
+<pre>&lt;Vout&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/CogroupedKStream.html" title="interface in org.apache.kafka.streams.kstream">CogroupedKStream</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,Vout&gt;&nbsp;cogroup(<a href="../../../../../org/apache/kafka/streams/kstream/Aggregator.html" title="interface in org.apache.kafka.streams.kstream">Aggregator</a>&lt;? super <a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">K</a>,? super <a href="../../../../../org/apache/kafka/streams/kstream/KGroupedStream.html" title="type parameter in KGroupedStream">V</a>,Vout&gt;&nbsp;aggregator)</code></pre>
 <div class="block">Create a new <a href="../../../../../org/apache/kafka/streams/kstream/CogroupedKStream.html" title="interface in org.apache.kafka.streams.kstream"><code>CogroupedKStream</code></a> from the this grouped KStream to allow cogrouping other
  <code>KGroupedStream</code> to it.
  <a href="../../../../../org/apache/kafka/streams/kstream/CogroupedKStream.html" title="interface in org.apache.kafka.streams.kstream"><code>CogroupedKStream</code></a> is an abstraction of multiple <i>grouped</i> record streams of <a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a> pairs.

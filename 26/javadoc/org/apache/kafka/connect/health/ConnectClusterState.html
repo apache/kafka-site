@@ -99,7 +99,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">ConnectClusterState</span></pre>
+<pre>public interface <span class="typeNameLabel">ConnectClusterState</span></code></pre>
 <div class="block">Provides the ability to lookup connector metadata, including status and configurations, as well
  as immutable cluster information such as Kafka cluster ID. This is made available to
  <a href="../../../../../org/apache/kafka/connect/rest/ConnectRestExtension.html" title="interface in org.apache.kafka.connect.rest"><code>ConnectRestExtension</code></a> implementations. The Connect framework
@@ -167,7 +167,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>connectors</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;connectors()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;connectors()</code></pre>
 <div class="block">Get the names of the connectors currently deployed in this cluster. This is a full list of connectors in the cluster gathered from
  the current configuration, which may change over time.</div>
 <dl>
@@ -182,7 +182,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>connectorHealth</h4>
-<pre><a href="../../../../../org/apache/kafka/connect/health/ConnectorHealth.html" title="class in org.apache.kafka.connect.health">ConnectorHealth</a>&nbsp;connectorHealth(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;connName)</pre>
+<pre><a href="../../../../../org/apache/kafka/connect/health/ConnectorHealth.html" title="class in org.apache.kafka.connect.health">ConnectorHealth</a>&nbsp;connectorHealth(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;connName)</code></pre>
 <div class="block">Lookup the current health of a connector and its tasks. This provides the current snapshot of health by querying the underlying
  herder. A connector returned by previous invocation of <a href="../../../../../org/apache/kafka/connect/health/ConnectClusterState.html#connectors--"><code>connectors()</code></a> may no longer be available and could result in <a href="../../../../../org/apache/kafka/connect/errors/NotFoundException.html" title="class in org.apache.kafka.connect.errors"><code>NotFoundException</code></a>.</div>
 <dl>
@@ -201,7 +201,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>connectorConfig</h4>
-<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;connectorConfig(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;connName)</pre>
+<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;connectorConfig(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;connName)</code></pre>
 <div class="block">Lookup the current configuration of a connector. This provides the current snapshot of configuration by querying the underlying
  herder. A connector returned by previous invocation of <a href="../../../../../org/apache/kafka/connect/health/ConnectClusterState.html#connectors--"><code>connectors()</code></a> may no longer be available and could result in <a href="../../../../../org/apache/kafka/connect/errors/NotFoundException.html" title="class in org.apache.kafka.connect.errors"><code>NotFoundException</code></a>.</div>
 <dl>
@@ -221,7 +221,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>clusterDetails</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/connect/health/ConnectClusterDetails.html" title="interface in org.apache.kafka.connect.health">ConnectClusterDetails</a>&nbsp;clusterDetails()</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/connect/health/ConnectClusterDetails.html" title="interface in org.apache.kafka.connect.health">ConnectClusterDetails</a>&nbsp;clusterDetails()</code></pre>
 <div class="block">Get details about the setup of the Connect cluster.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>

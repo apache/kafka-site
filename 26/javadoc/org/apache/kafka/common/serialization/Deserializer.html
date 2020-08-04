@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">Deserializer&lt;T&gt;</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></code></pre>
 <div class="block">An interface for converting bytes to objects.
 
  A class that implements this interface is expected to have a constructor with no parameters.
@@ -190,7 +190,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <li class="blockList">
 <h4>configure</h4>
 <pre>default&nbsp;void&nbsp;configure(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;configs,
-                       boolean&nbsp;isKey)</pre>
+                       boolean&nbsp;isKey)</code></pre>
 <div class="block">Configure this class.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -206,7 +206,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <li class="blockList">
 <h4>deserialize</h4>
 <pre><a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="type parameter in Deserializer">T</a>&nbsp;deserialize(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
-              byte[]&nbsp;data)</pre>
+              byte[]&nbsp;data)</code></pre>
 <div class="block">Deserialize a record value from a byte array into a value or object.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -225,7 +225,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <h4>deserialize</h4>
 <pre>default&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="type parameter in Deserializer">T</a>&nbsp;deserialize(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
                       <a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;headers,
-                      byte[]&nbsp;data)</pre>
+                      byte[]&nbsp;data)</code></pre>
 <div class="block">Deserialize a record value from a byte array into a value or object.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -243,7 +243,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <ul class="blockListLast">
 <li class="blockList">
 <h4>close</h4>
-<pre>default&nbsp;void&nbsp;close()</pre>
+<pre>default&nbsp;void&nbsp;close()</code></pre>
 <div class="block">Close this deserializer.
  <p>
  This method must be idempotent as it may be called multiple times.</div>

@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">Reconfigurable</span>
-extends <a href="../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a></pre>
+extends <a href="../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a></code></pre>
 <div class="block">Interface for reconfigurable classes that support dynamic configuration.</div>
 </li>
 </ul>
@@ -170,7 +170,7 @@ extends <a href="../../../../org/apache/kafka/common/Configurable.html" title="i
 <ul class="blockList">
 <li class="blockList">
 <h4>reconfigurableConfigs</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;reconfigurableConfigs()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;reconfigurableConfigs()</code></pre>
 <div class="block">Returns the names of configs that may be reconfigured.</div>
 </li>
 </ul>
@@ -181,7 +181,7 @@ extends <a href="../../../../org/apache/kafka/common/Configurable.html" title="i
 <li class="blockList">
 <h4>validateReconfiguration</h4>
 <pre>void&nbsp;validateReconfiguration(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;configs)
-                      throws <a href="../../../../org/apache/kafka/common/config/ConfigException.html" title="class in org.apache.kafka.common.config">ConfigException</a></pre>
+                      throws <a href="../../../../org/apache/kafka/common/config/ConfigException.html" title="class in org.apache.kafka.common.config">ConfigException</a></code></pre>
 <div class="block">Validates the provided configuration. The provided map contains
  all configs including any reconfigurable configs that may be different
  from the initial configuration. Reconfiguration will be not performed
@@ -200,7 +200,7 @@ extends <a href="../../../../org/apache/kafka/common/Configurable.html" title="i
 <ul class="blockListLast">
 <li class="blockList">
 <h4>reconfigure</h4>
-<pre>void&nbsp;reconfigure(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;configs)</pre>
+<pre>void&nbsp;reconfigure(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;configs)</code></pre>
 <div class="block">Reconfigures this instance with the given key-value pairs. The provided
  map contains all configs including any reconfigurable configs that
  may have changed since the object was initially configured using

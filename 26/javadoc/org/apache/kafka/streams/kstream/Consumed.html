@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">Consumed&lt;K,V&gt;</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">The <code>Consumed</code> class is used to define the optional parameters when using <a href="../../../../../org/apache/kafka/streams/StreamsBuilder.html" title="class in org.apache.kafka.streams"><code>StreamsBuilder</code></a> to
  build instances of <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a>, <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream"><code>KTable</code></a>, and <a href="../../../../../org/apache/kafka/streams/kstream/GlobalKTable.html" title="interface in org.apache.kafka.streams.kstream"><code>GlobalKTable</code></a>.
  <p>
@@ -125,7 +125,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
    "topicName",
    Consumed.with(Serdes.String(), Serdes.Long())
            .withTimestampExtractor(new LogAndSkipOnInvalidTimestamp()));
- </code></pre>
+ </code></code></pre>
  Similarly, you can read a topic as <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream"><code>KTable</code></a> with a custom <code>auto.offset.reset</code> configuration and force a
  state store <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>materialization</code></a> to access the content via
  interactive queries:
@@ -135,7 +135,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
    "topicName",
    Consumed.with(AutoOffsetReset.LATEST),
    Materialized.as("queryable-store-name"));
- </code></pre></div>
+ </code></code></pre></div>
 </li>
 </ul>
 </div>
@@ -310,7 +310,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>keySerde</h4>
-<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">K</a>&gt; keySerde</pre>
+<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">K</a>&gt; keySerde</code></pre>
 </li>
 </ul>
 <a name="valueSerde">
@@ -319,7 +319,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>valueSerde</h4>
-<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">V</a>&gt; valueSerde</pre>
+<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">V</a>&gt; valueSerde</code></pre>
 </li>
 </ul>
 <a name="timestampExtractor">
@@ -328,7 +328,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>timestampExtractor</h4>
-<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor">TimestampExtractor</a> timestampExtractor</pre>
+<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor">TimestampExtractor</a> timestampExtractor</code></pre>
 </li>
 </ul>
 <a name="resetPolicy">
@@ -337,7 +337,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>resetPolicy</h4>
-<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/streams/Topology.AutoOffsetReset.html" title="enum in org.apache.kafka.streams">Topology.AutoOffsetReset</a> resetPolicy</pre>
+<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/streams/Topology.AutoOffsetReset.html" title="enum in org.apache.kafka.streams">Topology.AutoOffsetReset</a> resetPolicy</code></pre>
 </li>
 </ul>
 <a name="processorName">
@@ -346,7 +346,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>processorName</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> processorName</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> processorName</code></pre>
 </li>
 </ul>
 </li>
@@ -363,7 +363,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Consumed</h4>
-<pre>protected&nbsp;Consumed(<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">V</a>&gt;&nbsp;consumed)</pre>
+<pre>protected&nbsp;Consumed(<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">V</a>&gt;&nbsp;consumed)</code></pre>
 <div class="block">Create an instance of <a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a> from an existing instance.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -388,7 +388,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;with(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;K&gt;&nbsp;keySerde,
                                        <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde,
                                        <a href="../../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor">TimestampExtractor</a>&nbsp;timestampExtractor,
-                                       <a href="../../../../../org/apache/kafka/streams/Topology.AutoOffsetReset.html" title="enum in org.apache.kafka.streams">Topology.AutoOffsetReset</a>&nbsp;resetPolicy)</pre>
+                                       <a href="../../../../../org/apache/kafka/streams/Topology.AutoOffsetReset.html" title="enum in org.apache.kafka.streams">Topology.AutoOffsetReset</a>&nbsp;resetPolicy)</code></pre>
 <div class="block">Create an instance of <a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a> with the supplied arguments. <code>null</code> values are acceptable.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -411,7 +411,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>with</h4>
 <pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;with(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;K&gt;&nbsp;keySerde,
-                                       <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</pre>
+                                       <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</code></pre>
 <div class="block">Create an instance of <a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a> with key and value <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>Serde</code></a>s.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -431,7 +431,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>with</h4>
-<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;with(<a href="../../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor">TimestampExtractor</a>&nbsp;timestampExtractor)</pre>
+<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;with(<a href="../../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor">TimestampExtractor</a>&nbsp;timestampExtractor)</code></pre>
 <div class="block">Create an instance of <a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a> with a <a href="../../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor"><code>TimestampExtractor</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -450,7 +450,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>with</h4>
-<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;with(<a href="../../../../../org/apache/kafka/streams/Topology.AutoOffsetReset.html" title="enum in org.apache.kafka.streams">Topology.AutoOffsetReset</a>&nbsp;resetPolicy)</pre>
+<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;with(<a href="../../../../../org/apache/kafka/streams/Topology.AutoOffsetReset.html" title="enum in org.apache.kafka.streams">Topology.AutoOffsetReset</a>&nbsp;resetPolicy)</code></pre>
 <div class="block">Create an instance of <a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a> with a <a href="../../../../../org/apache/kafka/streams/Topology.AutoOffsetReset.html" title="enum in org.apache.kafka.streams"><code>Topology.AutoOffsetReset</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -469,7 +469,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>as</h4>
-<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;as(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;processorName)</pre>
+<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;K,V&gt;&nbsp;as(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;processorName)</code></pre>
 <div class="block">Create an instance of <a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a> with provided processor name.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -488,7 +488,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>withKeySerde</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">V</a>&gt;&nbsp;withKeySerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">K</a>&gt;&nbsp;keySerde)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">V</a>&gt;&nbsp;withKeySerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">K</a>&gt;&nbsp;keySerde)</code></pre>
 <div class="block">Configure the instance of <a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a> with a key <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>Serde</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -504,7 +504,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>withValueSerde</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">V</a>&gt;&nbsp;withValueSerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">V</a>&gt;&nbsp;valueSerde)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">V</a>&gt;&nbsp;withValueSerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">V</a>&gt;&nbsp;valueSerde)</code></pre>
 <div class="block">Configure the instance of <a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a> with a value <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>Serde</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -520,7 +520,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>withTimestampExtractor</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">V</a>&gt;&nbsp;withTimestampExtractor(<a href="../../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor">TimestampExtractor</a>&nbsp;timestampExtractor)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">V</a>&gt;&nbsp;withTimestampExtractor(<a href="../../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor">TimestampExtractor</a>&nbsp;timestampExtractor)</code></pre>
 <div class="block">Configure the instance of <a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a> with a <a href="../../../../../org/apache/kafka/streams/processor/TimestampExtractor.html" title="interface in org.apache.kafka.streams.processor"><code>TimestampExtractor</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -536,7 +536,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>withOffsetResetPolicy</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">V</a>&gt;&nbsp;withOffsetResetPolicy(<a href="../../../../../org/apache/kafka/streams/Topology.AutoOffsetReset.html" title="enum in org.apache.kafka.streams">Topology.AutoOffsetReset</a>&nbsp;resetPolicy)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">V</a>&gt;&nbsp;withOffsetResetPolicy(<a href="../../../../../org/apache/kafka/streams/Topology.AutoOffsetReset.html" title="enum in org.apache.kafka.streams">Topology.AutoOffsetReset</a>&nbsp;resetPolicy)</code></pre>
 <div class="block">Configure the instance of <a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a> with a <a href="../../../../../org/apache/kafka/streams/Topology.AutoOffsetReset.html" title="enum in org.apache.kafka.streams"><code>Topology.AutoOffsetReset</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -552,7 +552,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>withName</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">V</a>&gt;&nbsp;withName(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;processorName)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream">Consumed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="type parameter in Consumed">V</a>&gt;&nbsp;withName(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;processorName)</code></pre>
 <div class="block">Configure the instance of <a href="../../../../../org/apache/kafka/streams/kstream/Consumed.html" title="class in org.apache.kafka.streams.kstream"><code>Consumed</code></a> with a processor name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -568,7 +568,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -581,7 +581,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>

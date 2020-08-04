@@ -32,7 +32,7 @@
   </div>
 
     <div class="section" id="processor-api">
-        <span id="streams-developer-guide-processor-api"></span><h1>Processor API<a class="headerlink" href="#processor-api" title="Permalink to this headline"></a></h1>
+        <span id="streams-developer-guide-processor-api"></span><h1 class="docs-title">Processor API<a class="headerlink" href="#processor-api" title="Permalink to this headline"></a></h1>
         <p>The Processor API allows developers to define and connect custom processors and to interact with state stores. With the
             Processor API, you can define arbitrary stream processors that process one received record at a time, and connect these
             processors with their associated state stores to compose the processor topology that represents a customized processing
@@ -157,8 +157,7 @@
       <span class="c1">// Note: Do not close any StateStores as these are managed by the library</span>
   <span class="o">}</span>
 
-<span class="o">}</span>
-</pre></div>
+<span class="o">}</span></pre></div>
             </div>
             <div class="admonition note">
                 <p><b>Note</b></p>
@@ -241,8 +240,7 @@
     <span class="n">Stores</span><span class="o">.</span><span class="na">persistentKeyValueStore</span><span class="o">(</span><span class="s">&quot;persistent-counts&quot;</span><span class="o">),</span>
     <span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">(),</span>
     <span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">());</span>
-<span class="n">KeyValueStore</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="n">countStore</span> <span class="o">=</span> <span class="n">countStoreSupplier</span><span class="o">.</span><span class="na">build</span><span class="o">();</span>
-</pre></div>
+<span class="n">KeyValueStore</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="n">countStore</span> <span class="o">=</span> <span class="n">countStoreSupplier</span><span class="o">.</span><span class="na">build</span><span class="o">();</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -272,8 +270,7 @@
     <span class="n">Stores</span><span class="o">.</span><span class="na">inMemoryKeyValueStore</span><span class="o">(</span><span class="s">&quot;inmemory-counts&quot;</span><span class="o">),</span>
     <span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">(),</span>
     <span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">());</span>
-<span class="n">KeyValueStore</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="n">countStore</span> <span class="o">=</span> <span class="n">countStoreSupplier</span><span class="o">.</span><span class="na">build</span><span class="o">();</span>
-</pre></div>
+<span class="n">KeyValueStore</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="n">countStore</span> <span class="o">=</span> <span class="n">countStoreSupplier</span><span class="o">.</span><span class="na">build</span><span class="o">();</span></pre></div>
                             </div>
                         </td>
                     </tr>
@@ -290,7 +287,7 @@
                     <a class="reference internal" href="#streams-developer-guide-state-store-enable-disable-fault-tolerance"><span class="std std-ref">enable or disable this backup feature</span></a> for a
                     state store.</p>
                 <p>Fault-tolerant state stores are backed by a
-                    <a class="reference external" href="https://kafka.apache.org/documentation.html#compaction">compacted</a> changelog topic.  The purpose of compacting this
+                    <a class="reference external" href="/documentation.html#compaction">compacted</a> changelog topic.  The purpose of compacting this
                     topic is to prevent the topic from growing indefinitely, to reduce the storage consumed in the associated Kafka cluster,
                     and to minimize recovery time if a state store needs to be restored from its changelog topic.</p>
                 <p>Fault-tolerant windowed state stores are backed by a topic that uses both compaction and
@@ -318,8 +315,7 @@
   <span class="n">Stores</span><span class="o">.</span><span class="na">persistentKeyValueStore</span><span class="o">(</span><span class="s">&quot;Counts&quot;</span><span class="o">),</span>
     <span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">(),</span>
     <span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">())</span>
-  <span class="o">.</span><span class="na">withLoggingDisabled</span><span class="o">();</span> <span class="c1">// disable backing up the store to a changelog topic</span>
-</pre></div>
+  <span class="o">.</span><span class="na">withLoggingDisabled</span><span class="o">();</span> <span class="c1">// disable backing up the store to a changelog topic</span></pre></div>
                 </div>
                 <div class="admonition attention">
                     <p class="first admonition-title">Attention</p>
@@ -339,8 +335,7 @@
   <span class="n">Stores</span><span class="o">.</span><span class="na">persistentKeyValueStore</span><span class="o">(</span><span class="s">&quot;Counts&quot;</span><span class="o">),</span>
     <span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">(),</span>
     <span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">())</span>
-  <span class="o">.</span><span class="na">withLoggingEnabled</span><span class="o">(</span><span class="n">changlogConfig</span><span class="o">);</span> <span class="c1">// enable changelogging, with custom changelog settings</span>
-</pre></div>
+  <span class="o">.</span><span class="na">withLoggingEnabled</span><span class="o">(</span><span class="n">changlogConfig</span><span class="o">);</span> <span class="c1">// enable changelogging, with custom changelog settings</span></pre></div>
                 </div>
             </div>
             <div class="section" id="implementing-custom-state-stores">
@@ -370,8 +365,7 @@
 
     <span class="c1">// add a header to the elements</span>
     <span class="n">context()</span><span class="o">.</span><span class="na">headers</span><span class="o">()</span><span class="o">.</span><span class="na">add</span><span class="o">.</span><span class="o">(</span><span class="s">&quot;key&quot;</span><span class="o">,</span> <span class="s">&quot;key&quot;</span>
-<span class="o">}</span>
-</pre></div>
+<span class="o">}</span></pre></div>
         </div>
         <div class="section" id="connecting-processors-and-state-stores">
             <h2><a class="toc-backref" href="#id8">Connecting Processors and State Stores</a><a class="headerlink" href="#connecting-processors-and-state-stores" title="Permalink to this headline"></a></h2>
@@ -394,8 +388,7 @@
 
     <span class="c1">// add the sink processor node that takes Kafka topic &quot;sink-topic&quot; as output</span>
     <span class="c1">// and the WordCountProcessor node as its upstream processor</span>
-    <span class="o">.</span><span class="na">addSink</span><span class="o">(</span><span class="s">&quot;Sink&quot;</span><span class="o">,</span> <span class="s">&quot;sink-topic&quot;</span><span class="o">,</span> <span class="s">&quot;Process&quot;</span><span class="o">);</span>
-</pre></div>
+    <span class="o">.</span><span class="na">addSink</span><span class="o">(</span><span class="s">&quot;Sink&quot;</span><span class="o">,</span> <span class="s">&quot;sink-topic&quot;</span><span class="o">,</span> <span class="s">&quot;Process&quot;</span><span class="o">);</span></pre></div>
             </div>
             <p>Here is a quick explanation of this example:</p>
             <ul class="simple">
@@ -435,7 +428,7 @@
 
                 <!--#include virtual="../../../includes/_header.htm" -->
                 <!--#include virtual="../../../includes/_top.htm" -->
-                    <div class="content documentation documentation--current">
+                    <div class="content documentation ">
                     <!--#include virtual="../../../includes/_nav.htm" -->
                     <div class="right">
                     <!--#include virtual="../../../includes/_docs_banner.htm" -->

@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public final class <span class="typeNameLabel">RecordMetadata</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">The metadata for a record that has been acknowledged by the server</div>
 </li>
 </ul>
@@ -266,7 +266,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>UNKNOWN_PARTITION</h4>
-<pre>public static final&nbsp;int UNKNOWN_PARTITION</pre>
+<pre>public static final&nbsp;int UNKNOWN_PARTITION</code></pre>
 <div class="block">Partition value for record without partition assigned</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -294,7 +294,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                       long&nbsp;timestamp,
                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;checksum,
                       int&nbsp;serializedKeySize,
-                      int&nbsp;serializedValueSize)</pre>
+                      int&nbsp;serializedValueSize)</code></pre>
 </li>
 </ul>
 </li>
@@ -311,7 +311,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>hasOffset</h4>
-<pre>public&nbsp;boolean&nbsp;hasOffset()</pre>
+<pre>public&nbsp;boolean&nbsp;hasOffset()</code></pre>
 <div class="block">Indicates whether the record metadata includes the offset.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -325,7 +325,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>offset</h4>
-<pre>public&nbsp;long&nbsp;offset()</pre>
+<pre>public&nbsp;long&nbsp;offset()</code></pre>
 <div class="block">The offset of the record in the topic/partition.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -339,7 +339,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>hasTimestamp</h4>
-<pre>public&nbsp;boolean&nbsp;hasTimestamp()</pre>
+<pre>public&nbsp;boolean&nbsp;hasTimestamp()</code></pre>
 <div class="block">Indicates whether the record metadata includes the timestamp.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -353,7 +353,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>timestamp</h4>
-<pre>public&nbsp;long&nbsp;timestamp()</pre>
+<pre>public&nbsp;long&nbsp;timestamp()</code></pre>
 <div class="block">The timestamp of the record in the topic/partition.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -368,7 +368,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>checksum</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;long&nbsp;checksum()</pre>
+public&nbsp;long&nbsp;checksum()</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">As of Kafka 0.11.0. Because of the potential for message format conversion on the broker, the
              computed checksum may not match what was stored on the broker, or what will be returned to the consumer.
              It is therefore unsafe to depend on this checksum for end-to-end delivery guarantees. Additionally,
@@ -385,7 +385,7 @@ public&nbsp;long&nbsp;checksum()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>serializedKeySize</h4>
-<pre>public&nbsp;int&nbsp;serializedKeySize()</pre>
+<pre>public&nbsp;int&nbsp;serializedKeySize()</code></pre>
 <div class="block">The size of the serialized, uncompressed key in bytes. If key is null, the returned size
  is -1.</div>
 </li>
@@ -396,7 +396,7 @@ public&nbsp;long&nbsp;checksum()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>serializedValueSize</h4>
-<pre>public&nbsp;int&nbsp;serializedValueSize()</pre>
+<pre>public&nbsp;int&nbsp;serializedValueSize()</code></pre>
 <div class="block">The size of the serialized, uncompressed value in bytes. If value is null, the returned
  size is -1.</div>
 </li>
@@ -407,7 +407,7 @@ public&nbsp;long&nbsp;checksum()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>topic</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic()</code></pre>
 <div class="block">The topic the record was appended to</div>
 </li>
 </ul>
@@ -417,7 +417,7 @@ public&nbsp;long&nbsp;checksum()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>partition</h4>
-<pre>public&nbsp;int&nbsp;partition()</pre>
+<pre>public&nbsp;int&nbsp;partition()</code></pre>
 <div class="block">The partition the record was sent to</div>
 </li>
 </ul>
@@ -427,7 +427,7 @@ public&nbsp;long&nbsp;checksum()</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>

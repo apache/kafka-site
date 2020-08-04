@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">ConfigProvider</span>
-extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></pre>
+extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" title="interface in org.apache.kafka.common">Configurable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></code></pre>
 <div class="block">A provider of configuration data, which may optionally support subscriptions to configuration changes.
  Implementations are required to safely support concurrent calls to any of the methods in this interface.</div>
 </li>
@@ -199,7 +199,7 @@ extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre><a href="../../../../../../org/apache/kafka/common/config/ConfigData.html" title="class in org.apache.kafka.common.config">ConfigData</a>&nbsp;get(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</pre>
+<pre><a href="../../../../../../org/apache/kafka/common/config/ConfigData.html" title="class in org.apache.kafka.common.config">ConfigData</a>&nbsp;get(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</code></pre>
 <div class="block">Retrieves the data at the given path.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -216,7 +216,7 @@ extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" ti
 <li class="blockList">
 <h4>get</h4>
 <pre><a href="../../../../../../org/apache/kafka/common/config/ConfigData.html" title="class in org.apache.kafka.common.config">ConfigData</a>&nbsp;get(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path,
-               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;keys)</pre>
+               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;keys)</code></pre>
 <div class="block">Retrieves the data with the given keys at the given path.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -235,7 +235,7 @@ extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" ti
 <h4>subscribe</h4>
 <pre>default&nbsp;void&nbsp;subscribe(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path,
                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;keys,
-                       <a href="../../../../../../org/apache/kafka/common/config/ConfigChangeCallback.html" title="interface in org.apache.kafka.common.config">ConfigChangeCallback</a>&nbsp;callback)</pre>
+                       <a href="../../../../../../org/apache/kafka/common/config/ConfigChangeCallback.html" title="interface in org.apache.kafka.common.config">ConfigChangeCallback</a>&nbsp;callback)</code></pre>
 <div class="block">Subscribes to changes for the given keys at the given path (optional operation).</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -255,7 +255,7 @@ extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" ti
 <h4>unsubscribe</h4>
 <pre>default&nbsp;void&nbsp;unsubscribe(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path,
                          <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;keys,
-                         <a href="../../../../../../org/apache/kafka/common/config/ConfigChangeCallback.html" title="interface in org.apache.kafka.common.config">ConfigChangeCallback</a>&nbsp;callback)</pre>
+                         <a href="../../../../../../org/apache/kafka/common/config/ConfigChangeCallback.html" title="interface in org.apache.kafka.common.config">ConfigChangeCallback</a>&nbsp;callback)</code></pre>
 <div class="block">Unsubscribes to changes for the given keys at the given path (optional operation).</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -273,7 +273,7 @@ extends <a href="../../../../../../org/apache/kafka/common/Configurable.html" ti
 <ul class="blockListLast">
 <li class="blockList">
 <h4>unsubscribeAll</h4>
-<pre>default&nbsp;void&nbsp;unsubscribeAll()</pre>
+<pre>default&nbsp;void&nbsp;unsubscribeAll()</code></pre>
 <div class="block">Clears all subscribers (optional operation).</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>

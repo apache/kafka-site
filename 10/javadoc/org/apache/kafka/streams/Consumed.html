@@ -120,7 +120,7 @@ extends java.lang.Object</pre>
  <p>
  For example, you can read a topic as <a href="../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a> with a custom timestamp extractor and specify the corresponding
  key and value serdes like:
- <pre><code>
+ <pre class="line-numbers"><code>
  StreamsBuilder builder = new StreamsBuilder();
  KStream&lt;String, Long&gt; stream = builder.stream(
    "topicName",
@@ -130,7 +130,7 @@ extends java.lang.Object</pre>
  Similarly, you can read a topic as <a href="../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream"><code>KTable</code></a> with a custom <code>auto.offset.reset</code> configuration and force a
  state store <a href="../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>materialization</code></a> to access the content via
  interactive queries:
- <pre><code>
+ <pre class="line-numbers"><code>
  StreamsBuilder builder = new StreamsBuilder();
  KTable&lt;Integer, Integer&gt; table = builder.table(
    "topicName",

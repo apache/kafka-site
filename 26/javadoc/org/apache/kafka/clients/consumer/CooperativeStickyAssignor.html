@@ -122,7 +122,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">CooperativeStickyAssignor</span>
-extends org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor</pre>
+extends org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor</code></pre>
 <div class="block">A cooperative version of the <code>AbstractStickyAssignor</code>. This follows the same (sticky)
  assignment logic as <a href="../../../../../org/apache/kafka/clients/consumer/StickyAssignor.html" title="class in org.apache.kafka.clients.consumer"><code>StickyAssignor</code></a> but allows for cooperative rebalancing while the
  <a href="../../../../../org/apache/kafka/clients/consumer/StickyAssignor.html" title="class in org.apache.kafka.clients.consumer"><code>StickyAssignor</code></a> follows the eager rebalancing protocol. See
@@ -286,7 +286,7 @@ extends org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>CooperativeStickyAssignor</h4>
-<pre>public&nbsp;CooperativeStickyAssignor()</pre>
+<pre>public&nbsp;CooperativeStickyAssignor()</code></pre>
 </li>
 </ul>
 </li>
@@ -303,7 +303,7 @@ extends org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>name</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.html#name--">ConsumerPartitionAssignor</a></code></span></div>
 <div class="block">Unique name for this assignor (e.g. "range" or "roundrobin" or "sticky"). Note, this is not required
  to be the same as the class name specified in <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerConfig.html#PARTITION_ASSIGNMENT_STRATEGY_CONFIG"><code>ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG</code></a></div>
@@ -319,7 +319,7 @@ extends org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>supportedProtocols</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.RebalanceProtocol.html" title="enum in org.apache.kafka.clients.consumer">ConsumerPartitionAssignor.RebalanceProtocol</a>&gt;&nbsp;supportedProtocols()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.RebalanceProtocol.html" title="enum in org.apache.kafka.clients.consumer">ConsumerPartitionAssignor.RebalanceProtocol</a>&gt;&nbsp;supportedProtocols()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.html#supportedProtocols--">ConsumerPartitionAssignor</a></code></span></div>
 <div class="block">Indicate which rebalance protocol this assignor works with;
  By default it should always work with <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.RebalanceProtocol.html#EAGER"><code>ConsumerPartitionAssignor.RebalanceProtocol.EAGER</code></a>.</div>
@@ -331,7 +331,7 @@ extends org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>memberData</h4>
-<pre>protected&nbsp;org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor.MemberData&nbsp;memberData(<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.Subscription.html" title="class in org.apache.kafka.clients.consumer">ConsumerPartitionAssignor.Subscription</a>&nbsp;subscription)</pre>
+<pre>protected&nbsp;org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor.MemberData&nbsp;memberData(<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.Subscription.html" title="class in org.apache.kafka.clients.consumer">ConsumerPartitionAssignor.Subscription</a>&nbsp;subscription)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>memberData</code>&nbsp;in class&nbsp;<code>org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor</code></dd>
@@ -345,7 +345,7 @@ extends org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor</pre>
 <li class="blockList">
 <h4>assign</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&gt;&nbsp;assign(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;partitionsPerTopic,
-                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.Subscription.html" title="class in org.apache.kafka.clients.consumer">ConsumerPartitionAssignor.Subscription</a>&gt;&nbsp;subscriptions)</pre>
+                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.Subscription.html" title="class in org.apache.kafka.clients.consumer">ConsumerPartitionAssignor.Subscription</a>&gt;&nbsp;subscriptions)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code>assign</code>&nbsp;in class&nbsp;<code>org.apache.kafka.clients.consumer.internals.AbstractStickyAssignor</code></dd>

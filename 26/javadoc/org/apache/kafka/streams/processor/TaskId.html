@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">TaskId</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../../../org/apache/kafka/streams/processor/TaskId.html" title="class in org.apache.kafka.streams.processor">TaskId</a>&gt;</pre>
+implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../../../org/apache/kafka/streams/processor/TaskId.html" title="class in org.apache.kafka.streams.processor">TaskId</a>&gt;</code></pre>
 <div class="block">The task ID representation composed as topic group ID plus the assigned partition ID.</div>
 </li>
 </ul>
@@ -242,7 +242,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparab
 <ul class="blockList">
 <li class="blockList">
 <h4>topicGroupId</h4>
-<pre>public final&nbsp;int topicGroupId</pre>
+<pre>public final&nbsp;int topicGroupId</code></pre>
 <div class="block">The ID of the topic group.</div>
 </li>
 </ul>
@@ -252,7 +252,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparab
 <ul class="blockListLast">
 <li class="blockList">
 <h4>partition</h4>
-<pre>public final&nbsp;int partition</pre>
+<pre>public final&nbsp;int partition</code></pre>
 <div class="block">The ID of the partition.</div>
 </li>
 </ul>
@@ -271,7 +271,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparab
 <li class="blockList">
 <h4>TaskId</h4>
 <pre>public&nbsp;TaskId(int&nbsp;topicGroupId,
-              int&nbsp;partition)</pre>
+              int&nbsp;partition)</code></pre>
 </li>
 </ul>
 </li>
@@ -288,7 +288,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparab
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -301,7 +301,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparab
 <ul class="blockList">
 <li class="blockList">
 <h4>parse</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/TaskId.html" title="class in org.apache.kafka.streams.processor">TaskId</a>&nbsp;parse(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;taskIdStr)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/TaskId.html" title="class in org.apache.kafka.streams.processor">TaskId</a>&nbsp;parse(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;taskIdStr)</code></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../../org/apache/kafka/streams/errors/TaskIdFormatException.html" title="class in org.apache.kafka.streams.errors">TaskIdFormatException</a></code> - if the taskIdStr is not a valid <a href="../../../../../org/apache/kafka/streams/processor/TaskId.html" title="class in org.apache.kafka.streams.processor"><code>TaskId</code></a></dd>
@@ -315,7 +315,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparab
 <li class="blockList">
 <h4>writeTo</h4>
 <pre>public&nbsp;void&nbsp;writeTo(<a href="https://docs.oracle.com/javase/8/docs/api/java/io/DataOutputStream.html?is-external=true" title="class or interface in java.io">DataOutputStream</a>&nbsp;out)
-             throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+             throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if cannot write to output stream</dd>
@@ -329,7 +329,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparab
 <li class="blockList">
 <h4>readFrom</h4>
 <pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/TaskId.html" title="class in org.apache.kafka.streams.processor">TaskId</a>&nbsp;readFrom(<a href="https://docs.oracle.com/javase/8/docs/api/java/io/DataInputStream.html?is-external=true" title="class or interface in java.io">DataInputStream</a>&nbsp;in)
-                       throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+                       throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if cannot read from input stream</dd>
@@ -342,7 +342,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparab
 <ul class="blockList">
 <li class="blockList">
 <h4>writeTo</h4>
-<pre>public&nbsp;void&nbsp;writeTo(<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/ByteBuffer.html?is-external=true" title="class or interface in java.nio">ByteBuffer</a>&nbsp;buf)</pre>
+<pre>public&nbsp;void&nbsp;writeTo(<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/ByteBuffer.html?is-external=true" title="class or interface in java.nio">ByteBuffer</a>&nbsp;buf)</code></pre>
 </li>
 </ul>
 <a name="readFrom-java.nio.ByteBuffer-">
@@ -351,7 +351,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparab
 <ul class="blockList">
 <li class="blockList">
 <h4>readFrom</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/TaskId.html" title="class in org.apache.kafka.streams.processor">TaskId</a>&nbsp;readFrom(<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/ByteBuffer.html?is-external=true" title="class or interface in java.nio">ByteBuffer</a>&nbsp;buf)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/processor/TaskId.html" title="class in org.apache.kafka.streams.processor">TaskId</a>&nbsp;readFrom(<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/ByteBuffer.html?is-external=true" title="class or interface in java.nio">ByteBuffer</a>&nbsp;buf)</code></pre>
 </li>
 </ul>
 <a name="equals-java.lang.Object-">
@@ -360,7 +360,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparab
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -373,7 +373,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparab
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -386,7 +386,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparab
 <ul class="blockListLast">
 <li class="blockList">
 <h4>compareTo</h4>
-<pre>public&nbsp;int&nbsp;compareTo(<a href="../../../../../org/apache/kafka/streams/processor/TaskId.html" title="class in org.apache.kafka.streams.processor">TaskId</a>&nbsp;other)</pre>
+<pre>public&nbsp;int&nbsp;compareTo(<a href="../../../../../org/apache/kafka/streams/processor/TaskId.html" title="class in org.apache.kafka.streams.processor">TaskId</a>&nbsp;other)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true#compareTo-T-" title="class or interface in java.lang">compareTo</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../../../org/apache/kafka/streams/processor/TaskId.html" title="class in org.apache.kafka.streams.processor">TaskId</a>&gt;</code></dd>

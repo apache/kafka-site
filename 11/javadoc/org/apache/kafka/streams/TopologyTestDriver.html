@@ -158,7 +158,7 @@ extends java.lang.Object</pre>
  For example, the following code fragment creates a configuration that specifies a local Kafka broker list (which is
  needed but not used), a timestamp extractor, and default serializers and deserializers for string keys and values:
 
- <pre><code>
+ <pre class="line-numbers"><code>
  Properties props = new Properties();
  props.setProperty(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9091");
  props.setProperty(StreamsConfig.DEFAULT_TIMESTAMP_EXTRACTOR_CLASS_CONFIG, CustomTimestampExtractor.class.getName());
@@ -187,7 +187,7 @@ extends java.lang.Object</pre>
  <code>output-topic-2</code>, then our test can obtain these messages using the
  <a href="../../../../org/apache/kafka/streams/TopologyTestDriver.html#readOutput-java.lang.String-org.apache.kafka.common.serialization.Deserializer-org.apache.kafka.common.serialization.Deserializer-"><code>readOutput(String, Deserializer, Deserializer)</code></a> method:
 
- <pre><code>
+ <pre class="line-numbers"><code>
  ProducerRecord&lt;String, String&gt; record1 = driver.readOutput("output-topic-1", strDeserializer, strDeserializer);
  ProducerRecord&lt;String, String&gt; record2 = driver.readOutput("output-topic-1", strDeserializer, strDeserializer);
  ProducerRecord&lt;String, String&gt; record3 = driver.readOutput("output-topic-2", strDeserializer, strDeserializer);

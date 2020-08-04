@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">ReadOnlyWindowStore&lt;K,V&gt;</span></pre>
+<pre>public interface <span class="typeNameLabel">ReadOnlyWindowStore&lt;K,V&gt;</span></code></pre>
 <div class="block">A window store that only supports read operations.
  Implementations should be thread-safe as concurrent reads and writes are expected.</div>
 </li>
@@ -220,7 +220,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>fetch</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">V</a>&nbsp;fetch(<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">K</a>&nbsp;key,
-        long&nbsp;time)</pre>
+        long&nbsp;time)</code></pre>
 <div class="block">Get the value of key from a window.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -245,7 +245,7 @@ var activeTableTab = "activeTableTab";
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 <a href="../../../../../org/apache/kafka/streams/state/WindowStoreIterator.html" title="interface in org.apache.kafka.streams.state">WindowStoreIterator</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">V</a>&gt;&nbsp;fetch(<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">K</a>&nbsp;key,
                                          long&nbsp;timeFrom,
-                                         long&nbsp;timeTo)</pre>
+                                         long&nbsp;timeTo)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html#fetch-K-java.time.Instant-java.time.Instant-"><code>fetch(Object, Instant, Instant)</code></a> instead</span></div>
 <div class="block">Get all the key-value pairs with the given key and the time range from all the existing windows.
  <p>
@@ -253,8 +253,7 @@ var activeTableTab = "activeTableTab";
  <p>
  The time range is inclusive and applies to the starting timestamp of the window.
  For example, if we have the following windows:
- <pre>
- +-------------------------------+
+ <pre class="line-numbers"><code class="language-text"> +-------------------------------+
  |  key  | start time | end time |
  +-------+------------+----------+
  |   A   |     10     |    20    |
@@ -264,8 +263,7 @@ var activeTableTab = "activeTableTab";
  |   A   |     20     |    30    |
  +-------+------------+----------+
  |   A   |     25     |    35    |
- +--------------------------------
- </pre>
+ +--------------------------------</code></pre>
  And we call <code>store.fetch("A", 10, 20)</code> then the results will contain the first
  three windows from the table above, i.e., all those where 10 &lt;= start time &lt;= 20.
  <p>
@@ -295,15 +293,14 @@ var activeTableTab = "activeTableTab";
 <pre><a href="../../../../../org/apache/kafka/streams/state/WindowStoreIterator.html" title="interface in org.apache.kafka.streams.state">WindowStoreIterator</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">V</a>&gt;&nbsp;fetch(<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">K</a>&nbsp;key,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html?is-external=true" title="class or interface in java.time">Instant</a>&nbsp;from,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html?is-external=true" title="class or interface in java.time">Instant</a>&nbsp;to)
-                      throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                      throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block">Get all the key-value pairs with the given key and the time range from all the existing windows.
  <p>
  This iterator must be closed after use.
  <p>
  The time range is inclusive and applies to the starting timestamp of the window.
  For example, if we have the following windows:
- <pre>
- +-------------------------------+
+ <pre class="line-numbers"><code class="language-text"> +-------------------------------+
  |  key  | start time | end time |
  +-------+------------+----------+
  |   A   |     10     |    20    |
@@ -313,8 +310,7 @@ var activeTableTab = "activeTableTab";
  |   A   |     20     |    30    |
  +-------+------------+----------+
  |   A   |     25     |    35    |
- +--------------------------------
- </pre>
+ +--------------------------------</code></pre>
  And we call <code>store.fetch("A", Instant.ofEpochMilli(10), Instant.ofEpochMilli(20))</code> then the results will contain the first
  three windows from the table above, i.e., all those where 10 &lt;= start time &lt;= 20.
  <p>
@@ -346,7 +342,7 @@ var activeTableTab = "activeTableTab";
 <a href="../../../../../org/apache/kafka/streams/state/KeyValueIterator.html" title="interface in org.apache.kafka.streams.state">KeyValueIterator</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">K</a>&gt;,<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">V</a>&gt;&nbsp;fetch(<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">K</a>&nbsp;from,
                                                   <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">K</a>&nbsp;to,
                                                   long&nbsp;timeFrom,
-                                                  long&nbsp;timeTo)</pre>
+                                                  long&nbsp;timeTo)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html#fetch-K-K-java.time.Instant-java.time.Instant-"><code>fetch(Object, Object, Instant, Instant)</code></a> instead</span></div>
 <div class="block">Get all the key-value pairs in the given key range and time range from all the existing windows.
  <p>
@@ -377,7 +373,7 @@ var activeTableTab = "activeTableTab";
                                       <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">K</a>&nbsp;to,
                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html?is-external=true" title="class or interface in java.time">Instant</a>&nbsp;fromTime,
                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html?is-external=true" title="class or interface in java.time">Instant</a>&nbsp;toTime)
-                               throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                               throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block">Get all the key-value pairs in the given key range and time range from all the existing windows.
  <p>
  This iterator must be closed after use.</div>
@@ -402,7 +398,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>all</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/state/KeyValueIterator.html" title="interface in org.apache.kafka.streams.state">KeyValueIterator</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">K</a>&gt;,<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">V</a>&gt;&nbsp;all()</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/state/KeyValueIterator.html" title="interface in org.apache.kafka.streams.state">KeyValueIterator</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">K</a>&gt;,<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">V</a>&gt;&nbsp;all()</code></pre>
 <div class="block">Gets all the key-value pairs in the existing windows.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -420,7 +416,7 @@ var activeTableTab = "activeTableTab";
 <h4>fetchAll</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 <a href="../../../../../org/apache/kafka/streams/state/KeyValueIterator.html" title="interface in org.apache.kafka.streams.state">KeyValueIterator</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">K</a>&gt;,<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">V</a>&gt;&nbsp;fetchAll(long&nbsp;timeFrom,
-                                                     long&nbsp;timeTo)</pre>
+                                                     long&nbsp;timeTo)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html#fetchAll-java.time.Instant-java.time.Instant-"><code>fetchAll(Instant, Instant)</code></a> instead</span></div>
 <div class="block">Gets all the key-value pairs that belong to the windows within in the given time range.</div>
 <dl>
@@ -443,7 +439,7 @@ var activeTableTab = "activeTableTab";
 <h4>fetchAll</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/state/KeyValueIterator.html" title="interface in org.apache.kafka.streams.state">KeyValueIterator</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">K</a>&gt;,<a href="../../../../../org/apache/kafka/streams/state/ReadOnlyWindowStore.html" title="type parameter in ReadOnlyWindowStore">V</a>&gt;&nbsp;fetchAll(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html?is-external=true" title="class or interface in java.time">Instant</a>&nbsp;from,
                                          <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html?is-external=true" title="class or interface in java.time">Instant</a>&nbsp;to)
-                                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block">Gets all the key-value pairs that belong to the windows within in the given time range.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

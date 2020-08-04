@@ -109,7 +109,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre><a href="../../../../../org/apache/kafka/common/annotation/InterfaceStability.Evolving.html" title="annotation in org.apache.kafka.common.annotation">@InterfaceStability.Evolving</a>
 public class <span class="typeNameLabel">ConfigEntry</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">A class representing a configuration entry containing name, value and additional metadata.
 
  The API of this class is evolving, see <a href="../../../../../org/apache/kafka/clients/admin/Admin.html" title="interface in org.apache.kafka.clients.admin"><code>Admin</code></a> for details.</div>
@@ -291,7 +291,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>ConfigEntry</h4>
 <pre>public&nbsp;ConfigEntry(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
-                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
+                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code></pre>
 <div class="block">Create a configuration entry with the provided values.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -311,7 +311,7 @@ public&nbsp;ConfigEntry(<a href="https://docs.oracle.com/javase/8/docs/api/java/
                                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
                                boolean&nbsp;isDefault,
                                boolean&nbsp;isSensitive,
-                               boolean&nbsp;isReadOnly)</pre>
+                               boolean&nbsp;isReadOnly)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 1.1.0. This constructor will be removed in a future release.</span></div>
 <div class="block">Create a configuration with the provided values.</div>
 <dl>
@@ -338,7 +338,7 @@ public&nbsp;ConfigEntry(<a href="https://docs.oracle.com/javase/8/docs/api/java/
 <ul class="blockList">
 <li class="blockList">
 <h4>name</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name()</code></pre>
 <div class="block">Return the config name.</div>
 </li>
 </ul>
@@ -348,7 +348,7 @@ public&nbsp;ConfigEntry(<a href="https://docs.oracle.com/javase/8/docs/api/java/
 <ul class="blockList">
 <li class="blockList">
 <h4>value</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value()</code></pre>
 <div class="block">Return the value or null. Null is returned if the config is unset or if isSensitive is true.</div>
 </li>
 </ul>
@@ -358,7 +358,7 @@ public&nbsp;ConfigEntry(<a href="https://docs.oracle.com/javase/8/docs/api/java/
 <ul class="blockList">
 <li class="blockList">
 <h4>source</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ConfigEntry.ConfigSource.html" title="enum in org.apache.kafka.clients.admin">ConfigEntry.ConfigSource</a>&nbsp;source()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ConfigEntry.ConfigSource.html" title="enum in org.apache.kafka.clients.admin">ConfigEntry.ConfigSource</a>&nbsp;source()</code></pre>
 <div class="block">Return the source of this configuration entry.</div>
 </li>
 </ul>
@@ -368,7 +368,7 @@ public&nbsp;ConfigEntry(<a href="https://docs.oracle.com/javase/8/docs/api/java/
 <ul class="blockList">
 <li class="blockList">
 <h4>isDefault</h4>
-<pre>public&nbsp;boolean&nbsp;isDefault()</pre>
+<pre>public&nbsp;boolean&nbsp;isDefault()</code></pre>
 <div class="block">Return whether the config value is the default or if it's been explicitly set.</div>
 </li>
 </ul>
@@ -378,7 +378,7 @@ public&nbsp;ConfigEntry(<a href="https://docs.oracle.com/javase/8/docs/api/java/
 <ul class="blockList">
 <li class="blockList">
 <h4>isSensitive</h4>
-<pre>public&nbsp;boolean&nbsp;isSensitive()</pre>
+<pre>public&nbsp;boolean&nbsp;isSensitive()</code></pre>
 <div class="block">Return whether the config value is sensitive. The value is always set to null by the broker if the config value
  is sensitive.</div>
 </li>
@@ -389,7 +389,7 @@ public&nbsp;ConfigEntry(<a href="https://docs.oracle.com/javase/8/docs/api/java/
 <ul class="blockList">
 <li class="blockList">
 <h4>isReadOnly</h4>
-<pre>public&nbsp;boolean&nbsp;isReadOnly()</pre>
+<pre>public&nbsp;boolean&nbsp;isReadOnly()</code></pre>
 <div class="block">Return whether the config is read-only and cannot be updated.</div>
 </li>
 </ul>
@@ -399,7 +399,7 @@ public&nbsp;ConfigEntry(<a href="https://docs.oracle.com/javase/8/docs/api/java/
 <ul class="blockList">
 <li class="blockList">
 <h4>synonyms</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/clients/admin/ConfigEntry.ConfigSynonym.html" title="class in org.apache.kafka.clients.admin">ConfigEntry.ConfigSynonym</a>&gt;&nbsp;synonyms()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/clients/admin/ConfigEntry.ConfigSynonym.html" title="class in org.apache.kafka.clients.admin">ConfigEntry.ConfigSynonym</a>&gt;&nbsp;synonyms()</code></pre>
 <div class="block">Returns all config values that may be used as the value of this config along with their source,
  in the order of precedence. The list starts with the value returned in this ConfigEntry.
  The list is empty if synonyms were not requested using <a href="../../../../../org/apache/kafka/clients/admin/DescribeConfigsOptions.html#includeSynonyms-boolean-"><code>DescribeConfigsOptions.includeSynonyms(boolean)</code></a></div>
@@ -411,7 +411,7 @@ public&nbsp;ConfigEntry(<a href="https://docs.oracle.com/javase/8/docs/api/java/
 <ul class="blockList">
 <li class="blockList">
 <h4>type</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ConfigEntry.ConfigType.html" title="enum in org.apache.kafka.clients.admin">ConfigEntry.ConfigType</a>&nbsp;type()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ConfigEntry.ConfigType.html" title="enum in org.apache.kafka.clients.admin">ConfigEntry.ConfigType</a>&nbsp;type()</code></pre>
 <div class="block">Return the config data type.</div>
 </li>
 </ul>
@@ -421,7 +421,7 @@ public&nbsp;ConfigEntry(<a href="https://docs.oracle.com/javase/8/docs/api/java/
 <ul class="blockList">
 <li class="blockList">
 <h4>documentation</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;documentation()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;documentation()</code></pre>
 <div class="block">Return the config documentation.</div>
 </li>
 </ul>
@@ -431,7 +431,7 @@ public&nbsp;ConfigEntry(<a href="https://docs.oracle.com/javase/8/docs/api/java/
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -444,7 +444,7 @@ public&nbsp;ConfigEntry(<a href="https://docs.oracle.com/javase/8/docs/api/java/
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -457,7 +457,7 @@ public&nbsp;ConfigEntry(<a href="https://docs.oracle.com/javase/8/docs/api/java/
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>

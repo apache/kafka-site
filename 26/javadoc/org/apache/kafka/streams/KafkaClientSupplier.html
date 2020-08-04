@@ -99,7 +99,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">KafkaClientSupplier</span></pre>
+<pre>public interface <span class="typeNameLabel">KafkaClientSupplier</span></code></pre>
 <div class="block"><code>KafkaClientSupplier</code> can be used to provide custom Kafka clients to a <a href="../../../../org/apache/kafka/streams/KafkaStreams.html" title="class in org.apache.kafka.streams"><code>KafkaStreams</code></a> instance.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -183,7 +183,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>getAdminClient</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-default&nbsp;<a href="../../../../org/apache/kafka/clients/admin/AdminClient.html" title="class in org.apache.kafka.clients.admin">AdminClient</a>&nbsp;getAdminClient(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;config)</pre>
+default&nbsp;<a href="../../../../org/apache/kafka/clients/admin/AdminClient.html" title="class in org.apache.kafka.clients.admin">AdminClient</a>&nbsp;getAdminClient(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;config)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Not called by Kafka Streams, which now uses <a href="../../../../org/apache/kafka/streams/KafkaClientSupplier.html#getAdmin-java.util.Map-"><code>getAdmin(java.util.Map&lt;java.lang.String, java.lang.Object&gt;)</code></a> instead.</span></div>
 <div class="block">Create an <a href="../../../../org/apache/kafka/clients/admin/AdminClient.html" title="class in org.apache.kafka.clients.admin"><code>AdminClient</code></a> which is used for internal topic management.</div>
 <dl>
@@ -200,7 +200,7 @@ default&nbsp;<a href="../../../../org/apache/kafka/clients/admin/AdminClient.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>getAdmin</h4>
-<pre>default&nbsp;<a href="../../../../org/apache/kafka/clients/admin/Admin.html" title="interface in org.apache.kafka.clients.admin">Admin</a>&nbsp;getAdmin(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;config)</pre>
+<pre>default&nbsp;<a href="../../../../org/apache/kafka/clients/admin/Admin.html" title="interface in org.apache.kafka.clients.admin">Admin</a>&nbsp;getAdmin(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;config)</code></pre>
 <div class="block">Create an <a href="../../../../org/apache/kafka/clients/admin/Admin.html" title="interface in org.apache.kafka.clients.admin"><code>Admin</code></a> which is used for internal topic management.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -216,7 +216,7 @@ default&nbsp;<a href="../../../../org/apache/kafka/clients/admin/AdminClient.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>getProducer</h4>
-<pre><a href="../../../../org/apache/kafka/clients/producer/Producer.html" title="interface in org.apache.kafka.clients.producer">Producer</a>&lt;byte[],byte[]&gt;&nbsp;getProducer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;config)</pre>
+<pre><a href="../../../../org/apache/kafka/clients/producer/Producer.html" title="interface in org.apache.kafka.clients.producer">Producer</a>&lt;byte[],byte[]&gt;&nbsp;getProducer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;config)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/clients/producer/Producer.html" title="interface in org.apache.kafka.clients.producer"><code>Producer</code></a> which is used to write records to sink topics.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -233,7 +233,7 @@ default&nbsp;<a href="../../../../org/apache/kafka/clients/admin/AdminClient.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>getConsumer</h4>
-<pre><a href="../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;byte[],byte[]&gt;&nbsp;getConsumer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;config)</pre>
+<pre><a href="../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;byte[],byte[]&gt;&nbsp;getConsumer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;config)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer"><code>Consumer</code></a> which is used to read records of source topics.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -250,7 +250,7 @@ default&nbsp;<a href="../../../../org/apache/kafka/clients/admin/AdminClient.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>getRestoreConsumer</h4>
-<pre><a href="../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;byte[],byte[]&gt;&nbsp;getRestoreConsumer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;config)</pre>
+<pre><a href="../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;byte[],byte[]&gt;&nbsp;getRestoreConsumer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;config)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer"><code>Consumer</code></a> which is used to read records to restore <a href="../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a>s.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -267,7 +267,7 @@ default&nbsp;<a href="../../../../org/apache/kafka/clients/admin/AdminClient.htm
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getGlobalConsumer</h4>
-<pre><a href="../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;byte[],byte[]&gt;&nbsp;getGlobalConsumer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;config)</pre>
+<pre><a href="../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;byte[],byte[]&gt;&nbsp;getGlobalConsumer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;config)</code></pre>
 <div class="block">Create a <a href="../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer"><code>Consumer</code></a> which is used to consume records for <a href="../../../../org/apache/kafka/streams/kstream/GlobalKTable.html" title="interface in org.apache.kafka.streams.kstream"><code>GlobalKTable</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public class <span class="typeNameLabel">DefaultPartitionGrouper</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../org/apache/kafka/streams/processor/PartitionGrouper.html" title="interface in org.apache.kafka.streams.processor">PartitionGrouper</a></pre>
+implements <a href="../../../../../org/apache/kafka/streams/processor/PartitionGrouper.html" title="interface in org.apache.kafka.streams.processor">PartitionGrouper</a></code></pre>
 <div class="block">Default implementation of the <a href="../../../../../org/apache/kafka/streams/processor/PartitionGrouper.html" title="interface in org.apache.kafka.streams.processor"><code>PartitionGrouper</code></a> interface that groups partitions by the partition id.
 
  Join operations requires that topics of the joining entities are copartitoned, i.e., being partitioned by the same key and having the same
@@ -203,7 +203,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/PartitionG
 <ul class="blockListLast">
 <li class="blockList">
 <h4>DefaultPartitionGrouper</h4>
-<pre>public&nbsp;DefaultPartitionGrouper()</pre>
+<pre>public&nbsp;DefaultPartitionGrouper()</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
@@ -222,7 +222,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/PartitionG
 <li class="blockList">
 <h4>partitionGroups</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/streams/processor/TaskId.html" title="class in org.apache.kafka.streams.processor">TaskId</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&gt;&nbsp;partitionGroups(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;topicGroups,
-                                                       <a href="../../../../../org/apache/kafka/common/Cluster.html" title="class in org.apache.kafka.common">Cluster</a>&nbsp;metadata)</pre>
+                                                       <a href="../../../../../org/apache/kafka/common/Cluster.html" title="class in org.apache.kafka.common">Cluster</a>&nbsp;metadata)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Generate tasks with the assigned topic partitions.</div>
 <dl>
@@ -243,7 +243,7 @@ implements <a href="../../../../../org/apache/kafka/streams/processor/PartitionG
 <li class="blockList">
 <h4>maxNumPartitions</h4>
 <pre>protected&nbsp;int&nbsp;maxNumPartitions(<a href="../../../../../org/apache/kafka/common/Cluster.html" title="class in org.apache.kafka.common">Cluster</a>&nbsp;metadata,
-                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topics)</pre>
+                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topics)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>

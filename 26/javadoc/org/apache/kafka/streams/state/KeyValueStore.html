@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">KeyValueStore&lt;K,V&gt;</span>
-extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>, <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="interface in org.apache.kafka.streams.state">ReadOnlyKeyValueStore</a>&lt;K,V&gt;</pre>
+extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>, <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="interface in org.apache.kafka.streams.state">ReadOnlyKeyValueStore</a>&lt;K,V&gt;</code></pre>
 <div class="block">A key-value store that supports put/get/delete and range queries.</div>
 </li>
 </ul>
@@ -197,7 +197,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.ht
 <li class="blockList">
 <h4>put</h4>
 <pre>void&nbsp;put(<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="type parameter in KeyValueStore">K</a>&nbsp;key,
-         <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="type parameter in KeyValueStore">V</a>&nbsp;value)</pre>
+         <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="type parameter in KeyValueStore">V</a>&nbsp;value)</code></pre>
 <div class="block">Update the value associated with this key.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -218,7 +218,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.ht
 <li class="blockList">
 <h4>putIfAbsent</h4>
 <pre><a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="type parameter in KeyValueStore">V</a>&nbsp;putIfAbsent(<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="type parameter in KeyValueStore">K</a>&nbsp;key,
-              <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="type parameter in KeyValueStore">V</a>&nbsp;value)</pre>
+              <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="type parameter in KeyValueStore">V</a>&nbsp;value)</code></pre>
 <div class="block">Update the value associated with this key, unless a value is already associated with the key.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -238,7 +238,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>putAll</h4>
-<pre>void&nbsp;putAll(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams">KeyValue</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="type parameter in KeyValueStore">K</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="type parameter in KeyValueStore">V</a>&gt;&gt;&nbsp;entries)</pre>
+<pre>void&nbsp;putAll(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams">KeyValue</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="type parameter in KeyValueStore">K</a>,<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="type parameter in KeyValueStore">V</a>&gt;&gt;&nbsp;entries)</code></pre>
 <div class="block">Update all the given key/value pairs.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -257,7 +257,7 @@ extends <a href="../../../../../org/apache/kafka/streams/processor/StateStore.ht
 <ul class="blockListLast">
 <li class="blockList">
 <h4>delete</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="type parameter in KeyValueStore">V</a>&nbsp;delete(<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="type parameter in KeyValueStore">K</a>&nbsp;key)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="type parameter in KeyValueStore">V</a>&nbsp;delete(<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="type parameter in KeyValueStore">K</a>&nbsp;key)</code></pre>
 <div class="block">Delete the value from the store (if there is one).</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

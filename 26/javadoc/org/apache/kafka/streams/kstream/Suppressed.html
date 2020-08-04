@@ -99,7 +99,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">Suppressed&lt;K&gt;</span></pre>
+<pre>public interface <span class="typeNameLabel">Suppressed&lt;K&gt;</span></code></pre>
 </li>
 </ul>
 </div>
@@ -193,7 +193,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>untilWindowCloses</h4>
-<pre>static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.html" title="interface in org.apache.kafka.streams.kstream">Suppressed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&gt;&nbsp;untilWindowCloses(<a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.StrictBufferConfig.html" title="interface in org.apache.kafka.streams.kstream">Suppressed.StrictBufferConfig</a>&nbsp;bufferConfig)</pre>
+<pre>static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.html" title="interface in org.apache.kafka.streams.kstream">Suppressed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream">Windowed</a>&gt;&nbsp;untilWindowCloses(<a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.StrictBufferConfig.html" title="interface in org.apache.kafka.streams.kstream">Suppressed.StrictBufferConfig</a>&nbsp;bufferConfig)</code></pre>
 <div class="block">Configure the suppression to emit only the "final results" from the window.
 
  By default all Streams operators emit results whenever new results are available.
@@ -224,7 +224,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>untilTimeLimit</h4>
 <pre>static&nbsp;&lt;K&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.html" title="interface in org.apache.kafka.streams.kstream">Suppressed</a>&lt;K&gt;&nbsp;untilTimeLimit(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeToWaitForMoreEvents,
-                                        <a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.BufferConfig.html" title="interface in org.apache.kafka.streams.kstream">Suppressed.BufferConfig</a>&nbsp;bufferConfig)</pre>
+                                        <a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.BufferConfig.html" title="interface in org.apache.kafka.streams.kstream">Suppressed.BufferConfig</a>&nbsp;bufferConfig)</code></pre>
 <div class="block">Configure the suppression to wait <code>timeToWaitForMoreEvents</code> amount of time after receiving a record
  before emitting it further downstream. If another record for the same key arrives in the mean time, it replaces
  the first record in the buffer but does <em>not</em> re-start the timer.</div>
@@ -245,7 +245,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>withName</h4>
-<pre><a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.html" title="interface in org.apache.kafka.streams.kstream">Suppressed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.html" title="type parameter in Suppressed">K</a>&gt;&nbsp;withName(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre><a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.html" title="interface in org.apache.kafka.streams.kstream">Suppressed</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Suppressed.html" title="type parameter in Suppressed">K</a>&gt;&nbsp;withName(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code></pre>
 <div class="block">Use the specified name for the suppression node in the topology.
  <p>
  This can be used to insert a suppression without changing the rest of the topology names

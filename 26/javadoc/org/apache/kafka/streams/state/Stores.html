@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public final class <span class="typeNameLabel">Stores</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">Factory for creating state stores in Kafka Streams.
  <p>
  When using the high-level DSL, i.e., <a href="../../../../../org/apache/kafka/streams/StreamsBuilder.html" title="class in org.apache.kafka.streams"><code>StreamsBuilder</code></a>, users create
@@ -125,7 +125,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                .withKeySerde(Serdes.Long())
                .withValueSerde(Serdes.String())
                .withCachingDisabled());
- </code></pre>
+ </code></code></pre>
  When using the Processor API, i.e., <a href="../../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams"><code>Topology</code></a>, users create
  <a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state"><code>StoreBuilder</code></a>s that can be attached to <a href="../../../../../org/apache/kafka/streams/processor/Processor.html" title="interface in org.apache.kafka.streams.processor"><code>Processor</code></a>s.
  For example, you can create a <a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream"><code>windowed</code></a> RocksDB store with custom
@@ -143,7 +143,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
    .withLoggingEnabled(topicConfig);
 
  topology.addStateStore(storeBuilder, "processorName");
- </code></pre></div>
+ </code></code></pre></div>
 </li>
 </ul>
 </div>
@@ -334,7 +334,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Stores</h4>
-<pre>public&nbsp;Stores()</pre>
+<pre>public&nbsp;Stores()</code></pre>
 </li>
 </ul>
 </li>
@@ -351,7 +351,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>persistentKeyValueStore</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/KeyValueBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">KeyValueBytesStoreSupplier</a>&nbsp;persistentKeyValueStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/KeyValueBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">KeyValueBytesStoreSupplier</a>&nbsp;persistentKeyValueStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code></pre>
 <div class="block">Create a persistent <a href="../../../../../org/apache/kafka/streams/state/KeyValueBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueBytesStoreSupplier</code></a>.
  <p>
  This store supplier can be passed into a <a href="../../../../../org/apache/kafka/streams/state/Stores.html#keyValueStoreBuilder-org.apache.kafka.streams.state.KeyValueBytesStoreSupplier-org.apache.kafka.common.serialization.Serde-org.apache.kafka.common.serialization.Serde-"><code>keyValueStoreBuilder(KeyValueBytesStoreSupplier, Serde, Serde)</code></a>.
@@ -372,7 +372,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>persistentTimestampedKeyValueStore</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/KeyValueBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">KeyValueBytesStoreSupplier</a>&nbsp;persistentTimestampedKeyValueStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/KeyValueBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">KeyValueBytesStoreSupplier</a>&nbsp;persistentTimestampedKeyValueStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code></pre>
 <div class="block">Create a persistent <a href="../../../../../org/apache/kafka/streams/state/KeyValueBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueBytesStoreSupplier</code></a>.
  <p>
  This store supplier can be passed into a
@@ -394,7 +394,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>inMemoryKeyValueStore</h4>
-<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/KeyValueBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">KeyValueBytesStoreSupplier</a>&nbsp;inMemoryKeyValueStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/KeyValueBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">KeyValueBytesStoreSupplier</a>&nbsp;inMemoryKeyValueStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code></pre>
 <div class="block">Create an in-memory <a href="../../../../../org/apache/kafka/streams/state/KeyValueBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueBytesStoreSupplier</code></a>.
  <p>
  This store supplier can be passed into a <a href="../../../../../org/apache/kafka/streams/state/Stores.html#keyValueStoreBuilder-org.apache.kafka.streams.state.KeyValueBytesStoreSupplier-org.apache.kafka.common.serialization.Serde-org.apache.kafka.common.serialization.Serde-"><code>keyValueStoreBuilder(KeyValueBytesStoreSupplier, Serde, Serde)</code></a>
@@ -415,7 +415,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>lruMap</h4>
 <pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/KeyValueBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">KeyValueBytesStoreSupplier</a>&nbsp;lruMap(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
-                                                int&nbsp;maxCacheSize)</pre>
+                                                int&nbsp;maxCacheSize)</code></pre>
 <div class="block">Create a LRU Map <a href="../../../../../org/apache/kafka/streams/state/KeyValueBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueBytesStoreSupplier</code></a>.
  <p>
  This store supplier can be passed into a <a href="../../../../../org/apache/kafka/streams/state/Stores.html#keyValueStoreBuilder-org.apache.kafka.streams.state.KeyValueBytesStoreSupplier-org.apache.kafka.common.serialization.Serde-org.apache.kafka.common.serialization.Serde-"><code>keyValueStoreBuilder(KeyValueBytesStoreSupplier, Serde, Serde)</code></a>
@@ -441,7 +441,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/Window
                                                                          long&nbsp;retentionPeriod,
                                                                          int&nbsp;numSegments,
                                                                          long&nbsp;windowSize,
-                                                                         boolean&nbsp;retainDuplicates)</pre>
+                                                                         boolean&nbsp;retainDuplicates)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.1 Use <a href="../../../../../org/apache/kafka/streams/state/Stores.html#persistentWindowStore-java.lang.String-java.time.Duration-java.time.Duration-boolean-"><code>persistentWindowStore(String, Duration, Duration, boolean)</code></a> instead</span></div>
 <div class="block">Create a persistent <a href="../../../../../org/apache/kafka/streams/state/WindowBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state"><code>WindowBytesStoreSupplier</code></a>.</div>
 <dl>
@@ -473,7 +473,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/Window
                                                              <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;retentionPeriod,
                                                              <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;windowSize,
                                                              boolean&nbsp;retainDuplicates)
-                                                      throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                                                      throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block">Create a persistent <a href="../../../../../org/apache/kafka/streams/state/WindowBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state"><code>WindowBytesStoreSupplier</code></a>.
  <p>
  This store supplier can be passed into a <a href="../../../../../org/apache/kafka/streams/state/Stores.html#windowStoreBuilder-org.apache.kafka.streams.state.WindowBytesStoreSupplier-org.apache.kafka.common.serialization.Serde-org.apache.kafka.common.serialization.Serde-"><code>windowStoreBuilder(WindowBytesStoreSupplier, Serde, Serde)</code></a>.
@@ -506,7 +506,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/Window
                                                                         <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;retentionPeriod,
                                                                         <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;windowSize,
                                                                         boolean&nbsp;retainDuplicates)
-                                                                 throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                                                                 throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block">Create a persistent <a href="../../../../../org/apache/kafka/streams/state/WindowBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state"><code>WindowBytesStoreSupplier</code></a>.
  <p>
  This store supplier can be passed into a
@@ -540,7 +540,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/Window
                                                            <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;retentionPeriod,
                                                            <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;windowSize,
                                                            boolean&nbsp;retainDuplicates)
-                                                    throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                                                    throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block">Create an in-memory <a href="../../../../../org/apache/kafka/streams/state/WindowBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state"><code>WindowBytesStoreSupplier</code></a>.
  <p>
  This store supplier can be passed into a <a href="../../../../../org/apache/kafka/streams/state/Stores.html#windowStoreBuilder-org.apache.kafka.streams.state.WindowBytesStoreSupplier-org.apache.kafka.common.serialization.Serde-org.apache.kafka.common.serialization.Serde-"><code>windowStoreBuilder(WindowBytesStoreSupplier, Serde, Serde)</code></a> or
@@ -570,7 +570,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/Window
 <h4>persistentSessionStore</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/SessionBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">SessionBytesStoreSupplier</a>&nbsp;persistentSessionStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
-                                                                           long&nbsp;retentionPeriodMs)</pre>
+                                                                           long&nbsp;retentionPeriodMs)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.1 Use <a href="../../../../../org/apache/kafka/streams/state/Stores.html#persistentSessionStore-java.lang.String-java.time.Duration-"><code>persistentSessionStore(String, Duration)</code></a> instead</span></div>
 <div class="block">Create a persistent <a href="../../../../../org/apache/kafka/streams/state/SessionBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state"><code>SessionBytesStoreSupplier</code></a>.</div>
 <dl>
@@ -591,7 +591,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/Sessio
 <li class="blockList">
 <h4>persistentSessionStore</h4>
 <pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/SessionBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">SessionBytesStoreSupplier</a>&nbsp;persistentSessionStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
-                                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;retentionPeriod)</pre>
+                                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;retentionPeriod)</code></pre>
 <div class="block">Create a persistent <a href="../../../../../org/apache/kafka/streams/state/SessionBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state"><code>SessionBytesStoreSupplier</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -611,7 +611,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/Sessio
 <li class="blockList">
 <h4>inMemorySessionStore</h4>
 <pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/SessionBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">SessionBytesStoreSupplier</a>&nbsp;inMemorySessionStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
-                                                             <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;retentionPeriod)</pre>
+                                                             <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;retentionPeriod)</code></pre>
 <div class="block">Create an in-memory <a href="../../../../../org/apache/kafka/streams/state/SessionBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state"><code>SessionBytesStoreSupplier</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -632,7 +632,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/Sessio
 <h4>keyValueStoreBuilder</h4>
 <pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state">StoreBuilder</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;K,V&gt;&gt;&nbsp;keyValueStoreBuilder(<a href="../../../../../org/apache/kafka/streams/state/KeyValueBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">KeyValueBytesStoreSupplier</a>&nbsp;supplier,
                                                                           <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;K&gt;&nbsp;keySerde,
-                                                                          <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</pre>
+                                                                          <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</code></pre>
 <div class="block">Creates a <a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state"><code>StoreBuilder</code></a> that can be used to build a <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a>.
  <p>
  The provided supplier should <strong>not</strong> be a supplier for
@@ -659,7 +659,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/Sessio
 <h4>timestampedKeyValueStoreBuilder</h4>
 <pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state">StoreBuilder</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/TimestampedKeyValueStore.html" title="interface in org.apache.kafka.streams.state">TimestampedKeyValueStore</a>&lt;K,V&gt;&gt;&nbsp;timestampedKeyValueStoreBuilder(<a href="../../../../../org/apache/kafka/streams/state/KeyValueBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">KeyValueBytesStoreSupplier</a>&nbsp;supplier,
                                                                                                 <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;K&gt;&nbsp;keySerde,
-                                                                                                <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</pre>
+                                                                                                <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</code></pre>
 <div class="block">Creates a <a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state"><code>StoreBuilder</code></a> that can be used to build a <a href="../../../../../org/apache/kafka/streams/state/TimestampedKeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>TimestampedKeyValueStore</code></a>.
  <p>
  The provided supplier should <strong>not</strong> be a supplier for
@@ -687,7 +687,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/Sessio
 <h4>windowStoreBuilder</h4>
 <pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state">StoreBuilder</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state">WindowStore</a>&lt;K,V&gt;&gt;&nbsp;windowStoreBuilder(<a href="../../../../../org/apache/kafka/streams/state/WindowBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">WindowBytesStoreSupplier</a>&nbsp;supplier,
                                                                       <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;K&gt;&nbsp;keySerde,
-                                                                      <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</pre>
+                                                                      <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</code></pre>
 <div class="block">Creates a <a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state"><code>StoreBuilder</code></a> that can be used to build a <a href="../../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state"><code>WindowStore</code></a>.
  <p>
  The provided supplier should <strong>not</strong> be a supplier for
@@ -714,7 +714,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/Sessio
 <h4>timestampedWindowStoreBuilder</h4>
 <pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state">StoreBuilder</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/TimestampedWindowStore.html" title="interface in org.apache.kafka.streams.state">TimestampedWindowStore</a>&lt;K,V&gt;&gt;&nbsp;timestampedWindowStoreBuilder(<a href="../../../../../org/apache/kafka/streams/state/WindowBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">WindowBytesStoreSupplier</a>&nbsp;supplier,
                                                                                             <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;K&gt;&nbsp;keySerde,
-                                                                                            <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</pre>
+                                                                                            <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</code></pre>
 <div class="block">Creates a <a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state"><code>StoreBuilder</code></a> that can be used to build a <a href="../../../../../org/apache/kafka/streams/state/TimestampedWindowStore.html" title="interface in org.apache.kafka.streams.state"><code>TimestampedWindowStore</code></a>.
  <p>
  The provided supplier should <strong>not</strong> be a supplier for
@@ -742,7 +742,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/state/Sessio
 <h4>sessionStoreBuilder</h4>
 <pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state">StoreBuilder</a>&lt;<a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;K,V&gt;&gt;&nbsp;sessionStoreBuilder(<a href="../../../../../org/apache/kafka/streams/state/SessionBytesStoreSupplier.html" title="interface in org.apache.kafka.streams.state">SessionBytesStoreSupplier</a>&nbsp;supplier,
                                                                         <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;K&gt;&nbsp;keySerde,
-                                                                        <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</pre>
+                                                                        <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</code></pre>
 <div class="block">Creates a <a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state"><code>StoreBuilder</code></a> that can be used to build a <a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state"><code>SessionStore</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>

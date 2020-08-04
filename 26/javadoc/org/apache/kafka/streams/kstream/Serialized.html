@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public class <span class="typeNameLabel">Serialized&lt;K,V&gt;</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">The class that is used to capture the key and value <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>Serde</code></a>s used when performing
  <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html#groupBy-org.apache.kafka.streams.kstream.KeyValueMapper-org.apache.kafka.streams.kstream.Serialized-"><code>KStream.groupBy(KeyValueMapper, Serialized)</code></a> and <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html#groupByKey-org.apache.kafka.streams.kstream.Serialized-"><code>KStream.groupByKey(Serialized)</code></a> operations.</div>
 </li>
@@ -236,7 +236,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>keySerde</h4>
-<pre>protected final&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">K</a>&gt; keySerde</pre>
+<pre>protected final&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">K</a>&gt; keySerde</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
@@ -246,7 +246,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>valueSerde</h4>
-<pre>protected final&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">V</a>&gt; valueSerde</pre>
+<pre>protected final&nbsp;<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">V</a>&gt; valueSerde</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
@@ -264,7 +264,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Serialized</h4>
-<pre>protected&nbsp;Serialized(<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="class in org.apache.kafka.streams.kstream">Serialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">V</a>&gt;&nbsp;serialized)</pre>
+<pre>protected&nbsp;Serialized(<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="class in org.apache.kafka.streams.kstream">Serialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">V</a>&gt;&nbsp;serialized)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
@@ -283,7 +283,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>with</h4>
 <pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="class in org.apache.kafka.streams.kstream">Serialized</a>&lt;K,V&gt;&nbsp;with(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;K&gt;&nbsp;keySerde,
-                                         <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</pre>
+                                         <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;V&gt;&nbsp;valueSerde)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Construct a <code>Serialized</code> instance with the provided key and value <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>Serde</code></a>s.
  If the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>Serde</code></a> params are <code>null</code> the default serdes defined in the configs will be used.</div>
@@ -307,7 +307,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>withKeySerde</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="class in org.apache.kafka.streams.kstream">Serialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">V</a>&gt;&nbsp;withKeySerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">K</a>&gt;&nbsp;keySerde)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="class in org.apache.kafka.streams.kstream">Serialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">V</a>&gt;&nbsp;withKeySerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">K</a>&gt;&nbsp;keySerde)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Construct a <code>Serialized</code> instance with the provided key <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>Serde</code></a>.
  If the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>Serde</code></a> params are null the default serdes defined in the configs will be used.</div>
@@ -326,7 +326,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>withValueSerde</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="class in org.apache.kafka.streams.kstream">Serialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">V</a>&gt;&nbsp;withValueSerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">V</a>&gt;&nbsp;valueSerde)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="class in org.apache.kafka.streams.kstream">Serialized</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">K</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">V</a>&gt;&nbsp;withValueSerde(<a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization">Serde</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Serialized.html" title="type parameter in Serialized">V</a>&gt;&nbsp;valueSerde)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Construct a <code>Serialized</code> instance with the provided value <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>Serde</code></a>.
  If the <a href="../../../../../org/apache/kafka/common/serialization/Serde.html" title="interface in org.apache.kafka.common.serialization"><code>Serde</code></a> params are null the default serdes defined in the configs will be used.</div>

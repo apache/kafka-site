@@ -109,7 +109,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre><a href="../../../../../org/apache/kafka/common/annotation/InterfaceStability.Evolving.html" title="annotation in org.apache.kafka.common.annotation">@InterfaceStability.Evolving</a>
 public interface <span class="typeNameLabel">Admin</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a></code></pre>
 <div class="block">The administrative client for Kafka, which supports managing and inspecting topics, brokers, configurations and ACLs.
  <p>
  The minimum broker version required is 0.10.0.0. Methods with stricter requirements will specify the minimum broker
@@ -673,7 +673,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 <ul class="blockList">
 <li class="blockList">
 <h4>create</h4>
-<pre>static&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/Admin.html" title="interface in org.apache.kafka.clients.admin">Admin</a>&nbsp;create(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;props)</pre>
+<pre>static&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/Admin.html" title="interface in org.apache.kafka.clients.admin">Admin</a>&nbsp;create(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;props)</code></pre>
 <div class="block">Create a new Admin with the given configuration.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -689,7 +689,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 <ul class="blockList">
 <li class="blockList">
 <h4>create</h4>
-<pre>static&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/Admin.html" title="interface in org.apache.kafka.clients.admin">Admin</a>&nbsp;create(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;conf)</pre>
+<pre>static&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/Admin.html" title="interface in org.apache.kafka.clients.admin">Admin</a>&nbsp;create(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;conf)</code></pre>
 <div class="block">Create a new Admin with the given configuration.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -705,7 +705,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>default&nbsp;void&nbsp;close()</pre>
+<pre>default&nbsp;void&nbsp;close()</code></pre>
 <div class="block">Close the Admin and release all associated resources.
  <p>
  See <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#close-long-java.util.concurrent.TimeUnit-"><code>close(long, TimeUnit)</code></a></div>
@@ -723,7 +723,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 <h4>close</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 default&nbsp;void&nbsp;close(long&nbsp;duration,
-                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</a>&nbsp;unit)</pre>
+                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</a>&nbsp;unit)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.2. Use <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#close-java.time.Duration-"><code>close(Duration)</code></a> or <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#close--"><code>close()</code></a>.</span></div>
 <div class="block">Close the Admin and release all associated resources.
  <p>
@@ -744,7 +744,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>void&nbsp;close(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+<pre>void&nbsp;close(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block">Close the Admin client and release all associated resources.
  <p>
  The close operation has a grace period during which current operations will be allowed to
@@ -763,7 +763,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <ul class="blockList">
 <li class="blockList">
 <h4>createTopics</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/CreateTopicsResult.html" title="class in org.apache.kafka.clients.admin">CreateTopicsResult</a>&nbsp;createTopics(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/clients/admin/NewTopic.html" title="class in org.apache.kafka.clients.admin">NewTopic</a>&gt;&nbsp;newTopics)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/CreateTopicsResult.html" title="class in org.apache.kafka.clients.admin">CreateTopicsResult</a>&nbsp;createTopics(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/clients/admin/NewTopic.html" title="class in org.apache.kafka.clients.admin">NewTopic</a>&gt;&nbsp;newTopics)</code></pre>
 <div class="block">Create a batch of new topics with the default options.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#createTopics-java.util.Collection-org.apache.kafka.clients.admin.CreateTopicsOptions-"><code>createTopics(Collection, CreateTopicsOptions)</code></a> with default options.
@@ -785,7 +785,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <li class="blockList">
 <h4>createTopics</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/CreateTopicsResult.html" title="class in org.apache.kafka.clients.admin">CreateTopicsResult</a>&nbsp;createTopics(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/clients/admin/NewTopic.html" title="class in org.apache.kafka.clients.admin">NewTopic</a>&gt;&nbsp;newTopics,
-                                <a href="../../../../../org/apache/kafka/clients/admin/CreateTopicsOptions.html" title="class in org.apache.kafka.clients.admin">CreateTopicsOptions</a>&nbsp;options)</pre>
+                                <a href="../../../../../org/apache/kafka/clients/admin/CreateTopicsOptions.html" title="class in org.apache.kafka.clients.admin">CreateTopicsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Create a batch of new topics.
  <p>
  This operation is not transactional so it may succeed for some topics while fail for others.
@@ -812,7 +812,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <ul class="blockList">
 <li class="blockList">
 <h4>deleteTopics</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DeleteTopicsResult.html" title="class in org.apache.kafka.clients.admin">DeleteTopicsResult</a>&nbsp;deleteTopics(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topics)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DeleteTopicsResult.html" title="class in org.apache.kafka.clients.admin">DeleteTopicsResult</a>&nbsp;deleteTopics(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topics)</code></pre>
 <div class="block">This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#deleteTopics-java.util.Collection-org.apache.kafka.clients.admin.DeleteTopicsOptions-"><code>deleteTopics(Collection, DeleteTopicsOptions)</code></a>
  with default options. See the overload for more details.
  <p>
@@ -832,7 +832,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <li class="blockList">
 <h4>deleteTopics</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/DeleteTopicsResult.html" title="class in org.apache.kafka.clients.admin">DeleteTopicsResult</a>&nbsp;deleteTopics(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topics,
-                                <a href="../../../../../org/apache/kafka/clients/admin/DeleteTopicsOptions.html" title="class in org.apache.kafka.clients.admin">DeleteTopicsOptions</a>&nbsp;options)</pre>
+                                <a href="../../../../../org/apache/kafka/clients/admin/DeleteTopicsOptions.html" title="class in org.apache.kafka.clients.admin">DeleteTopicsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Delete a batch of topics.
  <p>
  This operation is not transactional so it may succeed for some topics while fail for others.
@@ -862,7 +862,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <ul class="blockList">
 <li class="blockList">
 <h4>listTopics</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ListTopicsResult.html" title="class in org.apache.kafka.clients.admin">ListTopicsResult</a>&nbsp;listTopics()</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ListTopicsResult.html" title="class in org.apache.kafka.clients.admin">ListTopicsResult</a>&nbsp;listTopics()</code></pre>
 <div class="block">List the topics available in the cluster with the default options.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#listTopics-org.apache.kafka.clients.admin.ListTopicsOptions-"><code>listTopics(ListTopicsOptions)</code></a> with default options.
@@ -879,7 +879,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <ul class="blockList">
 <li class="blockList">
 <h4>listTopics</h4>
-<pre><a href="../../../../../org/apache/kafka/clients/admin/ListTopicsResult.html" title="class in org.apache.kafka.clients.admin">ListTopicsResult</a>&nbsp;listTopics(<a href="../../../../../org/apache/kafka/clients/admin/ListTopicsOptions.html" title="class in org.apache.kafka.clients.admin">ListTopicsOptions</a>&nbsp;options)</pre>
+<pre><a href="../../../../../org/apache/kafka/clients/admin/ListTopicsResult.html" title="class in org.apache.kafka.clients.admin">ListTopicsResult</a>&nbsp;listTopics(<a href="../../../../../org/apache/kafka/clients/admin/ListTopicsOptions.html" title="class in org.apache.kafka.clients.admin">ListTopicsOptions</a>&nbsp;options)</code></pre>
 <div class="block">List the topics available in the cluster.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -895,7 +895,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <ul class="blockList">
 <li class="blockList">
 <h4>describeTopics</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeTopicsResult.html" title="class in org.apache.kafka.clients.admin">DescribeTopicsResult</a>&nbsp;describeTopics(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topicNames)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeTopicsResult.html" title="class in org.apache.kafka.clients.admin">DescribeTopicsResult</a>&nbsp;describeTopics(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topicNames)</code></pre>
 <div class="block">Describe some topics in the cluster, with the default options.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#describeTopics-java.util.Collection-org.apache.kafka.clients.admin.DescribeTopicsOptions-"><code>describeTopics(Collection, DescribeTopicsOptions)</code></a> with
@@ -915,7 +915,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <li class="blockList">
 <h4>describeTopics</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/DescribeTopicsResult.html" title="class in org.apache.kafka.clients.admin">DescribeTopicsResult</a>&nbsp;describeTopics(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topicNames,
-                                    <a href="../../../../../org/apache/kafka/clients/admin/DescribeTopicsOptions.html" title="class in org.apache.kafka.clients.admin">DescribeTopicsOptions</a>&nbsp;options)</pre>
+                                    <a href="../../../../../org/apache/kafka/clients/admin/DescribeTopicsOptions.html" title="class in org.apache.kafka.clients.admin">DescribeTopicsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Describe some topics in the cluster.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -932,7 +932,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <ul class="blockList">
 <li class="blockList">
 <h4>describeCluster</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeClusterResult.html" title="class in org.apache.kafka.clients.admin">DescribeClusterResult</a>&nbsp;describeCluster()</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeClusterResult.html" title="class in org.apache.kafka.clients.admin">DescribeClusterResult</a>&nbsp;describeCluster()</code></pre>
 <div class="block">Get information about the nodes in the cluster, using the default options.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#describeCluster-org.apache.kafka.clients.admin.DescribeClusterOptions-"><code>describeCluster(DescribeClusterOptions)</code></a> with default options.
@@ -949,7 +949,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <ul class="blockList">
 <li class="blockList">
 <h4>describeCluster</h4>
-<pre><a href="../../../../../org/apache/kafka/clients/admin/DescribeClusterResult.html" title="class in org.apache.kafka.clients.admin">DescribeClusterResult</a>&nbsp;describeCluster(<a href="../../../../../org/apache/kafka/clients/admin/DescribeClusterOptions.html" title="class in org.apache.kafka.clients.admin">DescribeClusterOptions</a>&nbsp;options)</pre>
+<pre><a href="../../../../../org/apache/kafka/clients/admin/DescribeClusterResult.html" title="class in org.apache.kafka.clients.admin">DescribeClusterResult</a>&nbsp;describeCluster(<a href="../../../../../org/apache/kafka/clients/admin/DescribeClusterOptions.html" title="class in org.apache.kafka.clients.admin">DescribeClusterOptions</a>&nbsp;options)</code></pre>
 <div class="block">Get information about the nodes in the cluster.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -965,7 +965,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <ul class="blockList">
 <li class="blockList">
 <h4>describeAcls</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeAclsResult.html" title="class in org.apache.kafka.clients.admin">DescribeAclsResult</a>&nbsp;describeAcls(<a href="../../../../../org/apache/kafka/common/acl/AclBindingFilter.html" title="class in org.apache.kafka.common.acl">AclBindingFilter</a>&nbsp;filter)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeAclsResult.html" title="class in org.apache.kafka.clients.admin">DescribeAclsResult</a>&nbsp;describeAcls(<a href="../../../../../org/apache/kafka/common/acl/AclBindingFilter.html" title="class in org.apache.kafka.common.acl">AclBindingFilter</a>&nbsp;filter)</code></pre>
 <div class="block">This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#describeAcls-org.apache.kafka.common.acl.AclBindingFilter-org.apache.kafka.clients.admin.DescribeAclsOptions-"><code>describeAcls(AclBindingFilter, DescribeAclsOptions)</code></a> with
  default options. See the overload for more details.
  <p>
@@ -985,7 +985,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <li class="blockList">
 <h4>describeAcls</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/DescribeAclsResult.html" title="class in org.apache.kafka.clients.admin">DescribeAclsResult</a>&nbsp;describeAcls(<a href="../../../../../org/apache/kafka/common/acl/AclBindingFilter.html" title="class in org.apache.kafka.common.acl">AclBindingFilter</a>&nbsp;filter,
-                                <a href="../../../../../org/apache/kafka/clients/admin/DescribeAclsOptions.html" title="class in org.apache.kafka.clients.admin">DescribeAclsOptions</a>&nbsp;options)</pre>
+                                <a href="../../../../../org/apache/kafka/clients/admin/DescribeAclsOptions.html" title="class in org.apache.kafka.clients.admin">DescribeAclsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Lists access control lists (ACLs) according to the supplied filter.
  <p>
  Note: it may take some time for changes made by <code>createAcls</code> or <code>deleteAcls</code> to be reflected
@@ -1007,7 +1007,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <ul class="blockList">
 <li class="blockList">
 <h4>createAcls</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/CreateAclsResult.html" title="class in org.apache.kafka.clients.admin">CreateAclsResult</a>&nbsp;createAcls(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/acl/AclBinding.html" title="class in org.apache.kafka.common.acl">AclBinding</a>&gt;&nbsp;acls)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/CreateAclsResult.html" title="class in org.apache.kafka.clients.admin">CreateAclsResult</a>&nbsp;createAcls(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/acl/AclBinding.html" title="class in org.apache.kafka.common.acl">AclBinding</a>&gt;&nbsp;acls)</code></pre>
 <div class="block">This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#createAcls-java.util.Collection-org.apache.kafka.clients.admin.CreateAclsOptions-"><code>createAcls(Collection, CreateAclsOptions)</code></a> with
  default options. See the overload for more details.
  <p>
@@ -1027,7 +1027,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <li class="blockList">
 <h4>createAcls</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/CreateAclsResult.html" title="class in org.apache.kafka.clients.admin">CreateAclsResult</a>&nbsp;createAcls(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/acl/AclBinding.html" title="class in org.apache.kafka.common.acl">AclBinding</a>&gt;&nbsp;acls,
-                            <a href="../../../../../org/apache/kafka/clients/admin/CreateAclsOptions.html" title="class in org.apache.kafka.clients.admin">CreateAclsOptions</a>&nbsp;options)</pre>
+                            <a href="../../../../../org/apache/kafka/clients/admin/CreateAclsOptions.html" title="class in org.apache.kafka.clients.admin">CreateAclsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Creates access control lists (ACLs) which are bound to specific resources.
  <p>
  This operation is not transactional so it may succeed for some ACLs while fail for others.
@@ -1051,7 +1051,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <ul class="blockList">
 <li class="blockList">
 <h4>deleteAcls</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DeleteAclsResult.html" title="class in org.apache.kafka.clients.admin">DeleteAclsResult</a>&nbsp;deleteAcls(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/acl/AclBindingFilter.html" title="class in org.apache.kafka.common.acl">AclBindingFilter</a>&gt;&nbsp;filters)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DeleteAclsResult.html" title="class in org.apache.kafka.clients.admin">DeleteAclsResult</a>&nbsp;deleteAcls(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/acl/AclBindingFilter.html" title="class in org.apache.kafka.common.acl">AclBindingFilter</a>&gt;&nbsp;filters)</code></pre>
 <div class="block">This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#deleteAcls-java.util.Collection-org.apache.kafka.clients.admin.DeleteAclsOptions-"><code>deleteAcls(Collection, DeleteAclsOptions)</code></a> with default options.
  See the overload for more details.
  <p>
@@ -1071,7 +1071,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <li class="blockList">
 <h4>deleteAcls</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/DeleteAclsResult.html" title="class in org.apache.kafka.clients.admin">DeleteAclsResult</a>&nbsp;deleteAcls(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/acl/AclBindingFilter.html" title="class in org.apache.kafka.common.acl">AclBindingFilter</a>&gt;&nbsp;filters,
-                            <a href="../../../../../org/apache/kafka/clients/admin/DeleteAclsOptions.html" title="class in org.apache.kafka.clients.admin">DeleteAclsOptions</a>&nbsp;options)</pre>
+                            <a href="../../../../../org/apache/kafka/clients/admin/DeleteAclsOptions.html" title="class in org.apache.kafka.clients.admin">DeleteAclsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Deletes access control lists (ACLs) according to the supplied filters.
  <p>
  This operation is not transactional so it may succeed for some ACLs while fail for others.
@@ -1092,7 +1092,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <ul class="blockList">
 <li class="blockList">
 <h4>describeConfigs</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeConfigsResult.html" title="class in org.apache.kafka.clients.admin">DescribeConfigsResult</a>&nbsp;describeConfigs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/config/ConfigResource.html" title="class in org.apache.kafka.common.config">ConfigResource</a>&gt;&nbsp;resources)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeConfigsResult.html" title="class in org.apache.kafka.clients.admin">DescribeConfigsResult</a>&nbsp;describeConfigs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/config/ConfigResource.html" title="class in org.apache.kafka.common.config">ConfigResource</a>&gt;&nbsp;resources)</code></pre>
 <div class="block">Get the configuration for the specified resources with the default options.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#describeConfigs-java.util.Collection-org.apache.kafka.clients.admin.DescribeConfigsOptions-"><code>describeConfigs(Collection, DescribeConfigsOptions)</code></a> with default options.
@@ -1114,7 +1114,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <li class="blockList">
 <h4>describeConfigs</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/DescribeConfigsResult.html" title="class in org.apache.kafka.clients.admin">DescribeConfigsResult</a>&nbsp;describeConfigs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/config/ConfigResource.html" title="class in org.apache.kafka.common.config">ConfigResource</a>&gt;&nbsp;resources,
-                                      <a href="../../../../../org/apache/kafka/clients/admin/DescribeConfigsOptions.html" title="class in org.apache.kafka.clients.admin">DescribeConfigsOptions</a>&nbsp;options)</pre>
+                                      <a href="../../../../../org/apache/kafka/clients/admin/DescribeConfigsOptions.html" title="class in org.apache.kafka.clients.admin">DescribeConfigsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Get the configuration for the specified resources.
  <p>
  The returned configuration includes default values and the isDefault() method can be used to distinguish them
@@ -1142,7 +1142,7 @@ default&nbsp;void&nbsp;close(long&nbsp;duration,
 <li class="blockList">
 <h4>alterConfigs</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigsResult.html" title="class in org.apache.kafka.clients.admin">AlterConfigsResult</a>&nbsp;alterConfigs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/config/ConfigResource.html" title="class in org.apache.kafka.common.config">ConfigResource</a>,<a href="../../../../../org/apache/kafka/clients/admin/Config.html" title="class in org.apache.kafka.clients.admin">Config</a>&gt;&nbsp;configs)</pre>
+default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigsResult.html" title="class in org.apache.kafka.clients.admin">AlterConfigsResult</a>&nbsp;alterConfigs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/config/ConfigResource.html" title="class in org.apache.kafka.common.config">ConfigResource</a>,<a href="../../../../../org/apache/kafka/clients/admin/Config.html" title="class in org.apache.kafka.clients.admin">Config</a>&gt;&nbsp;configs)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.3. Use <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#incrementalAlterConfigs-java.util.Map-"><code>incrementalAlterConfigs(Map)</code></a>.</span></div>
 <div class="block">Update the configuration for the specified resources with the default options.
  <p>
@@ -1167,7 +1167,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <h4>alterConfigs</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 <a href="../../../../../org/apache/kafka/clients/admin/AlterConfigsResult.html" title="class in org.apache.kafka.clients.admin">AlterConfigsResult</a>&nbsp;alterConfigs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/config/ConfigResource.html" title="class in org.apache.kafka.common.config">ConfigResource</a>,<a href="../../../../../org/apache/kafka/clients/admin/Config.html" title="class in org.apache.kafka.clients.admin">Config</a>&gt;&nbsp;configs,
-                                            <a href="../../../../../org/apache/kafka/clients/admin/AlterConfigsOptions.html" title="class in org.apache.kafka.clients.admin">AlterConfigsOptions</a>&nbsp;options)</pre>
+                                            <a href="../../../../../org/apache/kafka/clients/admin/AlterConfigsOptions.html" title="class in org.apache.kafka.clients.admin">AlterConfigsOptions</a>&nbsp;options)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.3. Use <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#incrementalAlterConfigs-java.util.Map-org.apache.kafka.clients.admin.AlterConfigsOptions-"><code>incrementalAlterConfigs(Map, AlterConfigsOptions)</code></a>.</span></div>
 <div class="block">Update the configuration for the specified resources with the default options.
  <p>
@@ -1191,7 +1191,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>incrementalAlterConfigs</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigsResult.html" title="class in org.apache.kafka.clients.admin">AlterConfigsResult</a>&nbsp;incrementalAlterConfigs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/config/ConfigResource.html" title="class in org.apache.kafka.common.config">ConfigResource</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigOp.html" title="class in org.apache.kafka.clients.admin">AlterConfigOp</a>&gt;&gt;&nbsp;configs)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigsResult.html" title="class in org.apache.kafka.clients.admin">AlterConfigsResult</a>&nbsp;incrementalAlterConfigs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/config/ConfigResource.html" title="class in org.apache.kafka.common.config">ConfigResource</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigOp.html" title="class in org.apache.kafka.clients.admin">AlterConfigOp</a>&gt;&gt;&nbsp;configs)</code></pre>
 <div class="block">Incrementally updates the configuration for the specified resources with default options.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#incrementalAlterConfigs-java.util.Map-org.apache.kafka.clients.admin.AlterConfigsOptions-"><code>incrementalAlterConfigs(Map, AlterConfigsOptions)</code></a> with default options.
@@ -1213,7 +1213,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <li class="blockList">
 <h4>incrementalAlterConfigs</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/AlterConfigsResult.html" title="class in org.apache.kafka.clients.admin">AlterConfigsResult</a>&nbsp;incrementalAlterConfigs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/config/ConfigResource.html" title="class in org.apache.kafka.common.config">ConfigResource</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigOp.html" title="class in org.apache.kafka.clients.admin">AlterConfigOp</a>&gt;&gt;&nbsp;configs,
-                                           <a href="../../../../../org/apache/kafka/clients/admin/AlterConfigsOptions.html" title="class in org.apache.kafka.clients.admin">AlterConfigsOptions</a>&nbsp;options)</pre>
+                                           <a href="../../../../../org/apache/kafka/clients/admin/AlterConfigsOptions.html" title="class in org.apache.kafka.clients.admin">AlterConfigsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Incrementally update the configuration for the specified resources.
  <p>
  Updates are not transactional so they may succeed for some resources while fail for others. The configs for
@@ -1246,7 +1246,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>alterReplicaLogDirs</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterReplicaLogDirsResult.html" title="class in org.apache.kafka.clients.admin">AlterReplicaLogDirsResult</a>&nbsp;alterReplicaLogDirs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartitionReplica.html" title="class in org.apache.kafka.common">TopicPartitionReplica</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;replicaAssignment)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterReplicaLogDirsResult.html" title="class in org.apache.kafka.clients.admin">AlterReplicaLogDirsResult</a>&nbsp;alterReplicaLogDirs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartitionReplica.html" title="class in org.apache.kafka.common">TopicPartitionReplica</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;replicaAssignment)</code></pre>
 <div class="block">Change the log directory for the specified replicas. If the replica does not exist on the broker, the result
  shows REPLICA_NOT_AVAILABLE for the given replica and the replica will be created in the given log directory on the
  broker when it is created later. If the replica already exists on the broker, the replica will be moved to the given
@@ -1275,7 +1275,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <li class="blockList">
 <h4>alterReplicaLogDirs</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/AlterReplicaLogDirsResult.html" title="class in org.apache.kafka.clients.admin">AlterReplicaLogDirsResult</a>&nbsp;alterReplicaLogDirs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartitionReplica.html" title="class in org.apache.kafka.common">TopicPartitionReplica</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;replicaAssignment,
-                                              <a href="../../../../../org/apache/kafka/clients/admin/AlterReplicaLogDirsOptions.html" title="class in org.apache.kafka.clients.admin">AlterReplicaLogDirsOptions</a>&nbsp;options)</pre>
+                                              <a href="../../../../../org/apache/kafka/clients/admin/AlterReplicaLogDirsOptions.html" title="class in org.apache.kafka.clients.admin">AlterReplicaLogDirsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Change the log directory for the specified replicas. If the replica does not exist on the broker, the result
  shows REPLICA_NOT_AVAILABLE for the given replica and the replica will be created in the given log directory on the
  broker when it is created later. If the replica already exists on the broker, the replica will be moved to the given
@@ -1301,7 +1301,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>describeLogDirs</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeLogDirsResult.html" title="class in org.apache.kafka.clients.admin">DescribeLogDirsResult</a>&nbsp;describeLogDirs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;brokers)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeLogDirsResult.html" title="class in org.apache.kafka.clients.admin">DescribeLogDirsResult</a>&nbsp;describeLogDirs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;brokers)</code></pre>
 <div class="block">Query the information of all log directories on the given set of brokers
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#describeLogDirs-java.util.Collection-org.apache.kafka.clients.admin.DescribeLogDirsOptions-"><code>describeLogDirs(Collection, DescribeLogDirsOptions)</code></a> with default options.
@@ -1323,7 +1323,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <li class="blockList">
 <h4>describeLogDirs</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/DescribeLogDirsResult.html" title="class in org.apache.kafka.clients.admin">DescribeLogDirsResult</a>&nbsp;describeLogDirs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;brokers,
-                                      <a href="../../../../../org/apache/kafka/clients/admin/DescribeLogDirsOptions.html" title="class in org.apache.kafka.clients.admin">DescribeLogDirsOptions</a>&nbsp;options)</pre>
+                                      <a href="../../../../../org/apache/kafka/clients/admin/DescribeLogDirsOptions.html" title="class in org.apache.kafka.clients.admin">DescribeLogDirsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Query the information of all log directories on the given set of brokers
  <p>
  This operation is supported by brokers with version 1.0.0 or higher.</div>
@@ -1342,7 +1342,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>describeReplicaLogDirs</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeReplicaLogDirsResult.html" title="class in org.apache.kafka.clients.admin">DescribeReplicaLogDirsResult</a>&nbsp;describeReplicaLogDirs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartitionReplica.html" title="class in org.apache.kafka.common">TopicPartitionReplica</a>&gt;&nbsp;replicas)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeReplicaLogDirsResult.html" title="class in org.apache.kafka.clients.admin">DescribeReplicaLogDirsResult</a>&nbsp;describeReplicaLogDirs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartitionReplica.html" title="class in org.apache.kafka.common">TopicPartitionReplica</a>&gt;&nbsp;replicas)</code></pre>
 <div class="block">Query the replica log directory information for the specified replicas.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#describeReplicaLogDirs-java.util.Collection-org.apache.kafka.clients.admin.DescribeReplicaLogDirsOptions-"><code>describeReplicaLogDirs(Collection, DescribeReplicaLogDirsOptions)</code></a>
@@ -1364,7 +1364,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <li class="blockList">
 <h4>describeReplicaLogDirs</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/DescribeReplicaLogDirsResult.html" title="class in org.apache.kafka.clients.admin">DescribeReplicaLogDirsResult</a>&nbsp;describeReplicaLogDirs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartitionReplica.html" title="class in org.apache.kafka.common">TopicPartitionReplica</a>&gt;&nbsp;replicas,
-                                                    <a href="../../../../../org/apache/kafka/clients/admin/DescribeReplicaLogDirsOptions.html" title="class in org.apache.kafka.clients.admin">DescribeReplicaLogDirsOptions</a>&nbsp;options)</pre>
+                                                    <a href="../../../../../org/apache/kafka/clients/admin/DescribeReplicaLogDirsOptions.html" title="class in org.apache.kafka.clients.admin">DescribeReplicaLogDirsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Query the replica log directory information for the specified replicas.
  <p>
  This operation is supported by brokers with version 1.0.0 or higher.</div>
@@ -1383,7 +1383,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>createPartitions</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/CreatePartitionsResult.html" title="class in org.apache.kafka.clients.admin">CreatePartitionsResult</a>&nbsp;createPartitions(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../org/apache/kafka/clients/admin/NewPartitions.html" title="class in org.apache.kafka.clients.admin">NewPartitions</a>&gt;&nbsp;newPartitions)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/CreatePartitionsResult.html" title="class in org.apache.kafka.clients.admin">CreatePartitionsResult</a>&nbsp;createPartitions(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../org/apache/kafka/clients/admin/NewPartitions.html" title="class in org.apache.kafka.clients.admin">NewPartitions</a>&gt;&nbsp;newPartitions)</code></pre>
 <div class="block">Increase the number of partitions of the topics given as the keys of <code>newPartitions</code>
  according to the corresponding values. <strong>If partitions are increased for a topic that has a key,
  the partition logic or ordering of the messages will be affected.</strong>
@@ -1406,7 +1406,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <li class="blockList">
 <h4>createPartitions</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/CreatePartitionsResult.html" title="class in org.apache.kafka.clients.admin">CreatePartitionsResult</a>&nbsp;createPartitions(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../org/apache/kafka/clients/admin/NewPartitions.html" title="class in org.apache.kafka.clients.admin">NewPartitions</a>&gt;&nbsp;newPartitions,
-                                        <a href="../../../../../org/apache/kafka/clients/admin/CreatePartitionsOptions.html" title="class in org.apache.kafka.clients.admin">CreatePartitionsOptions</a>&nbsp;options)</pre>
+                                        <a href="../../../../../org/apache/kafka/clients/admin/CreatePartitionsOptions.html" title="class in org.apache.kafka.clients.admin">CreatePartitionsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Increase the number of partitions of the topics given as the keys of <code>newPartitions</code>
  according to the corresponding values. <strong>If partitions are increased for a topic that has a key,
  the partition logic or ordering of the messages will be affected.</strong>
@@ -1453,7 +1453,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>deleteRecords</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DeleteRecordsResult.html" title="class in org.apache.kafka.clients.admin">DeleteRecordsResult</a>&nbsp;deleteRecords(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/admin/RecordsToDelete.html" title="class in org.apache.kafka.clients.admin">RecordsToDelete</a>&gt;&nbsp;recordsToDelete)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DeleteRecordsResult.html" title="class in org.apache.kafka.clients.admin">DeleteRecordsResult</a>&nbsp;deleteRecords(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/admin/RecordsToDelete.html" title="class in org.apache.kafka.clients.admin">RecordsToDelete</a>&gt;&nbsp;recordsToDelete)</code></pre>
 <div class="block">Delete records whose offset is smaller than the given offset of the corresponding partition.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#deleteRecords-java.util.Map-org.apache.kafka.clients.admin.DeleteRecordsOptions-"><code>deleteRecords(Map, DeleteRecordsOptions)</code></a> with default options.
@@ -1475,7 +1475,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <li class="blockList">
 <h4>deleteRecords</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/DeleteRecordsResult.html" title="class in org.apache.kafka.clients.admin">DeleteRecordsResult</a>&nbsp;deleteRecords(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/admin/RecordsToDelete.html" title="class in org.apache.kafka.clients.admin">RecordsToDelete</a>&gt;&nbsp;recordsToDelete,
-                                  <a href="../../../../../org/apache/kafka/clients/admin/DeleteRecordsOptions.html" title="class in org.apache.kafka.clients.admin">DeleteRecordsOptions</a>&nbsp;options)</pre>
+                                  <a href="../../../../../org/apache/kafka/clients/admin/DeleteRecordsOptions.html" title="class in org.apache.kafka.clients.admin">DeleteRecordsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Delete records whose offset is smaller than the given offset of the corresponding partition.
  <p>
  This operation is supported by brokers with version 0.11.0.0 or higher.</div>
@@ -1494,7 +1494,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>createDelegationToken</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/CreateDelegationTokenResult.html" title="class in org.apache.kafka.clients.admin">CreateDelegationTokenResult</a>&nbsp;createDelegationToken()</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/CreateDelegationTokenResult.html" title="class in org.apache.kafka.clients.admin">CreateDelegationTokenResult</a>&nbsp;createDelegationToken()</code></pre>
 <div class="block">Create a Delegation Token.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#createDelegationToken-org.apache.kafka.clients.admin.CreateDelegationTokenOptions-"><code>createDelegationToken(CreateDelegationTokenOptions)</code></a> with default options.
@@ -1511,7 +1511,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>createDelegationToken</h4>
-<pre><a href="../../../../../org/apache/kafka/clients/admin/CreateDelegationTokenResult.html" title="class in org.apache.kafka.clients.admin">CreateDelegationTokenResult</a>&nbsp;createDelegationToken(<a href="../../../../../org/apache/kafka/clients/admin/CreateDelegationTokenOptions.html" title="class in org.apache.kafka.clients.admin">CreateDelegationTokenOptions</a>&nbsp;options)</pre>
+<pre><a href="../../../../../org/apache/kafka/clients/admin/CreateDelegationTokenResult.html" title="class in org.apache.kafka.clients.admin">CreateDelegationTokenResult</a>&nbsp;createDelegationToken(<a href="../../../../../org/apache/kafka/clients/admin/CreateDelegationTokenOptions.html" title="class in org.apache.kafka.clients.admin">CreateDelegationTokenOptions</a>&nbsp;options)</code></pre>
 <div class="block">Create a Delegation Token.
  <p>
  This operation is supported by brokers with version 1.1.0 or higher.
@@ -1542,7 +1542,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>renewDelegationToken</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/RenewDelegationTokenResult.html" title="class in org.apache.kafka.clients.admin">RenewDelegationTokenResult</a>&nbsp;renewDelegationToken(byte[]&nbsp;hmac)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/RenewDelegationTokenResult.html" title="class in org.apache.kafka.clients.admin">RenewDelegationTokenResult</a>&nbsp;renewDelegationToken(byte[]&nbsp;hmac)</code></pre>
 <div class="block">Renew a Delegation Token.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#renewDelegationToken-byte:A-org.apache.kafka.clients.admin.RenewDelegationTokenOptions-"><code>renewDelegationToken(byte[], RenewDelegationTokenOptions)</code></a> with default options.
@@ -1562,7 +1562,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <li class="blockList">
 <h4>renewDelegationToken</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/RenewDelegationTokenResult.html" title="class in org.apache.kafka.clients.admin">RenewDelegationTokenResult</a>&nbsp;renewDelegationToken(byte[]&nbsp;hmac,
-                                                <a href="../../../../../org/apache/kafka/clients/admin/RenewDelegationTokenOptions.html" title="class in org.apache.kafka.clients.admin">RenewDelegationTokenOptions</a>&nbsp;options)</pre>
+                                                <a href="../../../../../org/apache/kafka/clients/admin/RenewDelegationTokenOptions.html" title="class in org.apache.kafka.clients.admin">RenewDelegationTokenOptions</a>&nbsp;options)</code></pre>
 <div class="block">Renew a Delegation Token.
  <p>
  This operation is supported by brokers with version 1.1.0 or higher.
@@ -1598,7 +1598,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>expireDelegationToken</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ExpireDelegationTokenResult.html" title="class in org.apache.kafka.clients.admin">ExpireDelegationTokenResult</a>&nbsp;expireDelegationToken(byte[]&nbsp;hmac)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ExpireDelegationTokenResult.html" title="class in org.apache.kafka.clients.admin">ExpireDelegationTokenResult</a>&nbsp;expireDelegationToken(byte[]&nbsp;hmac)</code></pre>
 <div class="block">Expire a Delegation Token.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#expireDelegationToken-byte:A-org.apache.kafka.clients.admin.ExpireDelegationTokenOptions-"><code>expireDelegationToken(byte[], ExpireDelegationTokenOptions)</code></a> with default options.
@@ -1618,7 +1618,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <li class="blockList">
 <h4>expireDelegationToken</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/ExpireDelegationTokenResult.html" title="class in org.apache.kafka.clients.admin">ExpireDelegationTokenResult</a>&nbsp;expireDelegationToken(byte[]&nbsp;hmac,
-                                                  <a href="../../../../../org/apache/kafka/clients/admin/ExpireDelegationTokenOptions.html" title="class in org.apache.kafka.clients.admin">ExpireDelegationTokenOptions</a>&nbsp;options)</pre>
+                                                  <a href="../../../../../org/apache/kafka/clients/admin/ExpireDelegationTokenOptions.html" title="class in org.apache.kafka.clients.admin">ExpireDelegationTokenOptions</a>&nbsp;options)</code></pre>
 <div class="block">Expire a Delegation Token.
  <p>
  This operation is supported by brokers with version 1.1.0 or higher.
@@ -1654,7 +1654,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>describeDelegationToken</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeDelegationTokenResult.html" title="class in org.apache.kafka.clients.admin">DescribeDelegationTokenResult</a>&nbsp;describeDelegationToken()</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeDelegationTokenResult.html" title="class in org.apache.kafka.clients.admin">DescribeDelegationTokenResult</a>&nbsp;describeDelegationToken()</code></pre>
 <div class="block">Describe the Delegation Tokens.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#describeDelegationToken-org.apache.kafka.clients.admin.DescribeDelegationTokenOptions-"><code>describeDelegationToken(DescribeDelegationTokenOptions)</code></a> with default options.
@@ -1671,7 +1671,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>describeDelegationToken</h4>
-<pre><a href="../../../../../org/apache/kafka/clients/admin/DescribeDelegationTokenResult.html" title="class in org.apache.kafka.clients.admin">DescribeDelegationTokenResult</a>&nbsp;describeDelegationToken(<a href="../../../../../org/apache/kafka/clients/admin/DescribeDelegationTokenOptions.html" title="class in org.apache.kafka.clients.admin">DescribeDelegationTokenOptions</a>&nbsp;options)</pre>
+<pre><a href="../../../../../org/apache/kafka/clients/admin/DescribeDelegationTokenResult.html" title="class in org.apache.kafka.clients.admin">DescribeDelegationTokenResult</a>&nbsp;describeDelegationToken(<a href="../../../../../org/apache/kafka/clients/admin/DescribeDelegationTokenOptions.html" title="class in org.apache.kafka.clients.admin">DescribeDelegationTokenOptions</a>&nbsp;options)</code></pre>
 <div class="block">Describe the Delegation Tokens.
  <p>
  This operation is supported by brokers with version 1.1.0 or higher.
@@ -1701,7 +1701,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <li class="blockList">
 <h4>describeConsumerGroups</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/DescribeConsumerGroupsResult.html" title="class in org.apache.kafka.clients.admin">DescribeConsumerGroupsResult</a>&nbsp;describeConsumerGroups(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;groupIds,
-                                                    <a href="../../../../../org/apache/kafka/clients/admin/DescribeConsumerGroupsOptions.html" title="class in org.apache.kafka.clients.admin">DescribeConsumerGroupsOptions</a>&nbsp;options)</pre>
+                                                    <a href="../../../../../org/apache/kafka/clients/admin/DescribeConsumerGroupsOptions.html" title="class in org.apache.kafka.clients.admin">DescribeConsumerGroupsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Describe some group IDs in the cluster.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1718,7 +1718,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>describeConsumerGroups</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeConsumerGroupsResult.html" title="class in org.apache.kafka.clients.admin">DescribeConsumerGroupsResult</a>&nbsp;describeConsumerGroups(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;groupIds)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeConsumerGroupsResult.html" title="class in org.apache.kafka.clients.admin">DescribeConsumerGroupsResult</a>&nbsp;describeConsumerGroups(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;groupIds)</code></pre>
 <div class="block">Describe some group IDs in the cluster, with the default options.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#describeConsumerGroups-java.util.Collection-org.apache.kafka.clients.admin.DescribeConsumerGroupsOptions-"><code>describeConsumerGroups(Collection, DescribeConsumerGroupsOptions)</code></a>
@@ -1737,7 +1737,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>listConsumerGroups</h4>
-<pre><a href="../../../../../org/apache/kafka/clients/admin/ListConsumerGroupsResult.html" title="class in org.apache.kafka.clients.admin">ListConsumerGroupsResult</a>&nbsp;listConsumerGroups(<a href="../../../../../org/apache/kafka/clients/admin/ListConsumerGroupsOptions.html" title="class in org.apache.kafka.clients.admin">ListConsumerGroupsOptions</a>&nbsp;options)</pre>
+<pre><a href="../../../../../org/apache/kafka/clients/admin/ListConsumerGroupsResult.html" title="class in org.apache.kafka.clients.admin">ListConsumerGroupsResult</a>&nbsp;listConsumerGroups(<a href="../../../../../org/apache/kafka/clients/admin/ListConsumerGroupsOptions.html" title="class in org.apache.kafka.clients.admin">ListConsumerGroupsOptions</a>&nbsp;options)</code></pre>
 <div class="block">List the consumer groups available in the cluster.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1753,7 +1753,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>listConsumerGroups</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ListConsumerGroupsResult.html" title="class in org.apache.kafka.clients.admin">ListConsumerGroupsResult</a>&nbsp;listConsumerGroups()</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ListConsumerGroupsResult.html" title="class in org.apache.kafka.clients.admin">ListConsumerGroupsResult</a>&nbsp;listConsumerGroups()</code></pre>
 <div class="block">List the consumer groups available in the cluster with the default options.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#listConsumerGroups-org.apache.kafka.clients.admin.ListConsumerGroupsOptions-"><code>listConsumerGroups(ListConsumerGroupsOptions)</code></a> with default options.
@@ -1771,7 +1771,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <li class="blockList">
 <h4>listConsumerGroupOffsets</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/ListConsumerGroupOffsetsResult.html" title="class in org.apache.kafka.clients.admin">ListConsumerGroupOffsetsResult</a>&nbsp;listConsumerGroupOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;groupId,
-                                                        <a href="../../../../../org/apache/kafka/clients/admin/ListConsumerGroupOffsetsOptions.html" title="class in org.apache.kafka.clients.admin">ListConsumerGroupOffsetsOptions</a>&nbsp;options)</pre>
+                                                        <a href="../../../../../org/apache/kafka/clients/admin/ListConsumerGroupOffsetsOptions.html" title="class in org.apache.kafka.clients.admin">ListConsumerGroupOffsetsOptions</a>&nbsp;options)</code></pre>
 <div class="block">List the consumer group offsets available in the cluster.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1787,7 +1787,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>listConsumerGroupOffsets</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ListConsumerGroupOffsetsResult.html" title="class in org.apache.kafka.clients.admin">ListConsumerGroupOffsetsResult</a>&nbsp;listConsumerGroupOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;groupId)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ListConsumerGroupOffsetsResult.html" title="class in org.apache.kafka.clients.admin">ListConsumerGroupOffsetsResult</a>&nbsp;listConsumerGroupOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;groupId)</code></pre>
 <div class="block">List the consumer group offsets available in the cluster with the default options.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#listConsumerGroupOffsets-java.lang.String-org.apache.kafka.clients.admin.ListConsumerGroupOffsetsOptions-"><code>listConsumerGroupOffsets(String, ListConsumerGroupOffsetsOptions)</code></a> with default options.</div>
@@ -1804,7 +1804,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <li class="blockList">
 <h4>deleteConsumerGroups</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/DeleteConsumerGroupsResult.html" title="class in org.apache.kafka.clients.admin">DeleteConsumerGroupsResult</a>&nbsp;deleteConsumerGroups(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;groupIds,
-                                                <a href="../../../../../org/apache/kafka/clients/admin/DeleteConsumerGroupsOptions.html" title="class in org.apache.kafka.clients.admin">DeleteConsumerGroupsOptions</a>&nbsp;options)</pre>
+                                                <a href="../../../../../org/apache/kafka/clients/admin/DeleteConsumerGroupsOptions.html" title="class in org.apache.kafka.clients.admin">DeleteConsumerGroupsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Delete consumer groups from the cluster.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1820,7 +1820,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <ul class="blockList">
 <li class="blockList">
 <h4>deleteConsumerGroups</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DeleteConsumerGroupsResult.html" title="class in org.apache.kafka.clients.admin">DeleteConsumerGroupsResult</a>&nbsp;deleteConsumerGroups(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;groupIds)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DeleteConsumerGroupsResult.html" title="class in org.apache.kafka.clients.admin">DeleteConsumerGroupsResult</a>&nbsp;deleteConsumerGroups(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;groupIds)</code></pre>
 <div class="block">Delete consumer groups from the cluster with the default options.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1836,7 +1836,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <h4>deleteConsumerGroupOffsets</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/DeleteConsumerGroupOffsetsResult.html" title="class in org.apache.kafka.clients.admin">DeleteConsumerGroupOffsetsResult</a>&nbsp;deleteConsumerGroupOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;groupId,
                                                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions,
-                                                            <a href="../../../../../org/apache/kafka/clients/admin/DeleteConsumerGroupOffsetsOptions.html" title="class in org.apache.kafka.clients.admin">DeleteConsumerGroupOffsetsOptions</a>&nbsp;options)</pre>
+                                                            <a href="../../../../../org/apache/kafka/clients/admin/DeleteConsumerGroupOffsetsOptions.html" title="class in org.apache.kafka.clients.admin">DeleteConsumerGroupOffsetsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Delete committed offsets for a set of partitions in a consumer group. This will
  succeed at the partition level only if the group is not actively subscribed
  to the corresponding topic.</div>
@@ -1855,7 +1855,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <li class="blockList">
 <h4>deleteConsumerGroupOffsets</h4>
 <pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DeleteConsumerGroupOffsetsResult.html" title="class in org.apache.kafka.clients.admin">DeleteConsumerGroupOffsetsResult</a>&nbsp;deleteConsumerGroupOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;groupId,
-                                                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+                                                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block">Delete committed offsets for a set of partitions in a consumer group with the default
  options. This will succeed at the partition level only if the group is not actively
  subscribed to the corresponding topic.</div>
@@ -1872,7 +1872,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConfigs
 <li class="blockList">
 <h4>electPreferredLeaders</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferredLeadersResult.html" title="class in org.apache.kafka.clients.admin">ElectPreferredLeadersResult</a>&nbsp;electPreferredLeaders(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferredLeadersResult.html" title="class in org.apache.kafka.clients.admin">ElectPreferredLeadersResult</a>&nbsp;electPreferredLeaders(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.4.0. Use <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#electLeaders-org.apache.kafka.common.ElectionType-java.util.Set-"><code>electLeaders(ElectionType, Set)</code></a>.</span></div>
 <div class="block">Elect the preferred replica as leader for topic partitions.
  <p>
@@ -1896,7 +1896,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <h4>electPreferredLeaders</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferredLeadersResult.html" title="class in org.apache.kafka.clients.admin">ElectPreferredLeadersResult</a>&nbsp;electPreferredLeaders(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions,
-                                                                      <a href="../../../../../org/apache/kafka/clients/admin/ElectPreferredLeadersOptions.html" title="class in org.apache.kafka.clients.admin">ElectPreferredLeadersOptions</a>&nbsp;options)</pre>
+                                                                      <a href="../../../../../org/apache/kafka/clients/admin/ElectPreferredLeadersOptions.html" title="class in org.apache.kafka.clients.admin">ElectPreferredLeadersOptions</a>&nbsp;options)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.4.0. Use <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#electLeaders-org.apache.kafka.common.ElectionType-java.util.Set-org.apache.kafka.clients.admin.ElectLeadersOptions-"><code>electLeaders(ElectionType, Set, ElectLeadersOptions)</code></a>.</span></div>
 <div class="block">Elect the preferred replica as leader for topic partitions.
  <p>
@@ -1920,7 +1920,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <li class="blockList">
 <h4>electLeaders</h4>
 <pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectLeadersResult.html" title="class in org.apache.kafka.clients.admin">ElectLeadersResult</a>&nbsp;electLeaders(<a href="../../../../../org/apache/kafka/common/ElectionType.html" title="enum in org.apache.kafka.common">ElectionType</a>&nbsp;electionType,
-                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block">Elect a replica as leader for topic partitions.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#electLeaders-org.apache.kafka.common.ElectionType-java.util.Set-org.apache.kafka.clients.admin.ElectLeadersOptions-"><code>electLeaders(ElectionType, Set, ElectLeadersOptions)</code></a>
@@ -1942,7 +1942,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <h4>electLeaders</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/ElectLeadersResult.html" title="class in org.apache.kafka.clients.admin">ElectLeadersResult</a>&nbsp;electLeaders(<a href="../../../../../org/apache/kafka/common/ElectionType.html" title="enum in org.apache.kafka.common">ElectionType</a>&nbsp;electionType,
                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions,
-                                <a href="../../../../../org/apache/kafka/clients/admin/ElectLeadersOptions.html" title="class in org.apache.kafka.clients.admin">ElectLeadersOptions</a>&nbsp;options)</pre>
+                                <a href="../../../../../org/apache/kafka/clients/admin/ElectLeadersOptions.html" title="class in org.apache.kafka.clients.admin">ElectLeadersOptions</a>&nbsp;options)</code></pre>
 <div class="block">Elect a replica as leader for the given <code>partitions</code>, or for all partitions if the argument
  to <code>partitions</code> is null.
  <p>
@@ -1988,7 +1988,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <ul class="blockList">
 <li class="blockList">
 <h4>alterPartitionReassignments</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterPartitionReassignmentsResult.html" title="class in org.apache.kafka.clients.admin">AlterPartitionReassignmentsResult</a>&nbsp;alterPartitionReassignments(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../../org/apache/kafka/clients/admin/NewPartitionReassignment.html" title="class in org.apache.kafka.clients.admin">NewPartitionReassignment</a>&gt;&gt;&nbsp;reassignments)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterPartitionReassignmentsResult.html" title="class in org.apache.kafka.clients.admin">AlterPartitionReassignmentsResult</a>&nbsp;alterPartitionReassignments(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../../org/apache/kafka/clients/admin/NewPartitionReassignment.html" title="class in org.apache.kafka.clients.admin">NewPartitionReassignment</a>&gt;&gt;&nbsp;reassignments)</code></pre>
 <div class="block">Change the reassignments for one or more partitions.
  Providing an empty Optional (e.g via <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true#empty--" title="class or interface in java.util"><code>Optional.empty()</code></a>) will <bold>revert</bold> the reassignment for the associated partition.
 
@@ -2003,7 +2003,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <li class="blockList">
 <h4>alterPartitionReassignments</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/AlterPartitionReassignmentsResult.html" title="class in org.apache.kafka.clients.admin">AlterPartitionReassignmentsResult</a>&nbsp;alterPartitionReassignments(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../../org/apache/kafka/clients/admin/NewPartitionReassignment.html" title="class in org.apache.kafka.clients.admin">NewPartitionReassignment</a>&gt;&gt;&nbsp;reassignments,
-                                                              <a href="../../../../../org/apache/kafka/clients/admin/AlterPartitionReassignmentsOptions.html" title="class in org.apache.kafka.clients.admin">AlterPartitionReassignmentsOptions</a>&nbsp;options)</pre>
+                                                              <a href="../../../../../org/apache/kafka/clients/admin/AlterPartitionReassignmentsOptions.html" title="class in org.apache.kafka.clients.admin">AlterPartitionReassignmentsOptions</a>&nbsp;options)</code></pre>
 <div class="block">Change the reassignments for one or more partitions.
  Providing an empty Optional (e.g via <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true#empty--" title="class or interface in java.util"><code>Optional.empty()</code></a>) will <bold>revert</bold> the reassignment for the associated partition.
 
@@ -2036,7 +2036,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <ul class="blockList">
 <li class="blockList">
 <h4>listPartitionReassignments</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ListPartitionReassignmentsResult.html" title="class in org.apache.kafka.clients.admin">ListPartitionReassignmentsResult</a>&nbsp;listPartitionReassignments()</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ListPartitionReassignmentsResult.html" title="class in org.apache.kafka.clients.admin">ListPartitionReassignmentsResult</a>&nbsp;listPartitionReassignments()</code></pre>
 <div class="block">List all of the current partition reassignments
 
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#listPartitionReassignments-org.apache.kafka.clients.admin.ListPartitionReassignmentsOptions-"><code>listPartitionReassignments(ListPartitionReassignmentsOptions)</code></a>
@@ -2049,7 +2049,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <ul class="blockList">
 <li class="blockList">
 <h4>listPartitionReassignments</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ListPartitionReassignmentsResult.html" title="class in org.apache.kafka.clients.admin">ListPartitionReassignmentsResult</a>&nbsp;listPartitionReassignments(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ListPartitionReassignmentsResult.html" title="class in org.apache.kafka.clients.admin">ListPartitionReassignmentsResult</a>&nbsp;listPartitionReassignments(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block">List the current reassignments for the given partitions
 
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#listPartitionReassignments-java.util.Set-org.apache.kafka.clients.admin.ListPartitionReassignmentsOptions-"><code>listPartitionReassignments(Set, ListPartitionReassignmentsOptions)</code></a>
@@ -2063,7 +2063,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <li class="blockList">
 <h4>listPartitionReassignments</h4>
 <pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ListPartitionReassignmentsResult.html" title="class in org.apache.kafka.clients.admin">ListPartitionReassignmentsResult</a>&nbsp;listPartitionReassignments(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions,
-                                                                    <a href="../../../../../org/apache/kafka/clients/admin/ListPartitionReassignmentsOptions.html" title="class in org.apache.kafka.clients.admin">ListPartitionReassignmentsOptions</a>&nbsp;options)</pre>
+                                                                    <a href="../../../../../org/apache/kafka/clients/admin/ListPartitionReassignmentsOptions.html" title="class in org.apache.kafka.clients.admin">ListPartitionReassignmentsOptions</a>&nbsp;options)</code></pre>
 <div class="block">List the current reassignments for the given partitions
 
  <p>The following exceptions can be anticipated when calling <code>get()</code> on the futures obtained from
@@ -2091,7 +2091,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <ul class="blockList">
 <li class="blockList">
 <h4>listPartitionReassignments</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ListPartitionReassignmentsResult.html" title="class in org.apache.kafka.clients.admin">ListPartitionReassignmentsResult</a>&nbsp;listPartitionReassignments(<a href="../../../../../org/apache/kafka/clients/admin/ListPartitionReassignmentsOptions.html" title="class in org.apache.kafka.clients.admin">ListPartitionReassignmentsOptions</a>&nbsp;options)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ListPartitionReassignmentsResult.html" title="class in org.apache.kafka.clients.admin">ListPartitionReassignmentsResult</a>&nbsp;listPartitionReassignments(<a href="../../../../../org/apache/kafka/clients/admin/ListPartitionReassignmentsOptions.html" title="class in org.apache.kafka.clients.admin">ListPartitionReassignmentsOptions</a>&nbsp;options)</code></pre>
 <div class="block">List all of the current partition reassignments
 
  <p>The following exceptions can be anticipated when calling <code>get()</code> on the futures obtained from
@@ -2119,7 +2119,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <li class="blockList">
 <h4>listPartitionReassignments</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/ListPartitionReassignmentsResult.html" title="class in org.apache.kafka.clients.admin">ListPartitionReassignmentsResult</a>&nbsp;listPartitionReassignments(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&gt;&nbsp;partitions,
-                                                            <a href="../../../../../org/apache/kafka/clients/admin/ListPartitionReassignmentsOptions.html" title="class in org.apache.kafka.clients.admin">ListPartitionReassignmentsOptions</a>&nbsp;options)</pre>
+                                                            <a href="../../../../../org/apache/kafka/clients/admin/ListPartitionReassignmentsOptions.html" title="class in org.apache.kafka.clients.admin">ListPartitionReassignmentsOptions</a>&nbsp;options)</code></pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>partitions</code> - the partitions we want to get reassignment for, or an empty optional if we want to get the reassignments for all partitions in the cluster</dd>
@@ -2136,7 +2136,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <li class="blockList">
 <h4>removeMembersFromConsumerGroup</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/RemoveMembersFromConsumerGroupResult.html" title="class in org.apache.kafka.clients.admin">RemoveMembersFromConsumerGroupResult</a>&nbsp;removeMembersFromConsumerGroup(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;groupId,
-                                                                    <a href="../../../../../org/apache/kafka/clients/admin/RemoveMembersFromConsumerGroupOptions.html" title="class in org.apache.kafka.clients.admin">RemoveMembersFromConsumerGroupOptions</a>&nbsp;options)</pre>
+                                                                    <a href="../../../../../org/apache/kafka/clients/admin/RemoveMembersFromConsumerGroupOptions.html" title="class in org.apache.kafka.clients.admin">RemoveMembersFromConsumerGroupOptions</a>&nbsp;options)</code></pre>
 <div class="block">Remove members from the consumer group by given member identities.
  <p>
  For possible error codes, refer to <code>LeaveGroupResponse</code>.</div>
@@ -2156,7 +2156,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <li class="blockList">
 <h4>alterConsumerGroupOffsets</h4>
 <pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterConsumerGroupOffsetsResult.html" title="class in org.apache.kafka.clients.admin">AlterConsumerGroupOffsetsResult</a>&nbsp;alterConsumerGroupOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;groupId,
-                                                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets)</pre>
+                                                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets)</code></pre>
 <div class="block"><p>Alters offsets for the specified group. In order to succeed, the group must be empty.
 
  <p>This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#alterConsumerGroupOffsets-java.lang.String-java.util.Map-org.apache.kafka.clients.admin.AlterConsumerGroupOffsetsOptions-"><code>alterConsumerGroupOffsets(String, Map, AlterConsumerGroupOffsetsOptions)</code></a> with default options.
@@ -2178,7 +2178,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <h4>alterConsumerGroupOffsets</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/AlterConsumerGroupOffsetsResult.html" title="class in org.apache.kafka.clients.admin">AlterConsumerGroupOffsetsResult</a>&nbsp;alterConsumerGroupOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;groupId,
                                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets,
-                                                          <a href="../../../../../org/apache/kafka/clients/admin/AlterConsumerGroupOffsetsOptions.html" title="class in org.apache.kafka.clients.admin">AlterConsumerGroupOffsetsOptions</a>&nbsp;options)</pre>
+                                                          <a href="../../../../../org/apache/kafka/clients/admin/AlterConsumerGroupOffsetsOptions.html" title="class in org.apache.kafka.clients.admin">AlterConsumerGroupOffsetsOptions</a>&nbsp;options)</code></pre>
 <div class="block"><p>Alters offsets for the specified group. In order to succeed, the group must be empty.
 
  <p>This operation is not transactional so it may succeed for some partitions while fail for others.</div>
@@ -2198,7 +2198,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <ul class="blockList">
 <li class="blockList">
 <h4>listOffsets</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ListOffsetsResult.html" title="class in org.apache.kafka.clients.admin">ListOffsetsResult</a>&nbsp;listOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/admin/OffsetSpec.html" title="class in org.apache.kafka.clients.admin">OffsetSpec</a>&gt;&nbsp;topicPartitionOffsets)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ListOffsetsResult.html" title="class in org.apache.kafka.clients.admin">ListOffsetsResult</a>&nbsp;listOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/admin/OffsetSpec.html" title="class in org.apache.kafka.clients.admin">OffsetSpec</a>&gt;&nbsp;topicPartitionOffsets)</code></pre>
 <div class="block"><p>List offset for the specified partitions and OffsetSpec. This operation enables to find
  the beginning offset, end offset as well as the offset matching a timestamp in partitions.
 
@@ -2218,7 +2218,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <li class="blockList">
 <h4>listOffsets</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/ListOffsetsResult.html" title="class in org.apache.kafka.clients.admin">ListOffsetsResult</a>&nbsp;listOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/admin/OffsetSpec.html" title="class in org.apache.kafka.clients.admin">OffsetSpec</a>&gt;&nbsp;topicPartitionOffsets,
-                              <a href="../../../../../org/apache/kafka/clients/admin/ListOffsetsOptions.html" title="class in org.apache.kafka.clients.admin">ListOffsetsOptions</a>&nbsp;options)</pre>
+                              <a href="../../../../../org/apache/kafka/clients/admin/ListOffsetsOptions.html" title="class in org.apache.kafka.clients.admin">ListOffsetsOptions</a>&nbsp;options)</code></pre>
 <div class="block"><p>List offset for the specified partitions. This operation enables to find
  the beginning offset, end offset as well as the offset matching a timestamp in partitions.</div>
 <dl>
@@ -2236,7 +2236,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <ul class="blockList">
 <li class="blockList">
 <h4>describeClientQuotas</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeClientQuotasResult.html" title="class in org.apache.kafka.clients.admin">DescribeClientQuotasResult</a>&nbsp;describeClientQuotas(org.apache.kafka.common.quota.ClientQuotaFilter&nbsp;filter)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/DescribeClientQuotasResult.html" title="class in org.apache.kafka.clients.admin">DescribeClientQuotasResult</a>&nbsp;describeClientQuotas(org.apache.kafka.common.quota.ClientQuotaFilter&nbsp;filter)</code></pre>
 <div class="block">Describes all entities matching the provided filter that have at least one client quota configuration
  value defined.
  <p>
@@ -2259,7 +2259,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <li class="blockList">
 <h4>describeClientQuotas</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/DescribeClientQuotasResult.html" title="class in org.apache.kafka.clients.admin">DescribeClientQuotasResult</a>&nbsp;describeClientQuotas(org.apache.kafka.common.quota.ClientQuotaFilter&nbsp;filter,
-                                                <a href="../../../../../org/apache/kafka/clients/admin/DescribeClientQuotasOptions.html" title="class in org.apache.kafka.clients.admin">DescribeClientQuotasOptions</a>&nbsp;options)</pre>
+                                                <a href="../../../../../org/apache/kafka/clients/admin/DescribeClientQuotasOptions.html" title="class in org.apache.kafka.clients.admin">DescribeClientQuotasOptions</a>&nbsp;options)</code></pre>
 <div class="block">Describes all entities matching the provided filter that have at least one client quota configuration
  value defined.
  <p>
@@ -2290,7 +2290,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <ul class="blockList">
 <li class="blockList">
 <h4>alterClientQuotas</h4>
-<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterClientQuotasResult.html" title="class in org.apache.kafka.clients.admin">AlterClientQuotasResult</a>&nbsp;alterClientQuotas(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;org.apache.kafka.common.quota.ClientQuotaAlteration&gt;&nbsp;entries)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/AlterClientQuotasResult.html" title="class in org.apache.kafka.clients.admin">AlterClientQuotasResult</a>&nbsp;alterClientQuotas(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;org.apache.kafka.common.quota.ClientQuotaAlteration&gt;&nbsp;entries)</code></pre>
 <div class="block">Alters client quota configurations with the specified alterations.
  <p>
  This is a convenience method for <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#alterClientQuotas-java.util.Collection-org.apache.kafka.clients.admin.AlterClientQuotasOptions-"><code>alterClientQuotas(Collection, AlterClientQuotasOptions)</code></a>
@@ -2312,7 +2312,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <li class="blockList">
 <h4>alterClientQuotas</h4>
 <pre><a href="../../../../../org/apache/kafka/clients/admin/AlterClientQuotasResult.html" title="class in org.apache.kafka.clients.admin">AlterClientQuotasResult</a>&nbsp;alterClientQuotas(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;org.apache.kafka.common.quota.ClientQuotaAlteration&gt;&nbsp;entries,
-                                          <a href="../../../../../org/apache/kafka/clients/admin/AlterClientQuotasOptions.html" title="class in org.apache.kafka.clients.admin">AlterClientQuotasOptions</a>&nbsp;options)</pre>
+                                          <a href="../../../../../org/apache/kafka/clients/admin/AlterClientQuotasOptions.html" title="class in org.apache.kafka.clients.admin">AlterClientQuotasOptions</a>&nbsp;options)</code></pre>
 <div class="block">Alters client quota configurations with the specified alterations.
  <p>
  Alterations for a single entity are atomic, but across entities is not guaranteed. The resulting
@@ -2345,7 +2345,7 @@ default&nbsp;<a href="../../../../../org/apache/kafka/clients/admin/ElectPreferr
 <ul class="blockListLast">
 <li class="blockList">
 <h4>metrics</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/MetricName.html" title="class in org.apache.kafka.common">MetricName</a>,? extends <a href="../../../../../org/apache/kafka/common/Metric.html" title="interface in org.apache.kafka.common">Metric</a>&gt;&nbsp;metrics()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/MetricName.html" title="class in org.apache.kafka.common">MetricName</a>,? extends <a href="../../../../../org/apache/kafka/common/Metric.html" title="interface in org.apache.kafka.common">Metric</a>&gt;&nbsp;metrics()</code></pre>
 <div class="block">Get the metrics kept by the adminClient</div>
 </li>
 </ul>

@@ -318,7 +318,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local windowed <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-java.lang.String-org.apache.kafka.streams.state.QueryableStoreType-"><code>KafkaStreams#store(...)</code></a>.
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // compute sum
  Sting queryableStoreName = ... // the queryableStoreName should be the name of the store as defined by the Materialized instance
  ReadOnlySessionStore&lt;String,Long&gt; localWindowStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;ReadOnlySessionStore&lt;String, Long&gt;);
@@ -370,7 +370,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local windowed <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-java.lang.String-org.apache.kafka.streams.state.QueryableStoreType-"><code>KafkaStreams#store(...)</code></a>.
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // compute sum
  Sting queryableStoreName = ... // the queryableStoreName should be the name of the store as defined by the Materialized instance
  ReadOnlySessionStore&lt;String,Long&gt; localWindowStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;ReadOnlySessionStore&lt;String, Long&gt;);
@@ -532,7 +532,7 @@ var activeTableTab = "activeTableTab";
  <a href="../../../../../org/apache/kafka/streams/StreamsConfig.html#COMMIT_INTERVAL_MS_CONFIG"><code>commit intervall</code></a>
  <p>
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-java.lang.String-org.apache.kafka.streams.state.QueryableStoreType-"><code>KafkaStreams#store(...)</code></a>.
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // some windowed aggregation on value type double
  Sting queryableStoreName = ... // the queryableStoreName should be the name of the store as defined by the Materialized instance
  ReadOnlySessionStore&lt;String, Long&gt; sessionStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;sessionStore());
@@ -600,7 +600,7 @@ var activeTableTab = "activeTableTab";
  <a href="../../../../../org/apache/kafka/streams/StreamsConfig.html#COMMIT_INTERVAL_MS_CONFIG"><code>commit intervall</code></a>
  <p>
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-java.lang.String-org.apache.kafka.streams.state.QueryableStoreType-"><code>KafkaStreams#store(...)</code></a>.
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // some windowed aggregation on value type double
  Sting queryableStoreName = ... // the queryableStoreName should be the name of the store as defined by the Materialized instance
  ReadOnlySessionStore&lt;String, Long&gt; sessionStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;sessionStore());
@@ -724,7 +724,7 @@ var activeTableTab = "activeTableTab";
  <p>
  The specified <a href="../../../../../org/apache/kafka/streams/kstream/Reducer.html" title="interface in org.apache.kafka.streams.kstream"><code>Reducer</code></a> is applied for each input record and computes a new aggregate using the current
  aggregate (first argument) and the record's value (second argument):
- <pre><code>
+ <pre class="line-numbers"><code>
  // At the example of a Reducer&lt;Long&gt;
  new Reducer&lt;Long&gt;() {
    public Long apply(Long aggValue, Long currValue) {
@@ -747,7 +747,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local windowed <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-java.lang.String-org.apache.kafka.streams.state.QueryableStoreType-"><code>KafkaStreams#store(...)</code></a>.
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // compute sum
  Sting queryableStoreName = ... // the queryableStoreName should be the name of the store as defined by the Materialized instance
  ReadOnlySessionStore&lt;String,Long&gt; localWindowStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;ReadOnlySessionStore&lt;String, Long&gt;);
@@ -794,7 +794,7 @@ var activeTableTab = "activeTableTab";
  <p>
  The specified <a href="../../../../../org/apache/kafka/streams/kstream/Reducer.html" title="interface in org.apache.kafka.streams.kstream"><code>Reducer</code></a> is applied for each input record and computes a new aggregate using the current
  aggregate (first argument) and the record's value (second argument):
- <pre><code>
+ <pre class="line-numbers"><code>
  // At the example of a Reducer&lt;Long&gt;
  new Reducer&lt;Long&gt;() {
    public Long apply(Long aggValue, Long currValue) {
@@ -817,7 +817,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local windowed <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-java.lang.String-org.apache.kafka.streams.state.QueryableStoreType-"><code>KafkaStreams#store(...)</code></a>.
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // compute sum
  Sting queryableStoreName = ... // the queryableStoreName should be the name of the store as defined by the Materialized instance
  ReadOnlySessionStore&lt;String,Long&gt; localWindowStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;ReadOnlySessionStore&lt;String, Long&gt;);

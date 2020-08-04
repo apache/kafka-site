@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">FileConfigProvider</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../../org/apache/kafka/common/config/provider/ConfigProvider.html" title="interface in org.apache.kafka.common.config.provider">ConfigProvider</a></pre>
+implements <a href="../../../../../../org/apache/kafka/common/config/provider/ConfigProvider.html" title="interface in org.apache.kafka.common.config.provider">ConfigProvider</a></code></pre>
 <div class="block">An implementation of <a href="../../../../../../org/apache/kafka/common/config/provider/ConfigProvider.html" title="interface in org.apache.kafka.common.config.provider"><code>ConfigProvider</code></a> that represents a Properties file.
  All property keys and values are stored as cleartext.</div>
 </li>
@@ -213,7 +213,7 @@ implements <a href="../../../../../../org/apache/kafka/common/config/provider/Co
 <ul class="blockListLast">
 <li class="blockList">
 <h4>FileConfigProvider</h4>
-<pre>public&nbsp;FileConfigProvider()</pre>
+<pre>public&nbsp;FileConfigProvider()</code></pre>
 </li>
 </ul>
 </li>
@@ -230,7 +230,7 @@ implements <a href="../../../../../../org/apache/kafka/common/config/provider/Co
 <ul class="blockList">
 <li class="blockList">
 <h4>configure</h4>
-<pre>public&nbsp;void&nbsp;configure(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;configs)</pre>
+<pre>public&nbsp;void&nbsp;configure(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;configs)</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../org/apache/kafka/common/Configurable.html#configure-java.util.Map-">Configurable</a></code></span></div>
 <div class="block">Configure this class with the given key-value pairs</div>
 <dl>
@@ -245,7 +245,7 @@ implements <a href="../../../../../../org/apache/kafka/common/config/provider/Co
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>public&nbsp;<a href="../../../../../../org/apache/kafka/common/config/ConfigData.html" title="class in org.apache.kafka.common.config">ConfigData</a>&nbsp;get(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</pre>
+<pre>public&nbsp;<a href="../../../../../../org/apache/kafka/common/config/ConfigData.html" title="class in org.apache.kafka.common.config">ConfigData</a>&nbsp;get(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</code></pre>
 <div class="block">Retrieves the data at the given Properties file.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -264,7 +264,7 @@ implements <a href="../../../../../../org/apache/kafka/common/config/provider/Co
 <li class="blockList">
 <h4>get</h4>
 <pre>public&nbsp;<a href="../../../../../../org/apache/kafka/common/config/ConfigData.html" title="class in org.apache.kafka.common.config">ConfigData</a>&nbsp;get(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path,
-                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;keys)</pre>
+                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;keys)</code></pre>
 <div class="block">Retrieves the data with the given keys at the given Properties file.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -284,7 +284,7 @@ implements <a href="../../../../../../org/apache/kafka/common/config/provider/Co
 <li class="blockList">
 <h4>reader</h4>
 <pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html?is-external=true" title="class or interface in java.io">Reader</a>&nbsp;reader(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)
-                 throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+                 throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
@@ -297,7 +297,7 @@ implements <a href="../../../../../../org/apache/kafka/common/config/provider/Co
 <ul class="blockListLast">
 <li class="blockList">
 <h4>close</h4>
-<pre>public&nbsp;void&nbsp;close()</pre>
+<pre>public&nbsp;void&nbsp;close()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true#close--" title="class or interface in java.io">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></code></dd>

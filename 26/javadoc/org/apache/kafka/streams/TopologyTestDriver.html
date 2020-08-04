@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">TopologyTestDriver</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></pre>
+implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></code></pre>
 <div class="block">This class makes it easier to write tests to verify the behavior of topologies created with <a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams"><code>Topology</code></a> or
  <a href="../../../../org/apache/kafka/streams/StreamsBuilder.html" title="class in org.apache.kafka.streams"><code>StreamsBuilder</code></a>.
  You can test simple topologies that have a single processor, or very complex topologies that have multiple sources,
@@ -146,7 +146,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.
  props.setProperty(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
  Topology topology = ...
  TopologyTestDriver driver = new TopologyTestDriver(topology, props);
- </code></pre>
+ </code></code></pre>
 
  <p> Note that the <code>TopologyTestDriver</code> processes input records synchronously.
  This implies that <a href="../../../../org/apache/kafka/streams/StreamsConfig.html#COMMIT_INTERVAL_MS_CONFIG"><code>commit.interval.ms</code></a> and
@@ -163,7 +163,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.
  <pre><code>
  TestInputTopic&lt;String, String&gt; inputTopic = driver.createInputTopic("input-topic", stringSerdeSerializer, stringSerializer);
  inputTopic.pipeInput("key1", "value1");
- </code></pre>
+ </code></code></pre>
 
  When <a href="../../../../org/apache/kafka/streams/TestInputTopic.html#pipeInput-K-V-"><code>TestInputTopic.pipeInput(Object, Object)</code></a> is called, the driver passes the input message through to the appropriate source that
  consumes the named topic, and will invoke the processor(s) downstream of the source.
@@ -180,7 +180,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.
  KeyValue&lt;String, String&gt; record1 = outputTopic1.readKeyValue();
  KeyValue&lt;String, String&gt; record2 = outputTopic2.readKeyValue();
  KeyValue&lt;String, String&gt; record3 = outputTopic1.readKeyValue();
- </code></pre>
+ </code></code></pre>
 
  Again, our example topology generates messages with string keys and values, so we supply our string deserializer
  instance for use on both the keys and values. Your test logic can then verify whether these output records are
@@ -427,7 +427,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.
 <li class="blockList">
 <h4>TopologyTestDriver</h4>
 <pre>public&nbsp;TopologyTestDriver(<a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams">Topology</a>&nbsp;topology,
-                          <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;config)</pre>
+                          <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;config)</code></pre>
 <div class="block">Create a new test diver instance.
  Initialized the internally mocked wall-clock time with <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html?is-external=true#currentTimeMillis--" title="class or interface in java.lang"><code>current system time</code></a>.</div>
 <dl>
@@ -446,7 +446,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;TopologyTestDriver(<a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams">Topology</a>&nbsp;topology,
                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;config,
-                                      long&nbsp;initialWallClockTimeMs)</pre>
+                                      long&nbsp;initialWallClockTimeMs)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.4 use <a href="../../../../org/apache/kafka/streams/TopologyTestDriver.html#TopologyTestDriver-org.apache.kafka.streams.Topology-java.util.Properties-java.time.Instant-"><code>TopologyTestDriver(Topology, Properties, Instant)</code></a></span></div>
 <div class="block">Create a new test diver instance.</div>
 <dl>
@@ -465,7 +465,7 @@ public&nbsp;TopologyTestDriver(<a href="../../../../org/apache/kafka/streams/Top
 <h4>TopologyTestDriver</h4>
 <pre>public&nbsp;TopologyTestDriver(<a href="../../../../org/apache/kafka/streams/Topology.html" title="class in org.apache.kafka.streams">Topology</a>&nbsp;topology,
                           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;config,
-                          <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html?is-external=true" title="class or interface in java.time">Instant</a>&nbsp;initialWallClockTime)</pre>
+                          <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html?is-external=true" title="class or interface in java.time">Instant</a>&nbsp;initialWallClockTime)</code></pre>
 <div class="block">Create a new test diver instance.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -489,7 +489,7 @@ public&nbsp;TopologyTestDriver(<a href="../../../../org/apache/kafka/streams/Top
 <ul class="blockList">
 <li class="blockList">
 <h4>metrics</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/apache/kafka/common/MetricName.html" title="class in org.apache.kafka.common">MetricName</a>,? extends <a href="../../../../org/apache/kafka/common/Metric.html" title="interface in org.apache.kafka.common">Metric</a>&gt;&nbsp;metrics()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/apache/kafka/common/MetricName.html" title="class in org.apache.kafka.common">MetricName</a>,? extends <a href="../../../../org/apache/kafka/common/Metric.html" title="interface in org.apache.kafka.common">Metric</a>&gt;&nbsp;metrics()</code></pre>
 <div class="block">Get read-only handle on global metrics registry.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -504,7 +504,7 @@ public&nbsp;TopologyTestDriver(<a href="../../../../org/apache/kafka/streams/Top
 <li class="blockList">
 <h4>pipeInput</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;void&nbsp;pipeInput(<a href="../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;byte[],byte[]&gt;&nbsp;consumerRecord)</pre>
+public&nbsp;void&nbsp;pipeInput(<a href="../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;byte[],byte[]&gt;&nbsp;consumerRecord)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.4 use methods of <a href="../../../../org/apache/kafka/streams/TestInputTopic.html" title="class in org.apache.kafka.streams"><code>TestInputTopic</code></a> instead</span></div>
 <div class="block">Send an input message with the given key, value, and timestamp on the specified topic to the topology and then
  commit the messages.</div>
@@ -521,7 +521,7 @@ public&nbsp;void&nbsp;pipeInput(<a href="../../../../org/apache/kafka/clients/co
 <li class="blockList">
 <h4>pipeInput</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;void&nbsp;pipeInput(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;byte[],byte[]&gt;&gt;&nbsp;records)</pre>
+public&nbsp;void&nbsp;pipeInput(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;byte[],byte[]&gt;&gt;&nbsp;records)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.4 use methods of <a href="../../../../org/apache/kafka/streams/TestInputTopic.html" title="class in org.apache.kafka.streams"><code>TestInputTopic</code></a> instead</span></div>
 <div class="block">Send input messages to the topology and then commit each message individually.</div>
 <dl>
@@ -537,7 +537,7 @@ public&nbsp;void&nbsp;pipeInput(<a href="https://docs.oracle.com/javase/8/docs/a
 <li class="blockList">
 <h4>advanceWallClockTime</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;void&nbsp;advanceWallClockTime(long&nbsp;advanceMs)</pre>
+public&nbsp;void&nbsp;advanceWallClockTime(long&nbsp;advanceMs)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.4 use <a href="../../../../org/apache/kafka/streams/TopologyTestDriver.html#advanceWallClockTime-java.time.Duration-"><code>advanceWallClockTime(Duration)</code></a> instead</span></div>
 <div class="block">Advances the internally mocked wall-clock time.
  This might trigger a <a href="../../../../org/apache/kafka/streams/processor/PunctuationType.html#WALL_CLOCK_TIME"><code>wall-clock</code></a> type
@@ -554,7 +554,7 @@ public&nbsp;void&nbsp;advanceWallClockTime(long&nbsp;advanceMs)</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>advanceWallClockTime</h4>
-<pre>public&nbsp;void&nbsp;advanceWallClockTime(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;advance)</pre>
+<pre>public&nbsp;void&nbsp;advanceWallClockTime(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;advance)</code></pre>
 <div class="block">Advances the internally mocked wall-clock time.
  This might trigger a <a href="../../../../org/apache/kafka/streams/processor/PunctuationType.html#WALL_CLOCK_TIME"><code>wall-clock</code></a> type
  <a href="../../../../org/apache/kafka/streams/processor/ProcessorContext.html#schedule-java.time.Duration-org.apache.kafka.streams.processor.PunctuationType-org.apache.kafka.streams.processor.Punctuator-"><code>punctuations</code></a>.</div>
@@ -571,7 +571,7 @@ public&nbsp;void&nbsp;advanceWallClockTime(long&nbsp;advanceMs)</pre>
 <li class="blockList">
 <h4>readOutput</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;<a href="../../../../org/apache/kafka/clients/producer/ProducerRecord.html" title="class in org.apache.kafka.clients.producer">ProducerRecord</a>&lt;byte[],byte[]&gt;&nbsp;readOutput(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</pre>
+public&nbsp;<a href="../../../../org/apache/kafka/clients/producer/ProducerRecord.html" title="class in org.apache.kafka.clients.producer">ProducerRecord</a>&lt;byte[],byte[]&gt;&nbsp;readOutput(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.4 use methods of <a href="../../../../org/apache/kafka/streams/TestOutputTopic.html" title="class in org.apache.kafka.streams"><code>TestOutputTopic</code></a> instead</span></div>
 <div class="block">Read the next record from the given topic.
  These records were output by the topology during the previous calls to <a href="../../../../org/apache/kafka/streams/TopologyTestDriver.html#pipeInput-org.apache.kafka.clients.consumer.ConsumerRecord-"><code>pipeInput(ConsumerRecord)</code></a>.</div>
@@ -592,7 +592,7 @@ public&nbsp;<a href="../../../../org/apache/kafka/clients/producer/ProducerRecor
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/clients/producer/ProducerRecord.html" title="class in org.apache.kafka.clients.producer">ProducerRecord</a>&lt;K,V&gt;&nbsp;readOutput(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
                                                         <a href="../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;K&gt;&nbsp;keyDeserializer,
-                                                        <a href="../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;V&gt;&nbsp;valueDeserializer)</pre>
+                                                        <a href="../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;V&gt;&nbsp;valueDeserializer)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.4 use methods of <a href="../../../../org/apache/kafka/streams/TestOutputTopic.html" title="class in org.apache.kafka.streams"><code>TestOutputTopic</code></a> instead</span></div>
 <div class="block">Read the next record from the given topic.
  These records were output by the topology during the previous calls to <a href="../../../../org/apache/kafka/streams/TopologyTestDriver.html#pipeInput-org.apache.kafka.clients.consumer.ConsumerRecord-"><code>pipeInput(ConsumerRecord)</code></a>.</div>
@@ -614,7 +614,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/clients/produ
 <h4>createInputTopic</h4>
 <pre>public final&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/TestInputTopic.html" title="class in org.apache.kafka.streams">TestInputTopic</a>&lt;K,V&gt;&nbsp;createInputTopic(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topicName,
                                                         <a href="../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;K&gt;&nbsp;keySerializer,
-                                                        <a href="../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;V&gt;&nbsp;valueSerializer)</pre>
+                                                        <a href="../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;V&gt;&nbsp;valueSerializer)</code></pre>
 <div class="block">Create <a href="../../../../org/apache/kafka/streams/TestInputTopic.html" title="class in org.apache.kafka.streams"><code>TestInputTopic</code></a> to be used for piping records to topic
  Uses current system time as start timestamp for records.
  Auto-advance is disabled.</div>
@@ -641,7 +641,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/clients/produ
                                                         <a href="../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;K&gt;&nbsp;keySerializer,
                                                         <a href="../../../../org/apache/kafka/common/serialization/Serializer.html" title="interface in org.apache.kafka.common.serialization">Serializer</a>&lt;V&gt;&nbsp;valueSerializer,
                                                         <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html?is-external=true" title="class or interface in java.time">Instant</a>&nbsp;startTimestamp,
-                                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;autoAdvance)</pre>
+                                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;autoAdvance)</code></pre>
 <div class="block">Create <a href="../../../../org/apache/kafka/streams/TestInputTopic.html" title="class in org.apache.kafka.streams"><code>TestInputTopic</code></a> to be used for piping records to topic
  Uses provided start timestamp and autoAdvance parameter for records</div>
 <dl>
@@ -667,7 +667,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/clients/produ
 <h4>createOutputTopic</h4>
 <pre>public final&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/TestOutputTopic.html" title="class in org.apache.kafka.streams">TestOutputTopic</a>&lt;K,V&gt;&nbsp;createOutputTopic(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topicName,
                                                           <a href="../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;K&gt;&nbsp;keyDeserializer,
-                                                          <a href="../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;V&gt;&nbsp;valueDeserializer)</pre>
+                                                          <a href="../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;V&gt;&nbsp;valueDeserializer)</code></pre>
 <div class="block">Create <a href="../../../../org/apache/kafka/streams/TestOutputTopic.html" title="class in org.apache.kafka.streams"><code>TestOutputTopic</code></a> to be used for reading records from topic</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -688,7 +688,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/clients/produ
 <ul class="blockList">
 <li class="blockList">
 <h4>producedTopicNames</h4>
-<pre>public final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;producedTopicNames()</pre>
+<pre>public final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;producedTopicNames()</code></pre>
 <div class="block">Get all the names of all the topics to which records have been produced during the test run.
  <p>
  Call this method after piping the input into the test driver to retrieve the full set of topic names the topology
@@ -708,7 +708,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/clients/produ
 <ul class="blockList">
 <li class="blockList">
 <h4>getAllStateStores</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>&gt;&nbsp;getAllStateStores()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>&gt;&nbsp;getAllStateStores()</code></pre>
 <div class="block">Get all <a href="../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStores</code></a> from the topology.
  The stores can be a "regular" or global stores.
  <p>
@@ -740,7 +740,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/clients/produ
 <li class="blockList">
 <h4>getStateStore</h4>
 <pre>public&nbsp;<a href="../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>&nbsp;getStateStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)
-                         throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                         throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block">Get the <a href="../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor"><code>StateStore</code></a> with the given name.
  The store can be a "regular" or global store.
  <p>
@@ -773,7 +773,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/clients/produ
 <ul class="blockList">
 <li class="blockList">
 <h4>getKeyValueStore</h4>
-<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;K,V&gt;&nbsp;getKeyValueStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;K,V&gt;&nbsp;getKeyValueStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code></pre>
 <div class="block">Get the <a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> or <a href="../../../../org/apache/kafka/streams/state/TimestampedKeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>TimestampedKeyValueStore</code></a> with the given name.
  The store can be a "regular" or global store.
  <p>
@@ -805,7 +805,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/clients/produ
 <ul class="blockList">
 <li class="blockList">
 <h4>getTimestampedKeyValueStore</h4>
-<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;K,<a href="../../../../org/apache/kafka/streams/state/ValueAndTimestamp.html" title="class in org.apache.kafka.streams.state">ValueAndTimestamp</a>&lt;V&gt;&gt;&nbsp;getTimestampedKeyValueStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state">KeyValueStore</a>&lt;K,<a href="../../../../org/apache/kafka/streams/state/ValueAndTimestamp.html" title="class in org.apache.kafka.streams.state">ValueAndTimestamp</a>&lt;V&gt;&gt;&nbsp;getTimestampedKeyValueStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code></pre>
 <div class="block">Get the <a href="../../../../org/apache/kafka/streams/state/TimestampedKeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>TimestampedKeyValueStore</code></a> with the given name.
  The store can be a "regular" or global store.
  <p>
@@ -832,7 +832,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/clients/produ
 <ul class="blockList">
 <li class="blockList">
 <h4>getWindowStore</h4>
-<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state">WindowStore</a>&lt;K,V&gt;&nbsp;getWindowStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state">WindowStore</a>&lt;K,V&gt;&nbsp;getWindowStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code></pre>
 <div class="block">Get the <a href="../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state"><code>WindowStore</code></a> or <a href="../../../../org/apache/kafka/streams/state/TimestampedWindowStore.html" title="interface in org.apache.kafka.streams.state"><code>TimestampedWindowStore</code></a> with the given name.
  The store can be a "regular" or global store.
  <p>
@@ -864,7 +864,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/clients/produ
 <ul class="blockList">
 <li class="blockList">
 <h4>getTimestampedWindowStore</h4>
-<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state">WindowStore</a>&lt;K,<a href="../../../../org/apache/kafka/streams/state/ValueAndTimestamp.html" title="class in org.apache.kafka.streams.state">ValueAndTimestamp</a>&lt;V&gt;&gt;&nbsp;getTimestampedWindowStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/state/WindowStore.html" title="interface in org.apache.kafka.streams.state">WindowStore</a>&lt;K,<a href="../../../../org/apache/kafka/streams/state/ValueAndTimestamp.html" title="class in org.apache.kafka.streams.state">ValueAndTimestamp</a>&lt;V&gt;&gt;&nbsp;getTimestampedWindowStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code></pre>
 <div class="block">Get the <a href="../../../../org/apache/kafka/streams/state/TimestampedWindowStore.html" title="interface in org.apache.kafka.streams.state"><code>TimestampedWindowStore</code></a> with the given name.
  The store can be a "regular" or global store.
  <p>
@@ -891,7 +891,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/clients/produ
 <ul class="blockList">
 <li class="blockList">
 <h4>getSessionStore</h4>
-<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;K,V&gt;&nbsp;getSessionStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state">SessionStore</a>&lt;K,V&gt;&nbsp;getSessionStore(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code></pre>
 <div class="block">Get the <a href="../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state"><code>SessionStore</code></a> with the given name.
  The store can be a "regular" or global store.
  <p>
@@ -918,7 +918,7 @@ public&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../org/apache/kafka/clients/produ
 <ul class="blockListLast">
 <li class="blockList">
 <h4>close</h4>
-<pre>public&nbsp;void&nbsp;close()</pre>
+<pre>public&nbsp;void&nbsp;close()</code></pre>
 <div class="block">Close the driver, its topology, and all processors.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>

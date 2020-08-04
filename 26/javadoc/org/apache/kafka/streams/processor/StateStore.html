@@ -103,7 +103,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">StateStore</span></pre>
+<pre>public interface <span class="typeNameLabel">StateStore</span></code></pre>
 <div class="block">A storage engine for managing state maintained by a stream processor.
  <p>
  If the store is implemented as a persistent store, it <em>must</em> use the store name as directory name and write
@@ -197,7 +197,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>name</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name()</code></pre>
 <div class="block">The name of this store.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -212,7 +212,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>init</h4>
 <pre>void&nbsp;init(<a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor">ProcessorContext</a>&nbsp;context,
-          <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>&nbsp;root)</pre>
+          <a href="../../../../../org/apache/kafka/streams/processor/StateStore.html" title="interface in org.apache.kafka.streams.processor">StateStore</a>&nbsp;root)</code></pre>
 <div class="block">Initializes this state store.
  <p>
  The implementation of this function must register the root store in the context via the
@@ -237,7 +237,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>flush</h4>
-<pre>void&nbsp;flush()</pre>
+<pre>void&nbsp;flush()</code></pre>
 <div class="block">Flush any cached data</div>
 </li>
 </ul>
@@ -247,7 +247,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>void&nbsp;close()</pre>
+<pre>void&nbsp;close()</code></pre>
 <div class="block">Close the storage engine.
  Note that this function needs to be idempotent since it may be called
  several times on the same state store.
@@ -262,7 +262,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>persistent</h4>
-<pre>boolean&nbsp;persistent()</pre>
+<pre>boolean&nbsp;persistent()</code></pre>
 <div class="block">Return if the storage is persistent or not.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -276,7 +276,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>isOpen</h4>
-<pre>boolean&nbsp;isOpen()</pre>
+<pre>boolean&nbsp;isOpen()</code></pre>
 <div class="block">Is this store open for reading and writing</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>

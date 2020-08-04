@@ -107,7 +107,7 @@ var activeTableTab = "activeTableTab";
 </div>
 <br>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public interface <span class="typeNameLabel">PartitionGrouper</span></pre>
+public interface <span class="typeNameLabel">PartitionGrouper</span></code></pre>
 <div class="block">A partition grouper that generates partition groups given the list of topic-partitions.
 
  This grouper also acts as the stream task creation function along with partition distribution
@@ -162,7 +162,7 @@ public interface <span class="typeNameLabel">PartitionGrouper</span></pre>
 <li class="blockList">
 <h4>partitionGroups</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/streams/processor/TaskId.html" title="class in org.apache.kafka.streams.processor">TaskId</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&gt;&nbsp;partitionGroups(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;topicGroups,
-                                                <a href="../../../../../org/apache/kafka/common/Cluster.html" title="class in org.apache.kafka.common">Cluster</a>&nbsp;metadata)</pre>
+                                                <a href="../../../../../org/apache/kafka/common/Cluster.html" title="class in org.apache.kafka.common">Cluster</a>&nbsp;metadata)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Returns a map of task ids to groups of partitions. A partition group forms a task, thus, partitions that are
  expected to be processed together must be in the same group.

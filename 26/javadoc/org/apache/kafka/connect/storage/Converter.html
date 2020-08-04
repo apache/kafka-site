@@ -103,7 +103,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">Converter</span></pre>
+<pre>public interface <span class="typeNameLabel">Converter</span></code></pre>
 <div class="block">The Converter interface provides support for translating between Kafka Connect's runtime data format
  and byte[]. Internally, this likely includes an intermediate step to the format used by the serialization
  layer (e.g. JsonNode, GenericRecord, Message).</div>
@@ -188,7 +188,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>configure</h4>
 <pre>void&nbsp;configure(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,?&gt;&nbsp;configs,
-               boolean&nbsp;isKey)</pre>
+               boolean&nbsp;isKey)</code></pre>
 <div class="block">Configure this class.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -205,7 +205,7 @@ var activeTableTab = "activeTableTab";
 <h4>fromConnectData</h4>
 <pre>byte[]&nbsp;fromConnectData(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
                        <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
-                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 <div class="block">Convert a Kafka Connect data object to a native object for serialization.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -226,7 +226,7 @@ var activeTableTab = "activeTableTab";
 <pre>default&nbsp;byte[]&nbsp;fromConnectData(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
                                <a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;headers,
                                <a href="../../../../../org/apache/kafka/connect/data/Schema.html" title="interface in org.apache.kafka.connect.data">Schema</a>&nbsp;schema,
-                               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+                               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code></pre>
 <div class="block">Convert a Kafka Connect data object to a native object for serialization,
  potentially using the supplied topic and headers in the record as necessary.
 
@@ -252,7 +252,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>toConnectData</h4>
 <pre><a href="../../../../../org/apache/kafka/connect/data/SchemaAndValue.html" title="class in org.apache.kafka.connect.data">SchemaAndValue</a>&nbsp;toConnectData(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
-                             byte[]&nbsp;value)</pre>
+                             byte[]&nbsp;value)</code></pre>
 <div class="block">Convert a native object to a Kafka Connect data object.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -271,7 +271,7 @@ var activeTableTab = "activeTableTab";
 <h4>toConnectData</h4>
 <pre>default&nbsp;<a href="../../../../../org/apache/kafka/connect/data/SchemaAndValue.html" title="class in org.apache.kafka.connect.data">SchemaAndValue</a>&nbsp;toConnectData(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
                                      <a href="../../../../../org/apache/kafka/common/header/Headers.html" title="interface in org.apache.kafka.common.header">Headers</a>&nbsp;headers,
-                                     byte[]&nbsp;value)</pre>
+                                     byte[]&nbsp;value)</code></pre>
 <div class="block">Convert a native object to a Kafka Connect data object,
  potentially using the supplied topic and headers in the record as necessary.
 

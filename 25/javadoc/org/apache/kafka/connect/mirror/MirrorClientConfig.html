@@ -122,8 +122,7 @@ extends <a href="../../../../../org/apache/kafka/common/config/AbstractConfig.ht
   </p>
   <pre>
     MirrorMakerConfig mmConfig = new MirrorMakerConfig(props);
-    MirrorClientConfig mmClientConfig = mmConfig.clientConfig("some-cluster");
-  </pre>
+    MirrorClientConfig mmClientConfig = mmConfig.clientConfig("some-cluster");</pre>
   <p>
   In addition to the properties defined here, sub-configs are supported for Admin, Consumer, and Producer clients.
   For example:
@@ -131,8 +130,7 @@ extends <a href="../../../../../org/apache/kafka/common/config/AbstractConfig.ht
   <pre>
       bootstrap.servers = host1:9092
       consumer.client.id = mm2-client
-      replication.policy.separator = __
-  </pre></div>
+      replication.policy.separator = __</pre></div>
 </li>
 </ul>
 </div>

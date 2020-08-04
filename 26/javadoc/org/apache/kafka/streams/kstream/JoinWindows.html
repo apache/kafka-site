@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public final class <span class="typeNameLabel">JoinWindows</span>
-extends <a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" title="class in org.apache.kafka.streams.kstream">Windows</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Window.html" title="class in org.apache.kafka.streams.kstream">Window</a>&gt;</pre>
+extends <a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" title="class in org.apache.kafka.streams.kstream">Windows</a>&lt;<a href="../../../../../org/apache/kafka/streams/kstream/Window.html" title="class in org.apache.kafka.streams.kstream">Window</a>&gt;</code></pre>
 <div class="block">The window specifications used for joins.
  <p>
  A <code>JoinWindows</code> instance defines a maximum time difference for a <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html#join-org.apache.kafka.streams.kstream.KStream-org.apache.kafka.streams.kstream.ValueJoiner-org.apache.kafka.streams.kstream.JoinWindows-"><code>join over two streams</code></a> on the same key.
@@ -124,7 +124,7 @@ extends <a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" t
        stream1.key = stream2.key
        AND
        stream1.ts - before &lt;= stream2.ts AND stream2.ts &lt;= stream1.ts + after
- </code></pre>
+ </code></code></pre>
  There are three different window configuration supported:
  <ul>
      <li>before = after = time-difference</li>
@@ -343,7 +343,7 @@ extends <a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>beforeMs</h4>
-<pre>public final&nbsp;long beforeMs</pre>
+<pre>public final&nbsp;long beforeMs</code></pre>
 <div class="block">Maximum time difference for tuples that are before the join tuple.</div>
 </li>
 </ul>
@@ -353,7 +353,7 @@ extends <a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" t
 <ul class="blockListLast">
 <li class="blockList">
 <h4>afterMs</h4>
-<pre>public final&nbsp;long afterMs</pre>
+<pre>public final&nbsp;long afterMs</code></pre>
 <div class="block">Maximum time difference for tuples that are after the join tuple.</div>
 </li>
 </ul>
@@ -373,7 +373,7 @@ extends <a href="../../../../../org/apache/kafka/streams/kstream/Windows.html" t
 <h4>of</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows.html" title="class in org.apache.kafka.streams.kstream">JoinWindows</a>&nbsp;of(long&nbsp;timeDifferenceMs)
-                                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows.html#of-java.time.Duration-"><code>of(Duration)</code></a> instead.</span></div>
 <div class="block">Specifies that records of the same key are joinable if their timestamps are within <code>timeDifferenceMs</code>,
  i.e., the timestamp of a record from the secondary stream is max <code>timeDifferenceMs</code> earlier or later than
@@ -393,7 +393,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Join
 <li class="blockList">
 <h4>of</h4>
 <pre>public static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows.html" title="class in org.apache.kafka.streams.kstream">JoinWindows</a>&nbsp;of(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeDifference)
-                      throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                      throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block">Specifies that records of the same key are joinable if their timestamps are within <code>timeDifference</code>,
  i.e., the timestamp of a record from the secondary stream is max <code>timeDifference</code> earlier or later than
  the timestamp of the record from the primary stream.</div>
@@ -413,7 +413,7 @@ public static&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/Join
 <h4>before</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows.html" title="class in org.apache.kafka.streams.kstream">JoinWindows</a>&nbsp;before(long&nbsp;timeDifferenceMs)
-                               throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                               throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows.html#before-java.time.Duration-"><code>before(Duration)</code></a> instead.</span></div>
 <div class="block">Changes the start window boundary to <code>timeDifferenceMs</code> but keep the end window boundary as is.
  Thus, records of the same key are joinable if the timestamp of a record from the secondary stream is at most
@@ -435,7 +435,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows
 <li class="blockList">
 <h4>before</h4>
 <pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows.html" title="class in org.apache.kafka.streams.kstream">JoinWindows</a>&nbsp;before(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeDifference)
-                   throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                   throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block">Changes the start window boundary to <code>timeDifference</code> but keep the end window boundary as is.
  Thus, records of the same key are joinable if the timestamp of a record from the secondary stream is at most
  <code>timeDifference</code> earlier than the timestamp of the record from the primary stream.
@@ -457,7 +457,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows
 <h4>after</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows.html" title="class in org.apache.kafka.streams.kstream">JoinWindows</a>&nbsp;after(long&nbsp;timeDifferenceMs)
-                              throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                              throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows.html#after-java.time.Duration-"><code>after(Duration)</code></a> instead</span></div>
 <div class="block">Changes the end window boundary to <code>timeDifferenceMs</code> but keep the start window boundary as is.
  Thus, records of the same key are joinable if the timestamp of a record from the secondary stream is at most
@@ -479,7 +479,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows
 <li class="blockList">
 <h4>after</h4>
 <pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows.html" title="class in org.apache.kafka.streams.kstream">JoinWindows</a>&nbsp;after(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeDifference)
-                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block">Changes the end window boundary to <code>timeDifference</code> but keep the start window boundary as is.
  Thus, records of the same key are joinable if the timestamp of a record from the secondary stream is at most
  <code>timeDifference</code> later than the timestamp of the record from the primary stream.
@@ -499,7 +499,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows
 <ul class="blockList">
 <li class="blockList">
 <h4>windowsFor</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Window.html" title="class in org.apache.kafka.streams.kstream">Window</a>&gt;&nbsp;windowsFor(long&nbsp;timestamp)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../../org/apache/kafka/streams/kstream/Window.html" title="class in org.apache.kafka.streams.kstream">Window</a>&gt;&nbsp;windowsFor(long&nbsp;timestamp)</code></pre>
 <div class="block">Not supported by <code>JoinWindows</code>.
  Throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang"><code>UnsupportedOperationException</code></a>.</div>
 <dl>
@@ -520,7 +520,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows
 <ul class="blockList">
 <li class="blockList">
 <h4>size</h4>
-<pre>public&nbsp;long&nbsp;size()</pre>
+<pre>public&nbsp;long&nbsp;size()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/kstream/Windows.html#size--">Windows</a></code></span></div>
 <div class="block">Return the size of the specified windows in milliseconds.</div>
 <dl>
@@ -538,7 +538,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows
 <li class="blockList">
 <h4>grace</h4>
 <pre>public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows.html" title="class in org.apache.kafka.streams.kstream">JoinWindows</a>&nbsp;grace(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;afterWindowEnd)
-                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block">Reject out-of-order events that are delayed more than <code>afterWindowEnd</code>
  after the end of its window.
  <p>
@@ -559,7 +559,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows
 <ul class="blockList">
 <li class="blockList">
 <h4>gracePeriodMs</h4>
-<pre>public&nbsp;long&nbsp;gracePeriodMs()</pre>
+<pre>public&nbsp;long&nbsp;gracePeriodMs()</code></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/kstream/Windows.html#gracePeriodMs--">Windows</a></code></span></div>
 <div class="block">Return the window grace period (the time to admit
  out-of-order events after the end of the window.)
@@ -579,7 +579,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows
 <h4>until</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows.html" title="class in org.apache.kafka.streams.kstream">JoinWindows</a>&nbsp;until(long&nbsp;durationMs)
-                              throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+                              throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.1. Use <a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows.html#grace-java.time.Duration-"><code>grace(Duration)</code></a> instead.</span></div>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../org/apache/kafka/streams/kstream/Windows.html#until-long-">Windows</a></code></span></div>
 <div class="block">Set the window maintain duration (retention time) in milliseconds.
@@ -603,7 +603,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows
 <li class="blockList">
 <h4>maintainMs</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;long&nbsp;maintainMs()</pre>
+public&nbsp;long&nbsp;maintainMs()</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.1. This function should not be used anymore, since <a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows.html#until-long-"><code>until(long)</code></a>
              is deprecated in favor of <a href="../../../../../org/apache/kafka/streams/kstream/JoinWindows.html#grace-java.time.Duration-"><code>grace(Duration)</code></a>.</span></div>
 <div class="block">Return the window maintain duration (retention time) in milliseconds.
@@ -623,7 +623,7 @@ public&nbsp;long&nbsp;maintainMs()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -636,7 +636,7 @@ public&nbsp;long&nbsp;maintainMs()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -649,7 +649,7 @@ public&nbsp;long&nbsp;maintainMs()</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>

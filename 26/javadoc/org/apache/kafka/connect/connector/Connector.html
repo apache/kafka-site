@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public abstract class <span class="typeNameLabel">Connector</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../org/apache/kafka/connect/components/Versioned.html" title="interface in org.apache.kafka.connect.components">Versioned</a></pre>
+implements <a href="../../../../../org/apache/kafka/connect/components/Versioned.html" title="interface in org.apache.kafka.connect.components">Versioned</a></code></pre>
 <div class="block"><p>
  Connectors manage integration of Kafka Connect with another system, either as an input that ingests
  data into Kafka or an output that passes data to an external system. Implementations should
@@ -288,7 +288,7 @@ implements <a href="../../../../../org/apache/kafka/connect/components/Versioned
 <ul class="blockListLast">
 <li class="blockList">
 <h4>context</h4>
-<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/connect/connector/ConnectorContext.html" title="interface in org.apache.kafka.connect.connector">ConnectorContext</a> context</pre>
+<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/connect/connector/ConnectorContext.html" title="interface in org.apache.kafka.connect.connector">ConnectorContext</a> context</code></pre>
 </li>
 </ul>
 </li>
@@ -305,7 +305,7 @@ implements <a href="../../../../../org/apache/kafka/connect/components/Versioned
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Connector</h4>
-<pre>public&nbsp;Connector()</pre>
+<pre>public&nbsp;Connector()</code></pre>
 </li>
 </ul>
 </li>
@@ -322,7 +322,7 @@ implements <a href="../../../../../org/apache/kafka/connect/components/Versioned
 <ul class="blockList">
 <li class="blockList">
 <h4>initialize</h4>
-<pre>public&nbsp;void&nbsp;initialize(<a href="../../../../../org/apache/kafka/connect/connector/ConnectorContext.html" title="interface in org.apache.kafka.connect.connector">ConnectorContext</a>&nbsp;ctx)</pre>
+<pre>public&nbsp;void&nbsp;initialize(<a href="../../../../../org/apache/kafka/connect/connector/ConnectorContext.html" title="interface in org.apache.kafka.connect.connector">ConnectorContext</a>&nbsp;ctx)</code></pre>
 <div class="block">Initialize this connector, using the provided ConnectorContext to notify the runtime of
  input configuration changes.</div>
 <dl>
@@ -338,7 +338,7 @@ implements <a href="../../../../../org/apache/kafka/connect/components/Versioned
 <li class="blockList">
 <h4>initialize</h4>
 <pre>public&nbsp;void&nbsp;initialize(<a href="../../../../../org/apache/kafka/connect/connector/ConnectorContext.html" title="interface in org.apache.kafka.connect.connector">ConnectorContext</a>&nbsp;ctx,
-                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;taskConfigs)</pre>
+                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;taskConfigs)</code></pre>
 <div class="block"><p>
  Initialize this connector, using the provided ConnectorContext to notify the runtime of
  input configuration changes and using the provided set of Task configurations.
@@ -363,7 +363,7 @@ implements <a href="../../../../../org/apache/kafka/connect/components/Versioned
 <ul class="blockList">
 <li class="blockList">
 <h4>context</h4>
-<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/connect/connector/ConnectorContext.html" title="interface in org.apache.kafka.connect.connector">ConnectorContext</a>&nbsp;context()</pre>
+<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/connect/connector/ConnectorContext.html" title="interface in org.apache.kafka.connect.connector">ConnectorContext</a>&nbsp;context()</code></pre>
 <div class="block">Returns the context object used to interact with the Kafka Connect runtime.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -377,7 +377,7 @@ implements <a href="../../../../../org/apache/kafka/connect/components/Versioned
 <ul class="blockList">
 <li class="blockList">
 <h4>start</h4>
-<pre>public abstract&nbsp;void&nbsp;start(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;props)</pre>
+<pre>public abstract&nbsp;void&nbsp;start(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;props)</code></pre>
 <div class="block">Start this Connector. This method will only be called on a clean Connector, i.e. it has
  either just been instantiated and initialized or <a href="../../../../../org/apache/kafka/connect/connector/Connector.html#stop--"><code>stop()</code></a> has been invoked.</div>
 <dl>
@@ -392,7 +392,7 @@ implements <a href="../../../../../org/apache/kafka/connect/components/Versioned
 <ul class="blockList">
 <li class="blockList">
 <h4>reconfigure</h4>
-<pre>public&nbsp;void&nbsp;reconfigure(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;props)</pre>
+<pre>public&nbsp;void&nbsp;reconfigure(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;props)</code></pre>
 <div class="block">Reconfigure this Connector. Most implementations will not override this, using the default
  implementation that calls <a href="../../../../../org/apache/kafka/connect/connector/Connector.html#stop--"><code>stop()</code></a> followed by <a href="../../../../../org/apache/kafka/connect/connector/Connector.html#start-java.util.Map-"><code>start(Map)</code></a>.
  Implementations only need to override this if they want to handle this process more
@@ -409,7 +409,7 @@ implements <a href="../../../../../org/apache/kafka/connect/components/Versioned
 <ul class="blockList">
 <li class="blockList">
 <h4>taskClass</h4>
-<pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../../org/apache/kafka/connect/connector/Task.html" title="interface in org.apache.kafka.connect.connector">Task</a>&gt;&nbsp;taskClass()</pre>
+<pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../../org/apache/kafka/connect/connector/Task.html" title="interface in org.apache.kafka.connect.connector">Task</a>&gt;&nbsp;taskClass()</code></pre>
 <div class="block">Returns the Task implementation for this Connector.</div>
 </li>
 </ul>
@@ -419,7 +419,7 @@ implements <a href="../../../../../org/apache/kafka/connect/components/Versioned
 <ul class="blockList">
 <li class="blockList">
 <h4>taskConfigs</h4>
-<pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;taskConfigs(int&nbsp;maxTasks)</pre>
+<pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;taskConfigs(int&nbsp;maxTasks)</code></pre>
 <div class="block">Returns a set of configurations for Tasks based on the current configuration,
  producing at most count configurations.</div>
 <dl>
@@ -436,7 +436,7 @@ implements <a href="../../../../../org/apache/kafka/connect/components/Versioned
 <ul class="blockList">
 <li class="blockList">
 <h4>stop</h4>
-<pre>public abstract&nbsp;void&nbsp;stop()</pre>
+<pre>public abstract&nbsp;void&nbsp;stop()</code></pre>
 <div class="block">Stop this connector.</div>
 </li>
 </ul>
@@ -446,7 +446,7 @@ implements <a href="../../../../../org/apache/kafka/connect/components/Versioned
 <ul class="blockList">
 <li class="blockList">
 <h4>validate</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/config/Config.html" title="class in org.apache.kafka.common.config">Config</a>&nbsp;validate(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;connectorConfigs)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/config/Config.html" title="class in org.apache.kafka.common.config">Config</a>&nbsp;validate(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;connectorConfigs)</code></pre>
 <div class="block">Validate the connector configuration values against configuration definitions.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -463,7 +463,7 @@ implements <a href="../../../../../org/apache/kafka/connect/components/Versioned
 <ul class="blockListLast">
 <li class="blockList">
 <h4>config</h4>
-<pre>public abstract&nbsp;<a href="../../../../../org/apache/kafka/common/config/ConfigDef.html" title="class in org.apache.kafka.common.config">ConfigDef</a>&nbsp;config()</pre>
+<pre>public abstract&nbsp;<a href="../../../../../org/apache/kafka/common/config/ConfigDef.html" title="class in org.apache.kafka.common.config">ConfigDef</a>&nbsp;config()</code></pre>
 <div class="block">Define the configuration for the connector.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>

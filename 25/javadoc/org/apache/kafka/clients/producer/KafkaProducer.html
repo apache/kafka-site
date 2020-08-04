@@ -848,8 +848,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
                        }
                    }
                });
- </code>
- </pre>
+ </code></pre>
 
  Callbacks for records being sent to the same partition are guaranteed to execute in order. That is, in the
  following example <code>callback1</code> is guaranteed to execute before <code>callback2</code>:
@@ -858,8 +857,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
  <code>
  producer.send(new ProducerRecord&lt;byte[],byte[]&gt;(topic, partition, key1, value1), callback1);
  producer.send(new ProducerRecord&lt;byte[],byte[]&gt;(topic, partition, key2, value2), callback2);
- </code>
- </pre>
+ </code></pre>
  <p>
  When used as part of a transaction, it is not necessary to define a callback or check the result of the future
  in order to detect errors from <code>send</code>. If any of the send calls failed with an irrecoverable error,
@@ -939,8 +937,7 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
      producer.send(new ProducerRecord("my-topic", record.key(), record.value());
  producer.flush();
  consumer.commit();
- </code>
- </pre>
+ </code></pre>
 
  Note that the above example may drop records if the produce request fails. If we want to ensure that this does not occur
  we need to set <code>retries=&lt;large_number&gt;</code> in our config.

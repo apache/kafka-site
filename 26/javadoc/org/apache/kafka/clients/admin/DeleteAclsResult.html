@@ -109,7 +109,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre><a href="../../../../../org/apache/kafka/common/annotation/InterfaceStability.Evolving.html" title="annotation in org.apache.kafka.common.annotation">@InterfaceStability.Evolving</a>
 public class <span class="typeNameLabel">DeleteAclsResult</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></pre>
 <div class="block">The result of the <a href="../../../../../org/apache/kafka/clients/admin/Admin.html#deleteAcls-java.util.Collection-"><code>Admin.deleteAcls(Collection)</code></a> call.
 
  The API of this class is evolving, see <a href="../../../../../org/apache/kafka/clients/admin/Admin.html" title="interface in org.apache.kafka.clients.admin"><code>Admin</code></a> for details.</div>
@@ -199,7 +199,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>values</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/acl/AclBindingFilter.html" title="class in org.apache.kafka.common.acl">AclBindingFilter</a>,<a href="../../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="../../../../../org/apache/kafka/clients/admin/DeleteAclsResult.FilterResults.html" title="class in org.apache.kafka.clients.admin">DeleteAclsResult.FilterResults</a>&gt;&gt;&nbsp;values()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/acl/AclBindingFilter.html" title="class in org.apache.kafka.common.acl">AclBindingFilter</a>,<a href="../../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="../../../../../org/apache/kafka/clients/admin/DeleteAclsResult.FilterResults.html" title="class in org.apache.kafka.clients.admin">DeleteAclsResult.FilterResults</a>&gt;&gt;&nbsp;values()</code></pre>
 <div class="block">Return a map from acl filters to futures which can be used to check the status of the deletions by each
  filter.</div>
 </li>
@@ -210,7 +210,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>all</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/acl/AclBinding.html" title="class in org.apache.kafka.common.acl">AclBinding</a>&gt;&gt;&nbsp;all()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/common/KafkaFuture.html" title="class in org.apache.kafka.common">KafkaFuture</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/acl/AclBinding.html" title="class in org.apache.kafka.common.acl">AclBinding</a>&gt;&gt;&nbsp;all()</code></pre>
 <div class="block">Return a future which succeeds only if all the ACLs deletions succeed, and which contains all the deleted ACLs.
  Note that it if the filters don't match any ACLs, this is not considered an error.</div>
 </li>

@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">ConsumerRecords&lt;K,V&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;K,V&gt;&gt;</pre>
+implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;K,V&gt;&gt;</code></pre>
 <div class="block">A container that holds the list <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer"><code>ConsumerRecord</code></a> per partition for a
  particular topic. There is one <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer"><code>ConsumerRecord</code></a> list for every topic
  partition returned by a <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html#poll-java.time.Duration-"><code>Consumer.poll(java.time.Duration)</code></a> operation.</div>
@@ -242,7 +242,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockListLast">
 <li class="blockList">
 <h4>EMPTY</h4>
-<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecords</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt; EMPTY</pre>
+<pre>public static final&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecords</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt; EMPTY</code></pre>
 </li>
 </ul>
 </li>
@@ -259,7 +259,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ConsumerRecords</h4>
-<pre>public&nbsp;ConsumerRecords(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">V</a>&gt;&gt;&gt;&nbsp;records)</pre>
+<pre>public&nbsp;ConsumerRecords(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">V</a>&gt;&gt;&gt;&nbsp;records)</code></pre>
 </li>
 </ul>
 </li>
@@ -276,7 +276,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>records</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">V</a>&gt;&gt;&nbsp;records(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">V</a>&gt;&gt;&nbsp;records(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition)</code></pre>
 <div class="block">Get just the records for the given partition</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -290,7 +290,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>records</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">V</a>&gt;&gt;&nbsp;records(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">V</a>&gt;&gt;&nbsp;records(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</code></pre>
 <div class="block">Get just the records for the given topic</div>
 </li>
 </ul>
@@ -300,7 +300,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>partitions</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions()</code></pre>
 <div class="block">Get the partitions which have records contained in this record set.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -314,7 +314,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>iterator</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">V</a>&gt;&gt;&nbsp;iterator()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">V</a>&gt;&gt;&nbsp;iterator()</code></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecord.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecord</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="type parameter in ConsumerRecords">V</a>&gt;&gt;</code></dd>
@@ -327,7 +327,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>count</h4>
-<pre>public&nbsp;int&nbsp;count()</pre>
+<pre>public&nbsp;int&nbsp;count()</code></pre>
 <div class="block">The number of records for all topics</div>
 </li>
 </ul>
@@ -337,7 +337,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>isEmpty</h4>
-<pre>public&nbsp;boolean&nbsp;isEmpty()</pre>
+<pre>public&nbsp;boolean&nbsp;isEmpty()</code></pre>
 </li>
 </ul>
 <a name="empty--">
@@ -346,7 +346,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockListLast">
 <li class="blockList">
 <h4>empty</h4>
-<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecords</a>&lt;K,V&gt;&nbsp;empty()</pre>
+<pre>public static&nbsp;&lt;K,V&gt;&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecords</a>&lt;K,V&gt;&nbsp;empty()</code></pre>
 </li>
 </ul>
 </li>

@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">KafkaConsumer&lt;K,V&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;K,V&gt;</pre>
+implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.html" title="interface in org.apache.kafka.clients.consumer">Consumer</a>&lt;K,V&gt;</code></pre>
 <div class="block">A client that consumes records from a Kafka cluster.
  <p>
  This client transparently handles the failure of Kafka brokers, and transparently adapts as topic partitions
@@ -235,8 +235,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
  <h4>Automatic Offset Committing</h4>
  This example demonstrates a simple usage of Kafka's consumer api that relies on automatic offset committing.
  <p>
- <pre>
-     Properties props = new Properties();
+ <pre class="line-numbers"><code class="language-text">     Properties props = new Properties();
      props.setProperty(&quot;bootstrap.servers&quot;, &quot;localhost:9092&quot;);
      props.setProperty(&quot;group.id&quot;, &quot;test&quot;);
      props.setProperty(&quot;enable.auto.commit&quot;, &quot;true&quot;);
@@ -249,8 +248,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
          ConsumerRecords&lt;String, String&gt; records = consumer.poll(Duration.ofMillis(100));
          for (ConsumerRecord&lt;String, String&gt; record : records)
              System.out.printf(&quot;offset = %d, key = %s, value = %s%n&quot;, record.offset(), record.key(), record.value());
-     }
- </pre>
+     }</code></pre>
 
  The connection to the cluster is bootstrapped by specifying a list of one or more brokers to contact using the
  configuration <code>&gt;bootstrap.servers</code>. This list is just used to discover the rest of the brokers in the
@@ -273,8 +271,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
  is coupled with some processing logic and hence a message should not be considered as consumed until it is completed processing.
 
  <p>
- <pre>
-     Properties props = new Properties();
+ <pre class="line-numbers"><code class="language-text">     Properties props = new Properties();
      props.setProperty(&quot;bootstrap.servers&quot;, &quot;localhost:9092&quot;);
      props.setProperty(&quot;group.id&quot;, &quot;test&quot;);
      props.setProperty(&quot;enable.auto.commit&quot;, &quot;false&quot;);
@@ -294,8 +291,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
              consumer.commitSync();
              buffer.clear();
          }
-     }
- </pre>
+     }</code></pre>
 
  In this example we will consume a batch of records and batch them up in memory. When we have enough records
  batched, we will insert them into a database. If we allowed offsets to auto commit as in the previous example, records
@@ -321,8 +317,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
  you may wish to have even finer control over which records have been committed by specifying an offset explicitly.
  In the example below we commit offset after we finish handling the records in each partition.
  <p>
- <pre>
-     try {
+ <pre class="line-numbers"><code class="language-text">     try {
          while(running) {
              ConsumerRecords&lt;String, String&gt; records = consumer.poll(Duration.ofMillis(Long.MAX_VALUE));
              for (TopicPartition partition : records.partitions()) {
@@ -336,8 +331,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
          }
      } finally {
        consumer.close();
-     }
- </pre>
+     }</code></pre>
 
  <b>Note: The committed offset should always be the offset of the next message that your application will read.</b>
  Thus, when calling <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#commitSync-java.util.Map-"><code>commitSync(offsets)</code></a> you should add one to the offset of the last message processed.
@@ -360,12 +354,10 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
  To use this mode, instead of subscribing to the topic using <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#subscribe-java.util.Collection-"><code>subscribe</code></a>, you just call
  <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#assign-java.util.Collection-"><code>assign(Collection)</code></a> with the full list of partitions that you want to consume.
 
- <pre>
-     String topic = &quot;foo&quot;;
+ <pre class="line-numbers"><code class="language-text">     String topic = &quot;foo&quot;;
      TopicPartition partition0 = new TopicPartition(topic, 0);
      TopicPartition partition1 = new TopicPartition(topic, 1);
-     consumer.assign(Arrays.asList(partition0, partition1));
- </pre>
+     consumer.assign(Arrays.asList(partition0, partition1));</code></pre>
 
  Once assigned, you can call <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#poll-java.time.Duration-"><code>poll</code></a> in a loop, just as in the preceding examples to consume
  records. The group that the consumer specifies is still used for committing offsets, but now the set of partitions
@@ -501,8 +493,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
  thrown from the thread blocking on the operation. This can be used to shutdown the consumer from another thread.
  The following snippet shows the typical pattern:
 
- <pre>
- public class KafkaConsumerRunner implements Runnable {
+ <pre class="line-numbers"><code class="language-text"> public class KafkaConsumerRunner implements Runnable {
      private final AtomicBoolean closed = new AtomicBoolean(false);
      private final KafkaConsumer consumer;
 
@@ -531,16 +522,13 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
          closed.set(true);
          consumer.wakeup();
      }
- }
- </pre>
+ }</code></pre>
 
  Then in a separate thread, the consumer can be shutdown by setting the closed flag and waking up the consumer.
 
  <p>
- <pre>
-     closed.set(true);
-     consumer.wakeup();
- </pre>
+ <pre class="line-numbers"><code class="language-text">     closed.set(true);
+     consumer.wakeup();</code></pre>
 
  <p>
  Note that while it is possible to use thread interrupts instead of <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#wakeup--"><code>wakeup()</code></a> to abort a blocking operation
@@ -982,7 +970,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>KafkaConsumer</h4>
-<pre>public&nbsp;KafkaConsumer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;configs)</pre>
+<pre>public&nbsp;KafkaConsumer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;configs)</code></pre>
 <div class="block">A consumer is instantiated by providing a set of key-value pairs as configuration. Valid configuration strings
  are documented <a href="http://kafka.apache.org/documentation.html#consumerconfigs" >here</a>. Values can be
  either strings or objects of the appropriate type (for example a numeric configuration would accept either the
@@ -1005,7 +993,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <h4>KafkaConsumer</h4>
 <pre>public&nbsp;KafkaConsumer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;configs,
                      <a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html" title="type parameter in KafkaConsumer">K</a>&gt;&nbsp;keyDeserializer,
-                     <a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html" title="type parameter in KafkaConsumer">V</a>&gt;&nbsp;valueDeserializer)</pre>
+                     <a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html" title="type parameter in KafkaConsumer">V</a>&gt;&nbsp;valueDeserializer)</code></pre>
 <div class="block">A consumer is instantiated by providing a set of key-value pairs as configuration, and a key and a value <a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization"><code>Deserializer</code></a>.
  <p>
  Valid configuration strings are documented at <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerConfig.html" title="class in org.apache.kafka.clients.consumer"><code>ConsumerConfig</code></a>.
@@ -1027,7 +1015,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>KafkaConsumer</h4>
-<pre>public&nbsp;KafkaConsumer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;properties)</pre>
+<pre>public&nbsp;KafkaConsumer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;properties)</code></pre>
 <div class="block">A consumer is instantiated by providing a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util"><code>Properties</code></a> object as configuration.
  <p>
  Valid configuration strings are documented at <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerConfig.html" title="class in org.apache.kafka.clients.consumer"><code>ConsumerConfig</code></a>.
@@ -1047,7 +1035,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <h4>KafkaConsumer</h4>
 <pre>public&nbsp;KafkaConsumer(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;properties,
                      <a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html" title="type parameter in KafkaConsumer">K</a>&gt;&nbsp;keyDeserializer,
-                     <a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html" title="type parameter in KafkaConsumer">V</a>&gt;&nbsp;valueDeserializer)</pre>
+                     <a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization">Deserializer</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html" title="type parameter in KafkaConsumer">V</a>&gt;&nbsp;valueDeserializer)</code></pre>
 <div class="block">A consumer is instantiated by providing a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util"><code>Properties</code></a> object as configuration, and a
  key and a value <a href="../../../../../org/apache/kafka/common/serialization/Deserializer.html" title="interface in org.apache.kafka.common.serialization"><code>Deserializer</code></a>.
  <p>
@@ -1078,7 +1066,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>assignment</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;assignment()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;assignment()</code></pre>
 <div class="block">Get the set of partitions currently assigned to this consumer. If subscription happened by directly assigning
  partitions using <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#assign-java.util.Collection-"><code>assign(Collection)</code></a> then this will simply return the same partitions that
  were assigned. If topic subscription was used, then this will give the set of topic partitions currently assigned
@@ -1100,7 +1088,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>subscription</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;subscription()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;subscription()</code></pre>
 <div class="block">Get the current subscription. Will return the same topics used in the most recent call to
  <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#subscribe-java.util.Collection-org.apache.kafka.clients.consumer.ConsumerRebalanceListener-"><code>subscribe(Collection, ConsumerRebalanceListener)</code></a>, or an empty set if no such call has been made.</div>
 <dl>
@@ -1120,7 +1108,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <li class="blockList">
 <h4>subscribe</h4>
 <pre>public&nbsp;void&nbsp;subscribe(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topics,
-                      <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRebalanceListener.html" title="interface in org.apache.kafka.clients.consumer">ConsumerRebalanceListener</a>&nbsp;listener)</pre>
+                      <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRebalanceListener.html" title="interface in org.apache.kafka.clients.consumer">ConsumerRebalanceListener</a>&nbsp;listener)</code></pre>
 <div class="block">Subscribe to the given list of topics to get dynamically
  assigned partitions. <b>Topic subscriptions are not incremental. This list will replace the current
  assignment (if there is one).</b> Note that it is not possible to combine topic subscription with group management
@@ -1169,7 +1157,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>subscribe</h4>
-<pre>public&nbsp;void&nbsp;subscribe(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topics)</pre>
+<pre>public&nbsp;void&nbsp;subscribe(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;topics)</code></pre>
 <div class="block">Subscribe to the given list of topics to get dynamically assigned partitions.
  <b>Topic subscriptions are not incremental. This list will replace the current
  assignment (if there is one).</b> It is not possible to combine topic subscription with group management
@@ -1205,7 +1193,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <li class="blockList">
 <h4>subscribe</h4>
 <pre>public&nbsp;void&nbsp;subscribe(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a>&nbsp;pattern,
-                      <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRebalanceListener.html" title="interface in org.apache.kafka.clients.consumer">ConsumerRebalanceListener</a>&nbsp;listener)</pre>
+                      <a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRebalanceListener.html" title="interface in org.apache.kafka.clients.consumer">ConsumerRebalanceListener</a>&nbsp;listener)</code></pre>
 <div class="block">Subscribe to all topics matching specified pattern to get dynamically assigned partitions.
  The pattern matching will be done periodically against all topics existing at the time of check.
  This can be controlled through the <code>metadata.max.age.ms</code> configuration: by lowering
@@ -1238,7 +1226,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>subscribe</h4>
-<pre>public&nbsp;void&nbsp;subscribe(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a>&nbsp;pattern)</pre>
+<pre>public&nbsp;void&nbsp;subscribe(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a>&nbsp;pattern)</code></pre>
 <div class="block">Subscribe to all topics matching specified pattern to get dynamically assigned partitions.
  The pattern matching will be done periodically against topics existing at the time of check.
  <p>
@@ -1268,7 +1256,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>unsubscribe</h4>
-<pre>public&nbsp;void&nbsp;unsubscribe()</pre>
+<pre>public&nbsp;void&nbsp;unsubscribe()</code></pre>
 <div class="block">Unsubscribe from topics currently subscribed with <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#subscribe-java.util.Collection-"><code>subscribe(Collection)</code></a> or <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#subscribe-java.util.regex.Pattern-"><code>subscribe(Pattern)</code></a>.
  This also clears any partitions directly assigned through <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#assign-java.util.Collection-"><code>assign(Collection)</code></a>.</div>
 <dl>
@@ -1287,7 +1275,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>assign</h4>
-<pre>public&nbsp;void&nbsp;assign(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;void&nbsp;assign(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block">Manually assign a list of partitions to this consumer. This interface does not allow for incremental assignment
  and will replace the previous assignment (if there is one).
  <p>
@@ -1321,7 +1309,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
 <li class="blockList">
 <h4>poll</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecords</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html" title="type parameter in KafkaConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html" title="type parameter in KafkaConsumer">V</a>&gt;&nbsp;poll(long&nbsp;timeoutMs)</pre>
+public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecords</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html" title="type parameter in KafkaConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html" title="type parameter in KafkaConsumer">V</a>&gt;&nbsp;poll(long&nbsp;timeoutMs)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.0. Use <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#poll-java.time.Duration-"><code>poll(Duration)</code></a>, which does not block beyond the timeout awaiting partition
              assignment. See <a href="https://cwiki.apache.org/confluence/x/5kiHB">KIP-266</a> for more information.</span></div>
 <div class="block">Fetch data for the topics or partitions specified using one of the subscribe/assign APIs. It is an error to not have
@@ -1366,7 +1354,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <ul class="blockList">
 <li class="blockList">
 <h4>poll</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecords</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html" title="type parameter in KafkaConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html" title="type parameter in KafkaConsumer">V</a>&gt;&nbsp;poll(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRecords.html" title="class in org.apache.kafka.clients.consumer">ConsumerRecords</a>&lt;<a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html" title="type parameter in KafkaConsumer">K</a>,<a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html" title="type parameter in KafkaConsumer">V</a>&gt;&nbsp;poll(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block">Fetch data for the topics or partitions specified using one of the subscribe/assign APIs. It is an error to not have
  subscribed to any topics or partitions before polling for data.
  <p>
@@ -1418,7 +1406,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <ul class="blockList">
 <li class="blockList">
 <h4>commitSync</h4>
-<pre>public&nbsp;void&nbsp;commitSync()</pre>
+<pre>public&nbsp;void&nbsp;commitSync()</code></pre>
 <div class="block">Commit offsets returned on the last <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#poll-java.time.Duration-"><code>poll()</code></a> for all the subscribed list of topics and
  partitions.
  <p>
@@ -1470,7 +1458,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <ul class="blockList">
 <li class="blockList">
 <h4>commitSync</h4>
-<pre>public&nbsp;void&nbsp;commitSync(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+<pre>public&nbsp;void&nbsp;commitSync(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block">Commit offsets returned on the last <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#poll-java.time.Duration-"><code>poll()</code></a> for all the subscribed list of topics and
  partitions.
  <p>
@@ -1521,7 +1509,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <ul class="blockList">
 <li class="blockList">
 <h4>commitSync</h4>
-<pre>public&nbsp;void&nbsp;commitSync(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets)</pre>
+<pre>public&nbsp;void&nbsp;commitSync(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets)</code></pre>
 <div class="block">Commit the specified offsets for the specified list of topics and partitions.
  <p>
  This commits offsets to Kafka. The offsets committed using this API will be used on the first fetch after every
@@ -1579,7 +1567,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <li class="blockList">
 <h4>commitSync</h4>
 <pre>public&nbsp;void&nbsp;commitSync(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets,
-                       <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                       <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block">Commit the specified offsets for the specified list of topics and partitions.
  <p>
  This commits offsets to Kafka. The offsets committed using this API will be used on the first fetch after every
@@ -1636,7 +1624,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <ul class="blockList">
 <li class="blockList">
 <h4>commitAsync</h4>
-<pre>public&nbsp;void&nbsp;commitAsync()</pre>
+<pre>public&nbsp;void&nbsp;commitAsync()</code></pre>
 <div class="block">Commit offsets returned on the last <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#poll-java.time.Duration-"><code>poll(Duration)</code></a> for all the subscribed list of topics and partition.
  Same as <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#commitAsync-org.apache.kafka.clients.consumer.OffsetCommitCallback-"><code>commitAsync(null)</code></a></div>
 <dl>
@@ -1655,7 +1643,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <ul class="blockList">
 <li class="blockList">
 <h4>commitAsync</h4>
-<pre>public&nbsp;void&nbsp;commitAsync(<a href="../../../../../org/apache/kafka/clients/consumer/OffsetCommitCallback.html" title="interface in org.apache.kafka.clients.consumer">OffsetCommitCallback</a>&nbsp;callback)</pre>
+<pre>public&nbsp;void&nbsp;commitAsync(<a href="../../../../../org/apache/kafka/clients/consumer/OffsetCommitCallback.html" title="interface in org.apache.kafka.clients.consumer">OffsetCommitCallback</a>&nbsp;callback)</code></pre>
 <div class="block">Commit offsets returned on the last <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#poll-java.time.Duration-"><code>poll()</code></a> for the subscribed list of topics and partitions.
  <p>
  This commits offsets only to Kafka. The offsets committed using this API will be used on the first fetch after
@@ -1688,7 +1676,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <li class="blockList">
 <h4>commitAsync</h4>
 <pre>public&nbsp;void&nbsp;commitAsync(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;offsets,
-                        <a href="../../../../../org/apache/kafka/clients/consumer/OffsetCommitCallback.html" title="interface in org.apache.kafka.clients.consumer">OffsetCommitCallback</a>&nbsp;callback)</pre>
+                        <a href="../../../../../org/apache/kafka/clients/consumer/OffsetCommitCallback.html" title="interface in org.apache.kafka.clients.consumer">OffsetCommitCallback</a>&nbsp;callback)</code></pre>
 <div class="block">Commit the specified offsets for the specified list of topics and partitions to Kafka.
  <p>
  This commits offsets to Kafka. The offsets committed using this API will be used on the first fetch after every
@@ -1725,7 +1713,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <li class="blockList">
 <h4>seek</h4>
 <pre>public&nbsp;void&nbsp;seek(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition,
-                 long&nbsp;offset)</pre>
+                 long&nbsp;offset)</code></pre>
 <div class="block">Overrides the fetch offsets that the consumer will use on the next <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#poll-java.time.Duration-"><code>poll(timeout)</code></a>. If this API
  is invoked for the same partition more than once, the latest offset will be used on the next poll(). Note that
  you may lose data if this API is arbitrarily used in the middle of consumption, to reset the fetch offsets</div>
@@ -1747,7 +1735,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <li class="blockList">
 <h4>seek</h4>
 <pre>public&nbsp;void&nbsp;seek(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition,
-                 <a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&nbsp;offsetAndMetadata)</pre>
+                 <a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&nbsp;offsetAndMetadata)</code></pre>
 <div class="block">Overrides the fetch offsets that the consumer will use on the next <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#poll-java.time.Duration-"><code>poll(timeout)</code></a>. If this API
  is invoked for the same partition more than once, the latest offset will be used on the next poll(). Note that
  you may lose data if this API is arbitrarily used in the middle of consumption, to reset the fetch offsets. This
@@ -1769,7 +1757,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <ul class="blockList">
 <li class="blockList">
 <h4>seekToBeginning</h4>
-<pre>public&nbsp;void&nbsp;seekToBeginning(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;void&nbsp;seekToBeginning(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block">Seek to the first offset for each of the given partitions. This function evaluates lazily, seeking to the
  first offset in all partitions only when <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#poll-java.time.Duration-"><code>poll(Duration)</code></a> or <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#position-org.apache.kafka.common.TopicPartition-"><code>position(TopicPartition)</code></a> are called.
  If no partitions are provided, seek to the first offset for all of the currently assigned partitions.</div>
@@ -1790,7 +1778,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <ul class="blockList">
 <li class="blockList">
 <h4>seekToEnd</h4>
-<pre>public&nbsp;void&nbsp;seekToEnd(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;void&nbsp;seekToEnd(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block">Seek to the last offset for each of the given partitions. This function evaluates lazily, seeking to the
  final offset in all partitions only when <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#poll-java.time.Duration-"><code>poll(Duration)</code></a> or <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#position-org.apache.kafka.common.TopicPartition-"><code>position(TopicPartition)</code></a> are called.
  If no partitions are provided, seek to the final offset for all of the currently assigned partitions.
@@ -1814,7 +1802,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <ul class="blockList">
 <li class="blockList">
 <h4>position</h4>
-<pre>public&nbsp;long&nbsp;position(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition)</pre>
+<pre>public&nbsp;long&nbsp;position(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition)</code></pre>
 <div class="block">Get the offset of the <i>next record</i> that will be fetched (if a record with that offset exists).
  This method may issue a remote call to the server if there is no current position for the given partition.
  <p>
@@ -1856,7 +1844,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <li class="blockList">
 <h4>position</h4>
 <pre>public&nbsp;long&nbsp;position(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block">Get the offset of the <i>next record</i> that will be fetched (if a record with that offset exists).
  This method may issue a remote call to the server if there is no current position
  for the given partition.
@@ -1897,7 +1885,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerRe
 <li class="blockList">
 <h4>committed</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&nbsp;committed(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition)</pre>
+public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&nbsp;committed(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.4 Use <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#committed-java.util.Set-"><code>committed(Set)</code></a> instead</span></div>
 <div class="block">Get the last committed offset for the given partition (whether the commit happened by this process or
  another). This offset will be used as the position for the consumer in the event of a failure.
@@ -1937,7 +1925,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <h4>committed</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&nbsp;committed(<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&nbsp;partition,
-                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.4 Use <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#committed-java.util.Set-java.time.Duration-"><code>committed(Set, Duration)</code></a> instead</span></div>
 <div class="block">Get the last committed offset for the given partition (whether the commit happened by this process or
  another). This offset will be used as the position for the consumer in the event of a failure.
@@ -1974,7 +1962,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>committed</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;committed(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;committed(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block">Get the last committed offsets for the given partitions (whether the commit happened by this process or
  another). The returned offsets will be used as the position for the consumer in the event of a failure.
  <p>
@@ -2017,7 +2005,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <li class="blockList">
 <h4>committed</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;committed(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions,
-                                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block">Get the last committed offsets for the given partitions (whether the commit happened by this process or
  another). The returned offsets will be used as the position for the consumer in the event of a failure.
  <p>
@@ -2055,7 +2043,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>metrics</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/MetricName.html" title="class in org.apache.kafka.common">MetricName</a>,? extends <a href="../../../../../org/apache/kafka/common/Metric.html" title="interface in org.apache.kafka.common">Metric</a>&gt;&nbsp;metrics()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/MetricName.html" title="class in org.apache.kafka.common">MetricName</a>,? extends <a href="../../../../../org/apache/kafka/common/Metric.html" title="interface in org.apache.kafka.common">Metric</a>&gt;&nbsp;metrics()</code></pre>
 <div class="block">Get the metrics kept by the consumer</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -2071,7 +2059,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>partitionsFor</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&nbsp;partitionsFor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&nbsp;partitionsFor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic)</code></pre>
 <div class="block">Get metadata about the partitions for a given topic. This method will issue a remote call to the server if it
  does not already have any metadata about the given topic.</div>
 <dl>
@@ -2103,7 +2091,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <li class="blockList">
 <h4>partitionsFor</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&nbsp;partitionsFor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topic,
-                                         <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                                         <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block">Get metadata about the partitions for a given topic. This method will issue a remote call to the server if it
  does not already have any metadata about the given topic.</div>
 <dl>
@@ -2136,7 +2124,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>listTopics</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&gt;&nbsp;listTopics()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&gt;&nbsp;listTopics()</code></pre>
 <div class="block">Get metadata about partitions for all topics that the user is authorized to view. This method will issue a
  remote call to the server.</div>
 <dl>
@@ -2163,7 +2151,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>listTopics</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&gt;&nbsp;listTopics(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/apache/kafka/common/PartitionInfo.html" title="class in org.apache.kafka.common">PartitionInfo</a>&gt;&gt;&nbsp;listTopics(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block">Get metadata about partitions for all topics that the user is authorized to view. This method will issue a
  remote call to the server.</div>
 <dl>
@@ -2192,7 +2180,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>pause</h4>
-<pre>public&nbsp;void&nbsp;pause(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;void&nbsp;pause(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block">Suspend fetching from the requested partitions. Future calls to <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#poll-java.time.Duration-"><code>poll(Duration)</code></a> will not return
  any records from these partitions until they have been resumed using <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#resume-java.util.Collection-"><code>resume(Collection)</code></a>.
  Note that this method does not affect partition subscription. In particular, it does not cause a group
@@ -2215,7 +2203,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>resume</h4>
-<pre>public&nbsp;void&nbsp;resume(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;void&nbsp;resume(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block">Resume specified partitions which have been paused with <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#pause-java.util.Collection-"><code>pause(Collection)</code></a>. New calls to
  <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#poll-java.time.Duration-"><code>poll(Duration)</code></a> will return records from these partitions if there are any to be fetched.
  If the partitions were not previously paused, this method is a no-op.</div>
@@ -2237,7 +2225,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>paused</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;paused()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;paused()</code></pre>
 <div class="block">Get the set of partitions that were previously paused by a call to <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#pause-java.util.Collection-"><code>pause(Collection)</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -2255,7 +2243,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>offsetsForTimes</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndTimestamp.html" title="class in org.apache.kafka.clients.consumer">OffsetAndTimestamp</a>&gt;&nbsp;offsetsForTimes(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;timestampsToSearch)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndTimestamp.html" title="class in org.apache.kafka.clients.consumer">OffsetAndTimestamp</a>&gt;&nbsp;offsetsForTimes(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;timestampsToSearch)</code></pre>
 <div class="block">Look up the offsets for the given partitions by timestamp. The returned offset for each partition is the
  earliest offset whose timestamp is greater than or equal to the given timestamp in the corresponding partition.
 
@@ -2291,7 +2279,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <li class="blockList">
 <h4>offsetsForTimes</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndTimestamp.html" title="class in org.apache.kafka.clients.consumer">OffsetAndTimestamp</a>&gt;&nbsp;offsetsForTimes(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;timestampsToSearch,
-                                                              <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                                                              <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block">Look up the offsets for the given partitions by timestamp. The returned offset for each partition is the
  earliest offset whose timestamp is greater than or equal to the given timestamp in the corresponding partition.
 
@@ -2327,7 +2315,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>beginningOffsets</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;beginningOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;beginningOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block">Get the first offset for the given partitions.
  <p>
  This method does not change the current consumer position of the partitions.</div>
@@ -2355,7 +2343,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <li class="blockList">
 <h4>beginningOffsets</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;beginningOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions,
-                                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block">Get the first offset for the given partitions.
  <p>
  This method does not change the current consumer position of the partitions.</div>
@@ -2383,7 +2371,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>endOffsets</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;endOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;endOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block">Get the end offsets for the given partitions. In the default <code>read_uncommitted</code> isolation level, the end
  offset is the high watermark (that is, the offset of the last successfully replicated message plus one). For
  <code>read_committed</code> consumers, the end offset is the last stable offset (LSO), which is the minimum of
@@ -2416,7 +2404,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <li class="blockList">
 <h4>endOffsets</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;endOffsets(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions,
-                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block">Get the end offsets for the given partitions. In the default <code>read_uncommitted</code> isolation level, the end
  offset is the high watermark (that is, the offset of the last successfully replicated message plus one). For
  <code>read_committed</code> consumers, the end offset is the last stable offset (LSO), which is the minimum of
@@ -2449,7 +2437,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>groupMetadata</h4>
-<pre>public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerGroupMetadata.html" title="class in org.apache.kafka.clients.consumer">ConsumerGroupMetadata</a>&nbsp;groupMetadata()</pre>
+<pre>public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/ConsumerGroupMetadata.html" title="class in org.apache.kafka.clients.consumer">ConsumerGroupMetadata</a>&nbsp;groupMetadata()</code></pre>
 <div class="block">Return the current group metadata associated with this consumer.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -2467,7 +2455,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>enforceRebalance</h4>
-<pre>public&nbsp;void&nbsp;enforceRebalance()</pre>
+<pre>public&nbsp;void&nbsp;enforceRebalance()</code></pre>
 <div class="block">Alert the consumer to trigger a new rebalance by rejoining the group. This is a nonblocking call that forces
  the consumer to trigger a new rebalance on the next <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#poll-java.time.Duration-"><code>poll(Duration)</code></a> call. Note that this API does not
  itself initiate the rebalance, so you must still call <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#poll-java.time.Duration-"><code>poll(Duration)</code></a>. If a rebalance is already in
@@ -2500,7 +2488,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>public&nbsp;void&nbsp;close()</pre>
+<pre>public&nbsp;void&nbsp;close()</code></pre>
 <div class="block">Close the consumer, waiting for up to the default timeout of 30 seconds for any needed cleanup.
  If auto-commit is enabled, this will commit the current offsets if possible within the default
  timeout. See <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#close-java.time.Duration-"><code>close(Duration)</code></a> for details. Note that <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#wakeup--"><code>wakeup()</code></a>
@@ -2529,7 +2517,7 @@ public&nbsp;<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndM
 <h4>close</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;void&nbsp;close(long&nbsp;timeout,
-                              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</a>&nbsp;timeUnit)</pre>
+                              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</a>&nbsp;timeUnit)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Since 2.0. Use <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#close-java.time.Duration-"><code>close(Duration)</code></a> or <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#close--"><code>close()</code></a>.</span></div>
 <div class="block">Tries to close the consumer cleanly within the specified timeout. This method waits up to
  <code>timeout</code> for the consumer to complete pending commits and leave the group.
@@ -2559,7 +2547,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>public&nbsp;void&nbsp;close(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</pre>
+<pre>public&nbsp;void&nbsp;close(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time">Duration</a>&nbsp;timeout)</code></pre>
 <div class="block">Tries to close the consumer cleanly within the specified timeout. This method waits up to
  <code>timeout</code> for the consumer to complete pending commits and leave the group.
  If auto-commit is enabled, this will commit the current offsets if possible within the
@@ -2587,7 +2575,7 @@ public&nbsp;void&nbsp;close(long&nbsp;timeout,
 <ul class="blockListLast">
 <li class="blockList">
 <h4>wakeup</h4>
-<pre>public&nbsp;void&nbsp;wakeup()</pre>
+<pre>public&nbsp;void&nbsp;wakeup()</code></pre>
 <div class="block">Wakeup the consumer. This method is thread-safe and is useful in particular to abort a long poll.
  The thread which is blocking in an operation will throw <a href="../../../../../org/apache/kafka/common/errors/WakeupException.html" title="class in org.apache.kafka.common.errors"><code>WakeupException</code></a>.
  If no thread is blocking in a method which can throw <a href="../../../../../org/apache/kafka/common/errors/WakeupException.html" title="class in org.apache.kafka.common.errors"><code>WakeupException</code></a>, the next call to such a method will raise it instead.</div>

@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public abstract class <span class="typeNameLabel">SinkTask</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html" title="interface in org.apache.kafka.connect.connector">Task</a></pre>
+implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html" title="interface in org.apache.kafka.connect.connector">Task</a></code></pre>
 <div class="block">SinkTask is a Task that takes records loaded from Kafka and sends them to another system. Each task
  instance is assigned a set of partitions by the Connect framework and will handle all records received
  from those partitions. As records are fetched from Kafka, they will be passed to the sink task using the
@@ -310,7 +310,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>TOPICS_CONFIG</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> TOPICS_CONFIG</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> TOPICS_CONFIG</code></pre>
 <div class="block"><p>
  The configuration key that provides the list of topics that are inputs for this
  SinkTask.
@@ -327,7 +327,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>TOPICS_REGEX_CONFIG</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> TOPICS_REGEX_CONFIG</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> TOPICS_REGEX_CONFIG</code></pre>
 <div class="block"><p>
  The configuration key that provides a regex specifying which topics to include as inputs
  for this SinkTask.
@@ -344,7 +344,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <ul class="blockListLast">
 <li class="blockList">
 <h4>context</h4>
-<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/connect/sink/SinkTaskContext.html" title="interface in org.apache.kafka.connect.sink">SinkTaskContext</a> context</pre>
+<pre>protected&nbsp;<a href="../../../../../org/apache/kafka/connect/sink/SinkTaskContext.html" title="interface in org.apache.kafka.connect.sink">SinkTaskContext</a> context</code></pre>
 </li>
 </ul>
 </li>
@@ -361,7 +361,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SinkTask</h4>
-<pre>public&nbsp;SinkTask()</pre>
+<pre>public&nbsp;SinkTask()</code></pre>
 </li>
 </ul>
 </li>
@@ -378,7 +378,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>initialize</h4>
-<pre>public&nbsp;void&nbsp;initialize(<a href="../../../../../org/apache/kafka/connect/sink/SinkTaskContext.html" title="interface in org.apache.kafka.connect.sink">SinkTaskContext</a>&nbsp;context)</pre>
+<pre>public&nbsp;void&nbsp;initialize(<a href="../../../../../org/apache/kafka/connect/sink/SinkTaskContext.html" title="interface in org.apache.kafka.connect.sink">SinkTaskContext</a>&nbsp;context)</code></pre>
 <div class="block">Initialize the context of this task. Note that the partition assignment will be empty until
  Connect has opened the partitions for writing with <a href="../../../../../org/apache/kafka/connect/sink/SinkTask.html#open-java.util.Collection-"><code>open(Collection)</code></a>.</div>
 <dl>
@@ -393,7 +393,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>start</h4>
-<pre>public abstract&nbsp;void&nbsp;start(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;props)</pre>
+<pre>public abstract&nbsp;void&nbsp;start(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;props)</code></pre>
 <div class="block">Start the Task. This should handle any configuration parsing and one-time setup of the task.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -409,7 +409,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>put</h4>
-<pre>public abstract&nbsp;void&nbsp;put(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/connect/sink/SinkRecord.html" title="class in org.apache.kafka.connect.sink">SinkRecord</a>&gt;&nbsp;records)</pre>
+<pre>public abstract&nbsp;void&nbsp;put(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/connect/sink/SinkRecord.html" title="class in org.apache.kafka.connect.sink">SinkRecord</a>&gt;&nbsp;records)</code></pre>
 <div class="block">Put the records in the sink. Usually this should send the records to the sink asynchronously
  and immediately return.
 
@@ -429,7 +429,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>flush</h4>
-<pre>public&nbsp;void&nbsp;flush(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;currentOffsets)</pre>
+<pre>public&nbsp;void&nbsp;flush(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;currentOffsets)</code></pre>
 <div class="block">Flush all records that have been <a href="../../../../../org/apache/kafka/connect/sink/SinkTask.html#put-java.util.Collection-"><code>put(Collection)</code></a> for the specified topic-partitions.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -445,7 +445,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>preCommit</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;preCommit(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;currentOffsets)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;preCommit(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>,<a href="../../../../../org/apache/kafka/clients/consumer/OffsetAndMetadata.html" title="class in org.apache.kafka.clients.consumer">OffsetAndMetadata</a>&gt;&nbsp;currentOffsets)</code></pre>
 <div class="block">Pre-commit hook invoked prior to an offset commit.
 
  The default implementation simply invokes <a href="../../../../../org/apache/kafka/connect/sink/SinkTask.html#flush-java.util.Map-"><code>flush(Map)</code></a> and is thus able to assume all <code>currentOffsets</code> are safe to commit.</div>
@@ -465,7 +465,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>open</h4>
-<pre>public&nbsp;void&nbsp;open(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;void&nbsp;open(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block">The SinkTask use this method to create writers for newly assigned partitions in case of partition
  rebalance. This method will be called after partition re-assignment completes and before the SinkTask starts
  fetching data. Note that any errors raised from this method will cause the task to stop.</div>
@@ -483,7 +483,7 @@ implements <a href="../../../../../org/apache/kafka/connect/connector/Task.html"
 <li class="blockList">
 <h4>onPartitionsAssigned</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;void&nbsp;onPartitionsAssigned(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+public&nbsp;void&nbsp;onPartitionsAssigned(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../../org/apache/kafka/connect/sink/SinkTask.html#open-java.util.Collection-"><code>open(Collection)</code></a> for partition initialization.</span></div>
 </li>
 </ul>
@@ -493,7 +493,7 @@ public&nbsp;void&nbsp;onPartitionsAssigned(<a href="https://docs.oracle.com/java
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>public&nbsp;void&nbsp;close(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+<pre>public&nbsp;void&nbsp;close(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block">The SinkTask use this method to close writers for partitions that are no
  longer assigned to the SinkTask. This method will be called before a rebalance operation starts
  and after the SinkTask stops fetching data. After being closed, Connect will not write
@@ -512,7 +512,7 @@ public&nbsp;void&nbsp;onPartitionsAssigned(<a href="https://docs.oracle.com/java
 <li class="blockList">
 <h4>onPartitionsRevoked</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;void&nbsp;onPartitionsRevoked(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</pre>
+public&nbsp;void&nbsp;onPartitionsRevoked(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../org/apache/kafka/common/TopicPartition.html" title="class in org.apache.kafka.common">TopicPartition</a>&gt;&nbsp;partitions)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../../org/apache/kafka/connect/sink/SinkTask.html#close-java.util.Collection-"><code>close(Collection)</code></a> instead for partition cleanup.</span></div>
 </li>
 </ul>
@@ -522,7 +522,7 @@ public&nbsp;void&nbsp;onPartitionsRevoked(<a href="https://docs.oracle.com/javas
 <ul class="blockListLast">
 <li class="blockList">
 <h4>stop</h4>
-<pre>public abstract&nbsp;void&nbsp;stop()</pre>
+<pre>public abstract&nbsp;void&nbsp;stop()</code></pre>
 <div class="block">Perform any cleanup to stop this task. In SinkTasks, this method is invoked only once outstanding calls to other
  methods have completed (e.g., <a href="../../../../../org/apache/kafka/connect/sink/SinkTask.html#put-java.util.Collection-"><code>put(Collection)</code></a> has returned) and a final <a href="../../../../../org/apache/kafka/connect/sink/SinkTask.html#flush-java.util.Map-"><code>flush(Map)</code></a> and offset
  commit has completed. Implementations of this method should only need to perform final cleanup operations, such

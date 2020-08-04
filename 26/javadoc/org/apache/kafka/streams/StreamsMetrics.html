@@ -99,7 +99,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">StreamsMetrics</span></pre>
+<pre>public interface <span class="typeNameLabel">StreamsMetrics</span></code></pre>
 <div class="block">The Kafka Streams metrics interface for adding metric sensors and collecting metric values.</div>
 </li>
 </ul>
@@ -246,7 +246,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>metrics</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/apache/kafka/common/MetricName.html" title="class in org.apache.kafka.common">MetricName</a>,? extends <a href="../../../../org/apache/kafka/common/Metric.html" title="interface in org.apache.kafka.common">Metric</a>&gt;&nbsp;metrics()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/apache/kafka/common/MetricName.html" title="class in org.apache.kafka.common">MetricName</a>,? extends <a href="../../../../org/apache/kafka/common/Metric.html" title="interface in org.apache.kafka.common">Metric</a>&gt;&nbsp;metrics()</code></pre>
 <div class="block">Get read-only handle on global metrics registry.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -264,7 +264,7 @@ var activeTableTab = "activeTableTab";
                                                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;entityName,
                                                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;operationName,
                                                                  org.apache.kafka.common.metrics.Sensor.RecordingLevel&nbsp;recordingLevel,
-                                                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;tags)</pre>
+                                                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;tags)</code></pre>
 <div class="block">Add a latency, rate and total sensor for a specific operation, which will include the following metrics:
  <ol>
  <li>average latency</li>
@@ -306,7 +306,7 @@ var activeTableTab = "activeTableTab";
                                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;entityName,
                                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;operationName,
                                                           org.apache.kafka.common.metrics.Sensor.RecordingLevel&nbsp;recordingLevel,
-                                                          <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;tags)</pre>
+                                                          <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;tags)</code></pre>
 <div class="block">Add a rate and a total sensor for a specific operation, which will include the following metrics:
  <ol>
  <li>invocation rate (num.operations / time unit)</li>
@@ -346,7 +346,7 @@ org.apache.kafka.common.metrics.Sensor&nbsp;addLatencyAndThroughputSensor(<a hre
                                                                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;entityName,
                                                                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;operationName,
                                                                                  org.apache.kafka.common.metrics.Sensor.RecordingLevel&nbsp;recordingLevel,
-                                                                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;tags)</pre>
+                                                                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;tags)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.5. Use <a href="../../../../org/apache/kafka/streams/StreamsMetrics.html#addLatencyRateTotalSensor-java.lang.String-java.lang.String-java.lang.String-org.apache.kafka.common.metrics.Sensor.RecordingLevel-java.lang.String...-"><code>addLatencyRateTotalSensor()</code></a>
  instead.</span></div>
 <div class="block">Add a latency and throughput sensor for a specific operation, which will include the following sensors:
@@ -378,7 +378,7 @@ org.apache.kafka.common.metrics.Sensor&nbsp;addLatencyAndThroughputSensor(<a hre
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 void&nbsp;recordLatency(org.apache.kafka.common.metrics.Sensor&nbsp;sensor,
                                long&nbsp;startNs,
-                               long&nbsp;endNs)</pre>
+                               long&nbsp;endNs)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.5. Use <code>Sensor#record()</code> instead.</span></div>
 <div class="block">Record the given latency value of the sensor.
  If the passed sensor includes throughput metrics, e.g., when created by the
@@ -403,7 +403,7 @@ org.apache.kafka.common.metrics.Sensor&nbsp;addThroughputSensor(<a href="https:/
                                                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;entityName,
                                                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;operationName,
                                                                        org.apache.kafka.common.metrics.Sensor.RecordingLevel&nbsp;recordingLevel,
-                                                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;tags)</pre>
+                                                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;tags)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.5. Use <a href="../../../../org/apache/kafka/streams/StreamsMetrics.html#addRateTotalSensor-java.lang.String-java.lang.String-java.lang.String-org.apache.kafka.common.metrics.Sensor.RecordingLevel-java.lang.String...-"><code>addRateTotalSensor()</code></a> instead.</span></div>
 <div class="block">Add a throughput sensor for a specific operation:
  <ol>
@@ -433,7 +433,7 @@ org.apache.kafka.common.metrics.Sensor&nbsp;addThroughputSensor(<a href="https:/
 <h4>recordThroughput</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 void&nbsp;recordThroughput(org.apache.kafka.common.metrics.Sensor&nbsp;sensor,
-                                  long&nbsp;value)</pre>
+                                  long&nbsp;value)</code></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">since 2.5. Use <code>Sensor#record()</code> instead.</span></div>
 <div class="block">Record the throughput value of a sensor.</div>
 <dl>
@@ -450,7 +450,7 @@ void&nbsp;recordThroughput(org.apache.kafka.common.metrics.Sensor&nbsp;sensor,
 <li class="blockList">
 <h4>addSensor</h4>
 <pre>org.apache.kafka.common.metrics.Sensor&nbsp;addSensor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
-                                                 org.apache.kafka.common.metrics.Sensor.RecordingLevel&nbsp;recordingLevel)</pre>
+                                                 org.apache.kafka.common.metrics.Sensor.RecordingLevel&nbsp;recordingLevel)</code></pre>
 <div class="block">Generic method to create a sensor.
  Note that for most cases it is advisable to use
  <a href="../../../../org/apache/kafka/streams/StreamsMetrics.html#addRateTotalSensor-java.lang.String-java.lang.String-java.lang.String-org.apache.kafka.common.metrics.Sensor.RecordingLevel-java.lang.String...-"><code>addRateTotalSensor()</code></a>
@@ -478,7 +478,7 @@ void&nbsp;recordThroughput(org.apache.kafka.common.metrics.Sensor&nbsp;sensor,
 <h4>addSensor</h4>
 <pre>org.apache.kafka.common.metrics.Sensor&nbsp;addSensor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                                                  org.apache.kafka.common.metrics.Sensor.RecordingLevel&nbsp;recordingLevel,
-                                                 org.apache.kafka.common.metrics.Sensor...&nbsp;parents)</pre>
+                                                 org.apache.kafka.common.metrics.Sensor...&nbsp;parents)</code></pre>
 <div class="block">Generic method to create a sensor with parent sensors.
  Note that for most cases it is advisable to use
  <a href="../../../../org/apache/kafka/streams/StreamsMetrics.html#addRateTotalSensor-java.lang.String-java.lang.String-java.lang.String-org.apache.kafka.common.metrics.Sensor.RecordingLevel-java.lang.String...-"><code>addRateTotalSensor()</code></a>
@@ -504,7 +504,7 @@ void&nbsp;recordThroughput(org.apache.kafka.common.metrics.Sensor&nbsp;sensor,
 <ul class="blockListLast">
 <li class="blockList">
 <h4>removeSensor</h4>
-<pre>void&nbsp;removeSensor(org.apache.kafka.common.metrics.Sensor&nbsp;sensor)</pre>
+<pre>void&nbsp;removeSensor(org.apache.kafka.common.metrics.Sensor&nbsp;sensor)</code></pre>
 <div class="block">Remove a sensor.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

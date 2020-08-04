@@ -103,7 +103,7 @@ public interface <span class="strong">KTable&lt;K,V&gt;</span></pre>
  Some <code>KTable</code>s have an internal state (a <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>ReadOnlyKeyValueStore</code></a>) and are therefore queryable via the
  interactive queries API.
  For example:
- <pre><code>final KTable table = ...
+ <pre class="line-numbers"><code>final KTable table = ...
      ...
      final KafkaStreams streams = ...;
      streams.start()
@@ -423,7 +423,7 @@ public interface <span class="strong">KTable&lt;K,V&gt;</span></pre>
  This is a stateless record-by-record operation.
  <p>
  The example below counts the number of token of the value string.
- <pre><code>KTable&lt;String, String&gt; inputTable = builder.table("topic");
+ <pre class="line-numbers"><code>KTable&lt;String, String&gt; inputTable = builder.table("topic");
  KTable&lt;String, Integer&gt; outputTable = inputTable.mapValue(new ValueMapper&lt;String, Integer&gt; {
      Integer apply(String value) {
          return value.split(" ").length;
@@ -662,7 +662,7 @@ public interface <span class="strong">KTable&lt;K,V&gt;</span></pre>
 <div class="block">Convert this changelog stream to a <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a> using the given <a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream"><code>KeyValueMapper</code></a> to select the new key.
  <p>
  For example, you can compute the new key as the length of the value string.
- <pre><code>KTable&lt;String, String&gt; table = builder.table("topic");
+ <pre class="line-numbers"><code>KTable&lt;String, String&gt; table = builder.table("topic");
  KTable&lt;Integer, String&gt; keyedStream = table.toStream(new KeyValueMapper&lt;String, String, Integer&gt; {
      Integer apply(String key, String value) {
          return value.length();

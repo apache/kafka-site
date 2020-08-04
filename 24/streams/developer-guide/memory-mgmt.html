@@ -94,7 +94,7 @@
         finishes processing at a node, it is marked as dirty in the cache.  Any other keyed record <code class="docutils literal"><span class="pre">R2</span> <span class="pre">=</span> <span class="pre">&lt;K1,</span> <span class="pre">V2&gt;</span></code> with the
         same key <code class="docutils literal"><span class="pre">K1</span></code> that is processed on that node during that time will overwrite <code class="docutils literal"><span class="pre">&lt;K1,</span> <span class="pre">V1&gt;</span></code>, this is referred to as
         &#8220;being compacted&#8221;.  This has the same effect as
-        <a class="reference external" href="https://kafka.apache.org/documentation.html#compaction">Kafka&#8217;s log compaction</a>, but happens earlier, while the
+        <a class="reference external" href="/documentation.html#compaction">Kafka&#8217;s log compaction</a>, but happens earlier, while the
         records are still in memory, and within your client-side application, rather than on the server-side (i.e. the Kafka
         broker).  After flushing, <code class="docutils literal"><span class="pre">R2</span></code> is forwarded to the next processing node and then written to the local state store.</p>
       <p>The semantics of caching is that data is flushed to the state store and forwarded to the next downstream processor node

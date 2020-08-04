@@ -212,7 +212,7 @@ public interface <span class="strong">KGroupedTable&lt;K,V&gt;</span></pre>
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ... // counting words
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // counting words
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-word";
  Long countForWord = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
@@ -254,7 +254,7 @@ public interface <span class="strong">KGroupedTable&lt;K,V&gt;</span></pre>
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ... // counting words
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // counting words
  String storeName = storeSupplier.name();
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-word";
@@ -301,7 +301,7 @@ public interface <span class="strong">KGroupedTable&lt;K,V&gt;</span></pre>
  value as-is.
  Thus, <code>reduce(Reducer, Reducer, String)</code> can be used to compute aggregate functions like sum.
  For sum, the adder and substractor would work as follows:
- <pre><code>public class SumAdder implements Reducer&lt;Integer&gt; {
+ <pre class="line-numbers"><code>public class SumAdder implements Reducer&lt;Integer&gt; {
    public Integer apply(Integer currentAgg, Integer newValue) {
      return currentAgg + newValue;
    }
@@ -322,7 +322,7 @@ public interface <span class="strong">KGroupedTable&lt;K,V&gt;</span></pre>
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ... // counting words
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // counting words
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-word";
  Long countForWord = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
@@ -368,7 +368,7 @@ public interface <span class="strong">KGroupedTable&lt;K,V&gt;</span></pre>
  value as-is.
  Thus, <code>reduce(Reducer, Reducer, String)</code> can be used to compute aggregate functions like sum.
  For sum, the adder and substractor would work as follows:
- <pre><code>public class SumAdder implements Reducer&lt;Integer&gt; {
+ <pre class="line-numbers"><code>public class SumAdder implements Reducer&lt;Integer&gt; {
    public Integer apply(Integer currentAgg, Integer newValue) {
      return currentAgg + newValue;
    }
@@ -389,7 +389,7 @@ public interface <span class="strong">KGroupedTable&lt;K,V&gt;</span></pre>
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ... // counting words
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // counting words
  String storeName = storeSupplier.name();
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-word";
@@ -441,7 +441,7 @@ public interface <span class="strong">KGroupedTable&lt;K,V&gt;</span></pre>
  Thus, <code>aggregate(Initializer, Aggregator, Aggregator, String)</code> can be used to compute aggregate functions
  like sum.
  For sum, the initializer, adder, and substractor would work as follows:
- <pre><code>// in this example, LongSerde.class must be set as default value serde in StreamsConfig
+ <pre class="line-numbers"><code>// in this example, LongSerde.class must be set as default value serde in StreamsConfig
  public class SumInitializer implements Initializer&lt;Long&gt; {
    public Long apply() {
      return 0L;
@@ -469,7 +469,7 @@ public interface <span class="strong">KGroupedTable&lt;K,V&gt;</span></pre>
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ... // counting words
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // counting words
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-word";
  Long countForWord = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
@@ -519,7 +519,7 @@ public interface <span class="strong">KGroupedTable&lt;K,V&gt;</span></pre>
  Thus, <code>aggregate(Initializer, Aggregator, Aggregator, String)</code> can be used to compute aggregate functions
  like sum.
  For sum, the initializer, adder, and substractor would work as follows:
- <pre><code>public class SumInitializer implements Initializer&lt;Long&gt; {
+ <pre class="line-numbers"><code>public class SumInitializer implements Initializer&lt;Long&gt; {
    public Long apply() {
      return 0L;
    }
@@ -546,7 +546,7 @@ public interface <span class="strong">KGroupedTable&lt;K,V&gt;</span></pre>
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ... // counting words
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // counting words
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-word";
  Long countForWord = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
@@ -596,7 +596,7 @@ public interface <span class="strong">KGroupedTable&lt;K,V&gt;</span></pre>
  Thus, <code>aggregate(Initializer, Aggregator, Aggregator, String)</code> can be used to compute aggregate functions
  like sum.
  For sum, the initializer, adder, and substractor would work as follows:
- <pre><code>public class SumInitializer implements Initializer&lt;Long&gt; {
+ <pre class="line-numbers"><code>public class SumInitializer implements Initializer&lt;Long&gt; {
    public Long apply() {
      return 0L;
    }
@@ -623,7 +623,7 @@ public interface <span class="strong">KGroupedTable&lt;K,V&gt;</span></pre>
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ... // counting words
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // counting words
  String storeName = storeSupplier.name();
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-word";
