@@ -6,10 +6,53 @@
 	<div class="right">
     <h1>Download</h1>
 
-    <p>2.5.0 is the latest release. The current stable version is 2.5.0.</p>
+    <p>2.6.0 is the latest release. The current stable version is 2.6.0.</p>
 
     <p>
     You can verify your download by following these <a href="https://www.apache.org/info/verification.html">procedures</a> and using these <a href="https://www.apache.org/dist/kafka/KEYS">KEYS</a>.
+    </p>
+
+    <span id="2.6.0"></span>
+    <h3 class="download-version">2.6.0<a href="#2.6.0"><i class="fas fa-link " style="color:#053ce2"></i></a></h3>
+    <ul>
+        <li>
+            Released Aug 3, 2020
+        </li>
+        <li>
+            <a href="https://www.apache.org/dist/kafka/2.6.0/RELEASE_NOTES.html">Release Notes</a>
+        </li>
+        <li>
+            Source download: <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.6.0/kafka-2.6.0-src.tgz">kafka-2.6.0-src.tgz</a> (<a href="https://www.apache.org/dist/kafka/2.6.0/kafka-2.6.0-src.tgz.asc">asc</a>, <a href="https://www.apache.org/dist/kafka/2.6.0/kafka-2.6.0-src.tgz.sha512">sha512</a>)
+        </li>
+        <li>
+            Binary downloads:
+            <ul>
+                <li>Scala 2.12 &nbsp;- <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.6.0/kafka_2.12-2.6.0.tgz">kafka_2.12-2.6.0.tgz</a> (<a href="https://www.apache.org/dist/kafka/2.6.0/kafka_2.12-2.6.0.tgz.asc">asc</a>, <a href="https://www.apache.org/dist/kafka/2.6.0/kafka_2.12-2.6.0.tgz.sha512">sha512</a>)</li>
+                <li>Scala 2.13 &nbsp;- <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.6.0/kafka_2.13-2.6.0.tgz">kafka_2.13-2.6.0.tgz</a> (<a href="https://www.apache.org/dist/kafka/2.6.0/kafka_2.13-2.6.0.tgz.asc">asc</a>, <a href="https://www.apache.org/dist/kafka/2.6.0/kafka_2.13-2.6.0.tgz.sha512">sha512</a>)</li>
+            </ul>
+            We build for multiple versions of Scala. This only matters if you are using Scala and you want a version
+            built for the same Scala version you use. Otherwise any version should work (2.13 is recommended).
+        </li>
+    </ul>
+
+    <p>
+        Kafka 2.6.0 includes a number of significant new features. Here is a summary of some notable changes:
+    </p>
+
+    <ul>
+        <li>TLSv1.3 has been enabled by default for Java 11 or newer</li>
+        <li>Smooth scaling out of Kafka Streams applications</li>
+        <li>Kafka Streams support for emit on change</li>
+        <li>New metrics for better operational insight</li>
+        <li>Kafka Connect can automatically create topics for source connectors when configured to do so</li>
+        <li>Improved error reporting options for sink connectors in Kafka Connect</li>
+        <li>New Filter and conditional SMTs in Kafka Connect</li>
+        <li>The default value for the `client.dns.lookup` configuration is now `use_all_dns_ips`</li>
+        <li>Upgrade Zookeeper to 3.5.8</li>
+    </ul>
+
+    <p>
+        For more information, please read the detailed <a href="https://www.apache.org/dist/kafka/2.6.0/RELEASE_NOTES.html">Release Notes</a>.
     </p>
 
     <span id="2.5.0"></span>
