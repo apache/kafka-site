@@ -19,7 +19,7 @@
 
 <script id="upgrade-template" type="text/x-handlebars-template">
 
-<h4><a id="upgrade_2_6_0" href="#upgrade_2_6_0">Upgrading from 0.8.x, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, 1.0.x, 1.1.x, 2.0.x, 2.1.x, 2.2.x, 2.3.x, 2.4.x, or 2.5.x to 2.6.0</a></h4>
+<h4><a id="upgrade_2_6_0" href="#upgrade_2_6_0">Upgrading to 2.6.0 from any version 0.8.x through 2.5.x</a></h4>
 
 <p><b>If you are upgrading from a version prior to 2.1.x, please see the note below about the change to the schema used to store consumer offsets.
     Once you have changed the inter.broker.protocol.version to the latest version, it will not be possible to downgrade to a version prior to 2.1.</b></p>
@@ -27,19 +27,21 @@
 <p><b>For a rolling upgrade:</b></p>
 
 <ol>
-    <li> Update server.properties on all brokers and add the following properties. CURRENT_KAFKA_VERSION refers to the version you
-        are upgrading from. CURRENT_MESSAGE_FORMAT_VERSION refers to the message format version currently in use. If you have previously
-        overridden the message format version, you should keep its current value. Alternatively, if you are upgrading from a version prior
-        to 0.11.0.x, then CURRENT_MESSAGE_FORMAT_VERSION should be set to match CURRENT_KAFKA_VERSION.
+    <li> Update server.properties on all brokers and add the following properties. <code>CURRENT_PROTOCOL_VERSION</code> refers to the 
+        <a href="/26/documentation/#inter.broker.protocol.version">inter-broker protocol version</a> you are upgrading from. 
+        <code>CURRENT_MESSAGE_FORMAT_VERSION</code> refers to the <a href="/26/documentation/#log.message.format.version">log message format version</a>
+        currently in use. If you have previously overridden the message format version, you should keep its current value.
+        Alternatively, if you are upgrading from a version prior
+        to 0.11.0.x, then <code>CURRENT_MESSAGE_FORMAT_VERSION</code> should be set to match <code>CURRENT_PROTOCOL_VERSION</code>.
         <ul>
-            <li>inter.broker.protocol.version=CURRENT_KAFKA_VERSION (e.g. 0.10.0, 0.11.0, 1.0, 2.0, 2.2).</li>
+            <li>inter.broker.protocol.version=CURRENT_PROTOCOL_VERSION</li>
             <li>log.message.format.version=CURRENT_MESSAGE_FORMAT_VERSION  (See <a href="#upgrade_10_performance_impact">potential performance impact
                 following the upgrade</a> for the details on what this configuration does.)</li>
         </ul>
         If you are upgrading from version 0.11.0.x or above, and you have not overridden the message format, then you only need to override
         the inter-broker protocol version.
         <ul>
-            <li>inter.broker.protocol.version=CURRENT_KAFKA_VERSION (0.11.0, 1.0, 1.1, 2.0, 2.1, 2.2, 2.3).</li>
+            <li>inter.broker.protocol.version=CURRENT_PROTOCOL_VERSION</li>
         </ul>
     </li>
     <li> Upgrade the brokers one at a time: shut down the broker, update the code, and restart it. Once you have done so, the
@@ -47,7 +49,7 @@
         It is still possible to downgrade at this point if there are any problems.
     </li>
     <li> Once the cluster's behavior and performance has been verified, bump the protocol version by editing
-        <code>inter.broker.protocol.version</code> and setting it to 2.6.
+        <code>inter.broker.protocol.version</code> and setting it to <code>2.6-IV0</code>.
     </li>
     <li> Restart the brokers one by one for the new protocol version to take effect. Once the brokers begin using the latest
         protocol version, it will no longer be possible to downgrade the cluster to an older version.
@@ -83,7 +85,7 @@
     </li>
 </ul>
 
-<h4><a id="upgrade_2_5_0" href="#upgrade_2_5_0">Upgrading from 0.8.x, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, 1.0.x, 1.1.x, 2.0.x, 2.1.x, 2.2.x, 2.3.x, or 2.4.x to 2.5.0</a></h4>
+<h4><a id="upgrade_2_5_0" href="#upgrade_2_5_0">Upgrading to 2.5.0 from any version 0.8.x through 2.4.x</a></h4>
 
 <p><b>If you are upgrading from a version prior to 2.1.x, please see the note below about the change to the schema used to store consumer offsets.
     Once you have changed the inter.broker.protocol.version to the latest version, it will not be possible to downgrade to a version prior to 2.1.</b></p>
@@ -91,19 +93,21 @@
 <p><b>For a rolling upgrade:</b></p>
 
 <ol>
-    <li> Update server.properties on all brokers and add the following properties. CURRENT_KAFKA_VERSION refers to the version you
-        are upgrading from. CURRENT_MESSAGE_FORMAT_VERSION refers to the message format version currently in use. If you have previously
-        overridden the message format version, you should keep its current value. Alternatively, if you are upgrading from a version prior
-        to 0.11.0.x, then CURRENT_MESSAGE_FORMAT_VERSION should be set to match CURRENT_KAFKA_VERSION.
+    <li> Update server.properties on all brokers and add the following properties. <code>CURRENT_PROTOCOL_VERSION</code> refers to the 
+        <a href="/25/documentation/#inter.broker.protocol.version">inter-broker protocol version</a> you are upgrading from. 
+        <code>CURRENT_MESSAGE_FORMAT_VERSION</code> refers to the <a href="/25/documentation/#log.message.format.version">log message format version</a>
+        currently in use. If you have previously overridden the message format version, you should keep its current value.
+        Alternatively, if you are upgrading from a version prior
+        to 0.11.0.x, then <code>CURRENT_MESSAGE_FORMAT_VERSION</code> should be set to match <code>CURRENT_PROTOCOL_VERSION</code>.
         <ul>
-            <li>inter.broker.protocol.version=CURRENT_KAFKA_VERSION (e.g. 0.10.0, 0.11.0, 1.0, 2.0, 2.2).</li>
+            <li>inter.broker.protocol.version=CURRENT_PROTOCOL_VERSION</li>
             <li>log.message.format.version=CURRENT_MESSAGE_FORMAT_VERSION  (See <a href="#upgrade_10_performance_impact">potential performance impact
                 following the upgrade</a> for the details on what this configuration does.)</li>
         </ul>
         If you are upgrading from version 0.11.0.x or above, and you have not overridden the message format, then you only need to override
         the inter-broker protocol version.
         <ul>
-            <li>inter.broker.protocol.version=CURRENT_KAFKA_VERSION (0.11.0, 1.0, 1.1, 2.0, 2.1, 2.2, 2.3).</li>
+            <li>inter.broker.protocol.version=CURRENT_PROTOCOL_VERSION</li>
         </ul>
     </li>
     <li> Upgrade the brokers one at a time: shut down the broker, update the code, and restart it. Once you have done so, the
@@ -111,7 +115,7 @@
         It is still possible to downgrade at this point if there are any problems.
     </li>
     <li> Once the cluster's behavior and performance has been verified, bump the protocol version by editing
-        <code>inter.broker.protocol.version</code> and setting it to 2.5.
+        <code>inter.broker.protocol.version</code> and setting it to <code>2.5-IV0</code>.
     </li>
     <li> Restart the brokers one by one for the new protocol version to take effect. Once the brokers begin using the latest
         protocol version, it will no longer be possible to downgrade the cluster to an older version.
@@ -173,7 +177,7 @@
     </li>
 </ul>
 
-<h4><a id="upgrade_2_4_0" href="#upgrade_2_4_0">Upgrading from 0.8.x, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, 1.0.x, 1.1.x, 2.0.x or 2.1.x or 2.2.x or 2.3.x to 2.4.0</a></h4>
+<h4><a id="upgrade_2_4_0" href="#upgrade_2_4_0">Upgrading to 2.4.0 from any version 0.8.x through 2.3.x</a></h4>
 
 <p><b>If you are upgrading from a version prior to 2.1.x, please see the note below about the change to the schema used to store consumer offsets.
     Once you have changed the inter.broker.protocol.version to the latest version, it will not be possible to downgrade to a version prior to 2.1.</b></p>
@@ -181,19 +185,21 @@
 <p><b>For a rolling upgrade:</b></p>
 
 <ol>
-    <li> Update server.properties on all brokers and add the following properties. CURRENT_KAFKA_VERSION refers to the version you
-        are upgrading from. CURRENT_MESSAGE_FORMAT_VERSION refers to the message format version currently in use. If you have previously
-        overridden the message format version, you should keep its current value. Alternatively, if you are upgrading from a version prior
-        to 0.11.0.x, then CURRENT_MESSAGE_FORMAT_VERSION should be set to match CURRENT_KAFKA_VERSION.
+    <li> Update server.properties on all brokers and add the following properties. <code>CURRENT_PROTOCOL_VERSION</code> refers to the 
+        <a href="/24/documentation/#inter.broker.protocol.version">inter-broker protocol version</a> you are upgrading from. 
+        <code>CURRENT_MESSAGE_FORMAT_VERSION</code> refers to the <a href="/24/documentation/#log.message.format.version">log message format version</a>
+        currently in use. If you have previously overridden the message format version, you should keep its current value.
+        Alternatively, if you are upgrading from a version prior
+        to 0.11.0.x, then <code>CURRENT_MESSAGE_FORMAT_VERSION</code> should be set to match <code>CURRENT_PROTOCOL_VERSION</code>.
         <ul>
-            <li>inter.broker.protocol.version=CURRENT_KAFKA_VERSION (e.g. 0.10.0, 0.11.0, 1.0, 2.0, 2.2).</li>
+            <li>inter.broker.protocol.version=CURRENT_PROTOCOL_VERSION</li>
             <li>log.message.format.version=CURRENT_MESSAGE_FORMAT_VERSION  (See <a href="#upgrade_10_performance_impact">potential performance impact
                 following the upgrade</a> for the details on what this configuration does.)</li>
         </ul>
         If you are upgrading from version 0.11.0.x or above, and you have not overridden the message format, then you only need to override
         the inter-broker protocol version.
         <ul>
-            <li>inter.broker.protocol.version=CURRENT_KAFKA_VERSION (0.11.0, 1.0, 1.1, 2.0, 2.1, 2.2, 2.3).</li>
+            <li>inter.broker.protocol.version=CURRENT_PROTOCOL_VERSION</li>
         </ul>
     </li>
     <li> Upgrade the brokers one at a time: shut down the broker, update the code, and restart it. Once you have done so, the
@@ -201,7 +207,7 @@
         It is still possible to downgrade at this point if there are any problems.
     </li>
     <li> Once the cluster's behavior and performance has been verified, bump the protocol version by editing
-        <code>inter.broker.protocol.version</code> and setting it to 2.4.
+        <code>inter.broker.protocol.version</code> and setting it to <code>2.4-IV1</code>.
     </li>
     <li> Restart the brokers one by one for the new protocol version to take effect. Once the brokers begin using the latest
         protocol version, it will no longer be possible to downgrade the cluster to an older version.
