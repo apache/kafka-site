@@ -328,7 +328,13 @@
 				var docsHandle = document.querySelector('.toc-handle');
 
 				function toggleDocsWidth() {
-					docsContainer.classList.toggle('expanded');
+					let isExpanded = docsContainer.classList.toggle('expanded');
+					// change the arrow direction based on the view state is expanded or not
+					if (isExpanded) {
+						docsHandle.textContent = ">";
+					} else {
+						docsHandle.textContent = "<";
+					}
 				}
 
 				docsHandle.addEventListener('click', toggleDocsWidth);
