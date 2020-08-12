@@ -886,6 +886,10 @@ tr:nth-child(odd) {
     padding: 1rem 10rem 2.5rem;
     margin-bottom: 3rem;
 }
+.documentation .quickstart-step {
+    padding: 0;
+    border: 0;
+}
 .quickstart-step .anchor-heading {
     margin-top: 2rem;
 }
