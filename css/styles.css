@@ -329,7 +329,7 @@ ol.toc > li {
     hyphens: none;
 }
 
-table.docutils  {
+.docutils  {
     border-collapse: collapse;
     border-spacing: 0;
     empty-cells: show;
@@ -337,6 +337,11 @@ table.docutils  {
     table-layout: fixed; width: 100%;
     font-size:1.5rem;
     line-height: 1.8;
+}
+
+.docutils.literal,
+.docutils.literal .pre {
+    overflow-wrap: break-word;
 }
 
 td {
