@@ -1326,9 +1326,6 @@ nav .btn {
     background-color: #222;
     border-bottom: 2px solid white;
 }
-.documentation--current .documentation__banner {
-    display: none;
-}
 .content.documentation--current {
     position: relative;
     display: flex;
