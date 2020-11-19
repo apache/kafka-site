@@ -667,6 +667,8 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
          format used for the offsets topic on the broker does not support transactions</dd>
 <dd><code><a href="../../../../../org/apache/kafka/common/errors/AuthorizationException.html" title="class in org.apache.kafka.common.errors">AuthorizationException</a></code> - fatal error indicating that the configured
          transactional.id is not authorized, or the consumer group id is not authorized.</dd>
+<dd><code><a href="../../../../../org/apache/kafka/common/errors/InvalidProducerEpochException.html" title="class in org.apache.kafka.common.errors">InvalidProducerEpochException</a></code> - if the producer has attempted to produce with an old epoch
+         to the partition leader. See the exception for more details</dd>
 <dd><code><a href="../../../../../org/apache/kafka/common/KafkaException.html" title="class in org.apache.kafka.common">KafkaException</a></code> - if the producer has encountered a previous fatal or abortable error, or for any
          other unexpected error</dd>
 </dl>
@@ -716,6 +718,8 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
          (e.g. if the consumer has been kicked out of the group). Users should handle this by aborting the transaction.</dd>
 <dd><code><a href="../../../../../org/apache/kafka/common/errors/FencedInstanceIdException.html" title="class in org.apache.kafka.common.errors">FencedInstanceIdException</a></code> - if this producer instance gets fenced by broker due to a
                                                                   mis-configured consumer instance id within group metadata.</dd>
+<dd><code><a href="../../../../../org/apache/kafka/common/errors/InvalidProducerEpochException.html" title="class in org.apache.kafka.common.errors">InvalidProducerEpochException</a></code> - if the producer has attempted to produce with an old epoch
+         to the partition leader. See the exception for more details</dd>
 <dd><code><a href="../../../../../org/apache/kafka/common/KafkaException.html" title="class in org.apache.kafka.common">KafkaException</a></code> - if the producer has encountered a previous fatal or abortable error, or for any
          other unexpected error</dd>
 <dd><code><a href="../../../../../org/apache/kafka/common/errors/TimeoutException.html" title="class in org.apache.kafka.common.errors">TimeoutException</a></code> - if the time taken for sending offsets has surpassed max.block.ms.</dd>
@@ -751,6 +755,8 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
          does not support transactions (i.e. if its version is lower than 0.11.0.0)</dd>
 <dd><code><a href="../../../../../org/apache/kafka/common/errors/AuthorizationException.html" title="class in org.apache.kafka.common.errors">AuthorizationException</a></code> - fatal error indicating that the configured
          transactional.id is not authorized. See the exception for more details</dd>
+<dd><code><a href="../../../../../org/apache/kafka/common/errors/InvalidProducerEpochException.html" title="class in org.apache.kafka.common.errors">InvalidProducerEpochException</a></code> - if the producer has attempted to produce with an old epoch
+         to the partition leader. See the exception for more details</dd>
 <dd><code><a href="../../../../../org/apache/kafka/common/KafkaException.html" title="class in org.apache.kafka.common">KafkaException</a></code> - if the producer has encountered a previous fatal or abortable error, or for any
          other unexpected error</dd>
 <dd><code><a href="../../../../../org/apache/kafka/common/errors/TimeoutException.html" title="class in org.apache.kafka.common.errors">TimeoutException</a></code> - if the time taken for committing the transaction has surpassed <code>max.block.ms</code>.</dd>
