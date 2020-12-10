@@ -627,6 +627,8 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if no transactional.id has been configured or if <a href="../../../../../org/apache/kafka/clients/producer/KafkaProducer.html#initTransactions--"><code>initTransactions()</code></a>
          has not yet been invoked</dd>
 <dd><code><a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></code> - if another producer with the same transactional.id is active</dd>
+<dd><code><a href="../../../../../org/apache/kafka/common/errors/InvalidProducerEpochException.html" title="class in org.apache.kafka.common.errors">InvalidProducerEpochException</a></code> - if the producer has attempted to produce with an old epoch
+         to the partition leader. See the exception for more details</dd>
 <dd><code><a href="../../../../../org/apache/kafka/common/errors/UnsupportedVersionException.html" title="class in org.apache.kafka.common.errors">UnsupportedVersionException</a></code> - fatal error indicating the broker
          does not support transactions (i.e. if its version is lower than 0.11.0.0)</dd>
 <dd><code><a href="../../../../../org/apache/kafka/common/errors/AuthorizationException.html" title="class in org.apache.kafka.common.errors">AuthorizationException</a></code> - fatal error indicating that the configured
@@ -786,6 +788,8 @@ implements <a href="../../../../../org/apache/kafka/clients/producer/Producer.ht
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if no transactional.id has been configured or no transaction has been started</dd>
 <dd><code><a href="../../../../../org/apache/kafka/common/errors/ProducerFencedException.html" title="class in org.apache.kafka.common.errors">ProducerFencedException</a></code> - fatal error indicating another producer with the same transactional.id is active</dd>
+<dd><code><a href="../../../../../org/apache/kafka/common/errors/InvalidProducerEpochException.html" title="class in org.apache.kafka.common.errors">InvalidProducerEpochException</a></code> - if the producer has attempted to produce with an old epoch
+         to the partition leader. See the exception for more details</dd>
 <dd><code><a href="../../../../../org/apache/kafka/common/errors/UnsupportedVersionException.html" title="class in org.apache.kafka.common.errors">UnsupportedVersionException</a></code> - fatal error indicating the broker
          does not support transactions (i.e. if its version is lower than 0.11.0.0)</dd>
 <dd><code><a href="../../../../../org/apache/kafka/common/errors/AuthorizationException.html" title="class in org.apache.kafka.common.errors">AuthorizationException</a></code> - fatal error indicating that the configured
