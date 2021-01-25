@@ -577,7 +577,7 @@
   <h4 class="anchor-heading"><a id="georeplication-flows" class="anchor-link"></a><a href="#georeplication-flows">What Are Replication Flows</a></h4>
 
   <p>
-    With MirrorMaker, Kafka administrators can replicate topics, topic configurations, consumer groups and their offsets, and ACLs from one or more source Kafka clusters to one or more target Kafka clusters, i.e., across cluster environments. In a nutshell, MirrorMaker consumes data from the source cluster with source connectors, and then replicates the data by producing to the target cluster with sink connectors.
+    With MirrorMaker, Kafka administrators can replicate topics, topic configurations, consumer groups and their offsets, and ACLs from one or more source Kafka clusters to one or more target Kafka clusters, i.e., across cluster environments. In a nutshell, MirrorMaker uses Connectors to consume from source clusters and produce to target clusters.
   </p>
 
   <p>
