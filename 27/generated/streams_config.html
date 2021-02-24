@@ -141,7 +141,7 @@
 </li>
 <li>
 <h4><a id="max.task.idle.ms"></a><a id="streamsconfigs_max.task.idle.ms" href="#streamsconfigs_max.task.idle.ms">max.task.idle.ms</a></h4>
-<p>Maximum amount of time in milliseconds a stream task will stay idle when not all of its partition buffers contain records, to avoid potential out-of-order record processing across multiple input streams.</p>
+<p>Maximum amount of time in milliseconds a stream task will stay idle when not all of its partition buffers contain records, to avoid potential out-of-order record processing across multiple input streams. The value must be lower than <code>max.poll.interval.ms</code> to avoid rebalancing of unresponsive tasks.</p>
 <table><tbody>
 <tr><th>Type:</th><td>long</td></tr>
 <tr><th>Default:</th><td>0</td></tr>
