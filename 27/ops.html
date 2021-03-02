@@ -1154,8 +1154,16 @@ checkpoint-latency-ms-avg
   </p>
 
   <p>
-  To enforce a topic naming structure, it is useful to disable the Kafka feature to auto-create topics on demand by setting <code>auto.create.topics.enable=false</code> in the broker configuration. This stops users and applications from deliberately or inadvertently creating topics with arbitrary names, thus violating the naming structure. Then, you may want to put in place your own organizational process for controlled, yet automated creation of topics according to your naming convention, using scripting or your favorite automation toolkit.
+  To enforce a topic naming structure, several options are available:
   </p>
+
+  <ul>
+    <li>Use <a href="#security_authz">prefix ACLs</a> (cf. <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-290%3A+Support+for+Prefixed+ACLs">KIP-290</a>) to enforce a common prefix for topic names. For example, team A may only be permitted to create topics whose names start with <code>payments.teamA.</code>.</li>
+    <li>Define a custom <code>CreateTopicPolicy</code> (cf. <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-108%3A+Create+Topic+Policy">KIP-108</a> and the setting <a href="#brokerconfigs_create.topic.policy.class.name">create.topic.policy.class.name</a>) to enforce strict naming patterns. These policies provide the most flexibility and can cover complex patterns and rules to match an organization's needs.</li>
+    <li>Disable topic creation for normal users by denying it with an ACL, and then rely on an external process to create topics on behalf of users (e.g., scripting or your favorite automation toolkit).</li>
+    <li>It may also be useful to disable the Kafka feature to auto-create topics on demand by setting <code>auto.create.topics.enable=false</code> in the broker configuration. Note that you should not rely solely on this option.</li>
+  </ul>
+
 
   <h4 class="anchor-heading"><a id="multitenancy-topic-configs" class="anchor-link"></a><a href="#multitenancy-topic-configs">Configuring Topics: Data Retention And More</a></h4>
 
@@ -1176,7 +1184,7 @@ Security settings for Kafka fall into three main categories, which are similar t
   <ol>
     <li><strong>Encryption</strong> of data transferred between Kafka brokers and Kafka clients, between brokers, between brokers and ZooKeeper nodes, and between brokers and other, optional tools.</li>
     <li><strong>Authentication</strong> of connections from Kafka clients and applications to Kafka brokers, as well as connections from Kafka brokers to ZooKeeper nodes.</li>
-    <li><strong>Authorization</strong> of client operations such as creating, deleting, and altering the configuration of topics; writing events to or reading events from a topic; creating and deleting ACLs.</li>
+    <li><strong>Authorization</strong> of client operations such as creating, deleting, and altering the configuration of topics; writing events to or reading events from a topic; creating and deleting ACLs. Administrators can also define custom policies to put in place additional restrictions, such as a <code>CreateTopicPolicy</code> and <code>AlterConfigPolicy</code> (see <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-108%3A+Create+Topic+Policy">KIP-108</a> and the settings <a href="#brokerconfigs_create.topic.policy.class.name">create.topic.policy.class.name</a>, <a href="#brokerconfigs_alter.config.policy.class.name">alter.config.policy.class.name</a>).</li>
   </ol>
 
   <p>
@@ -1206,11 +1214,11 @@ $ bin/kafka-acls.sh \
   </p>
 
   <p>
-    <strong>Client quotas:</strong> Kafka supports different types of (per-user principal) client quotas. Because a client's quotas apply irrespective of which topics the client is writing to or reading from, they are a convenient and effective tool to allocate resources in a multi-tenant cluster. <a href="#design_quotascpu">Request rate quotas</a>, for example, help to limit a user's impact on broker CPU usage by limiting the time a broker spends on the <a href="/protocol.html">request handling path</a> for that user, after which throttling kicks in. In many situations, isolating users with request rate quotas has a bigger impact in multi-tenant clusters than setting incoming/outgoing network bandwidth quotas, because excessive broker CPU usage for processing requests reduces the effective bandwidth the broker can serve. Furthermore, administrators can also define <a href="#brokerconfigs_controller.quota.window.num">quotas on topic operations</a> such as create, delete, and alter to prevent Kafka clusters from being overwhelmed by highly concurrent topic operations (see <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-599%3A+Throttle+Create+Topic%2C+Create+Partition+and+Delete+Topic+Operations">KIP-599</a>).
+  <strong>Client quotas:</strong> Kafka supports different types of (per-user principal) client quotas. Because a client's quotas apply irrespective of which topics the client is writing to or reading from, they are a convenient and effective tool to allocate resources in a multi-tenant cluster. <a href="#design_quotascpu">Request rate quotas</a>, for example, help to limit a user's impact on broker CPU usage by limiting the time a broker spends on the <a href="/protocol.html">request handling path</a> for that user, after which throttling kicks in. In many situations, isolating users with request rate quotas has a bigger impact in multi-tenant clusters than setting incoming/outgoing network bandwidth quotas, because excessive broker CPU usage for processing requests reduces the effective bandwidth the broker can serve. Furthermore, administrators can also define quotas on topic operations—such as create, delete, and alter—to prevent Kafka clusters from being overwhelmed by highly concurrent topic operations (see <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-599%3A+Throttle+Create+Topic%2C+Create+Partition+and+Delete+Topic+Operations">KIP-599</a> and the quota type <code>controller_mutations_rate</code>).
   </p>
 
   <p>
-    <strong>Server quotas:</strong> In addition to client-side quotas, Kafka supports different types of broker-side quotas. For example, administrators can set a limit on the rate with which the <a href="#brokerconfigs_max.connection.creation.rate">broker accepts new connections</a>, set the <a href="#brokerconfigs_max.connections">maximum number of connections per broker</a>, or set the maximum number of connections allowed <a href="#brokerconfigs_max.connections.per.ip">from a specific IP address</a>.
+    <strong>Server quotas:</strong> Kafka also supports different types of broker-side quotas. For example, administrators can set a limit on the rate with which the <a href="#brokerconfigs_max.connection.creation.rate">broker accepts new connections</a>, set the <a href="#brokerconfigs_max.connections">maximum number of connections per broker</a>, or set the maximum number of connections allowed <a href="#brokerconfigs_max.connections.per.ip">from a specific IP address</a>.
   </p>
 
   <p>
