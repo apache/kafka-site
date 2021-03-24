@@ -444,7 +444,7 @@ tr:nth-child(odd) {
 }
 .logo-link {
     display: inline-block;
-    width: 220px;
+    width: 117px;
     height: 65px;
     background: url("/logos/kafka_logo--simple.png");
     background-size: auto 65px;
