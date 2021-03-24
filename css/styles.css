@@ -445,14 +445,14 @@ tr:nth-child(odd) {
 .logo-link {
     display: inline-block;
     width: 220px;
-    height: 64.77px;
-    background: url("/images/logo.png");
-    background-size: 217px auto;
+    height: 65px;
+    background: url("/logos/kafka_logo--simple.png");
+    background-size: auto 65px;
     background-repeat: no-repeat;
     /* small: 168 x 50 */
 }
 .page-dark .logo-link {
-    background: url('/logos/kafka-white.svg');
+    background: url('/logos/kafka_logo--white-simple.png.svg');
     background-repeat: no-repeat;
 }
 .page-dark {
