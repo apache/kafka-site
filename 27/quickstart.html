@@ -166,7 +166,7 @@ This is my second event</code></pre>
   </p>
 
   <p>Take a look at the <a href="/documentation/#connect">Kafka Connect section</a>
-  learn more about how to continuously import/export your data into and out of Kafka.</p>
+  to learn more about how to continuously import/export your data into and out of Kafka.</p>
 
   </div>
 
@@ -196,7 +196,7 @@ KTable&lt;String, Long&gt; wordCounts = textLines
             .groupBy((keyIgnored, word) -&gt; word)
             .count();
 
-wordCounts.toStream().to("output-topic"), Produced.with(Serdes.String(), Serdes.Long()));</code></pre>
+wordCounts.toStream().to("output-topic", Produced.with(Serdes.String(), Serdes.Long()));</code></pre>
 
   <p>
       The <a href="/25/documentation/streams/quickstart">Kafka Streams demo</a>
