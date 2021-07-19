@@ -187,7 +187,7 @@ $ export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libjemalloc.so”
        <span class="nd">@Override</span>
        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setConfig</span><span class="o">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">storeName</span><span class="o">,</span> <span class="kd">final</span> <span class="n">Options</span> <span class="n">options</span><span class="o">,</span> <span class="kd">final</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">configs</span><span class="o">)</span> <span class="o">{</span>
 
-         <span class="n">BlockBasedTableConfig</span> <span class="n">tableConfig</span> <span class="o">=</span> <span class="k">(BlockBasedTableConfig)</span> <span class="n">options</span><span><span class="o">.</span><span class="na">tableFormatConfig</span><span class="o">();</span>
+         <span class="n">BlockBasedTableConfig</span> <span class="n">tableConfig</span> <span class="o">=</span> <span class="k">(BlockBasedTableConfig)</span> <span class="n">options</span><span class="o">.</span><span class="na">tableFormatConfig</span><span class="o">();</span>
 
          <span class="c1"> // These three options in combination will limit the memory used by RocksDB to the size passed to the block cache (TOTAL_OFF_HEAP_MEMORY)</span>
          <span class="n">tableConfig</span><span class="o">.</span><span class="na">setBlockCache</span><span class="o">(</span><span class="mi">cache</span><span class="o">);</span>
@@ -209,6 +209,7 @@ $ export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libjemalloc.so”
          <span class="c1">// Cache and WriteBufferManager should not be closed here, as the same objects are shared by every store instance.</span>
        <span class="o">}</span>
     <span class="o">}</span>
+          </pre>
       <div>
         <sup id="fn1">1. INDEX_FILTER_BLOCK_RATIO can be used to set a fraction of the block cache to set aside for "high priority" (aka index and filter) blocks, preventing them from being evicted by data blocks. See the full signature of the <a class="reference external" href="https://github.com/facebook/rocksdb/blob/master/java/src/main/java/org/rocksdb/LRUCache.java#L72">LRUCache constructor</a>.
           NOTE: the boolean parameter in the cache constructor lets you control whether the cache should enforce a strict memory limit by failing the read or iteration in the rare cases where it might go larger than its capacity. Due to a
