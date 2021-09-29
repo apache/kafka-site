@@ -131,6 +131,11 @@ settings.put(... , ...);</code></pre>
                 <li>As the name of the subdirectory in the state directory (cf. <code class="docutils literal"><span class="pre">state.dir</span></code>)</li>
                 <li>As the prefix of internal Kafka topic names</li>
               </ul>
+              <dl class="docutils">
+                <dt>Tip:</dt>
+                <dd>When an application is updated, the <code class="docutils literal"><span class="pre">application.id</span></code> should be changed unless you want to reuse the existing data in internal topics and state stores.
+                  For example, you could embed the version information within <code class="docutils literal"><span class="pre">application.id</span></code>, as <code class="docutils literal"><span class="pre">my-app-v1.0.0</span></code> and <code class="docutils literal"><span class="pre">my-app-v1.0.2</span></code>.</dd>
+              </dl>
             </div></blockquote>
         </div>
         <div class="section" id="bootstrap-servers">
