@@ -100,7 +100,7 @@
 		<p>There are a few things that need to be considered in client code that are not a major concern on the server side.</p>
 		<ul>
 			<li>Libraries needed by the client should be avoided whenever possible. Clients are run in someone else's code and it is very possible that they may have the same library we have, but a different and incompatible version. This will mean they can't use our client. For this reason the client should not use any libraries that are not strictly necessary.</li>
-		<li>We should maintain API compatibility. Any incompatible changes should be ultimately settled in the KIP design process, where the usual strategy is to the old APIs, mark them as deprecated and potentially remove them in some next major release.</li>
+		<li>We should maintain API compatibility. Any incompatible changes should be ultimately settled in the KIP design process, where the usual strategy is to retain the old APIs, mark them as deprecated and potentially remove them in some next major release.</li>
 		</ul>
 
 		<h2>Streams API</h2>
