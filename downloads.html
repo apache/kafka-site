@@ -6,10 +6,56 @@
 	<div class="right">
     <h1>Download</h1>
 
-    <p>3.0.0 is the latest release. The current stable version is 3.0.0.</p>
+    <p>3.1.0 is the latest release. The current stable version is 3.1.0.</p>
 
     <p>
     You can verify your download by following these <a href="https://www.apache.org/info/verification.html">procedures</a> and using these <a href="https://downloads.apache.org/kafka/KEYS">KEYS</a>.
+    </p>
+
+    <span id="3.1.0"></span>
+    <h3 class="download-version">3.1.0<a href="#3.1.0"><i class="fas fa-link " style="color:#053ce2"></i></a></h3>
+    <ul>
+        <li>
+            Released January 24, 2022
+        </li>
+        <li>
+            <a href="https://downloads.apache.org/kafka/3.1.0/RELEASE_NOTES.html">Release Notes</a>
+        </li>
+        <li>
+            Source download: <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/3.1.0/kafka-3.1.0-src.tgz">kafka-3.1.0-src.tgz</a> (<a href="https://downloads.apache.org/kafka/3.1.0/kafka-3.1.0-src.tgz.asc">asc</a>, <a href="https://downloads.apache.org/kafka/3.1.0/kafka-3.1.0-src.tgz.sha512">sha512</a>)
+        </li>
+        <li>
+            Binary downloads:
+            <ul>
+                <li>Scala 2.12 &nbsp;- <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/3.1.0/kafka_2.12-3.1.0.tgz">kafka_2.12-3.1.0.tgz</a> (<a href="https://downloads.apache.org/kafka/3.1.0/kafka_2.12-3.1.0.tgz.asc">asc</a>, <a href="https://downloads.apache.org/kafka/3.1.0/kafka_2.12-3.1.0.tgz.sha512">sha512</a>)</li>
+                <li>Scala 2.13 &nbsp;- <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/3.1.0/kafka_2.13-3.1.0.tgz">kafka_2.13-3.1.0.tgz</a> (<a href="https://downloads.apache.org/kafka/3.1.0/kafka_2.13-3.1.0.tgz.asc">asc</a>, <a href="https://downloads.apache.org/kafka/3.1.0/kafka_2.13-3.1.0.tgz.sha512">sha512</a>)</li>
+            </ul>
+            We build for multiple versions of Scala. This only matters if you are using Scala and you want a version
+            built for the same Scala version you use. Otherwise any version should work (2.13 is recommended).
+        </li>
+    </ul>
+
+    <p>
+        Kafka 3.1.0 includes a number of significant new features. Here is a summary of some notable changes:
+    </p>
+
+    <ul>
+        <li>Apache Kafka supports Java 17</li>
+        <li>The FetchRequest supports Topic IDs (KIP-516)</li>
+        <li>Extend SASL/OAUTHBEARER with support for OIDC (KIP-768)</li>
+        <li>Add broker count metrics (KIP-748)</li>
+        <li>Differentiate consistently metric latency measured in millis and nanos (KIP-773)</li>
+        <li>The eager rebalance protocol is deprecated (KAFKA-13439)</li>
+        <li>Add TaskId field to StreamsException (KIP-783)</li>
+        <li>Custom partitioners in foreign-key joins (KIP-775)</li>
+        <li>Fetch/findSessions queries with open endpoints for SessionStore/WindowStore (KIP-766)</li>
+        <li>Range queries with open endpoints (KIP-763)</li>
+        <li>Add total blocked time metric to Streams (KIP-761)</li>
+        <li>Add additional configuration to control MirrorMaker2 internal topics naming convention (KIP-690)</li>
+    </ul>
+
+    <p>
+        For more information, please read the detailed <a href="https://downloads.apache.org/kafka/3.1.0/RELEASE_NOTES.html">Release Notes</a>.
     </p>
 
     <span id="3.0.0"></span>
