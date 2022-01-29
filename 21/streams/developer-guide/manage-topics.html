@@ -92,12 +92,11 @@
         <code>StreamsConfig.topicPrefix()</code>.
       </p>
       <p>
-        <pre class="brush: java;">
-          Properties config = new Properties();
+        <pre class="line-numbers"><code class="language-java">          Properties config = new Properties();
           config.put(StreamsConfig.APPLICATION_ID_CONFIG, "myapp");
           config.put(StreamsConfig.topicPrefix(TopicConfig.SEGMENT_MS_CONFIG), 100);
           KafkaStreams streams = new KafkaStreams(topology, config);
-        </pre>
+        </code></pre>
       </p>
       <div class="admonition note">
         <p class="first admonition-title">Note</p>

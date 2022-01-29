@@ -299,7 +299,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ... // counting words
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // counting words
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-word";
  Long countForWord = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
@@ -341,7 +341,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>.
  Use <a href="../../../../../org/apache/kafka/streams/processor/StateStoreSupplier.html#name()"><code>StateStoreSupplier.name()</code></a> to get the store name:
- <pre><code>KafkaStreams streams = ... // counting words
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // counting words
  String storeName = storeSupplier.name();
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-word";
@@ -381,7 +381,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  <p>
  To query the local windowed <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ... // counting words
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // counting words
  ReadOnlyWindowStore&lt;String,Long&gt; localWindowStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;windowStore());
  String key = "some-word";
  long fromTime = ...;
@@ -430,7 +430,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  To query the local windowed <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>.
  Use <a href="../../../../../org/apache/kafka/streams/processor/StateStoreSupplier.html#name()"><code>StateStoreSupplier.name()</code></a> to get the store name:
- <pre><code>KafkaStreams streams = ... // counting words
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // counting words
  String storeName = storeSupplier.name();
  ReadOnlyWindowStore&lt;String,Long&gt; localWindowStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;windowStore());
  String key = "some-word";
@@ -471,7 +471,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state"><code>SessionStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>.
  Use <a href="../../../../../org/apache/kafka/streams/processor/StateStoreSupplier.html#name()"><code>StateStoreSupplier.name()</code></a> to get the store name:
- <pre><code>KafkaStreams streams = ... // counting words
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // counting words
  String storeName = storeSupplier.name();
  ReadOnlySessionStore&lt;String,Long&gt; sessionStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;sessionStore());
  String key = "some-word";
@@ -510,7 +510,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state"><code>SessionStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>.
  Use <a href="../../../../../org/apache/kafka/streams/processor/StateStoreSupplier.html#name()"><code>StateStoreSupplier.name()</code></a> to get the store name:
- <pre><code>KafkaStreams streams = ... // counting words
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // counting words
  String storeName = storeSupplier.name();
  ReadOnlySessionStore&lt;String,Long&gt; sessionStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;sessionStore());
  String key = "some-word";
@@ -554,7 +554,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ... // compute sum
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // compute sum
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-key";
  Long sumForKey = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
@@ -606,7 +606,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>.
  Use <a href="../../../../../org/apache/kafka/streams/processor/StateStoreSupplier.html#name()"><code>StateStoreSupplier.name()</code></a> to get the store name:
- <pre><code>KafkaStreams streams = ... // compute sum
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // compute sum
  String storeName = storeSupplier.name();
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-key";
@@ -655,7 +655,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  <p>
  To query the local windowed <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ... // compute sum
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // compute sum
  ReadOnlyWindowStore&lt;String,Long&gt; localWindowStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;windowStore());
  String key = "some-key";
  long fromTime = ...;
@@ -714,7 +714,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  To query the local windowed <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>.
  Use <a href="../../../../../org/apache/kafka/streams/processor/StateStoreSupplier.html#name()"><code>StateStoreSupplier.name()</code></a> to get the store name:
- <pre><code>KafkaStreams streams = ... // compute sum
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // compute sum
  Sting storeName = storeSupplier.name();
  ReadOnlyWindowStore&lt;String,Long&gt; localWindowStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;windowStore());
  String key = "some-key";
@@ -764,7 +764,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state"><code>SessionStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ... // compute sum
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // compute sum
  ReadOnlySessionStore&lt;String,Long&gt; sessionStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;sessionStore());
  String key = "some-key";
  KeyValueIterator&lt;Windowed&lt;String&gt;, Long&gt; sumForKeyForSession = localWindowStore.fetch(key); // key must be local (application state is shared over all running Kafka Streams instances)
@@ -819,7 +819,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state"><code>SessionStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>.
  Use <a href="../../../../../org/apache/kafka/streams/processor/StateStoreSupplier.html#name()"><code>StateStoreSupplier.name()</code></a> to get the store name:
- <pre><code>KafkaStreams streams = ... // compute sum
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // compute sum
  Sting storeName = storeSupplier.name();
  ReadOnlySessionStore&lt;String,Long&gt; sessionStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;sessionStore());
  String key = "some-key";
@@ -874,7 +874,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ... // some aggregation on value type double
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // some aggregation on value type double
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-key";
  Long aggForKey = localStore.get(key); // key must be local (application state is shared over all running Kafka Streams instances)
@@ -929,7 +929,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>.
  Use <a href="../../../../../org/apache/kafka/streams/processor/StateStoreSupplier.html#name()"><code>StateStoreSupplier.name()</code></a> to get the store name:
- <pre><code>KafkaStreams streams = ... // some aggregation on value type double
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // some aggregation on value type double
  Sting storeName = storeSupplier.name();
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-key";
@@ -982,7 +982,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  <p>
  To query the local windowed <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>KafkaStreams streams = ... // some windowed aggregation on value type double
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // some windowed aggregation on value type double
  ReadOnlyWindowStore&lt;String,Long&gt; localWindowStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;windowStore());
  String key = "some-key";
  long fromTime = ...;
@@ -1044,7 +1044,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  To query the local windowed <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>.
  Use <a href="../../../../../org/apache/kafka/streams/processor/StateStoreSupplier.html#name()"><code>StateStoreSupplier.name()</code></a> to get the store name:
- <pre><code>KafkaStreams streams = ... // some windowed aggregation on value type Long
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // some windowed aggregation on value type Long
  Sting storeName = storeSupplier.name();
  ReadOnlyWindowStore&lt;String,Long&gt; localWindowStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;windowStore());
  String key = "some-key";
@@ -1099,7 +1099,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state"><code>SessionStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>.
  Use <a href="../../../../../org/apache/kafka/streams/processor/StateStoreSupplier.html#name()"><code>StateStoreSupplier.name()</code></a> to get the store name:
- <pre><code>KafkaStreams streams = ... // some windowed aggregation on value type double
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // some windowed aggregation on value type double
  Sting storeName = storeSupplier.name();
  ReadOnlySessionStore&lt;String, Long&gt; sessionStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;sessionStore());
  String key = "some-key";
@@ -1153,7 +1153,7 @@ public interface <span class="strong">KGroupedStream&lt;K,V&gt;</span></pre>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state"><code>SessionStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store(java.lang.String,%20org.apache.kafka.streams.state.QueryableStoreType)"><code>KafkaStreams#store(...)</code></a>.
  Use <a href="../../../../../org/apache/kafka/streams/processor/StateStoreSupplier.html#name()"><code>StateStoreSupplier.name()</code></a> to get the store name:
- <pre><code>KafkaStreams streams = ... // some windowed aggregation on value type double
+ <pre class="line-numbers"><code>KafkaStreams streams = ... // some windowed aggregation on value type double
  Sting storeName = storeSupplier.name();
  ReadOnlySessionStore&lt;String, Long&gt; sessionStore = streams.store(storeName, QueryableStoreTypes.&lt;String, Long&gt;sessionStore());
  String key = "some-key";

@@ -32,7 +32,7 @@
   </div>
 
     <div class="section" id="application-reset-tool">
-        <span id="streams-developer-guide-app-reset"></span><h1>Application Reset Tool<a class="headerlink" href="#application-reset-tool" title="Permalink to this headline"></a></h1>
+        <span id="streams-developer-guide-app-reset"></span><h1 class="docs-title">Application Reset Tool<a class="headerlink" href="#application-reset-tool" title="Permalink to this headline"></a></h1>
         <p>You can reset an application and force it to reprocess its data from scratch by using the application reset tool.
             This can be useful for development and testing, or when fixing bugs.</p>
         <p>The application reset tool handles the Kafka Streams <a class="reference internal" href="manage-topics.html#streams-developer-guide-topics-user"><span class="std std-ref">user topics</span></a> (input,
@@ -76,8 +76,7 @@
         <div class="section" id="step-1-run-the-application-reset-tool">
             <h2>Step 1: Run the application reset tool<a class="headerlink" href="#step-1-run-the-application-reset-tool" title="Permalink to this headline"></a></h2>
             <p>Invoke the application reset tool from the command line</p>
-            <div class="highlight-bash"><div class="highlight"><pre><span></span>&lt;path-to-kafka&gt;/bin/kafka-streams-application-reset
-</pre></div>
+            <div class="highlight-bash"><div class="highlight"><pre><span></span>&lt;path-to-kafka&gt;/bin/kafka-streams-application-reset</pre></div>
             </div>
             <p>The tool accepts the following parameters:</p>
             <div class="highlight-bash"><div class="highlight"><pre><span></span>Option <span class="o">(</span>* <span class="o">=</span> required<span class="o">)</span>                 Description
@@ -116,8 +115,7 @@
 --zookeeper                           Zookeeper option is deprecated by
                                         bootstrap.servers, as the reset tool
                                         would no longer access Zookeeper
-                                        directly.
-</pre></div>
+                                        directly.</pre></div>
             </div>
             <p>Consider the following as reset-offset scenarios for <code>input-topics</code>:</p>
             <ul>
@@ -156,8 +154,9 @@
 </script>
 
 <!--#include virtual="../../../includes/_header.htm" -->
+<body class="page-app-reset-tool">
 <!--#include virtual="../../../includes/_top.htm" -->
-<div class="content documentation documentation--current">
+<div class="content documentation ">
   <!--#include virtual="../../../includes/_nav.htm" -->
   <div class="right">
     <!--#include virtual="../../../includes/_docs_banner.htm" -->

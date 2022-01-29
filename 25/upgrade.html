@@ -19,7 +19,10 @@
 
 <script id="upgrade-template" type="text/x-handlebars-template">
 
-<h4><a id="upgrade_2_5_0" href="#upgrade_2_5_0">Upgrading from 0.8.x, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, 1.0.x, 1.1.x, 2.0.x or 2.1.x or 2.2.x, 2.3.x, 2.4.x to 2.5.0</a></h4>
+<h4 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_2_5_0" href="#upgrade_2_5_0"></a>
+<a href="#upgrade_2_5_0">Upgrading from 0.8.x</a>, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, 1.0.x, 1.1.x, 2.0.x or 2.1.x or 2.2.x, 2.3.x, 2.4.x to 2.5.0
+</h4>
 
 <p><b>If you are upgrading from a version prior to 2.1.x, please see the note below about the change to the schema used to store consumer offsets.
     Once you have changed the inter.broker.protocol.version to the latest version, it will not be possible to downgrade to a version prior to 2.1.</b></p>
@@ -61,7 +64,10 @@
     </li>
 </ol>
 
-<h5><a id="upgrade_250_notable" href="#upgrade_250_notable">Notable changes in 2.5.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_250_notable" href="#upgrade_250_notable"></a>
+<a href="#upgrade_250_notable">Notable changes in 2.5.0
+</a></h5>
 <ul>
     <li>When <code>RebalanceProtocol#COOPERATIVE</code> is used, <code>Consumer#poll</code> can still return data
         while it is in the middle of a rebalance for those partitions still owned by the consumer; in addition
@@ -81,7 +87,10 @@
         <a href="https://github.com/apache/kafka/tree/2.5/examples">examples</a> folder. Check out
         <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-447%3A+Producer+scalability+for+exactly+once+semantics">KIP-447</a>
         for the full details.</li>
-    <li>Deprecated <code>KafkaStreams.store(String, QueryableStoreType)</code> and replaced it with <code>KafkaStreams.store(StoreQueryParameters)</code>.</li>
+    <li>Added a new public api <code>KafkaStreams.queryMetadataForKey(String, K, Serializer) to get detailed information on the key being queried.
+        It provides information about the partition number where the key resides in addition to hosts containing the active and standby partitions for the key.</code></li>
+    <li>Provided support to query stale stores (for high availability) and the stores belonging to a specific partition by deprecating <code>KafkaStreams.store(String, QueryableStoreType)</code> and replacing it with <code>KafkaStreams.store(StoreQueryParameters)</code>.</li>
+    <li>Added a new public api to access lag information for stores local to an instance with <code>KafkaStreams.allLocalStorePartitionLags()</code>.</li>
     <li>Scala 2.11 is no longer supported. See
         <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-531%3A+Drop+support+for+Scala+2.11+in+Kafka+2.5">KIP-531</a>
         for details.</li>
@@ -106,7 +115,10 @@
     </li>
 </ul>
 
-<h4><a id="upgrade_2_4_0" href="#upgrade_2_4_0">Upgrading from 0.8.x, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, 1.0.x, 1.1.x, 2.0.x or 2.1.x or 2.2.x or 2.3.x to 2.4.0</a></h4>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="upgrade_2_4_0" href="#upgrade_2_4_0"></a>
+<a href="#upgrade_2_4_0">Upgrading from 0.8.x</a>, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, 1.0.x, 1.1.x, 2.0.x or 2.1.x or 2.2.x or 2.3.x to 2.4.0
+</h4>
 
 <p><b>If you are upgrading from a version prior to 2.1.x, please see the note below about the change to the schema used to store consumer offsets.
     Once you have changed the inter.broker.protocol.version to the latest version, it will not be possible to downgrade to a version prior to 2.1.</b></p>
@@ -169,7 +181,10 @@
     </li>
 </ol>
 
-<h5><a id="upgrade_240_notable" href="#upgrade_240_notable">Notable changes in 2.4.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_240_notable" href="#upgrade_240_notable"></a>
+<a href="#upgrade_240_notable">Notable changes in 2.4.0
+</a></h5>
 <ul>
     <li>A new Admin API has been added for partition reassignments. Due to changing the way Kafka propagates reassignment information,
         it is possible to lose reassignment state in failure edge cases while upgrading to the new version. It is not recommended to start reassignments while upgrading.</li>
@@ -209,7 +224,7 @@
         Your custom assignor can then leverage the <code>ownedPartitions</code> field in each consumer's <code>Subscription</code> to give partitions back to their previous owners whenever possible. Note that when
         a partition is to be reassigned to another consumer, it <em>must</em> be removed from the new assignment until it has been revoked from its original owner. Any consumer that has to revoke a partition will trigger
         a followup rebalance to allow the revoked partition to safely be assigned to its new owner. See the
-        <a href="https://kafka.apache.org/24/javadoc/index.html?org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.RebalanceProtocol.html">ConsumerPartitionAssignor RebalanceProtocol javadocs</a> for more information.
+        <a href="/24/javadoc/index.html?org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.RebalanceProtocol.html">ConsumerPartitionAssignor RebalanceProtocol javadocs</a> for more information.
         <br>
         To upgrade from the old (eager) protocol, which always revokes all partitions before rebalancing, to cooperative rebalancing, you must follow a specific upgrade path to get all clients on the same <code>ConsumerPartitionAssignor</code>
         that supports the cooperative protocol. This can be done with two rolling bounces, using the <code>CooperativeStickyAssignor</code> for the example: during the first one, add "cooperative-sticky" to the list of supported assignors
@@ -225,7 +240,7 @@
         The semantics of the <code>ConsumerRebalanceListener's</code> callbacks are further changed when following the cooperative rebalancing protocol described above. In addition to <code>onPartitionsLost</code>, <code>onPartitionsRevoked</code>
         will also never be called when the set of revoked partitions is empty. The callback will generally be invoked only at the end of a rebalance, and only on the set of partitions that are being moved to another consumer. The
         <code>onPartitionsAssigned</code> callback will however always be called, even with an empty set of partitions, as a way to notify users of a rebalance event (this is true for both cooperative and eager). For details on
-        the new callback semantics, see the <a href="https://kafka.apache.org/24/javadoc/index.html?org/apache/kafka/clients/consumer/ConsumerRebalanceListener.html">ConsumerRebalanceListener javadocs</a>.
+        the new callback semantics, see the <a href="/24/javadoc/index.html?org/apache/kafka/clients/consumer/ConsumerRebalanceListener.html">ConsumerRebalanceListener javadocs</a>.
     </li>
     <li>The Scala trait <code>kafka.security.auth.Authorizer</code> has been deprecated and replaced with a new Java API
         <code>org.apache.kafka.server.authorizer.Authorizer</code>. The authorizer implementation class
@@ -236,7 +251,10 @@
     </li>
 </ul>
 
-<h4><a id="upgrade_2_3_0" href="#upgrade_2_3_0">Upgrading from 0.8.x, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, 1.0.x, 1.1.x, 2.0.x or 2.1.x or 2.2.x to 2.3.0</a></h4>
+<h4 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_2_3_0" href="#upgrade_2_3_0"></a>
+<a href="#upgrade_2_3_0">Upgrading from 0.8.x</a>, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, 1.0.x, 1.1.x, 2.0.x or 2.1.x or 2.2.x to 2.3.0
+</h4>
 
 <p><b>If you are upgrading from a version prior to 2.1.x, please see the note below about the change to the schema used to store consumer offsets.
     Once you have changed the inter.broker.protocol.version to the latest version, it will not be possible to downgrade to a version prior to 2.1.</b></p>
@@ -278,7 +296,10 @@
     </li>
 </ol>
 
-<h5><a id="upgrade_230_notable" href="#upgrade_230_notable">Notable changes in 2.3.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_230_notable" href="#upgrade_230_notable"></a>
+<a href="#upgrade_230_notable">Notable changes in 2.3.0
+</a></h5>
 <ul>
     <li> We are introducing a new rebalancing protocol for Kafka Connect based on
         <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-415%3A+Incremental+Cooperative+Rebalancing+in+Kafka+Connect">incremental cooperative rebalancing</a>.
@@ -296,7 +317,10 @@
     <li>Kafka Streams 2.3.0 requires 0.11 message format or higher and does not work with older message format.</li>
 </ul>
 
-<h4><a id="upgrade_2_2_0" href="#upgrade_2_2_0">Upgrading from 0.8.x, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, 1.0.x, 1.1.x, 2.0.x or 2.1.x to 2.2.0</a></h4>
+<h4 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_2_2_0" href="#upgrade_2_2_0"></a>
+<a href="#upgrade_2_2_0">Upgrading from 0.8.x</a>, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, 1.0.x, 1.1.x, 2.0.x or 2.1.x to 2.2.0
+</h4>
 
 <p><b>If you are upgrading from a version prior to 2.1.x, please see the note below about the change to the schema used to store consumer offsets.
     Once you have changed the inter.broker.protocol.version to the latest version, it will not be possible to downgrade to a version prior to 2.1.</b></p>
@@ -338,12 +362,18 @@
     </li>
 </ol>
 
-<h5><a id="upgrade_221_notable" href="#upgrade_221_notable">Notable changes in 2.2.1</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_221_notable" href="#upgrade_221_notable"></a>
+<a href="#upgrade_221_notable">Notable changes in 2.2.1
+</a></h5>
 <ul>
     <li>Kafka Streams 2.2.1 requires 0.11 message format or higher and does not work with older message format.</li>
 </ul>
 
-<h5><a id="upgrade_220_notable" href="#upgrade_220_notable">Notable changes in 2.2.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_220_notable" href="#upgrade_220_notable"></a>
+<a href="#upgrade_220_notable">Notable changes in 2.2.0
+</a></h5>
 <ul>
     <li>The default consumer group id has been changed from the empty string (<code>""</code>) to <code>null</code>. Consumers who use the new default group id will not be able to subscribe to topics,
         and fetch or commit offsets. The empty string as consumer group id is deprecated but will be supported until a future major release. Old clients that rely on the empty string group id will now
@@ -354,7 +384,10 @@
     <li>Kafka Streams depends on a newer version of RocksDBs that requires MacOS 10.13 or higher.</li>
 </ul>
 
-<h4><a id="upgrade_2_1_0" href="#upgrade_2_1_0">Upgrading from 0.8.x, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, 1.0.x, 1.1.x, or 2.0.0 to 2.1.0</a></h4>
+<h4 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_2_1_0" href="#upgrade_2_1_0"></a>
+<a href="#upgrade_2_1_0">Upgrading from 0.8.x</a>, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, 1.0.x, 1.1.x, or 2.0.0 to 2.1.0
+</h4>
 
 <p><b>Note that 2.1.x contains a change to the internal schema used to store consumer offsets. Once the upgrade is
   complete, it will not be possible to downgrade to previous versions. See the rolling upgrade notes below for more detail.</b></p>
@@ -421,7 +454,10 @@
         in a Java 7 compatible fashion. Now we consolidated these interfaces as Java 7 support has been dropped since.</li>
 </ol>
 
-<h5><a id="upgrade_210_notable" href="#upgrade_210_notable">Notable changes in 2.1.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_210_notable" href="#upgrade_210_notable"></a>
+<a href="#upgrade_210_notable">Notable changes in 2.1.0
+</a></h5>
 <ul>
     <li>Jetty has been upgraded to 9.4.12, which excludes TLS_RSA_* ciphers by default because they do not support forward
         secrecy, see https://github.com/eclipse/jetty.project/issues/2807 for more information.</li>
@@ -436,7 +472,10 @@
     </li>
 </ul>
 
-<h4><a id="upgrade_2_0_0" href="#upgrade_2_0_0">Upgrading from 0.8.x, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, 1.0.x, or 1.1.x to 2.0.0</a></h4>
+<h4 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_2_0_0" href="#upgrade_2_0_0"></a>
+<a href="#upgrade_2_0_0">Upgrading from 0.8.x</a>, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, 1.0.x, or 1.1.x to 2.0.0
+</h4>
 <p>Kafka 2.0.0 introduces wire protocol changes. By following the recommended rolling upgrade plan below,
     you guarantee no downtime during the upgrade. However, please review the <a href="#upgrade_200_notable">notable changes in 2.0.0</a> before upgrading.
 </p>
@@ -485,7 +524,10 @@
     </li>
 </ol>
 
-<h5><a id="upgrade_200_notable" href="#upgrade_200_notable">Notable changes in 2.0.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_200_notable" href="#upgrade_200_notable"></a>
+<a href="#upgrade_200_notable">Notable changes in 2.0.0
+</a></h5>
 <ul>
     <li><a href="https://cwiki.apache.org/confluence/x/oYtjB">KIP-186</a> increases the default offset retention time from 1 day to 7 days. This makes it less likely to "lose" offsets in an application that commits infrequently. It also increases the active set of offsets and therefore can increase memory usage on the broker. Note that the console consumer currently enables offset commit by default and can be the source of a large number of offsets which this change will now preserve for 7 days instead of 1. You can preserve the existing behavior by setting the broker config <code>offsets.retention.minutes</code> to 1440.</li>
     <li>Support for Java 7 has been dropped, Java 8 is now the minimum version required.</li>
@@ -555,7 +597,10 @@
     <code>zookeeper.connection.timeout.ms</code>.</li>
 </ul>
 
-<h5><a id="upgrade_200_new_protocols" href="#upgrade_200_new_protocols">New Protocol Versions</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_200_new_protocols" href="#upgrade_200_new_protocols"></a>
+<a href="#upgrade_200_new_protocols">New Protocol Versions
+</a></h5>
 <ul>
     <li> <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-279%3A+Fix+log+divergence+between+leader+and+follower+after+fast+leader+fail+over">KIP-279</a>: OffsetsForLeaderEpochResponse v1 introduces a partition-level <code>leader_epoch</code> field. </li>
     <li> <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-219+-+Improve+quota+communication">KIP-219</a>: Bump up the protocol versions of non-cluster action requests and responses that are throttled on quota violation.</li>
@@ -563,7 +608,10 @@
 </ul>
 
 
-<h5><a id="upgrade_200_streams_from_11" href="#upgrade_200_streams_from_11">Upgrading a 1.1 Kafka Streams Application</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_200_streams_from_11" href="#upgrade_200_streams_from_11"></a>
+<a href="#upgrade_200_streams_from_11">Upgrading a 1.1 Kafka Streams Application
+</a></h5>
 <ul>
     <li> Upgrading your Streams application from 1.1 to 2.0 does not require a broker upgrade.
          A Kafka Streams 2.0 application can connect to 2.0, 1.1, 1.0, 0.11.0, 0.10.2 and 0.10.1 brokers (it is not possible to connect to 0.10.0 brokers though). </li>
@@ -571,7 +619,10 @@
          See <a href="/{{version}}/documentation/streams/upgrade-guide#streams_api_changes_200">Streams API changes in 2.0.0</a> for more details. </li>
 </ul>
 
-<h4><a id="upgrade_1_1_0" href="#upgrade_1_1_0">Upgrading from 0.8.x, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, or 1.0.x to 1.1.x</a></h4>
+<h4 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_1_1_0" href="#upgrade_1_1_0"></a>
+<a href="#upgrade_1_1_0">Upgrading from 0.8.x</a>, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x, 0.11.0.x, or 1.0.x to 1.1.x
+</h4>
 <p>Kafka 1.1.0 introduces wire protocol changes. By following the recommended rolling upgrade plan below,
     you guarantee no downtime during the upgrade. However, please review the <a href="#upgrade_110_notable">notable changes in 1.1.0</a> before upgrading.
 </p>
@@ -615,13 +666,19 @@
         Hot-swapping the jar-file only might not work.</li>
 </ol>
 
-<h5><a id="upgrade_111_notable" href="#upgrade_111_notable">Notable changes in 1.1.1</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_111_notable" href="#upgrade_111_notable"></a>
+<a href="#upgrade_111_notable">Notable changes in 1.1.1
+</a></h5>
 <ul>
     <li> New Kafka Streams configuration parameter <code>upgrade.from</code> added that allows rolling bounce upgrade from version 0.10.0.x </li>
     <li> See the <a href="/{{version}}/documentation/streams/upgrade-guide.html"><b>Kafka Streams upgrade guide</b></a> for details about this new config.
 </ul>
 
-<h5><a id="upgrade_110_notable" href="#upgrade_110_notable">Notable changes in 1.1.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_110_notable" href="#upgrade_110_notable"></a>
+<a href="#upgrade_110_notable">Notable changes in 1.1.0
+</a></h5>
 <ul>
     <li>The kafka artifact in Maven no longer depends on log4j or slf4j-log4j12. Similarly to the kafka-clients artifact, users
         can now choose the logging back-end by including the appropriate slf4j module (slf4j-log4j12, logback, etc.). The release
@@ -637,20 +694,29 @@
         explicitly or implicitly due to any of the other options like decoder.</li>
 </ul>
 
-<h5><a id="upgrade_110_new_protocols" href="#upgrade_110_new_protocols">New Protocol Versions</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_110_new_protocols" href="#upgrade_110_new_protocols"></a>
+<a href="#upgrade_110_new_protocols">New Protocol Versions
+</a></h5>
 <ul>
     <li> <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-226+-+Dynamic+Broker+Configuration">KIP-226</a> introduced DescribeConfigs Request/Response v1.</li>
     <li> <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-227%3A+Introduce+Incremental+FetchRequests+to+Increase+Partition+Scalability">KIP-227</a> introduced Fetch Request/Response v7.</li>
 </ul>
 
-<h5><a id="upgrade_110_streams_from_10" href="#upgrade_110_streams_from_10">Upgrading a 1.0 Kafka Streams Application</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_110_streams_from_10" href="#upgrade_110_streams_from_10"></a>
+<a href="#upgrade_110_streams_from_10">Upgrading a 1.0 Kafka Streams Application
+</a></h5>
 <ul>
     <li> Upgrading your Streams application from 1.0 to 1.1 does not require a broker upgrade.
         A Kafka Streams 1.1 application can connect to 1.0, 0.11.0, 0.10.2 and 0.10.1 brokers (it is not possible to connect to 0.10.0 brokers though). </li>
     <li> See <a href="/{{version}}/documentation/streams/upgrade-guide#streams_api_changes_110">Streams API changes in 1.1.0</a> for more details. </li>
 </ul>
 
-<h4><a id="upgrade_1_0_0" href="#upgrade_1_0_0">Upgrading from 0.8.x, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x or 0.11.0.x to 1.0.0</a></h4>
+<h4 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_1_0_0" href="#upgrade_1_0_0"></a>
+<a href="#upgrade_1_0_0">Upgrading from 0.8.x</a>, 0.9.x, 0.10.0.x, 0.10.1.x, 0.10.2.x or 0.11.0.x to 1.0.0
+</h4>
 <p>Kafka 1.0.0 introduces wire protocol changes. By following the recommended rolling upgrade plan below,
     you guarantee no downtime during the upgrade. However, please review the <a href="#upgrade_100_notable">notable changes in 1.0.0</a> before upgrading.
 </p>
@@ -695,19 +761,28 @@
         Similarly for the message format version.</li>
 </ol>
 
-<h5><a id="upgrade_102_notable" href="#upgrade_102_notable">Notable changes in 1.0.2</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_102_notable" href="#upgrade_102_notable"></a>
+<a href="#upgrade_102_notable">Notable changes in 1.0.2
+</a></h5>
 <ul>
     <li> New Kafka Streams configuration parameter <code>upgrade.from</code> added that allows rolling bounce upgrade from version 0.10.0.x </li>
     <li> See the <a href="/{{version}}/documentation/streams/upgrade-guide.html"><b>Kafka Streams upgrade guide</b></a> for details about this new config.
 </ul>
 
-<h5><a id="upgrade_101_notable" href="#upgrade_101_notable">Notable changes in 1.0.1</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_101_notable" href="#upgrade_101_notable"></a>
+<a href="#upgrade_101_notable">Notable changes in 1.0.1
+</a></h5>
 <ul>
     <li>Restored binary compatibility of AdminClient's Options classes (e.g. CreateTopicsOptions, DeleteTopicsOptions, etc.) with
         0.11.0.x. Binary (but not source) compatibility had been broken inadvertently in 1.0.0.</li>
 </ul>
 
-<h5><a id="upgrade_100_notable" href="#upgrade_100_notable">Notable changes in 1.0.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_100_notable" href="#upgrade_100_notable"></a>
+<a href="#upgrade_100_notable">Notable changes in 1.0.0
+</a></h5>
 <ul>
     <li>Topic deletion is now enabled by default, since the functionality is now stable. Users who wish to
         to retain the previous behavior should set the broker config <code>delete.topic.enable</code> to <code>false</code>. Keep in mind that topic deletion removes data and the operation is not reversible (i.e. there is no "undelete" operation)</li>
@@ -754,7 +829,10 @@
     <li>config/consumer.properties file updated to use new consumer config properties.</li>
 </ul>
 
-<h5><a id="upgrade_100_new_protocols" href="#upgrade_100_new_protocols">New Protocol Versions</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_100_new_protocols" href="#upgrade_100_new_protocols"></a>
+<a href="#upgrade_100_new_protocols">New Protocol Versions
+</a></h5>
 <ul>
     <li> <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-112%3A+Handle+disk+failure+for+JBOD">KIP-112</a>: LeaderAndIsrRequest v1 introduces a partition-level <code>is_new</code> field. </li>
     <li> <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-112%3A+Handle+disk+failure+for+JBOD">KIP-112</a>: UpdateMetadataRequest v4 introduces a partition-level <code>offline_replicas</code> field. </li>
@@ -766,7 +844,10 @@
          be used if the SaslHandshake request version is greater than 0. </li>
 </ul>
 
-<h5><a id="upgrade_100_streams_from_0110" href="#upgrade_100_streams_from_0110">Upgrading a 0.11.0 Kafka Streams Application</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_100_streams_from_0110" href="#upgrade_100_streams_from_0110"></a>
+<a href="#upgrade_100_streams_from_0110">Upgrading a 0.11.0 Kafka Streams Application
+</a></h5>
 <ul>
     <li> Upgrading your Streams application from 0.11.0 to 1.0 does not require a broker upgrade.
          A Kafka Streams 1.0 application can connect to 0.11.0, 0.10.2 and 0.10.1 brokers (it is not possible to connect to 0.10.0 brokers though).
@@ -777,7 +858,10 @@
     <li> See <a href="/{{version}}/documentation/streams/upgrade-guide#streams_api_changes_100">Streams API changes in 1.0.0</a> for more details. </li>
 </ul>
 
-<h5><a id="upgrade_100_streams_from_0102" href="#upgrade_100_streams_from_0102">Upgrading a 0.10.2 Kafka Streams Application</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_100_streams_from_0102" href="#upgrade_100_streams_from_0102"></a>
+<a href="#upgrade_100_streams_from_0102">Upgrading a 0.10.2 Kafka Streams Application
+</a></h5>
 <ul>
     <li> Upgrading your Streams application from 0.10.2 to 1.0 does not require a broker upgrade.
          A Kafka Streams 1.0 application can connect to 1.0, 0.11.0, 0.10.2 and 0.10.1 brokers (it is not possible to connect to 0.10.0 brokers though). </li>
@@ -788,7 +872,10 @@
     <li> See <a href="/{{version}}/documentation/streams/upgrade-guide#streams_api_changes_0110">Streams API changes in 0.11.0</a> for more details. </li>
 </ul>
 
-<h5><a id="upgrade_100_streams_from_0101" href="#upgrade_1100_streams_from_0101">Upgrading a 0.10.1 Kafka Streams Application</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_100_streams_from_0101" href="#upgrade_1100_streams_from_0101"></a>
+<a href="#upgrade_1100_streams_from_0101">Upgrading a 0.10.1 Kafka Streams Application
+</a></h5>
 <ul>
     <li> Upgrading your Streams application from 0.10.1 to 1.0 does not require a broker upgrade.
          A Kafka Streams 1.0 application can connect to 1.0, 0.11.0, 0.10.2 and 0.10.1 brokers (it is not possible to connect to 0.10.0 brokers though). </li>
@@ -804,7 +891,10 @@
          <a href="/{{version}}/documentation/streams/upgrade-guide#streams_api_changes_0102">Streams API changes in 0.10.2</a> for more details. </li>
 </ul>
 
-<h5><a id="upgrade_100_streams_from_0100" href="#upgrade_100_streams_from_0100">Upgrading a 0.10.0 Kafka Streams Application</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_100_streams_from_0100" href="#upgrade_100_streams_from_0100"></a>
+<a href="#upgrade_100_streams_from_0100">Upgrading a 0.10.0 Kafka Streams Application
+</a></h5>
 <ul>
     <li> Upgrading your Streams application from 0.10.0 to 1.0 does require a <a href="#upgrade_10_1">broker upgrade</a> because a Kafka Streams 1.0 application can only connect to 0.1, 0.11.0, 0.10.2, or 0.10.1 brokers. </li>
     <li> There are couple of API changes, that are not backward compatible (cf. <a href="/{{version}}/documentation/streams/upgrade-guide#streams_api_changes_100">Streams API changes in 1.0.0</a>,
@@ -832,7 +922,10 @@
     </li>
 </ul>
 
-<h4><a id="upgrade_11_0_0" href="#upgrade_11_0_0">Upgrading from 0.8.x, 0.9.x, 0.10.0.x, 0.10.1.x or 0.10.2.x to 0.11.0.0</a></h4>
+<h4 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_11_0_0" href="#upgrade_11_0_0"></a>
+<a href="#upgrade_11_0_0">Upgrading from 0.8.x</a>, 0.9.x, 0.10.0.x, 0.10.1.x or 0.10.2.x to 0.11.0.0
+</h4>
 <p>Kafka 0.11.0.0 introduces a new message format version as well as wire protocol changes. By following the recommended rolling upgrade plan below,
   you guarantee no downtime during the upgrade. However, please review the <a href="#upgrade_1100_notable">notable changes in 0.11.0.0</a> before upgrading.
 </p>
@@ -877,7 +970,10 @@
     before you switch to 0.11.0.</li>
 </ol>
 
-<h5><a id="upgrade_1100_streams_from_0102" href="#upgrade_1100_streams_from_0102">Upgrading a 0.10.2 Kafka Streams Application</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_1100_streams_from_0102" href="#upgrade_1100_streams_from_0102"></a>
+<a href="#upgrade_1100_streams_from_0102">Upgrading a 0.10.2 Kafka Streams Application
+</a></h5>
 <ul>
     <li> Upgrading your Streams application from 0.10.2 to 0.11.0 does not require a broker upgrade.
          A Kafka Streams 0.11.0 application can connect to 0.11.0, 0.10.2 and 0.10.1 brokers (it is not possible to connect to 0.10.0 brokers though). </li>
@@ -885,7 +981,10 @@
     <li> See <a href="/{{version}}/documentation/streams/upgrade-guide#streams_api_changes_0110">Streams API changes in 0.11.0</a> for more details. </li>
 </ul>
 
-<h5><a id="upgrade_1100_streams_from_0101" href="#upgrade_1100_streams_from_0101">Upgrading a 0.10.1 Kafka Streams Application</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_1100_streams_from_0101" href="#upgrade_1100_streams_from_0101"></a>
+<a href="#upgrade_1100_streams_from_0101">Upgrading a 0.10.1 Kafka Streams Application
+</a></h5>
 <ul>
     <li> Upgrading your Streams application from 0.10.1 to 0.11.0 does not require a broker upgrade.
          A Kafka Streams 0.11.0 application can connect to 0.11.0, 0.10.2 and 0.10.1 brokers (it is not possible to connect to 0.10.0 brokers though). </li>
@@ -897,7 +996,10 @@
          <a href="/{{version}}/documentation/streams/upgrade-guide#streams_api_changes_0102">Streams API changes in 0.10.2</a> for more details. </li>
 </ul>
 
-<h5><a id="upgrade_1100_streams_from_0100" href="#upgrade_1100_streams_from_0100">Upgrading a 0.10.0 Kafka Streams Application</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_1100_streams_from_0100" href="#upgrade_1100_streams_from_0100"></a>
+<a href="#upgrade_1100_streams_from_0100">Upgrading a 0.10.0 Kafka Streams Application
+</a></h5>
 <ul>
     <li> Upgrading your Streams application from 0.10.0 to 0.11.0 does require a <a href="#upgrade_10_1">broker upgrade</a> because a Kafka Streams 0.11.0 application can only connect to 0.11.0, 0.10.2, or 0.10.1 brokers. </li>
     <li> There are couple of API changes, that are not backward compatible (cf. <a href="/{{version}}/documentation/streams#streams_api_changes_0110">Streams API changes in 0.11.0</a>,
@@ -923,13 +1025,19 @@
     </li>
 </ul>
 
-<h5><a id="upgrade_1103_notable" href="#upgrade_1103_notable">Notable changes in 0.11.0.3</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_1103_notable" href="#upgrade_1103_notable"></a>
+<a href="#upgrade_1103_notable">Notable changes in 0.11.0.3
+</a></h5>
 <ul>
 <li> New Kafka Streams configuration parameter <code>upgrade.from</code> added that allows rolling bounce upgrade from version 0.10.0.x </li>
 <li> See the <a href="/{{version}}/documentation/streams/upgrade-guide.html"><b>Kafka Streams upgrade guide</b></a> for details about this new config.
 </ul>
 
-<h5><a id="upgrade_1100_notable" href="#upgrade_1100_notable">Notable changes in 0.11.0.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_1100_notable" href="#upgrade_1100_notable"></a>
+<a href="#upgrade_1100_notable">Notable changes in 0.11.0.0
+</a></h5>
 <ul>
     <li>Unclean leader election is now disabled by default. The new default favors durability over availability. Users who wish to
         to retain the previous behavior should set the broker config <code>unclean.leader.election.enable</code> to <code>true</code>.</li>
@@ -974,7 +1082,10 @@
     </li>
 </ul>
 
-<h5><a id="upgrade_1100_new_protocols" href="#upgrade_1100_new_protocols">New Protocol Versions</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_1100_new_protocols" href="#upgrade_1100_new_protocols"></a>
+<a href="#upgrade_1100_new_protocols">New Protocol Versions
+</a></h5>
 <ul>
     <li> <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-107%3A+Add+purgeDataBefore()+API+in+AdminClient">KIP-107</a>: FetchRequest v5 introduces a partition-level <code>log_start_offset</code> field. </li>
     <li> <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-107%3A+Add+purgeDataBefore()+API+in+AdminClient">KIP-107</a>: FetchResponse v5 introduces a partition-level <code>log_start_offset</code> field. </li>
@@ -982,7 +1093,10 @@
     <li> <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers">KIP-82</a>: FetchResponse v5 introduces an array of <code>header</code> in the message protocol, containing <code>key</code> field and <code>value</code> field.</li>
 </ul>
 
-<h5><a id="upgrade_11_exactly_once_semantics" href="#upgrade_11_exactly_once_semantics">Notes on Exactly Once Semantics</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_11_exactly_once_semantics" href="#upgrade_11_exactly_once_semantics"></a>
+<a href="#upgrade_11_exactly_once_semantics">Notes on Exactly Once Semantics
+</a></h5>
 <p>Kafka 0.11.0 includes support for idempotent and transactional capabilities in the producer. Idempotent delivery
   ensures that messages are delivered exactly once to a particular topic partition during the lifetime of a single producer.
   Transactional delivery allows producers to send data to multiple partitions such that either all messages are successfully
@@ -1005,7 +1119,10 @@
     for the full details</li>
 </ol>
 
-<h5><a id="upgrade_11_message_format" href="#upgrade_11_message_format">Notes on the new message format in 0.11.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_11_message_format" href="#upgrade_11_message_format"></a>
+<a href="#upgrade_11_message_format">Notes on the new message format in 0.11.0
+</a></h5>
 <p>The 0.11.0 message format includes several major enhancements in order to support better delivery semantics for the producer
   (see <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-98+-+Exactly+Once+Delivery+and+Transactional+Messaging">KIP-98</a>)
   and improved replication fault tolerance
@@ -1037,7 +1154,10 @@
   clients first before the brokers.
 </p>
 
-<h4><a id="upgrade_10_2_0" href="#upgrade_10_2_0">Upgrading from 0.8.x, 0.9.x, 0.10.0.x or 0.10.1.x to 0.10.2.0</a></h4>
+<h4 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_10_2_0" href="#upgrade_10_2_0"></a>
+<a href="#upgrade_10_2_0">Upgrading from 0.8.x</a>, 0.9.x, 0.10.0.x or 0.10.1.x to 0.10.2.0
+</h4>
 <p>0.10.2.0 has wire protocol changes. By following the recommended rolling upgrade plan below, you guarantee no downtime during the upgrade.
 However, please review the <a href="#upgrade_1020_notable">notable changes in 0.10.2.0</a> before upgrading.
 </p>
@@ -1069,7 +1189,10 @@ Kafka cluster before upgrading your clients. Version 0.10.2 brokers support 0.8.
 
 <p><b>Note:</b> Bumping the protocol version and restarting can be done any time after the brokers were upgraded. It does not have to be immediately after.
 
-<h5><a id="upgrade_1020_streams_from_0101" href="#upgrade_1020_streams_from_0101">Upgrading a 0.10.1 Kafka Streams Application</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_1020_streams_from_0101" href="#upgrade_1020_streams_from_0101"></a>
+<a href="#upgrade_1020_streams_from_0101">Upgrading a 0.10.1 Kafka Streams Application
+</a></h5>
 <ul>
     <li> Upgrading your Streams application from 0.10.1 to 0.10.2 does not require a broker upgrade.
          A Kafka Streams 0.10.2 application can connect to 0.10.2 and 0.10.1 brokers (it is not possible to connect to 0.10.0 brokers though). </li>
@@ -1079,7 +1202,10 @@ Kafka cluster before upgrading your clients. Version 0.10.2 brokers support 0.8.
     <li> See <a href="/{{version}}/documentation/streams/upgrade-guide#streams_api_changes_0102">Streams API changes in 0.10.2</a> for more details. </li>
 </ul>
 
-<h5><a id="upgrade_1020_streams_from_0100" href="#upgrade_1020_streams_from_0100">Upgrading a 0.10.0 Kafka Streams Application</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_1020_streams_from_0100" href="#upgrade_1020_streams_from_0100"></a>
+<a href="#upgrade_1020_streams_from_0100">Upgrading a 0.10.0 Kafka Streams Application
+</a></h5>
 <ul>
     <li> Upgrading your Streams application from 0.10.0 to 0.10.2 does require a <a href="#upgrade_10_1">broker upgrade</a> because a Kafka Streams 0.10.2 application can only connect to 0.10.2 or 0.10.1 brokers. </li>
     <li> There are couple of API changes, that are not backward compatible (cf. <a href="/{{version}}/documentation/streams#streams_api_changes_0102">Streams API changes in 0.10.2</a> for more details).
@@ -1103,18 +1229,27 @@ Kafka cluster before upgrading your clients. Version 0.10.2 brokers support 0.8.
     </li>
 </ul>
 
-<h5><a id="upgrade_10202_notable" href="#upgrade_10202_notable">Notable changes in 0.10.2.2</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_10202_notable" href="#upgrade_10202_notable"></a>
+<a href="#upgrade_10202_notable">Notable changes in 0.10.2.2
+</a></h5>
 <ul>
 <li> New configuration parameter <code>upgrade.from</code> added that allows rolling bounce upgrade from version 0.10.0.x </li>
 </ul>
 
-<h5><a id="upgrade_10201_notable" href="#upgrade_10201_notable">Notable changes in 0.10.2.1</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_10201_notable" href="#upgrade_10201_notable"></a>
+<a href="#upgrade_10201_notable">Notable changes in 0.10.2.1
+</a></h5>
 <ul>
   <li> The default values for two configurations of the StreamsConfig class were changed to improve the resiliency of Kafka Streams applications. The internal Kafka Streams producer <code>retries</code> default value was changed from 0 to 10. The internal Kafka Streams consumer <code>max.poll.interval.ms</code>  default value was changed from 300000 to <code>Integer.MAX_VALUE</code>.
   </li>
 </ul>
 
-<h5><a id="upgrade_1020_notable" href="#upgrade_1020_notable">Notable changes in 0.10.2.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_1020_notable" href="#upgrade_1020_notable"></a>
+<a href="#upgrade_1020_notable">Notable changes in 0.10.2.0
+</a></h5>
 <ul>
     <li>The Java clients (producer and consumer) have acquired the ability to communicate with older brokers. Version 0.10.2 clients
         can talk to version 0.10.0 or newer brokers. Note that some features are not available or are limited when older brokers
@@ -1134,7 +1269,10 @@ Kafka cluster before upgrading your clients. Version 0.10.2 brokers support 0.8.
         StreamsConfig class. User should pay attention to the default values and set these if needed. For more details please refer to <a href="/{{version}}/documentation/#streamsconfigs">3.5 Kafka Streams Configs</a>.</li>
 </ul>
 
-<h5><a id="upgrade_1020_new_protocols" href="#upgrade_1020_new_protocols">New Protocol Versions</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_1020_new_protocols" href="#upgrade_1020_new_protocols"></a>
+<a href="#upgrade_1020_new_protocols">New Protocol Versions
+</a></h5>
 <ul>
     <li> <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-88%3A+OffsetFetch+Protocol+Update">KIP-88</a>: OffsetFetchRequest v2 supports retrieval of offsets for all topics if the <code>topics</code> array is set to <code>null</code>. </li>
     <li> <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-88%3A+OffsetFetch+Protocol+Update">KIP-88</a>: OffsetFetchResponse v2 introduces a top-level <code>error_code</code> field. </li>
@@ -1143,7 +1281,10 @@ Kafka cluster before upgrading your clients. Version 0.10.2 brokers support 0.8.
     <li> <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-108%3A+Create+Topic+Policy">KIP-108</a>: CreateTopicsResponse v1 introduces an <code>error_message</code> field to the elements of the <code>topic_errors</code> array. </li>
 </ul>
 
-<h4><a id="upgrade_10_1" href="#upgrade_10_1">Upgrading from 0.8.x, 0.9.x or 0.10.0.X to 0.10.1.0</a></h4>
+<h4 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_10_1" href="#upgrade_10_1"></a>
+<a href="#upgrade_10_1">Upgrading from 0.8.x</a>, 0.9.x or 0.10.0.X to 0.10.1.0
+</h4>
 0.10.1.0 has wire protocol changes. By following the recommended rolling upgrade plan below, you guarantee no downtime during the upgrade.
 However, please notice the <a href="#upgrade_10_1_breaking">Potential breaking changes in 0.10.1.0</a> before upgrade.
 <br>
@@ -1173,13 +1314,19 @@ only support 0.10.1.x or later brokers while 0.10.1.x brokers also support older
 <p><b>Note:</b> Bumping the protocol version and restarting can be done any time after the brokers were upgraded. It does not have to be immediately after.
 
 <!-- TODO: add when 0.10.1.2 is released
-<h5><a id="upgrade_1012_notable" href="#upgrade_1012_notable">Notable changes in 0.10.1.2</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_1012_notable" href="#upgrade_1012_notable"></a>
+<a href="#upgrade_1012_notable">Notable changes in 0.10.1.2
+</a></h5>
 <ul>
     <li> New configuration parameter <code>upgrade.from</code> added that allows rolling bounce upgrade from version 0.10.0.x </li>
 </ul>
 -->
 
-<h5><a id="upgrade_10_1_breaking" href="#upgrade_10_1_breaking">Potential breaking changes in 0.10.1.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_10_1_breaking" href="#upgrade_10_1_breaking"></a>
+<a href="#upgrade_10_1_breaking">Potential breaking changes in 0.10.1.0
+</a></h5>
 <ul>
     <li> The log retention time is no longer based on last modified time of the log segments. Instead it will be based on the largest timestamp of the messages in a log segment.</li>
     <li> The log rolling time is no longer depending on log segment create time. Instead it is now based on the timestamp in the messages. More specifically. if the timestamp of the first message in the segment is T, the log will be rolled out when a new message has a timestamp greater than or equal to T + log.roll.ms </li>
@@ -1188,7 +1335,10 @@ only support 0.10.1.x or later brokers while 0.10.1.x brokers also support older
     <li> Due to the increased number of index files, on some brokers with large amount the log segments (e.g. >15K), the log loading process during the broker startup could be longer. Based on our experiment, setting the num.recovery.threads.per.data.dir to one may reduce the log loading time. </li>
 </ul>
 
-<h5><a id="upgrade_1010_streams_from_0100" href="#upgrade_1010_streams_from_0100">Upgrading a 0.10.0 Kafka Streams Application</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_1010_streams_from_0100" href="#upgrade_1010_streams_from_0100"></a>
+<a href="#upgrade_1010_streams_from_0100">Upgrading a 0.10.0 Kafka Streams Application
+</a></h5>
 <ul>
     <li> Upgrading your Streams application from 0.10.0 to 0.10.1 does require a <a href="#upgrade_10_1">broker upgrade</a> because a Kafka Streams 0.10.1 application can only connect to 0.10.1 brokers. </li>
     <li> There are couple of API changes, that are not backward compatible (cf. <a href="/{{version}}/documentation/streams/upgrade-guide#streams_api_changes_0101">Streams API changes in 0.10.1</a> for more details).
@@ -1212,7 +1362,10 @@ only support 0.10.1.x or later brokers while 0.10.1.x brokers also support older
     </li>
 </ul>
 
-<h5><a id="upgrade_1010_notable" href="#upgrade_1010_notable">Notable changes in 0.10.1.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_1010_notable" href="#upgrade_1010_notable"></a>
+<a href="#upgrade_1010_notable">Notable changes in 0.10.1.0
+</a></h5>
 <ul>
     <li> The new Java consumer is no longer in beta and we recommend it for all new development. The old Scala consumers are still supported, but they will be deprecated in the next release
          and will be removed in a future major release. </li>
@@ -1243,7 +1396,10 @@ only support 0.10.1.x or later brokers while 0.10.1.x brokers also support older
          the request is sent to avoid starvation issues. </li>
 </ul>
 
-<h5><a id="upgrade_1010_new_protocols" href="#upgrade_1010_new_protocols">New Protocol Versions</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_1010_new_protocols" href="#upgrade_1010_new_protocols"></a>
+<a href="#upgrade_1010_new_protocols">New Protocol Versions
+</a></h5>
 <ul>
     <li> ListOffsetRequest v1 supports accurate offset search based on timestamps. </li>
     <li> MetadataResponse v2 introduces a new field: "cluster_id". </li>
@@ -1252,7 +1408,10 @@ only support 0.10.1.x or later brokers while 0.10.1.x brokers also support older
     <li> JoinGroup v1 introduces a new field: "rebalance_timeout". </li>
 </ul>
 
-<h4><a id="upgrade_10" href="#upgrade_10">Upgrading from 0.8.x or 0.9.x to 0.10.0.0</a></h4>
+<h4 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_10" href="#upgrade_10"></a>
+<a href="#upgrade_10">Upgrading from 0.8.x or 0.9.x to 0.10.0.0
+</a></h4>
 <p>
 0.10.0.0 has <a href="#upgrade_10_breaking">potential breaking changes</a> (please review before upgrading) and possible <a href="#upgrade_10_performance_impact">  performance impact following the upgrade</a>. By following the recommended rolling upgrade plan below, you guarantee no downtime and no performance impact during and following the upgrade.
 <br>
@@ -1285,7 +1444,10 @@ work with 0.10.0.x brokers. Therefore, 0.9.0.0 clients should be upgraded to 0.9
 
 <p><b>Note:</b> Bumping the protocol version and restarting can be done any time after the brokers were upgraded. It does not have to be immediately after.
 
-<h5><a id="upgrade_10_performance_impact" href="#upgrade_10_performance_impact">Potential performance impact following upgrade to 0.10.0.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_10_performance_impact" href="#upgrade_10_performance_impact"></a>
+<a href="#upgrade_10_performance_impact">Potential performance impact following upgrade to 0.10.0.0
+</a></h5>
 <p>
     The message format in 0.10.0 includes a new timestamp field and uses relative offsets for compressed messages.
     The on disk message format can be configured through log.message.format.version in the server.properties file.
@@ -1326,7 +1488,10 @@ work with 0.10.0.x brokers. Therefore, 0.9.0.0 clients should be upgraded to 0.9
 
 </p>
 
-<h5><a id="upgrade_10_breaking" href="#upgrade_10_breaking">Potential breaking changes in 0.10.0.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_10_breaking" href="#upgrade_10_breaking"></a>
+<a href="#upgrade_10_breaking">Potential breaking changes in 0.10.0.0
+</a></h5>
 <ul>
     <li> Starting from Kafka 0.10.0.0, the message format version in Kafka is represented as the Kafka version. For example, message format 0.9.0 refers to the highest message version supported by Kafka 0.9.0. </li>
     <li> Message format 0.10.0 has been introduced and it is used by default. It includes a timestamp field in the messages and relative offsets are used for compressed messages. </li>
@@ -1348,7 +1513,10 @@ work with 0.10.0.x brokers. Therefore, 0.9.0.0 clients should be upgraded to 0.9
          should use interoperable LZ4f framing. A list of interoperable LZ4 libraries is available at http://www.lz4.org/
 </ul>
 
-<h5><a id="upgrade_10_notable" href="#upgrade_10_notable">Notable changes in 0.10.0.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_10_notable" href="#upgrade_10_notable"></a>
+<a href="#upgrade_10_notable">Notable changes in 0.10.0.0
+</a></h5>
 
 <ul>
     <li> Starting from Kafka 0.10.0.0, a new client library named <b>Kafka Streams</b> is available for stream processing on data stored in Kafka topics. This new client library only works with 0.10.x and upward versioned brokers due to message format changes mentioned above. For more information please read <a href="/{{version}}/documentation/streams">Streams documentation</a>.</li>
@@ -1358,7 +1526,10 @@ work with 0.10.0.x brokers. Therefore, 0.9.0.0 clients should be upgraded to 0.9
     <li> The new consumer API has been marked stable. </li>
 </ul>
 
-<h4><a id="upgrade_9" href="#upgrade_9">Upgrading from 0.8.0, 0.8.1.X, or 0.8.2.X to 0.9.0.0</a></h4>
+<h4 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_9" href="#upgrade_9"></a>
+<a href="#upgrade_9">Upgrading from 0.8.0</a>, 0.8.1.X, or 0.8.2.X to 0.9.0.0
+</h4>
 
 0.9.0.0 has <a href="#upgrade_9_breaking">potential breaking changes</a> (please review before upgrading) and an inter-broker protocol change from previous versions. This means that upgraded brokers and clients may not be compatible with older versions. It is important that you upgrade your Kafka cluster before upgrading your clients. If you are using MirrorMaker downstream clusters should be upgraded first as well.
 
@@ -1375,7 +1546,10 @@ work with 0.10.0.x brokers. Therefore, 0.9.0.0 clients should be upgraded to 0.9
 
 <p><b>Note:</b> Bumping the protocol version and restarting can be done any time after the brokers were upgraded. It does not have to be immediately after.
 
-<h5><a id="upgrade_9_breaking" href="#upgrade_9_breaking">Potential breaking changes in 0.9.0.0</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_9_breaking" href="#upgrade_9_breaking"></a>
+<a href="#upgrade_9_breaking">Potential breaking changes in 0.9.0.0
+</a></h5>
 
 <ul>
     <li> Java 1.6 is no longer supported. </li>
@@ -1393,7 +1567,10 @@ work with 0.10.0.x brokers. Therefore, 0.9.0.0 clients should be upgraded to 0.9
     <li> By default, all command line tools will print all logging messages to stderr instead of stdout. </li>
 </ul>
 
-<h5><a id="upgrade_901_notable" href="#upgrade_901_notable">Notable changes in 0.9.0.1</a></h5>
+<h5 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_901_notable" href="#upgrade_901_notable"></a>
+<a href="#upgrade_901_notable">Notable changes in 0.9.0.1
+</a></h5>
 
 <ul>
     <li> The new broker id generation feature can be disabled by setting broker.id.generation.enable to false. </li>
@@ -1410,15 +1587,24 @@ work with 0.10.0.x brokers. Therefore, 0.9.0.0 clients should be upgraded to 0.9
     <li> The producer config block.on.buffer.full has been deprecated and will be removed in future release. Currently its default value has been changed to false. The KafkaProducer will no longer throw BufferExhaustedException but instead will use max.block.ms value to block, after which it will throw a TimeoutException. If block.on.buffer.full property is set to true explicitly, it will set the max.block.ms to Long.MAX_VALUE and metadata.fetch.timeout.ms will not be honoured</li>
 </ul>
 
-<h4><a id="upgrade_82" href="#upgrade_82">Upgrading from 0.8.1 to 0.8.2</a></h4>
+<h4 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_82" href="#upgrade_82"></a>
+<a href="#upgrade_82">Upgrading from 0.8.1 to 0.8.2
+</a></h4>
 
 0.8.2 is fully compatible with 0.8.1. The upgrade can be done one broker at a time by simply bringing it down, updating the code, and restarting it.
 
-<h4><a id="upgrade_81" href="#upgrade_81">Upgrading from 0.8.0 to 0.8.1</a></h4>
+<h4 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_81" href="#upgrade_81"></a>
+<a href="#upgrade_81">Upgrading from 0.8.0 to 0.8.1
+</a></h4>
 
 0.8.1 is fully compatible with 0.8. The upgrade can be done one broker at a time by simply bringing it down, updating the code, and restarting it.
 
-<h4><a id="upgrade_7" href="#upgrade_7">Upgrading from 0.7</a></h4>
+<h4 class="anchor-heading">
+    <a class="anchor-link" id="upgrade_7" href="#upgrade_7"></a>
+<a href="#upgrade_7">Upgrading from 0.7
+</a></h4>
 
 Release 0.7 is incompatible with newer releases. Major changes were made to the API, ZooKeeper data structures, and protocol, and configuration in order to add replication (Which was missing in 0.7). The upgrade from 0.7 to later versions requires a <a href="https://cwiki.apache.org/confluence/display/KAFKA/Migrating+from+0.7+to+0.8">special tool</a> for migration. This migration can be done without downtime.
 

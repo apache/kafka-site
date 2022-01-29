@@ -121,13 +121,13 @@ public interface <span class="typeNameLabel">GlobalKTable&lt;K,V&gt;</span></pre
  <a href="../../../../../org/apache/kafka/streams/KeyValue.html" title="class in org.apache.kafka.streams"><code>KeyValue</code></a> of the left hand side <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a> to the key of the right hand side <code>GlobalKTable</code>.
  <p>
  A <code>GlobalKTable</code> is created via a <a href="../../../../../org/apache/kafka/streams/StreamsBuilder.html" title="class in org.apache.kafka.streams"><code>StreamsBuilder</code></a>. For example:
- <pre><code>
+ <pre class="line-numbers"><code>
  builder.globalTable("topic-name", "queryable-store-name");
  </code></pre>
  all <code>GlobalKTable</code>s are backed by a <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>ReadOnlyKeyValueStore</code></a> and are therefore queryable via the
  interactive queries API.
  For example:
- <pre><code>
+ <pre class="line-numbers"><code>
  final GlobalKTable globalOne = builder.globalTable("g1", "g1-store");
  final GlobalKTable globalTwo = builder.globalTable("g2", "g2-store");
  ...

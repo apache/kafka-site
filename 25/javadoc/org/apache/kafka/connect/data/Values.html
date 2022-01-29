@@ -118,8 +118,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  class to convert the value to the desired type:
  <pre>
      Header header = ...
-     long value = Values.convertToLong(header.schema(), header.value());
- </pre>
+     long value = Values.convertToLong(header.schema(), header.value());</pre>
 
  <p>This class is able to convert any value to a string representation as well as parse those string representations back into most of
  the types. The only exception is <a href="../../../../../org/apache/kafka/connect/data/Struct.html" title="class in org.apache.kafka.connect.data"><code>Struct</code></a> values that require a schema and thus cannot be parsed from a simple string.</div>

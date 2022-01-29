@@ -126,8 +126,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  |    A      |     2       |     12     |
  +-----------+-------------+------------+
  |    A      |     3       |     20     |
- +-----------+-------------+------------+
- </pre>
+ +-----------+-------------+------------+</pre>
  We'd have 2 sessions for key A.
  One starting from time 10 and ending at time 12 and another starting and ending at time 20.
  The length of the session is driven by the timestamps of the data within the session.
@@ -139,8 +138,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  |    key    |    value    |    time    |
  +-----------+-------------+------------+
  |    A      |     4       |     16     |
- +-----------+-------------+------------+
- </pre>
+ +-----------+-------------+------------+</pre>
  The previous 2 sessions would be merged into a single session with start time 10 and end time 20.
  The aggregate value for this session would be the result of aggregating all 4 values.
  <p>

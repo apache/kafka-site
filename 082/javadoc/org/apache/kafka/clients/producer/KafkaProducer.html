@@ -337,13 +337,13 @@ public java.util.concurrent.Future&lt;<A HREF="../../../../../org/apache/kafka/c
  <p>
  If you want to simulate a simple blocking call you can do the following:
 
- <pre><code>producer.send(new ProducerRecord&lt;byte[],byte[]&gt;("the-topic", "key".getBytes(), "value".getBytes())).get();
+ <pre class="line-numbers"><code>producer.send(new ProducerRecord&lt;byte[],byte[]&gt;("the-topic", "key".getBytes(), "value".getBytes())).get();
  </code></pre>
  <p>
  Those desiring fully non-blocking usage can make use of the <A HREF="../../../../../org/apache/kafka/clients/producer/Callback.html" title="interface in org.apache.kafka.clients.producer"><CODE>Callback</CODE></A> parameter to provide a callback that
  will be invoked when the request is complete.
 
- <pre><code>ProducerRecord&lt;byte[],byte[]&gt; record = new ProducerRecord&lt;byte[],byte[]&gt;("the-topic", "key".getBytes(), "value".getBytes());
+ <pre class="line-numbers"><code>ProducerRecord&lt;byte[],byte[]&gt; record = new ProducerRecord&lt;byte[],byte[]&gt;("the-topic", "key".getBytes(), "value".getBytes());
    producer.send(myRecord,
                 new Callback() {
                      public void onCompletion(RecordMetadata metadata, Exception e) {
@@ -357,7 +357,7 @@ public java.util.concurrent.Future&lt;<A HREF="../../../../../org/apache/kafka/c
  Callbacks for records being sent to the same partition are guaranteed to execute in order. That is, in the
  following example <code>callback1</code> is guaranteed to execute before <code>callback2</code>:
 
- <pre><code>producer.send(new ProducerRecord&lt;byte[],byte[]&gt;(topic, partition, key1, value1), callback1);
+ <pre class="line-numbers"><code>producer.send(new ProducerRecord&lt;byte[],byte[]&gt;(topic, partition, key1, value1), callback1);
  producer.send(new ProducerRecord&lt;byte[],byte[]&gt;(topic, partition, key2, value2), callback2);
  </code></pre>
  <p>

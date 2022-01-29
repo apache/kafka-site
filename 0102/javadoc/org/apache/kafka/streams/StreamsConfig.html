@@ -108,7 +108,7 @@ extends <a href="../../../../org/apache/kafka/common/config/AbstractConfig.html"
  <a href="../../../../org/apache/kafka/streams/StreamsConfig.html#consumerPrefix(java.lang.String)"><code>consumerPrefix(String)</code></a> and <a href="../../../../org/apache/kafka/streams/StreamsConfig.html#producerPrefix(java.lang.String)"><code>producerPrefix(String)</code></a>, respectively.
  <p>
  Example:
- <pre><code>// potentially wrong: sets "metadata.max.age.ms" to 1 minute for producer AND consumer
+ <pre class="line-numbers"><code>// potentially wrong: sets "metadata.max.age.ms" to 1 minute for producer AND consumer
  Properties streamsProperties = new Properties();
  streamsProperties.put(ConsumerConfig.METADATA_MAX_AGE_CONFIG, 60000);
  // or

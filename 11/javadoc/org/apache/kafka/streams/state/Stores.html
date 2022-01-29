@@ -143,7 +143,7 @@ extends java.lang.Object</pre>
  <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a>.
  For example, a topic read as <a href="../../../../../org/apache/kafka/streams/kstream/KTable.html" title="interface in org.apache.kafka.streams.kstream"><code>KTable</code></a> can be materialized into an
  in-memory store with custom key/value serdes and caching disabled:
- <pre><code>
+ <pre class="line-numbers"><code>
  StreamsBuilder builder = new StreamsBuilder();
  KeyValueBytesStoreSupplier storeSupplier = Stores.inMemoryKeyValueStore("queryable-store-name");
  KTable&lt;Long,String&gt; table = builder.table(
@@ -157,7 +157,7 @@ extends java.lang.Object</pre>
  <a href="../../../../../org/apache/kafka/streams/state/StoreBuilder.html" title="interface in org.apache.kafka.streams.state"><code>StoreBuilder</code></a>s that can be attached to <a href="../../../../../org/apache/kafka/streams/processor/Processor.html" title="interface in org.apache.kafka.streams.processor"><code>Processor</code></a>s.
  For example, you can create a <a href="../../../../../org/apache/kafka/streams/kstream/Windowed.html" title="class in org.apache.kafka.streams.kstream"><code>windowed</code></a> RocksDB store with custom
  changelog topic configuration like:
- <pre><code>
+ <pre class="line-numbers"><code>
  Topology topology = new Topology();
  topology.addProcessor("processorName", ...);
 

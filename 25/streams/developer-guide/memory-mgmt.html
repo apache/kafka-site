@@ -32,7 +32,7 @@
   </div>
 
   <div class="section" id="memory-management">
-    <span id="streams-developer-guide-memory-management"></span><h1>Memory Management<a class="headerlink" href="#memory-management" title="Permalink to this headline"></a></h1>
+    <span id="streams-developer-guide-memory-management"></span><h1 class="docs-title">Memory Management<a class="headerlink" href="#memory-management" title="Permalink to this headline"></a></h1>
     <p>You can specify the total memory (RAM) size used for internal caching and compacting of records. This caching happens
       before the records are written to state stores or forwarded downstream to other nodes.</p>
     <p>The record caches are implemented slightly different in the DSL and Processor API.</p>
@@ -82,8 +82,7 @@
         processing topology:</p>
       <div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// Enable record cache of size 10 MB.</span>
 <span class="n">Properties</span> <span class="n">props</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Properties</span><span class="o">();</span>
-<span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">StreamsConfig</span><span class="o">.</span><span class="na">CACHE_MAX_BYTES_BUFFERING_CONFIG</span><span class="o">,</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024L</span><span class="o">);</span>
-</pre></div>
+<span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">StreamsConfig</span><span class="o">.</span><span class="na">CACHE_MAX_BYTES_BUFFERING_CONFIG</span><span class="o">,</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024L</span><span class="o">);</span></pre></div>
       </div>
       <p>This parameter controls the number of bytes allocated for caching. Specifically, for a processor topology instance with
         <code class="docutils literal"><span class="pre">T</span></code> threads and <code class="docutils literal"><span class="pre">C</span></code> bytes allocated for caching, each thread will have an even <code class="docutils literal"><span class="pre">C/T</span></code> bytes to construct its own
@@ -94,7 +93,7 @@
         finishes processing at a node, it is marked as dirty in the cache.  Any other keyed record <code class="docutils literal"><span class="pre">R2</span> <span class="pre">=</span> <span class="pre">&lt;K1,</span> <span class="pre">V2&gt;</span></code> with the
         same key <code class="docutils literal"><span class="pre">K1</span></code> that is processed on that node during that time will overwrite <code class="docutils literal"><span class="pre">&lt;K1,</span> <span class="pre">V1&gt;</span></code>, this is referred to as
         &#8220;being compacted&#8221;.  This has the same effect as
-        <a class="reference external" href="https://kafka.apache.org/documentation.html#compaction">Kafka&#8217;s log compaction</a>, but happens earlier, while the
+        <a class="reference external" href="/documentation.html#compaction">Kafka&#8217;s log compaction</a>, but happens earlier, while the
         records are still in memory, and within your client-side application, rather than on the server-side (i.e. the Kafka
         broker).  After flushing, <code class="docutils literal"><span class="pre">R2</span></code> is forwarded to the next processing node and then written to the local state store.</p>
       <p>The semantics of caching is that data is flushed to the state store and forwarded to the next downstream processor node
@@ -107,8 +106,7 @@
           <blockquote>
             <div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// Disable record cache</span>
 <span class="n">Properties</span> <span class="n">props</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Properties</span><span class="o">();</span>
-<span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">StreamsConfig</span><span class="o">.</span><span class="na">CACHE_MAX_BYTES_BUFFERING_CONFIG</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
-</pre></div>
+<span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">StreamsConfig</span><span class="o">.</span><span class="na">CACHE_MAX_BYTES_BUFFERING_CONFIG</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span></pre></div>
             </div>
               <p>Turning off caching might result in high write traffic for the underlying RocksDB store.
                 With default settings caching is enabled within Kafka Streams but RocksDB caching is disabled.
@@ -123,8 +121,7 @@
 <span class="c1">// Enable record cache of size 10 MB.</span>
 <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">StreamsConfig</span><span class="o">.</span><span class="na">CACHE_MAX_BYTES_BUFFERING_CONFIG</span><span class="o">,</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024L</span><span class="o">);</span>
 <span class="c1">// Set commit interval to 1 second.</span>
-<span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">StreamsConfig</span><span class="o">.</span><span class="na">COMMIT_INTERVAL_MS_CONFIG</span><span class="o">,</span> <span class="mi">1000</span><span class="o">);</span>
-</pre></div>
+<span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">StreamsConfig</span><span class="o">.</span><span class="na">COMMIT_INTERVAL_MS_CONFIG</span><span class="o">,</span> <span class="mi">1000</span><span class="o">);</span></pre></div>
             </div>
             </div></blockquote>
         </li>
@@ -164,8 +161,7 @@
     <span class="n">Stores</span><span class="o">.</span><span class="na">persistentKeyValueStore</span><span class="o">(</span><span class="s">&quot;Counts&quot;</span><span class="o">),</span>
     <span class="n">Serdes</span><span class="o">.</span><span class="na">String</span><span class="o">(),</span>
     <span class="n">Serdes</span><span class="o">.</span><span class="na">Long</span><span class="o">())</span>
-  <span class="o">.</span><span class="na">withCachingEnabled</span><span class="o">()</span>
-</pre></div>
+  <span class="o">.</span><span class="na">withCachingEnabled</span><span class="o">()</span></pre></div>
       </div>
     </div>
     <div class="section" id="rocksdb">
@@ -249,8 +245,9 @@
 </script>
 
 <!--#include virtual="../../../includes/_header.htm" -->
+<body class="page-streams-memory-management">
 <!--#include virtual="../../../includes/_top.htm" -->
-<div class="content documentation documentation--current">
+<div class="content documentation ">
   <!--#include virtual="../../../includes/_nav.htm" -->
   <div class="right">
     <!--#include virtual="../../../includes/_docs_banner.htm" -->

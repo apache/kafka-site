@@ -124,7 +124,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
  <a href="../../../../../../org/apache/kafka/common/security/auth/AuthenticateCallbackHandler.html" title="interface in org.apache.kafka.common.security.auth"><code>AuthenticateCallbackHandler</code></a> implementation creates an unsecured token
  as defined by these JAAS module options:
  <p>
- <table>
+ <table class="data-table">
  <tr>
  <th>JAAS Module Option for Unsecured Token Retrieval</th>
  <th>Documentation</th>
@@ -201,8 +201,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
  KafkaClient {
       org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule Required
       unsecuredLoginStringClaim_sub="thePrincipalName";
- };
- </pre>
+ };</pre>
 
  An implementation of the <a href="../../../../../../org/apache/kafka/common/security/auth/Login.html" title="interface in org.apache.kafka.common.security.auth"><code>Login</code></a> interface specific to the
  <code>OAUTHBEARER</code> mechanism is automatically applied; it periodically
@@ -212,7 +211,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
  and are as follows. See the documentation for these properties elsewhere for
  details.
  <p>
- <table>
+ <table class="data-table">
  <tr>
  <th>Producer/Consumer/Broker Configuration Property</th>
  </tr>
@@ -239,7 +238,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
  <a href="../../../../../../org/apache/kafka/common/security/auth/AuthenticateCallbackHandler.html" title="interface in org.apache.kafka.common.security.auth"><code>AuthenticateCallbackHandler</code></a> implementation validates an unsecured
  token as defined by these JAAS module options:
  <p>
- <table>
+ <table class="data-table">
  <tr>
  <th>JAAS Module Option for Unsecured Token Validation</th>
  <th>Documentation</th>
@@ -276,8 +275,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/aut
  KafkaServer {
       org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule Required
       unsecuredLoginStringClaim_sub="thePrincipalName";
- };
- </pre>
+ };</pre>
 
  Production use cases will require writing an implementation of
  <a href="../../../../../../org/apache/kafka/common/security/auth/AuthenticateCallbackHandler.html" title="interface in org.apache.kafka.common.security.auth"><code>AuthenticateCallbackHandler</code></a> that can handle an instance of

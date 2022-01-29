@@ -22,7 +22,7 @@
     <div class="right">
         <h1>Kafka protocol guide</h1>
 
-<p>This document covers the wire protocol implemented in Kafka. It is meant to give a readable guide to the protocol that covers the available requests, their binary format, and the proper way to make use of them to implement a client. This document assumes you understand the basic design and terminology described <a href="https://kafka.apache.org/documentation.html#design">here</a></p>
+<p>This document covers the wire protocol implemented in Kafka. It is meant to give a readable guide to the protocol that covers the available requests, their binary format, and the proper way to make use of them to implement a client. This document assumes you understand the basic design and terminology described <a href="/documentation.html#design">here</a></p>
 
 <ul class="toc">
     <li><a href="#protocol_preliminaries">Preliminaries</a>
@@ -183,10 +183,10 @@ Kafka request. SASL/GSSAPI authentication is performed starting with this packet
 
 <p>All requests and responses originate from the following grammar which will be incrementally describe through the rest of this document:</p>
 
-<pre>
+<pre class="line-numbers"><code class="language-java">
 RequestOrResponse => Size (RequestMessage | ResponseMessage)
 Size => int32
-</pre>
+</code></pre>
 
 <table class="data-table"><tbody>
 <tr><th>Field</th><th>Description</th></tr>

@@ -250,8 +250,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
          ConsumerRecords&lt;String, String&gt; records = consumer.poll(Duration.ofMillis(100));
          for (ConsumerRecord&lt;String, String&gt; record : records)
              System.out.printf(&quot;offset = %d, key = %s, value = %s%n&quot;, record.offset(), record.key(), record.value());
-     }
- </pre>
+     }</pre>
 
  The connection to the cluster is bootstrapped by specifying a list of one or more brokers to contact using the
  configuration <code>&gt;bootstrap.servers</code>. This list is just used to discover the rest of the brokers in the
@@ -295,8 +294,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
              consumer.commitSync();
              buffer.clear();
          }
-     }
- </pre>
+     }</pre>
 
  In this example we will consume a batch of records and batch them up in memory. When we have enough records
  batched, we will insert them into a database. If we allowed offsets to auto commit as in the previous example, records
@@ -337,8 +335,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
          }
      } finally {
        consumer.close();
-     }
- </pre>
+     }</pre>
 
  <b>Note: The committed offset should always be the offset of the next message that your application will read.</b>
  Thus, when calling <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#commitSync-java.util.Map-"><code>commitSync(offsets)</code></a> you should add one to the offset of the last message processed.
@@ -365,8 +362,7 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
      String topic = &quot;foo&quot;;
      TopicPartition partition0 = new TopicPartition(topic, 0);
      TopicPartition partition1 = new TopicPartition(topic, 1);
-     consumer.assign(Arrays.asList(partition0, partition1));
- </pre>
+     consumer.assign(Arrays.asList(partition0, partition1));</pre>
 
  Once assigned, you can call <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#poll-java.time.Duration-"><code>poll</code></a> in a loop, just as in the preceding examples to consume
  records. The group that the consumer specifies is still used for committing offsets, but now the set of partitions
@@ -531,16 +527,14 @@ implements <a href="../../../../../org/apache/kafka/clients/consumer/Consumer.ht
          closed.set(true);
          consumer.wakeup();
      }
- }
- </pre>
+ }</pre>
 
  Then in a separate thread, the consumer can be shutdown by setting the closed flag and waking up the consumer.
 
  <p>
  <pre>
      closed.set(true);
-     consumer.wakeup();
- </pre>
+     consumer.wakeup();</pre>
 
  <p>
  Note that while it is possible to use thread interrupts instead of <a href="../../../../../org/apache/kafka/clients/consumer/KafkaConsumer.html#wakeup--"><code>wakeup()</code></a> to abort a blocking operation

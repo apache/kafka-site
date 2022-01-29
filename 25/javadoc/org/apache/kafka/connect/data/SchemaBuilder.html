@@ -128,16 +128,14 @@ implements <a href="../../../../../org/apache/kafka/connect/data/Schema.html" ti
          .field("month", Schema.STRING_SCHEMA)
          .field("day", Schema.INT8_SCHEMA)
          .field("year", Schema.INT16_SCHEMA)
-         .build();
-     </pre>
+         .build();</pre>
  </p>
  <p>
      Here is an example of using a second SchemaBuilder to construct complex, nested types:
      <pre>
      Schema userListSchema = SchemaBuilder.array(
          SchemaBuilder.struct().name("com.example.User").field("username", Schema.STRING_SCHEMA).field("id", Schema.INT64_SCHEMA).build()
-     ).build();
-     </pre>
+     ).build();</pre>
  </p></div>
 </li>
 </ul>

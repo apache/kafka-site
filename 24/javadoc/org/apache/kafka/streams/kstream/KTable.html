@@ -119,7 +119,7 @@ var activeTableTab = "activeTableTab";
  Some <code>KTable</code>s have an internal state (a <a href="../../../../../org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>ReadOnlyKeyValueStore</code></a>) and are therefore queryable via the
  interactive queries API.
  For example:
- <pre><code>
+ <pre class="line-numbers"><code>
      final KTable table = ...
      ...
      final KafkaStreams streams = ...;
@@ -683,7 +683,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-java.lang.String-org.apache.kafka.streams.state.QueryableStoreType-"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // filtering words
  ReadOnlyKeyValueStore&lt;K,V&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;K, V&gt;keyValueStore());
  K key = "some-word";
@@ -731,7 +731,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-java.lang.String-org.apache.kafka.streams.state.QueryableStoreType-"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // filtering words
  ReadOnlyKeyValueStore&lt;K,V&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;K, V&gt;keyValueStore());
  K key = "some-word";
@@ -841,7 +841,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-java.lang.String-org.apache.kafka.streams.state.QueryableStoreType-"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // filtering words
  ReadOnlyKeyValueStore&lt;K,V&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;K, V&gt;keyValueStore());
  K key = "some-word";
@@ -889,7 +889,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-java.lang.String-org.apache.kafka.streams.state.QueryableStoreType-"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // filtering words
  ReadOnlyKeyValueStore&lt;K,V&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;K, V&gt;keyValueStore());
  K key = "some-word";
@@ -927,7 +927,7 @@ var activeTableTab = "activeTableTab";
  This is a stateless record-by-record operation.
  <p>
  The example below counts the number of token of the value string.
- <pre><code>
+ <pre class="line-numbers"><code>
  KTable&lt;String, String&gt; inputTable = builder.table("topic");
  KTable&lt;String, Integer&gt; outputTable = inputTable.mapValues(value -&gt; value.split(" ").length);
  </code></pre>
@@ -966,7 +966,7 @@ var activeTableTab = "activeTableTab";
  This is a stateless record-by-record operation.
  <p>
  The example below counts the number of token of the value string.
- <pre><code>
+ <pre class="line-numbers"><code>
  KTable&lt;String, String&gt; inputTable = builder.table("topic");
  KTable&lt;String, Integer&gt; outputTable = inputTable.mapValues(value -&gt; value.split(" ").length, Named.as("countTokenValue"));
  </code></pre>
@@ -1005,7 +1005,7 @@ var activeTableTab = "activeTableTab";
  This is a stateless record-by-record operation.
  <p>
  The example below counts the number of token of value and key strings.
- <pre><code>
+ <pre class="line-numbers"><code>
  KTable&lt;String, String&gt; inputTable = builder.table("topic");
  KTable&lt;String, Integer&gt; outputTable =
   inputTable.mapValues((readOnlyKey, value) -&gt; readOnlyKey.split(" ").length + value.split(" ").length);
@@ -1046,7 +1046,7 @@ var activeTableTab = "activeTableTab";
  This is a stateless record-by-record operation.
  <p>
  The example below counts the number of token of value and key strings.
- <pre><code>
+ <pre class="line-numbers"><code>
  KTable&lt;String, String&gt; inputTable = builder.table("topic");
  KTable&lt;String, Integer&gt; outputTable =
   inputTable.mapValues((readOnlyKey, value) -&gt; readOnlyKey.split(" ").length + value.split(" ").length, Named.as("countTokenValueAndKey"));
@@ -1090,7 +1090,7 @@ var activeTableTab = "activeTableTab";
  This is a stateless record-by-record operation.
  <p>
  The example below counts the number of token of the value string.
- <pre><code>
+ <pre class="line-numbers"><code>
  KTable&lt;String, String&gt; inputTable = builder.table("topic");
  KTable&lt;String, Integer&gt; outputTable = inputTable.mapValue(new ValueMapper&lt;String, Integer&gt; {
      Integer apply(String value) {
@@ -1144,7 +1144,7 @@ var activeTableTab = "activeTableTab";
  This is a stateless record-by-record operation.
  <p>
  The example below counts the number of token of the value string.
- <pre><code>
+ <pre class="line-numbers"><code>
  KTable&lt;String, String&gt; inputTable = builder.table("topic");
  KTable&lt;String, Integer&gt; outputTable = inputTable.mapValue(new ValueMapper&lt;String, Integer&gt; {
      Integer apply(String value) {
@@ -1198,7 +1198,7 @@ var activeTableTab = "activeTableTab";
  This is a stateless record-by-record operation.
  <p>
  The example below counts the number of token of value and key strings.
- <pre><code>
+ <pre class="line-numbers"><code>
  KTable&lt;String, String&gt; inputTable = builder.table("topic");
  KTable&lt;String, Integer&gt; outputTable = inputTable.mapValue(new ValueMapperWithKey&lt;String, String, Integer&gt; {
      Integer apply(String readOnlyKey, String value) {
@@ -1253,7 +1253,7 @@ var activeTableTab = "activeTableTab";
  This is a stateless record-by-record operation.
  <p>
  The example below counts the number of token of value and key strings.
- <pre><code>
+ <pre class="line-numbers"><code>
  KTable&lt;String, String&gt; inputTable = builder.table("topic");
  KTable&lt;String, Integer&gt; outputTable = inputTable.mapValue(new ValueMapperWithKey&lt;String, String, Integer&gt; {
      Integer apply(String readOnlyKey, String value) {
@@ -1336,7 +1336,7 @@ var activeTableTab = "activeTableTab";
 <div class="block">Convert this changelog stream to a <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a> using the given <a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream"><code>KeyValueMapper</code></a> to select the new key.
  <p>
  For example, you can compute the new key as the length of the value string.
- <pre><code>
+ <pre class="line-numbers"><code>
  KTable&lt;String, String&gt; table = builder.table("topic");
  KTable&lt;Integer, String&gt; keyedStream = table.toStream(new KeyValueMapper&lt;String, String, Integer&gt; {
      Integer apply(String key, String value) {
@@ -1373,7 +1373,7 @@ var activeTableTab = "activeTableTab";
 <div class="block">Convert this changelog stream to a <a href="../../../../../org/apache/kafka/streams/kstream/KStream.html" title="interface in org.apache.kafka.streams.kstream"><code>KStream</code></a> using the given <a href="../../../../../org/apache/kafka/streams/kstream/KeyValueMapper.html" title="interface in org.apache.kafka.streams.kstream"><code>KeyValueMapper</code></a> to select the new key.
  <p>
  For example, you can compute the new key as the length of the value string.
- <pre><code>
+ <pre class="line-numbers"><code>
  KTable&lt;String, String&gt; table = builder.table("topic");
  KTable&lt;Integer, String&gt; keyedStream = table.toStream(new KeyValueMapper&lt;String, String, Integer&gt; {
      Integer apply(String key, String value) {
@@ -1442,7 +1442,7 @@ var activeTableTab = "activeTableTab";
  such concerns are handled for you.
  <p>
  In order to assign a state, the state must be created and registered beforehand:
- <pre><code>
+ <pre class="line-numbers"><code>
  // create store
  StoreBuilder&lt;KeyValueStore&lt;String,String&gt;&gt; keyValueStoreBuilder =
          Stores.keyValueStoreBuilder(Stores.persistentKeyValueStore("myValueTransformState"),
@@ -1458,7 +1458,7 @@ var activeTableTab = "activeTableTab";
  <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor"><code>ProcessorContext</code></a>.
  To trigger periodic actions via <a href="../../../../../org/apache/kafka/streams/processor/Punctuator.html#punctuate-long-"><code>punctuate()</code></a>,
  a schedule must be registered.
- <pre><code>
+ <pre class="line-numbers"><code>
  new ValueTransformerWithKeySupplier() {
      ValueTransformerWithKey get() {
          return new ValueTransformerWithKey() {
@@ -1526,7 +1526,7 @@ var activeTableTab = "activeTableTab";
  such concerns are handled for you.
  <p>
  In order to assign a state, the state must be created and registered beforehand:
- <pre><code>
+ <pre class="line-numbers"><code>
  // create store
  StoreBuilder&lt;KeyValueStore&lt;String,String&gt;&gt; keyValueStoreBuilder =
          Stores.keyValueStoreBuilder(Stores.persistentKeyValueStore("myValueTransformState"),
@@ -1542,7 +1542,7 @@ var activeTableTab = "activeTableTab";
  <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor"><code>ProcessorContext</code></a>.
  To trigger periodic actions via <a href="../../../../../org/apache/kafka/streams/processor/Punctuator.html#punctuate-long-"><code>punctuate()</code></a>,
  a schedule must be registered.
- <pre><code>
+ <pre class="line-numbers"><code>
  new ValueTransformerWithKeySupplier() {
      ValueTransformerWithKey get() {
          return new ValueTransformerWithKey() {
@@ -1608,7 +1608,7 @@ var activeTableTab = "activeTableTab";
  as specified by the user via <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a> parameter, and is queryable through its given name.
  <p>
  In order to assign a state, the state must be created and registered beforehand:
- <pre><code>
+ <pre class="line-numbers"><code>
  // create store
  StoreBuilder&lt;KeyValueStore&lt;String,String&gt;&gt; keyValueStoreBuilder =
          Stores.keyValueStoreBuilder(Stores.persistentKeyValueStore("myValueTransformState"),
@@ -1629,7 +1629,7 @@ var activeTableTab = "activeTableTab";
  <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor"><code>ProcessorContext</code></a>.
  To trigger periodic actions via <a href="../../../../../org/apache/kafka/streams/processor/Punctuator.html#punctuate-long-"><code>punctuate()</code></a>,
  a schedule must be registered.
- <pre><code>
+ <pre class="line-numbers"><code>
  new ValueTransformerWithKeySupplier() {
      ValueTransformerWithKey get() {
          return new ValueTransformerWithKey() {
@@ -1698,7 +1698,7 @@ var activeTableTab = "activeTableTab";
  as specified by the user via <a href="../../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a> parameter, and is queryable through its given name.
  <p>
  In order to assign a state, the state must be created and registered beforehand:
- <pre><code>
+ <pre class="line-numbers"><code>
  // create store
  StoreBuilder&lt;KeyValueStore&lt;String,String&gt;&gt; keyValueStoreBuilder =
          Stores.keyValueStoreBuilder(Stores.persistentKeyValueStore("myValueTransformState"),
@@ -1719,7 +1719,7 @@ var activeTableTab = "activeTableTab";
  <a href="../../../../../org/apache/kafka/streams/processor/ProcessorContext.html" title="interface in org.apache.kafka.streams.processor"><code>ProcessorContext</code></a>.
  To trigger periodic actions via <a href="../../../../../org/apache/kafka/streams/processor/Punctuator.html#punctuate-long-"><code>punctuate()</code></a>,
  a schedule must be registered.
- <pre><code>
+ <pre class="line-numbers"><code>
  new ValueTransformerWithKeySupplier() {
      ValueTransformerWithKey get() {
          return new ValueTransformerWithKey() {

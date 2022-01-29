@@ -336,7 +336,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state"><code>SessionStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // counting words
  Store queryableStoreName = ... // the queryableStoreName should be the name of the store as defined by the Materialized instance
  ReadOnlySessionStore&lt;String,Long&gt; localWindowStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;sessionStore());
@@ -405,7 +405,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/SessionStore.html" title="interface in org.apache.kafka.streams.state"><code>SessionStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams.store(StoreQueryParameters)</code></a>  KafkaStreams#store(...)}:
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // some windowed aggregation on value type double
  Sting queryableStoreName = ... // the queryableStoreName should be the name of the store as defined by the Materialized instance
  ReadOnlySessionStore&lt;String, Long&gt; sessionStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;sessionStore());

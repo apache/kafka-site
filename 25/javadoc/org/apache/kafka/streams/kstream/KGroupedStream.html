@@ -333,7 +333,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams#store(...)</code></a>.
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // counting words
  String queryableStoreName = "storeName"; // the store name should be the name of the store as defined by the Materialized instance
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
@@ -387,7 +387,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams#store(...)</code></a>.
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // counting words
  String queryableStoreName = "storeName"; // the store name should be the name of the store as defined by the Materialized instance
  ReadOnlyKeyValueStore&lt;String,Long&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
@@ -482,7 +482,7 @@ var activeTableTab = "activeTableTab";
  <p>
  The specified <a href="../../../../../org/apache/kafka/streams/kstream/Reducer.html" title="interface in org.apache.kafka.streams.kstream"><code>Reducer</code></a> is applied for each input record and computes a new aggregate using the current
  aggregate (first argument) and the record's value (second argument):
- <pre><code>
+ <pre class="line-numbers"><code>
  // At the example of a Reducer&lt;Long&gt;
  new Reducer&lt;Long&gt;() {
    public Long apply(Long aggValue, Long currValue) {
@@ -505,7 +505,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams#store(...)</code></a>.
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // compute sum
  String queryableStoreName = "storeName" // the store name should be the name of the store as defined by the Materialized instance
  ReadOnlyKeyValueStore&lt;String, Long&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
@@ -553,7 +553,7 @@ var activeTableTab = "activeTableTab";
  <p>
  The specified <a href="../../../../../org/apache/kafka/streams/kstream/Reducer.html" title="interface in org.apache.kafka.streams.kstream"><code>Reducer</code></a> is applied for each input record and computes a new aggregate using the current
  aggregate (first argument) and the record's value (second argument):
- <pre><code>
+ <pre class="line-numbers"><code>
  // At the example of a Reducer&lt;Long&gt;
  new Reducer&lt;Long&gt;() {
    public Long apply(Long aggValue, Long currValue) {
@@ -576,7 +576,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams#store(...)</code></a>.
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // compute sum
  String queryableStoreName = "storeName" // the store name should be the name of the store as defined by the Materialized instance
  ReadOnlyKeyValueStore&lt;String, Long&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
@@ -696,7 +696,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // some aggregation on value type double
  String queryableStoreName = "storeName" // the store name should be the name of the store as defined by the Materialized instance
  ReadOnlyKeyValueStore&lt;String, Long&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
@@ -764,7 +764,7 @@ var activeTableTab = "activeTableTab";
  <p>
  To query the local <a href="../../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams.store(StoreQueryParameters)</code></a>  KafkaStreams#store(...)}:
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ... // some aggregation on value type double
  String queryableStoreName = "storeName" // the store name should be the name of the store as defined by the Materialized instance
  ReadOnlyKeyValueStore&lt;String, Long&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());

@@ -509,7 +509,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  </pre>
  To query the local <a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#store-java.lang.String-org.apache.kafka.streams.state.QueryableStoreType-"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ...
  ReadOnlyKeyValueStore&lt;String, Long&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-key";
@@ -693,7 +693,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  </pre>
  To query the local <a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#store-java.lang.String-org.apache.kafka.streams.state.QueryableStoreType-"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ...
  ReadOnlyKeyValueStore&lt;String, Long&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-key";
@@ -730,7 +730,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  <p>
  To query the local <a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#store-java.lang.String-org.apache.kafka.streams.state.QueryableStoreType-"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ...
  ReadOnlyKeyValueStore&lt;String, Long&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-key";

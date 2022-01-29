@@ -127,7 +127,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  Similarly using <a href="../../../../org/apache/kafka/streams/TestOutputTopic.html#readValue--"><code>readValue()</code></a> you only get the value of a record.
 
  <h2>Processing records</h2>
- <pre><code>
+ <pre class="line-numbers"><code>
      private TestOutputTopic&lt;String, Long&gt; outputTopic;
       ...
      outputTopic = testDriver.createOutputTopic(OUTPUT_TOPIC, stringDeserializer, longDeserializer);

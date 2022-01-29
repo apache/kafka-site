@@ -509,11 +509,10 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  serdes in <a href="../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a>, i.e.,
  <pre> <code>
  streamBuilder.table(topic, Consumed.with(Serde.String(), Serde.String()), Materialized.&lt;String, String, KeyValueStore&lt;Bytes, byte[]&gt;as(storeName))
- </code>
- </pre>
+ </code></pre>
  To query the local <a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ...
  ReadOnlyKeyValueStore&lt;String, Long&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-key";
@@ -693,11 +692,10 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  serdes in <a href="../../../../org/apache/kafka/streams/kstream/Materialized.html" title="class in org.apache.kafka.streams.kstream"><code>Materialized</code></a>, i.e.,
  <pre> <code>
  streamBuilder.globalTable(topic, Consumed.with(Serde.String(), Serde.String()), Materialized.&lt;String, String, KeyValueStore&lt;Bytes, byte[]&gt;as(storeName))
- </code>
- </pre>
+ </code></pre>
  To query the local <a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ...
  ReadOnlyKeyValueStore&lt;String, Long&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-key";
@@ -734,7 +732,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  <p>
  To query the local <a href="../../../../org/apache/kafka/streams/state/KeyValueStore.html" title="interface in org.apache.kafka.streams.state"><code>KeyValueStore</code></a> it must be obtained via
  <a href="../../../../org/apache/kafka/streams/KafkaStreams.html#store-org.apache.kafka.streams.StoreQueryParameters-"><code>KafkaStreams#store(...)</code></a>:
- <pre><code>
+ <pre class="line-numbers"><code>
  KafkaStreams streams = ...
  ReadOnlyKeyValueStore&lt;String, Long&gt; localStore = streams.store(queryableStoreName, QueryableStoreTypes.&lt;String, Long&gt;keyValueStore());
  String key = "some-key";
