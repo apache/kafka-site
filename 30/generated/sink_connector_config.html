@@ -151,7 +151,7 @@
 </li>
 <li>
 <h4><a id="errors.log.include.messages"></a><a id="sinkconnectorconfigs_errors.log.include.messages" href="#sinkconnectorconfigs_errors.log.include.messages">errors.log.include.messages</a></h4>
-<p>Whether to the include in the log the Connect record that resulted in a failure. This is 'false' by default, which will prevent record keys, values, and headers from being written to log files, although some information such as topic and partition number will still be logged.</p>
+<p>Whether to include in the log the Connect record that resulted in a failure.For sink records, the topic, partition, offset, and timestamp will be logged. For source records, the key and value (and their schemas), all headers, and the timestamp, Kafka topic, Kafka partition, source partition, and source offset will be logged. This is 'false' by default, which will prevent record keys, values, and headers from being written to log files.</p>
 <table><tbody>
 <tr><th>Type:</th><td>boolean</td></tr>
 <tr><th>Default:</th><td>false</td></tr>
