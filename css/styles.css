@@ -901,6 +901,7 @@ tr:nth-child(odd) {
     color: #888888;
     padding: 2rem 0;
     background: white;
+    text-align: center;
 }
 .footer__legal {
     margin: 0 2rem;
