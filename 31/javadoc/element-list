@@ -14,6 +14,7 @@ org.apache.kafka.common.quota
 org.apache.kafka.common.resource
 org.apache.kafka.common.security.auth
 org.apache.kafka.common.security.oauthbearer
+org.apache.kafka.common.security.oauthbearer.secured
 org.apache.kafka.common.security.plain
 org.apache.kafka.common.security.scram
 org.apache.kafka.common.security.token.delegation
