@@ -1,0 +1,523 @@
+<ul class="config-list">
+<li>
+<h4><a id="application.id"></a><a id="streamsconfigs_application.id" href="#streamsconfigs_application.id">application.id</a></h4>
+<p>An identifier for the stream processing application. Must be unique within the Kafka cluster. It is used as 1) the default client-id prefix, 2) the group-id for membership management, 3) the changelog topic prefix.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="bootstrap.servers"></a><a id="streamsconfigs_bootstrap.servers" href="#streamsconfigs_bootstrap.servers">bootstrap.servers</a></h4>
+<p>A list of host/port pairs to use for establishing the initial connection to the Kafka cluster. The client will make use of all servers irrespective of which servers are specified here for bootstrapping&mdash;this list only impacts the initial hosts used to discover the full set of servers. This list should be in the form <code>host1:port1,host2:port2,...</code>. Since these servers are just used for the initial connection to discover the full cluster membership (which may change dynamically), this list need not contain the full set of servers (you may want more than one, though, in case a server is down).</p>
+<table><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="num.standby.replicas"></a><a id="streamsconfigs_num.standby.replicas" href="#streamsconfigs_num.standby.replicas">num.standby.replicas</a></h4>
+<p>The number of standby replicas for each task.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>0</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="state.dir"></a><a id="streamsconfigs_state.dir" href="#streamsconfigs_state.dir">state.dir</a></h4>
+<p>Directory location for state store. This path must be unique for each streams instance sharing the same underlying filesystem.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>/var/folders/ds/dq10m26j2kjcypywn_lt0b0m0000gn/T//kafka-streams</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="acceptable.recovery.lag"></a><a id="streamsconfigs_acceptable.recovery.lag" href="#streamsconfigs_acceptable.recovery.lag">acceptable.recovery.lag</a></h4>
+<p>The maximum acceptable lag (number of offsets to catch up) for a client to be considered caught-up enough to receive an active task assignment. Upon assignment, it will still restore the rest of the changelog before processing. To avoid a pause in processing during rebalances, this config should correspond to a recovery time of well under a minute for a given workload. Must be at least 0.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>10000</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="cache.max.bytes.buffering"></a><a id="streamsconfigs_cache.max.bytes.buffering" href="#streamsconfigs_cache.max.bytes.buffering">cache.max.bytes.buffering</a></h4>
+<p>Maximum number of memory bytes to be used for buffering across all threads</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>10485760</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="client.id"></a><a id="streamsconfigs_client.id" href="#streamsconfigs_client.id">client.id</a></h4>
+<p>An ID prefix string used for the client IDs of internal consumer, producer and restore-consumer, with pattern '<client.id>-StreamThread-<threadSequenceNumber>-<consumer|producer|restore-consumer>'.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="default.deserialization.exception.handler"></a><a id="streamsconfigs_default.deserialization.exception.handler" href="#streamsconfigs_default.deserialization.exception.handler">default.deserialization.exception.handler</a></h4>
+<p>Exception handling class that implements the <code>org.apache.kafka.streams.errors.DeserializationExceptionHandler</code> interface.</p>
+<table><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>org.apache.kafka.streams.errors.LogAndFailExceptionHandler</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="default.key.serde"></a><a id="streamsconfigs_default.key.serde" href="#streamsconfigs_default.key.serde">default.key.serde</a></h4>
+<p> Default serializer / deserializer class for key that implements the <code>org.apache.kafka.common.serialization.Serde</code> interface. Note when windowed serde class is used, one needs to set the inner serde class that implements the <code>org.apache.kafka.common.serialization.Serde</code> interface via 'default.windowed.key.serde.inner' or 'default.windowed.value.serde.inner' as well</p>
+<table><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="default.list.key.serde.inner"></a><a id="streamsconfigs_default.list.key.serde.inner" href="#streamsconfigs_default.list.key.serde.inner">default.list.key.serde.inner</a></h4>
+<p>Default inner class of list serde for key that implements the <code>org.apache.kafka.common.serialization.Serde</code> interface. This configuration will be read if and only if <code>default.key.serde</code> configuration is set to <code>org.apache.kafka.common.serialization.Serdes.ListSerde</code></p>
+<table><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="default.list.key.serde.type"></a><a id="streamsconfigs_default.list.key.serde.type" href="#streamsconfigs_default.list.key.serde.type">default.list.key.serde.type</a></h4>
+<p>Default class for key that implements the <code>java.util.List</code> interface. This configuration will be read if and only if <code>default.key.serde</code> configuration is set to <code>org.apache.kafka.common.serialization.Serdes.ListSerde</code> Note when list serde class is used, one needs to set the inner serde class that implements the <code>org.apache.kafka.common.serialization.Serde</code> interface via 'default.list.key.serde.inner'</p>
+<table><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="default.list.value.serde.inner"></a><a id="streamsconfigs_default.list.value.serde.inner" href="#streamsconfigs_default.list.value.serde.inner">default.list.value.serde.inner</a></h4>
+<p>Default inner class of list serde for value that implements the <code>org.apache.kafka.common.serialization.Serde</code> interface. This configuration will be read if and only if <code>default.value.serde</code> configuration is set to <code>org.apache.kafka.common.serialization.Serdes.ListSerde</code></p>
+<table><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="default.list.value.serde.type"></a><a id="streamsconfigs_default.list.value.serde.type" href="#streamsconfigs_default.list.value.serde.type">default.list.value.serde.type</a></h4>
+<p>Default class for value that implements the <code>java.util.List</code> interface. This configuration will be read if and only if <code>default.value.serde</code> configuration is set to <code>org.apache.kafka.common.serialization.Serdes.ListSerde</code> Note when list serde class is used, one needs to set the inner serde class that implements the <code>org.apache.kafka.common.serialization.Serde</code> interface via 'default.list.value.serde.inner'</p>
+<table><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="default.production.exception.handler"></a><a id="streamsconfigs_default.production.exception.handler" href="#streamsconfigs_default.production.exception.handler">default.production.exception.handler</a></h4>
+<p>Exception handling class that implements the <code>org.apache.kafka.streams.errors.ProductionExceptionHandler</code> interface.</p>
+<table><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>org.apache.kafka.streams.errors.DefaultProductionExceptionHandler</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="default.timestamp.extractor"></a><a id="streamsconfigs_default.timestamp.extractor" href="#streamsconfigs_default.timestamp.extractor">default.timestamp.extractor</a></h4>
+<p>Default timestamp extractor class that implements the <code>org.apache.kafka.streams.processor.TimestampExtractor</code> interface.</p>
+<table><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>org.apache.kafka.streams.processor.FailOnInvalidTimestamp</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="default.value.serde"></a><a id="streamsconfigs_default.value.serde" href="#streamsconfigs_default.value.serde">default.value.serde</a></h4>
+<p>Default serializer / deserializer class for value that implements the <code>org.apache.kafka.common.serialization.Serde</code> interface. Note when windowed serde class is used, one needs to set the inner serde class that implements the <code>org.apache.kafka.common.serialization.Serde</code> interface via 'default.windowed.key.serde.inner' or 'default.windowed.value.serde.inner' as well</p>
+<table><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="max.task.idle.ms"></a><a id="streamsconfigs_max.task.idle.ms" href="#streamsconfigs_max.task.idle.ms">max.task.idle.ms</a></h4>
+<p>This config controls whether joins and merges may produce out-of-order results. The config value is the maximum amount of time in milliseconds a stream task will stay idle when it is fully caught up on some (but not all) input partitions to wait for producers to send additional records and avoid potential out-of-order record processing across multiple input streams. The default (zero) does not wait for producers to send more records, but it does wait to fetch data that is already present on the brokers. This default means that for records that are already present on the brokers, Streams will process them in timestamp order. Set to -1 to disable idling entirely and process any locally available data, even though doing so may produce out-of-order processing.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>0</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="max.warmup.replicas"></a><a id="streamsconfigs_max.warmup.replicas" href="#streamsconfigs_max.warmup.replicas">max.warmup.replicas</a></h4>
+<p>The maximum number of warmup replicas (extra standbys beyond the configured num.standbys) that can be assigned at once for the purpose of keeping  the task available on one instance while it is warming up on another instance it has been reassigned to. Used to throttle how much extra broker  traffic and cluster state can be used for high availability. Must be at least 1.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>2</td></tr>
+<tr><th>Valid Values:</th><td>[1,...]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="num.stream.threads"></a><a id="streamsconfigs_num.stream.threads" href="#streamsconfigs_num.stream.threads">num.stream.threads</a></h4>
+<p>The number of threads to execute stream processing.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>1</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="processing.guarantee"></a><a id="streamsconfigs_processing.guarantee" href="#streamsconfigs_processing.guarantee">processing.guarantee</a></h4>
+<p>The processing guarantee that should be used. Possible values are <code>at_least_once</code> (default) and <code>exactly_once_v2</code> (requires brokers version 2.5 or higher). Deprecated options are <code>exactly_once</code> (requires brokers version 0.11.0 or higher) and <code>exactly_once_beta</code> (requires brokers version 2.5 or higher). Note that exactly-once processing requires a cluster of at least three brokers by default what is the recommended setting for production; for development you can change this, by adjusting broker setting <code>transaction.state.log.replication.factor</code> and <code>transaction.state.log.min.isr</code>.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>at_least_once</td></tr>
+<tr><th>Valid Values:</th><td>[at_least_once, exactly_once, exactly_once_beta, exactly_once_v2]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="rack.aware.assignment.tags"></a><a id="streamsconfigs_rack.aware.assignment.tags" href="#streamsconfigs_rack.aware.assignment.tags">rack.aware.assignment.tags</a></h4>
+<p>List of client tag keys used to distribute standby replicas across Kafka Streams instances. When configured, Kafka Streams will make a best-effort to distribute the standby tasks over each client tag dimension.</p>
+<table><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td>List containing maximum of 5 elements</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="replication.factor"></a><a id="streamsconfigs_replication.factor" href="#streamsconfigs_replication.factor">replication.factor</a></h4>
+<p>The replication factor for change log topics and repartition topics created by the stream processing application. The default of <code>-1</code> (meaning: use broker default replication factor) requires broker version 2.4 or newer</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>-1</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="security.protocol"></a><a id="streamsconfigs_security.protocol" href="#streamsconfigs_security.protocol">security.protocol</a></h4>
+<p>Protocol used to communicate with brokers. Valid values are: PLAINTEXT, SSL, SASL_PLAINTEXT, SASL_SSL.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>PLAINTEXT</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="task.timeout.ms"></a><a id="streamsconfigs_task.timeout.ms" href="#streamsconfigs_task.timeout.ms">task.timeout.ms</a></h4>
+<p>The maximum amount of time in milliseconds a task might stall due to internal errors and retries until an error is raised. For a timeout of 0ms, a task would raise an error for the first internal error. For any timeout larger than 0ms, a task will retry at least once before an error is raised.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>300000 (5 minutes)</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="topology.optimization"></a><a id="streamsconfigs_topology.optimization" href="#streamsconfigs_topology.optimization">topology.optimization</a></h4>
+<p>A configuration telling Kafka Streams if it should optimize the topology, disabled by default</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>none</td></tr>
+<tr><th>Valid Values:</th><td>[none, all]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="application.server"></a><a id="streamsconfigs_application.server" href="#streamsconfigs_application.server">application.server</a></h4>
+<p>A host:port pair pointing to a user-defined endpoint that can be used for state store discovery and interactive queries on this KafkaStreams instance.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="buffered.records.per.partition"></a><a id="streamsconfigs_buffered.records.per.partition" href="#streamsconfigs_buffered.records.per.partition">buffered.records.per.partition</a></h4>
+<p>Maximum number of records to buffer per partition.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>1000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="built.in.metrics.version"></a><a id="streamsconfigs_built.in.metrics.version" href="#streamsconfigs_built.in.metrics.version">built.in.metrics.version</a></h4>
+<p>Version of the built-in metrics to use.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>latest</td></tr>
+<tr><th>Valid Values:</th><td>[latest]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="commit.interval.ms"></a><a id="streamsconfigs_commit.interval.ms" href="#streamsconfigs_commit.interval.ms">commit.interval.ms</a></h4>
+<p>The frequency in milliseconds with which to save the position of the processor. (Note, if <code>processing.guarantee</code> is set to <code>exactly_once_v2</code>, <code>exactly_once</code>,the default value is <code>100</code>, otherwise the default value is <code>30000</code>.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>30000 (30 seconds)</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="connections.max.idle.ms"></a><a id="streamsconfigs_connections.max.idle.ms" href="#streamsconfigs_connections.max.idle.ms">connections.max.idle.ms</a></h4>
+<p>Close idle connections after the number of milliseconds specified by this config.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>540000 (9 minutes)</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="default.dsl.store"></a><a id="streamsconfigs_default.dsl.store" href="#streamsconfigs_default.dsl.store">default.dsl.store</a></h4>
+<p>The default state store type used by DSL operators.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>rocksDB</td></tr>
+<tr><th>Valid Values:</th><td>[rocksDB, in_memory]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="metadata.max.age.ms"></a><a id="streamsconfigs_metadata.max.age.ms" href="#streamsconfigs_metadata.max.age.ms">metadata.max.age.ms</a></h4>
+<p>The period of time in milliseconds after which we force a refresh of metadata even if we haven't seen any partition leadership changes to proactively discover any new brokers or partitions.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>300000 (5 minutes)</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="metric.reporters"></a><a id="streamsconfigs_metric.reporters" href="#streamsconfigs_metric.reporters">metric.reporters</a></h4>
+<p>A list of classes to use as metrics reporters. Implementing the <code>org.apache.kafka.common.metrics.MetricsReporter</code> interface allows plugging in classes that will be notified of new metric creation. The JmxReporter is always included to register JMX statistics.</p>
+<table><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="metrics.num.samples"></a><a id="streamsconfigs_metrics.num.samples" href="#streamsconfigs_metrics.num.samples">metrics.num.samples</a></h4>
+<p>The number of samples maintained to compute metrics.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>2</td></tr>
+<tr><th>Valid Values:</th><td>[1,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="metrics.recording.level"></a><a id="streamsconfigs_metrics.recording.level" href="#streamsconfigs_metrics.recording.level">metrics.recording.level</a></h4>
+<p>The highest recording level for metrics.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>INFO</td></tr>
+<tr><th>Valid Values:</th><td>[INFO, DEBUG, TRACE]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="metrics.sample.window.ms"></a><a id="streamsconfigs_metrics.sample.window.ms" href="#streamsconfigs_metrics.sample.window.ms">metrics.sample.window.ms</a></h4>
+<p>The window of time a metrics sample is computed over.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>30000 (30 seconds)</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="poll.ms"></a><a id="streamsconfigs_poll.ms" href="#streamsconfigs_poll.ms">poll.ms</a></h4>
+<p>The amount of time in milliseconds to block waiting for input.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>100</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="probing.rebalance.interval.ms"></a><a id="streamsconfigs_probing.rebalance.interval.ms" href="#streamsconfigs_probing.rebalance.interval.ms">probing.rebalance.interval.ms</a></h4>
+<p>The maximum time in milliseconds to wait before triggering a rebalance to probe for warmup replicas that have finished warming up and are ready to become active. Probing rebalances will continue to be triggered until the assignment is balanced. Must be at least 1 minute.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>600000 (10 minutes)</td></tr>
+<tr><th>Valid Values:</th><td>[60000,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="receive.buffer.bytes"></a><a id="streamsconfigs_receive.buffer.bytes" href="#streamsconfigs_receive.buffer.bytes">receive.buffer.bytes</a></h4>
+<p>The size of the TCP receive buffer (SO_RCVBUF) to use when reading data. If the value is -1, the OS default will be used.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>32768 (32 kibibytes)</td></tr>
+<tr><th>Valid Values:</th><td>[-1,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="reconnect.backoff.max.ms"></a><a id="streamsconfigs_reconnect.backoff.max.ms" href="#streamsconfigs_reconnect.backoff.max.ms">reconnect.backoff.max.ms</a></h4>
+<p>The maximum amount of time in milliseconds to wait when reconnecting to a broker that has repeatedly failed to connect. If provided, the backoff per host will increase exponentially for each consecutive connection failure, up to this maximum. After calculating the backoff increase, 20% random jitter is added to avoid connection storms.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>1000 (1 second)</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="reconnect.backoff.ms"></a><a id="streamsconfigs_reconnect.backoff.ms" href="#streamsconfigs_reconnect.backoff.ms">reconnect.backoff.ms</a></h4>
+<p>The base amount of time to wait before attempting to reconnect to a given host. This avoids repeatedly connecting to a host in a tight loop. This backoff applies to all connection attempts by the client to a broker.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>50</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="repartition.purge.interval.ms"></a><a id="streamsconfigs_repartition.purge.interval.ms" href="#streamsconfigs_repartition.purge.interval.ms">repartition.purge.interval.ms</a></h4>
+<p>The frequency in milliseconds with which to delete fully consumed records from repartition topics. Purging will occur after at least this value since the last purge, but may be delayed until later. (Note, unlike <code>commit.interval.ms</code>, the default for this value remains unchanged when <code>processing.guarantee</code> is set to <code>exactly_once_v2</code>).</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>30000 (30 seconds)</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="request.timeout.ms"></a><a id="streamsconfigs_request.timeout.ms" href="#streamsconfigs_request.timeout.ms">request.timeout.ms</a></h4>
+<p>The configuration controls the maximum amount of time the client will wait for the response of a request. If the response is not received before the timeout elapses the client will resend the request if necessary or fail the request if retries are exhausted.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>40000 (40 seconds)</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="retries"></a><a id="streamsconfigs_retries" href="#streamsconfigs_retries">retries</a></h4>
+<p>Setting a value greater than zero will cause the client to resend any request that fails with a potentially transient error. It is recommended to set the value to either zero or `MAX_VALUE` and use corresponding timeout parameters to control how long a client should retry a request.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>0</td></tr>
+<tr><th>Valid Values:</th><td>[0,...,2147483647]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="retry.backoff.ms"></a><a id="streamsconfigs_retry.backoff.ms" href="#streamsconfigs_retry.backoff.ms">retry.backoff.ms</a></h4>
+<p>The amount of time to wait before attempting to retry a failed request to a given topic partition. This avoids repeatedly sending requests in a tight loop under some failure scenarios.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>100</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="rocksdb.config.setter"></a><a id="streamsconfigs_rocksdb.config.setter" href="#streamsconfigs_rocksdb.config.setter">rocksdb.config.setter</a></h4>
+<p>A Rocks DB config setter class or class name that implements the <code>org.apache.kafka.streams.state.RocksDBConfigSetter</code> interface</p>
+<table><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="send.buffer.bytes"></a><a id="streamsconfigs_send.buffer.bytes" href="#streamsconfigs_send.buffer.bytes">send.buffer.bytes</a></h4>
+<p>The size of the TCP send buffer (SO_SNDBUF) to use when sending data. If the value is -1, the OS default will be used.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>131072 (128 kibibytes)</td></tr>
+<tr><th>Valid Values:</th><td>[-1,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="state.cleanup.delay.ms"></a><a id="streamsconfigs_state.cleanup.delay.ms" href="#streamsconfigs_state.cleanup.delay.ms">state.cleanup.delay.ms</a></h4>
+<p>The amount of time in milliseconds to wait before deleting state when a partition has migrated. Only state directories that have not been modified for at least <code>state.cleanup.delay.ms</code> will be removed</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>600000 (10 minutes)</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="upgrade.from"></a><a id="streamsconfigs_upgrade.from" href="#streamsconfigs_upgrade.from">upgrade.from</a></h4>
+<p>Allows upgrading in a backward compatible way. This is needed when upgrading from [0.10.0, 1.1] to 2.0+, or when upgrading from [2.0, 2.3] to 2.4+. When upgrading from 2.4 to a newer version it is not required to specify this config. Default is `null`. Accepted values are "0.10.0", "0.10.1", "0.10.2", "0.11.0", "1.0", "1.1", "2.0", "2.1", "2.2", "2.3" (for upgrading from the corresponding old version).</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td>[null, 0.10.0, 0.10.1, 0.10.2, 0.11.0, 1.0, 1.1, 2.0, 2.1, 2.2, 2.3]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="window.size.ms"></a><a id="streamsconfigs_window.size.ms" href="#streamsconfigs_window.size.ms">window.size.ms</a></h4>
+<p>Sets window size for the deserializer in order to calculate window end times.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="windowed.inner.class.serde"></a><a id="streamsconfigs_windowed.inner.class.serde" href="#streamsconfigs_windowed.inner.class.serde">windowed.inner.class.serde</a></h4>
+<p> Default serializer / deserializer for the inner class of a windowed record. Must implement the " +<br>        "<code>org.apache.kafka.common.serialization.Serde</code> interface.. Note that setting this config in KafkaStreams application would result in an error as it is meant to be used only from Plain consumer client.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="windowstore.changelog.additional.retention.ms"></a><a id="streamsconfigs_windowstore.changelog.additional.retention.ms" href="#streamsconfigs_windowstore.changelog.additional.retention.ms">windowstore.changelog.additional.retention.ms</a></h4>
+<p>Added to a windows maintainMs to ensure data is not deleted from the log prematurely. Allows for clock drift. Default is 1 day</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>86400000 (1 day)</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+</ul>
+

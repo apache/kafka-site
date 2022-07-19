@@ -276,10 +276,6 @@ ol.toc > li {
     overflow-x: scroll;
     margin: 2rem 0;
 }
-.page-dark .data-table th,
-.page-dark .data-table td {
-    color: white;
-}
 .data-table tbody {
     border-style: solid;
     border-color: #E5E5E5;
@@ -402,30 +398,6 @@ tr:nth-child(odd) {
 .config-list>li:nth-child(odd) {
     background: #f2f2f2;
 }
-.page-dark,
-.page-dark * {
-    box-sizing: border-box;
-}
-.page-dark .config-list {
-    padding-left: 0;
-}
-.page-dark .config-list>li:nth-child(odd) {
-    background: rgba(0, 0, 0, 0.2);
-}
-.page-dark .config-list td {
-    color: white;
-}
-
-.page-dark .config-list .data-table {
-    width: auto;
-}
-
-.page-dark code {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-color: rgba(0, 0, 0, 0.3);
-    border-radius: 0.3rem;
-    font-size: 1.4rem;
-}
 
 .horizontal-list li {
     display: inline-block;
@@ -444,88 +416,18 @@ tr:nth-child(odd) {
 }
 .logo-link {
     display: inline-block;
-    width: 220px;
-    height: 64.77px;
-    background: url("/images/logo.png");
-    background-size: 217px auto;
+    width: 117px;
+    height: 65px;
+    background: url("/logos/kafka_logo--simple.png");
+    background-size: auto 65px;
     background-repeat: no-repeat;
     /* small: 168 x 50 */
-}
-.page-dark .logo-link {
-    background: url('/logos/kafka-white.svg');
-    background-repeat: no-repeat;
-}
-.page-dark {
-    background: #363D3F;
-    color: white;
-    margin: 0;
-}
-.page-dark .content {
-    max-width: 100rem;
-}
-.page-dark .content-separator {
-    max-width: 100rem;
-    background-color: #969191;
-    border: none;
-    height: 1px;
-}
-.page-dark .content-get-started {
-    margin-top: 7rem;
-}
-.page-dark a:link {
-    color: var(--green);
-}
-.page-dark a:visited {
-    color: var(--green);
-}
-.page-dark .top-nav-item-anchor:link,
-.page-dark .top-nav-item-anchor:active,
-.page-dark .top-nav-item-anchor:visited,
-.page-dark .top-nav-anchor:link,
-.page-dark .top-nav-anchor:active,
-.page-dark .top-nav-anchor:visited {
-    color: white;
-    text-decoration: none;
-}
-.page-dark .top-nav-item-anchor:hover,
-.page-dark .top-nav-anchor:hover,
-.page-dark .top-nav-item-anchor:focus,
-.page-dark .top-nav-anchor:focus {
-    color: var(--green);
-}
-.page-dark .top-nav-menu {
-    background-color: #373E40;
-}
-.page-dark .header {
-    background-color: #363D3F;
-}
-.page-dark .header.scrolled {
-    background-color: #373E40;
-}
-.page-dark .top-nav-download {
-    background: linear-gradient(90deg, #427583 -15.13%, var(--green) 100%), #0A1011;
-    color: white !important; /* ignoring link colors */
-}
-.page-dark .top-nav-download:hover {
-    background: linear-gradient(90deg, #427583 -15.13%, #80bdbd 100%), #0A1011;
-}
-.page-dark .anchor-heading {
-    position: relative;
 }
 .anchor-link,
 .header-link {
     position: relative;
     top: -12rem;
     left: 0;
-}
-.page-dark .docs-title,
-.page-dark .content-title {
-    font-family: Roboto;
-    font-weight: bold;
-    font-size: 3rem;
-    line-height: 4.2rem;
-    text-transform: uppercase;
-    color: #FFFFFF;
 }
 #docs-top-link {
     position: fixed;
@@ -595,17 +497,6 @@ tr:nth-child(odd) {
     height: 2px;
     background-color: black;
     border-radius: 2px;
-}
-.page-dark .burger-toggle {
-    padding: .4rem;
-    border-radius: .3rem;
-    width: 4rem;
-    height: 4rem;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    background-color: rgba(0, 0, 0, 0.1);
-}
-.page-dark .burger-toggle .burger-line {
-    background-color: white;
 }
 .top-nav-toggle {
     display: none;
@@ -1010,6 +901,7 @@ tr:nth-child(odd) {
     color: #888888;
     padding: 2rem 0;
     background: white;
+    text-align: center;
 }
 .footer__legal {
     margin: 0 2rem;
@@ -1283,11 +1175,6 @@ nav .btn {
 .callout--basic {
     width: auto;
 }
-.page-dark .callout {
-    background-color: #363D3F;
-    border: 1px solid #888;
-    border-radius: .4rem;
-}
 .callout::before {
     content: "";
     width: 0;
@@ -1321,10 +1208,6 @@ nav .btn {
     background-color: #888888;
     color: #ffffff;
     cursor: pointer;
-}
-.page-dark .documentation__banner:hover {
-    background-color: #222;
-    border-bottom: 2px solid white;
 }
 .content.documentation--current {
     position: relative;
@@ -1407,17 +1290,6 @@ nav .btn {
 }
 .pagination__btn--disabled {
     display: none;
-}
-.page-dark .pagination__btn {
-    border-color: white;
-    color: white;
-    text-decoration: none;
-}
-.page-dark .pagination__btn:hover {
-    text-decoration: underline;
-    border-color: white;
-    color: white;
-    background: rgba(0, 0, 0, 0.2);
 }
 /* Doc landing page */
 
@@ -1899,10 +1771,6 @@ nav .btn {
     color: #000!important;
     padding-bottom: 0;
 }
-.page-dark .sticky-top .active-menu-item {
-    color: #fff!important; /* have to override the previous -- assuming it was there for a reason */
-    border-bottom-color: #fff;
-}
 .sticky-top a {
     color: #8c8888;
     margin-top: 16px;
@@ -1998,9 +1866,6 @@ ul.video-list {
     color: #000000;
     margin-bottom: 54px;
     max-width: 91rem;
-}
-.page-dark .streams__description {
-    color: white;
 }
 .separator {
     width: 920px;
@@ -2165,17 +2030,8 @@ ul.video-list {
     background-color: #000;
     color: #fff;
 }
-.page-dark .video__list .active .video-number {
-    background-color: white;
-    color: black;
-}
 .video__list .active .video__text {
     color: #000;
-}
-.page-dark .video__list .active .video__text {
-    color: #fff;
-    text-decoration: underline;
-    text-decoration-color: black;
 }
 .video__item {
     margin: 0px;
@@ -2473,12 +2329,6 @@ ul.video-list {
     .header.scrolled {
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.38);
     }
-    .page-dark .header {
-        background-color: #373E40;
-    }
-    .page-dark .top-nav-toggle + .top-nav-container {
-        background-color: #373E40;
-    }
     .page-home .content-home {
         margin-top: 16rem;
     }
@@ -2634,11 +2484,10 @@ ul.video-list {
     .page-home .content {
         margin-top: 16rem;
     }
-    .logo-link,
-    .page-dark .logo-link {
-        width: 170px;
+    .logo-link {
+        width: 100px;
         height: 50px;
-        background-size: 168px auto;
+        background-size: 93px auto;
         background-repeat: no-repeat;
     }
     .content {

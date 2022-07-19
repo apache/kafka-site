@@ -1,0 +1,683 @@
+<ul class="config-list">
+<li>
+<h4><a id="bootstrap.servers"></a><a id="adminclientconfigs_bootstrap.servers" href="#adminclientconfigs_bootstrap.servers">bootstrap.servers</a></h4>
+<p>A list of host/port pairs to use for establishing the initial connection to the Kafka cluster. The client will make use of all servers irrespective of which servers are specified here for bootstrapping&mdash;this list only impacts the initial hosts used to discover the full set of servers. This list should be in the form <code>host1:port1,host2:port2,...</code>. Since these servers are just used for the initial connection to discover the full cluster membership (which may change dynamically), this list need not contain the full set of servers (you may want more than one, though, in case a server is down).</p>
+<table><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.key.password"></a><a id="adminclientconfigs_ssl.key.password" href="#adminclientconfigs_ssl.key.password">ssl.key.password</a></h4>
+<p>The password of the private key in the key store file or the PEM key specified in `ssl.keystore.key'. This is required for clients only if two-way authentication is configured.</p>
+<table><tbody>
+<tr><th>Type:</th><td>password</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.keystore.certificate.chain"></a><a id="adminclientconfigs_ssl.keystore.certificate.chain" href="#adminclientconfigs_ssl.keystore.certificate.chain">ssl.keystore.certificate.chain</a></h4>
+<p>Certificate chain in the format specified by 'ssl.keystore.type'. Default SSL engine factory supports only PEM format with a list of X.509 certificates</p>
+<table><tbody>
+<tr><th>Type:</th><td>password</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.keystore.key"></a><a id="adminclientconfigs_ssl.keystore.key" href="#adminclientconfigs_ssl.keystore.key">ssl.keystore.key</a></h4>
+<p>Private key in the format specified by 'ssl.keystore.type'. Default SSL engine factory supports only PEM format with PKCS#8 keys. If the key is encrypted, key password must be specified using 'ssl.key.password'</p>
+<table><tbody>
+<tr><th>Type:</th><td>password</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.keystore.location"></a><a id="adminclientconfigs_ssl.keystore.location" href="#adminclientconfigs_ssl.keystore.location">ssl.keystore.location</a></h4>
+<p>The location of the key store file. This is optional for client and can be used for two-way authentication for client.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.keystore.password"></a><a id="adminclientconfigs_ssl.keystore.password" href="#adminclientconfigs_ssl.keystore.password">ssl.keystore.password</a></h4>
+<p>The store password for the key store file. This is optional for client and only needed if 'ssl.keystore.location' is configured. Key store password is not supported for PEM format.</p>
+<table><tbody>
+<tr><th>Type:</th><td>password</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.truststore.certificates"></a><a id="adminclientconfigs_ssl.truststore.certificates" href="#adminclientconfigs_ssl.truststore.certificates">ssl.truststore.certificates</a></h4>
+<p>Trusted certificates in the format specified by 'ssl.truststore.type'. Default SSL engine factory supports only PEM format with X.509 certificates.</p>
+<table><tbody>
+<tr><th>Type:</th><td>password</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.truststore.location"></a><a id="adminclientconfigs_ssl.truststore.location" href="#adminclientconfigs_ssl.truststore.location">ssl.truststore.location</a></h4>
+<p>The location of the trust store file.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.truststore.password"></a><a id="adminclientconfigs_ssl.truststore.password" href="#adminclientconfigs_ssl.truststore.password">ssl.truststore.password</a></h4>
+<p>The password for the trust store file. If a password is not set, trust store file configured will still be used, but integrity checking is disabled. Trust store password is not supported for PEM format.</p>
+<table><tbody>
+<tr><th>Type:</th><td>password</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="client.dns.lookup"></a><a id="adminclientconfigs_client.dns.lookup" href="#adminclientconfigs_client.dns.lookup">client.dns.lookup</a></h4>
+<p>Controls how the client uses DNS lookups. If set to <code>use_all_dns_ips</code>, connect to each returned IP address in sequence until a successful connection is established. After a disconnection, the next IP is used. Once all IPs have been used once, the client resolves the IP(s) from the hostname again (both the JVM and the OS cache DNS name lookups, however). If set to <code>resolve_canonical_bootstrap_servers_only</code>, resolve each bootstrap address into a list of canonical names. After the bootstrap phase, this behaves the same as <code>use_all_dns_ips</code>.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>use_all_dns_ips</td></tr>
+<tr><th>Valid Values:</th><td>[use_all_dns_ips, resolve_canonical_bootstrap_servers_only]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="client.id"></a><a id="adminclientconfigs_client.id" href="#adminclientconfigs_client.id">client.id</a></h4>
+<p>An id string to pass to the server when making requests. The purpose of this is to be able to track the source of requests beyond just ip/port by allowing a logical application name to be included in server-side request logging.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="connections.max.idle.ms"></a><a id="adminclientconfigs_connections.max.idle.ms" href="#adminclientconfigs_connections.max.idle.ms">connections.max.idle.ms</a></h4>
+<p>Close idle connections after the number of milliseconds specified by this config.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>300000 (5 minutes)</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="default.api.timeout.ms"></a><a id="adminclientconfigs_default.api.timeout.ms" href="#adminclientconfigs_default.api.timeout.ms">default.api.timeout.ms</a></h4>
+<p>Specifies the timeout (in milliseconds) for client APIs. This configuration is used as the default timeout for all client operations that do not specify a <code>timeout</code> parameter.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>60000 (1 minute)</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="receive.buffer.bytes"></a><a id="adminclientconfigs_receive.buffer.bytes" href="#adminclientconfigs_receive.buffer.bytes">receive.buffer.bytes</a></h4>
+<p>The size of the TCP receive buffer (SO_RCVBUF) to use when reading data. If the value is -1, the OS default will be used.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>65536 (64 kibibytes)</td></tr>
+<tr><th>Valid Values:</th><td>[-1,...]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="request.timeout.ms"></a><a id="adminclientconfigs_request.timeout.ms" href="#adminclientconfigs_request.timeout.ms">request.timeout.ms</a></h4>
+<p>The configuration controls the maximum amount of time the client will wait for the response of a request. If the response is not received before the timeout elapses the client will resend the request if necessary or fail the request if retries are exhausted.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>30000 (30 seconds)</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.client.callback.handler.class"></a><a id="adminclientconfigs_sasl.client.callback.handler.class" href="#adminclientconfigs_sasl.client.callback.handler.class">sasl.client.callback.handler.class</a></h4>
+<p>The fully qualified name of a SASL client callback handler class that implements the AuthenticateCallbackHandler interface.</p>
+<table><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.jaas.config"></a><a id="adminclientconfigs_sasl.jaas.config" href="#adminclientconfigs_sasl.jaas.config">sasl.jaas.config</a></h4>
+<p>JAAS login context parameters for SASL connections in the format used by JAAS configuration files. JAAS configuration file format is described <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/jgss/tutorials/LoginConfigFile.html">here</a>. The format for the value is: <code>loginModuleClass controlFlag (optionName=optionValue)*;</code>. For brokers, the config must be prefixed with listener prefix and SASL mechanism name in lower-case. For example, listener.name.sasl_ssl.scram-sha-256.sasl.jaas.config=com.example.ScramLoginModule required;</p>
+<table><tbody>
+<tr><th>Type:</th><td>password</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.kerberos.service.name"></a><a id="adminclientconfigs_sasl.kerberos.service.name" href="#adminclientconfigs_sasl.kerberos.service.name">sasl.kerberos.service.name</a></h4>
+<p>The Kerberos principal name that Kafka runs as. This can be defined either in Kafka's JAAS config or in Kafka's config.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.login.callback.handler.class"></a><a id="adminclientconfigs_sasl.login.callback.handler.class" href="#adminclientconfigs_sasl.login.callback.handler.class">sasl.login.callback.handler.class</a></h4>
+<p>The fully qualified name of a SASL login callback handler class that implements the AuthenticateCallbackHandler interface. For brokers, login callback handler config must be prefixed with listener prefix and SASL mechanism name in lower-case. For example, listener.name.sasl_ssl.scram-sha-256.sasl.login.callback.handler.class=com.example.CustomScramLoginCallbackHandler</p>
+<table><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.login.class"></a><a id="adminclientconfigs_sasl.login.class" href="#adminclientconfigs_sasl.login.class">sasl.login.class</a></h4>
+<p>The fully qualified name of a class that implements the Login interface. For brokers, login config must be prefixed with listener prefix and SASL mechanism name in lower-case. For example, listener.name.sasl_ssl.scram-sha-256.sasl.login.class=com.example.CustomScramLogin</p>
+<table><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.mechanism"></a><a id="adminclientconfigs_sasl.mechanism" href="#adminclientconfigs_sasl.mechanism">sasl.mechanism</a></h4>
+<p>SASL mechanism used for client connections. This may be any mechanism for which a security provider is available. GSSAPI is the default mechanism.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>GSSAPI</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.oauthbearer.jwks.endpoint.url"></a><a id="adminclientconfigs_sasl.oauthbearer.jwks.endpoint.url" href="#adminclientconfigs_sasl.oauthbearer.jwks.endpoint.url">sasl.oauthbearer.jwks.endpoint.url</a></h4>
+<p>The OAuth/OIDC provider URL from which the provider's <a href="https://datatracker.ietf.org/doc/html/rfc7517#section-5">JWKS (JSON Web Key Set)</a> can be retrieved. The URL can be HTTP(S)-based or file-based. If the URL is HTTP(S)-based, the JWKS data will be retrieved from the OAuth/OIDC provider via the configured URL on broker startup. All then-current keys will be cached on the broker for incoming requests. If an authentication request is received for a JWT that includes a "kid" header claim value that isn't yet in the cache, the JWKS endpoint will be queried again on demand. However, the broker polls the URL every sasl.oauthbearer.jwks.endpoint.refresh.ms milliseconds to refresh the cache with any forthcoming keys before any JWT requests that include them are received. If the URL is file-based, the broker will load the JWKS file from a configured location on startup. In the event that the JWT includes a "kid" header value that isn't in the JWKS file, the broker will reject the JWT and authentication will fail.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.oauthbearer.token.endpoint.url"></a><a id="adminclientconfigs_sasl.oauthbearer.token.endpoint.url" href="#adminclientconfigs_sasl.oauthbearer.token.endpoint.url">sasl.oauthbearer.token.endpoint.url</a></h4>
+<p>The URL for the OAuth/OIDC identity provider. If the URL is HTTP(S)-based, it is the issuer's token endpoint URL to which requests will be made to login based on the configuration in sasl.jaas.config. If the URL is file-based, it specifies a file containing an access token (in JWT serialized form) issued by the OAuth/OIDC identity provider to use for authorization.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="security.protocol"></a><a id="adminclientconfigs_security.protocol" href="#adminclientconfigs_security.protocol">security.protocol</a></h4>
+<p>Protocol used to communicate with brokers. Valid values are: PLAINTEXT, SSL, SASL_PLAINTEXT, SASL_SSL.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>PLAINTEXT</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="send.buffer.bytes"></a><a id="adminclientconfigs_send.buffer.bytes" href="#adminclientconfigs_send.buffer.bytes">send.buffer.bytes</a></h4>
+<p>The size of the TCP send buffer (SO_SNDBUF) to use when sending data. If the value is -1, the OS default will be used.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>131072 (128 kibibytes)</td></tr>
+<tr><th>Valid Values:</th><td>[-1,...]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="socket.connection.setup.timeout.max.ms"></a><a id="adminclientconfigs_socket.connection.setup.timeout.max.ms" href="#adminclientconfigs_socket.connection.setup.timeout.max.ms">socket.connection.setup.timeout.max.ms</a></h4>
+<p>The maximum amount of time the client will wait for the socket connection to be established. The connection setup timeout will increase exponentially for each consecutive connection failure up to this maximum. To avoid connection storms, a randomization factor of 0.2 will be applied to the timeout resulting in a random range between 20% below and 20% above the computed value.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>30000 (30 seconds)</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="socket.connection.setup.timeout.ms"></a><a id="adminclientconfigs_socket.connection.setup.timeout.ms" href="#adminclientconfigs_socket.connection.setup.timeout.ms">socket.connection.setup.timeout.ms</a></h4>
+<p>The amount of time the client will wait for the socket connection to be established. If the connection is not built before the timeout elapses, clients will close the socket channel.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>10000 (10 seconds)</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.enabled.protocols"></a><a id="adminclientconfigs_ssl.enabled.protocols" href="#adminclientconfigs_ssl.enabled.protocols">ssl.enabled.protocols</a></h4>
+<p>The list of protocols enabled for SSL connections. The default is 'TLSv1.2,TLSv1.3' when running with Java 11 or newer, 'TLSv1.2' otherwise. With the default value for Java 11, clients and servers will prefer TLSv1.3 if both support it and fallback to TLSv1.2 otherwise (assuming both support at least TLSv1.2). This default should be fine for most cases. Also see the config documentation for `ssl.protocol`.</p>
+<table><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>TLSv1.2</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.keystore.type"></a><a id="adminclientconfigs_ssl.keystore.type" href="#adminclientconfigs_ssl.keystore.type">ssl.keystore.type</a></h4>
+<p>The file format of the key store file. This is optional for client.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>JKS</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.protocol"></a><a id="adminclientconfigs_ssl.protocol" href="#adminclientconfigs_ssl.protocol">ssl.protocol</a></h4>
+<p>The SSL protocol used to generate the SSLContext. The default is 'TLSv1.3' when running with Java 11 or newer, 'TLSv1.2' otherwise. This value should be fine for most use cases. Allowed values in recent JVMs are 'TLSv1.2' and 'TLSv1.3'. 'TLS', 'TLSv1.1', 'SSL', 'SSLv2' and 'SSLv3' may be supported in older JVMs, but their usage is discouraged due to known security vulnerabilities. With the default value for this config and 'ssl.enabled.protocols', clients will downgrade to 'TLSv1.2' if the server does not support 'TLSv1.3'. If this config is set to 'TLSv1.2', clients will not use 'TLSv1.3' even if it is one of the values in ssl.enabled.protocols and the server only supports 'TLSv1.3'.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>TLSv1.2</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.provider"></a><a id="adminclientconfigs_ssl.provider" href="#adminclientconfigs_ssl.provider">ssl.provider</a></h4>
+<p>The name of the security provider used for SSL connections. Default value is the default security provider of the JVM.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.truststore.type"></a><a id="adminclientconfigs_ssl.truststore.type" href="#adminclientconfigs_ssl.truststore.type">ssl.truststore.type</a></h4>
+<p>The file format of the trust store file.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>JKS</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="metadata.max.age.ms"></a><a id="adminclientconfigs_metadata.max.age.ms" href="#adminclientconfigs_metadata.max.age.ms">metadata.max.age.ms</a></h4>
+<p>The period of time in milliseconds after which we force a refresh of metadata even if we haven't seen any partition leadership changes to proactively discover any new brokers or partitions.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>300000 (5 minutes)</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="metric.reporters"></a><a id="adminclientconfigs_metric.reporters" href="#adminclientconfigs_metric.reporters">metric.reporters</a></h4>
+<p>A list of classes to use as metrics reporters. Implementing the <code>org.apache.kafka.common.metrics.MetricsReporter</code> interface allows plugging in classes that will be notified of new metric creation. The JmxReporter is always included to register JMX statistics.</p>
+<table><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="metrics.num.samples"></a><a id="adminclientconfigs_metrics.num.samples" href="#adminclientconfigs_metrics.num.samples">metrics.num.samples</a></h4>
+<p>The number of samples maintained to compute metrics.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>2</td></tr>
+<tr><th>Valid Values:</th><td>[1,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="metrics.recording.level"></a><a id="adminclientconfigs_metrics.recording.level" href="#adminclientconfigs_metrics.recording.level">metrics.recording.level</a></h4>
+<p>The highest recording level for metrics.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>INFO</td></tr>
+<tr><th>Valid Values:</th><td>[INFO, DEBUG, TRACE]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="metrics.sample.window.ms"></a><a id="adminclientconfigs_metrics.sample.window.ms" href="#adminclientconfigs_metrics.sample.window.ms">metrics.sample.window.ms</a></h4>
+<p>The window of time a metrics sample is computed over.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>30000 (30 seconds)</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="reconnect.backoff.max.ms"></a><a id="adminclientconfigs_reconnect.backoff.max.ms" href="#adminclientconfigs_reconnect.backoff.max.ms">reconnect.backoff.max.ms</a></h4>
+<p>The maximum amount of time in milliseconds to wait when reconnecting to a broker that has repeatedly failed to connect. If provided, the backoff per host will increase exponentially for each consecutive connection failure, up to this maximum. After calculating the backoff increase, 20% random jitter is added to avoid connection storms.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>1000 (1 second)</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="reconnect.backoff.ms"></a><a id="adminclientconfigs_reconnect.backoff.ms" href="#adminclientconfigs_reconnect.backoff.ms">reconnect.backoff.ms</a></h4>
+<p>The base amount of time to wait before attempting to reconnect to a given host. This avoids repeatedly connecting to a host in a tight loop. This backoff applies to all connection attempts by the client to a broker.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>50</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="retries"></a><a id="adminclientconfigs_retries" href="#adminclientconfigs_retries">retries</a></h4>
+<p>Setting a value greater than zero will cause the client to resend any request that fails with a potentially transient error. It is recommended to set the value to either zero or `MAX_VALUE` and use corresponding timeout parameters to control how long a client should retry a request.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>2147483647</td></tr>
+<tr><th>Valid Values:</th><td>[0,...,2147483647]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="retry.backoff.ms"></a><a id="adminclientconfigs_retry.backoff.ms" href="#adminclientconfigs_retry.backoff.ms">retry.backoff.ms</a></h4>
+<p>The amount of time to wait before attempting to retry a failed request. This avoids repeatedly sending requests in a tight loop under some failure scenarios.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>100</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.kerberos.kinit.cmd"></a><a id="adminclientconfigs_sasl.kerberos.kinit.cmd" href="#adminclientconfigs_sasl.kerberos.kinit.cmd">sasl.kerberos.kinit.cmd</a></h4>
+<p>Kerberos kinit command path.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>/usr/bin/kinit</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.kerberos.min.time.before.relogin"></a><a id="adminclientconfigs_sasl.kerberos.min.time.before.relogin" href="#adminclientconfigs_sasl.kerberos.min.time.before.relogin">sasl.kerberos.min.time.before.relogin</a></h4>
+<p>Login thread sleep time between refresh attempts.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>60000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.kerberos.ticket.renew.jitter"></a><a id="adminclientconfigs_sasl.kerberos.ticket.renew.jitter" href="#adminclientconfigs_sasl.kerberos.ticket.renew.jitter">sasl.kerberos.ticket.renew.jitter</a></h4>
+<p>Percentage of random jitter added to the renewal time.</p>
+<table><tbody>
+<tr><th>Type:</th><td>double</td></tr>
+<tr><th>Default:</th><td>0.05</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.kerberos.ticket.renew.window.factor"></a><a id="adminclientconfigs_sasl.kerberos.ticket.renew.window.factor" href="#adminclientconfigs_sasl.kerberos.ticket.renew.window.factor">sasl.kerberos.ticket.renew.window.factor</a></h4>
+<p>Login thread will sleep until the specified window factor of time from last refresh to ticket's expiry has been reached, at which time it will try to renew the ticket.</p>
+<table><tbody>
+<tr><th>Type:</th><td>double</td></tr>
+<tr><th>Default:</th><td>0.8</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.login.connect.timeout.ms"></a><a id="adminclientconfigs_sasl.login.connect.timeout.ms" href="#adminclientconfigs_sasl.login.connect.timeout.ms">sasl.login.connect.timeout.ms</a></h4>
+<p>The (optional) value in milliseconds for the external authentication provider connection timeout. Currently applies only to OAUTHBEARER.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.login.read.timeout.ms"></a><a id="adminclientconfigs_sasl.login.read.timeout.ms" href="#adminclientconfigs_sasl.login.read.timeout.ms">sasl.login.read.timeout.ms</a></h4>
+<p>The (optional) value in milliseconds for the external authentication provider read timeout. Currently applies only to OAUTHBEARER.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.login.refresh.buffer.seconds"></a><a id="adminclientconfigs_sasl.login.refresh.buffer.seconds" href="#adminclientconfigs_sasl.login.refresh.buffer.seconds">sasl.login.refresh.buffer.seconds</a></h4>
+<p>The amount of buffer time before credential expiration to maintain when refreshing a credential, in seconds. If a refresh would otherwise occur closer to expiration than the number of buffer seconds then the refresh will be moved up to maintain as much of the buffer time as possible. Legal values are between 0 and 3600 (1 hour); a default value of  300 (5 minutes) is used if no value is specified. This value and sasl.login.refresh.min.period.seconds are both ignored if their sum exceeds the remaining lifetime of a credential. Currently applies only to OAUTHBEARER.</p>
+<table><tbody>
+<tr><th>Type:</th><td>short</td></tr>
+<tr><th>Default:</th><td>300</td></tr>
+<tr><th>Valid Values:</th><td>[0,...,3600]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.login.refresh.min.period.seconds"></a><a id="adminclientconfigs_sasl.login.refresh.min.period.seconds" href="#adminclientconfigs_sasl.login.refresh.min.period.seconds">sasl.login.refresh.min.period.seconds</a></h4>
+<p>The desired minimum time for the login refresh thread to wait before refreshing a credential, in seconds. Legal values are between 0 and 900 (15 minutes); a default value of 60 (1 minute) is used if no value is specified.  This value and  sasl.login.refresh.buffer.seconds are both ignored if their sum exceeds the remaining lifetime of a credential. Currently applies only to OAUTHBEARER.</p>
+<table><tbody>
+<tr><th>Type:</th><td>short</td></tr>
+<tr><th>Default:</th><td>60</td></tr>
+<tr><th>Valid Values:</th><td>[0,...,900]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.login.refresh.window.factor"></a><a id="adminclientconfigs_sasl.login.refresh.window.factor" href="#adminclientconfigs_sasl.login.refresh.window.factor">sasl.login.refresh.window.factor</a></h4>
+<p>Login refresh thread will sleep until the specified window factor relative to the credential's lifetime has been reached, at which time it will try to refresh the credential. Legal values are between 0.5 (50%) and 1.0 (100%) inclusive; a default value of 0.8 (80%) is used if no value is specified. Currently applies only to OAUTHBEARER.</p>
+<table><tbody>
+<tr><th>Type:</th><td>double</td></tr>
+<tr><th>Default:</th><td>0.8</td></tr>
+<tr><th>Valid Values:</th><td>[0.5,...,1.0]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.login.refresh.window.jitter"></a><a id="adminclientconfigs_sasl.login.refresh.window.jitter" href="#adminclientconfigs_sasl.login.refresh.window.jitter">sasl.login.refresh.window.jitter</a></h4>
+<p>The maximum amount of random jitter relative to the credential's lifetime that is added to the login refresh thread's sleep time. Legal values are between 0 and 0.25 (25%) inclusive; a default value of 0.05 (5%) is used if no value is specified. Currently applies only to OAUTHBEARER.</p>
+<table><tbody>
+<tr><th>Type:</th><td>double</td></tr>
+<tr><th>Default:</th><td>0.05</td></tr>
+<tr><th>Valid Values:</th><td>[0.0,...,0.25]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.login.retry.backoff.max.ms"></a><a id="adminclientconfigs_sasl.login.retry.backoff.max.ms" href="#adminclientconfigs_sasl.login.retry.backoff.max.ms">sasl.login.retry.backoff.max.ms</a></h4>
+<p>The (optional) value in milliseconds for the maximum wait between login attempts to the external authentication provider. Login uses an exponential backoff algorithm with an initial wait based on the sasl.login.retry.backoff.ms setting and will double in wait length between attempts up to a maximum wait length specified by the sasl.login.retry.backoff.max.ms setting. Currently applies only to OAUTHBEARER.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>10000 (10 seconds)</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.login.retry.backoff.ms"></a><a id="adminclientconfigs_sasl.login.retry.backoff.ms" href="#adminclientconfigs_sasl.login.retry.backoff.ms">sasl.login.retry.backoff.ms</a></h4>
+<p>The (optional) value in milliseconds for the initial wait between login attempts to the external authentication provider. Login uses an exponential backoff algorithm with an initial wait based on the sasl.login.retry.backoff.ms setting and will double in wait length between attempts up to a maximum wait length specified by the sasl.login.retry.backoff.max.ms setting. Currently applies only to OAUTHBEARER.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>100</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.oauthbearer.clock.skew.seconds"></a><a id="adminclientconfigs_sasl.oauthbearer.clock.skew.seconds" href="#adminclientconfigs_sasl.oauthbearer.clock.skew.seconds">sasl.oauthbearer.clock.skew.seconds</a></h4>
+<p>The (optional) value in seconds to allow for differences between the time of the OAuth/OIDC identity provider and the broker.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>30</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.oauthbearer.expected.audience"></a><a id="adminclientconfigs_sasl.oauthbearer.expected.audience" href="#adminclientconfigs_sasl.oauthbearer.expected.audience">sasl.oauthbearer.expected.audience</a></h4>
+<p>The (optional) comma-delimited setting for the broker to use to verify that the JWT was issued for one of the expected audiences. The JWT will be inspected for the standard OAuth "aud" claim and if this value is set, the broker will match the value from JWT's "aud" claim  to see if there is an exact match. If there is no match, the broker will reject the JWT and authentication will fail.</p>
+<table><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.oauthbearer.expected.issuer"></a><a id="adminclientconfigs_sasl.oauthbearer.expected.issuer" href="#adminclientconfigs_sasl.oauthbearer.expected.issuer">sasl.oauthbearer.expected.issuer</a></h4>
+<p>The (optional) setting for the broker to use to verify that the JWT was created by the expected issuer. The JWT will be inspected for the standard OAuth "iss" claim and if this value is set, the broker will match it exactly against what is in the JWT's "iss" claim. If there is no match, the broker will reject the JWT and authentication will fail.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.oauthbearer.jwks.endpoint.refresh.ms"></a><a id="adminclientconfigs_sasl.oauthbearer.jwks.endpoint.refresh.ms" href="#adminclientconfigs_sasl.oauthbearer.jwks.endpoint.refresh.ms">sasl.oauthbearer.jwks.endpoint.refresh.ms</a></h4>
+<p>The (optional) value in milliseconds for the broker to wait between refreshing its JWKS (JSON Web Key Set) cache that contains the keys to verify the signature of the JWT.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>3600000 (1 hour)</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms"></a><a id="adminclientconfigs_sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms" href="#adminclientconfigs_sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms">sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms</a></h4>
+<p>The (optional) value in milliseconds for the maximum wait between attempts to retrieve the JWKS (JSON Web Key Set) from the external authentication provider. JWKS retrieval uses an exponential backoff algorithm with an initial wait based on the sasl.oauthbearer.jwks.endpoint.retry.backoff.ms setting and will double in wait length between attempts up to a maximum wait length specified by the sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms setting.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>10000 (10 seconds)</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.oauthbearer.jwks.endpoint.retry.backoff.ms"></a><a id="adminclientconfigs_sasl.oauthbearer.jwks.endpoint.retry.backoff.ms" href="#adminclientconfigs_sasl.oauthbearer.jwks.endpoint.retry.backoff.ms">sasl.oauthbearer.jwks.endpoint.retry.backoff.ms</a></h4>
+<p>The (optional) value in milliseconds for the initial wait between JWKS (JSON Web Key Set) retrieval attempts from the external authentication provider. JWKS retrieval uses an exponential backoff algorithm with an initial wait based on the sasl.oauthbearer.jwks.endpoint.retry.backoff.ms setting and will double in wait length between attempts up to a maximum wait length specified by the sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms setting.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>100</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.oauthbearer.scope.claim.name"></a><a id="adminclientconfigs_sasl.oauthbearer.scope.claim.name" href="#adminclientconfigs_sasl.oauthbearer.scope.claim.name">sasl.oauthbearer.scope.claim.name</a></h4>
+<p>The OAuth claim for the scope is often named "scope", but this (optional) setting can provide a different name to use for the scope included in the JWT payload's claims if the OAuth/OIDC provider uses a different name for that claim.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>scope</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.oauthbearer.sub.claim.name"></a><a id="adminclientconfigs_sasl.oauthbearer.sub.claim.name" href="#adminclientconfigs_sasl.oauthbearer.sub.claim.name">sasl.oauthbearer.sub.claim.name</a></h4>
+<p>The OAuth claim for the subject is often named "sub", but this (optional) setting can provide a different name to use for the subject included in the JWT payload's claims if the OAuth/OIDC provider uses a different name for that claim.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>sub</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="security.providers"></a><a id="adminclientconfigs_security.providers" href="#adminclientconfigs_security.providers">security.providers</a></h4>
+<p>A list of configurable creator classes each returning a provider implementing security algorithms. These classes should implement the <code>org.apache.kafka.common.security.auth.SecurityProviderCreator</code> interface.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.cipher.suites"></a><a id="adminclientconfigs_ssl.cipher.suites" href="#adminclientconfigs_ssl.cipher.suites">ssl.cipher.suites</a></h4>
+<p>A list of cipher suites. This is a named combination of authentication, encryption, MAC and key exchange algorithm used to negotiate the security settings for a network connection using TLS or SSL network protocol. By default all the available cipher suites are supported.</p>
+<table><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.endpoint.identification.algorithm"></a><a id="adminclientconfigs_ssl.endpoint.identification.algorithm" href="#adminclientconfigs_ssl.endpoint.identification.algorithm">ssl.endpoint.identification.algorithm</a></h4>
+<p>The endpoint identification algorithm to validate server hostname using server certificate. </p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>https</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.engine.factory.class"></a><a id="adminclientconfigs_ssl.engine.factory.class" href="#adminclientconfigs_ssl.engine.factory.class">ssl.engine.factory.class</a></h4>
+<p>The class of type org.apache.kafka.common.security.auth.SslEngineFactory to provide SSLEngine objects. Default value is org.apache.kafka.common.security.ssl.DefaultSslEngineFactory</p>
+<table><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.keymanager.algorithm"></a><a id="adminclientconfigs_ssl.keymanager.algorithm" href="#adminclientconfigs_ssl.keymanager.algorithm">ssl.keymanager.algorithm</a></h4>
+<p>The algorithm used by key manager factory for SSL connections. Default value is the key manager factory algorithm configured for the Java Virtual Machine.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>SunX509</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.secure.random.implementation"></a><a id="adminclientconfigs_ssl.secure.random.implementation" href="#adminclientconfigs_ssl.secure.random.implementation">ssl.secure.random.implementation</a></h4>
+<p>The SecureRandom PRNG implementation to use for SSL cryptography operations. </p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="ssl.trustmanager.algorithm"></a><a id="adminclientconfigs_ssl.trustmanager.algorithm" href="#adminclientconfigs_ssl.trustmanager.algorithm">ssl.trustmanager.algorithm</a></h4>
+<p>The algorithm used by trust manager factory for SSL connections. Default value is the trust manager factory algorithm configured for the Java Virtual Machine.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>PKIX</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+</ul>
+
