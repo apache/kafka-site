@@ -13,16 +13,13 @@
     iframe.allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
     iframe.setAttribute('allowFullScreen', '');
     videoPlaceholder.parentNode.replaceChild(iframe, videoPlaceholder);
-    document.getElementById('instruct').style = 'display:none';
   }
 </script>
 <div class="content">
   <!--#include virtual="includes/_nav.htm" -->
     <div class="page-header">
       <h1 class="page-header-title">Apache Kafka Quickstart</h1>
-      <p class="page-header-text">Everything you need to know about Kafka in 10 minutes
-           <span id="instruct"> (click image to load video) </span>
-      </p>
+      <p class="page-header-text">Everything you need to know about Kafka in 10 minutes</p>
         <div class="page-header-video">
            <img id="video_placeholder" width="480" height="270" src="images/what_is_kafka.png" onclick="loadVideo()" style="cursor:pointer"/>
         </div>
