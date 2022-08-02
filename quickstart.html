@@ -3,8 +3,8 @@
 <!--#include virtual="includes/_top.htm" -->
 <script type="text/javascript">
   function loadVideo () {
-    const videoPlaceholder = document.getElementById("video_placeholder"); 
-    const iframe = document.createElement('iframe');
+    var videoPlaceholder = document.getElementById("video_placeholder"); 
+    var iframe = document.createElement('iframe');
     iframe.class="youtube-embed page-header-video-embed";
     iframe.width="480";
     iframe.height="270";
@@ -13,13 +13,16 @@
     iframe.allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
     iframe.setAttribute('allowFullScreen', '');
     videoPlaceholder.parentNode.replaceChild(iframe, videoPlaceholder);
+    document.getElementById('notification').style.display = 'none';
   }
 </script>
 <div class="content">
   <!--#include virtual="includes/_nav.htm" -->
     <div class="page-header">
       <h1 class="page-header-title">Apache Kafka Quickstart</h1>
-      <p class="page-header-text">Everything you need to know about Kafka in 10 minutes</p>
+      <p class="page-header-text">Everything you need to know about Kafka in 10 minutes
+        <span id="notification"><br/>(clicking the image will load a video from YouTube)</span>
+      </p>
         <div class="page-header-video">
            <img id="video_placeholder" width="480" height="270" src="images/what_is_kafka.png" onclick="loadVideo()" style="cursor:pointer"/>
         </div>
