@@ -3408,7 +3408,7 @@ for built-in state stores, currently we have:
 
   <h5 class="anchor-heading"><a id="kraft_role" class="anchor-link"></a><a href="#kraft_role">Process Roles</a></h5>
 
-  <p>In KRaft mode each Kafka server can be configured as a controller, a broker, or both using the <code>process.roles<code> property. This property can have the following values:</p>
+  <p>In KRaft mode each Kafka server can be configured as a controller, a broker, or both using the <code>process.roles</code> property. This property can have the following values:</p>
 
   <ul>
     <li>If <code>process.roles</code> is set to <code>broker</code>, the server acts as a broker.</li>
@@ -3438,7 +3438,7 @@ node.id=1
 listeners=CONTROLLER://controller1.example.com:9093
 controller.quorum.voters=1@controller1.example.com:9093,2@controller2.example.com:9093,3@controller3.example.com:9093</code></pre>
 
-  <p>Every broker and controller must set the <code>controller.quorum.voters</code> property. The node ID supplied in the <code>controller.quorum.voters</code> property must match the corresponding id on the controller servers. For example, on controller1, node.id must be set to 1, and so forth. Each node ID must be unique across all the servers in a particular cluster. No two servers can have the same node ID regardless of their <code>process.roles<code> values.
+  <p>Every broker and controller must set the <code>controller.quorum.voters</code> property. The node ID supplied in the <code>controller.quorum.voters</code> property must match the corresponding id on the controller servers. For example, on controller1, node.id must be set to 1, and so forth. Each node ID must be unique across all the servers in a particular cluster. No two servers can have the same node ID regardless of their <code>process.roles</code> values.
 
   <h4 class="anchor-heading"><a id="kraft_storage" class="anchor-link"></a><a href="#kraft_storage">Storage Tool</a></h4>
   <p></p>
