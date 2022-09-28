@@ -1215,7 +1215,7 @@ nav .btn {
 }
 .content.documentation--current .right {
     max-width: 65rem;
-    margin: 0 0 0 33rem;
+    margin: 0 0 0 auto;
 }
 .content.documentation--current.expanded .right {
     max-width: 85rem;
