@@ -6,11 +6,55 @@
 	<div class="right">
     <h1>Download</h1>
 
-    <p>3.2.3 is the latest release. The current stable version is 3.2.3.</p>
+    <p>3.3.1 is the latest release. The current stable version is 3.3.1.</p>
 
     <p>
     You can verify your download by following these <a href="https://www.apache.org/info/verification.html">procedures</a> and using these <a href="https://downloads.apache.org/kafka/KEYS">KEYS</a>.
     </p>
+
+    <span id="3.3.1"></span>
+    <h3 class="download-version">3.3.1<a href="#3.3.1"><i class="fas fa-link " style="color:#053ce2"></i></a></h3>
+    <ul>
+        <li>
+            Released October 3, 2022
+        </li>
+        <li>
+            <a href="https://downloads.apache.org/kafka/3.3.1/RELEASE_NOTES.html">3.3.1</a> and <a href="https://archive.apache.org/dist/kafka/3.3.0/RELEASE_NOTES.html">3.3.0</a> Release Notes
+        </li>
+        <li>
+            Source download: <a href="https://downloads.apache.org/kafka/3.3.1/kafka-3.3.1-src.tgz">kafka-3.3.1-src.tgz</a> (<a href="https://downloads.apache.org/kafka/3.3.1/kafka-3.3.1-src.tgz.asc">asc</a>, <a href="https://downloads.apache.org/kafka/3.3.1/kafka-3.3.1-src.tgz.sha512">sha512</a>)
+        </li>
+        <li>
+            Binary downloads:
+            <ul>
+                <li>Scala 2.12 &nbsp;- <a href="https://downloads.apache.org/kafka/3.3.1/kafka_2.12-3.3.1.tgz">kafka_2.12-3.3.1.tgz</a> (<a href="https://downloads.apache.org/kafka/3.3.1/kafka_2.12-3.3.1.tgz.asc">asc</a>, <a href="https://downloads.apache.org/kafka/3.3.1/kafka_2.12-3.3.1.tgz.sha512">sha512</a>)</li>
+                <li>Scala 2.13 &nbsp;- <a href="https://downloads.apache.org/kafka/3.3.1/kafka_2.13-3.3.1.tgz">kafka_2.13-3.3.1.tgz</a> (<a href="https://downloads.apache.org/kafka/3.3.1/kafka_2.13-3.3.1.tgz.asc">asc</a>, <a href="https://downloads.apache.org/kafka/3.3.1/kafka_2.13-3.3.1.tgz.sha512">sha512</a>)</li>
+            </ul>
+            We build for multiple versions of Scala. This only matters if you are using Scala and you want a version
+            built for the same Scala version you use. Otherwise any version should work (2.13 is recommended).
+        </li>
+    </ul>
+
+    <p>
+        Kafka 3.3.1 includes a number of significant new features. Here is a summary of some notable changes:
+    </p>
+
+    <ul>
+        <li>KIP-833: Mark KRaft as Production Ready</li>
+        <li>KIP-778: KRaft to KRaft upgrades</li>
+        <li>KIP-835: Monitor KRaft Controller Quorum health</li>
+        <li>KIP-794: Strictly Uniform Sticky Partitioner</li>
+        <li>KIP-834: Pause/resume KafkaStreams topologies</li>
+        <li>KIP-618: Exactly-Once support for source connectors</li>
+    </ul>
+
+    <p>
+        For more information, please read the detailed <a href="https://downloads.apache.org/kafka/3.3.1/RELEASE_NOTES.html">3.3.1</a> and <a href="https://archive.apache.org/dist/kafka/3.3.0/RELEASE_NOTES.html">3.3.0</a> Release Notes.
+    </p>
+
+    <span id="3.3.0"></span>
+    <h3 class="download-version">3.3.0<a href="#3.3.0"><i class="fas fa-link " style="color:#053ce2"></i></a></h3>
+    <p>A significant bug was found in the 3.3.0 release after artifacts were pushed to Apache and Maven central but prior to the release announcement. As a result the decision was taken to not announce 3.3.0 and release 3.3.1 with the fix. It is recommended that 3.3.0 not be used.</p>
 
     <span id="3.2.3"></span>
     <h3 class="download-version">3.2.3<a href="#3.2.3"><i class="fas fa-link " style="color:#053ce2"></i></a></h3>
@@ -535,13 +579,13 @@
             <a href="https://archive.apache.org/dist/kafka/2.6.3/RELEASE_NOTES.html">Release Notes</a>
         </li>
         <li>
-            Source download: <a href="https://archive.apache.org/dist/kafka/2.6.3/kafka-2.6.3-src.tgz">kafka-2.6.3-src.tgz</a> (<a href="https://archive.apache.org/dist/kafka/2.6.3/kafka-2.6.3-src.tgz.asc">asc</a>, <a href="https://downloads.apache.org/kafka/2.6.3/kafka-2.6.3-src.tgz.sha512">sha512</a>)
+            Source download: <a href="https://archive.apache.org/dist/kafka/2.6.3/kafka-2.6.3-src.tgz">kafka-2.6.3-src.tgz</a> (<a href="https://archive.apache.org/dist/kafka/2.6.3/kafka-2.6.3-src.tgz.asc">asc</a>, <a href="https://archive.apache.org/dist/kafka/2.6.3/kafka-2.6.3-src.tgz.sha512">sha512</a>)
         </li>
         <li>
             Binary downloads:
             <ul>
-                <li>Scala 2.12 &nbsp;- <a href="https://archive.apache.org/dist/kafka/2.6.3/kafka_2.12-2.6.3.tgz">kafka_2.12-2.6.3.tgz</a> (<a href="https://archive.apache.org/dist/kafka/2.6.3/kafka_2.12-2.6.3.tgz.asc">asc</a>, <a href="https://downloads.apache.org/kafka/2.6.3/kafka_2.12-2.6.3.tgz.sha512">sha512</a>)</li>
-                <li>Scala 2.13 &nbsp;- <a href="https://archive.apache.org/dist/kafka/2.6.3/kafka_2.13-2.6.3.tgz">kafka_2.13-2.6.3.tgz</a> (<a href="https://archive.apache.org/dist/kafka/2.6.3/kafka_2.13-2.6.3.tgz.asc">asc</a>, <a href="https://downloads.apache.org/kafka/2.6.3/kafka_2.13-2.6.3.tgz.sha512">sha512</a>)</li>
+                <li>Scala 2.12 &nbsp;- <a href="https://archive.apache.org/dist/kafka/2.6.3/kafka_2.12-2.6.3.tgz">kafka_2.12-2.6.3.tgz</a> (<a href="https://archive.apache.org/dist/kafka/2.6.3/kafka_2.12-2.6.3.tgz.asc">asc</a>, <a href="https://archive.apache.org/dist/kafka/2.6.3/kafka_2.12-2.6.3.tgz.sha512">sha512</a>)</li>
+                <li>Scala 2.13 &nbsp;- <a href="https://archive.apache.org/dist/kafka/2.6.3/kafka_2.13-2.6.3.tgz">kafka_2.13-2.6.3.tgz</a> (<a href="https://archive.apache.org/dist/kafka/2.6.3/kafka_2.13-2.6.3.tgz.asc">asc</a>, <a href="https://archive.apache.org/dist/kafka/2.6.3/kafka_2.13-2.6.3.tgz.sha512">sha512</a>)</li>
             </ul>
             We build for multiple versions of Scala. This only matters if you are using Scala and you want a version
             built for the same Scala version you use. Otherwise any version should work (2.13 is recommended).
