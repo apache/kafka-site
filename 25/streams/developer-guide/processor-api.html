@@ -364,7 +364,7 @@
             <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">public void process(String key, String value) {</span>
 
     <span class="c1">// add a header to the elements</span>
-    <span class="n">context()</span><span class="o">.</span><span class="na">headers</span><span class="o">()</span><span class="o">.</span><span class="na">add</span><span class="o">.</span><span class="o">(</span><span class="s">&quot;key&quot;</span><span class="o">,</span> <span class="s">&quot;key&quot;</span>
+    <span class="n">context()</span><span class="o">.</span><span class="na">headers</span><span class="o">()</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">key</span><span class="o">,</span> <span class="n">value</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
 <span class="o">}</span></pre></div>
         </div>
         <div class="section" id="connecting-processors-and-state-stores">
