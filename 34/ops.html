@@ -3673,7 +3673,7 @@ zookeeper.connect=localhost:2181
   <pre>
 # Sample ZK broker server.properties listening on 9092
 broker.id=0
-listeners=PLAINTEXT://:9092
+listeners=PLAINTEXT://localhost:9092
 advertised.listeners=PLAINTEXT://localhost:9092
 listener.security.protocol.map=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT
 
@@ -3715,7 +3715,7 @@ controller.listener.names=CONTROLLER</pre>
 # Sample KRaft broker server.properties listening on 9092
 process.roles=broker
 node.id=0
-listeners=PLAINTEXT://:9092
+listeners=PLAINTEXT://localhost:9092
 advertised.listeners=PLAINTEXT://localhost:9092
 listener.security.protocol.map=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT
 
