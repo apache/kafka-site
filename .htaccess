@@ -10,5 +10,3 @@ RewriteRule ^/?(\d+)/javadoc - [S=2]
 RewriteRule ^/?(\d+)/images/ - [S=1]
 RewriteCond $2 !=protocol
 RewriteRule ^/?(\d+)/([a-z]+)(\.html)? /$1/documentation#$2 [R=302,L,NE]
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ %{REQUEST_FILENAME}.html
