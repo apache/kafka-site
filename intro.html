@@ -1,26 +1,35 @@
 <!--#include virtual="/includes/_header.htm" -->
 <body class="page-intro ">
 <!--#include virtual="/includes/_top.htm" -->
+<script type="text/javascript">
+  function loadVideo () {
+    var videoPlaceholder = document.getElementById("video_placeholder"); 
+    var iframe = document.createElement('iframe');
+    iframe.width="480";
+    iframe.height="270";
+    iframe.src="https://www.youtube.com/embed/FKgi3n-FyNU?modestbranding=1";
+    iframe.frameborder="0";
+    iframe.allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+    iframe.setAttribute('allowFullScreen', '');
+    iframe.setAttribute('class','youtube-embed page-header-video-embed');
+    videoPlaceholder.parentNode.replaceChild(iframe, videoPlaceholder);
+    document.getElementById("notification").style.display = 'none';
+  }
+</script>
 <div class="content">
   <!--#include virtual="/includes/_nav.htm" -->
   <div class="right">
 		<div class="page-header">
       <h1 class="page-header-title">Introduction</h1>
-      <p class="page-header-text">Everything you need to know about Kafka in 10 minutes</p>
-
-      <div class="page-header-video">
-        <iframe
-          class="youtube-embed page-header-video-embed"
-          width="480" height="270"
-          src="https://www.youtube.com/embed/FKgi3n-FyNU?modestbranding=1"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-        </iframe>
-      </div>
-      
+     <p class="page-header-text">Everything you need to know about Kafka in 10 minutes
+        <span id="notification"> <br/>(clicking the image will load a video from YouTube)</span>
+     </p>
+        <div class="page-header-video">
+           <img id="video_placeholder" width="480" height="270" src="images/what_is_kafka.png" onclick="loadVideo()" style="cursor:pointer"/>
+        </div>
     </div>
 <!-- should always link the latest release's documentation -->
-    <!--#include virtual="/31/introduction.html" -->
+    <!--#include virtual="/34/introduction.html" -->
 
 <!--#include virtual="includes/_footer.htm" -->
 

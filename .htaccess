@@ -4,6 +4,7 @@ AddType text/html .html
 AddHandler server-parsed .html
 Redirect 301 /design.html /documentation#design
 
+RewriteRule ^/?(\d+)/generated/ - [S=4]
 RewriteRule ^/?(\d+)/documentation(\.html)? - [S=3]
 RewriteRule ^/?(\d+)/javadoc - [S=2]
 RewriteRule ^/?(\d+)/images/ - [S=1]

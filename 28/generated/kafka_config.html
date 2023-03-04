@@ -1639,6 +1639,17 @@
 </tbody></table>
 </li>
 <li>
+<h4><a id="sasl.server.max.receive.size"></a><a id="brokerconfigs_sasl.server.max.receive.size" href="#brokerconfigs_sasl.server.max.receive.size">sasl.server.max.receive.size</a></h4>
+<p>The maximum receive size allowed before and during initial SASL authentication. Default receive size is 512KB. GSSAPI limits requests to 64K, but we allow upto 512KB by default for custom SASL mechanisms. In practice, PLAIN, SCRAM and OAUTH mechanisms can use much smaller limits.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>524288</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+<tr><th>Update Mode:</th><td>read-only</td></tr>
+</tbody></table>
+</li>
+<li>
 <h4><a id="security.inter.broker.protocol"></a><a id="brokerconfigs_security.inter.broker.protocol" href="#brokerconfigs_security.inter.broker.protocol">security.inter.broker.protocol</a></h4>
 <p>Security protocol used to communicate between brokers. Valid values are: PLAINTEXT, SSL, SASL_PLAINTEXT, SASL_SSL. It is an error to set this and inter.broker.listener.name properties at the same time.</p>
 <table><tbody>

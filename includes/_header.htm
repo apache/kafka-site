@@ -15,14 +15,12 @@
 		<meta property="og:description" content="Apache Kafka: A Distributed Streaming Platform." />
 		<meta property="og:site_name" content="Apache Kafka" />
 		<meta property="og:type" content="website" />
-		<link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:100,300,400,700,900|Roboto+Condensed:300" rel="stylesheet">
+		<link href="/css/fonts.css" rel="stylesheet">
 		<script src="/js/jquery.min.js"></script>
 		<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" />
-		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
-		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
-		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+		<link rel="stylesheet" href="/css/prism.min.css" />
+		<script defer src="/js/prism.min.js"></script>
 
 		<script>
 			// DO NOT NEED TO UPDATE
@@ -61,4 +59,21 @@
 				}
 			}
 		</script>
+		<!-- Matomo -->
+		<script>
+			var _paq = window._paq = window._paq || [];
+			/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+			/* We explicitly disable cookie tracking to avoid privacy issues */
+			_paq.push(['disableCookies']);
+			_paq.push(['trackPageView']);
+			_paq.push(['enableLinkTracking']);
+			(function() {
+				var u="//matomo.privacy.apache.org/";
+				_paq.push(['setTrackerUrl', u+'matomo.php']);
+				_paq.push(['setSiteId', '26']);
+				var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+				g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+			})();
+		</script>
+		<!-- End Matomo Code -->
 	</head>
