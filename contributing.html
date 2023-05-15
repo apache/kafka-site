@@ -78,6 +78,20 @@
 			<li>Demonstrated good understanding and exercised good technical judgement on at least one component of the codebase (e.g. core, clients, connect, streams, tests) from contribution activities in the above mentioned areas.</li>
 		</ul>
 
+		<h2>Collaborators</h2>
+
+		<p>
+		The Apache build infrastructure has provided two roles to make project management easier. These roles allow non-committers to perform some administrative actions like triaging pull requests or triggering builds. They are:
+		<ul>
+			<li><a href="https://cwiki.apache.org/confluence/pages/viewpage.action?spaceKey=INFRA&title=Git+-+.asf.yaml+features#Git.asf.yamlfeatures-JenkinsPRwhitelisting">Jenkins PR Whitelisted Users</a></li>
+			<li><a href="https://cwiki.apache.org/confluence/pages/viewpage.action?spaceKey=INFRA&title=Git+-+.asf.yaml+features#Git.asf.yamlfeatures-AssigningexternalcollaboratorswiththetriageroleonGitHub">Github Collaborators</a></li>
+		</ul>
+		</p>
+
+		<p>
+		In an effort to keep the Apache Kafka project running smoothly, and also to help contributors become committers, we have enabled these roles (See <a href="https://github.com/apache/kafka/blob/trunk/.asf.yaml">the Apache Kafka Infra config</a>). To keep this process lightweight and fair, we keep the list of contributors full by specifying the top N non-committers (sorted by number of commits they have authored in the last 12 months), where N is the maximum size of that list (currently 20). Authorship is determined by <code>git shortlog</code>. The list will be updated as part of the major/minor release process, three to four times a year.
+		</p>
+
 	<script>
 	// Show selected style on nav item
 	$(function() { $('.b-nav__project').addClass('selected'); });
