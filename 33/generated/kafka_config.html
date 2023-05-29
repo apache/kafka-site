@@ -2365,6 +2365,50 @@
 </tbody></table>
 </li>
 <li>
+<h4><a id="metrics.jmx.include" href="#metrics.jmx.include">metrics.jmx.include</a></h4>
+<p>RegEx for included metrics available over JMX.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>".*" (all metrics)</td></tr>
+<tr><th>Valid Values:</th><td>Valid RegEx</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+<tr><th>Update Mode:</th><td>read-only</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="metrics.jmx.exclude" href="#metrics.jmx.exclude">metrics.jmx.exclude</a></h4>
+<p>RegEx for excluded metrics available over JMX. Will exclude metrics available configured by <code>metrics.jmx.include</code>.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td>Valid RegEx</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+<tr><th>Update Mode:</th><td>read-only</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="metrics.jmx.whitelist" href="#metrics.jmx.whitelist">metrics.jmx.whitelist</a></h4>
+<p>DEPRECATED: An alias for <code>metrics.jmx.include</code>, which should be used instead of this config.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>".*" (all metrics)</td></tr>
+<tr><th>Valid Values:</th><td>Valid RegEx</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+<tr><th>Update Mode:</th><td>read-only</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="metrics.jmx.exclude" href="#metrics.jmx.exclude">metrics.jmx.exclude</a></h4>
+<p>DEPRECATED: An alias for <code>metrics.jmx.exclude</code>, which should be used instead of this config.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td>Valid RegEx</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+<tr><th>Update Mode:</th><td>read-only</td></tr>
+</tbody></table>
+</li>
+<li>
 <h4><a id="password.encoder.cipher.algorithm"></a><a id="brokerconfigs_password.encoder.cipher.algorithm" href="#brokerconfigs_password.encoder.cipher.algorithm">password.encoder.cipher.algorithm</a></h4>
 <p>The Cipher algorithm used for encoding dynamically configured passwords.</p>
 <table><tbody>
