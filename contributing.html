@@ -44,7 +44,7 @@
 
 		The easiest way to get started working with the code base is to pick up a really easy JIRA and work on that. This will help you get familiar with the code base, build system, review process, etc. We flag these kind of starter bugs <a href="https://issues.apache.org/jira/issues/?jql=project%20%3D%20KAFKA%20AND%20labels%20%3D%20newbie%20AND%20status%20%3D%20Open">here</a>.
 		<p>
-		Please contact us to be added to the contributor list with your JIRA account username provided in the email. After that you can assign yourself to the JIRA ticket you have started working on so others will notice.
+		Please request a JIRA account using <a href="https://selfserve.apache.org/jira-account.html">ASF's Self-serve portal</a>. After that you can assign yourself to the JIRA ticket you have started working on so others will notice.
 		</p>
                 <p>
                 If your work is considered a "major change" then you would need to initiate a Kafka Improvement Proposal (KIP) along with the JIRA ticket (more details can be found <a href="https://cwiki.apache.org/confluence/display/KAFKA/Kafka+Improvement+Proposals">here</a>). Please ask us to grant you the permission on wiki space in order to create a KIP wiki page.
@@ -77,6 +77,20 @@
 			</li>
 			<li>Demonstrated good understanding and exercised good technical judgement on at least one component of the codebase (e.g. core, clients, connect, streams, tests) from contribution activities in the above mentioned areas.</li>
 		</ul>
+
+		<h2>Collaborators</h2>
+
+		<p>
+		The Apache build infrastructure has provided two roles to make project management easier. These roles allow non-committers to perform some administrative actions like triaging pull requests or triggering builds. See the ASF documentation (note: you need to be logged in to the wiki):
+		<ul>
+			<li><a href="https://cwiki.apache.org/confluence/pages/viewpage.action?spaceKey=INFRA&title=Git+-+.asf.yaml+features#Git.asf.yamlfeatures-JenkinsPRwhitelisting">Jenkins PR Whitelisted Users</a></li>
+			<li><a href="https://cwiki.apache.org/confluence/pages/viewpage.action?spaceKey=INFRA&title=Git+-+.asf.yaml+features#Git.asf.yamlfeatures-AssigningexternalcollaboratorswiththetriageroleonGitHub">Github Collaborators</a></li>
+		</ul>
+		</p>
+
+		<p>
+		In an effort to keep the Apache Kafka project running smoothly, and also to help contributors become committers, we have enabled these roles (See <a href="https://github.com/apache/kafka/blob/trunk/.asf.yaml">the Apache Kafka Infra config</a>). To keep this process lightweight and fair, we keep the list of contributors full by specifying the top N non-committers (sorted by number of commits they have authored in the last 12 months), where N is the maximum size of that list (currently 10). Authorship is determined by <code>git shortlog</code>. The list will be updated as part of the major/minor release process, three to four times a year.
+		</p>
 
 	<script>
 	// Show selected style on nav item
