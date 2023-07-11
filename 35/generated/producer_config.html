@@ -861,7 +861,7 @@
 </li>
 <li>
 <h4><a id="transaction.timeout.ms"></a><a id="producerconfigs_transaction.timeout.ms" href="#producerconfigs_transaction.timeout.ms">transaction.timeout.ms</a></h4>
-<p>The maximum amount of time in milliseconds that a transaction will remain open before the coordinator proactively aborts it. The start of the transaction is set at the time that the first partition is added to it. If this value is larger than the <code>transaction.max.timeout.ms<code> setting in the broker, the request will fail with a <code>InvalidTxnTimeoutException</code> error.</p>
+<p>The maximum amount of time in milliseconds that a transaction will remain open before the coordinator proactively aborts it. The start of the transaction is set at the time that the first partition is added to it. If this value is larger than the <code>transaction.max.timeout.ms</code> setting in the broker, the request will fail with a <code>InvalidTxnTimeoutException</code> error.</p>
 <table><tbody>
 <tr><th>Type:</th><td>int</td></tr>
 <tr><th>Default:</th><td>60000 (1 minute)</td></tr>
