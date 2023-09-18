@@ -30,16 +30,23 @@
                 15 Sep 2023 - Satish Duggana (<a href="https://twitter.com/0xeed">@SatishDuggana</a>)
                 <p>We are proud to announce the release of Apache Kafka 3.6.0. This release contains many new features and improvements. This blog post will highlight some of the more prominent features. For a full list of changes, be sure to check the <a href="https://downloads.apache.org/kafka/3.6.0/RELEASE_NOTES.html">release notes</a>.</p>
                 <p>See the <a href="https://kafka.apache.org/36/documentation.html#upgrade_3_6_0">Upgrading to 3.6.0 from any version 0.8.x through 3.5.x</a> section in the documentation for the list of notable changes and detailed upgrade steps.</p>
-                <p>The ability to migrate Kafka clusters from ZK to KRaft mode with no downtime is still an early access feature. It is currently only suitable for testing in non production environments. See <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-866+ZooKeeper+to+KRaft+Migration">KIP-866</a> for more details.</p>
+                <p>
+                    The ability to migrate Kafka clusters from a ZooKeeper metadata system to a KRaft metadata system is
+                    now considered stable and suitable for production environments. See the ZooKeeper to KRaft migration
+                    <a href="https://kafka.apache.org/documentation/#kraft_zk_migration">operations documentation</a> for
+                    details. Note that support for JBOD is still not available for KRaft clusters, therefor clusters
+                    utilizing JBOD cannot be migrated. See <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-858%3A+Handle+JBOD+broker+disk+failure+in+KRaft">KIP-858</a>
+                    for details regarding KRaft and JBOD.
+                </p>
                 <p><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-405%3A+Kafka+Tiered+Storage">Tiered Storage<a> is an early access feature. It is currently only suitable for testing in non production environments. See <a href="https://cwiki.apache.org/confluence/display/KAFKA/Kafka+Tiered+Storage+Early+Access+Release+Notes">Early Access Notes</a> for more details.</p>
 
-                <p><it>Note: ZooKeeper is marked as deprecated since 3.5.0 release. ZooKeeper is planned to be removed in Apache Kafka 4.0. (Cf <a href="/documentation#zk_depr">ZooKeeper Deprecation</a>)</it><p>
+                <p><i>Note: ZooKeeper is marked as deprecated since 3.5.0 release. ZooKeeper is planned to be removed in Apache Kafka 4.0. (Cf <a href="/documentation#zk_depr">ZooKeeper Deprecation</a>)</i><p>
                 <h3>Kafka Broker, Controller, Producer, Consumer and Admin Client</h3>
                 <ul>
                 <li><b>KIP-405: Kafka Tiered Storage</b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-405%3A+Kafka+Tiered+Storage">KIP-405</a>. It introduces tiered storage feature in Kafka that provides separation of computation and storage in the broker.</li>
                 <li><b>KIP-797: Accept duplicate listener on port for IPv4/IPv6</b><a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=195726330">KIP-797</a>. Brokers can be configured with listeners that have same port on different ip stack like ipv4 and ipv6.</li>
                 <li><b>KIP-863: Reduce CompletedFetch#parseRecord() memory copy</b><a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=225152035">KIP-863</a>. Reduced CompletedFetch#parseRecord() memory copy by deserializing using byte buffers.</li>
-                <li><b>KIP-868 Metadata Transactions</b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-868+Metadata+Transactions">KIP-868</a>. This feature is about allowing the controller to generate atomic transactions of records that can exceed the maximum batch size.</li>
+                <li><b>KIP-868: Metadata Transactions</b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-868+Metadata+Transactions">KIP-868</a>. This feature is about allowing the controller to generate atomic transactions of records that can exceed the maximum batch size.</li>
                 <li><b>KIP-902: Upgrade Zookeeper to 3.8.1</b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-902%3A+Upgrade+Zookeeper+to+3.8.1">KIP-902</a>. Zookeeper client upgraded to 3.8.1 version as the current zookeeper dependency version 3.6.3 reached the end of life.</li>
                 <li><b>KIP-917: Additional custom metadata for remote log segment</b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-917%3A+Additional+custom+metadata+for+remote+log+segment">KIP-917</a>. Custom metedata support for remote log segments.</li>
                 <li><b>KIP-930: Rename ambiguous Tiered Storage Metrics</b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-930%3A+Rename+ambiguous+Tiered+Storage+Metrics">KIP-930</a>. Renamed ambiguous tiered storage metrics.</li>
