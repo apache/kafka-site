@@ -2084,18 +2084,23 @@ These metrics are reported on both Controllers and Brokers in a KRaft Cluster
     <td>kafka.controller:type=KafkaController,name=LastAppliedRecordLagMs</td>
   </tr>
   <tr>
-    <td>Timed-out Broker Heartbeat count</td>
+    <td>Timed-out Broker Heartbeat Count</td>
     <td>The number of broker heartbeats that timed out on this controller since the process was started. Note that only 
     active controllers handle heartbeats, so only they will see increases in this metric.</td>
     <td>kafka.controller:type=KafkaController,name=TimedOutBrokerHeartbeatCount</td>
   </tr>
   <tr>
-    <td>Number of Operations started in Event Queue</td>
+    <td>Number Of Operations Started In Event Queue</td>
     <td>The total number of controller event queue operations that were started. This includes deferred operations.</td>
     <td>kafka.controller:type=KafkaController,name=EventQueueOperationsStartedCount</td>
   </tr>
   <tr>
-    <td>Number of new Controller Elections</td>
+    <td>Number of Operations Timed Out In Event Queue</td>
+    <td>The total number of controller event queue operations that timed out before they could be performed.</td>
+    <td>kafka.controller:type=KafkaController,name=EventQueueOperationsTimedOutCount</td>
+  </tr>
+  <tr>
+    <td>Number Of New Controller Elections</td>
     <td>Counts the number of times this node has seen a new controller elected. A transition to the "no leader" state 
     is not counted here. If the same controller as before becomes active, that still counts.</td>
     <td>kafka.controller:type=KafkaController,name=NewActiveControllersCount</td>
@@ -2135,23 +2140,6 @@ These metrics are reported on both Controllers and Brokers in a KRaft Cluster
     <td>The number of errors encountered by the BrokerMetadataPublisher while applying a new MetadataImage based on the latest MetadataDelta.</td>
     <td>kafka.server:type=broker-metadata-metrics,name=metadata-apply-error-count</td>
   </tr>
-  <tr>
-    <td>Forwarding Manager Queue Time</td>
-    <td>A histogram describing the amount of time in milliseconds each admin request spends in the broker's forwarding manager queue, 
-    waiting to be sent to the controller. This does not include the time that the request spends waiting for a response from the controller.</td>
-    <td>kafka.server:type=ForwardingManager,name=QueueTimeMs</td>
-  </tr>	 
-  <tr>
-    <td>Forwarding Manager Queue Size</td>
-    <td>The current number of RPCs that are waiting in the broker's forwarding manager queue, waiting to be sent to the controller.</td>
-    <td>kafka.server:type=ForwardingManager,name=QueueLength</td>
-  </tr>	 
-  <tr>
-    <td>Forwarding Manager Remote Time</td>
-    <td>A histogram describing the amount of time in milliseconds each request sent by the ForwardingManager spends waiting for a response. 
-    This does not include the time spent in the queue.</td>
-    <td>kafka.server:type=ForwardingManager,name=RemoteTimeMs</td>
-  </tr>	 
   </tbody>
 </table>
   <h4><a id="selector_monitoring" href="#selector_monitoring">Common monitoring metrics for producer/consumer/connect/streams</a></h4>
