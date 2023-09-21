@@ -201,7 +201,7 @@
 </li>
 <li>
 <h4><a id="rack.aware.assignment.non_overlap_cost"></a><a id="streamsconfigs_rack.aware.assignment.non_overlap_cost" href="#streamsconfigs_rack.aware.assignment.non_overlap_cost">rack.aware.assignment.non_overlap_cost</a></h4>
-<p>Cost associated with moving tasks from existing assignment. This config and <code>rack.aware.assignment.traffic_cost</code> controls whether the optimization algorithm favors minimizing cross rack traffic or minimize the movement of tasks in existing assignment. If set a larger value <code>org.apache.kafka.streams.processor.internals.assignment.RackAwareTaskAssignor<code/> will optimize to maintain the existing assignment. The default value is null which means it will use default non_overlap cost values in different assignors.</p>
+<p>Cost associated with moving tasks from existing assignment. This config and <code>rack.aware.assignment.traffic_cost</code> controls whether the optimization algorithm favors minimizing cross rack traffic or minimize the movement of tasks in existing assignment. If set a larger value <code>org.apache.kafka.streams.processor.internals.assignment.RackAwareTaskAssignor</code> will optimize to maintain the existing assignment. The default value is null which means it will use default non_overlap cost values in different assignors.</p>
 <table><tbody>
 <tr><th>Type:</th><td>int</td></tr>
 <tr><th>Default:</th><td>null</td></tr>
