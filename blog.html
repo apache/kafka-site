@@ -32,19 +32,19 @@
                 <p>See the <a href="https://kafka.apache.org/36/documentation.html#upgrade_3_6_0">Upgrading to 3.6.0 from any version 0.8.x through 3.5.x</a> section in the documentation for the list of notable changes and detailed upgrade steps.</p>
                 <p>
                     The ability to migrate Kafka clusters from a ZooKeeper metadata system to a KRaft metadata system is
-                    now considered stable and suitable for production environments. See the ZooKeeper to KRaft migration
+                    now ready for usage in production environments. See the ZooKeeper to KRaft migration
                     <a href="https://kafka.apache.org/documentation/#kraft_zk_migration">operations documentation</a> for
-                    details. Note that support for JBOD is still not available for KRaft clusters, therefor clusters
-                    utilizing JBOD cannot be migrated. See <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-858%3A+Handle+JBOD+broker+disk+failure+in+KRaft">KIP-858</a>
+                    details. Note that support for JBOD is still not available for KRaft clusters, therefore clusters
+                    utilizing JBOD can not be migrated. See <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-858%3A+Handle+JBOD+broker+disk+failure+in+KRaft">KIP-858</a>
                     for details regarding KRaft and JBOD.
                 </p>
                 <p>Support for Delegation Tokens in KRaft (<a href="https://issues.apache.org/jira/browse/KAFKA-15219">KAFKA-15219</a>) was completed in 3.6, further reducing the gap of features between ZooKeeper-based Kafka clusters and KRaft. Migration of delegation tokens from ZooKeeper to KRaft is also included in 3.6.</p>
-                <p><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-405%3A+Kafka+Tiered+Storage">Tiered Storage</a> is an early access feature. It is currently only suitable for testing in non production environments. See <a href="https://cwiki.apache.org/confluence/display/KAFKA/Kafka+Tiered+Storage+Early+Access+Release+Notes">Early Access Notes</a> for more details.</p>
+                <p><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-405%3A+Kafka+Tiered+Storage">Tiered Storage</a> is an early access feature. It is currently only suitable for testing in non production environments. See the <a href="https://cwiki.apache.org/confluence/display/KAFKA/Kafka+Tiered+Storage+Early+Access+Release+Notes">Early Access Release Notes</a> for more details.</p>
 
-                <p><i>Note: ZooKeeper is marked as deprecated since 3.5.0 release. ZooKeeper is planned to be removed in Apache Kafka 4.0. (Cf <a href="/documentation#zk_depr">ZooKeeper Deprecation</a>)</i><p>
+                <p><i>Note: ZooKeeper is marked as deprecated since 3.5.0 release. ZooKeeper is planned to be removed in Apache Kafka 4.0. For more information, please see the documentation for <a href="/documentation#zk_depr">ZooKeeper Deprecation</a></i><p>
                 <h3>Kafka Broker, Controller, Producer, Consumer and Admin Client</h3>
                 <ul>
-                <li><b>KIP-405: Kafka Tiered Storage: </b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-405%3A+Kafka+Tiered+Storage">KIP-405</a>. It introduces tiered storage feature in Kafka that provides separation of computation and storage in the broker.</li>
+                <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-405%3A+Kafka+Tiered+Storage">KIP-405</a>: Kafka Tiered Storage (Early Access): </b><br>It introduces tiered storage feature in Kafka that provides separation of computation and storage in the broker.</li>
                 <li><b>KIP-797: Accept duplicate listener on port for IPv4/IPv6: </b><a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=195726330">KIP-797</a>. Brokers can be configured with listeners that have same port on different ip stack like ipv4 and ipv6.</li>
                 <li><b>KIP-863: Reduce CompletedFetch#parseRecord() memory copy: </b><a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=225152035">KIP-863</a>. Reduced CompletedFetch#parseRecord() memory copy by deserializing using byte buffers.</li>
                 <li><b>KIP-868: Metadata Transactions: </b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-868+Metadata+Transactions">KIP-868</a>. This feature is about allowing the controller to generate atomic transactions of records that can exceed the maximum batch size.</li>
