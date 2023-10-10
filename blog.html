@@ -56,7 +56,8 @@
                         Transactions Server Side Defense (Part 1): </b><br>Hanging transactions can negatively impact
                         your read committed consumers and prevent compacted logs from being compacted. KIP-890 helps
                         address hanging transactions by verifying partition additions. Part 2 of KIP-890 will optimize
-                        verification, which currently adds an extra hop.
+                        verification, which currently adds an extra hop.<br>
+                        In 3.6.0, transaction verification will prevent hanging transactions on data partitions. In the next release, transactional offset commits will also be covered.
                     </li>
                     <li><b><a
                             href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=195726330">KIP-797</a>:
@@ -68,16 +69,16 @@
                     </li>
                     <li><b><a
                             href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=225152035">KIP-863</a>:
-                        Reduce CompletedFetch#parseRecord() memory copy: </b><br>reduces memory allocation and improves
+                        Reduce CompletedFetch#parseRecord() memory copy: </b><br>Reduces memory allocation and improves
                         memory performance during record deserialization by using a ByteBuffer instead of byte[] for
                         deserialization, which improves efficiency. Updated public interfaces include the Deserializer
                         class, ByteBufferDeserializer class, and StringDeserializer class.
                     </li>
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-868+Metadata+Transactions">KIP-868</a>:
-                        Metadata Transactions: </b><br> improves the overall durability of the KRaft layer by adding
+                        Metadata Transactions: </b><br>Improves the overall durability of the KRaft layer by adding
                         metadata transactions that consist of:
                         <ul>
-                            <li>ssBeginTransaction</li>
+                            <li>BeginTransaction</li>
                             <li>Number of records</li>
                             <li>EndTransaction or AbortTransaction</li>
                         </ul>
@@ -88,10 +89,8 @@
                         fetch limit.
                     </li>
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-902%3A+Upgrade+Zookeeper+to+3.8.2">KIP-902</a>:
-                        Upgrade Zookeeper to 3.8.2:</b>upgrades the ZooKeeper version that is bundled with Kafka to
-                        version 3.8.2. The new version includes several updates and security improvements. This is the
-                        last planned update for ZooKeeper in the 3.8.x releases, as it will be removed in Apache Kafka
-                        4.0 and replaced with KRaft.
+                        Upgrade Zookeeper to 3.8.2:</b><br>This upgrades the ZooKeeper version that is bundled with Kafka to
+                        version 3.8.2. The new version includes several updates and security improvements.
                     </li>
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-917%3A+Additional+custom+metadata+for+remote+log+segment">KIP-917</a>:
                         Additional custom metadata for remote log segment:</b><br> It introduces having an optional
@@ -100,7 +99,7 @@
                         remote log segment metadata.
                     </li>
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-937%3A+Improve+Message+Timestamp+Validation">KIP-937</a>:
-                        Improve Message Timestamp Validation: </b> Improves data integrity and prevents potential
+                        Improve Message Timestamp Validation: </b><br>It improves data integrity and prevents potential
                         pitfalls caused by inaccurate timestamp handling by adding more validation logic for message
                         timestamps. While past timestamps are a normal occurrence in Kafka, future timestamps might
                         represent an incorrectly formatted integer. KIP-937 rejects messages with future timestamps and
@@ -108,14 +107,13 @@
                     </li>
                     <li><b><a
                             href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-938%3A+Add+more+metrics+for+measuring+KRaft+performance">KIP-938</a>:
-                        Add more metrics for measuring KRaft performance: </b><br> Adds new controller, loader, and
-                        snapshot emitter KRaft performance metrics.
+                        Add more metrics for measuring KRaft performance: </b><br>Adds new controller, loader, and snapshot emitter KRaft performance metrics.
                     </li>
                 </ul>
                 <h3>Kafka Streams</h3>
                 <ul>
-                <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-923%3A+Add+A+Grace+Period+to+Stream+Table+Join">KIP-923</a>: Add A Grace Period to Stream Table Join: </b>Adds a grace period to stream-table joins to improve table-side out-of-order data handling. The joined object has a new method called .withGracePeriod that will cause the table side lookup to only happen after the grace period has passed.</li>
-                <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-941%3A+Range+queries+to+accept+null+lower+and+upper+bounds">KIP-941</a>: Range queries to accept null lower and upper bounds: </b>Previously, RangeQuery did not support null to specify “no upper/lower bound”.
+                <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-923%3A+Add+A+Grace+Period+to+Stream+Table+Join">KIP-923</a>: Add A Grace Period to Stream Table Join: </b><br>Adds a grace period to stream-table joins to improve table-side out-of-order data handling. The joined object has a new method called "withGracePeriod" that will cause the table side lookup to only happen after the grace period has passed.</li>
+                <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-941%3A+Range+queries+to+accept+null+lower+and+upper+bounds">KIP-941</a>: Range queries to accept null lower and upper bounds:</b><br>Previously, RangeQuery did not support null to specify “no upper/lower bound”.
                     KIP-941 allows users to pass null into withRange(...) for lower/upper bounds to specify a full or half-open range:
                     <ul>
                     <li>`withRange(null, null)` == `withNoBounds()`</li>
@@ -153,10 +151,10 @@
                             </tr>
                         </table>
                     </li>
-                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-898%3A+Modernize+Connect+plugin+discovery">KIP-898</a>: Modernize Connect plugin discovery: </b><br>With KIP-898, Connect workers now read from ServiceLoader manifests and module info directly during startup for more efficient plugin class discovery. Note that this update requires connector developers to add service declarations to their plugins.</li>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-898%3A+Modernize+Connect+plugin+discovery">KIP-898</a>: Modernize Connect plugin discovery: </b><br>With KIP-898, Connect workers can now read from ServiceLoader manifests and module info directly during startup for more efficient plugin class discovery. Note that this update allows connector developers to add service declarations to their plugins.</li>
                 </ul>
                 <h3>Summary</h3>
-                <p>Ready to get started with Apache Kafka 3.6.0? Check out all of the details in the release notes and download Apache Kafka 3.6.0.</p>
+                <p>Ready to get started with Apache Kafka 3.6.0? Check out all the details in the <a href="https://archive.apache.org/dist/kafka/3.6.0/RELEASE_NOTES.html">release notes</a> and <a href="https://kafka.apache.org/downloads">download</a> Apache Kafka 3.6.0.</p>
 
                 <p>This was a community effort, so thank you to everyone who contributed to this release, including all our users and our 139 contributors: <br>
                     A. Sophie Blee-Goldman, Aaron Ai, Abhijeet Kumar, aindriu-aiven, Akhilesh Chaganti, Alexandre Dupriez, Alexandre Garnier, Alok Thatikunta, Alyssa Huang, Aman Singh, Andras Katona, Andrew Schofield, Andrew Grant, Aneel Kumar, Anton Agestam, Artem Livshits, atu-sharm, bachmanity1, Bill Bejeck, Bo Gao, Bruno Cadonna, Calvin Liu, Chaitanya Mukka, Chase Thomas, Cheryl Simmons, Chia-Ping Tsai, Chris Egerton, Christo Lolov, Clay Johnson, Colin P. McCabe, Colt McNealy, d00791190, Damon Xie, Danica Fine, Daniel Scanteianu, Daniel Urban, David Arthur, David Jacot, David Mao, dengziming, Deqi Hu, Dimitar Dimitrov, Divij Vaidya, DL1231, Dániel Urbán, Erik van Oosten, ezio, Farooq Qaiser, Federico Valeri, flashmouse, Florin Akermann, Gabriel Oliveira, Gantigmaa Selenge, Gaurav Narula, GeunJae Jeon, Greg Harris, Guozhang Wang, Hailey Ni, Hao Li, Hector Geraldino, hudeqi, hzh0425, Iblis Lin, iit2009060, Ismael Juma, Ivan Yurchenko, James Shaw, Jason Gustafson, Jeff Kim, Jim Galasyn, John Roesler, Joobi S B, Jorge Esteban Quilcate Otoya, Josep Prat, Joseph (Ting-Chou) Lin, José Armando García Sancio, Jun Rao, Justine Olshan, Kamal Chandraprakash, Keith Wall, Kirk True, Lianet Magrans, LinShunKang, Liu Zeyu, lixy, Lucas Bradstreet, Lucas Brutschy, Lucent-Wong, Lucia Cerchie, Luke Chen, Manikumar Reddy, Manyanda Chitimbo, Maros Orsak, Matthew de Detrich, Matthias J. Sax, maulin-vasavada, Max Riedel, Mehari Beyene, Michal Cabak (@miccab), Mickael Maison, Milind Mantri, minjian.cai, mojh7, Nikolay, Okada Haruki, Omnia G H Ibrahim, Owen Leung, Philip Nee, prasanthV, Proven Provenzano, Purshotam Chauhan, Qichao Chu, Rajini Sivaram, Randall Hauch, Renaldo Baur Filho, Ritika Reddy, Rittika Adhikari, Rohan, Ron Dagostino, Sagar Rao, Said Boudjelda, Sambhav Jain, Satish Duggana, sciclon2, Shekhar Rajak, Sungyun Hur, Sushant Mahajan, Tanay Karmarkar, tison, Tom Bentley, vamossagar12, Victoria Xia, Vincent Jiang, vveicc, Walker Carlson, Yash Mayya, Yi-Sheng Lien, Ziming Deng, 蓝士钦
