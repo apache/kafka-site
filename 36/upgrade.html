@@ -118,9 +118,9 @@
         </li>
         <li>Transaction partition verification (<a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-890%3A+Transactions+Server-Side+Defense">KIP-890</a>)
             has been added to data partitions to prevent hanging transactions. Workloads with compression can experience InvalidRecordExceptions and UnknownServerExceptions.
-            For workloads with compression, <code>transaction.partition.verification.enable</code> should be set to false. Note that the default for 3.6 is true.
+            This feature can be disabled by setting <code>transaction.partition.verification.enable</code> to false. Note that the default for 3.6 is true.
             The configuration can also be updated dynamically and is applied to the broker.
-            This will be fixed in a future release. See <a href="https://issues.apache.org/jira/browse/KAFKA-15653">KAFKA-15653</a> for more details.
+            This will be fixed in 3.6.1. See <a href="https://issues.apache.org/jira/browse/KAFKA-15653">KAFKA-15653</a> for more details.
         </li>
     </ul>
 
