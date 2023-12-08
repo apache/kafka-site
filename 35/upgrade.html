@@ -19,8 +19,25 @@
 
 <script id="upgrade-template" type="text/x-handlebars-template">
 
+<h4><a id="upgrade_3_5_2" href="#upgrade_3_5_2">Upgrading to 3.5.2 from any version 0.8.x through 3.4.x</a></h4>
+    All upgrade steps remain same as <a href="#upgrade_3_5_0">upgrading to 3.5.0</a>
+    <h5><a id="upgrade_352_notable" href="#upgrade_352_notable">Notable changes in 3.5.2</a></h5>
+    <ul>
+        <li>
+            When migrating producer ID blocks from ZK to KRaft, there could be duplicate producer IDs being given to
+            transactional or idempotent producers. This can cause long term problems since the producer IDs are
+            persisted and reused for a long time.
+            See <a href="https://issues.apache.org/jira/browse/KAFKA-15552">KAFKA-15552</a> for more details.
+        </li>
+        <li>
+            In 3.5.0 and 3.5.1, there could be an issue that the empty ISR is returned from controller after AlterPartition request
+            during rolling upgrade. This issue will impact the availability of the topic partition.
+            See <a href="https://issues.apache.org/jira/browse/KAFKA-15353">KAFKA-15353</a> for more details.
+        </li>
+    </ul>
+
 <h4><a id="upgrade_3_5_1" href="#upgrade_3_5_1">Upgrading to 3.5.1 from any version 0.8.x through 3.4.x</a></h4>
-    All upgrade steps remain same as <a id="upgrade_3_5_0" href="#upgrade_3_5_0">upgrading to 3.5.0</a>
+    All upgrade steps remain same as <a href="#upgrade_3_5_0">upgrading to 3.5.0</a>
     <h5><a id="upgrade_351_notable" href="#upgrade_351_notable">Notable changes in 3.5.1</a></h5>
     <ul>
         <li>
