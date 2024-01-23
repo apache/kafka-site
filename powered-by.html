@@ -218,6 +218,11 @@
         "logo": "datavisor.png",
         "logoBgColor": "#ffffff",
         "description": "DataVisor uses Apache Kafka as a critical real-time data pipeline that connects various micro-services in our fraud detection systems. Kafka is at the core of enabling our product to horizontally scale for large, enterprise data flows."
+    },{
+        "link": "https://deephaven.io/",
+        "logo": "deephaven.svg",
+        "logoBgColor": "#040427",
+        "description": "Deephaven is a query engine for streaming workloads. Deephaven enables you to ingest and <a href='https://deephaven.io/core/docs/how-to-guides/data-import-export/kafka-stream/' target='_blank'>transform Kafka feeds as live dataframes</a>."
     }, {
         "link": "https://developer.ibm.com/messaging/message-hub/",
         "logo": "ibmmessagehub.png",
@@ -434,7 +439,7 @@
         "logoBgColor": "#ffffff",
         "description": "We use Kafka to ingest real-time event data, stream it to Storm and Hadoop, and then serve it from our Druid cluster to feed our interactive analytics dashboards. We've also built  connectors for directly ingesting events from Kafka into Druid."
     }, {
-        "link": "https://www.moesif.com ",
+        "link": "https://www.moesif.com",
         "logo": "moesif.png",
         "logoBgColor": "#ffffff",
         "description": "Moesif (an API analytics service) uses Kafka to power our pipeline to enrich large amounts of API event data. It's used as our backbone to ship that data to multiple data centers and services. It’s one of the most rock stable open source software out there for anyone in data processing."
@@ -808,6 +813,22 @@ $(function() { $('.b-nav__poweredby').addClass('selected'); });
 
 <script>
     $(function () {
+        // enforce alphabetical sort by root domain for fairness
+        poweredByItems.forEach(function getRootDomain(item) {
+            /**
+             * 1. remove the protocol 
+             *    ex. https://subdomain.example.com/kafka-article/whatever.html => subdomain.example.com/kafka-article/whatever.html
+             * 2. split the URL at the first occurrence of /, ?, or # and takes the first part
+             *    ex. subdomain.example.com/kafka-article/whatever.html => subdomain.example.com
+             * 3. split the domain on . and take the last two parts
+             *    ex. subdomain.example.com => example.com
+             */
+            item.domain = item.link.replace(/^https?:\/\//, '').split(/[/?#]/)[0].toLowerCase().split('.').slice(-2).join('.');
+        });
+        poweredByItems.sort(function(a, b) {
+                return a.domain.localeCompare(b.domain);
+        });
+        
         // loop through all Handlebar templates on the page and render them
         for(var i = 0; i < poweredByItems.length; i++) {
             var context = poweredByItems[i];
