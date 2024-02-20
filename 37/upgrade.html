@@ -32,14 +32,14 @@
             overridden the message format version, you should keep its current value. Alternatively, if you are upgrading from a version prior
             to 0.11.0.x, then CURRENT_MESSAGE_FORMAT_VERSION should be set to match CURRENT_KAFKA_VERSION.
             <ul>
-                <li>inter.broker.protocol.version=CURRENT_KAFKA_VERSION (e.g. <code>3.5</code>, <code>3.4</code>, etc.)</li>
+                <li>inter.broker.protocol.version=CURRENT_KAFKA_VERSION (e.g. <code>3.6</code>, <code>3.5</code>, etc.)</li>
                 <li>log.message.format.version=CURRENT_MESSAGE_FORMAT_VERSION  (See <a href="#upgrade_10_performance_impact">potential performance impact
                     following the upgrade</a> for the details on what this configuration does.)</li>
             </ul>
             If you are upgrading from version 0.11.0.x or above, and you have not overridden the message format, then you only need to override
             the inter-broker protocol version.
             <ul>
-                <li>inter.broker.protocol.version=CURRENT_KAFKA_VERSION (e.g. <code>3.5</code>, <code>3.4</code>, etc.)</li>
+                <li>inter.broker.protocol.version=CURRENT_KAFKA_VERSION (e.g. <code>3.6</code>, <code>3.5</code>, etc.)</li>
             </ul>
         </li>
         <li>Upgrade the brokers one at a time: shut down the broker, update the code, and restart it. Once you have done so, the
@@ -47,14 +47,14 @@
             It is still possible to downgrade at this point if there are any problems.
         </li>
         <li>Once the cluster's behavior and performance has been verified, bump the protocol version by editing
-            <code>inter.broker.protocol.version</code> and setting it to <code>3.6</code>.
+            <code>inter.broker.protocol.version</code> and setting it to <code>3.7</code>.
         </li>
         <li>Restart the brokers one by one for the new protocol version to take effect. Once the brokers begin using the latest
             protocol version, it will no longer be possible to downgrade the cluster to an older version.
         </li>
         <li>If you have overridden the message format version as instructed above, then you need to do one more rolling restart to
             upgrade it to its latest version. Once all (or most) consumers have been upgraded to 0.11.0 or later,
-            change log.message.format.version to 3.6 on each broker and restart them one by one. Note that the older Scala clients,
+            change log.message.format.version to 3.7 on each broker and restart them one by one. Note that the older Scala clients,
             which are no longer maintained, do not support the message format introduced in 0.11, so to avoid conversion costs
             (or to take advantage of <a href="#upgrade_11_exactly_once_semantics">exactly once semantics</a>),
             the newer Java clients must be used.
