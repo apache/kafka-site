@@ -34,7 +34,7 @@
                     In the last release, 3.6,
                     <a href="https://kafka.apache.org/documentation/#kraft_zk_migration">the ability to migrate Kafka clusters from a ZooKeeper metadata system</a>
                     to a KRaft metadata system was ready for usage in production environments with one caveat -- JBOD was not yet available for KRaft clusters.
-                    In this release, we are shipping an early access release of JBOD in KRaft. (See <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-858%3A+Handle+JBOD+broker+disk+failure+in+KRaft">KIP-858</a> for details)
+                    In this release, we are shipping an early access release of JBOD in KRaft. (See <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-858%3A+Handle+JBOD+broker+disk+failure+in+KRaft">KIP-858</a> and the <a href="https://cwiki.apache.org/confluence/display/KAFKA/Kafka+JBOD+in+KRaft+Early+Access+Release+Notes">release notes</a> for details).
                 </p>
                 <p>
                     Additionally, client APIs released prior to Apache Kafka 2.1 are now marked deprecated in 3.7 and will be removed in Apache Kafka 4.0. See <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-896%3A+Remove+old+client+protocol+API+versions+in+Kafka+4.0">KIP-896</a> for details and RPC versions that are now deprecated.
@@ -49,7 +49,7 @@
                 <h3>Kafka Broker, Controller, Producer, Consumer and Admin Client</h3>
                 <ul>
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-858%3A+Handle+JBOD+broker+disk+failure+in+KRaft">(Early Access) KIP-858 Handle JBOD broker disk failure in KRaft</a>:
-                        </b><br>This update closes the gap on one of the last major missing features in KRaft by adding JBOD support in KRaft-based clusters.
+                        </b><br>This update closes the gap on one of the last major missing features in KRaft by adding JBOD support in KRaft-based clusters. Note that it is not yet recommended for use in production environments. Please refer to the <a href="https://cwiki.apache.org/confluence/display/KAFKA/Kafka+JBOD+in+KRaft+Early+Access+Release+Notes">release notes</a> to help us test it and provide feedback at <a href="https://issues.apache.org/jira/browse/KAFKA-16061">KAFKA-16061</a>.
                     </li>
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-714%3A+Client+metrics+and+observability">KIP-714 Client metrics and observability</a>:
                         </b><br>With KIP-714, operators get better visibility into the clients connecting to their cluster with broker-side support of client-level metrics via a standardized telemetry interface.
