@@ -80,7 +80,7 @@
 
     <p>
         Kafka Streams offers two ways to define the stream processing topology: the <a href="/{{version}}/documentation/streams/developer-guide/dsl-api.html"><b>Kafka Streams DSL</b></a> provides
-        the most common data transformation operations such as <code>map</code>, <code>filter</code>, <code>join</code> and <code>aggregations</code> out of the box; the lower-level <a href="/{{version}}/documentation/streams/developer-guide#streams_processor"><b>Processor API</b></a> allows
+        the most common data transformation operations such as <code>map</code>, <code>filter</code>, <code>join</code> and <code>aggregations</code> out of the box; the lower-level <a href="/{{version}}/documentation/streams/developer-guide/processor-api.html"><b>Processor API</b></a> allows
         developers define and connect custom processors as well as to interact with <a href="#streams_state">state stores</a>.
     </p>
 
@@ -134,7 +134,7 @@
         Some stream processing applications don't require state, which means the processing of a message is independent from
         the processing of all other messages.
         However, being able to maintain state opens up many possibilities for sophisticated stream processing applications: you
-        can join input streams, or group and aggregate data records. Many such stateful operators are provided by the <a href="/{{version}}/documentation/streams/developer-guide#streams_dsl"><b>Kafka Streams DSL</b></a>.
+        can join input streams, or group and aggregate data records. Many such stateful operators are provided by the <a href="/{{version}}/documentation/streams/developer-guide/dsl-api.html"><b>Kafka Streams DSL</b></a>.
     </p>
     <p>
         Kafka Streams provides so-called <b>state stores</b>, which can be used by stream processing applications to store and query data.
