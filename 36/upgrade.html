@@ -84,7 +84,9 @@
 
     <h5><a id="upgrade_360_notable" href="#upgrade_360_notable">Notable changes in 3.6.0</a></h5>
     <ul>
-        <li>Apache Kafka now supports having both an IPv4 and an IPv6 listener on the same port. This change only applies to
+        <li>ZooKeeper to KRaft migrations are now recommended for production usage. One significant issue was found in the
+	  3.6.0 release which affects transactional producers https://issues.apache.org/jira/browse/KAFKA-15552.</li>
+	<li>Apache Kafka now supports having both an IPv4 and an IPv6 listener on the same port. This change only applies to
             non advertised listeners (advertised listeners already have this feature)</li>
         <li>The Apache Zookeeper dependency has been upgraded to 3.8.1 due to 3.6 reaching end-of-life. To bring both your
             Kafka and Zookeeper clusters to the latest versions:
