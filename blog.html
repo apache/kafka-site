@@ -64,7 +64,7 @@
                         </b><br>KIP-951 optimizes the time it takes for a client to discover the new leader of a partition, leading to reduced end-to-end latency of produce/fetch requests in the presence of leadership changes (broker restarts, partition reassignments, etc.).
                     </li>
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-975%3A+Docker+Image+for+Apache+Kafka">KIP-975 Docker Image for Apache Kafka</a>:
-                        </b><br>Introduces a <a href="https://docs.docker.com/trusted-content/dsos-program/">Sponsored OSS</a> Apache Kafka Docker image, enabling quicker testing and deployment, as well as onboarding of developers.
+                        </b><br>Introduces an official Apache Kafka Docker image, enabling quicker testing and deployment, as well as onboarding of developers.
                     </li>
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-580%3A+Exponential+Backoff+for+Kafka+Clients">KIP-580 Exponential Backoff for Kafka Clients</a>:
                         </b><br>Changes the client’s retry backoff time used for retrying failed requests from a static one to an exponentially-increasing one. This should help reduce slow metadata convergence after broker failure due to overload.
