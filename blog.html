@@ -79,7 +79,7 @@
                         </b><br>Another part of this KIP shipped, this time adding transaction verification preventing hanging transactions for consumer offset partitions.
                     </li>
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-896%3A+Remove+old+client+protocol+API+versions+in+Kafka+4.0">KIP-896 Remove old client protocol API versions in Kafka 4.0</a>:
-                        </b><br>Remove old client protocol API versions in Kafka 4.0.
+                        </b><br>KIP-896 marks all client request versions older than Apache Kafka 2.1 as deprecated, and introduces new metrics to monitor the presence of such requests. Support for these requests will be dropped in Apache Kafka 4.0.
                     </li>
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-919%3A+Allow+AdminClient+to+Talk+Directly+with+the+KRaft+Controller+Quorum+and+add+Controller+Registration">KIP-919 Allow AdminClient to Talk Directly with the KRaft Controller Quorum and add Controller Registration</a>:
                         </b><br>Allows the AdminClient to talk directly with the KRaft Controller Quorum, which allows us to support operations like DESCRIBE_QUORUM and INCREMENTAL_ALTER_CONFIGS to dynamically change the log4j levels on a KRaft controller. This helps with debugging scenarios where other parts of the system are down.
