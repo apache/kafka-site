@@ -61,7 +61,7 @@
 </li>
 <li>
 <h4><a id="client.id"></a><a id="streamsconfigs_client.id" href="#streamsconfigs_client.id">client.id</a></h4>
-<p>An ID prefix string used for the client IDs of internal [main-|restore-|global-]consumer, producer, and admin clients with pattern <code>&lt;client.id&gt;-[Global]StreamThread[-&lt;threadSequenceNumber$gt;]-&lt;consumer|producer|restore-consumer|global-consumer&gt;</code>.</p>
+<p>An ID prefix string used for the client IDs of internal [main-|restore-|global-]consumer, producer, and admin clients with pattern <code>&lt;client.id&gt;-[Global]StreamThread[-&lt;threadSequenceNumber&gt;]-&lt;consumer|producer|restore-consumer|global-consumer&gt;</code>.</p>
 <table><tbody>
 <tr><th>Type:</th><td>string</td></tr>
 <tr><th>Default:</th><td>""</td></tr>
@@ -381,7 +381,7 @@
 </li>
 <li>
 <h4><a id="enable.metrics.push"></a><a id="streamsconfigs_enable.metrics.push" href="#streamsconfigs_enable.metrics.push">enable.metrics.push</a></h4>
-<p>Whether to enable pushing of internal [main-|restore-|global]consumer, producer, and admin client metrics to the cluster, if the cluster has a client metrics subscription which matches a client.</p>
+<p>Whether to enable pushing of internal [main-|restore-|global-]consumer, producer, and admin client metrics to the cluster, if the cluster has a client metrics subscription which matches a client.</p>
 <table><tbody>
 <tr><th>Type:</th><td>boolean</td></tr>
 <tr><th>Default:</th><td>true</td></tr>
