@@ -33,7 +33,11 @@
                 <p>
                     In a previous release, 3.6,
                     <a href="https://kafka.apache.org/38/documentation.html#tiered_storage">tiered storage</a> was released as early availability feature.
-                    In this release, Tiered Storage now supports clusters configured with multiple log directories (i.e. JBOD feature).
+                    In this release, Tiered Storage now supports clusters configured with multiple log directories (i.e. JBOD feature). This feature still remains as early availability.
+                </p>
+                <p>
+                    In the last release, 3.7, <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-858%3A+Handle+JBOD+broker+disk+failure+in+KRaft">KIP-858</a>
+                    was released in early availability. Since this version, JBOD in KRaft is considered production ready.
                 </p>
                 <p>
                     Up until now, only the default compression level was used by Apache Kafka. From this version on, a configuration mechanism to specify compression level is included. See <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-390%3A+Support+Compression+Level">KIP-390</a> for more details.
