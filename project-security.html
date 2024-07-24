@@ -35,6 +35,22 @@
 		<p>
                         For a list of security issues fixed in released versions of Apache Kafka, see <a href="/cve-list">CVE list</a>.
 		</p>
+		<h2>Advisories for dependencies</h2>
+		<p>
+			Many organizations use 'security scanning' tools to detect components for which advisories exist. While we generally encourage using such tools, since they are an important way users are notified of risks, our experience is that they produce a lot of false positives: when a dependency of Kafka contains a vulnerability, it is likely Kafka is using it in a way that is not affected. As such, we do not consider the fact that an advisory has been published for a Kafka dependency sensitive. Only when additional analysis suggests Kafka may be affected by the problem, we ask you to report this finding privately through <a href="mailto:security@kafka.apache.org?Subject=[SECURITY] My security issue" target="_top">security@kafka.apache.org</a>.
+		</p>
+		<p>
+			When handling such warnings, you can:
+			<ul>
+				<li>Check if our <a href="https://github.com/apache/kafka/blob/trunk/gradle/resources/dependencycheck-suppressions.xml">DependencyCheck suppressions</a> contain any information on this advisory.
+				<li>See if there is any discussion on this advisory in the <a href="https://issues.apache.org/jira/browse/KAFKA">issue tracker</a>
+				<li>Do your own analysis on whether this advisory affects Kafka.
+				<ul>
+					<li>If it seems it might, report this finding privately through <a href="mailto:security@kafka.apache.org?Subject=[SECURITY] My security issue" target="_top">security@kafka.apache.org</a>.
+					<li>If it seems not to, <a href="/contributing.html">contribute</a> a section to our <a href="https://github.com/apache/kafka/blob/trunk/gradle/resources/dependencycheck-suppressions.xml">DependencyCheck suppressions</a> explaining why it is not affected.
+				</ul>
+			</ul>
+		</p>
 
 <!--#include virtual="includes/_footer.htm" -->
 
