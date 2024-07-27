@@ -43,6 +43,10 @@
                     Up until now, only the default compression level was used by Apache Kafka. From this version on, a configuration mechanism to specify compression level is included. See <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-390%3A+Support+Compression+Level">KIP-390</a> for more details.
                 </p>
                 <p>
+                    In the last release, 3.7, <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-848%3A+The+Next+Generation+of+the+Consumer+Rebalance+Protocol">KIP-848 The Next Generation of the Consumer Rebalance Protocol</a> was made available as early access. This version includes numerous bug
+                    fixes and the community is encouraged to test and provide feedback. <a href="https://cwiki.apache.org/confluence/display/KAFKA/The+Next+Generation+of+the+Consumer+Rebalance+Protocol+%28KIP-848%29+-+Early+Access+Release+Notes">See the early access release notes for more information.</a>
+                </p>
+                <p>
                     The configuration value <code>offsets.commit.required.acks</code> is deprecated in this version and it will be removed in Kafka 4.0. See <a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=303794933">KIP-1041</a> for more details.
                 </p>
                 <p>
@@ -51,29 +55,35 @@
 
                 <h3>Kafka Broker, Controller, Producer, Consumer and Admin Client</h3>
                 <ul>
-                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-1028%3A+Docker+Official+Image+for+Apache+Kafka">KIP-1028: Docker Official Image for Apache Kafka</a>:
-                        </b><br>This update introduces the official Docker image for Apache Kafka.
-                    </li>
-                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-974%3A+Docker+Image+for+GraalVM+based+Native+Kafka+Broker">KIP-974: Docker Image for GraalVM based Native Kafka Broker</a>:
-                        </b><br>This update introduces the process to create Docker native image for Apache Kafka based onf GraalVM. The advantage of this Apache Kafka docker image that can launch brokers with sub-second startup time and minimal memory footprint by leveraging a GraalVM based native Kafka binary and runs in the Kraft mode.
-                    </li>
-                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-1036%3A+Extend+RecordDeserializationException+exception">KIP-1036: Extend RecordDeserializationException exception</a>:
-                        </b><br><a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=87297793">KIP-334</a> introduced into the Consumer the RecordDeserializationException with offsets information. That is useful to skip a poison pill but as you do not have access to the Record, it still prevents easy implementation of dead letter queue or simply logging the faulty data.
-                    </li>
-                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-1019%3A+Expose+method+to+determine+Metric+Measurability">KIP-1019: Expose method to determine Metric Measurability</a>:
-                        </b><br>This KIP introduces a new method, <code>isMeasurable()</code>, to the <code>KafkaMetric</code> class, eliminating the need for accessing private fields or handling exceptions in case of non-measurable metrics.
-                    </li>
-                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-993%3A+Allow+restricting+files+accessed+by+File+and+Directory+ConfigProviders">KIP-993: Allow restricting files accessed by File and Directory ConfigProviders</a>:
-                        </b><br>This KIP adds the ability to limit the files accessible to the file and directory configuration providers so the caller doesn't have unrestricted access.
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-390%3A+Support+Compression+Level">KIP-390: Support Compression Level</a>:
+                        </b><br>Adds a mechanism to specify compression level instead of relying on the default one.
                     </li>
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-719%3A+Deprecate+Log4J+Appender">KIP-719: Deprecate Log4J Appender</a>:
                         </b><br>Log4J Appender is now deprecated and it will be removed, most probably, in Kafka 4.0.
                     </li>
-                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-390%3A+Support+Compression+Level">KIP-390: Support Compression Level</a>:
-                        </b><br>Adds a mechanism to specify compression level instead of relying on the default one.
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-848%3A+The+Next+Generation+of+the+Consumer+Rebalance+Protocol">(Early Access) KIP-848 The Next Generation of the Consumer Rebalance Protocol</a>:
+                        </b><br>The new simplified Consumer Rebalance Protocol moves complexity away from the consumer and into the Group Coordinator within the broker and completely revamps the protocol to be incremental in nature. It provides the same guarantee as the current protocol––but better and more efficient, including no longer relying on a global synchronization barrier. <a href="https://cwiki.apache.org/confluence/display/KAFKA/The+Next+Generation+of+the+Consumer+Rebalance+Protocol+%28KIP-848%29+-+Early+Access+Release+Notes">See the early access release notes for more information.</a>
+                    </li>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-899%3A+Allow+producer+and+consumer+clients+to+rebootstrap">KIP-899: Allow producer and consumer clients to rebootstrap</a>:
+                        </b><br>This KIP allows Kafka clients to repeat the bootstrap process when updating metadata if none of the known brokers are available.
+                    </li>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-993%3A+Allow+restricting+files+accessed+by+File+and+Directory+ConfigProviders">KIP-993: Allow restricting files accessed by File and Directory ConfigProviders</a>:
+                        </b><br>This KIP adds the ability to limit the files accessible to the file and directory configuration providers so the caller doesn't have unrestricted access.
+                    </li>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-974%3A+Docker+Image+for+GraalVM+based+Native+Kafka+Broker">KIP-974: Docker Image for GraalVM based Native Kafka Broker</a>:
+                        </b><br>This update introduces the process to create Docker native image for Apache Kafka based onf GraalVM. The advantage of this Apache Kafka docker image that can launch brokers with sub-second startup time and minimal memory footprint by leveraging a GraalVM based native Kafka binary and runs in the Kraft mode.
                     </li>
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-1018%3A+Introduce+max+remote+fetch+timeout+config+for+DelayedRemoteFetch+requests">KIP-1018: Introduce max remote fetch timeout config for DelayedRemoteFetch requests</a>:
                         </b><br>Introduces a new timeout parameter, <code>remote.fetch.max.wait.ms</code>, to offer users the option to configure the timeout based on their workload.
+                    </li>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-1019%3A+Expose+method+to+determine+Metric+Measurability">KIP-1019: Expose method to determine Metric Measurability</a>:
+                        </b><br>This KIP introduces a new method, <code>isMeasurable()</code>, to the <code>KafkaMetric</code> class, eliminating the need for accessing private fields or handling exceptions in case of non-measurable metrics.
+                    </li>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-1028%3A+Docker+Official+Image+for+Apache+Kafka">KIP-1028: Docker Official Image for Apache Kafka</a>:
+                        </b><br>This update introduces the official Docker image for Apache Kafka.
+                    </li>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-1036%3A+Extend+RecordDeserializationException+exception">KIP-1036: Extend RecordDeserializationException exception</a>:
+                        </b><br><a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=87297793">KIP-334</a> introduced into the Consumer the RecordDeserializationException with offsets information. That is useful to skip a poison pill but as you do not have access to the Record, it still prevents easy implementation of dead letter queue or simply logging the faulty data.
                     </li>
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-1037%3A+Allow+WriteTxnMarkers+API+with+Alter+Cluster+Permission">KIP-1037: Allow WriteTxnMarkers API with Alter Cluster Permission</a>:
                         </b><br>This KIP builds on <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-98+-+Exactly+Once+Delivery+and+Transactional+Messaging#KIP98ExactlyOnceDeliveryandTransactionalMessaging-5.2WriteTxnMarkerRequest">KIP-98</a> and <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-664%3A+Provide+tooling+to+detect+and+abort+hanging+transactions">KIP-664</a> allowing the <code>WriteTxnMarkers</code> API to be invoked with the Alter permission on the cluster to reflect that this API is an admin operation that can be called from the Kafka Admin Client.
@@ -84,9 +94,7 @@
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-1047+Introduce+new+org.apache.kafka.tools.api.Decoder+to+replace+kafka.serializer.Decoder">KIP-1047 Introduce new org.apache.kafka.tools.api.Decoder to replace kafka.serializer.Decoder</a>:
                         </b><br>This KIP deprecates <code>kafka.serializer.Decoder</code> and introduces <code>org.apache.kafka.tools.api.Decoder</code> in oder to allow the migration of tool related code from core to the tools module.
                     </li>
-                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-899%3A+Allow+producer+and+consumer+clients+to+rebootstrap">KIP-899: Allow producer and consumer clients to rebootstrap</a>:
-                        </b><br>This KIP allows Kafka clients to repeat the bootstrap process when updating metadata if none of the known brokers are available.
-                    </li>
+                </ul>
                 <h3>Kafka Streams</h3>
                 <ul>
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-989%3A+Improved+StateStore+Iterator+metrics+for+detecting+leaks">KIP-989: Improved StateStore Iterator metrics for detecting leaks</a>:
