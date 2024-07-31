@@ -43,8 +43,8 @@
                     Up until now, only the default compression level was used by Apache Kafka. From this version on, a configuration mechanism to specify compression level is included. See <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-390%3A+Support+Compression+Level">KIP-390</a> for more details.
                 </p>
                 <p>
-                    In the last release, 3.7, <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-848%3A+The+Next+Generation+of+the+Consumer+Rebalance+Protocol">KIP-848 The Next Generation of the Consumer Rebalance Protocol</a> was made available as early access. This version includes numerous bug
-                    fixes and the community is encouraged to test and provide feedback. <a href="https://cwiki.apache.org/confluence/display/KAFKA/The+Next+Generation+of+the+Consumer+Rebalance+Protocol+%28KIP-848%29+-+Early+Access+Release+Notes">See the early access release notes for more information.</a>
+                    <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-848%3A+The+Next+Generation+of+the+Consumer+Rebalance+Protocol">KIP-848 The Next Generation of the Consumer Rebalance Protocol</a> is available as preview in 3.8. This version includes numerous bug
+                    fixes and the community is encouraged to test and provide feedback. <a href="https://cwiki.apache.org/confluence/display/KAFKA/The+Next+Generation+of+the+Consumer+Rebalance+Protocol+%28KIP-848%29+-+Preview+Release+Notes">See the preview release notes for more information.</a>
                 </p>
                 <p>
                     The configuration value <code>offsets.commit.required.acks</code> is deprecated in this version and it will be removed in Kafka 4.0. See <a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=303794933">KIP-1041</a> for more details.
@@ -61,8 +61,8 @@
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-719%3A+Deprecate+Log4J+Appender">KIP-719: Deprecate Log4J Appender</a>:
                         </b><br>Log4J Appender is now deprecated and it will be removed, most probably, in Kafka 4.0.
                     </li>
-                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-848%3A+The+Next+Generation+of+the+Consumer+Rebalance+Protocol">(Early Access) KIP-848 The Next Generation of the Consumer Rebalance Protocol</a>:
-                        </b><br>The new simplified Consumer Rebalance Protocol moves complexity away from the consumer and into the Group Coordinator within the broker and completely revamps the protocol to be incremental in nature. It provides the same guarantee as the current protocol––but better and more efficient, including no longer relying on a global synchronization barrier. <a href="https://cwiki.apache.org/confluence/display/KAFKA/The+Next+Generation+of+the+Consumer+Rebalance+Protocol+%28KIP-848%29+-+Early+Access+Release+Notes">See the early access release notes for more information.</a>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-848%3A+The+Next+Generation+of+the+Consumer+Rebalance+Protocol">(Preview) KIP-848 The Next Generation of the Consumer Rebalance Protocol</a>:
+                        </b><br>The new simplified Consumer Rebalance Protocol moves complexity away from the consumer and into the Group Coordinator within the broker and completely revamps the protocol to be incremental in nature. It provides the same guarantee as the current protocol––but better and more efficient, including no longer relying on a global synchronization barrier. <a href="https://cwiki.apache.org/confluence/display/KAFKA/The+Next+Generation+of+the+Consumer+Rebalance+Protocol+%28KIP-848%29+-+Preview+Release+Notes">See the preview release notes for more information.</a>
                     </li>
                     <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-899%3A+Allow+producer+and+consumer+clients+to+rebootstrap">KIP-899: Allow producer and consumer clients to rebootstrap</a>:
                         </b><br>This KIP allows Kafka clients to repeat the bootstrap process when updating metadata if none of the known brokers are available.
