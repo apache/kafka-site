@@ -308,8 +308,12 @@
                 <p>We are proud to announce the release of Apache Kafka 3.6.0. This release contains many new features and improvements. This blog post will highlight some of the more prominent features. For a full list of changes, be sure to check the <a href="https://archive.apache.org/dist/kafka/3.6.0/RELEASE_NOTES.html">release notes</a>.</p>
                 <p>See the <a href="https://kafka.apache.org/36/documentation.html#upgrade_3_6_0">Upgrading to 3.6.0 from any version 0.8.x through 3.5.x</a> section in the documentation for the list of notable changes and detailed upgrade steps.</p>
                 <p>
-                    The ability to migrate Kafka clusters from a ZooKeeper metadata system to a KRaft metadata system is
-                    now ready for usage in production environments. See the ZooKeeper to KRaft migration
+                    The 3.6.0 release marked the first production ready release for the migration of Kafka
+                    clusters from a ZooKeeper metadata system to a KRaft metadata system. Users wanting to
+                    perform this migration are advised to first upgrade to 3.6.2 or 3.7.1 to receive important
+                    bug fixes.
+                <p>
+                    See the ZooKeeper to KRaft migration
                     <a href="https://kafka.apache.org/documentation/#kraft_zk_migration">operations documentation</a> for
                     details. Note that support for JBOD is still not available for KRaft clusters, therefore clusters
                     utilizing JBOD can not be migrated. See <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-858%3A+Handle+JBOD+broker+disk+failure+in+KRaft">KIP-858</a>
@@ -472,7 +476,7 @@
                 <p>We are proud to announce the release of Apache Kafka 3.5.0. This release contains many new features and improvements. This blog post will highlight some of the more prominent features. For a full list of changes, be sure to check the <a href="https://archive.apache.org/dist/kafka/3.5.0/RELEASE_NOTES.html">release notes</a>.</p>
                 <p>See the <a href="https://kafka.apache.org/35/documentation.html#upgrade_3_5_0">Upgrading to 3.5.0 from any version 0.8.x through 3.4.x</a> section in the documentation for the list of notable changes and detailed upgrade steps.</p>
                 <p>The ability to migrate Kafka clusters from ZK to KRaft mode with no downtime is still an early access feature. It is currently only suitable for testing in non production environments. See <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-866+ZooKeeper+to+KRaft+Migration">KIP-866</a> for more details.</p>
-		<p><it>Note: ZooKeeper is now marked deprecated in this release. ZooKeeper is planned to be removed in Apache Kafka 4.0. (Cf <a href="/documentation#zk_depr">ZooKeeper Deprecation</a>)</it><p>
+		<p><i>Note: ZooKeeper is now marked deprecated in this release. ZooKeeper is planned to be removed in Apache Kafka 4.0. (Cf <a href="/documentation#zk_depr">ZooKeeper Deprecation</a>)</i><p>
                 <h3>Kafka Broker, Controller, Producer, Consumer and Admin Client</h3>
                 <ul>
                 <li><b>KIP-881: Rack-aware Partition Assignment for Kafka Consumers</b>: Kafka 3.4.0 only contained the protocol changes for <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-881%3A+Rack-aware+Partition+Assignment+for+Kafka+Consumers">KIP-881</a>. The built-in assignors have now been updated to support rack-awareness.</li>
