@@ -30,6 +30,16 @@
 </tbody></table>
 </li>
 <li>
+<h4><a id="remote.log.manager.copier.thread.pool.size"></a><a id="remote_log_manager_remote.log.manager.copier.thread.pool.size" href="#remote_log_manager_remote.log.manager.copier.thread.pool.size">remote.log.manager.copier.thread.pool.size</a></h4>
+<p>Size of the thread pool used in scheduling tasks to copy segments. The default value of -1 means that this will be set to the configured value of remote.log.manager.thread.pool.size, if available; otherwise, it defaults to 10.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>-1</td></tr>
+<tr><th>Valid Values:</th><td>The default value of -1 means that this will be set to the configured value of remote.log.manager.thread.pool.size, if available; otherwise, it defaults to 10.</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
 <h4><a id="remote.log.manager.copy.max.bytes.per.second"></a><a id="remote_log_manager_remote.log.manager.copy.max.bytes.per.second" href="#remote_log_manager_remote.log.manager.copy.max.bytes.per.second">remote.log.manager.copy.max.bytes.per.second</a></h4>
 <p>The maximum number of bytes that can be copied from local storage to remote storage per second. This is a global limit for all the partitions that are being copied from local storage to remote storage. The default value is Long.MAX_VALUE, which means there is no limit on the number of bytes that can be copied per second.</p>
 <table><tbody>
@@ -56,6 +66,16 @@
 <tr><th>Type:</th><td>int</td></tr>
 <tr><th>Default:</th><td>1</td></tr>
 <tr><th>Valid Values:</th><td>[1,...]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="remote.log.manager.expiration.thread.pool.size"></a><a id="remote_log_manager_remote.log.manager.expiration.thread.pool.size" href="#remote_log_manager_remote.log.manager.expiration.thread.pool.size">remote.log.manager.expiration.thread.pool.size</a></h4>
+<p>Size of the thread pool used in scheduling tasks to clean up remote log segments. The default value of -1 means that this will be set to the configured value of remote.log.manager.thread.pool.size, if available; otherwise, it defaults to 10.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>-1</td></tr>
+<tr><th>Valid Values:</th><td>The default value of -1 means that this will be set to the configured value of remote.log.manager.thread.pool.size, if available; otherwise, it defaults to 10.</td></tr>
 <tr><th>Importance:</th><td>medium</td></tr>
 </tbody></table>
 </li>
@@ -91,7 +111,7 @@
 </li>
 <li>
 <h4><a id="remote.log.manager.thread.pool.size"></a><a id="remote_log_manager_remote.log.manager.thread.pool.size" href="#remote_log_manager_remote.log.manager.thread.pool.size">remote.log.manager.thread.pool.size</a></h4>
-<p>Size of the thread pool used in scheduling tasks to copy segments, fetch remote log indexes and clean up remote log segments.</p>
+<p>Deprecated. Size of the thread pool used in scheduling tasks to copy segments, fetch remote log indexes and clean up remote log segments.</p>
 <table><tbody>
 <tr><th>Type:</th><td>int</td></tr>
 <tr><th>Default:</th><td>10</td></tr>
