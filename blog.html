@@ -24,6 +24,122 @@
             <h1 class="content-title">Blog</h1>
             <article>
                 <h2 class="bullet">
+                    <a id="apache_kafka_390_release_announcement"></a>
+                    <a href="#apache_kafka_390_release_announcement">Apache Kafka 3.9.0 Release Announcement</a>
+                </h2>
+                6 November 2024 - Colin P. McCabe
+                <p>We are proud to announce the release of Apache Kafka 3.9.0. This is a major release, the final one in the 3.x line. This will also be the final major release to feature the deprecated Apache ZooKeeper mode.  Starting in 4.0 and later, Kafka will always run without ZooKeeper.</p>
+                <h3>Dynamic KRaft Quorums</h3>
+                <p>When in KRaft mode, Kafka relies on a Raft quorum of controller processes to store its metadata log.
+                Previously, controller quorums were specified by a static configuration that needed to be set on all
+                brokers and controllers. This made changing the hostnames of controllers, or adding or removing them,
+                very difficult to do without downtime.</p>
+
+                <p><a
+                href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-853%3A+KRaft+Controller+Membership+Changes">KIP-853:
+                KRaft Controller Membership Changes</a> makes quorum membership dynamic. Administrators can now add and
+                remove controller nodes by running the <b>kafka-metadata-quorum.sh</b> tool or using the associated
+                AdminClient API.
+
+                <p>This feature has been eagerly awaited by the community, and we are excited to deliver it in 3.9. The
+                main limitation in 3.9 is that we do not support converting over static metadata quorums to dynamic
+                ones. However, this ability is coming soon.</p>
+
+                <p>For more information about using the new  dynamic quorums feature, see <a
+                href="https://kafka.apache.org/39/documentation.html#kraft_reconfig">the KIP-853 documentation.</a></p>
+
+                <h3>Improved ZooKeeper Migration</h3>
+                <p>Users that are using ZooKeeper mode today need to go through a process called ZooKeeper migration
+                before they will be able to use KRaft mode. The migration process involves running a series of commands
+                to copy the metadata stored in ZooKeeper into a KRaft quorum.</p>
+
+                <p>ZK migration is not a new feature; indeed, it has been under development since Kafka 3.4. However, I
+                wanted to highlight that Kafka 3.9 is the final and best iteration of our ZK migration feature. As we
+                migrated thousands of clusters (big and small), we found and fixed many bugs. We also closed all of the
+                remaining feature gaps that kept some users tied to ZooKeeper.</p>
+
+                <p>Kafka 4.0 will be fully saying goodbye to ZooKeeper. There will be no support for running in ZK mode,
+                or migrating from ZK mode. This means that administrators that are still using the deprecated ZK mode
+                who need to upgrade to 4.0 and beyond will need to make a stop at a &#34;bridge release.&#34;
+                For example, if you wanted to upgrade from Kafka 3.0 to Kafka 4.0, you might do the following&#58;</p>
+
+                <ul>
+                <li>Upgrade to Kafka 3.9.</li>
+                <li>Perform ZK migration.</li>
+                <li>Upgrade to Kafka 4.0.</li>
+                </ul>
+
+                <p>In this example, Kafka 3.9 serves as the &#34;bridge&#34; to 4.0</p>
+
+                <p>As you migrate your older Kafka clusters, also keep in mind that Kafka 3.5 and later use a version of
+                ZooKeeper that is not wire-compatible with Kafka versions older than 2.4. Therefore, if you want to migrate
+                a cluster older than that, you will have to make an additional stop at a release with a ZK version
+                supported by both Kafkas. See <a
+                href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-902%3A+Upgrade+Zookeeper+to+3.8.2">KIP-902</a>
+                for details.</p>
+
+                <p>As an example, if you wanted to migrate from Kafka 1.0 to Kafka 4.0, you might do the following&#58;</p>
+                <ul>
+                <li>Upgrade to Kafka 3.4 (a newer version will not work due to ZK incompatibilites)</li>
+                <li>Upgrade to ZooKeeper 3.8</li>
+                <li>Upgrade to Kafka 3.9.</li>
+                <li>Perform ZK migration.</li>
+                <li>Upgrade to Kafka 4.0.</li>
+                </ul>
+
+                <p>These multi-step migrations should be quite rare. Running such an old Kafka version raises security concerns,
+                after all. However, I wanted to mention it for completeness.</p>
+
+                <h3>Tiered Storage</h3>
+                <p>Tiered storage is a feature that has been under development since Kafka 3.6. It allows Kafka to seamlessly offload data to pluggable external storage systems, such as cloud object stores.  (See <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-405%3A+Kafka+Tiered+Storage">KIP-405</a> for more details.)</p>
+
+                <p>Tiered storage is now production-ready in Kafka 3.9. In addition, we added the following
+                improvements&#58;</p>
+                <ul>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-950%3A++Tiered+Storage+Disablement">KIP-950: Tiered Storage Disablement</a>:
+                        </b><br>There is now a mechanism for dynamically disabling tiered storage on a per-topic basis.
+                    </li>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-956+Tiered+Storage+Quotas">KIP-956 Tiered Storage Quotas</a>:
+                        </b><br>Administrators can now put upper bounds on tiered storage upload and download rates.
+                    </li>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-1005%3A+Expose+EarliestLocalOffset+and+TieredOffset">KIP-1005: Expose EarliestLocalOffset and TieredOffset</a>:
+                        </b><br>Kafka now exposes the highest offset at which partition data is stored in remote storage.
+                    </li>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-1057%3A+Add+remote+log+metadata+flag+to+the+dump+log+tool">KIP-1057: Add remote log metadata flag to the dump log tool</a>:
+                        </b><br>The kafka-dump-log.sh tool gained the ability to examine tiered storage records.
+                    </li>
+                </ul>
+
+                <h3>Kafka Streams</h3>
+                <p>There are several Kafka Streams improvements in Apache Kafka 3.9.</p>
+                <ul>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-1049%3A+Add+config+log.summary.interval.ms+to+Kafka+Streams">KIP-1049: Add config log.summary.interval.ms to Kafka Streams</a>:
+                        </b><br>Introduce the log.summary.interval.ms to control the frequency of summary logs.
+                    </li>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-1040%3A+Improve+handling+of+nullable+values+in+InsertField%2C+ExtractField%2C+and+other+transformations">KIP-1040: Improve handling of nullable values in InsertField, ExtractField, and other transformations</a>:
+                        </b><br>Add more configuration knobs for handling nulls in Kafka streams.
+                    </li>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-1033%3A+Add+Kafka+Streams+exception+handler+for+exceptions+occurring+during+processing">KIP-1033: Add Kafka Streams exception handler for exceptions occurring during processing</a>:
+                        </b><br>Improve exception handling in Kafka streams.
+                    </li>
+                </ul>
+
+                <h3>Kafka Connect</h3>
+                <p>Kafka Connect received several improvements in 3.9 as well.</p>
+                <ul>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-1031%3A+Control+offset+translation+in+MirrorSourceConnector">KIP-1031: Control offset translation in MirrorSourceConnector</a>:
+                        </b><br>Add the emit.offset-syncs.enabled configuration, which can be used to disable configuration synchronization.
+                    </li>
+                    <li><b><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-1017%3A+Health+check+endpoint+for+Kafka+Connect">KIP-1017: Health check endpoint for Kafka Connect</a>:
+                        </b><br>Add a REST endpoint that can be used to determine if Kafka Connect workers are healthy.
+                    </li>
+                </ul>
+
+                <h3>Conclusion</h3>
+                <p>I hope that this post has given you a sense of all the exciting things that are going on in Kafka 3.9. For more details, take a look at the <a href="https://archive.apache.org/dist/kafka/3.7.0/RELEASE_NOTES.html">release notes</a>, or simply <a href="https://kafka.apache.org/downloads">download</a> the release for yourself.
+            </article>
+            <article>
+                <h2 class="bullet">
                     <a id="apache_kafka_381_release_announcement"></a>
                     <a href="#apache_kafka_381_release_announcement">Apache Kafka 3.8.1 Release Announcement</a>
                 </h2>
