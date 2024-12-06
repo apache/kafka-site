@@ -2881,6 +2881,11 @@ All of the following metrics have a recording level of <code>info</code>:
     <td>kafka.streams:type=stream-metrics,client-id=([-.\w]+)</td>
   </tr>
   <tr>
+    <td>alive-stream-threads</td>
+    <td>The current number of alive stream threads that are running or participating in rebalance.</td>
+    <td>kafka.streams:type=stream-metrics,client-id=([-.\w]+)</td>
+  </tr>
+  <tr>
       <td>failed-stream-threads</td>
       <td>The number of failed stream threads since the start of the Kafka Streams client.</td>
       <td>kafka.streams:type=stream-metrics,client-id=([-.\w]+)</td>
@@ -3981,7 +3986,8 @@ controller.listener.names=CONTROLLER</pre>
     To migrate the brokers to KRaft, they simply need to be reconfigured as KRaft brokers and restarted. Using the above
     broker configuration as an example, we would replace the <code>broker.id</code> with <code>node.id</code> and add
     <code>process.roles=broker</code>. It is important that the broker maintain the same Broker/Node ID when it is restarted.
-    The zookeeper configurations should be removed at this point.
+    The zookeeper configurations should be removed at this point. Finally, if you have set
+    <code>control.plane.listener.name</code>. please remove it before restarting in KRaft mode.
   </p>
 
   <p>

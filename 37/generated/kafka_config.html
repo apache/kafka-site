@@ -1266,7 +1266,7 @@
 </li>
 <li>
 <h4><a id="group.coordinator.rebalance.protocols"></a><a id="brokerconfigs_group.coordinator.rebalance.protocols" href="#brokerconfigs_group.coordinator.rebalance.protocols">group.coordinator.rebalance.protocols</a></h4>
-<p>The list of enabled rebalance protocols. The consumer rebalance protocol is in early access and therefore must not be used in production.</p>
+<p>The list of enabled rebalance protocols. Supported protocols: consumer,classic. The consumer rebalance protocol is in early access and therefore must not be used in production.</p>
 <table><tbody>
 <tr><th>Type:</th><td>list</td></tr>
 <tr><th>Default:</th><td>classic</td></tr>
@@ -1354,7 +1354,7 @@
 </li>
 <li>
 <h4><a id="inter.broker.protocol.version"></a><a id="brokerconfigs_inter.broker.protocol.version" href="#brokerconfigs_inter.broker.protocol.version">inter.broker.protocol.version</a></h4>
-<p>Specify which version of the inter-broker protocol will be used.<br> This is typically bumped after all brokers were upgraded to a new version.<br> Example of some valid values are: 0.8.0, 0.8.1, 0.8.1.1, 0.8.2, 0.8.2.0, 0.8.2.1, 0.9.0.0, 0.9.0.1 Check MetadataVersion for the full list.<br>This configuration is only applicable in Zookeeper mode.</p>
+<p>Specify which version of the inter-broker protocol will be used.<br> This is typically bumped after all brokers were upgraded to a new version.<br> Example of some valid values are: 0.8.0, 0.8.1, 0.8.1.1, 0.8.2, 0.8.2.0, 0.8.2.1, 0.9.0.0, 0.9.0.1 Check MetadataVersion for the full list.</p>
 <table><tbody>
 <tr><th>Type:</th><td>string</td></tr>
 <tr><th>Default:</th><td>3.7-IV4</td></tr>
@@ -2204,7 +2204,7 @@
 <p>The list of protocols enabled for SSL connections. The default is 'TLSv1.2,TLSv1.3' when running with Java 11 or newer, 'TLSv1.2' otherwise. With the default value for Java 11, clients and servers will prefer TLSv1.3 if both support it and fallback to TLSv1.2 otherwise (assuming both support at least TLSv1.2). This default should be fine for most cases. Also see the config documentation for `ssl.protocol`.</p>
 <table><tbody>
 <tr><th>Type:</th><td>list</td></tr>
-<tr><th>Default:</th><td>TLSv1.2,TLSv1.3</td></tr>
+<tr><th>Default:</th><td>TLSv1.2</td></tr>
 <tr><th>Valid Values:</th><td></td></tr>
 <tr><th>Importance:</th><td>medium</td></tr>
 <tr><th>Update Mode:</th><td>per-broker</td></tr>
@@ -2292,7 +2292,7 @@
 <p>The SSL protocol used to generate the SSLContext. The default is 'TLSv1.3' when running with Java 11 or newer, 'TLSv1.2' otherwise. This value should be fine for most use cases. Allowed values in recent JVMs are 'TLSv1.2' and 'TLSv1.3'. 'TLS', 'TLSv1.1', 'SSL', 'SSLv2' and 'SSLv3' may be supported in older JVMs, but their usage is discouraged due to known security vulnerabilities. With the default value for this config and 'ssl.enabled.protocols', clients will downgrade to 'TLSv1.2' if the server does not support 'TLSv1.3'. If this config is set to 'TLSv1.2', clients will not use 'TLSv1.3' even if it is one of the values in ssl.enabled.protocols and the server only supports 'TLSv1.3'.</p>
 <table><tbody>
 <tr><th>Type:</th><td>string</td></tr>
-<tr><th>Default:</th><td>TLSv1.3</td></tr>
+<tr><th>Default:</th><td>TLSv1.2</td></tr>
 <tr><th>Valid Values:</th><td></td></tr>
 <tr><th>Importance:</th><td>medium</td></tr>
 <tr><th>Update Mode:</th><td>per-broker</td></tr>
