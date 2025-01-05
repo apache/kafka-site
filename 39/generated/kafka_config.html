@@ -199,7 +199,15 @@
 </li>
 <li>
 <h4><a id="listeners"></a><a id="brokerconfigs_listeners" href="#brokerconfigs_listeners">listeners</a></h4>
-<p>Listener List - Comma-separated list of URIs we will listen on and the listener names. If the listener name is not a security protocol, <code>listener.security.protocol.map</code> must also be set.<br> Listener names and port numbers must be unique unless %n one listener is an IPv4 address and the other listener is %n an IPv6 address (for the same port).%n Specify hostname as 0.0.0.0 to bind to all interfaces.%n Leave hostname empty to bind to default interface.%n Examples of legal listener lists:%n <code>PLAINTEXT://myhost:9092,SSL://:9091</code>%n <code>CLIENT://0.0.0.0:9092,REPLICATION://localhost:9093</code>%n <code>PLAINTEXT://127.0.0.1:9092,SSL://[::1]:9092</code>%n</p>
+<p>Listener List - Comma-separated list of URIs we will listen on and the listener names. If the listener name is not a security protocol, <code>listener.security.protocol.map</code> must also be set.
+<br> Listener names and port numbers must be unique unless one listener is an IPv4 address and the other listener is an IPv6 address (for the same port).
+<br> Specify hostname as 0.0.0.0 to bind to all interfaces.
+<br> Leave hostname empty to bind to default interface.
+<br> Examples of legal listener lists:
+<br> <code>PLAINTEXT://myhost:9092,SSL://:9091</code>
+<br> <code>CLIENT://0.0.0.0:9092,REPLICATION://localhost:9093</code>
+<br> <code>PLAINTEXT://127.0.0.1:9092,SSL://[::1]:9092</code>
+<br></p>
 <table><tbody>
 <tr><th>Type:</th><td>string</td></tr>
 <tr><th>Default:</th><td>PLAINTEXT://:9092</td></tr>
