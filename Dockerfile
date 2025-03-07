@@ -9,12 +9,12 @@ RUN sed -i \
       AddType text/html .html\n\
       AddHandler server-parsed .html\n\
       Redirect 301 /design.html /documentation#design\n\
-      RewriteRule ^/?(\\\d+)/generated/ - [S=4]\n\
-      RewriteRule ^/?(\\\d+)/documentation(\\.html)? - [S=3]\n\
-      RewriteRule ^/?(\\\d+)/javadoc - [S=2]\n\
-      RewriteRule ^/?(\\\d+)/images/ - [S=1]\n\
+      RewriteRule ^/?(\\d+)/generated/ - [S=4]\n\
+      RewriteRule ^/?(\\d+)/documentation(\\.html)? - [S=3]\n\
+      RewriteRule ^/?(\\d+)/javadoc - [S=2]\n\
+      RewriteRule ^/?(\\d+)/images/ - [S=1]\n\
       RewriteCond $2 !=protocol\n\
-      RewriteRule ^/?(\\\d+)/([a-z]+)(\\.html)? /$1/documentation#$2 [R=302,L,NE]' \
+      RewriteRule ^/?(\\d+)/([a-z]+)(\\.html)? /$1/documentation#$2 [R=302,L,NE]' \
   "/usr/local/apache2/conf/httpd.conf"
 
 CMD ["httpd-foreground"]
