@@ -5,7 +5,7 @@ RUN sed -i \
   -e 's/#LoadModule include_module modules\/mod_include.so/LoadModule include_module modules\/mod_include.so/g' \
   -e 's/#LoadModule rewrite_module modules\/mod_rewrite.so/LoadModule rewrite_module modules\/mod_rewrite.so/g' \
   -e 's/Options Indexes FollowSymLinks/Options +Includes/g' \
-  -e '/<Directory "\/usr\/local\/apache2\/htdocs">/a\n\      RewriteEngine On\n\
+  -e '/<Directory "\/usr\/local\/apache2\/htdocs">/a\    RewriteEngine On\
       AddType text/html .html\n\
       AddHandler server-parsed .html\n\
       Redirect 301 /design.html /documentation#design\n\
