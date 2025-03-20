@@ -1680,6 +1680,10 @@ nav .btn {
     h4 {
         font-size: 1.6rem;
     }
+    td {
+        padding: 0.5rem;
+        width: 5rem;
+    }
     .logo {
         width: 21.667rem;
         height: auto;
