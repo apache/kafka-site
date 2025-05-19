@@ -67,7 +67,7 @@
 </li>
 <li>
 <h4><a id="control.plane.listener.name"></a><a id="brokerconfigs_control.plane.listener.name" href="#brokerconfigs_control.plane.listener.name">control.plane.listener.name</a></h4>
-<p>Name of listener used for communication between controller and brokers. A broker will use the <code>control.plane.listener.name</code> to locate the endpoint in listeners list, to listen for connections from the controller. For example, if a broker's config is:<br><code>listeners = INTERNAL://192.1.1.8:9092, EXTERNAL://10.1.1.5:9093, CONTROLLER://192.1.1.8:9094 listener.security.protocol.map = INTERNAL:PLAINTEXT, EXTERNAL:SSL, CONTROLLER:SSL control.plane.listener.name = CONTROLLER</code><br>On startup, the broker will start listening on "192.1.1.8:9094" with security protocol "SSL".<br>On the controller side, when it discovers a broker's published endpoints through ZooKeeper, it will use the <code>control.plane.listener.name</code> to find the endpoint, which it will use to establish connection to the broker.<br>For example, if the broker's published endpoints on ZooKeeper are:<br> <code>"endpoints" : ["INTERNAL://broker1.example.com:9092","EXTERNAL://broker1.example.com:9093","CONTROLLER://broker1.example.com:9094"]</code><br> and the controller's config is:<br><code>listener.security.protocol.map = INTERNAL:PLAINTEXT, EXTERNAL:SSL, CONTROLLER:SSL control.plane.listener.name = CONTROLLER</code><br>then the controller will use "broker1.example.com:9094" with security protocol "SSL" to connect to the broker.<br>If not explicitly configured, the default value will be null and there will be no dedicated endpoints for controller connections.<br>If explicitly configured, the value cannot be the same as the value of <code>inter.broker.listener.name</code>.</p>
+<p>Name of listener used for communication between controller and brokers. A broker will use the <code>control.plane.listener.name</code> to locate the endpoint in listeners list, to listen for connections from the controller. For example, if a broker's config is:<br><code>listeners = INTERNAL://192.1.1.8:9092, EXTERNAL://10.1.1.5:9093, CONTROLLER://192.1.1.8:9094listener.security.protocol.map = INTERNAL:PLAINTEXT, EXTERNAL:SSL, CONTROLLER:SSLcontrol.plane.listener.name = CONTROLLER</code><br>On startup, the broker will start listening on "192.1.1.8:9094" with security protocol "SSL".<br>On the controller side, when it discovers a broker's published endpoints through ZooKeeper, it will use the <code>control.plane.listener.name</code> to find the endpoint, which it will use to establish connection to the broker.<br>For example, if the broker's published endpoints on ZooKeeper are:<br> <code>"endpoints" : ["INTERNAL://broker1.example.com:9092","EXTERNAL://broker1.example.com:9093","CONTROLLER://broker1.example.com:9094"]</code><br> and the controller's config is:<br><code>listener.security.protocol.map = INTERNAL:PLAINTEXT, EXTERNAL:SSL, CONTROLLER:SSLcontrol.plane.listener.name = CONTROLLER</code><br>then the controller will use "broker1.example.com:9094" with security protocol "SSL" to connect to the broker.<br>If not explicitly configured, the default value will be null and there will be no dedicated endpoints for controller connections.<br>If explicitly configured, the value cannot be the same as the value of <code>inter.broker.listener.name</code>.</p>
 <table><tbody>
 <tr><th>Type:</th><td>string</td></tr>
 <tr><th>Default:</th><td>null</td></tr>
@@ -199,15 +199,7 @@
 </li>
 <li>
 <h4><a id="listeners"></a><a id="brokerconfigs_listeners" href="#brokerconfigs_listeners">listeners</a></h4>
-<p>Listener List - Comma-separated list of URIs we will listen on and the listener names. If the listener name is not a security protocol, <code>listener.security.protocol.map</code> must also be set.
-<br> Listener names and port numbers must be unique unless one listener is an IPv4 address and the other listener is an IPv6 address (for the same port).
-<br> Specify hostname as 0.0.0.0 to bind to all interfaces.
-<br> Leave hostname empty to bind to default interface.
-<br> Examples of legal listener lists:
-<br> <code>PLAINTEXT://myhost:9092,SSL://:9091</code>
-<br> <code>CLIENT://0.0.0.0:9092,REPLICATION://localhost:9093</code>
-<br> <code>PLAINTEXT://127.0.0.1:9092,SSL://[::1]:9092</code>
-<br></p>
+<p>Listener List - Comma-separated list of URIs we will listen on and the listener names. If the listener name is not a security protocol, <code>listener.security.protocol.map</code> must also be set.<br> Listener names and port numbers must be unique unless %n one listener is an IPv4 address and the other listener is %n an IPv6 address (for the same port).%n Specify hostname as 0.0.0.0 to bind to all interfaces.%n Leave hostname empty to bind to default interface.%n Examples of legal listener lists:%n <code>PLAINTEXT://myhost:9092,SSL://:9091</code>%n <code>CLIENT://0.0.0.0:9092,REPLICATION://localhost:9093</code>%n <code>PLAINTEXT://127.0.0.1:9092,SSL://[::1]:9092</code>%n</p>
 <table><tbody>
 <tr><th>Type:</th><td>string</td></tr>
 <tr><th>Default:</th><td>PLAINTEXT://:9092</td></tr>
@@ -1329,11 +1321,11 @@
 </li>
 <li>
 <h4><a id="group.coordinator.rebalance.protocols"></a><a id="brokerconfigs_group.coordinator.rebalance.protocols" href="#brokerconfigs_group.coordinator.rebalance.protocols">group.coordinator.rebalance.protocols</a></h4>
-<p>The list of enabled rebalance protocols. The consumer and share rebalance protocol are in early access and therefore must not be used in production.</p>
+<p>The list of enabled rebalance protocols. Supported protocols: consumer,classic,share,unknown. The consumer rebalance protocol is in early access and therefore must not be used in production.</p>
 <table><tbody>
 <tr><th>Type:</th><td>list</td></tr>
 <tr><th>Default:</th><td>classic</td></tr>
-<tr><th>Valid Values:</th><td>[consumer, classic, share]</td></tr>
+<tr><th>Valid Values:</th><td>[consumer, classic, share, unknown]</td></tr>
 <tr><th>Importance:</th><td>medium</td></tr>
 <tr><th>Update Mode:</th><td>read-only</td></tr>
 </tbody></table>
@@ -2520,7 +2512,7 @@
 <p>The list of protocols enabled for SSL connections. The default is 'TLSv1.2,TLSv1.3' when running with Java 11 or newer, 'TLSv1.2' otherwise. With the default value for Java 11, clients and servers will prefer TLSv1.3 if both support it and fallback to TLSv1.2 otherwise (assuming both support at least TLSv1.2). This default should be fine for most cases. Also see the config documentation for `ssl.protocol`.</p>
 <table><tbody>
 <tr><th>Type:</th><td>list</td></tr>
-<tr><th>Default:</th><td>TLSv1.2</td></tr>
+<tr><th>Default:</th><td>TLSv1.2,TLSv1.3</td></tr>
 <tr><th>Valid Values:</th><td></td></tr>
 <tr><th>Importance:</th><td>medium</td></tr>
 <tr><th>Update Mode:</th><td>per-broker</td></tr>
@@ -2608,7 +2600,7 @@
 <p>The SSL protocol used to generate the SSLContext. The default is 'TLSv1.3' when running with Java 11 or newer, 'TLSv1.2' otherwise. This value should be fine for most use cases. Allowed values in recent JVMs are 'TLSv1.2' and 'TLSv1.3'. 'TLS', 'TLSv1.1', 'SSL', 'SSLv2' and 'SSLv3' may be supported in older JVMs, but their usage is discouraged due to known security vulnerabilities. With the default value for this config and 'ssl.enabled.protocols', clients will downgrade to 'TLSv1.2' if the server does not support 'TLSv1.3'. If this config is set to 'TLSv1.2', clients will not use 'TLSv1.3' even if it is one of the values in ssl.enabled.protocols and the server only supports 'TLSv1.3'.</p>
 <table><tbody>
 <tr><th>Type:</th><td>string</td></tr>
-<tr><th>Default:</th><td>TLSv1.2</td></tr>
+<tr><th>Default:</th><td>TLSv1.3</td></tr>
 <tr><th>Valid Values:</th><td></td></tr>
 <tr><th>Importance:</th><td>medium</td></tr>
 <tr><th>Update Mode:</th><td>per-broker</td></tr>

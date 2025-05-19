@@ -298,7 +298,7 @@
 </li>
 <li>
 <h4><a id="remote.storage.enable"></a><a id="topicconfigs_remote.storage.enable" href="#topicconfigs_remote.storage.enable">remote.storage.enable</a></h4>
-<p>To enable tiered storage for a topic, set this configuration as true. You can not disable this config once it is enabled. It will be provided in future versions.</p>
+<p>To enable tiered storage for a topic, set this configuration to true. To disable tiered storage for a topic that has it enabled, set this configuration to false. When disabling, you must also set <code>remote.log.delete.on.disable</code> to true.</p>
 <table><tbody>
 <tr><th>Type:</th><td>boolean</td></tr>
 <tr><th>Default:</th><td>false</td></tr>
