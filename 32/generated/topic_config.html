@@ -1,0 +1,289 @@
+<ul class="config-list">
+<li>
+<h4><a id="cleanup.policy"></a><a id="topicconfigs_cleanup.policy" href="#topicconfigs_cleanup.policy">cleanup.policy</a></h4>
+<p>A string that is either "delete" or "compact" or both. This string designates the retention policy to use on old log segments. The default policy ("delete") will discard old segments when their retention time or size limit has been reached. The "compact" setting will enable <a href="#compaction">log compaction</a> on the topic.</p>
+<table><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>delete</td></tr>
+<tr><th>Valid Values:</th><td>[compact, delete]</td></tr>
+<tr><th>Server Default Property:</th><td>log.cleanup.policy</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="compression.type"></a><a id="topicconfigs_compression.type" href="#topicconfigs_compression.type">compression.type</a></h4>
+<p>Specify the final compression type for a given topic. This configuration accepts the standard compression codecs ('gzip', 'snappy', 'lz4', 'zstd'). It additionally accepts 'uncompressed' which is equivalent to no compression; and 'producer' which means retain the original compression codec set by the producer.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>producer</td></tr>
+<tr><th>Valid Values:</th><td>[uncompressed, zstd, lz4, snappy, gzip, producer]</td></tr>
+<tr><th>Server Default Property:</th><td>compression.type</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="delete.retention.ms"></a><a id="topicconfigs_delete.retention.ms" href="#topicconfigs_delete.retention.ms">delete.retention.ms</a></h4>
+<p>The amount of time to retain delete tombstone markers for <a href="#compaction">log compacted</a> topics. This setting also gives a bound on the time in which a consumer must complete a read if they begin from offset 0 to ensure that they get a valid snapshot of the final stage (otherwise delete tombstones may be collected before they complete their scan).</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>86400000 (1 day)</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Server Default Property:</th><td>log.cleaner.delete.retention.ms</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="file.delete.delay.ms"></a><a id="topicconfigs_file.delete.delay.ms" href="#topicconfigs_file.delete.delay.ms">file.delete.delay.ms</a></h4>
+<p>The time to wait before deleting a file from the filesystem</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>60000 (1 minute)</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Server Default Property:</th><td>log.segment.delete.delay.ms</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="flush.messages"></a><a id="topicconfigs_flush.messages" href="#topicconfigs_flush.messages">flush.messages</a></h4>
+<p>This setting allows specifying an interval at which we will force an fsync of data written to the log. For example if this was set to 1 we would fsync after every message; if it were 5 we would fsync after every five messages. In general we recommend you not set this and use replication for durability and allow the operating system's background flush capabilities as it is more efficient. This setting can be overridden on a per-topic basis (see <a href="#topicconfigs">the per-topic configuration section</a>).</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>9223372036854775807</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Server Default Property:</th><td>log.flush.interval.messages</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="flush.ms"></a><a id="topicconfigs_flush.ms" href="#topicconfigs_flush.ms">flush.ms</a></h4>
+<p>This setting allows specifying a time interval at which we will force an fsync of data written to the log. For example if this was set to 1000 we would fsync after 1000 ms had passed. In general we recommend you not set this and use replication for durability and allow the operating system's background flush capabilities as it is more efficient.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>9223372036854775807</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Server Default Property:</th><td>log.flush.interval.ms</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="follower.replication.throttled.replicas"></a><a id="topicconfigs_follower.replication.throttled.replicas" href="#topicconfigs_follower.replication.throttled.replicas">follower.replication.throttled.replicas</a></h4>
+<p>A list of replicas for which log replication should be throttled on the follower side. The list should describe a set of replicas in the form [PartitionId]:[BrokerId],[PartitionId]:[BrokerId]:... or alternatively the wildcard '*' can be used to throttle all replicas for this topic.</p>
+<table><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td>[partitionId]:[brokerId],[partitionId]:[brokerId],...</td></tr>
+<tr><th>Server Default Property:</th><td>follower.replication.throttled.replicas</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="index.interval.bytes"></a><a id="topicconfigs_index.interval.bytes" href="#topicconfigs_index.interval.bytes">index.interval.bytes</a></h4>
+<p>This setting controls how frequently Kafka adds an index entry to its offset index. The default setting ensures that we index a message roughly every 4096 bytes. More indexing allows reads to jump closer to the exact position in the log but makes the index larger. You probably don't need to change this.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>4096 (4 kibibytes)</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Server Default Property:</th><td>log.index.interval.bytes</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="leader.replication.throttled.replicas"></a><a id="topicconfigs_leader.replication.throttled.replicas" href="#topicconfigs_leader.replication.throttled.replicas">leader.replication.throttled.replicas</a></h4>
+<p>A list of replicas for which log replication should be throttled on the leader side. The list should describe a set of replicas in the form [PartitionId]:[BrokerId],[PartitionId]:[BrokerId]:... or alternatively the wildcard '*' can be used to throttle all replicas for this topic.</p>
+<table><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td>[partitionId]:[brokerId],[partitionId]:[brokerId],...</td></tr>
+<tr><th>Server Default Property:</th><td>leader.replication.throttled.replicas</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="max.compaction.lag.ms"></a><a id="topicconfigs_max.compaction.lag.ms" href="#topicconfigs_max.compaction.lag.ms">max.compaction.lag.ms</a></h4>
+<p>The maximum time a message will remain ineligible for compaction in the log. Only applicable for logs that are being compacted.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>9223372036854775807</td></tr>
+<tr><th>Valid Values:</th><td>[1,...]</td></tr>
+<tr><th>Server Default Property:</th><td>log.cleaner.max.compaction.lag.ms</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="max.message.bytes"></a><a id="topicconfigs_max.message.bytes" href="#topicconfigs_max.message.bytes">max.message.bytes</a></h4>
+<p>The largest record batch size allowed by Kafka (after compression if compression is enabled). If this is increased and there are consumers older than 0.10.2, the consumers' fetch size must also be increased so that they can fetch record batches this large. In the latest message format version, records are always grouped into batches for efficiency. In previous message format versions, uncompressed records are not grouped into batches and this limit only applies to a single record in that case.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>1048588</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Server Default Property:</th><td>message.max.bytes</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="message.format.version"></a><a id="topicconfigs_message.format.version" href="#topicconfigs_message.format.version">message.format.version</a></h4>
+<p>[DEPRECATED] Specify the message format version the broker will use to append messages to the logs. The value of this config is always assumed to be `3.0` if `inter.broker.protocol.version` is 3.0 or higher (the actual config value is ignored). Otherwise, the value should be a valid ApiVersion. Some examples are: 0.10.0, 1.1, 2.8, 3.0. By setting a particular message format version, the user is certifying that all the existing messages on disk are smaller or equal than the specified version. Setting this value incorrectly will cause consumers with older versions to break as they will receive messages with a format that they don't understand.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>3.0-IV1</td></tr>
+<tr><th>Valid Values:</th><td>[0.8.0, 0.8.1, 0.8.2, 0.9.0, 0.10.0-IV0, 0.10.0-IV1, 0.10.1-IV0, 0.10.1-IV1, 0.10.1-IV2, 0.10.2-IV0, 0.11.0-IV0, 0.11.0-IV1, 0.11.0-IV2, 1.0-IV0, 1.1-IV0, 2.0-IV0, 2.0-IV1, 2.1-IV0, 2.1-IV1, 2.1-IV2, 2.2-IV0, 2.2-IV1, 2.3-IV0, 2.3-IV1, 2.4-IV0, 2.4-IV1, 2.5-IV0, 2.6-IV0, 2.7-IV0, 2.7-IV1, 2.7-IV2, 2.8-IV0, 2.8-IV1, 3.0-IV0, 3.0-IV1, 3.1-IV0, 3.2-IV0]</td></tr>
+<tr><th>Server Default Property:</th><td>log.message.format.version</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="message.timestamp.difference.max.ms"></a><a id="topicconfigs_message.timestamp.difference.max.ms" href="#topicconfigs_message.timestamp.difference.max.ms">message.timestamp.difference.max.ms</a></h4>
+<p>The maximum difference allowed between the timestamp when a broker receives a message and the timestamp specified in the message. If message.timestamp.type=CreateTime, a message will be rejected if the difference in timestamp exceeds this threshold. This configuration is ignored if message.timestamp.type=LogAppendTime.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>9223372036854775807</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Server Default Property:</th><td>log.message.timestamp.difference.max.ms</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="message.timestamp.type"></a><a id="topicconfigs_message.timestamp.type" href="#topicconfigs_message.timestamp.type">message.timestamp.type</a></h4>
+<p>Define whether the timestamp in the message is message create time or log append time. The value should be either `CreateTime` or `LogAppendTime`</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>CreateTime</td></tr>
+<tr><th>Valid Values:</th><td>[CreateTime, LogAppendTime]</td></tr>
+<tr><th>Server Default Property:</th><td>log.message.timestamp.type</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="min.cleanable.dirty.ratio"></a><a id="topicconfigs_min.cleanable.dirty.ratio" href="#topicconfigs_min.cleanable.dirty.ratio">min.cleanable.dirty.ratio</a></h4>
+<p>This configuration controls how frequently the log compactor will attempt to clean the log (assuming <a href="#compaction">log compaction</a> is enabled). By default we will avoid cleaning a log where more than 50% of the log has been compacted. This ratio bounds the maximum space wasted in the log by duplicates (at 50% at most 50% of the log could be duplicates). A higher ratio will mean fewer, more efficient cleanings but will mean more wasted space in the log. If the max.compaction.lag.ms or the min.compaction.lag.ms configurations are also specified, then the log compactor considers the log to be eligible for compaction as soon as either: (i) the dirty ratio threshold has been met and the log has had dirty (uncompacted) records for at least the min.compaction.lag.ms duration, or (ii) if the log has had dirty (uncompacted) records for at most the max.compaction.lag.ms period.</p>
+<table><tbody>
+<tr><th>Type:</th><td>double</td></tr>
+<tr><th>Default:</th><td>0.5</td></tr>
+<tr><th>Valid Values:</th><td>[0,...,1]</td></tr>
+<tr><th>Server Default Property:</th><td>log.cleaner.min.cleanable.ratio</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="min.compaction.lag.ms"></a><a id="topicconfigs_min.compaction.lag.ms" href="#topicconfigs_min.compaction.lag.ms">min.compaction.lag.ms</a></h4>
+<p>The minimum time a message will remain uncompacted in the log. Only applicable for logs that are being compacted.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>0</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Server Default Property:</th><td>log.cleaner.min.compaction.lag.ms</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="min.insync.replicas"></a><a id="topicconfigs_min.insync.replicas" href="#topicconfigs_min.insync.replicas">min.insync.replicas</a></h4>
+<p>When a producer sets acks to "all" (or "-1"), this configuration specifies the minimum number of replicas that must acknowledge a write for the write to be considered successful. If this minimum cannot be met, then the producer will raise an exception (either NotEnoughReplicas or NotEnoughReplicasAfterAppend).<br>When used together, <code>min.insync.replicas</code> and <code>acks</code> allow you to enforce greater durability guarantees. A typical scenario would be to create a topic with a replication factor of 3, set <code>min.insync.replicas</code> to 2, and produce with <code>acks</code> of "all". This will ensure that the producer raises an exception if a majority of replicas do not receive a write.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>1</td></tr>
+<tr><th>Valid Values:</th><td>[1,...]</td></tr>
+<tr><th>Server Default Property:</th><td>min.insync.replicas</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="preallocate"></a><a id="topicconfigs_preallocate" href="#topicconfigs_preallocate">preallocate</a></h4>
+<p>True if we should preallocate the file on disk when creating a new log segment.</p>
+<table><tbody>
+<tr><th>Type:</th><td>boolean</td></tr>
+<tr><th>Default:</th><td>false</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Server Default Property:</th><td>log.preallocate</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="retention.bytes"></a><a id="topicconfigs_retention.bytes" href="#topicconfigs_retention.bytes">retention.bytes</a></h4>
+<p>This configuration controls the maximum size a partition (which consists of log segments) can grow to before we will discard old log segments to free up space if we are using the "delete" retention policy. By default there is no size limit only a time limit. Since this limit is enforced at the partition level, multiply it by the number of partitions to compute the topic retention in bytes.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>-1</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Server Default Property:</th><td>log.retention.bytes</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="retention.ms"></a><a id="topicconfigs_retention.ms" href="#topicconfigs_retention.ms">retention.ms</a></h4>
+<p>This configuration controls the maximum time we will retain a log before we will discard old log segments to free up space if we are using the "delete" retention policy. This represents an SLA on how soon consumers must read their data. If set to -1, no time limit is applied.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>604800000 (7 days)</td></tr>
+<tr><th>Valid Values:</th><td>[-1,...]</td></tr>
+<tr><th>Server Default Property:</th><td>log.retention.ms</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="segment.bytes"></a><a id="topicconfigs_segment.bytes" href="#topicconfigs_segment.bytes">segment.bytes</a></h4>
+<p>This configuration controls the segment file size for the log. Retention and cleaning is always done a file at a time so a larger segment size means fewer files but less granular control over retention.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>1073741824 (1 gibibyte)</td></tr>
+<tr><th>Valid Values:</th><td>[14,...]</td></tr>
+<tr><th>Server Default Property:</th><td>log.segment.bytes</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="segment.index.bytes"></a><a id="topicconfigs_segment.index.bytes" href="#topicconfigs_segment.index.bytes">segment.index.bytes</a></h4>
+<p>This configuration controls the size of the index that maps offsets to file positions. We preallocate this index file and shrink it only after log rolls. You generally should not need to change this setting.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>10485760 (10 mebibytes)</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Server Default Property:</th><td>log.index.size.max.bytes</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="segment.jitter.ms"></a><a id="topicconfigs_segment.jitter.ms" href="#topicconfigs_segment.jitter.ms">segment.jitter.ms</a></h4>
+<p>The maximum random jitter subtracted from the scheduled segment roll time to avoid thundering herds of segment rolling</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>0</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Server Default Property:</th><td>log.roll.jitter.ms</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="segment.ms"></a><a id="topicconfigs_segment.ms" href="#topicconfigs_segment.ms">segment.ms</a></h4>
+<p>This configuration controls the period of time after which Kafka will force the log to roll even if the segment file isn't full to ensure that retention can delete or compact old data.</p>
+<table><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>604800000 (7 days)</td></tr>
+<tr><th>Valid Values:</th><td>[1,...]</td></tr>
+<tr><th>Server Default Property:</th><td>log.roll.ms</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="unclean.leader.election.enable"></a><a id="topicconfigs_unclean.leader.election.enable" href="#topicconfigs_unclean.leader.election.enable">unclean.leader.election.enable</a></h4>
+<p>Indicates whether to enable replicas not in the ISR set to be elected as leader as a last resort, even though doing so may result in data loss.</p>
+<table><tbody>
+<tr><th>Type:</th><td>boolean</td></tr>
+<tr><th>Default:</th><td>false</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Server Default Property:</th><td>unclean.leader.election.enable</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="message.downconversion.enable"></a><a id="topicconfigs_message.downconversion.enable" href="#topicconfigs_message.downconversion.enable">message.downconversion.enable</a></h4>
+<p>This configuration controls whether down-conversion of message formats is enabled to satisfy consume requests. When set to <code>false</code>, broker will not perform down-conversion for consumers expecting an older message format. The broker responds with <code>UNSUPPORTED_VERSION</code> error for consume requests from such older clients. This configurationdoes not apply to any message format conversion that might be required for replication to followers.</p>
+<table><tbody>
+<tr><th>Type:</th><td>boolean</td></tr>
+<tr><th>Default:</th><td>true</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Server Default Property:</th><td>log.message.downconversion.enable</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+</ul>
+
