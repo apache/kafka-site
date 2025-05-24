@@ -1,0 +1,34 @@
+<div class="row">
+  {{ $index := 0 }}
+  {{ range .Site.Data.committers }}
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        {{ if .image }}
+          <img class="card-img-top" src="{{ .image }}" alt="{{ .name }}">
+        {{ end }}
+        <div class="card-body">
+          <h5 class="card-title">{{ .name }}</h5>
+          <p class="card-text">{{ .title }}</p>
+          <p class="card-text">
+            {{ if .linkedIn }}
+              <a href="{{ .linkedIn }}" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            {{ end }}
+            {{ if .twitter }}
+              <a href="{{ .twitter }}" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+            {{ end }}
+            {{ if .github }}
+              <a href="{{ .github }}" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            {{ end }}
+            {{ if .website }}
+              <a href="{{ .website }}" target="_blank"><i class="fas fa-globe fa-2x"></i></a>
+            {{ end }}
+          </p>
+        </div>
+      </div>
+    </div>
+    {{ $index = add $index 1 }}
+    {{ if eq (mod $index 2) 0 }}
+      </div><div class="row">
+    {{ end }}
+  {{ end }}
+</div>
