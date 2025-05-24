@@ -1,0 +1,25 @@
+<!-- Check the variable that indicates whether this is an archived doc set.
+  If yes, display a banner. -->
+{{ $currentPageURL := .Permalink }}
+{{ $isArchived := false }}
+{{ $olderVersion := "" }}
+{{ $latest_version := .Site.Params.url_latest_version }}
+{{ $current_version := .Site.Params.version }}
+
+{{ range .Site.Params.versions }}
+  {{ if and (in $currentPageURL .url) .archived_version }}
+    {{ $isArchived = true }}
+    {{ $olderVersion = .version }}
+  {{ end }}
+{{ end }}
+
+{{ if $isArchived }}
+  {{ $color := "warning" }}
+  <div class="pageinfo pageinfo-{{ $color }}">
+    {{ with $current_version }}<p>You are viewing documentation for an older version ({{ $olderVersion | markdownify }}) of Kafka. 
+      {{ with $latest_version }}For up-to-date documentation, see the 
+        <a href="{{ $latest_version | safeURL }}" target="_blank">latest version</a>.</p>
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}
