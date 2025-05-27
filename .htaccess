@@ -1,1 +1,1 @@
-Header set Content-Security-Policy "style-src https://fonts.googleapis.com/css; script-src https://unpkg.com; script-src https://code.jquery.com"
+Header set Content-Security-Policy "style-src 'self'; style-src https://fonts.googleapis.com/css; script-src 'self'; script-src https://unpkg.com; script-src https://code.jquery.com"
