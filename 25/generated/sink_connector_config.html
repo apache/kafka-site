@@ -1,0 +1,234 @@
+<ul class="config-list">
+<li>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="name" href="#name"></a>
+<a href="#name">name</a></h4>
+<p>Globally unique name to use for this connector.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td>non-empty string without ISO control characters</td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="connector.class"></a>
+   <a href="#connector.class">connector.class</a>
+</h4>
+<p>Name or alias of the class for this connector. Must be a subclass of org.apache.kafka.connect.connector.Connector. If the connector is org.apache.kafka.connect.file.FileStreamSinkConnector, you can either specify this full name,  or use "FileStreamSink" or "FileStreamSinkConnector" to make the configuration a bit shorter</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="tasks.max"></a>
+   <a href="#tasks.max">tasks.max</a>
+</h4>
+<p>Maximum number of tasks to use for this connector.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>1</td></tr>
+<tr><th>Valid Values:</th><td>[1,...]</td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="topics" href="#topics"></a>
+<a href="#topics">topics</a></h4>
+<p>List of topics to consume, separated by commas</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="topics.regex"></a>
+   <a href="#topics.regex">topics.regex</a>
+</h4>
+<p>Regular expression giving topics to consume. Under the hood, the regex is compiled to a <code>java.util.regex.Pattern</code>. Only one of topics or topics.regex should be specified.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td>valid regex</td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="key.converter"></a>
+   <a href="#key.converter">key.converter</a>
+</h4>
+<p>Converter class used to convert between Kafka Connect format and the serialized form that is written to Kafka. This controls the format of the keys in messages written to or read from Kafka, and since this is independent of connectors it allows any connector to work with any serialization format. Examples of common formats include JSON and Avro.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="value.converter"></a>
+   <a href="#value.converter">value.converter</a>
+</h4>
+<p>Converter class used to convert between Kafka Connect format and the serialized form that is written to Kafka. This controls the format of the values in messages written to or read from Kafka, and since this is independent of connectors it allows any connector to work with any serialization format. Examples of common formats include JSON and Avro.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="header.converter"></a>
+   <a href="#header.converter">header.converter</a>
+</h4>
+<p>HeaderConverter class used to convert between Kafka Connect format and the serialized form that is written to Kafka. This controls the format of the header values in messages written to or read from Kafka, and since this is independent of connectors it allows any connector to work with any serialization format. Examples of common formats include JSON and Avro. By default, the SimpleHeaderConverter is used to serialize header values to strings and deserialize them by inferring the schemas.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="config.action.reload"></a>
+   <a href="#config.action.reload">config.action.reload</a>
+</h4>
+<p>The action that Connect should take on the connector when changes in external configuration providers result in a change in the connector's configuration properties. A value of 'none' indicates that Connect will do nothing. A value of 'restart' indicates that Connect should restart/reload the connector with the updated configuration properties.The restart may actually be scheduled in the future if the external configuration provider indicates that a configuration value will expire in the future.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>restart</td></tr>
+<tr><th>Valid Values:</th><td>[none, restart]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="transforms" href="#transforms"></a>
+<a href="#transforms">transforms</a></h4>
+<p>Aliases for the transformations to be applied to records.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td>non-null string, unique transformation aliases</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="errors.retry.timeout"></a>
+   <a href="#errors.retry.timeout">errors.retry.timeout</a>
+</h4>
+<p>The maximum duration in milliseconds that a failed operation will be reattempted. The default is 0, which means no retries will be attempted. Use -1 for infinite retries.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>0</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="errors.retry.delay.max.ms"></a>
+   <a href="#errors.retry.delay.max.ms">errors.retry.delay.max.ms</a>
+</h4>
+<p>The maximum duration in milliseconds between consecutive retry attempts. Jitter will be added to the delay once this limit is reached to prevent thundering herd issues.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>60000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="errors.tolerance"></a>
+   <a href="#errors.tolerance">errors.tolerance</a>
+</h4>
+<p>Behavior for tolerating errors during connector operation. 'none' is the default value and signals that any error will result in an immediate connector task failure; 'all' changes the behavior to skip over problematic records.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>none</td></tr>
+<tr><th>Valid Values:</th><td>[none, all]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="errors.log.enable"></a>
+   <a href="#errors.log.enable">errors.log.enable</a>
+</h4>
+<p>If true, write each error and the details of the failed operation and problematic record to the Connect application log. This is 'false' by default, so that only errors that are not tolerated are reported.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>boolean</td></tr>
+<tr><th>Default:</th><td>false</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="errors.log.include.messages"></a>
+   <a href="#errors.log.include.messages">errors.log.include.messages</a>
+</h4>
+<p>Whether to the include in the log the Connect record that resulted in a failure. This is 'false' by default, which will prevent record keys, values, and headers from being written to log files, although some information such as topic and partition number will still be logged.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>boolean</td></tr>
+<tr><th>Default:</th><td>false</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="errors.deadletterqueue.topic.name"></a>
+   <a href="#errors.deadletterqueue.topic.name">errors.deadletterqueue.topic.name</a>
+</h4>
+<p>The name of the topic to be used as the dead letter queue (DLQ) for messages that result in an error when processed by this sink connector, or its transformations or converters. The topic name is blank by default, which means that no messages are to be recorded in the DLQ.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="errors.deadletterqueue.topic.replication.factor"></a>
+   <a href="#errors.deadletterqueue.topic.replication.factor">errors.deadletterqueue.topic.replication.factor</a>
+</h4>
+<p>Replication factor used to create the dead letter queue topic when it doesn't already exist.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>short</td></tr>
+<tr><th>Default:</th><td>3</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="errors.deadletterqueue.context.headers.enable"></a>
+   <a href="#errors.deadletterqueue.context.headers.enable">errors.deadletterqueue.context.headers.enable</a>
+</h4>
+<p>If true, add headers containing error context to the messages written to the dead letter queue. To avoid clashing with headers from the original record, all error context header keys, all error context header keys will start with <code>__connect.errors.</code></p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>boolean</td></tr>
+<tr><th>Default:</th><td>false</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+</ul>
+

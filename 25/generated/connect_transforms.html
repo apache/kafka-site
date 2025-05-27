@@ -1,0 +1,408 @@
+<div id="org.apache.kafka.connect.transforms.InsertField">
+<h5>org.apache.kafka.connect.transforms.InsertField</h5>
+Insert field(s) using attributes from the record metadata or a configured static value.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.InsertField$Key</code>) or value (<code>org.apache.kafka.connect.transforms.InsertField$Value</code>).
+<p/>
+<ul class="config-list">
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="offset.field"></a>
+   <a href="#offset.field">offset.field</a>
+</h4>
+<p>Field name for Kafka offset - only applicable to sink connectors.<br/>Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="partition.field"></a>
+   <a href="#partition.field">partition.field</a>
+</h4>
+<p>Field name for Kafka partition. Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="static.field"></a>
+   <a href="#static.field">static.field</a>
+</h4>
+<p>Field name for static data field. Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="static.value"></a>
+   <a href="#static.value">static.value</a>
+</h4>
+<p>Static field value, if field name configured.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="timestamp.field"></a>
+   <a href="#timestamp.field">timestamp.field</a>
+</h4>
+<p>Field name for record timestamp. Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="topic.field"></a>
+   <a href="#topic.field">topic.field</a>
+</h4>
+<p>Field name for Kafka topic. Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.ReplaceField">
+<h5>org.apache.kafka.connect.transforms.ReplaceField</h5>
+Filter or rename fields.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.ReplaceField$Key</code>) or value (<code>org.apache.kafka.connect.transforms.ReplaceField$Value</code>).
+<p/>
+<ul class="config-list">
+<li>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="blacklist" href="#blacklist"></a>
+<a href="#blacklist">blacklist
+    </a></h4>
+<p>Fields to exclude. This takes precedence over the whitelist.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="renames" href="#renames"></a>
+<a href="#renames">renames
+    </a></h4>
+<p>Field rename mappings.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td>list of colon-delimited pairs, e.g. <code>foo:bar,abc:xyz</code></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="whitelist" href="#whitelist"></a>
+<a href="#whitelist">whitelist
+    </a></h4>
+<p>Fields to include. If specified, only these fields will be used.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.MaskField">
+<h5>org.apache.kafka.connect.transforms.MaskField</h5>
+Mask specified fields with a valid null value for the field type (i.e. 0, false, empty string, and so on).<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.MaskField$Key</code>) or value (<code>org.apache.kafka.connect.transforms.MaskField$Value</code>).
+<p/>
+<ul class="config-list">
+<li>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="fields" href="#fields"></a>
+<a href="#fields">fields
+    </a></h4>
+<p>Names of fields to mask.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td>non-empty list</td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.ValueToKey">
+<h5>org.apache.kafka.connect.transforms.ValueToKey</h5>
+Replace the record key with a new key formed from a subset of fields in the record value.
+<p/>
+<ul class="config-list">
+<li>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="fields" href="#fields"></a>
+<a href="#fields">fields
+    </a></h4>
+<p>Field names on the record value to extract as the record key.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td>non-empty list</td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.HoistField">
+<h5>org.apache.kafka.connect.transforms.HoistField</h5>
+Wrap data using the specified field name in a Struct when schema present, or a Map in the case of schemaless data.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.HoistField$Key</code>) or value (<code>org.apache.kafka.connect.transforms.HoistField$Value</code>).
+<p/>
+<ul class="config-list">
+<li>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="field" href="#field"></a>
+<a href="#field">field
+    </a></h4>
+<p>Field name for the single field that will be created in the resulting Struct or Map.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.ExtractField">
+<h5>org.apache.kafka.connect.transforms.ExtractField</h5>
+Extract the specified field from a Struct when schema present, or a Map in the case of schemaless data. Any null values are passed through unmodified.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.ExtractField$Key</code>) or value (<code>org.apache.kafka.connect.transforms.ExtractField$Value</code>).
+<p/>
+<ul class="config-list">
+<li>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="field" href="#field"></a>
+<a href="#field">field
+    </a></h4>
+<p>Field name to extract.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.SetSchemaMetadata">
+<h5>org.apache.kafka.connect.transforms.SetSchemaMetadata</h5>
+Set the schema name, version or both on the record's key (<code>org.apache.kafka.connect.transforms.SetSchemaMetadata$Key</code>) or value (<code>org.apache.kafka.connect.transforms.SetSchemaMetadata$Value</code>) schema.
+<p/>
+<ul class="config-list">
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="schema.name"></a>
+   <a href="#schema.name">schema.name</a>
+</h4>
+<p>Schema name to set.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="schema.version"></a>
+   <a href="#schema.version">schema.version</a>
+</h4>
+<p>Schema version to set.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.TimestampRouter">
+<h5>org.apache.kafka.connect.transforms.TimestampRouter</h5>
+Update the record's topic field as a function of the original topic value and the record timestamp.<p/>This is mainly useful for sink connectors, since the topic field is often used to determine the equivalent entity name in the destination system(e.g. database table or search index name).
+<p/>
+<ul class="config-list">
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="timestamp.format"></a>
+   <a href="#timestamp.format">timestamp.format</a>
+</h4>
+<p>Format string for the timestamp that is compatible with <code>java.text.SimpleDateFormat</code>.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>yyyyMMdd</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="topic.format"></a>
+   <a href="#topic.format">topic.format</a>
+</h4>
+<p>Format string which can contain <code>${topic}</code> and <code>${timestamp}</code> as placeholders for the topic and timestamp, respectively.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>${topic}-${timestamp}</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.RegexRouter">
+<h5>org.apache.kafka.connect.transforms.RegexRouter</h5>
+Update the record topic using the configured regular expression and replacement string.<p/>Under the hood, the regex is compiled to a <code>java.util.regex.Pattern</code>. If the pattern matches the input topic, <code>java.util.regex.Matcher#replaceFirst()</code> is used with the replacement string to obtain the new topic.
+<p/>
+<ul class="config-list">
+<li>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="regex" href="#regex"></a>
+<a href="#regex">regex
+    </a></h4>
+<p>Regular expression to use for matching.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td>valid regex</td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="replacement" href="#replacement"></a>
+<a href="#replacement">replacement
+    </a></h4>
+<p>Replacement string.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.Flatten">
+<h5>org.apache.kafka.connect.transforms.Flatten</h5>
+Flatten a nested data structure, generating names for each field by concatenating the field names at each level with a configurable delimiter character. Applies to Struct when schema present, or a Map in the case of schemaless data. The default delimiter is '.'.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.Flatten$Key</code>) or value (<code>org.apache.kafka.connect.transforms.Flatten$Value</code>).
+<p/>
+<ul class="config-list">
+<li>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="delimiter" href="#delimiter"></a>
+<a href="#delimiter">delimiter
+    </a></h4>
+<p>Delimiter to insert between field names from the input record when generating field names for the output record</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>.</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.Cast">
+<h5>org.apache.kafka.connect.transforms.Cast</h5>
+Cast fields or the entire key or value to a specific type, e.g. to force an integer field to a smaller width. Only simple primitive types are supported -- integers, floats, boolean, and string. <p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.Cast$Key</code>) or value (<code>org.apache.kafka.connect.transforms.Cast$Value</code>).
+<p/>
+<ul class="config-list">
+<li>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="spec" href="#spec"></a>
+<a href="#spec">spec
+    </a></h4>
+<p>List of fields and the type to cast them to of the form field1:type,field2:type to cast fields of Maps or Structs. A single type to cast the entire value. Valid types are int8, int16, int32, int64, float32, float64, boolean, and string.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td>list of colon-delimited pairs, e.g. <code>foo:bar,abc:xyz</code></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+</ul>
+
+</div>
+<div id="org.apache.kafka.connect.transforms.TimestampConverter">
+<h5>org.apache.kafka.connect.transforms.TimestampConverter</h5>
+Convert timestamps between different formats such as Unix epoch, strings, and Connect Date/Timestamp types.Applies to individual fields or to the entire value.<p/>Use the concrete transformation type designed for the record key (<code>org.apache.kafka.connect.transforms.TimestampConverter$Key</code>) or value (<code>org.apache.kafka.connect.transforms.TimestampConverter$Value</code>).
+<p/>
+<ul class="config-list">
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="target.type"></a>
+   <a href="#target.type">target.type</a>
+</h4>
+<p>The desired timestamp representation: string, unix, Date, Time, or Timestamp</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="field" href="#field"></a>
+<a href="#field">field
+    </a></h4>
+<p>The field containing the timestamp, or empty if the entire value is a timestamp</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="format" href="#format"></a>
+<a href="#format">format
+    </a></h4>
+<p>A SimpleDateFormat-compatible format for the timestamp. Used to generate the output when type=string or used to parse the input if the input is a string.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+</ul>
+
+</div>

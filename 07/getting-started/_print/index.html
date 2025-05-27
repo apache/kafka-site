@@ -1,0 +1,157 @@
+<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=en class=no-js><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel=canonical type=text/html href=https://example.kafka-site-md.dev/07/getting-started/><link rel=alternate type=application/rss+xml href=https://example.kafka-site-md.dev/07/getting-started/index.xml><meta name=robots content="noindex, nofollow"><link rel="shortcut icon" href=/favicons/favicon.ico><link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180><link rel=icon type=image/png href=/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/favicons/android-36x36.png sizes=36x36><link rel=icon type=image/png href=/favicons/android-48x48.png sizes=48x48><link rel=icon type=image/png href=/favicons/android-72x72.png sizes=72x72><link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96><link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144><link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192><title>Getting Started | </title><meta name=description content="This section provides an overview of what Kafka is, why it is useful, and how to get started using it."><meta property="og:title" content="Getting Started"><meta property="og:description" content="This section provides an overview of what Kafka is, why it is useful, and how to get started using it."><meta property="og:type" content="website"><meta property="og:url" content="https://example.kafka-site-md.dev/07/getting-started/"><meta itemprop=name content="Getting Started"><meta itemprop=description content="This section provides an overview of what Kafka is, why it is useful, and how to get started using it."><meta name=twitter:card content="summary"><meta name=twitter:title content="Getting Started"><meta name=twitter:description content="This section provides an overview of what Kafka is, why it is useful, and how to get started using it."><link rel=preload href=/scss/main.min.3f0213b0a39240272e37bcd6a93b8dfa80e226c4c60b30bb629965d371350035.css as=style integrity="sha256-PwITsKOSQCcuN7zWqTuN+oDiJsTGCzC7Ypll03E1ADU=" crossorigin=anonymous><link href=/scss/main.min.3f0213b0a39240272e37bcd6a93b8dfa80e226c4c60b30bb629965d371350035.css rel=stylesheet integrity="sha256-PwITsKOSQCcuN7zWqTuN+oDiJsTGCzC7Ypll03E1ADU=" crossorigin=anonymous><script src=https://code.jquery.com/jquery-3.7.1.min.js integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin=anonymous></script><script defer src=https://unpkg.com/lunr@2.3.9/lunr.min.js integrity=sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli crossorigin=anonymous></script></head><body class=td-section><header><nav class="td-navbar js-navbar-scroll" data-bs-theme=dark><div class="container-fluid flex-column flex-md-row"><a class=navbar-brand href=/><span class="navbar-brand__logo navbar-logo"><svg width="154" height="250" viewBox="0 0 256 416" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"><path d="M201.816 230.216c-16.186.0-30.697 7.171-40.634 18.461l-25.463-18.026c2.703-7.442 4.255-15.433 4.255-23.797.0-8.219-1.498-16.076-4.112-23.408l25.406-17.835c9.936 11.233 24.409 18.365 40.548 18.365 29.875.0 54.184-24.305 54.184-54.184.0-29.879-24.309-54.184-54.184-54.184s-54.184 24.305-54.184 54.184c0 5.348.808 10.505 2.258 15.389l-25.423 17.844c-10.62-13.175-25.911-22.374-43.333-25.182v-30.64c24.544-5.155 43.037-26.962 43.037-53.019C124.171 24.305 99.862.0 69.987.0 40.112.0 15.803 24.305 15.803 54.184c0 25.708 18.014 47.246 42.067 52.769v31.038C25.044 143.753.0 172.401.0 206.854c0 34.621 25.292 63.374 58.355 68.94v32.774c-24.299 5.341-42.552 27.011-42.552 52.894.0 29.879 24.309 54.184 54.184 54.184s54.184-24.305 54.184-54.184c0-25.883-18.253-47.553-42.552-52.894v-32.775a69.965 69.965.0 0042.6-24.776l25.633 18.143c-1.423 4.84-2.22 9.946-2.22 15.24.0 29.879 24.309 54.184 54.184 54.184S256 314.279 256 284.4c0-29.879-24.309-54.184-54.184-54.184zm0-126.695c14.487.0 26.27 11.788 26.27 26.271s-11.783 26.27-26.27 26.27-26.27-11.787-26.27-26.27 11.783-26.271 26.27-26.271zm-158.1-49.337c0-14.483 11.784-26.27 26.271-26.27s26.27 11.787 26.27 26.27c0 14.483-11.783 26.27-26.27 26.27s-26.271-11.787-26.271-26.27zm52.541 307.278c0 14.483-11.783 26.27-26.27 26.27s-26.271-11.787-26.271-26.27 11.784-26.27 26.271-26.27 26.27 11.787 26.27 26.27zm-26.272-117.97c-20.205.0-36.642-16.434-36.642-36.638.0-20.205 16.437-36.642 36.642-36.642 20.204.0 36.641 16.437 36.641 36.642.0 20.204-16.437 36.638-36.641 36.638zm131.831 67.179c-14.487.0-26.27-11.788-26.27-26.271s11.783-26.27 26.27-26.27 26.27 11.787 26.27 26.27-11.783 26.271-26.27 26.271z" style="fill:#231f20"/></svg></span><span class=navbar-brand__name></span></a><div class="td-navbar-nav-scroll ms-md-auto" id=main_navbar><ul class=navbar-nav><li class=nav-item><a class=nav-link href=/40/><span>Documentation</span></a></li><li class=nav-item><a class=nav-link href=/blog/><span>Blog</span></a></li><li class=nav-item><a class=nav-link href=/community/><span>Community</span></a></li><li class=nav-item><a class=nav-link href=/testimonials/><span>Testimonials</span></a></li><li class=nav-item><a class=nav-link href=/community/downloads/><span>Download Kafka</span></a></li><li class="nav-item dropdown d-none d-lg-block"><div class=dropdown><a class="nav-link dropdown-toggle" href=# role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false>Releases</a><ul class=dropdown-menu><li><a class=dropdown-item href=/40/>4.0</a></li><li><a class=dropdown-item href=/39/>3.9</a></li><li><a class=dropdown-item href=/38/>3.8</a></li><li><a class=dropdown-item href=/37/>3.7</a></li><li><a class=dropdown-item href=/36/>3.6</a></li><li><a class=dropdown-item href=/35/>3.5</a></li><li><a class=dropdown-item href=/34/>3.4</a></li><li><a class=dropdown-item href=/33/>3.3</a></li><li><a class=dropdown-item href=/32/>3.2</a></li><li><a class=dropdown-item href=/31/>3.1</a></li><li><a class=dropdown-item href=/30/>3.0</a></li><li><a class=dropdown-item href=/28/>2.8</a></li><li><a class=dropdown-item href=/27/>2.7</a></li><li><a class=dropdown-item href=/26/>2.6</a></li><li><a class=dropdown-item href=/25/>2.5</a></li><li><a class=dropdown-item href=/24/>2.4</a></li><li><a class=dropdown-item href=/23/>2.3</a></li><li><a class=dropdown-item href=/22/>2.2</a></li><li><a class=dropdown-item href=/21/>2.1</a></li><li><a class=dropdown-item href=/20/>2.0</a></li><li><a class=dropdown-item href=/11/>1.1</a></li><li><a class=dropdown-item href=/10/>1.0</a></li><li><a class=dropdown-item href=/0110/>0.11.0</a></li><li><a class=dropdown-item href=/0102/>0.10.2</a></li><li><a class=dropdown-item href=/0101/>0.10.1</a></li><li><a class=dropdown-item href=/0100/>0.10.0</a></li><li><a class=dropdown-item href=/090/>0.9.0</a></li><li><a class=dropdown-item href=/082/>0.8.2</a></li><li><a class=dropdown-item href=/081/>0.8.1</a></li><li><a class=dropdown-item href=/080/>0.8.0</a></li><li><a class=dropdown-item href=/07/>0.7</a></li></ul></div></li></ul></div><div class="d-none d-lg-block"><div class="td-search td-search--offline"><div class=td-search__icon></div><input type=search class="td-search__input form-control" placeholder="Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.18defa90a38a78a1aa3f3acbbf4825d0.json data-offline-search-base-href=/ data-offline-search-max-results=10></div></div></div></nav></header><div class="container-fluid td-outer"><div class=td-main><div class="row flex-xl-nowrap"><main class="col-12 col-md-9 col-xl-8 ps-md-5" role=main><div class=td-content><div class="pageinfo pageinfo-primary d-print-none"><p>This is the multi-page printable view of this section.
+<a href=# onclick="return print(),!1">Click here to print</a>.</p><p><a href=/07/getting-started/>Return to the regular view of this page</a>.</p></div><h1 class=title>Getting Started</h1><div class=lead>This section provides an overview of what Kafka is, why it is useful, and how to get started using it.</div><ul><li>1: <a href=#pg-c294a7def0f0f653e85f63e2631ec218>Quick Start</a></li></ul><div class=content></div></div><div class=td-content><h1 id=pg-c294a7def0f0f653e85f63e2631ec218>1 - Quick Start</h1><h1 id=quick-start>Quick Start<a class=td-heading-self-link href=#quick-start aria-label="Heading self-link"></a></h1><h1 id=step-1-download-the-code>Step 1: Download the code<a class=td-heading-self-link href=#step-1-download-the-code aria-label="Heading self-link"></a></h1><p><a href=../downloads.html title="Kafka downloads">Download</a> a recent stable release.</p><pre><code>**&gt; tar xzf kafka-&lt;VERSION&gt;.tgz**
+**&gt; cd kafka-&lt;VERSION&gt;**
+**&gt; ./sbt update**
+**&gt; ./sbt package**
+</code></pre><h1 id=step-2-start-the-server>Step 2: Start the server<a class=td-heading-self-link href=#step-2-start-the-server aria-label="Heading self-link"></a></h1><p>Kafka brokers and consumers use this for co-ordination.</p><p>First start the zookeeper server. You can use the convenience script packaged with kafka to get a quick-and-dirty single-node zookeeper instance.</p><pre><code>**&gt; bin/zookeeper-server-start.sh config/zookeeper.properties**
+[2010-11-21 23:45:02,335] INFO Reading configuration from: config/zookeeper.properties
+...
+</code></pre><p>Now start the Kafka server:</p><pre><code>**&gt; bin/kafka-server-start.sh config/server.properties**
+jkreps-mn-2:kafka-trunk jkreps$ bin/kafka-server-start.sh config/server.properties
+[2010-11-21 23:51:39,608] INFO starting log cleaner every 60000 ms (kafka.log.LogManager)
+[2010-11-21 23:51:39,628] INFO connecting to ZK: localhost:2181 (kafka.server.KafkaZooKeeper)
+...
+</code></pre><h1 id=step-3-send-some-messages>Step 3: Send some messages<a class=td-heading-self-link href=#step-3-send-some-messages aria-label="Heading self-link"></a></h1><p>Kafka comes with a command line client that will take input from standard in and send it out as messages to the Kafka cluster. By default each line will be sent as a separate message. The topic <em>test</em> is created automatically when messages are sent to it. Omitting logging you should see something like this:</p><pre><code>&gt; **bin/kafka-console-producer.sh --zookeeper localhost:2181 --topic test**
+This is a message
+This is another message
+</code></pre><h1 id=step-4-start-a-consumer>Step 4: Start a consumer<a class=td-heading-self-link href=#step-4-start-a-consumer aria-label="Heading self-link"></a></h1><p>Kafka also has a command line consumer that will dump out messages to standard out.</p><pre><code>**&gt; bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beginning**
+This is a message
+This is another message
+</code></pre><p>If you have each of the above commands running in a different terminal then you should now be able to type messages into the producer terminal and see them appear in the consumer terminal.</p><p>Both of these command line tools have additional options. Running the command with no arguments will display usage information documenting them in more detail.</p><h1 id=step-5-write-some-code>Step 5: Write some code<a class=td-heading-self-link href=#step-5-write-some-code aria-label="Heading self-link"></a></h1><p>Below is some very simple examples of using Kafka for sending messages, more complete examples can be found in the Kafka source code in the examples/ directory.</p><h2 id=producer-code>Producer Code<a class=td-heading-self-link href=#producer-code aria-label="Heading self-link"></a></h2><h3 id=producer-api>Producer API<a class=td-heading-self-link href=#producer-api aria-label="Heading self-link"></a></h3><p>Here are examples of using the producer API - <code>kafka.producer.Producer&lt;T></code> -</p><ol><li><p>First, start a local instance of the zookeeper server</p><p>./bin/zookeeper-server-start.sh config/zookeeper.properties</p></li><li><p>Next, start a kafka broker</p><p>./bin/kafka-server-start.sh config/server.properties</p></li><li><p>Now, create the producer with all configuration defaults and use zookeeper based broker discovery.</p><p>import java.util.Arrays;
+import java.util.List;
+import java.util.Properties;
+import kafka.javaapi.producer.SyncProducer;
+import kafka.javaapi.message.ByteBufferMessageSet;
+import kafka.message.Message;
+import kafka.producer.SyncProducerConfig;</p></li></ol><pre><code>...
+
+Properties props = new Properties();
+props.put(“zk.connect”, “127.0.0.1:2181”);
+props.put(&quot;serializer.class&quot;, &quot;kafka.serializer.StringEncoder&quot;);
+ProducerConfig config = new ProducerConfig(props);
+Producer&lt;String, String&gt; producer = new Producer&lt;String, String&gt;(config);
+</code></pre><ol start=4><li><p>Send a single message</p><p>// The message is sent to a randomly selected partition registered in ZK
+ProducerData&lt;String, String> data = new ProducerData&lt;String, String>(&ldquo;test-topic&rdquo;, &ldquo;test-message&rdquo;);
+producer.send(data);</p></li><li><p>Send multiple messages to multiple topics in one request</p><p>List<string> messages = new java.util.ArrayList<string>();
+messages.add(&ldquo;test-message1&rdquo;);
+messages.add(&ldquo;test-message2&rdquo;);
+ProducerData&lt;String, String> data1 = new ProducerData&lt;String, String>(&ldquo;test-topic1&rdquo;, messages);
+ProducerData&lt;String, String> data2 = new ProducerData&lt;String, String>(&ldquo;test-topic2&rdquo;, messages);
+List&lt;ProducerData&lt;String, String&#187; dataForMultipleTopics = new ArrayList&lt;ProducerData&lt;String, String&#187;();
+dataForMultipleTopics.add(data1);
+dataForMultipleTopics.add(data2);
+producer.send(dataForMultipleTopics);</p></li><li><p>Send a message with a partition key. Messages with the same key are sent to the same partition</p><p>ProducerData&lt;String, String> data = new ProducerData&lt;String, String>(&ldquo;test-topic&rdquo;, &ldquo;test-key&rdquo;, &ldquo;test-message&rdquo;);
+producer.send(data);</p></li><li><p>Use your custom partitioner</p></li></ol><p>If you are using zookeeper based broker discovery, <code>kafka.producer.Producer&lt;T></code> routes your data to a particular broker partition based on a <code>kafka.producer.Partitioner&lt;T></code>, specified through the <code>partitioner.class</code> config parameter. It defaults to <code>kafka.producer.DefaultPartitioner</code>. If you don&rsquo;t supply a partition key, then it sends each request to a random broker partition.</p><pre><code>    class MemberIdPartitioner extends Partitioner[MemberIdLocation] {
+  def partition(data: MemberIdLocation, numPartitions: Int): Int = {
+    (data.location.hashCode % numPartitions)
+  }
+}
+// create the producer config to plug in the above partitioner
+Properties props = new Properties();
+props.put(“zk.connect”, “127.0.0.1:2181”);
+props.put(&quot;serializer.class&quot;, &quot;kafka.serializer.StringEncoder&quot;);
+props.put(&quot;partitioner.class&quot;, &quot;xyz.MemberIdPartitioner&quot;);
+ProducerConfig config = new ProducerConfig(props);
+Producer&lt;String, String&gt; producer = new Producer&lt;String, String&gt;(config);
+</code></pre><ol start=8><li>Use custom Encoder</li></ol><p>The producer takes in a required config parameter <code>serializer.class</code> that specifies an <code>Encoder&lt;T></code> to convert T to a Kafka Message. Default is the no-op kafka.serializer.DefaultEncoder. Here is an example of a custom Encoder -</p><pre><code>    class TrackingDataSerializer extends Encoder&lt;TrackingData&gt; {
+  // Say you want to use your own custom Avro encoding
+  CustomAvroEncoder avroEncoder = new CustomAvroEncoder();
+  def toMessage(event: TrackingData):Message = {
+	new Message(avroEncoder.getBytes(event));
+  }
+}
+</code></pre><p>If you want to use the above Encoder, pass it in to the &ldquo;serializer.class&rdquo; config parameter</p><pre><code>    Properties props = new Properties();
+props.put(&quot;serializer.class&quot;, &quot;xyz.TrackingDataSerializer&quot;);
+</code></pre><ol start=9><li>Using static list of brokers, instead of zookeeper based broker discovery</li></ol><p>Some applications would rather not depend on zookeeper. In that case, the config parameter <code>broker.list</code> can be used to specify the list of all brokers in the Kafka cluster.- the list of all brokers in your Kafka cluster in the following format - <code>broker_id1:host1:port1, broker_id2:host2:port2...</code></p><pre><code>    // you can stop the zookeeper instance as it is no longer required
+./bin/zookeeper-server-stop.sh
+// create the producer config object 
+Properties props = new Properties();
+props.put(“broker.list”, “0:localhost:9092”);
+props.put(&quot;serializer.class&quot;, &quot;kafka.serializer.StringEncoder&quot;);
+ProducerConfig config = new ProducerConfig(props);
+// send a message using default partitioner 
+Producer&lt;String, String&gt; producer = new Producer&lt;String, String&gt;(config);
+List&lt;String&gt; messages = new java.util.ArrayList&lt;String&gt;();
+messages.add(&quot;test-message&quot;);
+ProducerData&lt;String, String&gt; data = new ProducerData&lt;String, String&gt;(&quot;test-topic&quot;, messages);
+producer.send(data);
+</code></pre><ol start=10><li><p>Use the asynchronous producer along with GZIP compression. This buffers writes in memory until either <code>batch.size</code> or <code>queue.time</code> is reached. After that, data is sent to the Kafka brokers</p><p>Properties props = new Properties();
+props.put(&ldquo;zk.connect&rdquo;‚ &ldquo;127.0.0.1:2181&rdquo;);
+props.put(&ldquo;serializer.class&rdquo;, &ldquo;kafka.serializer.StringEncoder&rdquo;);
+props.put(&ldquo;producer.type&rdquo;, &ldquo;async&rdquo;);
+props.put(&ldquo;compression.codec&rdquo;, &ldquo;1&rdquo;);
+ProducerConfig config = new ProducerConfig(props);
+Producer&lt;String, String> producer = new Producer&lt;String, String>(config);
+ProducerData&lt;String, String> data = new ProducerData&lt;String, String>(&ldquo;test-topic&rdquo;, &ldquo;test-message&rdquo;);
+producer.send(data);</p></li><li><p>Finally, the producer should be closed, through</p><p>producer.close();</p></li></ol><h3 id=log4j-appender>Log4j appender<a class=td-heading-self-link href=#log4j-appender aria-label="Heading self-link"></a></h3><p>Data can also be produced to a Kafka server in the form of a log4j appender. In this way, minimal code needs to be written in order to send some data across to the Kafka server. Here is an example of how to use the Kafka Log4j appender - Start by defining the Kafka appender in your log4j.properties file.</p><pre><code>// define the kafka log4j appender config parameters
+log4j.appender.KAFKA=kafka.producer.KafkaLog4jAppender
+// **REQUIRED** : set the hostname of the kafka server
+log4j.appender.KAFKA.Host=localhost
+// **REQUIRED** : set the port on which the Kafka server is listening for connections
+log4j.appender.KAFKA.Port=9092
+// **REQUIRED** : the topic under which the logger messages are to be posted
+log4j.appender.KAFKA.Topic=test
+// the serializer to be used to turn an object into a Kafka message. Defaults to kafka.producer.DefaultStringEncoder
+log4j.appender.KAFKA.Serializer=kafka.test.AppenderStringSerializer
+// do not set the above KAFKA appender as the root appender
+log4j.rootLogger=INFO
+// set the logger for your package to be the KAFKA appender
+log4j.logger.your.test.package=INFO, KAFKA
+</code></pre><p>Data can be sent using a log4j appender as follows -</p><pre><code>Logger logger = Logger.getLogger([your.test.class])
+logger.info(&quot;message from log4j appender&quot;);
+</code></pre><p>If your log4j appender fails to send messages, please verify that the correct log4j properties file is being used. You can add <code>-Dlog4j.debug=true</code> to your VM parameters to verify this.</p><h2 id=consumer-code>Consumer Code<a class=td-heading-self-link href=#consumer-code aria-label="Heading self-link"></a></h2><p>The consumer code is slightly more complex as it enables multithreaded consumption:</p><pre><code>// specify some consumer properties
+Properties props = new Properties();
+props.put(&quot;zk.connect&quot;, &quot;localhost:2181&quot;);
+props.put(&quot;zk.connectiontimeout.ms&quot;, &quot;1000000&quot;);
+props.put(&quot;groupid&quot;, &quot;test_group&quot;);
+
+// Create the connection to the cluster
+ConsumerConfig consumerConfig = new ConsumerConfig(props);
+ConsumerConnector consumerConnector = Consumer.createJavaConsumerConnector(consumerConfig);
+
+// create 4 partitions of the stream for topic “test”, to allow 4 threads to consume
+Map&lt;String, List&lt;KafkaStream&lt;Message&gt;&gt;&gt; topicMessageStreams =
+    consumerConnector.createMessageStreams(ImmutableMap.of(&quot;test&quot;, 4));
+List&lt;KafkaStream&lt;Message&gt;&gt; streams = topicMessageStreams.get(&quot;test&quot;);
+
+// create list of 4 threads to consume from each of the partitions
+ExecutorService executor = Executors.newFixedThreadPool(4);
+
+// consume the messages in the threads
+for(final KafkaStream&lt;Message&gt; stream: streams) {
+  executor.submit(new Runnable() {
+    public void run() {
+      for(MessageAndMetadata msgAndMetadata: stream) {
+        // process message (msgAndMetadata.message())
+      }
+    }
+  });
+}
+</code></pre><h2 id=hadoop-consumer>Hadoop Consumer<a class=td-heading-self-link href=#hadoop-consumer aria-label="Heading self-link"></a></h2><p>Providing a horizontally scalable solution for aggregating and loading data into Hadoop was one of our basic use cases. To support this use case, we provide a Hadoop-based consumer which spawns off many map tasks to pull data from the Kafka cluster in parallel. This provides extremely fast pull-based Hadoop data load capabilities (we were able to fully saturate the network with only a handful of Kafka servers).</p><p>Usage information on the hadoop consumer can be found <a href=https://github.com/kafka-dev/kafka/tree/master/contrib/hadoop-consumer>here</a>.</p><h2 id=simple-consumer>Simple Consumer<a class=td-heading-self-link href=#simple-consumer aria-label="Heading self-link"></a></h2><p>Kafka has a lower-level consumer api for reading message chunks directly from servers. Under most circumstances this should not be needed. But just in case, it&rsquo;s usage is as follows:</p><pre><code>import kafka.api.FetchRequest;
+import kafka.javaapi.consumer.SimpleConsumer;
+import kafka.javaapi.message.ByteBufferMessageSet;
+import kafka.message.Message;
+import kafka.message.MessageSet;
+import kafka.utils.Utils;
+
+...
+
+// create a consumer to connect to the kafka server running on localhost, port 9092, socket timeout of 10 secs, socket receive buffer of ~1MB
+SimpleConsumer consumer = new SimpleConsumer(&quot;127.0.0.1&quot;, 9092, 10000, 1024000);
+
+long offset = 0;
+while (true) {
+  // create a fetch request for topic “test”, partition 0, current offset, and fetch size of 1MB
+  FetchRequest fetchRequest = new FetchRequest(&quot;test&quot;, 0, offset, 1000000);
+
+  // get the message set from the consumer and print them out
+  ByteBufferMessageSet messages = consumer.fetch(fetchRequest);
+  for(MessageAndOffset msg : messages) {
+    System.out.println(&quot;consumed: &quot; + Utils.toString(msg.message.payload(), &quot;UTF-8&quot;));
+    // advance the offset after consuming each message
+    offset = msg.offset;
+  }
+}
+</code></pre></div></main></div></div><footer class="td-footer row d-print-none"><div class=container-fluid><div class="row mx-md-2"><div class="td-footer__left col-6 col-sm-4 order-sm-1"><ul class=td-footer__links-list><li class=td-footer__links-item data-bs-toggle=tooltip title=Contact aria-label=Contact><a target=_blank rel=noopener href=/community/contact/ aria-label=Contact><i class="fa fa-envelope"></i></a></li><li class=td-footer__links-item data-bs-toggle=tooltip title=Twitter aria-label=Twitter><a target=_blank rel=noopener href=https://twitter.com/apachekafka aria-label=Twitter><i class="fab fa-twitter"></i></a></li><li class=td-footer__links-item data-bs-toggle=tooltip title="Stack Overflow" aria-label="Stack Overflow"><a target=_blank rel=noopener href=https://stackoverflow.com/questions/tagged/apache-kafka aria-label="Stack Overflow"><i class="fab fa-stack-overflow"></i></a></li></ul></div><div class="td-footer__right col-6 col-sm-4 order-sm-3"><ul class=td-footer__links-list><li class=td-footer__links-item data-bs-toggle=tooltip title=GitHub aria-label=GitHub><a target=_blank rel=noopener href=https://github.com/apache/kafka aria-label=GitHub><i class="fab fa-github"></i></a></li><li class=td-footer__links-item data-bs-toggle=tooltip title="Developer mailing list" aria-label="Developer mailing list"><a target=_blank rel=noopener href=mailto:dev@kafka.apache.org aria-label="Developer mailing list"><i class="fa fa-envelope"></i></a></li></ul></div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2"><span class=td-footer__copyright>&copy;
+2014&ndash;2025
+<span class=td-footer__authors>By <a href=https://www.apache.org/>Apache Software Foundation</a> under the terms of the <a href=https://www.apache.org/licenses/LICENSE-2.0>Apache License v2</a></span></span><span class=td-footer__all_rights_reserved>All Rights Reserved</span><span class=ms-2><a href=https://privacy.apache.org/policies/privacy-policy-public.html target=_blank rel=noopener>Privacy Policy</a></span></div></div></div></footer></div><script src=/js/main.min.dc2c0119076a0df855e55a8044ce0de74b7b9033c20e853e22d7ec7e9bdde965.js integrity="sha256-3CwBGQdqDfhV5VqARM4N50t7kDPCDoU+Itfsfpvd6WU=" crossorigin=anonymous></script><script defer src=/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js integrity="sha256-c0eKfUgHaYrtfjVesj+YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin=anonymous></script><script src=/js/tabpane-persist.js></script></body></html>
