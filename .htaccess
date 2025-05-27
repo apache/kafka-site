@@ -1,1 +1,1 @@
-Header set Content-Security-Policy "style-src 'self'; style-src https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i&display=swap; script-src 'self'; script-src https://unpkg.com/lunr@2.3.9/lunr.min.js; script-src https://code.jquery.com/jquery-3.7.1.min.js"
+Header set Content-Security-Policy "style-src 'self' fonts.googleapis.com; script-src 'self' unpkg.com code.jquery.com"
