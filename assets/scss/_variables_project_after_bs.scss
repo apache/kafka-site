@@ -1,0 +1,20 @@
+$custom-colors: (
+  'my-favorite-color': purple,
+  'my-other-color': pink,
+  'white': #ffffff,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+.navbar-nav {
+  --bs-nav-link-color: rgb(0,0,0);
+  --bs-nav-link-hover-color: #427583; 
+  --bs-nav-link-disabled-color: rgba(105, 102, 102, 0.943);
+  --bs-nav-link-active-color: rgb(49, 12, 236);
+  --bs-navbar-active-color: rgb(49, 12, 236);
+}
+
+.td-search__input:not(:focus) {
+  background: #736e6e1d;
+}
+

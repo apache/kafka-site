@@ -1,0 +1,1174 @@
+<ul class="config-list">
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="config.storage.topic"></a>
+   <a href="#config.storage.topic">config.storage.topic</a>
+</h4>
+<p>The name of the Kafka topic where connector configurations are stored</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="group.id"></a>
+   <a href="#group.id">group.id</a>
+</h4>
+<p>A unique string that identifies the Connect cluster group this worker belongs to.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="key.converter"></a>
+   <a href="#key.converter">key.converter</a>
+</h4>
+<p>Converter class used to convert between Kafka Connect format and the serialized form that is written to Kafka. This controls the format of the keys in messages written to or read from Kafka, and since this is independent of connectors it allows any connector to work with any serialization format. Examples of common formats include JSON and Avro.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="offset.storage.topic"></a>
+   <a href="#offset.storage.topic">offset.storage.topic</a>
+</h4>
+<p>The name of the Kafka topic where connector offsets are stored</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="status.storage.topic"></a>
+   <a href="#status.storage.topic">status.storage.topic</a>
+</h4>
+<p>The name of the Kafka topic where connector and task status are stored</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="value.converter"></a>
+   <a href="#value.converter">value.converter</a>
+</h4>
+<p>Converter class used to convert between Kafka Connect format and the serialized form that is written to Kafka. This controls the format of the values in messages written to or read from Kafka, and since this is independent of connectors it allows any connector to work with any serialization format. Examples of common formats include JSON and Avro.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="bootstrap.servers"></a>
+   <a href="#bootstrap.servers">bootstrap.servers</a>
+</h4>
+<p>A list of host/port pairs to use for establishing the initial connection to the Kafka cluster. The client will make use of all servers irrespective of which servers are specified here for bootstrapping&mdash;this list only impacts the initial hosts used to discover the full set of servers. This list should be in the form <code>host1:port1,host2:port2,...</code>. Since these servers are just used for the initial connection to discover the full cluster membership (which may change dynamically), this list need not contain the full set of servers (you may want more than one, though, in case a server is down).</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>localhost:9092</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="heartbeat.interval.ms"></a>
+   <a href="#heartbeat.interval.ms">heartbeat.interval.ms</a>
+</h4>
+<p>The expected time between heartbeats to the group coordinator when using Kafka's group management facilities. Heartbeats are used to ensure that the worker's session stays active and to facilitate rebalancing when new members join or leave the group. The value must be set lower than <code>session.timeout.ms</code>, but typically should be set no higher than 1/3 of that value. It can be adjusted even lower to control the expected time for normal rebalances.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>3000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="rebalance.timeout.ms"></a>
+   <a href="#rebalance.timeout.ms">rebalance.timeout.ms</a>
+</h4>
+<p>The maximum allowed time for each worker to join the group once a rebalance has begun. This is basically a limit on the amount of time needed for all tasks to flush any pending data and commit offsets. If the timeout is exceeded, then the worker will be removed from the group, which will cause offset commit failures.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>60000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="session.timeout.ms"></a>
+   <a href="#session.timeout.ms">session.timeout.ms</a>
+</h4>
+<p>The timeout used to detect worker failures. The worker sends periodic heartbeats to indicate its liveness to the broker. If no heartbeats are received by the broker before the expiration of this session timeout, then the broker will remove the worker from the group and initiate a rebalance. Note that the value must be in the allowable range as configured in the broker configuration by <code>group.min.session.timeout.ms</code> and <code>group.max.session.timeout.ms</code>.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>10000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="ssl.key.password"></a>
+   <a href="#ssl.key.password">ssl.key.password</a>
+</h4>
+<p>The password of the private key in the key store file. This is optional for client.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>password</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="ssl.keystore.location"></a>
+   <a href="#ssl.keystore.location">ssl.keystore.location</a>
+</h4>
+<p>The location of the key store file. This is optional for client and can be used for two-way authentication for client.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="ssl.keystore.password"></a>
+   <a href="#ssl.keystore.password">ssl.keystore.password</a>
+</h4>
+<p>The store password for the key store file. This is optional for client and only needed if ssl.keystore.location is configured. </p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>password</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="ssl.truststore.location"></a>
+   <a href="#ssl.truststore.location">ssl.truststore.location</a>
+</h4>
+<p>The location of the trust store file. </p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="ssl.truststore.password"></a>
+   <a href="#ssl.truststore.password">ssl.truststore.password</a>
+</h4>
+<p>The password for the trust store file. If a password is not set access to the truststore is still available, but integrity checking is disabled.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>password</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="client.dns.lookup"></a>
+   <a href="#client.dns.lookup">client.dns.lookup</a>
+</h4>
+<p>Controls how the client uses DNS lookups. If set to <code>use_all_dns_ips</code> then, when the lookup returns multiple IP addresses for a hostname, they will all be attempted to connect to before failing the connection. Applies to both bootstrap and advertised servers. If the value is <code>resolve_canonical_bootstrap_servers_only</code> each entry will be resolved and expanded into a list of canonical names.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>default</td></tr>
+<tr><th>Valid Values:</th><td>[default, use_all_dns_ips, resolve_canonical_bootstrap_servers_only]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="connections.max.idle.ms"></a>
+   <a href="#connections.max.idle.ms">connections.max.idle.ms</a>
+</h4>
+<p>Close idle connections after the number of milliseconds specified by this config.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>540000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="connector.client.config.override.policy"></a>
+   <a href="#connector.client.config.override.policy">connector.client.config.override.policy</a>
+</h4>
+<p>Class name or alias of implementation of <code>ConnectorClientConfigOverridePolicy</code>. Defines what client configurations can be overriden by the connector. The default implementation is `None`. The other possible policies in the framework include `All` and `Principal`. </p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>None</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="receive.buffer.bytes"></a>
+   <a href="#receive.buffer.bytes">receive.buffer.bytes</a>
+</h4>
+<p>The size of the TCP receive buffer (SO_RCVBUF) to use when reading data. If the value is -1, the OS default will be used.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>32768</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="request.timeout.ms"></a>
+   <a href="#request.timeout.ms">request.timeout.ms</a>
+</h4>
+<p>The configuration controls the maximum amount of time the client will wait for the response of a request. If the response is not received before the timeout elapses the client will resend the request if necessary or fail the request if retries are exhausted.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>40000</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="sasl.client.callback.handler.class"></a>
+   <a href="#sasl.client.callback.handler.class">sasl.client.callback.handler.class</a>
+</h4>
+<p>The fully qualified name of a SASL client callback handler class that implements the AuthenticateCallbackHandler interface.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="sasl.jaas.config"></a>
+   <a href="#sasl.jaas.config">sasl.jaas.config</a>
+</h4>
+<p>JAAS login context parameters for SASL connections in the format used by JAAS configuration files. JAAS configuration file format is described <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/jgss/tutorials/LoginConfigFile.html"></a>
+      here. The format for the value is: '<code>loginModuleClass controlFlag (optionName=optionValue)*;</code>'. For brokers, the config must be prefixed with listener prefix and SASL mechanism name in lower-case. For example, listener.name.sasl_ssl.scram-sha-256.sasl.jaas.config=com.example.ScramLoginModule required;</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>password</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="sasl.kerberos.service.name"></a>
+   <a href="#sasl.kerberos.service.name">sasl.kerberos.service.name</a>
+</h4>
+<p>The Kerberos principal name that Kafka runs as. This can be defined either in Kafka's JAAS config or in Kafka's config.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="sasl.login.callback.handler.class"></a>
+   <a href="#sasl.login.callback.handler.class">sasl.login.callback.handler.class</a>
+</h4>
+<p>The fully qualified name of a SASL login callback handler class that implements the AuthenticateCallbackHandler interface. For brokers, login callback handler config must be prefixed with listener prefix and SASL mechanism name in lower-case. For example, listener.name.sasl_ssl.scram-sha-256.sasl.login.callback.handler.class=com.example.CustomScramLoginCallbackHandler</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="sasl.login.class"></a>
+   <a href="#sasl.login.class">sasl.login.class</a>
+</h4>
+<p>The fully qualified name of a class that implements the Login interface. For brokers, login config must be prefixed with listener prefix and SASL mechanism name in lower-case. For example, listener.name.sasl_ssl.scram-sha-256.sasl.login.class=com.example.CustomScramLogin</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="sasl.mechanism"></a>
+   <a href="#sasl.mechanism">sasl.mechanism</a>
+</h4>
+<p>SASL mechanism used for client connections. This may be any mechanism for which a security provider is available. GSSAPI is the default mechanism.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>GSSAPI</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="security.protocol"></a>
+   <a href="#security.protocol">security.protocol</a>
+</h4>
+<p>Protocol used to communicate with brokers. Valid values are: PLAINTEXT, SSL, SASL_PLAINTEXT, SASL_SSL.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>PLAINTEXT</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="send.buffer.bytes"></a>
+   <a href="#send.buffer.bytes">send.buffer.bytes</a>
+</h4>
+<p>The size of the TCP send buffer (SO_SNDBUF) to use when sending data. If the value is -1, the OS default will be used.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>131072</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="ssl.enabled.protocols"></a>
+   <a href="#ssl.enabled.protocols">ssl.enabled.protocols</a>
+</h4>
+<p>The list of protocols enabled for SSL connections.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>TLSv1.2</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="ssl.keystore.type"></a>
+   <a href="#ssl.keystore.type">ssl.keystore.type</a>
+</h4>
+<p>The file format of the key store file. This is optional for client.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>JKS</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="ssl.protocol"></a>
+   <a href="#ssl.protocol">ssl.protocol</a>
+</h4>
+<p>The SSL protocol used to generate the SSLContext. Default setting is TLSv1.2, which is fine for most cases. Allowed values in recent JVMs are TLSv1.2 and TLSv1.3. TLS, TLSv1.1, SSL, SSLv2 and SSLv3 may be supported in older JVMs, but their usage is discouraged due to known security vulnerabilities.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>TLSv1.2</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="ssl.provider"></a>
+   <a href="#ssl.provider">ssl.provider</a>
+</h4>
+<p>The name of the security provider used for SSL connections. Default value is the default security provider of the JVM.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="ssl.truststore.type"></a>
+   <a href="#ssl.truststore.type">ssl.truststore.type</a>
+</h4>
+<p>The file format of the trust store file.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>JKS</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="worker.sync.timeout.ms"></a>
+   <a href="#worker.sync.timeout.ms">worker.sync.timeout.ms</a>
+</h4>
+<p>When the worker is out of sync with other workers and needs to resynchronize configurations, wait up to this amount of time before giving up, leaving the group, and waiting a backoff period before rejoining.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>3000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="worker.unsync.backoff.ms"></a>
+   <a href="#worker.unsync.backoff.ms">worker.unsync.backoff.ms</a>
+</h4>
+<p>When the worker is out of sync with other workers and  fails to catch up within worker.sync.timeout.ms, leave the Connect cluster for this long before rejoining.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>300000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="access.control.allow.methods"></a>
+   <a href="#access.control.allow.methods">access.control.allow.methods</a>
+</h4>
+<p>Sets the methods supported for cross origin requests by setting the Access-Control-Allow-Methods header. The default value of the Access-Control-Allow-Methods header allows cross origin requests for GET, POST and HEAD.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="access.control.allow.origin"></a>
+   <a href="#access.control.allow.origin">access.control.allow.origin</a>
+</h4>
+<p>Value to set the Access-Control-Allow-Origin header to for REST API requests.To enable cross origin access, set this to the domain of the application that should be permitted to access the API, or '*' to allow access from any domain. The default value only allows access from the domain of the REST API.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="admin.listeners"></a>
+   <a href="#admin.listeners">admin.listeners</a>
+</h4>
+<p>List of comma-separated URIs the Admin REST API will listen on. The supported protocols are HTTP and HTTPS. An empty or blank string will disable this feature. The default behavior is to use the regular listener (specified by the 'listeners' property).</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td>org.apache.kafka.connect.runtime.WorkerConfig$AdminListenersValidator@36d4b5c</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="client.id"></a>
+   <a href="#client.id">client.id</a>
+</h4>
+<p>An id string to pass to the server when making requests. The purpose of this is to be able to track the source of requests beyond just ip/port by allowing a logical application name to be included in server-side request logging.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="config.providers"></a>
+   <a href="#config.providers">config.providers</a>
+</h4>
+<p>Comma-separated names of <code>ConfigProvider</code> classes, loaded and used in the order specified. Implementing the interface  <code>ConfigProvider</code> allows you to replace variable references in connector configurations, such as for externalized secrets. </p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="config.storage.replication.factor"></a>
+   <a href="#config.storage.replication.factor">config.storage.replication.factor</a>
+</h4>
+<p>Replication factor used when creating the configuration storage topic</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>short</td></tr>
+<tr><th>Default:</th><td>3</td></tr>
+<tr><th>Valid Values:</th><td>[1,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="connect.protocol"></a>
+   <a href="#connect.protocol">connect.protocol</a>
+</h4>
+<p>Compatibility mode for Kafka Connect Protocol</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>sessioned</td></tr>
+<tr><th>Valid Values:</th><td>[eager, compatible, sessioned]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="header.converter"></a>
+   <a href="#header.converter">header.converter</a>
+</h4>
+<p>HeaderConverter class used to convert between Kafka Connect format and the serialized form that is written to Kafka. This controls the format of the header values in messages written to or read from Kafka, and since this is independent of connectors it allows any connector to work with any serialization format. Examples of common formats include JSON and Avro. By default, the SimpleHeaderConverter is used to serialize header values to strings and deserialize them by inferring the schemas.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>org.apache.kafka.connect.storage.SimpleHeaderConverter</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="inter.worker.key.generation.algorithm"></a>
+   <a href="#inter.worker.key.generation.algorithm">inter.worker.key.generation.algorithm</a>
+</h4>
+<p>The algorithm to use for generating internal request keys</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>HmacSHA256</td></tr>
+<tr><th>Valid Values:</th><td>Any KeyGenerator algorithm supported by the worker JVM</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="inter.worker.key.size"></a>
+   <a href="#inter.worker.key.size">inter.worker.key.size</a>
+</h4>
+<p>The size of the key to use for signing internal requests, in bits. If null, the default key size for the key generation algorithm will be used.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="inter.worker.key.ttl.ms"></a>
+   <a href="#inter.worker.key.ttl.ms">inter.worker.key.ttl.ms</a>
+</h4>
+<p>The TTL of generated session keys used for internal request validation (in milliseconds)</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>3600000</td></tr>
+<tr><th>Valid Values:</th><td>[0,...,2147483647]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="inter.worker.signature.algorithm"></a>
+   <a href="#inter.worker.signature.algorithm">inter.worker.signature.algorithm</a>
+</h4>
+<p>The algorithm used to sign internal requests</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>HmacSHA256</td></tr>
+<tr><th>Valid Values:</th><td>Any MAC algorithm supported by the worker JVM</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="inter.worker.verification.algorithms"></a>
+   <a href="#inter.worker.verification.algorithms">inter.worker.verification.algorithms</a>
+</h4>
+<p>A list of permitted algorithms for verifying internal requests</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>HmacSHA256</td></tr>
+<tr><th>Valid Values:</th><td>A list of one or more MAC algorithms, each supported by the worker JVM</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="internal.key.converter"></a>
+   <a href="#internal.key.converter">internal.key.converter</a>
+</h4>
+<p>Converter class used to convert between Kafka Connect format and the serialized form that is written to Kafka. This controls the format of the keys in messages written to or read from Kafka, and since this is independent of connectors it allows any connector to work with any serialization format. Examples of common formats include JSON and Avro. This setting controls the format used for internal bookkeeping data used by the framework, such as configs and offsets, so users can typically use any functioning Converter implementation. Deprecated; will be removed in an upcoming version.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>org.apache.kafka.connect.json.JsonConverter</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="internal.value.converter"></a>
+   <a href="#internal.value.converter">internal.value.converter</a>
+</h4>
+<p>Converter class used to convert between Kafka Connect format and the serialized form that is written to Kafka. This controls the format of the values in messages written to or read from Kafka, and since this is independent of connectors it allows any connector to work with any serialization format. Examples of common formats include JSON and Avro. This setting controls the format used for internal bookkeeping data used by the framework, such as configs and offsets, so users can typically use any functioning Converter implementation. Deprecated; will be removed in an upcoming version.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>org.apache.kafka.connect.json.JsonConverter</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+  <a class="anchor-link" id="listeners" href="#listeners"></a>
+<a href="#listeners">listeners
+</a></h4>
+<p>List of comma-separated URIs the REST API will listen on. The supported protocols are HTTP and HTTPS.<br> Specify hostname as 0.0.0.0 to bind to all interfaces.<br> Leave hostname empty to bind to default interface.<br> Examples of legal listener lists: HTTP://myhost:8083,HTTPS://myhost:8084</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="metadata.max.age.ms"></a>
+   <a href="#metadata.max.age.ms">metadata.max.age.ms</a>
+</h4>
+<p>The period of time in milliseconds after which we force a refresh of metadata even if we haven't seen any partition leadership changes to proactively discover any new brokers or partitions.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>300000</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="metric.reporters"></a>
+   <a href="#metric.reporters">metric.reporters</a>
+</h4>
+<p>A list of classes to use as metrics reporters. Implementing the <code>org.apache.kafka.common.metrics.MetricsReporter</code> interface allows plugging in classes that will be notified of new metric creation. The JmxReporter is always included to register JMX statistics.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="metrics.num.samples"></a>
+   <a href="#metrics.num.samples">metrics.num.samples</a>
+</h4>
+<p>The number of samples maintained to compute metrics.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>2</td></tr>
+<tr><th>Valid Values:</th><td>[1,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="metrics.recording.level"></a>
+   <a href="#metrics.recording.level">metrics.recording.level</a>
+</h4>
+<p>The highest recording level for metrics.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>INFO</td></tr>
+<tr><th>Valid Values:</th><td>[INFO, DEBUG]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="metrics.sample.window.ms"></a>
+   <a href="#metrics.sample.window.ms">metrics.sample.window.ms</a>
+</h4>
+<p>The window of time a metrics sample is computed over.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>30000</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="offset.flush.interval.ms"></a>
+   <a href="#offset.flush.interval.ms">offset.flush.interval.ms</a>
+</h4>
+<p>Interval at which to try committing offsets for tasks.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>60000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="offset.flush.timeout.ms"></a>
+   <a href="#offset.flush.timeout.ms">offset.flush.timeout.ms</a>
+</h4>
+<p>Maximum number of milliseconds to wait for records to flush and partition offset data to be committed to offset storage before cancelling the process and restoring the offset data to be committed in a future attempt.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>5000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="offset.storage.partitions"></a>
+   <a href="#offset.storage.partitions">offset.storage.partitions</a>
+</h4>
+<p>The number of partitions used when creating the offset storage topic</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>25</td></tr>
+<tr><th>Valid Values:</th><td>[1,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="offset.storage.replication.factor"></a>
+   <a href="#offset.storage.replication.factor">offset.storage.replication.factor</a>
+</h4>
+<p>Replication factor used when creating the offset storage topic</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>short</td></tr>
+<tr><th>Default:</th><td>3</td></tr>
+<tr><th>Valid Values:</th><td>[1,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="plugin.path"></a>
+   <a href="#plugin.path">plugin.path</a>
+</h4>
+<p>List of paths separated by commas (,) that contain plugins (connectors, converters, transformations). The list should consist of top level directories that include any combination of: <br>a) directories immediately containing jars with plugins and their dependencies<br>b) uber-jars with plugins and their dependencies<br>c) directories immediately containing the package directory structure of classes of plugins and their dependencies<br>Note: symlinks will be followed to discover dependencies or plugins.<br>Examples: plugin.path=/usr/local/share/java,/usr/local/share/kafka/plugins,/opt/connectors</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="reconnect.backoff.max.ms"></a>
+   <a href="#reconnect.backoff.max.ms">reconnect.backoff.max.ms</a>
+</h4>
+<p>The maximum amount of time in milliseconds to wait when reconnecting to a broker that has repeatedly failed to connect. If provided, the backoff per host will increase exponentially for each consecutive connection failure, up to this maximum. After calculating the backoff increase, 20% random jitter is added to avoid connection storms.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>1000</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="reconnect.backoff.ms"></a>
+   <a href="#reconnect.backoff.ms">reconnect.backoff.ms</a>
+</h4>
+<p>The base amount of time to wait before attempting to reconnect to a given host. This avoids repeatedly connecting to a host in a tight loop. This backoff applies to all connection attempts by the client to a broker.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>50</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="rest.advertised.host.name"></a>
+   <a href="#rest.advertised.host.name">rest.advertised.host.name</a>
+</h4>
+<p>If this is set, this is the hostname that will be given out to other workers to connect to.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="rest.advertised.listener"></a>
+   <a href="#rest.advertised.listener">rest.advertised.listener</a>
+</h4>
+<p>Sets the advertised listener (HTTP or HTTPS) which will be given to other workers to use.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="rest.advertised.port"></a>
+   <a href="#rest.advertised.port">rest.advertised.port</a>
+</h4>
+<p>If this is set, this is the port that will be given out to other workers to connect to.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="rest.extension.classes"></a>
+   <a href="#rest.extension.classes">rest.extension.classes</a>
+</h4>
+<p>Comma-separated names of <code>ConnectRestExtension</code> classes, loaded and called in the order specified. Implementing the interface  <code>ConnectRestExtension</code> allows you to inject into Connect's REST API user defined resources like filters. Typically used to add custom capability like logging, security, etc. </p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="rest.host.name"></a>
+   <a href="#rest.host.name">rest.host.name</a>
+</h4>
+<p>Hostname for the REST API. If this is set, it will only bind to this interface.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="rest.port"></a>
+   <a href="#rest.port">rest.port</a>
+</h4>
+<p>Port for the REST API to listen on.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>8083</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="retry.backoff.ms"></a>
+   <a href="#retry.backoff.ms">retry.backoff.ms</a>
+</h4>
+<p>The amount of time to wait before attempting to retry a failed request to a given topic partition. This avoids repeatedly sending requests in a tight loop under some failure scenarios.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>100</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="sasl.kerberos.kinit.cmd"></a>
+   <a href="#sasl.kerberos.kinit.cmd">sasl.kerberos.kinit.cmd</a>
+</h4>
+<p>Kerberos kinit command path.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>/usr/bin/kinit</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="sasl.kerberos.min.time.before.relogin"></a>
+   <a href="#sasl.kerberos.min.time.before.relogin">sasl.kerberos.min.time.before.relogin</a>
+</h4>
+<p>Login thread sleep time between refresh attempts.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>60000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="sasl.kerberos.ticket.renew.jitter"></a>
+   <a href="#sasl.kerberos.ticket.renew.jitter">sasl.kerberos.ticket.renew.jitter</a>
+</h4>
+<p>Percentage of random jitter added to the renewal time.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>double</td></tr>
+<tr><th>Default:</th><td>0.05</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="sasl.kerberos.ticket.renew.window.factor"></a>
+   <a href="#sasl.kerberos.ticket.renew.window.factor">sasl.kerberos.ticket.renew.window.factor</a>
+</h4>
+<p>Login thread will sleep until the specified window factor of time from last refresh to ticket's expiry has been reached, at which time it will try to renew the ticket.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>double</td></tr>
+<tr><th>Default:</th><td>0.8</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="sasl.login.refresh.buffer.seconds"></a>
+   <a href="#sasl.login.refresh.buffer.seconds">sasl.login.refresh.buffer.seconds</a>
+</h4>
+<p>The amount of buffer time before credential expiration to maintain when refreshing a credential, in seconds. If a refresh would otherwise occur closer to expiration than the number of buffer seconds then the refresh will be moved up to maintain as much of the buffer time as possible. Legal values are between 0 and 3600 (1 hour); a default value of  300 (5 minutes) is used if no value is specified. This value and sasl.login.refresh.min.period.seconds are both ignored if their sum exceeds the remaining lifetime of a credential. Currently applies only to OAUTHBEARER.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>short</td></tr>
+<tr><th>Default:</th><td>300</td></tr>
+<tr><th>Valid Values:</th><td>[0,...,3600]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="sasl.login.refresh.min.period.seconds"></a>
+   <a href="#sasl.login.refresh.min.period.seconds">sasl.login.refresh.min.period.seconds</a>
+</h4>
+<p>The desired minimum time for the login refresh thread to wait before refreshing a credential, in seconds. Legal values are between 0 and 900 (15 minutes); a default value of 60 (1 minute) is used if no value is specified.  This value and  sasl.login.refresh.buffer.seconds are both ignored if their sum exceeds the remaining lifetime of a credential. Currently applies only to OAUTHBEARER.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>short</td></tr>
+<tr><th>Default:</th><td>60</td></tr>
+<tr><th>Valid Values:</th><td>[0,...,900]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="sasl.login.refresh.window.factor"></a>
+   <a href="#sasl.login.refresh.window.factor">sasl.login.refresh.window.factor</a>
+</h4>
+<p>Login refresh thread will sleep until the specified window factor relative to the credential's lifetime has been reached, at which time it will try to refresh the credential. Legal values are between 0.5 (50%) and 1.0 (100%) inclusive; a default value of 0.8 (80%) is used if no value is specified. Currently applies only to OAUTHBEARER.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>double</td></tr>
+<tr><th>Default:</th><td>0.8</td></tr>
+<tr><th>Valid Values:</th><td>[0.5,...,1.0]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="sasl.login.refresh.window.jitter"></a>
+   <a href="#sasl.login.refresh.window.jitter">sasl.login.refresh.window.jitter</a>
+</h4>
+<p>The maximum amount of random jitter relative to the credential's lifetime that is added to the login refresh thread's sleep time. Legal values are between 0 and 0.25 (25%) inclusive; a default value of 0.05 (5%) is used if no value is specified. Currently applies only to OAUTHBEARER.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>double</td></tr>
+<tr><th>Default:</th><td>0.05</td></tr>
+<tr><th>Valid Values:</th><td>[0.0,...,0.25]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="scheduled.rebalance.max.delay.ms"></a>
+   <a href="#scheduled.rebalance.max.delay.ms">scheduled.rebalance.max.delay.ms</a>
+</h4>
+<p>The maximum delay that is scheduled in order to wait for the return of one or more departed workers before rebalancing and reassigning their connectors and tasks to the group. During this period the connectors and tasks of the departed workers remain unassigned</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>300000</td></tr>
+<tr><th>Valid Values:</th><td>[0,...,2147483647]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="ssl.cipher.suites"></a>
+   <a href="#ssl.cipher.suites">ssl.cipher.suites</a>
+</h4>
+<p>A list of cipher suites. This is a named combination of authentication, encryption, MAC and key exchange algorithm used to negotiate the security settings for a network connection using TLS or SSL network protocol. By default all the available cipher suites are supported.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="ssl.client.auth"></a>
+   <a href="#ssl.client.auth">ssl.client.auth</a>
+</h4>
+<p>Configures kafka broker to request client authentication. The following settings are common:  <ul> <li><code>ssl.client.auth=required</code> If set to required client authentication is required. <li><code>ssl.client.auth=requested</code> This means client authentication is optional. unlike requested , if this option is set client can choose not to provide authentication information about itself <li><code>ssl.client.auth=none</code> This means client authentication is not needed.</ul></p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>none</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="ssl.endpoint.identification.algorithm"></a>
+   <a href="#ssl.endpoint.identification.algorithm">ssl.endpoint.identification.algorithm</a>
+</h4>
+<p>The endpoint identification algorithm to validate server hostname using server certificate. </p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>https</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="ssl.keymanager.algorithm"></a>
+   <a href="#ssl.keymanager.algorithm">ssl.keymanager.algorithm</a>
+</h4>
+<p>The algorithm used by key manager factory for SSL connections. Default value is the key manager factory algorithm configured for the Java Virtual Machine.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>SunX509</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="ssl.secure.random.implementation"></a>
+   <a href="#ssl.secure.random.implementation">ssl.secure.random.implementation</a>
+</h4>
+<p>The SecureRandom PRNG implementation to use for SSL cryptography operations. </p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="ssl.trustmanager.algorithm"></a>
+   <a href="#ssl.trustmanager.algorithm">ssl.trustmanager.algorithm</a>
+</h4>
+<p>The algorithm used by trust manager factory for SSL connections. Default value is the trust manager factory algorithm configured for the Java Virtual Machine.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>PKIX</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="status.storage.partitions"></a>
+   <a href="#status.storage.partitions">status.storage.partitions</a>
+</h4>
+<p>The number of partitions used when creating the status storage topic</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>5</td></tr>
+<tr><th>Valid Values:</th><td>[1,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="status.storage.replication.factor"></a>
+   <a href="#status.storage.replication.factor">status.storage.replication.factor</a>
+</h4>
+<p>Replication factor used when creating the status storage topic</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>short</td></tr>
+<tr><th>Default:</th><td>3</td></tr>
+<tr><th>Valid Values:</th><td>[1,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="task.shutdown.graceful.timeout.ms"></a>
+   <a href="#task.shutdown.graceful.timeout.ms">task.shutdown.graceful.timeout.ms</a>
+</h4>
+<p>Amount of time to wait for tasks to shutdown gracefully. This is the total amount of time, not per task. All task have shutdown triggered, then they are waited on sequentially.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>5000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="topic.tracking.allow.reset"></a>
+   <a href="#topic.tracking.allow.reset">topic.tracking.allow.reset</a>
+</h4>
+<p>If set to true, it allows user requests to reset the set of active topics per connector.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>boolean</td></tr>
+<tr><th>Default:</th><td>true</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="topic.tracking.enable"></a>
+   <a href="#topic.tracking.enable">topic.tracking.enable</a>
+</h4>
+<p>Enable tracking the set of active topics per connector during runtime.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>boolean</td></tr>
+<tr><th>Default:</th><td>true</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+</ul>
+

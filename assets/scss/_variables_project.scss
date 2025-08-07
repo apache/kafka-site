@@ -1,0 +1,49 @@
+/*
+
+Add styles or override variables from the theme here.
+
+*/
+
+$primary: #ffffff;
+
+.td-search__input:not(:focus) {
+  background: #736e6e1d;
+}
+
+// Layout
+.l-container--padded {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+.grid__item__logo {
+    margin: auto;
+    width: 16rem;
+    height: 6rem;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.c-testimonials {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+  
+.c-testimonials__testimonial {
+    text-align: left;
+    margin-bottom: 1rem;
+  
+    a {
+      display: block;
+      margin-bottom: 1rem;
+    }
+}
+
+.used-by-logo {
+    max-height: 4rem;
+    max-width: 100%;
+  }
+  

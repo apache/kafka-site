@@ -1,0 +1,16 @@
+{{ $testimonials := site.Data.testimonials -}}
+<div class="row c-testimonials">
+{{- range $testimonials -}}
+  {{ $img   := printf "/images/powered-by/%s" .logo | relURL -}}
+  {{ $quote := .description | markdownify -}}
+  <div class="col-12 col-sm-6 col-lg-4 c-testimonials__testimonial">
+    <a href="{{ .link }}" target="_blank" rel="noopener">
+      <span class="grid__item__logo" style="background-image: url({{ $img }});"></span>
+      {{/* <img class="used-by-logo" src="{{ $img }}" alt="{{ .name }} testimonial logo"> */}}
+    </a>
+    <p>
+      {{- $quote -}}
+    </p>
+  </div>
+{{ end -}}
+</div>
