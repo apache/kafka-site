@@ -66,7 +66,7 @@
                     <li>
                         <a href="https://cwiki.apache.org/confluence/x/JQstEw">KIP-1092: Extend Consumer#close with an option to leave the group or not</a>
                         <br>
-                        This adds a new <code>Consumer.close(CloseOptions)</code> method which let's define if the consumer should explicitly leave its group when
+                        This adds a new <code>Consumer.close(CloseOptions)</code> method which lets define if the consumer should explicitly leave its group when
                         it's shutting down. This enables Streams to control when to trigger group rebalances. The <code>Consumer.close(Duration)</code> method is now
                         deprecated.
                     </li>
@@ -103,7 +103,7 @@
                     <li>
                         <a href="https://cwiki.apache.org/confluence/x/4gm9F">KIP-1152: Add transactional ID pattern filter to ListTransactions API</a>
                         <br>
-                        When listing transactions you can now provide a pattern to filter based on the transactional ID. In environments with many transactional IDs, this avoid 
+                        When listing transactions you can now provide a pattern to filter based on the transactional ID. In environments with many transactional IDs, this avoids 
                         having to list all transactions and filter them on the client-side.
                     </li>
                 </ul>
