@@ -1,0 +1,523 @@
+<ul class="config-list">
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="application.id"></a>
+   <a href="#application.id">application.id</a>
+</h4>
+<p>An identifier for the stream processing application. Must be unique within the Kafka cluster. It is used as 1) the default client-id prefix, 2) the group-id for membership management, 3) the changelog topic prefix.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="bootstrap.servers"></a>
+   <a href="#bootstrap.servers">bootstrap.servers</a>
+</h4>
+<p>A list of host/port pairs to use for establishing the initial connection to the Kafka cluster. The client will make use of all servers irrespective of which servers are specified here for bootstrapping&mdash;this list only impacts the initial hosts used to discover the full set of servers. This list should be in the form <code>host1:port1,host2:port2,...</code>. Since these servers are just used for the initial connection to discover the full cluster membership (which may change dynamically), this list need not contain the full set of servers (you may want more than one, though, in case a server is down).</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td></td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="replication.factor"></a>
+   <a href="#replication.factor">replication.factor</a>
+</h4>
+<p>The replication factor for change log topics and repartition topics created by the stream processing application.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>1</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="state.dir"></a>
+   <a href="#state.dir">state.dir</a>
+</h4>
+<p>Directory location for state store. This path must be unique for each streams instance sharing the same underlying filesystem.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>/tmp/kafka-streams</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="cache.max.bytes.buffering"></a>
+   <a href="#cache.max.bytes.buffering">cache.max.bytes.buffering</a>
+</h4>
+<p>Maximum number of memory bytes to be used for buffering across all threads</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>10485760</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="client.id"></a>
+   <a href="#client.id">client.id</a>
+</h4>
+<p>An ID prefix string used for the client IDs of internal consumer, producer and restore-consumer, with pattern '<client.id>-StreamThread-<threadSequenceNumber>-<consumer|producer|restore-consumer>'.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="default.deserialization.exception.handler"></a>
+   <a href="#default.deserialization.exception.handler">default.deserialization.exception.handler</a>
+</h4>
+<p>Exception handling class that implements the <code>org.apache.kafka.streams.errors.DeserializationExceptionHandler</code> interface.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>org.apache.kafka.streams.errors.LogAndFailExceptionHandler</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="default.key.serde"></a>
+   <a href="#default.key.serde">default.key.serde</a>
+</h4>
+<p> Default serializer / deserializer class for key that implements the <code>org.apache.kafka.common.serialization.Serde</code> interface. Note when windowed serde class is used, one needs to set the inner serde class that implements the <code>org.apache.kafka.common.serialization.Serde</code> interface via 'default.windowed.key.serde.inner' or 'default.windowed.value.serde.inner' as well</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>org.apache.kafka.common.serialization.Serdes$ByteArraySerde</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="default.production.exception.handler"></a>
+   <a href="#default.production.exception.handler">default.production.exception.handler</a>
+</h4>
+<p>Exception handling class that implements the <code>org.apache.kafka.streams.errors.ProductionExceptionHandler</code> interface.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>org.apache.kafka.streams.errors.DefaultProductionExceptionHandler</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="default.timestamp.extractor"></a>
+   <a href="#default.timestamp.extractor">default.timestamp.extractor</a>
+</h4>
+<p>Default timestamp extractor class that implements the <code>org.apache.kafka.streams.processor.TimestampExtractor</code> interface.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>org.apache.kafka.streams.processor.FailOnInvalidTimestamp</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="default.value.serde"></a>
+   <a href="#default.value.serde">default.value.serde</a>
+</h4>
+<p>Default serializer / deserializer class for value that implements the <code>org.apache.kafka.common.serialization.Serde</code> interface. Note when windowed serde class is used, one needs to set the inner serde class that implements the <code>org.apache.kafka.common.serialization.Serde</code> interface via 'default.windowed.key.serde.inner' or 'default.windowed.value.serde.inner' as well</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>org.apache.kafka.common.serialization.Serdes$ByteArraySerde</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="max.task.idle.ms"></a>
+   <a href="#max.task.idle.ms">max.task.idle.ms</a>
+</h4>
+<p>Maximum amount of time a stream task will stay idle when not all of its partition buffers contain records, to avoid potential out-of-order record processing across multiple input streams.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>0</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="num.standby.replicas"></a>
+   <a href="#num.standby.replicas">num.standby.replicas</a>
+</h4>
+<p>The number of standby replicas for each task.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>0</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="num.stream.threads"></a>
+   <a href="#num.stream.threads">num.stream.threads</a>
+</h4>
+<p>The number of threads to execute stream processing.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>1</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="processing.guarantee"></a>
+   <a href="#processing.guarantee">processing.guarantee</a>
+</h4>
+<p>The processing guarantee that should be used. Possible values are <code>at_least_once</code> (default) and <code>exactly_once</code>. Note that exactly-once processing requires a cluster of at least three brokers by default what is the recommended setting for production; for development you can change this, by adjusting broker setting <code>transaction.state.log.replication.factor</code> and <code>transaction.state.log.min.isr</code>.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>at_least_once</td></tr>
+<tr><th>Valid Values:</th><td>[at_least_once, exactly_once]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="security.protocol"></a>
+   <a href="#security.protocol">security.protocol</a>
+</h4>
+<p>Protocol used to communicate with brokers. Valid values are: PLAINTEXT, SSL, SASL_PLAINTEXT, SASL_SSL.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>PLAINTEXT</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="topology.optimization"></a>
+   <a href="#topology.optimization">topology.optimization</a>
+</h4>
+<p>A configuration telling Kafka Streams if it should optimize the topology, disabled by default</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>none</td></tr>
+<tr><th>Valid Values:</th><td>[none, all]</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="application.server"></a>
+   <a href="#application.server">application.server</a>
+</h4>
+<p>A host:port pair pointing to a user-defined endpoint that can be used for state store discovery and interactive queries on this KafkaStreams instance.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="buffered.records.per.partition"></a>
+   <a href="#buffered.records.per.partition">buffered.records.per.partition</a>
+</h4>
+<p>Maximum number of records to buffer per partition.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>1000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="built.in.metrics.version"></a>
+   <a href="#built.in.metrics.version">built.in.metrics.version</a>
+</h4>
+<p>Version of the built-in metrics to use.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>latest</td></tr>
+<tr><th>Valid Values:</th><td>[0.10.0-2.4, latest]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="commit.interval.ms"></a>
+   <a href="#commit.interval.ms">commit.interval.ms</a>
+</h4>
+<p>The frequency with which to save the position of the processor. (Note, if <code>processing.guarantee</code> is set to <code>exactly_once</code>, the default value is <code>100</code>, otherwise the default value is <code>30000</code>.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>30000</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="connections.max.idle.ms"></a>
+   <a href="#connections.max.idle.ms">connections.max.idle.ms</a>
+</h4>
+<p>Close idle connections after the number of milliseconds specified by this config.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>540000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="metadata.max.age.ms"></a>
+   <a href="#metadata.max.age.ms">metadata.max.age.ms</a>
+</h4>
+<p>The period of time in milliseconds after which we force a refresh of metadata even if we haven't seen any partition leadership changes to proactively discover any new brokers or partitions.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>300000</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="metric.reporters"></a>
+   <a href="#metric.reporters">metric.reporters</a>
+</h4>
+<p>A list of classes to use as metrics reporters. Implementing the <code>org.apache.kafka.common.metrics.MetricsReporter</code> interface allows plugging in classes that will be notified of new metric creation. The JmxReporter is always included to register JMX statistics.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="metrics.num.samples"></a>
+   <a href="#metrics.num.samples">metrics.num.samples</a>
+</h4>
+<p>The number of samples maintained to compute metrics.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>2</td></tr>
+<tr><th>Valid Values:</th><td>[1,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="metrics.recording.level"></a>
+   <a href="#metrics.recording.level">metrics.recording.level</a>
+</h4>
+<p>The highest recording level for metrics.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>INFO</td></tr>
+<tr><th>Valid Values:</th><td>[INFO, DEBUG]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="metrics.sample.window.ms"></a>
+   <a href="#metrics.sample.window.ms">metrics.sample.window.ms</a>
+</h4>
+<p>The window of time a metrics sample is computed over.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>30000</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="partition.grouper"></a>
+   <a href="#partition.grouper">partition.grouper</a>
+</h4>
+<p>Partition grouper class that implements the <code>org.apache.kafka.streams.processor.PartitionGrouper</code> interface. WARNING: This config is deprecated and will be removed in 3.0.0 release.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>org.apache.kafka.streams.processor.DefaultPartitionGrouper</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="poll.ms"></a>
+   <a href="#poll.ms">poll.ms</a>
+</h4>
+<p>The amount of time in milliseconds to block waiting for input.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>100</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="receive.buffer.bytes"></a>
+   <a href="#receive.buffer.bytes">receive.buffer.bytes</a>
+</h4>
+<p>The size of the TCP receive buffer (SO_RCVBUF) to use when reading data. If the value is -1, the OS default will be used.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>32768</td></tr>
+<tr><th>Valid Values:</th><td>[-1,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="reconnect.backoff.max.ms"></a>
+   <a href="#reconnect.backoff.max.ms">reconnect.backoff.max.ms</a>
+</h4>
+<p>The maximum amount of time in milliseconds to wait when reconnecting to a broker that has repeatedly failed to connect. If provided, the backoff per host will increase exponentially for each consecutive connection failure, up to this maximum. After calculating the backoff increase, 20% random jitter is added to avoid connection storms.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>1000</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="reconnect.backoff.ms"></a>
+   <a href="#reconnect.backoff.ms">reconnect.backoff.ms</a>
+</h4>
+<p>The base amount of time to wait before attempting to reconnect to a given host. This avoids repeatedly connecting to a host in a tight loop. This backoff applies to all connection attempts by the client to a broker.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>50</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="request.timeout.ms"></a>
+   <a href="#request.timeout.ms">request.timeout.ms</a>
+</h4>
+<p>The configuration controls the maximum amount of time the client will wait for the response of a request. If the response is not received before the timeout elapses the client will resend the request if necessary or fail the request if retries are exhausted.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>40000</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+      <a class="anchor-link" id="retries" href="#retries"></a>
+<a href="#retries">retries
+</a></h4>
+<p>Setting a value greater than zero will cause the client to resend any request that fails with a potentially transient error.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>0</td></tr>
+<tr><th>Valid Values:</th><td>[0,...,2147483647]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="retry.backoff.ms"></a>
+   <a href="#retry.backoff.ms">retry.backoff.ms</a>
+</h4>
+<p>The amount of time to wait before attempting to retry a failed request to a given topic partition. This avoids repeatedly sending requests in a tight loop under some failure scenarios.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>100</td></tr>
+<tr><th>Valid Values:</th><td>[0,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="rocksdb.config.setter"></a>
+   <a href="#rocksdb.config.setter">rocksdb.config.setter</a>
+</h4>
+<p>A Rocks DB config setter class or class name that implements the <code>org.apache.kafka.streams.state.RocksDBConfigSetter</code> interface</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>class</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="send.buffer.bytes"></a>
+   <a href="#send.buffer.bytes">send.buffer.bytes</a>
+</h4>
+<p>The size of the TCP send buffer (SO_SNDBUF) to use when sending data. If the value is -1, the OS default will be used.</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>131072</td></tr>
+<tr><th>Valid Values:</th><td>[-1,...]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="state.cleanup.delay.ms"></a>
+   <a href="#state.cleanup.delay.ms">state.cleanup.delay.ms</a>
+</h4>
+<p>The amount of time in milliseconds to wait before deleting state when a partition has migrated. Only state directories that have not been modified for at least <code>state.cleanup.delay.ms</code> will be removed</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>600000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="upgrade.from"></a>
+   <a href="#upgrade.from">upgrade.from</a>
+</h4>
+<p>Allows upgrading in a backward compatible way. This is needed when upgrading from [0.10.0, 1.1] to 2.0+, or when upgrading from [2.0, 2.3] to 2.4+. When upgrading from 2.4 to a newer version it is not required to specify this config. Default is null. Accepted values are "0.10.0", "0.10.1", "0.10.2", "0.11.0", "1.0", "1.1", "2.0", "2.1", "2.2", "2.3" (for upgrading from the corresponding old version).</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td>[null, 0.10.0, 0.10.1, 0.10.2, 0.11.0, 1.0, 1.1, 2.0, 2.1, 2.2, 2.3]</td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4 class="anchor-heading">
+   <a class="anchor-link" id="windowstore.changelog.additional.retention.ms"></a>
+   <a href="#windowstore.changelog.additional.retention.ms">windowstore.changelog.additional.retention.ms</a>
+</h4>
+<p>Added to a windows maintainMs to ensure data is not deleted from the log prematurely. Allows for clock drift. Default is 1 day</p>
+<table class="data-table"><tbody>
+<tr><th>Type:</th><td>long</td></tr>
+<tr><th>Default:</th><td>86400000</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>low</td></tr>
+</tbody></table>
+</li>
+</ul>
+
