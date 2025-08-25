@@ -61,12 +61,12 @@
                         <a href="https://cwiki.apache.org/confluence/x/8ItyEg">KIP-1050: Consistent error handling for Transactions</a>
                         <br>
                         This KIP updates the error handling logic and documentation of all the transaction APIs to make it simpler to build robust applications and build
-                        third party Kafka clients that behave the same way as the Java client.
+                        third-party Kafka clients that behave the same way as the Java client.
                     </li>
                     <li>
                         <a href="https://cwiki.apache.org/confluence/x/JQstEw">KIP-1092: Extend Consumer#close with an option to leave the group or not</a>
                         <br>
-                        This adds a new <code>Consumer.close(CloseOptions)</code> method which lets define if the consumer should explicitly leave its group when
+                        This adds a new <code>Consumer.close(CloseOptions)</code> method which indicates whether the consumer should explicitly leave its group when
                         it's shutting down. This enables Streams to control when to trigger group rebalances. The <code>Consumer.close(Duration)</code> method is now
                         deprecated.
                     </li>
@@ -98,7 +98,7 @@
                         <a href="https://cwiki.apache.org/confluence/x/LwqWF">KIP-1143: Deprecated Optional&lt;String&gt; and return String from public Endpoint#listenerName</a>
                         <br>
                         This is a cleanup in the <code>Endpoint</code> class. The existing <code>listenerName()</code> method which returns <code>Optional&lt;String&gt;</code> is now
-                        deprecated and users should now transition to the new <code>listenerName()</code> method which returns <code>String</code>.
+                        deprecated and users should transition to the new <code>listenerName()</code> method which returns <code>String</code>.
                     </li>
                     <li>
                         <a href="https://cwiki.apache.org/confluence/x/4gm9F">KIP-1152: Add transactional ID pattern filter to ListTransactions API</a>
@@ -138,7 +138,7 @@
                     <li>
                         <a href="https://cwiki.apache.org/confluence/x/lY3GDQ">KIP-877: Mechanism for plugins and connectors to register metrics</a>
                         <br>
-                        All worker and connector plugins can now register their own metrics. For Connectors and tasks this is done via their context. Other plugins
+                        All worker and connector plugins can now register their own metrics. For connectors and tasks this is done via their context. Other plugins
                         can implement the <code>Monitorable</code> interface to do so.
                     </li>
                     <li>
