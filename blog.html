@@ -85,13 +85,13 @@
                     <li>
                         <a href="https://cwiki.apache.org/confluence/x/LorREw">KIP-1118: Add Deadlock Protection on Producer Network Thread</a>
                         <br>
-                        From 4.1, if <code>KafkaProducer.flush()</code> is called from the <code>KafkaProducer.send()</code> callback, and exception is raised. Previously this 
+                        From 4.1, if <code>KafkaProducer.flush()</code> is called from the <code>KafkaProducer.send()</code> callback, then an exception is raised. Previously this 
                         could lead to a deadlock in the producer.
                     </li>
                     <li>
                         <a href="https://cwiki.apache.org/confluence/x/uIxEF">KIP-1139: Add support for OAuth jwt-bearer grant type</a>
                         <br>
-                        In addition of the client_credentials grant type, Kafka now supports the jwt-bearer grant type for OAuth. This grant type avoids putting secrets in clear
+                        In addition to the client_credentials grant type, Kafka now supports the jwt-bearer grant type for OAuth. This grant type avoids putting secrets in clear
                         in the configuration and is also supported by many OAuth providers.
                     </li>
                     <li>
