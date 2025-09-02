@@ -14,7 +14,9 @@ RUN sed -i \
       RewriteRule ^/?(\\d+)/javadoc - [S=2]\n\
       RewriteRule ^/?(\\d+)/images/ - [S=1]\n\
       RewriteCond $2 !=protocol\n\
-      RewriteRule ^/?(\\d+)/([a-z]+)(\\.html)? /$1/documentation#$2 [R=302,L,NE]' \
+      RewriteRule ^/?(\\d+)/([a-z]+)(\\.html)? /$1/documentation#$2 [R=302,L,NE]\n \
+      RewriteCond %{REQUEST_FILENAME}.html -f\n\
+      RewriteRule ^(.*)$ %{REQUEST_FILENAME}.html' \
   "/usr/local/apache2/conf/httpd.conf"
 
 CMD ["httpd-foreground"]
