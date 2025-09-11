@@ -843,6 +843,98 @@
 </td></tr>
 </tbody></table>
 </div>
+<div><pre>Produce Response (Version: 12) => [responses] throttle_time_ms _tagged_fields 
+  responses => name [partition_responses] _tagged_fields 
+    name => COMPACT_STRING
+    partition_responses => index error_code base_offset log_append_time_ms log_start_offset [record_errors] error_message _tagged_fields 
+      index => INT32
+      error_code => INT16
+      base_offset => INT64
+      log_append_time_ms => INT64
+      log_start_offset => INT64
+      record_errors => batch_index batch_index_error_message _tagged_fields 
+        batch_index => INT32
+        batch_index_error_message => COMPACT_NULLABLE_STRING
+      error_message => COMPACT_NULLABLE_STRING
+  throttle_time_ms => INT32
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>responses</td><td>Each produce response.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>partition_responses</td><td>Each partition that we produced to within the topic.</td></tr>
+<tr>
+<td>index</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>base_offset</td><td>The base offset.</td></tr>
+<tr>
+<td>log_append_time_ms</td><td>The timestamp returned by broker after appending the messages. If CreateTime is used for the topic, the timestamp will be -1.  If LogAppendTime is used for the topic, the timestamp will be the broker local time when the messages are appended.</td></tr>
+<tr>
+<td>log_start_offset</td><td>The log start offset.</td></tr>
+<tr>
+<td>record_errors</td><td>The batch indices of records that caused the batch to be dropped.</td></tr>
+<tr>
+<td>batch_index</td><td>The batch index of the record that caused the batch to be dropped.</td></tr>
+<tr>
+<td>batch_index_error_message</td><td>The error message of the record that caused the batch to be dropped.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>error_message</td><td>The global error message summarizing the common root cause of the records that caused the batch to be dropped.</td></tr>
+<tr>
+<td>_tagged_fields</td><td><table class="data-table"><tbody>
+<tr><th>Tag</th>
+<th>Tagged field</th>
+<th>Description</th>
+</tr><tr>
+<td>0</td><td>current_leader</td><td>The leader broker that the producer should use for future requests.<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>leader_id</td><td>The ID of the current leader or -1 if the leader is unknown.</td></tr>
+<tr>
+<td>leader_epoch</td><td>The latest known leader epoch.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>_tagged_fields</td><td><table class="data-table"><tbody>
+<tr><th>Tag</th>
+<th>Tagged field</th>
+<th>Description</th>
+</tr><tr>
+<td>0</td><td>node_endpoints</td><td>Endpoints for all current-leaders enumerated in PartitionProduceResponses, with errors NOT_LEADER_OR_FOLLOWER.<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>node_id</td><td>The ID of the associated node.</td></tr>
+<tr>
+<td>host</td><td>The node's hostname.</td></tr>
+<tr>
+<td>port</td><td>The node's port.</td></tr>
+<tr>
+<td>rack</td><td>The rack of the node, or null if it has not been assigned to a rack.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_Fetch">Fetch API (Key: 1):</a></h5>
 
 <b>Requests:</b><br>
@@ -2740,6 +2832,131 @@
 </td></tr>
 </tbody></table>
 </div>
+<div><pre>Fetch Response (Version: 17) => throttle_time_ms error_code session_id [responses] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  session_id => INT32
+  responses => topic_id [partitions] _tagged_fields 
+    topic_id => UUID
+    partitions => partition_index error_code high_watermark last_stable_offset log_start_offset [aborted_transactions] preferred_read_replica records _tagged_fields 
+      partition_index => INT32
+      error_code => INT16
+      high_watermark => INT64
+      last_stable_offset => INT64
+      log_start_offset => INT64
+      aborted_transactions => producer_id first_offset _tagged_fields 
+        producer_id => INT64
+        first_offset => INT64
+      preferred_read_replica => INT32
+      records => COMPACT_RECORDS
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The top level response error code.</td></tr>
+<tr>
+<td>session_id</td><td>The fetch session ID, or 0 if this is not part of a fetch session.</td></tr>
+<tr>
+<td>responses</td><td>The response topics.</td></tr>
+<tr>
+<td>topic_id</td><td>The unique topic ID.</td></tr>
+<tr>
+<td>partitions</td><td>The topic partitions.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no fetch error.</td></tr>
+<tr>
+<td>high_watermark</td><td>The current high water mark.</td></tr>
+<tr>
+<td>last_stable_offset</td><td>The last stable offset (or LSO) of the partition. This is the last offset such that the state of all transactional records prior to this offset have been decided (ABORTED or COMMITTED).</td></tr>
+<tr>
+<td>log_start_offset</td><td>The current log start offset.</td></tr>
+<tr>
+<td>aborted_transactions</td><td>The aborted transactions.</td></tr>
+<tr>
+<td>producer_id</td><td>The producer id associated with the aborted transaction.</td></tr>
+<tr>
+<td>first_offset</td><td>The first offset in the aborted transaction.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>preferred_read_replica</td><td>The preferred read replica for the consumer to use on its next fetch request.</td></tr>
+<tr>
+<td>records</td><td>The record data.</td></tr>
+<tr>
+<td>_tagged_fields</td><td><table class="data-table"><tbody>
+<tr><th>Tag</th>
+<th>Tagged field</th>
+<th>Description</th>
+</tr><tr>
+<td>0</td><td>diverging_epoch</td><td>In case divergence is detected based on the `LastFetchedEpoch` and `FetchOffset` in the request, this field indicates the largest epoch and its end offset such that subsequent records are known to diverge.<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>epoch</td><td>The largest epoch.</td></tr>
+<tr>
+<td>end_offset</td><td>The end offset of the epoch.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</td></tr>
+<tr>
+<td>1</td><td>current_leader</td><td>The current leader of the partition.<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>leader_id</td><td>The ID of the current leader or -1 if the leader is unknown.</td></tr>
+<tr>
+<td>leader_epoch</td><td>The latest known leader epoch.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</td></tr>
+<tr>
+<td>2</td><td>snapshot_id</td><td>In the case of fetching an offset less than the LogStartOffset, this is the end offset and epoch that should be used in the FetchSnapshot request.<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>end_offset</td><td>The end offset of the epoch.</td></tr>
+<tr>
+<td>epoch</td><td>The largest epoch.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td><table class="data-table"><tbody>
+<tr><th>Tag</th>
+<th>Tagged field</th>
+<th>Description</th>
+</tr><tr>
+<td>0</td><td>node_endpoints</td><td>Endpoints for all current-leaders enumerated in PartitionData, with errors NOT_LEADER_OR_FOLLOWER & FENCED_LEADER_EPOCH.<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>node_id</td><td>The ID of the associated node.</td></tr>
+<tr>
+<td>host</td><td>The node's hostname.</td></tr>
+<tr>
+<td>port</td><td>The node's port.</td></tr>
+<tr>
+<td>rack</td><td>The rack of the node, or null if it has not been assigned to a rack.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_ListOffsets">ListOffsets API (Key: 2):</a></h5>
 
 <b>Requests:</b><br>
@@ -3354,6 +3571,46 @@
 </tbody></table>
 </div>
 <div><pre>ListOffsets Response (Version: 9) => throttle_time_ms [topics] _tagged_fields 
+  throttle_time_ms => INT32
+  topics => name [partitions] _tagged_fields 
+    name => COMPACT_STRING
+    partitions => partition_index error_code timestamp offset leader_epoch _tagged_fields 
+      partition_index => INT32
+      error_code => INT16
+      timestamp => INT64
+      offset => INT64
+      leader_epoch => INT32
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>topics</td><td>Each topic in the response.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>partitions</td><td>Each partition in the response.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The partition error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>timestamp</td><td>The timestamp associated with the returned offset.</td></tr>
+<tr>
+<td>offset</td><td>The returned offset.</td></tr>
+<tr>
+<td>leader_epoch</td><td>The leader epoch associated with the returned offset.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
+<div><pre>ListOffsets Response (Version: 10) => throttle_time_ms [topics] _tagged_fields 
   throttle_time_ms => INT32
   topics => name [partitions] _tagged_fields 
     name => COMPACT_STRING
@@ -4544,6 +4801,90 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>Metadata Response (Version: 13) => throttle_time_ms [brokers] cluster_id controller_id [topics] error_code _tagged_fields 
+  throttle_time_ms => INT32
+  brokers => node_id host port rack _tagged_fields 
+    node_id => INT32
+    host => COMPACT_STRING
+    port => INT32
+    rack => COMPACT_NULLABLE_STRING
+  cluster_id => COMPACT_NULLABLE_STRING
+  controller_id => INT32
+  topics => error_code name topic_id is_internal [partitions] topic_authorized_operations _tagged_fields 
+    error_code => INT16
+    name => COMPACT_NULLABLE_STRING
+    topic_id => UUID
+    is_internal => BOOLEAN
+    partitions => error_code partition_index leader_id leader_epoch [replica_nodes] [isr_nodes] [offline_replicas] _tagged_fields 
+      error_code => INT16
+      partition_index => INT32
+      leader_id => INT32
+      leader_epoch => INT32
+      replica_nodes => INT32
+      isr_nodes => INT32
+      offline_replicas => INT32
+    topic_authorized_operations => INT32
+  error_code => INT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>brokers</td><td>A list of brokers present in the cluster.</td></tr>
+<tr>
+<td>node_id</td><td>The broker ID.</td></tr>
+<tr>
+<td>host</td><td>The broker hostname.</td></tr>
+<tr>
+<td>port</td><td>The broker port.</td></tr>
+<tr>
+<td>rack</td><td>The rack of the broker, or null if it has not been assigned to a rack.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>cluster_id</td><td>The cluster ID that responding broker belongs to.</td></tr>
+<tr>
+<td>controller_id</td><td>The ID of the controller broker.</td></tr>
+<tr>
+<td>topics</td><td>Each topic in the response.</td></tr>
+<tr>
+<td>error_code</td><td>The topic error, or 0 if there was no error.</td></tr>
+<tr>
+<td>name</td><td>The topic name. Null for non-existing topics queried by ID. This is never null when ErrorCode is zero. One of Name and TopicId is always populated.</td></tr>
+<tr>
+<td>topic_id</td><td>The topic id. Zero for non-existing topics queried by name. This is never zero when ErrorCode is zero. One of Name and TopicId is always populated.</td></tr>
+<tr>
+<td>is_internal</td><td>True if the topic is internal.</td></tr>
+<tr>
+<td>partitions</td><td>Each partition in the topic.</td></tr>
+<tr>
+<td>error_code</td><td>The partition error, or 0 if there was no error.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>leader_id</td><td>The ID of the leader broker.</td></tr>
+<tr>
+<td>leader_epoch</td><td>The leader epoch of this partition.</td></tr>
+<tr>
+<td>replica_nodes</td><td>The set of all nodes that host this partition.</td></tr>
+<tr>
+<td>isr_nodes</td><td>The set of nodes that are in sync with the leader for this partition.</td></tr>
+<tr>
+<td>offline_replicas</td><td>The set of offline replicas of this partition.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>topic_authorized_operations</td><td>32-bit bitfield to represent authorized operations for this topic.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>error_code</td><td>The top-level error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_OffsetCommit">OffsetCommit API (Key: 8):</a></h5>
 
 <b>Requests:</b><br>
@@ -5010,6 +5351,37 @@
 </tbody></table>
 </div>
 <div><pre>OffsetCommit Response (Version: 8) => throttle_time_ms [topics] _tagged_fields 
+  throttle_time_ms => INT32
+  topics => name [partitions] _tagged_fields 
+    name => COMPACT_STRING
+    partitions => partition_index error_code _tagged_fields 
+      partition_index => INT32
+      error_code => INT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>topics</td><td>The responses for each topic.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>partitions</td><td>The responses for each partition in the topic.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
+<div><pre>OffsetCommit Response (Version: 9) => throttle_time_ms [topics] _tagged_fields 
   throttle_time_ms => INT32
   topics => name [partitions] _tagged_fields 
     name => COMPACT_STRING
@@ -5557,6 +5929,57 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>OffsetFetch Response (Version: 9) => throttle_time_ms [groups] _tagged_fields 
+  throttle_time_ms => INT32
+  groups => group_id [topics] error_code _tagged_fields 
+    group_id => COMPACT_STRING
+    topics => name [partitions] _tagged_fields 
+      name => COMPACT_STRING
+      partitions => partition_index committed_offset committed_leader_epoch metadata error_code _tagged_fields 
+        partition_index => INT32
+        committed_offset => INT64
+        committed_leader_epoch => INT32
+        metadata => COMPACT_NULLABLE_STRING
+        error_code => INT16
+    error_code => INT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>groups</td><td>The responses per group id.</td></tr>
+<tr>
+<td>group_id</td><td>The group ID.</td></tr>
+<tr>
+<td>topics</td><td>The responses per topic.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>partitions</td><td>The responses per partition.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>committed_offset</td><td>The committed message offset.</td></tr>
+<tr>
+<td>committed_leader_epoch</td><td>The leader epoch.</td></tr>
+<tr>
+<td>metadata</td><td>The partition metadata.</td></tr>
+<tr>
+<td>error_code</td><td>The partition-level error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>error_code</td><td>The group-level error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_FindCoordinator">FindCoordinator API (Key: 10):</a></h5>
 
 <b>Requests:</b><br>
@@ -5823,9 +6246,103 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>FindCoordinator Response (Version: 6) => throttle_time_ms [coordinators] _tagged_fields 
+  throttle_time_ms => INT32
+  coordinators => key node_id host port error_code error_message _tagged_fields 
+    key => COMPACT_STRING
+    node_id => INT32
+    host => COMPACT_STRING
+    port => INT32
+    error_code => INT16
+    error_message => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>coordinators</td><td>Each coordinator result in the response.</td></tr>
+<tr>
+<td>key</td><td>The coordinator key.</td></tr>
+<tr>
+<td>node_id</td><td>The node id.</td></tr>
+<tr>
+<td>host</td><td>The host name.</td></tr>
+<tr>
+<td>port</td><td>The port.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_JoinGroup">JoinGroup API (Key: 11):</a></h5>
 
 <b>Requests:</b><br>
+<div><pre>JoinGroup Request (Version: 0) => group_id session_timeout_ms member_id protocol_type [protocols] 
+  group_id => STRING
+  session_timeout_ms => INT32
+  member_id => STRING
+  protocol_type => STRING
+  protocols => name metadata 
+    name => STRING
+    metadata => BYTES
+</pre><p><b>Request header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>group_id</td><td>The group identifier.</td></tr>
+<tr>
+<td>session_timeout_ms</td><td>The coordinator considers the consumer dead if it receives no heartbeat after this timeout in milliseconds.</td></tr>
+<tr>
+<td>member_id</td><td>The member id assigned by the group coordinator.</td></tr>
+<tr>
+<td>protocol_type</td><td>The unique name the for class of protocols implemented by the group we want to join.</td></tr>
+<tr>
+<td>protocols</td><td>The list of protocols that the member supports.</td></tr>
+<tr>
+<td>name</td><td>The protocol name.</td></tr>
+<tr>
+<td>metadata</td><td>The protocol metadata.</td></tr>
+</tbody></table>
+</div>
+<div><pre>JoinGroup Request (Version: 1) => group_id session_timeout_ms rebalance_timeout_ms member_id protocol_type [protocols] 
+  group_id => STRING
+  session_timeout_ms => INT32
+  rebalance_timeout_ms => INT32
+  member_id => STRING
+  protocol_type => STRING
+  protocols => name metadata 
+    name => STRING
+    metadata => BYTES
+</pre><p><b>Request header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>group_id</td><td>The group identifier.</td></tr>
+<tr>
+<td>session_timeout_ms</td><td>The coordinator considers the consumer dead if it receives no heartbeat after this timeout in milliseconds.</td></tr>
+<tr>
+<td>rebalance_timeout_ms</td><td>The maximum time in milliseconds that the coordinator will wait for each member to rejoin when rebalancing the group.</td></tr>
+<tr>
+<td>member_id</td><td>The member id assigned by the group coordinator.</td></tr>
+<tr>
+<td>protocol_type</td><td>The unique name the for class of protocols implemented by the group we want to join.</td></tr>
+<tr>
+<td>protocols</td><td>The list of protocols that the member supports.</td></tr>
+<tr>
+<td>name</td><td>The protocol name.</td></tr>
+<tr>
+<td>metadata</td><td>The protocol metadata.</td></tr>
+</tbody></table>
+</div>
 <div><pre>JoinGroup Request (Version: 2) => group_id session_timeout_ms rebalance_timeout_ms member_id protocol_type [protocols] 
   group_id => STRING
   session_timeout_ms => INT32
@@ -6112,6 +6629,68 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>JoinGroup Response (Version: 0) => error_code generation_id protocol_name leader member_id [members] 
+  error_code => INT16
+  generation_id => INT32
+  protocol_name => STRING
+  leader => STRING
+  member_id => STRING
+  members => member_id metadata 
+    member_id => STRING
+    metadata => BYTES
+</pre><p><b>Response header version:</b> 0</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>generation_id</td><td>The generation ID of the group.</td></tr>
+<tr>
+<td>protocol_name</td><td>The group protocol selected by the coordinator.</td></tr>
+<tr>
+<td>leader</td><td>The leader of the group.</td></tr>
+<tr>
+<td>member_id</td><td>The member ID assigned by the group coordinator.</td></tr>
+<tr>
+<td>members</td><td>The group members.</td></tr>
+<tr>
+<td>member_id</td><td>The group member ID.</td></tr>
+<tr>
+<td>metadata</td><td>The group member metadata.</td></tr>
+</tbody></table>
+</div>
+<div><pre>JoinGroup Response (Version: 1) => error_code generation_id protocol_name leader member_id [members] 
+  error_code => INT16
+  generation_id => INT32
+  protocol_name => STRING
+  leader => STRING
+  member_id => STRING
+  members => member_id metadata 
+    member_id => STRING
+    metadata => BYTES
+</pre><p><b>Response header version:</b> 0</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>generation_id</td><td>The generation ID of the group.</td></tr>
+<tr>
+<td>protocol_name</td><td>The group protocol selected by the coordinator.</td></tr>
+<tr>
+<td>leader</td><td>The leader of the group.</td></tr>
+<tr>
+<td>member_id</td><td>The member ID assigned by the group coordinator.</td></tr>
+<tr>
+<td>members</td><td>The group members.</td></tr>
+<tr>
+<td>member_id</td><td>The group member ID.</td></tr>
+<tr>
+<td>metadata</td><td>The group member metadata.</td></tr>
+</tbody></table>
+</div>
 <div><pre>JoinGroup Response (Version: 2) => throttle_time_ms error_code generation_id protocol_name leader member_id [members] 
   throttle_time_ms => INT32
   error_code => INT16
@@ -6380,6 +6959,53 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>JoinGroup Response (Version: 9) => throttle_time_ms error_code generation_id protocol_type protocol_name leader skip_assignment member_id [members] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  generation_id => INT32
+  protocol_type => COMPACT_NULLABLE_STRING
+  protocol_name => COMPACT_NULLABLE_STRING
+  leader => COMPACT_STRING
+  skip_assignment => BOOLEAN
+  member_id => COMPACT_STRING
+  members => member_id group_instance_id metadata _tagged_fields 
+    member_id => COMPACT_STRING
+    group_instance_id => COMPACT_NULLABLE_STRING
+    metadata => COMPACT_BYTES
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>generation_id</td><td>The generation ID of the group.</td></tr>
+<tr>
+<td>protocol_type</td><td>The group protocol name.</td></tr>
+<tr>
+<td>protocol_name</td><td>The group protocol selected by the coordinator.</td></tr>
+<tr>
+<td>leader</td><td>The leader of the group.</td></tr>
+<tr>
+<td>skip_assignment</td><td>True if the leader must skip running the assignment.</td></tr>
+<tr>
+<td>member_id</td><td>The member ID assigned by the group coordinator.</td></tr>
+<tr>
+<td>members</td><td>The group members.</td></tr>
+<tr>
+<td>member_id</td><td>The group member ID.</td></tr>
+<tr>
+<td>group_instance_id</td><td>The unique identifier of the consumer instance provided by end user.</td></tr>
+<tr>
+<td>metadata</td><td>The group member metadata.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_Heartbeat">Heartbeat API (Key: 12):</a></h5>
 
 <b>Requests:</b><br>
@@ -6519,6 +7145,21 @@
 <td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
 <tr>
 <td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+</tbody></table>
+</div>
+<div><pre>Heartbeat Response (Version: 4) => throttle_time_ms error_code _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
 <h5><a name="The_Messages_LeaveGroup">LeaveGroup API (Key: 13):</a></h5>
@@ -6694,6 +7335,35 @@
 </tbody></table>
 </div>
 <div><pre>LeaveGroup Response (Version: 4) => throttle_time_ms error_code [members] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  members => member_id group_instance_id error_code _tagged_fields 
+    member_id => COMPACT_STRING
+    group_instance_id => COMPACT_NULLABLE_STRING
+    error_code => INT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>members</td><td>List of leaving member responses.</td></tr>
+<tr>
+<td>member_id</td><td>The member ID to remove from the group.</td></tr>
+<tr>
+<td>group_instance_id</td><td>The group instance ID to remove from the group.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
+<div><pre>LeaveGroup Response (Version: 5) => throttle_time_ms error_code [members] _tagged_fields 
   throttle_time_ms => INT32
   error_code => INT16
   members => member_id group_instance_id error_code _tagged_fields 
@@ -6972,6 +7642,30 @@
 <td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
 <tr>
 <td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>assignment</td><td>The member assignment.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
+<div><pre>SyncGroup Response (Version: 5) => throttle_time_ms error_code protocol_type protocol_name assignment _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  protocol_type => COMPACT_NULLABLE_STRING
+  protocol_name => COMPACT_NULLABLE_STRING
+  assignment => COMPACT_BYTES
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>protocol_type</td><td>The group protocol type.</td></tr>
+<tr>
+<td>protocol_name</td><td>The group protocol name.</td></tr>
 <tr>
 <td>assignment</td><td>The member assignment.</td></tr>
 <tr>
@@ -7362,6 +8056,67 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>DescribeGroups Response (Version: 6) => throttle_time_ms [groups] _tagged_fields 
+  throttle_time_ms => INT32
+  groups => error_code error_message group_id group_state protocol_type protocol_data [members] authorized_operations _tagged_fields 
+    error_code => INT16
+    error_message => COMPACT_NULLABLE_STRING
+    group_id => COMPACT_STRING
+    group_state => COMPACT_STRING
+    protocol_type => COMPACT_STRING
+    protocol_data => COMPACT_STRING
+    members => member_id group_instance_id client_id client_host member_metadata member_assignment _tagged_fields 
+      member_id => COMPACT_STRING
+      group_instance_id => COMPACT_NULLABLE_STRING
+      client_id => COMPACT_STRING
+      client_host => COMPACT_STRING
+      member_metadata => COMPACT_BYTES
+      member_assignment => COMPACT_BYTES
+    authorized_operations => INT32
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>groups</td><td>Each described group.</td></tr>
+<tr>
+<td>error_code</td><td>The describe error, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The describe error message, or null if there was no error.</td></tr>
+<tr>
+<td>group_id</td><td>The group ID string.</td></tr>
+<tr>
+<td>group_state</td><td>The group state string, or the empty string.</td></tr>
+<tr>
+<td>protocol_type</td><td>The group protocol type, or the empty string.</td></tr>
+<tr>
+<td>protocol_data</td><td>The group protocol data, or the empty string.</td></tr>
+<tr>
+<td>members</td><td>The group members.</td></tr>
+<tr>
+<td>member_id</td><td>The member id.</td></tr>
+<tr>
+<td>group_instance_id</td><td>The unique identifier of the consumer instance provided by end user.</td></tr>
+<tr>
+<td>client_id</td><td>The client ID used in the member's latest join group request.</td></tr>
+<tr>
+<td>client_host</td><td>The client host.</td></tr>
+<tr>
+<td>member_metadata</td><td>The metadata corresponding to the current group protocol in use.</td></tr>
+<tr>
+<td>member_assignment</td><td>The current assignment provided by the group leader.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>authorized_operations</td><td>32-bit bitfield to represent authorized operations for this group.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_ListGroups">ListGroups API (Key: 16):</a></h5>
 
 <b>Requests:</b><br>
@@ -7541,6 +8296,38 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>ListGroups Response (Version: 5) => throttle_time_ms error_code [groups] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  groups => group_id protocol_type group_state group_type _tagged_fields 
+    group_id => COMPACT_STRING
+    protocol_type => COMPACT_STRING
+    group_state => COMPACT_STRING
+    group_type => COMPACT_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>groups</td><td>Each group in the response.</td></tr>
+<tr>
+<td>group_id</td><td>The group ID.</td></tr>
+<tr>
+<td>protocol_type</td><td>The group protocol type.</td></tr>
+<tr>
+<td>group_state</td><td>The group state name.</td></tr>
+<tr>
+<td>group_type</td><td>The group type name.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_SaslHandshake">SaslHandshake API (Key: 17):</a></h5>
 
 <b>Requests:</b><br>
@@ -7566,6 +8353,19 @@
 </div>
 <b>Responses:</b><br>
 <div><pre>SaslHandshake Response (Version: 0) => error_code [mechanisms] 
+  error_code => INT16
+  mechanisms => STRING
+</pre><p><b>Response header version:</b> 0</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>mechanisms</td><td>The mechanisms enabled in the server.</td></tr>
+</tbody></table>
+</div>
+<div><pre>SaslHandshake Response (Version: 1) => error_code [mechanisms] 
   error_code => INT16
   mechanisms => STRING
 </pre><p><b>Response header version:</b> 0</p>
@@ -7706,6 +8506,72 @@
 </tbody></table>
 </div>
 <div><pre>ApiVersions Response (Version: 3) => error_code [api_keys] throttle_time_ms _tagged_fields 
+  error_code => INT16
+  api_keys => api_key min_version max_version _tagged_fields 
+    api_key => INT16
+    min_version => INT16
+    max_version => INT16
+  throttle_time_ms => INT32
+</pre><p><b>Response header version:</b> 0</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>error_code</td><td>The top-level error code.</td></tr>
+<tr>
+<td>api_keys</td><td>The APIs supported by the broker.</td></tr>
+<tr>
+<td>api_key</td><td>The API index.</td></tr>
+<tr>
+<td>min_version</td><td>The minimum supported version, inclusive.</td></tr>
+<tr>
+<td>max_version</td><td>The maximum supported version, inclusive.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>_tagged_fields</td><td><table class="data-table"><tbody>
+<tr><th>Tag</th>
+<th>Tagged field</th>
+<th>Description</th>
+</tr><tr>
+<td>0</td><td>supported_features</td><td>Features supported by the broker. Note: in v0-v3, features with MinSupportedVersion = 0 are omitted.<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>name</td><td>The name of the feature.</td></tr>
+<tr>
+<td>min_version</td><td>The minimum supported version for the feature.</td></tr>
+<tr>
+<td>max_version</td><td>The maximum supported version for the feature.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</td></tr>
+<tr>
+<td>1</td><td>finalized_features_epoch</td><td>The monotonically increasing epoch for the finalized features information. Valid values are >= 0. A value of -1 is special and represents unknown epoch.</td></tr>
+<tr>
+<td>2</td><td>finalized_features</td><td>List of cluster-wide finalized features. The information is valid only if FinalizedFeaturesEpoch >= 0.<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>name</td><td>The name of the feature.</td></tr>
+<tr>
+<td>max_version_level</td><td>The cluster-wide finalized max version level for the feature.</td></tr>
+<tr>
+<td>min_version_level</td><td>The cluster-wide finalized min version level for the feature.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</td></tr>
+<tr>
+<td>3</td><td>zk_migration_ready</td><td>Set by a KRaft controller if the required configurations for ZK migration are present.</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</div>
+<div><pre>ApiVersions Response (Version: 4) => error_code [api_keys] throttle_time_ms _tagged_fields 
   error_code => INT16
   api_keys => api_key min_version max_version _tagged_fields 
     api_key => INT16
@@ -8241,6 +9107,68 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>CreateTopics Response (Version: 7) => throttle_time_ms [topics] _tagged_fields 
+  throttle_time_ms => INT32
+  topics => name topic_id error_code error_message num_partitions replication_factor [configs] _tagged_fields 
+    name => COMPACT_STRING
+    topic_id => UUID
+    error_code => INT16
+    error_message => COMPACT_NULLABLE_STRING
+    num_partitions => INT32
+    replication_factor => INT16
+    configs => name value read_only config_source is_sensitive _tagged_fields 
+      name => COMPACT_STRING
+      value => COMPACT_NULLABLE_STRING
+      read_only => BOOLEAN
+      config_source => INT8
+      is_sensitive => BOOLEAN
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>topics</td><td>Results for each topic we tried to create.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>topic_id</td><td>The unique topic ID.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if there was no error.</td></tr>
+<tr>
+<td>num_partitions</td><td>Number of partitions of the topic.</td></tr>
+<tr>
+<td>replication_factor</td><td>Replication factor of the topic.</td></tr>
+<tr>
+<td>configs</td><td>Configuration of the topic.</td></tr>
+<tr>
+<td>name</td><td>The configuration name.</td></tr>
+<tr>
+<td>value</td><td>The configuration value.</td></tr>
+<tr>
+<td>read_only</td><td>True if the configuration is read-only.</td></tr>
+<tr>
+<td>config_source</td><td>The configuration source.</td></tr>
+<tr>
+<td>is_sensitive</td><td>True if this configuration is sensitive.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td><table class="data-table"><tbody>
+<tr><th>Tag</th>
+<th>Tagged field</th>
+<th>Description</th>
+</tr><tr>
+<td>0</td><td>topic_config_error_code</td><td>Optional topic config error returned if configs are not returned in the response.</td></tr>
+</tbody></table>
+</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_DeleteTopics">DeleteTopics API (Key: 20):</a></h5>
 
 <b>Requests:</b><br>
@@ -8443,6 +9371,35 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>DeleteTopics Response (Version: 6) => throttle_time_ms [responses] _tagged_fields 
+  throttle_time_ms => INT32
+  responses => name topic_id error_code error_message _tagged_fields 
+    name => COMPACT_NULLABLE_STRING
+    topic_id => UUID
+    error_code => INT16
+    error_message => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>responses</td><td>The results for each topic we tried to delete.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>topic_id</td><td>The unique topic ID.</td></tr>
+<tr>
+<td>error_code</td><td>The deletion error, or 0 if the deletion succeeded.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_DeleteRecords">DeleteRecords API (Key: 21):</a></h5>
 
 <b>Requests:</b><br>
@@ -8582,6 +9539,40 @@
 <td>low_watermark</td><td>The partition low water mark.</td></tr>
 <tr>
 <td>error_code</td><td>The deletion error code, or 0 if the deletion succeeded.</td></tr>
+</tbody></table>
+</div>
+<div><pre>DeleteRecords Response (Version: 2) => throttle_time_ms [topics] _tagged_fields 
+  throttle_time_ms => INT32
+  topics => name [partitions] _tagged_fields 
+    name => COMPACT_STRING
+    partitions => partition_index low_watermark error_code _tagged_fields 
+      partition_index => INT32
+      low_watermark => INT64
+      error_code => INT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>topics</td><td>Each topic that we wanted to delete records from.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>partitions</td><td>Each partition that we wanted to delete records from.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>low_watermark</td><td>The partition low water mark.</td></tr>
+<tr>
+<td>error_code</td><td>The deletion error code, or 0 if the deletion succeeded.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
 <h5><a name="The_Messages_InitProducerId">InitProducerId API (Key: 22):</a></h5>
@@ -8793,6 +9784,27 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>InitProducerId Response (Version: 5) => throttle_time_ms error_code producer_id producer_epoch _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  producer_id => INT64
+  producer_epoch => INT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>producer_id</td><td>The current producer id.</td></tr>
+<tr>
+<td>producer_epoch</td><td>The current epoch associated with the producer id.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_OffsetForLeaderEpoch">OffsetForLeaderEpoch API (Key: 23):</a></h5>
 
 <b>Requests:</b><br>
@@ -8944,6 +9956,43 @@
 <td>leader_epoch</td><td>The leader epoch of the partition.</td></tr>
 <tr>
 <td>end_offset</td><td>The end offset of the epoch.</td></tr>
+</tbody></table>
+</div>
+<div><pre>OffsetForLeaderEpoch Response (Version: 4) => throttle_time_ms [topics] _tagged_fields 
+  throttle_time_ms => INT32
+  topics => topic [partitions] _tagged_fields 
+    topic => COMPACT_STRING
+    partitions => error_code partition leader_epoch end_offset _tagged_fields 
+      error_code => INT16
+      partition => INT32
+      leader_epoch => INT32
+      end_offset => INT64
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>topics</td><td>Each topic we fetched offsets for.</td></tr>
+<tr>
+<td>topic</td><td>The topic name.</td></tr>
+<tr>
+<td>partitions</td><td>Each partition in the topic we fetched offsets for.</td></tr>
+<tr>
+<td>error_code</td><td>The error code 0, or if there was no error.</td></tr>
+<tr>
+<td>partition</td><td>The partition index.</td></tr>
+<tr>
+<td>leader_epoch</td><td>The leader epoch of the partition.</td></tr>
+<tr>
+<td>end_offset</td><td>The end offset of the epoch.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
 <h5><a name="The_Messages_AddPartitionsToTxn">AddPartitionsToTxn API (Key: 24):</a></h5>
@@ -9276,6 +10325,48 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>AddPartitionsToTxn Response (Version: 5) => throttle_time_ms error_code [results_by_transaction] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  results_by_transaction => transactional_id [topic_results] _tagged_fields 
+    transactional_id => COMPACT_STRING
+    topic_results => name [results_by_partition] _tagged_fields 
+      name => COMPACT_STRING
+      results_by_partition => partition_index partition_error_code _tagged_fields 
+        partition_index => INT32
+        partition_error_code => INT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>Duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The response top level error code.</td></tr>
+<tr>
+<td>results_by_transaction</td><td>Results categorized by transactional ID.</td></tr>
+<tr>
+<td>transactional_id</td><td>The transactional id corresponding to the transaction.</td></tr>
+<tr>
+<td>topic_results</td><td>The results for each topic.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>results_by_partition</td><td>The results for each partition.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition indexes.</td></tr>
+<tr>
+<td>partition_error_code</td><td>The response error code.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_AddOffsetsToTxn">AddOffsetsToTxn API (Key: 25):</a></h5>
 
 <b>Requests:</b><br>
@@ -9419,6 +10510,21 @@
 </tbody></table>
 </div>
 <div><pre>AddOffsetsToTxn Response (Version: 3) => throttle_time_ms error_code _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>Duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The response error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
+<div><pre>AddOffsetsToTxn Response (Version: 4) => throttle_time_ms error_code _tagged_fields 
   throttle_time_ms => INT32
   error_code => INT16
 </pre><p><b>Response header version:</b> 1</p>
@@ -9626,6 +10732,27 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>EndTxn Response (Version: 5) => throttle_time_ms error_code producer_id producer_epoch _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  producer_id => INT64
+  producer_epoch => INT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>producer_id</td><td>The producer ID.</td></tr>
+<tr>
+<td>producer_epoch</td><td>The current epoch associated with the producer.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_WriteTxnMarkers">WriteTxnMarkers API (Key: 27):</a></h5>
 
 <b>Requests:</b><br>
@@ -9667,6 +10794,42 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>WriteTxnMarkers Response (Version: 1) => [markers] _tagged_fields 
+  markers => producer_id [topics] _tagged_fields 
+    producer_id => INT64
+    topics => name [partitions] _tagged_fields 
+      name => COMPACT_STRING
+      partitions => partition_index error_code _tagged_fields 
+        partition_index => INT32
+        error_code => INT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>markers</td><td>The results for writing makers.</td></tr>
+<tr>
+<td>producer_id</td><td>The current producer ID in use by the transactional ID.</td></tr>
+<tr>
+<td>topics</td><td>The results by topic.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>partitions</td><td>The results by partition.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_TxnOffsetCommit">TxnOffsetCommit API (Key: 28):</a></h5>
 
 <b>Requests:</b><br>
@@ -10087,6 +11250,37 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>TxnOffsetCommit Response (Version: 5) => throttle_time_ms [topics] _tagged_fields 
+  throttle_time_ms => INT32
+  topics => name [partitions] _tagged_fields 
+    name => COMPACT_STRING
+    partitions => partition_index error_code _tagged_fields 
+      partition_index => INT32
+      error_code => INT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>topics</td><td>The responses for each topic.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>partitions</td><td>The responses for each partition in the topic.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_DescribeAcls">DescribeAcls API (Key: 29):</a></h5>
 
 <b>Requests:</b><br>
@@ -10223,6 +11417,55 @@
 </tbody></table>
 </div>
 <div><pre>DescribeAcls Response (Version: 2) => throttle_time_ms error_code error_message [resources] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  error_message => COMPACT_NULLABLE_STRING
+  resources => resource_type resource_name pattern_type [acls] _tagged_fields 
+    resource_type => INT8
+    resource_name => COMPACT_STRING
+    pattern_type => INT8
+    acls => principal host operation permission_type _tagged_fields 
+      principal => COMPACT_STRING
+      host => COMPACT_STRING
+      operation => INT8
+      permission_type => INT8
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if there was no error.</td></tr>
+<tr>
+<td>resources</td><td>Each Resource that is referenced in an ACL.</td></tr>
+<tr>
+<td>resource_type</td><td>The resource type.</td></tr>
+<tr>
+<td>resource_name</td><td>The resource name.</td></tr>
+<tr>
+<td>pattern_type</td><td>The resource pattern type.</td></tr>
+<tr>
+<td>acls</td><td>The ACLs.</td></tr>
+<tr>
+<td>principal</td><td>The ACL principal.</td></tr>
+<tr>
+<td>host</td><td>The ACL host.</td></tr>
+<tr>
+<td>operation</td><td>The ACL operation.</td></tr>
+<tr>
+<td>permission_type</td><td>The ACL permission type.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
+<div><pre>DescribeAcls Response (Version: 3) => throttle_time_ms error_code error_message [resources] _tagged_fields 
   throttle_time_ms => INT32
   error_code => INT16
   error_message => COMPACT_NULLABLE_STRING
@@ -10418,6 +11661,29 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>CreateAcls Response (Version: 3) => throttle_time_ms [results] _tagged_fields 
+  throttle_time_ms => INT32
+  results => error_code error_message _tagged_fields 
+    error_code => INT16
+    error_message => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>results</td><td>The results for each ACL creation.</td></tr>
+<tr>
+<td>error_code</td><td>The result error, or zero if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The result message, or null if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_DeleteAcls">DeleteAcls API (Key: 31):</a></h5>
 
 <b>Requests:</b><br>
@@ -10573,6 +11839,61 @@
 </tbody></table>
 </div>
 <div><pre>DeleteAcls Response (Version: 2) => throttle_time_ms [filter_results] _tagged_fields 
+  throttle_time_ms => INT32
+  filter_results => error_code error_message [matching_acls] _tagged_fields 
+    error_code => INT16
+    error_message => COMPACT_NULLABLE_STRING
+    matching_acls => error_code error_message resource_type resource_name pattern_type principal host operation permission_type _tagged_fields 
+      error_code => INT16
+      error_message => COMPACT_NULLABLE_STRING
+      resource_type => INT8
+      resource_name => COMPACT_STRING
+      pattern_type => INT8
+      principal => COMPACT_STRING
+      host => COMPACT_STRING
+      operation => INT8
+      permission_type => INT8
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>filter_results</td><td>The results for each filter.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if the filter succeeded.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if the filter succeeded.</td></tr>
+<tr>
+<td>matching_acls</td><td>The ACLs which matched this filter.</td></tr>
+<tr>
+<td>error_code</td><td>The deletion error code, or 0 if the deletion succeeded.</td></tr>
+<tr>
+<td>error_message</td><td>The deletion error message, or null if the deletion succeeded.</td></tr>
+<tr>
+<td>resource_type</td><td>The ACL resource type.</td></tr>
+<tr>
+<td>resource_name</td><td>The ACL resource name.</td></tr>
+<tr>
+<td>pattern_type</td><td>The ACL resource pattern type.</td></tr>
+<tr>
+<td>principal</td><td>The ACL principal.</td></tr>
+<tr>
+<td>host</td><td>The ACL host.</td></tr>
+<tr>
+<td>operation</td><td>The ACL operation.</td></tr>
+<tr>
+<td>permission_type</td><td>The ACL permission type.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
+<div><pre>DeleteAcls Response (Version: 3) => throttle_time_ms [filter_results] _tagged_fields 
   throttle_time_ms => INT32
   filter_results => error_code error_message [matching_acls] _tagged_fields 
     error_code => INT16
@@ -10900,6 +12221,75 @@
 <td>documentation</td><td>The configuration documentation.</td></tr>
 </tbody></table>
 </div>
+<div><pre>DescribeConfigs Response (Version: 4) => throttle_time_ms [results] _tagged_fields 
+  throttle_time_ms => INT32
+  results => error_code error_message resource_type resource_name [configs] _tagged_fields 
+    error_code => INT16
+    error_message => COMPACT_NULLABLE_STRING
+    resource_type => INT8
+    resource_name => COMPACT_STRING
+    configs => name value read_only config_source is_sensitive [synonyms] config_type documentation _tagged_fields 
+      name => COMPACT_STRING
+      value => COMPACT_NULLABLE_STRING
+      read_only => BOOLEAN
+      config_source => INT8
+      is_sensitive => BOOLEAN
+      synonyms => name value source _tagged_fields 
+        name => COMPACT_STRING
+        value => COMPACT_NULLABLE_STRING
+        source => INT8
+      config_type => INT8
+      documentation => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>results</td><td>The results for each resource.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if we were able to successfully describe the configurations.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if we were able to successfully describe the configurations.</td></tr>
+<tr>
+<td>resource_type</td><td>The resource type.</td></tr>
+<tr>
+<td>resource_name</td><td>The resource name.</td></tr>
+<tr>
+<td>configs</td><td>Each listed configuration.</td></tr>
+<tr>
+<td>name</td><td>The configuration name.</td></tr>
+<tr>
+<td>value</td><td>The configuration value.</td></tr>
+<tr>
+<td>read_only</td><td>True if the configuration is read-only.</td></tr>
+<tr>
+<td>config_source</td><td>The configuration source.</td></tr>
+<tr>
+<td>is_sensitive</td><td>True if this configuration is sensitive.</td></tr>
+<tr>
+<td>synonyms</td><td>The synonyms for this configuration key.</td></tr>
+<tr>
+<td>name</td><td>The synonym name.</td></tr>
+<tr>
+<td>value</td><td>The synonym value.</td></tr>
+<tr>
+<td>source</td><td>The synonym source.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>config_type</td><td>The configuration data type. Type can be one of the following values - BOOLEAN, STRING, INT, SHORT, LONG, DOUBLE, LIST, CLASS, PASSWORD.</td></tr>
+<tr>
+<td>documentation</td><td>The configuration documentation.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_AlterConfigs">AlterConfigs API (Key: 33):</a></h5>
 
 <b>Requests:</b><br>
@@ -11044,6 +12434,35 @@
 <td>resource_name</td><td>The resource name.</td></tr>
 </tbody></table>
 </div>
+<div><pre>AlterConfigs Response (Version: 2) => throttle_time_ms [responses] _tagged_fields 
+  throttle_time_ms => INT32
+  responses => error_code error_message resource_type resource_name _tagged_fields 
+    error_code => INT16
+    error_message => COMPACT_NULLABLE_STRING
+    resource_type => INT8
+    resource_name => COMPACT_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>Duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>responses</td><td>The responses for each resource.</td></tr>
+<tr>
+<td>error_code</td><td>The resource error code.</td></tr>
+<tr>
+<td>error_message</td><td>The resource error message, or null if there was no error.</td></tr>
+<tr>
+<td>resource_type</td><td>The resource type.</td></tr>
+<tr>
+<td>resource_name</td><td>The resource name.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_AlterReplicaLogDirs">AlterReplicaLogDirs API (Key: 34):</a></h5>
 
 <b>Requests:</b><br>
@@ -11121,6 +12540,37 @@
 <td>partition_index</td><td>The partition index.</td></tr>
 <tr>
 <td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+</tbody></table>
+</div>
+<div><pre>AlterReplicaLogDirs Response (Version: 2) => throttle_time_ms [results] _tagged_fields 
+  throttle_time_ms => INT32
+  results => topic_name [partitions] _tagged_fields 
+    topic_name => COMPACT_STRING
+    partitions => partition_index error_code _tagged_fields 
+      partition_index => INT32
+      error_code => INT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>Duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>results</td><td>The results for each topic.</td></tr>
+<tr>
+<td>topic_name</td><td>The name of the topic.</td></tr>
+<tr>
+<td>partitions</td><td>The results for each partition.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
 <h5><a name="The_Messages_DescribeLogDirs">DescribeLogDirs API (Key: 35):</a></h5>
@@ -11342,6 +12792,63 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>DescribeLogDirs Response (Version: 4) => throttle_time_ms error_code [results] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  results => error_code log_dir [topics] total_bytes usable_bytes _tagged_fields 
+    error_code => INT16
+    log_dir => COMPACT_STRING
+    topics => name [partitions] _tagged_fields 
+      name => COMPACT_STRING
+      partitions => partition_index partition_size offset_lag is_future_key _tagged_fields 
+        partition_index => INT32
+        partition_size => INT64
+        offset_lag => INT64
+        is_future_key => BOOLEAN
+    total_bytes => INT64
+    usable_bytes => INT64
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>results</td><td>The log directories.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>log_dir</td><td>The absolute log directory path.</td></tr>
+<tr>
+<td>topics</td><td>The topics.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>partitions</td><td>The partitions.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>partition_size</td><td>The size of the log segments in this partition in bytes.</td></tr>
+<tr>
+<td>offset_lag</td><td>The lag of the log's LEO w.r.t. partition's HW (if it is the current log for the partition) or current replica's LEO (if it is the future log for the partition).</td></tr>
+<tr>
+<td>is_future_key</td><td>True if this log is created by AlterReplicaLogDirsRequest and will replace the current log of the replica in the future.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>total_bytes</td><td>The total size in bytes of the volume the log directory is in.</td></tr>
+<tr>
+<td>usable_bytes</td><td>The usable size in bytes of the volume the log directory is in.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_SaslAuthenticate">SaslAuthenticate API (Key: 36):</a></h5>
 
 <b>Requests:</b><br>
@@ -11411,6 +12918,27 @@
 <td>auth_bytes</td><td>The SASL authentication bytes from the server, as defined by the SASL mechanism.</td></tr>
 <tr>
 <td>session_lifetime_ms</td><td>Number of milliseconds after which only re-authentication over the existing connection to create a new session can occur.</td></tr>
+</tbody></table>
+</div>
+<div><pre>SaslAuthenticate Response (Version: 2) => error_code error_message auth_bytes session_lifetime_ms _tagged_fields 
+  error_code => INT16
+  error_message => COMPACT_NULLABLE_STRING
+  auth_bytes => COMPACT_BYTES
+  session_lifetime_ms => INT64
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if there was no error.</td></tr>
+<tr>
+<td>auth_bytes</td><td>The SASL authentication bytes from the server, as defined by the SASL mechanism.</td></tr>
+<tr>
+<td>session_lifetime_ms</td><td>Number of milliseconds after which only re-authentication over the existing connection to create a new session can occur.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
 <h5><a name="The_Messages_CreatePartitions">CreatePartitions API (Key: 37):</a></h5>
@@ -11611,6 +13139,32 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>CreatePartitions Response (Version: 3) => throttle_time_ms [results] _tagged_fields 
+  throttle_time_ms => INT32
+  results => name error_code error_message _tagged_fields 
+    name => COMPACT_STRING
+    error_code => INT16
+    error_message => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>results</td><td>The partition creation results for each topic.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>error_code</td><td>The result error, or zero if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The result message, or null if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_CreateDelegationToken">CreateDelegationToken API (Key: 38):</a></h5>
 
 <b>Requests:</b><br>
@@ -11756,6 +13310,48 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>CreateDelegationToken Response (Version: 3) => error_code principal_type principal_name token_requester_principal_type token_requester_principal_name issue_timestamp_ms expiry_timestamp_ms max_timestamp_ms token_id hmac throttle_time_ms _tagged_fields 
+  error_code => INT16
+  principal_type => COMPACT_STRING
+  principal_name => COMPACT_STRING
+  token_requester_principal_type => COMPACT_STRING
+  token_requester_principal_name => COMPACT_STRING
+  issue_timestamp_ms => INT64
+  expiry_timestamp_ms => INT64
+  max_timestamp_ms => INT64
+  token_id => COMPACT_STRING
+  hmac => COMPACT_BYTES
+  throttle_time_ms => INT32
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>error_code</td><td>The top-level error, or zero if there was no error.</td></tr>
+<tr>
+<td>principal_type</td><td>The principal type of the token owner.</td></tr>
+<tr>
+<td>principal_name</td><td>The name of the token owner.</td></tr>
+<tr>
+<td>token_requester_principal_type</td><td>The principal type of the requester of the token.</td></tr>
+<tr>
+<td>token_requester_principal_name</td><td>The principal type of the requester of the token.</td></tr>
+<tr>
+<td>issue_timestamp_ms</td><td>When this token was generated.</td></tr>
+<tr>
+<td>expiry_timestamp_ms</td><td>When this token expires.</td></tr>
+<tr>
+<td>max_timestamp_ms</td><td>The maximum lifetime of this token.</td></tr>
+<tr>
+<td>token_id</td><td>The token UUID.</td></tr>
+<tr>
+<td>hmac</td><td>HMAC of the delegation token.</td></tr>
+<tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_RenewDelegationToken">RenewDelegationToken API (Key: 39):</a></h5>
 
 <b>Requests:</b><br>
@@ -11804,6 +13400,24 @@
 <td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
 </tbody></table>
 </div>
+<div><pre>RenewDelegationToken Response (Version: 2) => error_code expiry_timestamp_ms throttle_time_ms _tagged_fields 
+  error_code => INT16
+  expiry_timestamp_ms => INT64
+  throttle_time_ms => INT32
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>expiry_timestamp_ms</td><td>The timestamp in milliseconds at which this token expires.</td></tr>
+<tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_ExpireDelegationToken">ExpireDelegationToken API (Key: 40):</a></h5>
 
 <b>Requests:</b><br>
@@ -11850,6 +13464,24 @@
 <td>expiry_timestamp_ms</td><td>The timestamp in milliseconds at which this token expires.</td></tr>
 <tr>
 <td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+</tbody></table>
+</div>
+<div><pre>ExpireDelegationToken Response (Version: 2) => error_code expiry_timestamp_ms throttle_time_ms _tagged_fields 
+  error_code => INT16
+  expiry_timestamp_ms => INT64
+  throttle_time_ms => INT32
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>expiry_timestamp_ms</td><td>The timestamp in milliseconds at which this token expires.</td></tr>
+<tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
 <h5><a name="The_Messages_DescribeDelegationToken">DescribeDelegationToken API (Key: 41):</a></h5>
@@ -12010,6 +13642,64 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>DescribeDelegationToken Response (Version: 3) => error_code [tokens] throttle_time_ms _tagged_fields 
+  error_code => INT16
+  tokens => principal_type principal_name token_requester_principal_type token_requester_principal_name issue_timestamp expiry_timestamp max_timestamp token_id hmac [renewers] _tagged_fields 
+    principal_type => COMPACT_STRING
+    principal_name => COMPACT_STRING
+    token_requester_principal_type => COMPACT_STRING
+    token_requester_principal_name => COMPACT_STRING
+    issue_timestamp => INT64
+    expiry_timestamp => INT64
+    max_timestamp => INT64
+    token_id => COMPACT_STRING
+    hmac => COMPACT_BYTES
+    renewers => principal_type principal_name _tagged_fields 
+      principal_type => COMPACT_STRING
+      principal_name => COMPACT_STRING
+  throttle_time_ms => INT32
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>tokens</td><td>The tokens.</td></tr>
+<tr>
+<td>principal_type</td><td>The token principal type.</td></tr>
+<tr>
+<td>principal_name</td><td>The token principal name.</td></tr>
+<tr>
+<td>token_requester_principal_type</td><td>The principal type of the requester of the token.</td></tr>
+<tr>
+<td>token_requester_principal_name</td><td>The principal type of the requester of the token.</td></tr>
+<tr>
+<td>issue_timestamp</td><td>The token issue timestamp in milliseconds.</td></tr>
+<tr>
+<td>expiry_timestamp</td><td>The token expiry timestamp in milliseconds.</td></tr>
+<tr>
+<td>max_timestamp</td><td>The token maximum timestamp length in milliseconds.</td></tr>
+<tr>
+<td>token_id</td><td>The token ID.</td></tr>
+<tr>
+<td>hmac</td><td>The token HMAC.</td></tr>
+<tr>
+<td>renewers</td><td>Those who are able to renew this token before it expires.</td></tr>
+<tr>
+<td>principal_type</td><td>The renewer principal type.</td></tr>
+<tr>
+<td>principal_name</td><td>The renewer principal name.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_DeleteGroups">DeleteGroups API (Key: 42):</a></h5>
 
 <b>Requests:</b><br>
@@ -12082,6 +13772,29 @@
 <td>group_id</td><td>The group id.</td></tr>
 <tr>
 <td>error_code</td><td>The deletion error, or 0 if the deletion succeeded.</td></tr>
+</tbody></table>
+</div>
+<div><pre>DeleteGroups Response (Version: 2) => throttle_time_ms [results] _tagged_fields 
+  throttle_time_ms => INT32
+  results => group_id error_code _tagged_fields 
+    group_id => COMPACT_STRING
+    error_code => INT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>results</td><td>The deletion results.</td></tr>
+<tr>
+<td>group_id</td><td>The group id.</td></tr>
+<tr>
+<td>error_code</td><td>The deletion error, or 0 if the deletion succeeded.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
 <h5><a name="The_Messages_ElectLeaders">ElectLeaders API (Key: 43):</a></h5>
@@ -12214,6 +13927,43 @@
 <td>error_message</td><td>The result message, or null if there was no error.</td></tr>
 </tbody></table>
 </div>
+<div><pre>ElectLeaders Response (Version: 2) => throttle_time_ms error_code [replica_election_results] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  replica_election_results => topic [partition_result] _tagged_fields 
+    topic => COMPACT_STRING
+    partition_result => partition_id error_code error_message _tagged_fields 
+      partition_id => INT32
+      error_code => INT16
+      error_message => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The top level response error code.</td></tr>
+<tr>
+<td>replica_election_results</td><td>The election results, or an empty array if the requester did not have permission and the request asks for all partitions.</td></tr>
+<tr>
+<td>topic</td><td>The topic name.</td></tr>
+<tr>
+<td>partition_result</td><td>The results for each partition.</td></tr>
+<tr>
+<td>partition_id</td><td>The partition id.</td></tr>
+<tr>
+<td>error_code</td><td>The result error, or zero if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The result message, or null if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_IncrementalAlterConfigs">IncrementalAlterConfigs API (Key: 44):</a></h5>
 
 <b>Requests:</b><br>
@@ -12311,6 +14061,35 @@
 <td>resource_name</td><td>The resource name.</td></tr>
 </tbody></table>
 </div>
+<div><pre>IncrementalAlterConfigs Response (Version: 1) => throttle_time_ms [responses] _tagged_fields 
+  throttle_time_ms => INT32
+  responses => error_code error_message resource_type resource_name _tagged_fields 
+    error_code => INT16
+    error_message => COMPACT_NULLABLE_STRING
+    resource_type => INT8
+    resource_name => COMPACT_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>Duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>responses</td><td>The responses for each resource.</td></tr>
+<tr>
+<td>error_code</td><td>The resource error code.</td></tr>
+<tr>
+<td>error_message</td><td>The resource error message, or null if there was no error.</td></tr>
+<tr>
+<td>resource_type</td><td>The resource type.</td></tr>
+<tr>
+<td>resource_name</td><td>The resource name.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_AlterPartitionReassignments">AlterPartitionReassignments API (Key: 45):</a></h5>
 
 <b>Requests:</b><br>
@@ -12346,6 +14125,46 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>AlterPartitionReassignments Response (Version: 0) => throttle_time_ms error_code error_message [responses] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  error_message => COMPACT_NULLABLE_STRING
+  responses => name [partitions] _tagged_fields 
+    name => COMPACT_STRING
+    partitions => partition_index error_code error_message _tagged_fields 
+      partition_index => INT32
+      error_code => INT16
+      error_message => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The top-level error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The top-level error message, or null if there was no error.</td></tr>
+<tr>
+<td>responses</td><td>The responses to topics to reassign.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>partitions</td><td>The responses to partitions to reassign.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The error code for this partition, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The error message for this partition, or null if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_ListPartitionReassignments">ListPartitionReassignments API (Key: 46):</a></h5>
 
 <b>Requests:</b><br>
@@ -12373,6 +14192,49 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>ListPartitionReassignments Response (Version: 0) => throttle_time_ms error_code error_message [topics] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  error_message => COMPACT_NULLABLE_STRING
+  topics => name [partitions] _tagged_fields 
+    name => COMPACT_STRING
+    partitions => partition_index [replicas] [adding_replicas] [removing_replicas] _tagged_fields 
+      partition_index => INT32
+      replicas => INT32
+      adding_replicas => INT32
+      removing_replicas => INT32
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The top-level error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The top-level error message, or null if there was no error.</td></tr>
+<tr>
+<td>topics</td><td>The ongoing reassignments for each topic.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>partitions</td><td>The ongoing reassignments for each partition.</td></tr>
+<tr>
+<td>partition_index</td><td>The index of the partition.</td></tr>
+<tr>
+<td>replicas</td><td>The current replica set.</td></tr>
+<tr>
+<td>adding_replicas</td><td>The set of replicas we are currently adding.</td></tr>
+<tr>
+<td>removing_replicas</td><td>The set of replicas we are currently removing.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_OffsetDelete">OffsetDelete API (Key: 47):</a></h5>
 
 <b>Requests:</b><br>
@@ -12399,6 +14261,34 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>OffsetDelete Response (Version: 0) => error_code throttle_time_ms [topics] 
+  error_code => INT16
+  throttle_time_ms => INT32
+  topics => name [partitions] 
+    name => STRING
+    partitions => partition_index error_code 
+      partition_index => INT32
+      error_code => INT16
+</pre><p><b>Response header version:</b> 0</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>error_code</td><td>The top-level error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>topics</td><td>The responses for each topic.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>partitions</td><td>The responses for each partition in the topic.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_DescribeClientQuotas">DescribeClientQuotas API (Key: 48):</a></h5>
 
 <b>Requests:</b><br>
@@ -12486,6 +14376,51 @@
 <td>key</td><td>The quota configuration key.</td></tr>
 <tr>
 <td>value</td><td>The quota configuration value.</td></tr>
+</tbody></table>
+</div>
+<div><pre>DescribeClientQuotas Response (Version: 1) => throttle_time_ms error_code error_message [entries] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  error_message => COMPACT_NULLABLE_STRING
+  entries => [entity] [values] _tagged_fields 
+    entity => entity_type entity_name _tagged_fields 
+      entity_type => COMPACT_STRING
+      entity_name => COMPACT_NULLABLE_STRING
+    values => key value _tagged_fields 
+      key => COMPACT_STRING
+      value => FLOAT64
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or `0` if the quota description succeeded.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or `null` if the quota description succeeded.</td></tr>
+<tr>
+<td>entries</td><td>A result entry.</td></tr>
+<tr>
+<td>entity</td><td>The quota entity description.</td></tr>
+<tr>
+<td>entity_type</td><td>The entity type.</td></tr>
+<tr>
+<td>entity_name</td><td>The entity name, or null if the default.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>values</td><td>The quota values for the entity.</td></tr>
+<tr>
+<td>key</td><td>The quota configuration key.</td></tr>
+<tr>
+<td>value</td><td>The quota configuration value.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
 <h5><a name="The_Messages_AlterClientQuotas">AlterClientQuotas API (Key: 49):</a></h5>
@@ -12596,6 +14531,40 @@
 <td>entity_name</td><td>The name of the entity, or null if the default.</td></tr>
 </tbody></table>
 </div>
+<div><pre>AlterClientQuotas Response (Version: 1) => throttle_time_ms [entries] _tagged_fields 
+  throttle_time_ms => INT32
+  entries => error_code error_message [entity] _tagged_fields 
+    error_code => INT16
+    error_message => COMPACT_NULLABLE_STRING
+    entity => entity_type entity_name _tagged_fields 
+      entity_type => COMPACT_STRING
+      entity_name => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>entries</td><td>The quota configuration entries to alter.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or `0` if the quota alteration succeeded.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or `null` if the quota alteration succeeded.</td></tr>
+<tr>
+<td>entity</td><td>The quota entity to alter.</td></tr>
+<tr>
+<td>entity_type</td><td>The entity type.</td></tr>
+<tr>
+<td>entity_name</td><td>The name of the entity, or null if the default.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_DescribeUserScramCredentials">DescribeUserScramCredentials API (Key: 50):</a></h5>
 
 <b>Requests:</b><br>
@@ -12617,6 +14586,49 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>DescribeUserScramCredentials Response (Version: 0) => throttle_time_ms error_code error_message [results] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  error_message => COMPACT_NULLABLE_STRING
+  results => user error_code error_message [credential_infos] _tagged_fields 
+    user => COMPACT_STRING
+    error_code => INT16
+    error_message => COMPACT_NULLABLE_STRING
+    credential_infos => mechanism iterations _tagged_fields 
+      mechanism => INT8
+      iterations => INT32
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The message-level error code, 0 except for user authorization or infrastructure issues.</td></tr>
+<tr>
+<td>error_message</td><td>The message-level error message, if any.</td></tr>
+<tr>
+<td>results</td><td>The results for descriptions, one per user.</td></tr>
+<tr>
+<td>user</td><td>The user name.</td></tr>
+<tr>
+<td>error_code</td><td>The user-level error code.</td></tr>
+<tr>
+<td>error_message</td><td>The user-level error message, if any.</td></tr>
+<tr>
+<td>credential_infos</td><td>The mechanism and related information associated with the user's SCRAM credentials.</td></tr>
+<tr>
+<td>mechanism</td><td>The SCRAM mechanism.</td></tr>
+<tr>
+<td>iterations</td><td>The number of iterations used in the SCRAM credential.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_AlterUserScramCredentials">AlterUserScramCredentials API (Key: 51):</a></h5>
 
 <b>Requests:</b><br>
@@ -12661,6 +14673,32 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>AlterUserScramCredentials Response (Version: 0) => throttle_time_ms [results] _tagged_fields 
+  throttle_time_ms => INT32
+  results => user error_code error_message _tagged_fields 
+    user => COMPACT_STRING
+    error_code => INT16
+    error_message => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>results</td><td>The results for deletions and alterations, one per affected user.</td></tr>
+<tr>
+<td>user</td><td>The user name.</td></tr>
+<tr>
+<td>error_code</td><td>The error code.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, if any.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_DescribeQuorum">DescribeQuorum API (Key: 55):</a></h5>
 
 <b>Requests:</b><br>
@@ -12860,6 +14898,102 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>DescribeQuorum Response (Version: 2) => error_code error_message [topics] [nodes] _tagged_fields 
+  error_code => INT16
+  error_message => COMPACT_NULLABLE_STRING
+  topics => topic_name [partitions] _tagged_fields 
+    topic_name => COMPACT_STRING
+    partitions => partition_index error_code error_message leader_id leader_epoch high_watermark [current_voters] [observers] _tagged_fields 
+      partition_index => INT32
+      error_code => INT16
+      error_message => COMPACT_NULLABLE_STRING
+      leader_id => INT32
+      leader_epoch => INT32
+      high_watermark => INT64
+      current_voters => replica_id replica_directory_id log_end_offset last_fetch_timestamp last_caught_up_timestamp _tagged_fields 
+        replica_id => INT32
+        replica_directory_id => UUID
+        log_end_offset => INT64
+        last_fetch_timestamp => INT64
+        last_caught_up_timestamp => INT64
+      observers => replica_id replica_directory_id log_end_offset last_fetch_timestamp last_caught_up_timestamp _tagged_fields 
+        replica_id => INT32
+        replica_directory_id => UUID
+        log_end_offset => INT64
+        last_fetch_timestamp => INT64
+        last_caught_up_timestamp => INT64
+  nodes => node_id [listeners] _tagged_fields 
+    node_id => INT32
+    listeners => name host port _tagged_fields 
+      name => COMPACT_STRING
+      host => COMPACT_STRING
+      port => UINT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>error_code</td><td>The top level error code.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if there was no error.</td></tr>
+<tr>
+<td>topics</td><td>The response from the describe quorum API.</td></tr>
+<tr>
+<td>topic_name</td><td>The topic name.</td></tr>
+<tr>
+<td>partitions</td><td>The partition data.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The partition error code.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if there was no error.</td></tr>
+<tr>
+<td>leader_id</td><td>The ID of the current leader or -1 if the leader is unknown.</td></tr>
+<tr>
+<td>leader_epoch</td><td>The latest known leader epoch.</td></tr>
+<tr>
+<td>high_watermark</td><td>The high water mark.</td></tr>
+<tr>
+<td>current_voters</td><td>The current voters of the partition.</td></tr>
+<tr>
+<td>replica_id</td><td>The ID of the replica.</td></tr>
+<tr>
+<td>replica_directory_id</td><td>The replica directory ID of the replica.</td></tr>
+<tr>
+<td>log_end_offset</td><td>The last known log end offset of the follower or -1 if it is unknown.</td></tr>
+<tr>
+<td>last_fetch_timestamp</td><td>The last known leader wall clock time time when a follower fetched from the leader. This is reported as -1 both for the current leader or if it is unknown for a voter.</td></tr>
+<tr>
+<td>last_caught_up_timestamp</td><td>The leader wall clock append time of the offset for which the follower made the most recent fetch request. This is reported as the current time for the leader and -1 if unknown for a voter.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>observers</td><td>The observers of the partition.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>nodes</td><td>The nodes in the quorum.</td></tr>
+<tr>
+<td>node_id</td><td>The ID of the associated node.</td></tr>
+<tr>
+<td>listeners</td><td>The listeners of this controller.</td></tr>
+<tr>
+<td>name</td><td>The name of the endpoint.</td></tr>
+<tr>
+<td>host</td><td>The hostname.</td></tr>
+<tr>
+<td>port</td><td>The port.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_UpdateFeatures">UpdateFeatures API (Key: 57):</a></h5>
 
 <b>Requests:</b><br>
@@ -13012,6 +15146,24 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>UpdateFeatures Response (Version: 2) => throttle_time_ms error_code error_message _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  error_message => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The top-level error code, or `0` if there was no top-level error.</td></tr>
+<tr>
+<td>error_message</td><td>The top-level error message, or `null` if there was no top-level error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_DescribeCluster">DescribeCluster API (Key: 60):</a></h5>
 
 <b>Requests:</b><br>
@@ -13152,6 +15304,56 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>DescribeCluster Response (Version: 2) => throttle_time_ms error_code error_message endpoint_type cluster_id controller_id [brokers] cluster_authorized_operations _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  error_message => COMPACT_NULLABLE_STRING
+  endpoint_type => INT8
+  cluster_id => COMPACT_STRING
+  controller_id => INT32
+  brokers => broker_id host port rack is_fenced _tagged_fields 
+    broker_id => INT32
+    host => COMPACT_STRING
+    port => INT32
+    rack => COMPACT_NULLABLE_STRING
+    is_fenced => BOOLEAN
+  cluster_authorized_operations => INT32
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The top-level error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The top-level error message, or null if there was no error.</td></tr>
+<tr>
+<td>endpoint_type</td><td>The endpoint type that was described. 1=brokers, 2=controllers.</td></tr>
+<tr>
+<td>cluster_id</td><td>The cluster ID that responding broker belongs to.</td></tr>
+<tr>
+<td>controller_id</td><td>The ID of the controller broker.</td></tr>
+<tr>
+<td>brokers</td><td>Each broker in the response.</td></tr>
+<tr>
+<td>broker_id</td><td>The broker ID.</td></tr>
+<tr>
+<td>host</td><td>The broker hostname.</td></tr>
+<tr>
+<td>port</td><td>The broker port.</td></tr>
+<tr>
+<td>rack</td><td>The rack of the broker, or null if it has not been assigned to a rack.</td></tr>
+<tr>
+<td>is_fenced</td><td>Whether the broker is fenced</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>cluster_authorized_operations</td><td>32-bit bitfield to represent authorized operations for this cluster.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_DescribeProducers">DescribeProducers API (Key: 61):</a></h5>
 
 <b>Requests:</b><br>
@@ -13176,6 +15378,63 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>DescribeProducers Response (Version: 0) => throttle_time_ms [topics] _tagged_fields 
+  throttle_time_ms => INT32
+  topics => name [partitions] _tagged_fields 
+    name => COMPACT_STRING
+    partitions => partition_index error_code error_message [active_producers] _tagged_fields 
+      partition_index => INT32
+      error_code => INT16
+      error_message => COMPACT_NULLABLE_STRING
+      active_producers => producer_id producer_epoch last_sequence last_timestamp coordinator_epoch current_txn_start_offset _tagged_fields 
+        producer_id => INT64
+        producer_epoch => INT32
+        last_sequence => INT32
+        last_timestamp => INT64
+        coordinator_epoch => INT32
+        current_txn_start_offset => INT64
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>topics</td><td>Each topic in the response.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>partitions</td><td>Each partition in the response.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The partition error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The partition error message, which may be null if no additional details are available.</td></tr>
+<tr>
+<td>active_producers</td><td>The active producers for the partition.</td></tr>
+<tr>
+<td>producer_id</td><td>The producer id.</td></tr>
+<tr>
+<td>producer_epoch</td><td>The producer epoch.</td></tr>
+<tr>
+<td>last_sequence</td><td>The last sequence number sent by the producer.</td></tr>
+<tr>
+<td>last_timestamp</td><td>The last timestamp sent by the producer.</td></tr>
+<tr>
+<td>coordinator_epoch</td><td>The current epoch of the producer group.</td></tr>
+<tr>
+<td>current_txn_start_offset</td><td>The current transaction start offset of the producer.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_UnregisterBroker">UnregisterBroker API (Key: 64):</a></h5>
 
 <b>Requests:</b><br>
@@ -13192,6 +15451,24 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>UnregisterBroker Response (Version: 0) => throttle_time_ms error_code error_message _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  error_message => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>Duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The top-level error message, or `null` if there was no top-level error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_DescribeTransactions">DescribeTransactions API (Key: 65):</a></h5>
 
 <b>Requests:</b><br>
@@ -13208,6 +15485,55 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>DescribeTransactions Response (Version: 0) => throttle_time_ms [transaction_states] _tagged_fields 
+  throttle_time_ms => INT32
+  transaction_states => error_code transactional_id transaction_state transaction_timeout_ms transaction_start_time_ms producer_id producer_epoch [topics] _tagged_fields 
+    error_code => INT16
+    transactional_id => COMPACT_STRING
+    transaction_state => COMPACT_STRING
+    transaction_timeout_ms => INT32
+    transaction_start_time_ms => INT64
+    producer_id => INT64
+    producer_epoch => INT16
+    topics => topic [partitions] _tagged_fields 
+      topic => COMPACT_STRING
+      partitions => INT32
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>transaction_states</td><td>The current state of the transaction.</td></tr>
+<tr>
+<td>error_code</td><td>The error code.</td></tr>
+<tr>
+<td>transactional_id</td><td>The transactional id.</td></tr>
+<tr>
+<td>transaction_state</td><td>The current transaction state of the producer.</td></tr>
+<tr>
+<td>transaction_timeout_ms</td><td>The timeout in milliseconds for the transaction.</td></tr>
+<tr>
+<td>transaction_start_time_ms</td><td>The start time of the transaction in milliseconds.</td></tr>
+<tr>
+<td>producer_id</td><td>The current producer id associated with the transaction.</td></tr>
+<tr>
+<td>producer_epoch</td><td>The current epoch associated with the producer id.</td></tr>
+<tr>
+<td>topics</td><td>The set of partitions included in the current transaction (if active). When a transaction is preparing to commit or abort, this will include only partitions which do not have markers.</td></tr>
+<tr>
+<td>topic</td><td>The topic name.</td></tr>
+<tr>
+<td>partitions</td><td>The partition ids included in the current transaction.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_ListTransactions">ListTransactions API (Key: 66):</a></h5>
 
 <b>Requests:</b><br>
@@ -13246,6 +15572,38 @@
 </div>
 <b>Responses:</b><br>
 <div><pre>ListTransactions Response (Version: 0) => throttle_time_ms error_code [unknown_state_filters] [transaction_states] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  unknown_state_filters => COMPACT_STRING
+  transaction_states => transactional_id producer_id transaction_state _tagged_fields 
+    transactional_id => COMPACT_STRING
+    producer_id => INT64
+    transaction_state => COMPACT_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>unknown_state_filters</td><td>Set of state filters provided in the request which were unknown to the transaction coordinator.</td></tr>
+<tr>
+<td>transaction_states</td><td>The current state of the transaction for the transactional id.</td></tr>
+<tr>
+<td>transactional_id</td><td>The transactional id.</td></tr>
+<tr>
+<td>producer_id</td><td>The producer id.</td></tr>
+<tr>
+<td>transaction_state</td><td>The current transaction state of the producer.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
+<div><pre>ListTransactions Response (Version: 1) => throttle_time_ms error_code [unknown_state_filters] [transaction_states] _tagged_fields 
   throttle_time_ms => INT32
   error_code => INT16
   unknown_state_filters => COMPACT_STRING
@@ -13373,6 +15731,49 @@
 </div>
 <b>Responses:</b><br>
 <div><pre>ConsumerGroupHeartbeat Response (Version: 0) => throttle_time_ms error_code error_message member_id member_epoch heartbeat_interval_ms assignment _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  error_message => COMPACT_NULLABLE_STRING
+  member_id => COMPACT_NULLABLE_STRING
+  member_epoch => INT32
+  heartbeat_interval_ms => INT32
+  assignment => [topic_partitions] _tagged_fields 
+    topic_partitions => topic_id [partitions] _tagged_fields 
+      topic_id => UUID
+      partitions => INT32
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The top-level error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The top-level error message, or null if there was no error.</td></tr>
+<tr>
+<td>member_id</td><td>The member id is generated by the consumer starting from version 1, while in version 0, it can be provided by users or generated by the group coordinator.</td></tr>
+<tr>
+<td>member_epoch</td><td>The member epoch.</td></tr>
+<tr>
+<td>heartbeat_interval_ms</td><td>The heartbeat interval in milliseconds.</td></tr>
+<tr>
+<td>assignment</td><td>null if not provided; the assignment otherwise.</td></tr>
+<tr>
+<td>topic_partitions</td><td>The partitions assigned to the member that can be used immediately.</td></tr>
+<tr>
+<td>topic_id</td><td>The topic ID.</td></tr>
+<tr>
+<td>partitions</td><td>The partitions.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
+<div><pre>ConsumerGroupHeartbeat Response (Version: 1) => throttle_time_ms error_code error_message member_id member_epoch heartbeat_interval_ms assignment _tagged_fields 
   throttle_time_ms => INT32
   error_code => INT16
   error_message => COMPACT_NULLABLE_STRING
@@ -13545,6 +15946,105 @@
 <td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 </div>
+<div><pre>ConsumerGroupDescribe Response (Version: 1) => throttle_time_ms [groups] _tagged_fields 
+  throttle_time_ms => INT32
+  groups => error_code error_message group_id group_state group_epoch assignment_epoch assignor_name [members] authorized_operations _tagged_fields 
+    error_code => INT16
+    error_message => COMPACT_NULLABLE_STRING
+    group_id => COMPACT_STRING
+    group_state => COMPACT_STRING
+    group_epoch => INT32
+    assignment_epoch => INT32
+    assignor_name => COMPACT_STRING
+    members => member_id instance_id rack_id member_epoch client_id client_host [subscribed_topic_names] subscribed_topic_regex assignment target_assignment member_type _tagged_fields 
+      member_id => COMPACT_STRING
+      instance_id => COMPACT_NULLABLE_STRING
+      rack_id => COMPACT_NULLABLE_STRING
+      member_epoch => INT32
+      client_id => COMPACT_STRING
+      client_host => COMPACT_STRING
+      subscribed_topic_names => COMPACT_STRING
+      subscribed_topic_regex => COMPACT_NULLABLE_STRING
+      assignment => [topic_partitions] _tagged_fields 
+        topic_partitions => topic_id topic_name [partitions] _tagged_fields 
+          topic_id => UUID
+          topic_name => COMPACT_STRING
+          partitions => INT32
+      target_assignment => [topic_partitions] _tagged_fields 
+        topic_partitions => topic_id topic_name [partitions] _tagged_fields 
+          topic_id => UUID
+          topic_name => COMPACT_STRING
+          partitions => INT32
+      member_type => INT8
+    authorized_operations => INT32
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>groups</td><td>Each described group.</td></tr>
+<tr>
+<td>error_code</td><td>The describe error, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The top-level error message, or null if there was no error.</td></tr>
+<tr>
+<td>group_id</td><td>The group ID string.</td></tr>
+<tr>
+<td>group_state</td><td>The group state string, or the empty string.</td></tr>
+<tr>
+<td>group_epoch</td><td>The group epoch.</td></tr>
+<tr>
+<td>assignment_epoch</td><td>The assignment epoch.</td></tr>
+<tr>
+<td>assignor_name</td><td>The selected assignor.</td></tr>
+<tr>
+<td>members</td><td>The members.</td></tr>
+<tr>
+<td>member_id</td><td>The member ID.</td></tr>
+<tr>
+<td>instance_id</td><td>The member instance ID.</td></tr>
+<tr>
+<td>rack_id</td><td>The member rack ID.</td></tr>
+<tr>
+<td>member_epoch</td><td>The current member epoch.</td></tr>
+<tr>
+<td>client_id</td><td>The client ID.</td></tr>
+<tr>
+<td>client_host</td><td>The client host.</td></tr>
+<tr>
+<td>subscribed_topic_names</td><td>The subscribed topic names.</td></tr>
+<tr>
+<td>subscribed_topic_regex</td><td>the subscribed topic regex otherwise or null of not provided.</td></tr>
+<tr>
+<td>assignment</td><td>The current assignment.</td></tr>
+<tr>
+<td>topic_partitions</td><td>The assigned topic-partitions to the member.</td></tr>
+<tr>
+<td>topic_id</td><td>The topic ID.</td></tr>
+<tr>
+<td>topic_name</td><td>The topic name.</td></tr>
+<tr>
+<td>partitions</td><td>The partitions.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>target_assignment</td><td>The target assignment.</td></tr>
+<tr>
+<td>member_type</td><td>-1 for unknown. 0 for classic member. +1 for consumer member.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>authorized_operations</td><td>32-bit bitfield to represent authorized operations for this group.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_GetTelemetrySubscriptions">GetTelemetrySubscriptions API (Key: 71):</a></h5>
 
 <b>Requests:</b><br>
@@ -13561,6 +16061,42 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>GetTelemetrySubscriptions Response (Version: 0) => throttle_time_ms error_code client_instance_id subscription_id [accepted_compression_types] push_interval_ms telemetry_max_bytes delta_temporality [requested_metrics] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  client_instance_id => UUID
+  subscription_id => INT32
+  accepted_compression_types => INT8
+  push_interval_ms => INT32
+  telemetry_max_bytes => INT32
+  delta_temporality => BOOLEAN
+  requested_metrics => COMPACT_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>client_instance_id</td><td>Assigned client instance id if ClientInstanceId was 0 in the request, else 0.</td></tr>
+<tr>
+<td>subscription_id</td><td>Unique identifier for the current subscription set for this client instance.</td></tr>
+<tr>
+<td>accepted_compression_types</td><td>Compression types that broker accepts for the PushTelemetryRequest.</td></tr>
+<tr>
+<td>push_interval_ms</td><td>Configured push interval, which is the lowest configured interval in the current subscription set.</td></tr>
+<tr>
+<td>telemetry_max_bytes</td><td>The maximum bytes of binary data the broker accepts in PushTelemetryRequest.</td></tr>
+<tr>
+<td>delta_temporality</td><td>Flag to indicate monotonic/counter metrics are to be emitted as deltas or cumulative values.</td></tr>
+<tr>
+<td>requested_metrics</td><td>Requested metrics prefix string match. Empty array: No metrics subscribed, Array[0] empty string: All metrics subscribed.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_PushTelemetry">PushTelemetry API (Key: 72):</a></h5>
 
 <b>Requests:</b><br>
@@ -13589,6 +16125,21 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>PushTelemetry Response (Version: 0) => throttle_time_ms error_code _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_ListClientMetricsResources">ListClientMetricsResources API (Key: 74):</a></h5>
 
 <b>Requests:</b><br>
@@ -13602,6 +16153,29 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>ListClientMetricsResources Response (Version: 0) => throttle_time_ms error_code [client_metrics_resources] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  client_metrics_resources => name _tagged_fields 
+    name => COMPACT_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>client_metrics_resources</td><td>Each client metrics resource in the response.</td></tr>
+<tr>
+<td>name</td><td>The resource name.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_DescribeTopicPartitions">DescribeTopicPartitions API (Key: 75):</a></h5>
 
 <b>Requests:</b><br>
@@ -13637,6 +16211,81 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>DescribeTopicPartitions Response (Version: 0) => throttle_time_ms [topics] next_cursor _tagged_fields 
+  throttle_time_ms => INT32
+  topics => error_code name topic_id is_internal [partitions] topic_authorized_operations _tagged_fields 
+    error_code => INT16
+    name => COMPACT_NULLABLE_STRING
+    topic_id => UUID
+    is_internal => BOOLEAN
+    partitions => error_code partition_index leader_id leader_epoch [replica_nodes] [isr_nodes] [eligible_leader_replicas] [last_known_elr] [offline_replicas] _tagged_fields 
+      error_code => INT16
+      partition_index => INT32
+      leader_id => INT32
+      leader_epoch => INT32
+      replica_nodes => INT32
+      isr_nodes => INT32
+      eligible_leader_replicas => INT32
+      last_known_elr => INT32
+      offline_replicas => INT32
+    topic_authorized_operations => INT32
+  next_cursor => topic_name partition_index _tagged_fields 
+    topic_name => COMPACT_STRING
+    partition_index => INT32
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>topics</td><td>Each topic in the response.</td></tr>
+<tr>
+<td>error_code</td><td>The topic error, or 0 if there was no error.</td></tr>
+<tr>
+<td>name</td><td>The topic name.</td></tr>
+<tr>
+<td>topic_id</td><td>The topic id.</td></tr>
+<tr>
+<td>is_internal</td><td>True if the topic is internal.</td></tr>
+<tr>
+<td>partitions</td><td>Each partition in the topic.</td></tr>
+<tr>
+<td>error_code</td><td>The partition error, or 0 if there was no error.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>leader_id</td><td>The ID of the leader broker.</td></tr>
+<tr>
+<td>leader_epoch</td><td>The leader epoch of this partition.</td></tr>
+<tr>
+<td>replica_nodes</td><td>The set of all nodes that host this partition.</td></tr>
+<tr>
+<td>isr_nodes</td><td>The set of nodes that are in sync with the leader for this partition.</td></tr>
+<tr>
+<td>eligible_leader_replicas</td><td>The new eligible leader replicas otherwise.</td></tr>
+<tr>
+<td>last_known_elr</td><td>The last known ELR.</td></tr>
+<tr>
+<td>offline_replicas</td><td>The set of offline replicas of this partition.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>topic_authorized_operations</td><td>32-bit bitfield to represent authorized operations for this topic.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>next_cursor</td><td>The next topic and partition index to fetch details for.</td></tr>
+<tr>
+<td>topic_name</td><td>The name for the first topic to process.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index to start with.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_ShareGroupHeartbeat">ShareGroupHeartbeat API (Key: 76):</a></h5>
 
 <b>Requests:</b><br>
@@ -13665,6 +16314,49 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>ShareGroupHeartbeat Response (Version: 0) => throttle_time_ms error_code error_message member_id member_epoch heartbeat_interval_ms assignment _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  error_message => COMPACT_NULLABLE_STRING
+  member_id => COMPACT_NULLABLE_STRING
+  member_epoch => INT32
+  heartbeat_interval_ms => INT32
+  assignment => [topic_partitions] _tagged_fields 
+    topic_partitions => topic_id [partitions] _tagged_fields 
+      topic_id => UUID
+      partitions => INT32
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The top-level error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The top-level error message, or null if there was no error.</td></tr>
+<tr>
+<td>member_id</td><td>The member ID is generated by the consumer and provided by the consumer for all requests.</td></tr>
+<tr>
+<td>member_epoch</td><td>The member epoch.</td></tr>
+<tr>
+<td>heartbeat_interval_ms</td><td>The heartbeat interval in milliseconds.</td></tr>
+<tr>
+<td>assignment</td><td>null if not provided; the assignment otherwise.</td></tr>
+<tr>
+<td>topic_partitions</td><td>The partitions assigned to the member.</td></tr>
+<tr>
+<td>topic_id</td><td>The topic ID.</td></tr>
+<tr>
+<td>partitions</td><td>The partitions.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_ShareGroupDescribe">ShareGroupDescribe API (Key: 77):</a></h5>
 
 <b>Requests:</b><br>
@@ -13684,6 +16376,89 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>ShareGroupDescribe Response (Version: 0) => throttle_time_ms [groups] _tagged_fields 
+  throttle_time_ms => INT32
+  groups => error_code error_message group_id group_state group_epoch assignment_epoch assignor_name [members] authorized_operations _tagged_fields 
+    error_code => INT16
+    error_message => COMPACT_NULLABLE_STRING
+    group_id => COMPACT_STRING
+    group_state => COMPACT_STRING
+    group_epoch => INT32
+    assignment_epoch => INT32
+    assignor_name => COMPACT_STRING
+    members => member_id rack_id member_epoch client_id client_host [subscribed_topic_names] assignment _tagged_fields 
+      member_id => COMPACT_STRING
+      rack_id => COMPACT_NULLABLE_STRING
+      member_epoch => INT32
+      client_id => COMPACT_STRING
+      client_host => COMPACT_STRING
+      subscribed_topic_names => COMPACT_STRING
+      assignment => [topic_partitions] _tagged_fields 
+        topic_partitions => topic_id topic_name [partitions] _tagged_fields 
+          topic_id => UUID
+          topic_name => COMPACT_STRING
+          partitions => INT32
+    authorized_operations => INT32
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>groups</td><td>Each described group.</td></tr>
+<tr>
+<td>error_code</td><td>The describe error, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The top-level error message, or null if there was no error.</td></tr>
+<tr>
+<td>group_id</td><td>The group ID string.</td></tr>
+<tr>
+<td>group_state</td><td>The group state string, or the empty string.</td></tr>
+<tr>
+<td>group_epoch</td><td>The group epoch.</td></tr>
+<tr>
+<td>assignment_epoch</td><td>The assignment epoch.</td></tr>
+<tr>
+<td>assignor_name</td><td>The selected assignor.</td></tr>
+<tr>
+<td>members</td><td>The members.</td></tr>
+<tr>
+<td>member_id</td><td>The member ID.</td></tr>
+<tr>
+<td>rack_id</td><td>The member rack ID.</td></tr>
+<tr>
+<td>member_epoch</td><td>The current member epoch.</td></tr>
+<tr>
+<td>client_id</td><td>The client ID.</td></tr>
+<tr>
+<td>client_host</td><td>The client host.</td></tr>
+<tr>
+<td>subscribed_topic_names</td><td>The subscribed topic names.</td></tr>
+<tr>
+<td>assignment</td><td>The current assignment.</td></tr>
+<tr>
+<td>topic_partitions</td><td>The assigned topic-partitions to the member.</td></tr>
+<tr>
+<td>topic_id</td><td>The topic ID.</td></tr>
+<tr>
+<td>topic_name</td><td>The topic name.</td></tr>
+<tr>
+<td>partitions</td><td>The partitions.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>authorized_operations</td><td>32-bit bitfield to represent authorized operations for this group.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_ShareFetch">ShareFetch API (Key: 78):</a></h5>
 
 <b>Requests:</b><br>
@@ -13759,6 +16534,97 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>ShareFetch Response (Version: 0) => throttle_time_ms error_code error_message [responses] [node_endpoints] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  error_message => COMPACT_NULLABLE_STRING
+  responses => topic_id [partitions] _tagged_fields 
+    topic_id => UUID
+    partitions => partition_index error_code error_message acknowledge_error_code acknowledge_error_message current_leader records [acquired_records] _tagged_fields 
+      partition_index => INT32
+      error_code => INT16
+      error_message => COMPACT_NULLABLE_STRING
+      acknowledge_error_code => INT16
+      acknowledge_error_message => COMPACT_NULLABLE_STRING
+      current_leader => leader_id leader_epoch _tagged_fields 
+        leader_id => INT32
+        leader_epoch => INT32
+      records => COMPACT_RECORDS
+      acquired_records => first_offset last_offset delivery_count _tagged_fields 
+        first_offset => INT64
+        last_offset => INT64
+        delivery_count => INT16
+  node_endpoints => node_id host port rack _tagged_fields 
+    node_id => INT32
+    host => COMPACT_STRING
+    port => INT32
+    rack => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The top-level response error code.</td></tr>
+<tr>
+<td>error_message</td><td>The top-level error message, or null if there was no error.</td></tr>
+<tr>
+<td>responses</td><td>The response topics.</td></tr>
+<tr>
+<td>topic_id</td><td>The unique topic ID.</td></tr>
+<tr>
+<td>partitions</td><td>The topic partitions.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The fetch error code, or 0 if there was no fetch error.</td></tr>
+<tr>
+<td>error_message</td><td>The fetch error message, or null if there was no fetch error.</td></tr>
+<tr>
+<td>acknowledge_error_code</td><td>The acknowledge error code, or 0 if there was no acknowledge error.</td></tr>
+<tr>
+<td>acknowledge_error_message</td><td>The acknowledge error message, or null if there was no acknowledge error.</td></tr>
+<tr>
+<td>current_leader</td><td>The current leader of the partition.</td></tr>
+<tr>
+<td>leader_id</td><td>The ID of the current leader or -1 if the leader is unknown.</td></tr>
+<tr>
+<td>leader_epoch</td><td>The latest known leader epoch.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>records</td><td>The record data.</td></tr>
+<tr>
+<td>acquired_records</td><td>The acquired records.</td></tr>
+<tr>
+<td>first_offset</td><td>The earliest offset in this batch of acquired records.</td></tr>
+<tr>
+<td>last_offset</td><td>The last offset of this batch of acquired records.</td></tr>
+<tr>
+<td>delivery_count</td><td>The delivery count of this batch of acquired records.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>node_endpoints</td><td>Endpoints for all current leaders enumerated in PartitionData with error NOT_LEADER_OR_FOLLOWER.</td></tr>
+<tr>
+<td>node_id</td><td>The ID of the associated node.</td></tr>
+<tr>
+<td>host</td><td>The node's hostname.</td></tr>
+<tr>
+<td>port</td><td>The node's port.</td></tr>
+<tr>
+<td>rack</td><td>The rack of the node, or null if it has not been assigned to a rack.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_ShareAcknowledge">ShareAcknowledge API (Key: 79):</a></h5>
 
 <b>Requests:</b><br>
@@ -13811,6 +16677,74 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>ShareAcknowledge Response (Version: 0) => throttle_time_ms error_code error_message [responses] [node_endpoints] _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  error_message => COMPACT_NULLABLE_STRING
+  responses => topic_id [partitions] _tagged_fields 
+    topic_id => UUID
+    partitions => partition_index error_code error_message current_leader _tagged_fields 
+      partition_index => INT32
+      error_code => INT16
+      error_message => COMPACT_NULLABLE_STRING
+      current_leader => leader_id leader_epoch _tagged_fields 
+        leader_id => INT32
+        leader_epoch => INT32
+  node_endpoints => node_id host port rack _tagged_fields 
+    node_id => INT32
+    host => COMPACT_STRING
+    port => INT32
+    rack => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The top level response error code.</td></tr>
+<tr>
+<td>error_message</td><td>The top-level error message, or null if there was no error.</td></tr>
+<tr>
+<td>responses</td><td>The response topics.</td></tr>
+<tr>
+<td>topic_id</td><td>The unique topic ID.</td></tr>
+<tr>
+<td>partitions</td><td>The topic partitions.</td></tr>
+<tr>
+<td>partition_index</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if there was no error.</td></tr>
+<tr>
+<td>current_leader</td><td>The current leader of the partition.</td></tr>
+<tr>
+<td>leader_id</td><td>The ID of the current leader or -1 if the leader is unknown.</td></tr>
+<tr>
+<td>leader_epoch</td><td>The latest known leader epoch.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>node_endpoints</td><td>Endpoints for all current leaders enumerated in PartitionData with error NOT_LEADER_OR_FOLLOWER.</td></tr>
+<tr>
+<td>node_id</td><td>The ID of the associated node.</td></tr>
+<tr>
+<td>host</td><td>The node's hostname.</td></tr>
+<tr>
+<td>port</td><td>The node's port.</td></tr>
+<tr>
+<td>rack</td><td>The rack of the node, or null if it has not been assigned to a rack.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_AddRaftVoter">AddRaftVoter API (Key: 80):</a></h5>
 
 <b>Requests:</b><br>
@@ -13850,6 +16784,24 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>AddRaftVoter Response (Version: 0) => throttle_time_ms error_code error_message _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  error_message => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_RemoveRaftVoter">RemoveRaftVoter API (Key: 81):</a></h5>
 
 <b>Requests:</b><br>
@@ -13872,6 +16824,24 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>RemoveRaftVoter Response (Version: 0) => throttle_time_ms error_code error_message _tagged_fields 
+  throttle_time_ms => INT32
+  error_code => INT16
+  error_message => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>throttle_time_ms</td><td>The duration in milliseconds for which the request was throttled due to a quota violation, or zero if the request did not violate any quota.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_InitializeShareGroupState">InitializeShareGroupState API (Key: 83):</a></h5>
 
 <b>Requests:</b><br>
@@ -13910,6 +16880,37 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>InitializeShareGroupState Response (Version: 0) => [results] _tagged_fields 
+  results => topic_id [partitions] _tagged_fields 
+    topic_id => UUID
+    partitions => partition error_code error_message _tagged_fields 
+      partition => INT32
+      error_code => INT16
+      error_message => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>results</td><td>The initialization results.</td></tr>
+<tr>
+<td>topic_id</td><td>The topic identifier.</td></tr>
+<tr>
+<td>partitions</td><td>The results for the partitions.</td></tr>
+<tr>
+<td>partition</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_ReadShareGroupState">ReadShareGroupState API (Key: 84):</a></h5>
 
 <b>Requests:</b><br>
@@ -13945,6 +16946,60 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>ReadShareGroupState Response (Version: 0) => [results] _tagged_fields 
+  results => topic_id [partitions] _tagged_fields 
+    topic_id => UUID
+    partitions => partition error_code error_message state_epoch start_offset [state_batches] _tagged_fields 
+      partition => INT32
+      error_code => INT16
+      error_message => COMPACT_NULLABLE_STRING
+      state_epoch => INT32
+      start_offset => INT64
+      state_batches => first_offset last_offset delivery_state delivery_count _tagged_fields 
+        first_offset => INT64
+        last_offset => INT64
+        delivery_state => INT8
+        delivery_count => INT16
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>results</td><td>The read results.</td></tr>
+<tr>
+<td>topic_id</td><td>The topic identifier.</td></tr>
+<tr>
+<td>partitions</td><td>The results for the partitions.</td></tr>
+<tr>
+<td>partition</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if there was no error.</td></tr>
+<tr>
+<td>state_epoch</td><td>The state epoch for this share-partition.</td></tr>
+<tr>
+<td>start_offset</td><td>The share-partition start offset, which can be -1 if it is not yet initialized.</td></tr>
+<tr>
+<td>state_batches</td><td>The state batches for this share-partition.</td></tr>
+<tr>
+<td>first_offset</td><td>The base offset of this state batch.</td></tr>
+<tr>
+<td>last_offset</td><td>The last offset of this state batch.</td></tr>
+<tr>
+<td>delivery_state</td><td>The state - 0:Available,2:Acked,4:Archived.</td></tr>
+<tr>
+<td>delivery_count</td><td>The delivery count.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_WriteShareGroupState">WriteShareGroupState API (Key: 85):</a></h5>
 
 <b>Requests:</b><br>
@@ -14003,6 +17058,37 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>WriteShareGroupState Response (Version: 0) => [results] _tagged_fields 
+  results => topic_id [partitions] _tagged_fields 
+    topic_id => UUID
+    partitions => partition error_code error_message _tagged_fields 
+      partition => INT32
+      error_code => INT16
+      error_message => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>results</td><td>The write results.</td></tr>
+<tr>
+<td>topic_id</td><td>The topic identifier.</td></tr>
+<tr>
+<td>partitions</td><td>The results for the partitions.</td></tr>
+<tr>
+<td>partition</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_DeleteShareGroupState">DeleteShareGroupState API (Key: 86):</a></h5>
 
 <b>Requests:</b><br>
@@ -14035,6 +17121,37 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>DeleteShareGroupState Response (Version: 0) => [results] _tagged_fields 
+  results => topic_id [partitions] _tagged_fields 
+    topic_id => UUID
+    partitions => partition error_code error_message _tagged_fields 
+      partition => INT32
+      error_code => INT16
+      error_message => COMPACT_NULLABLE_STRING
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>results</td><td>The delete results.</td></tr>
+<tr>
+<td>topic_id</td><td>The topic identifier.</td></tr>
+<tr>
+<td>partitions</td><td>The results for the partitions.</td></tr>
+<tr>
+<td>partition</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if there was no error.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 <h5><a name="The_Messages_ReadShareGroupStateSummary">ReadShareGroupStateSummary API (Key: 87):</a></h5>
 
 <b>Requests:</b><br>
@@ -14070,4 +17187,41 @@
 </tbody></table>
 </div>
 <b>Responses:</b><br>
+<div><pre>ReadShareGroupStateSummary Response (Version: 0) => [results] _tagged_fields 
+  results => topic_id [partitions] _tagged_fields 
+    topic_id => UUID
+    partitions => partition error_code error_message state_epoch start_offset _tagged_fields 
+      partition => INT32
+      error_code => INT16
+      error_message => COMPACT_NULLABLE_STRING
+      state_epoch => INT32
+      start_offset => INT64
+</pre><p><b>Response header version:</b> 1</p>
+<table class="data-table"><tbody>
+<tr><th>Field</th>
+<th>Description</th>
+</tr><tr>
+<td>results</td><td>The read results.</td></tr>
+<tr>
+<td>topic_id</td><td>The topic identifier.</td></tr>
+<tr>
+<td>partitions</td><td>The results for the partitions.</td></tr>
+<tr>
+<td>partition</td><td>The partition index.</td></tr>
+<tr>
+<td>error_code</td><td>The error code, or 0 if there was no error.</td></tr>
+<tr>
+<td>error_message</td><td>The error message, or null if there was no error.</td></tr>
+<tr>
+<td>state_epoch</td><td>The state epoch of the share-partition.</td></tr>
+<tr>
+<td>start_offset</td><td>The share-partition start offset.</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+<tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
+</tbody></table>
+</div>
 
