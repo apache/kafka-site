@@ -1031,12 +1031,12 @@ nav .btn {
     min-height: 60rem;
     overflow: hidden;
 }
-.apache-feather {
+.apache-logo {
     position: absolute;
     bottom: 2rem;
     right: 2rem;
 }
-.apache-feather:hover {
+.apache-logo:hover {
     -webkit-animation-name: spin;
     -webkit-animation-duration: 200ms;
     -webkit-animation-iteration-count: infinite;
@@ -1503,7 +1503,7 @@ nav .btn {
     }
 }
 @media only screen and (max-width: 1035px) {
-    .apache-feather {
+    .apache-logo {
         bottom: 2.8rem;
     }
 }
