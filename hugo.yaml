@@ -89,7 +89,7 @@ menu:
   main:
     # Point this to the latest documentation version.
     - name: "Documentation"
-      url: "/40/"
+      url: "/41/"
       weight: 20
     # Add a top level menu pointing to downloads page
     - name: "Download Kafka"
@@ -127,10 +127,13 @@ params:
   # The version number for the version of the docs represented in this doc set.
   # Used in the "version-banner" partial to display a version number for the
   # current doc set.
-  version: 4.0
+  version: 4.1
   versions:
+    - version: "4.1"
+      url: /41/
     - version: "4.0"
       url: /40/
+      archived_version: true
     - version: "3.9"
       url: /39/
       archived_version: true
@@ -224,10 +227,10 @@ params:
 
   # A link to latest version of the docs. Used in the "version-banner" partial to
   # point people to the main doc site.
-  url_latest_version: /40/
+  url_latest_version: /41/
 
   # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-  github_repo: https://github.com/hvishwanath/kafka-site-md
+  github_repo: https://github.com/apache/kafka-site/
 
   # An optional link to a related project repo. For example, the sibling repository where your product code lives.
   # github_project_repo: https://github.com/google/docsy
@@ -237,7 +240,7 @@ params:
 
   # Uncomment this if your GitHub repo does not have "main" as the default branch,
   # or specify a new value if you want to reference another branch in your GitHub links
-  github_branch: main
+  github_branch: markdown
 
   # Google Custom Search Engine ID. Remove or comment out to disable search.
   # gcs_engine_id: d72aa9b2712488cc3
