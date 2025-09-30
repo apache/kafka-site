@@ -1,0 +1,76 @@
+FROM alpine:3.19
+
+# Install runtime dependencies
+RUN apk add --no-cache \
+    curl \
+    git \
+    nodejs \
+    npm \
+    bash \
+    ca-certificates \
+    libc6-compat
+
+# Install Go 1.22.2 (required by go.mod)
+ARG TARGETARCH
+RUN if [ "$TARGETARCH" = "arm64" ]; then \
+        GO_ARCH="arm64"; \
+    else \
+        GO_ARCH="amd64"; \
+    fi && \
+    curl -L "https://go.dev/dl/go1.22.2.linux-${GO_ARCH}.tar.gz" -o go.tar.gz && \
+    tar -C /usr/local -xzf go.tar.gz && \
+    rm go.tar.gz
+
+# Set Go environment variables
+ENV GOPATH="/go"
+ENV PATH="/usr/local/go/bin:${PATH}"
+ENV PATH="${GOPATH}/bin:${PATH}"
+
+# Download Hugo binary directly (much more space efficient than compiling)
+ARG TARGETARCH
+RUN if [ "$TARGETARCH" = "arm64" ]; then \
+        HUGO_ARCH="arm64"; \
+    else \
+        HUGO_ARCH="amd64"; \
+    fi && \
+    echo "Downloading Hugo for architecture: ${HUGO_ARCH}" && \
+    curl -L "https://github.com/gohugoio/hugo/releases/download/v0.123.7/hugo_extended_0.123.7_linux-${HUGO_ARCH}.tar.gz" -o hugo.tar.gz && \
+    echo "Extracting Hugo..." && \
+    tar -xzf hugo.tar.gz && \
+    echo "Contents after extraction:" && \
+    ls -la && \
+    echo "Hugo binary details:" && \
+    ls -la hugo && \
+    echo "Moving Hugo binary..." && \
+    cp hugo /usr/local/bin/hugo && \
+    chmod +x /usr/local/bin/hugo && \
+    echo "Hugo binary location and permissions:" && \
+    ls -la /usr/local/bin/hugo && \
+    echo "Testing Hugo binary:" && \
+    ldd /usr/local/bin/hugo && \
+    /usr/local/bin/hugo version && \
+    rm hugo.tar.gz hugo
+
+# Install global dependencies
+RUN npm install -g postcss postcss-cli autoprefixer
+
+# Copy entrypoint script
+COPY scripts/entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# Create working directory
+WORKDIR /src
+
+# Configure Git to trust the working directory
+RUN git config --global --add safe.directory /src
+
+# Verify installations
+RUN node --version && \
+    npm --version && \
+    npx --version && \
+    hugo version && \
+    go version
+
+EXPOSE 1313
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
