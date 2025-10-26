@@ -11,5 +11,7 @@ RewriteRule ^/?(\d+)/images/ - [S=1]
 RewriteCond $2 !=protocol
 RewriteRule ^/?(\d+)/([a-z]+)(\.html)? /$1/documentation#$2 [R=302,L,NE]
 
-# Adding YouTube for embedded videos to CSP header, more details please check https://infra.apache.org/tools/csp.html
+# Kafka website embeds YouTube tutorial videos in many documentation pages e.g. QuickStart, Kafka Streams which using <iframe> tags.
+# Without adding YouTube domains to the CSP (Content-Security-Policy), browsers will block these iframes and videos won't display.
+# More details please check https://infra.apache.org/tools/csp.html.
 SetEnv CSP_PROJECT_DOMAINS "https://youtube.com https://www.youtube.com"
