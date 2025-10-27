@@ -43,34 +43,24 @@ jobs:
     
     - name: Create or checkout asf-staging branch
       run: |
+        # Create scratch space for staging branch
+        mkdir asf-staging
+        cd asf-staging
         # Check if asf-staging branch exists
         if git show-ref --verify --quiet refs/remotes/origin/asf-staging; then
           echo "asf-staging branch exists, checking it out"
           git checkout -B asf-staging origin/asf-staging
         else
-          echo "asf-staging branch doesn't exist, creating it"
-          git checkout --orphan asf-staging
-          git rm -rf .
+          echo "asf-staging branch doesn't exist!"
+          exit 1
         fi
     
     - name: Copy build output to asf-staging branch
       run: |
-        # Create a temporary directory for the site content
-        mkdir -p /tmp/site-content
-        
         # Copy all contents from output directory to temporary directory
         if [ -d "output" ]; then
-          cp -r output/* /tmp/site-content/ 2>/dev/null || true
+          cp -r output/* asf-staging 2>/dev/null || true
         fi
-        
-        # Remove all files except .git
-        find . -not -path './.git*' -delete 2>/dev/null || true
-        
-        # Copy site content back to root
-        cp -r /tmp/site-content/* . 2>/dev/null || true
-        
-        # Clean up temporary directory
-        rm -rf /tmp/site-content
         
         # Add all files
         git add .
