@@ -14,7 +14,15 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   --bs-navbar-active-color: rgb(49, 12, 236);
 }
 
-.td-search__input:not(:focus) {
-  background: #736e6e1d;
+
+// Make the releases dropdown scrollable
+ul.dropdown-menu {
+  max-height: 600px; /* Adjust this value as needed */
+  overflow-y: scroll;
+}
+
+.td-navbar .td-search__input:not(:focus) {
+  background: #bdbdbd;
+  border: 1px solid #bdbdbd;
 }
 
