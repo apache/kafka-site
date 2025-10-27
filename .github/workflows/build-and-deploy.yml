@@ -66,7 +66,7 @@ jobs:
         fi
         
         # Restore top level files
-        git restore .htaccess .asf.yaml
+        #git restore .htaccess .asf.yaml
 
         # Add all files
         git add .
