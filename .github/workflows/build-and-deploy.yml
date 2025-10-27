@@ -16,7 +16,7 @@ env:
   BUILD_BRANCHES: 'markdown'
 
 jobs:
-  build-and-deploy:
+  build-html:
     runs-on: ubuntu-latest
     
     steps:
@@ -35,7 +35,20 @@ jobs:
         ls -la output/
         echo "HTML files found:"
         find output/ -name "*.html" | head -10
-    
+
+    - name: Archive HTML
+      id: archive-html
+      uses: actions/upload-artifact@v4
+      with:
+        name: html
+        path: output
+        compression-level: 9
+        if-no-files-found: error
+
+  deploy-to-staging:
+    runs-on: ubuntu-latest
+    needs: build-html
+    steps:
     - name: Configure Git
       run: |
         git config --global user.name "GitHub Actions"
