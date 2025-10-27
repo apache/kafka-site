@@ -1,12 +1,12 @@
 <div class="row">
   {{ $index := 0 }}
   {{ range .Site.Data.committers }}
-    <div class="col-md-6 mb-4">
+    <div class="col-md-4 mb-4">
       <div class="card h-100">
         {{ if .image }}
           <img class="card-img-top" src="{{ .image }}" alt="{{ .name }}">
         {{ end }}
-        <div class="card-body">
+        <div class="card-body" style="padding: 0.75rem;">
           <h5 class="card-title">{{ .name }}</h5>
           <p class="card-text">{{ .title }}</p>
           <p class="card-text">
@@ -27,7 +27,7 @@
       </div>
     </div>
     {{ $index = add $index 1 }}
-    {{ if eq (mod $index 2) 0 }}
+    {{ if eq (mod $index 3) 0 }}
       </div><div class="row">
     {{ end }}
   {{ end }}
