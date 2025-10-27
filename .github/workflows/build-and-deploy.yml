@@ -1,0 +1,105 @@
+name: Build and Deploy Site
+
+on:
+  push:
+    branches: [ markdown ]
+  workflow_dispatch:
+    inputs:
+      target_branches:
+        description: 'Comma-separated list of branches to build (e.g., markdown,main)'
+        required: false
+        default: 'markdown'
+        type: string
+
+env:
+  # Default branches - can be overridden by repository variables
+  BUILD_BRANCHES: 'markdown'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Full history needed for branch operations
+    
+    - name: Run make build
+      run: |
+        make build
+    
+    - name: Verify build output
+      run: |
+        echo "Build output contents:"
+        ls -la output/
+        echo "HTML files found:"
+        find output/ -name "*.html" | head -10
+    
+    - name: Configure Git
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+    
+    - name: Create or checkout site-html branch
+      run: |
+        # Check if site-html branch exists
+        if git show-ref --verify --quiet refs/remotes/origin/site-html; then
+          echo "site-html branch exists, checking it out"
+          git checkout -B site-html origin/site-html
+        else
+          echo "site-html branch doesn't exist, creating it"
+          git checkout --orphan site-html
+          git rm -rf .
+        fi
+    
+    - name: Copy build output to site-html branch
+      run: |
+        # Create a temporary directory for the site content
+        mkdir -p /tmp/site-content
+        
+        # Copy all contents from output directory to temporary directory
+        if [ -d "output" ]; then
+          cp -r output/* /tmp/site-content/ 2>/dev/null || true
+        fi
+        
+        # Remove all files except .git
+        find . -not -path './.git*' -delete 2>/dev/null || true
+        
+        # Copy site content back to root
+        cp -r /tmp/site-content/* . 2>/dev/null || true
+        
+        # Clean up temporary directory
+        rm -rf /tmp/site-content
+        
+        # Add all files
+        git add .
+        
+        # Show what will be committed
+        echo "Files to be committed:"
+        git status --porcelain
+    
+    - name: Commit and push to site-html branch
+      run: |
+        # Check if there are changes to commit
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Deploy site build from ${{ github.ref_name }} - ${{ github.sha }}"
+          echo "Would push to asf-staging"
+          echo "Successfully deployed to site-html branch"
+          git show
+        fi
+    
+    - name: Create deployment summary
+      run: |
+        echo "## Deployment Summary" >> $GITHUB_STEP_SUMMARY
+        echo "- **Source Branch**: ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Target Branch**: site-html" >> $GITHUB_STEP_SUMMARY
+        echo "- **Build Time**: $(date)" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Build Output" >> $GITHUB_STEP_SUMMARY
+        echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+        ls -la output/ 2>/dev/null || echo "No output directory found" >> $GITHUB_STEP_SUMMARY
+        echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
