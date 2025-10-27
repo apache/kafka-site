@@ -41,19 +41,19 @@ jobs:
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
     
-    - name: Create or checkout site-html branch
+    - name: Create or checkout asf-staging branch
       run: |
-        # Check if site-html branch exists
-        if git show-ref --verify --quiet refs/remotes/origin/site-html; then
-          echo "site-html branch exists, checking it out"
-          git checkout -B site-html origin/site-html
+        # Check if asf-staging branch exists
+        if git show-ref --verify --quiet refs/remotes/origin/asf-staging; then
+          echo "asf-staging branch exists, checking it out"
+          git checkout -B asf-staging origin/asf-staging
         else
-          echo "site-html branch doesn't exist, creating it"
-          git checkout --orphan site-html
+          echo "asf-staging branch doesn't exist, creating it"
+          git checkout --orphan asf-staging
           git rm -rf .
         fi
     
-    - name: Copy build output to site-html branch
+    - name: Copy build output to asf-staging branch
       run: |
         # Create a temporary directory for the site content
         mkdir -p /tmp/site-content
@@ -79,7 +79,7 @@ jobs:
         echo "Files to be committed:"
         git status --porcelain
     
-    - name: Commit and push to site-html branch
+    - name: Commit and push to asf-staging branch
       run: |
         # Check if there are changes to commit
         if git diff --staged --quiet; then
@@ -87,7 +87,7 @@ jobs:
         else
           git commit -m "Deploy site build from ${{ github.ref_name }} - ${{ github.sha }}"
           echo "Would push to asf-staging"
-          echo "Successfully deployed to site-html branch"
+          echo "Successfully deployed to asf-staging branch"
           git show --stat
         fi
     
@@ -96,7 +96,7 @@ jobs:
         echo "## Deployment Summary" >> $GITHUB_STEP_SUMMARY
         echo "- **Source Branch**: ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
         echo "- **Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
-        echo "- **Target Branch**: site-html" >> $GITHUB_STEP_SUMMARY
+        echo "- **Target Branch**: asf-staging" >> $GITHUB_STEP_SUMMARY
         echo "- **Build Time**: $(date)" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### Build Output" >> $GITHUB_STEP_SUMMARY
