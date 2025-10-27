@@ -45,7 +45,9 @@ jobs:
       run: |
         # Create scratch space for staging branch
         mkdir asf-staging
+
         cd asf-staging
+
         # Check if asf-staging branch exists
         if git show-ref --verify --quiet refs/remotes/origin/asf-staging; then
           echo "asf-staging branch exists, checking it out"
@@ -54,14 +56,18 @@ jobs:
           echo "asf-staging branch doesn't exist!"
           exit 1
         fi
+
+        # Remove existing contents
+        rm -rf *
     
-    - name: Copy build output to asf-staging branch
-      run: |
         # Copy all contents from output directory to temporary directory
         if [ -d "output" ]; then
-          cp -r output/* asf-staging 2>/dev/null || true
+          cp -r ../output/* . 2>/dev/null || true
         fi
         
+        # Restore top level files
+        git restore .htaccess .asf.yaml
+
         # Add all files
         git add .
         
@@ -69,8 +75,6 @@ jobs:
         echo "Files to be committed:"
         git status --porcelain
     
-    - name: Commit and push to asf-staging branch
-      run: |
         # Check if there are changes to commit
         if git diff --staged --quiet; then
           echo "No changes to commit"
