@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Core Concepts
-
 We first summarize the key concepts of Kafka Streams. 
 
 # Stream Processing Topology
@@ -59,8 +57,6 @@ Some stream processing applications don't require state, which means the process
 Kafka Streams provides so-called **state stores** , which can be used by stream processing applications to store and query data. This is an important capability when implementing stateful operations. Every task in Kafka Streams embeds one or more state stores that can be accessed via APIs to store and query data required for processing. These state stores can either be a persistent key-value store, an in-memory hashmap, or another convenient data structure. Kafka Streams offers fault-tolerance and automatic recovery for local state stores. 
 
 Kafka Streams allows direct read-only queries of the state stores by methods, threads, processes or applications external to the stream processing application that created the state stores. This is provided through a feature called **Interactive Queries**. All stores are named and Interactive Queries exposes only the read operations of the underlying implementation. 
-
-[Previous](/0102/streams) [Next](/0102/streams/architecture)
 
   * [Documentation](/documentation)
   * [Streams](/streams)

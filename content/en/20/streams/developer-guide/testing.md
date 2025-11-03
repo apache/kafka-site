@@ -10,11 +10,6 @@ type: docs
 
 # Testing Kafka Streams
 
-**Table of Contents**
-
-  * Importing the test utilities
-  * Testing Streams applications
-  * Unit testing Processors
 
 
 
@@ -91,7 +86,7 @@ Note, that you should always close the test driver at the end to make sure all r
     testDriver.close();
             
 
-# Example
+## Example
 
 The following example demonstrates how to use the test driver and helper classes. The example creates a topology that computes the maximum value per key using a key-value-store. While processing, no output is generated, but only the store is updated. Output is only sent downstream based on event-time and wall-clock punctuations. 
     
@@ -334,8 +329,6 @@ Processors can schedule punctuators to handle periodic tasks. The mock context d
                     
 
 If you need to write tests involving automatic firing of scheduled punctuators, we recommend creating a simple topology with your processor and using the [`TopologyTestDriver`](testing.html#testing-topologytestdriver). 
-
-[Previous](/20/streams/developer-guide/datatypes) [Next](/20/streams/developer-guide/interactive-queries)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

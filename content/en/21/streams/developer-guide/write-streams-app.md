@@ -8,13 +8,6 @@ keywords:
 type: docs
 ---
 
-# Writing a Streams Application
-
-**Table of Contents**
-
-  * Libraries and Maven artifacts
-  * Using Kafka Streams within your application code
-  * Testing a Streams application
 
 
 
@@ -164,8 +157,6 @@ After an application is stopped, Kafka Streams will migrate any tasks that had b
 Testing a Streams application
 
 Kafka Streams comes with a `test-utils` module to help you test your application [here](testing.html). 
-
-[Previous](/21/streams/developer-guide/) [Next](/21/streams/developer-guide/config-streams)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

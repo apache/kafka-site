@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Quick Start
-
 # Step 1: Download the code 
 
 [Download](../downloads.html "Kafka downloads") a recent stable release. 

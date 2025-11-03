@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Data Types and Serialization
-
 Every Kafka Streams application must provide SerDes (Serializer/Deserializer) for the data types of record keys and record values (e.g. `java.lang.String`) to materialize the data when necessary. Operations that require such SerDes information include: `stream()`, `table()`, `to()`, `through()`, `groupByKey()`, `groupBy()`.
 
 You can provide SerDes by using either of these methods:
@@ -19,14 +17,6 @@ You can provide SerDes by using either of these methods:
 
 
 
-**Table of Contents**
-
-  * Configuring SerDes
-  * Overriding default SerDes
-  * Available SerDes
-    * Primitive and basic types
-    * JSON
-    * Implementing custom serdes
 
 # Configuring SerDes
 
@@ -74,7 +64,7 @@ If you want to override serdes selectively, i.e., keep the defaults for some fie
 
 # Available SerDes
 
-# Primitive and basic types
+## Primitive and basic types
 
 Apache Kafka includes several built-in serde implementations for Java primitives and basic types such as `byte[]` in its `kafka-clients` Maven artifact:
     
@@ -100,7 +90,7 @@ String | `Serdes.String()`
 
 [Bytes](https://github.com/apache/kafka/blob/1.0/clients/src/main/java/org/apache/kafka/common/utils/Bytes.java) is a wrapper for Java's `byte[]` (byte array) that supports proper equality and ordering semantics. You may want to consider using `Bytes` instead of `byte[]` in your applications.
 
-# JSON
+## JSON
 
 The code examples of Kafka Streams also include a basic serde implementation for JSON:
 
@@ -116,8 +106,6 @@ If you need to implement custom SerDes, your best starting point is to take a lo
     1. Write a _serializer_ for your data type `T` by implementing [org.apache.kafka.common.serialization.Serializer](https://github.com/apache/kafka/blob/1.0/clients/src/main/java/org/apache/kafka/common/serialization/Serializer.java).
     2. Write a _deserializer_ for `T` by implementing [org.apache.kafka.common.serialization.Deserializer](https://github.com/apache/kafka/blob/1.0/clients/src/main/java/org/apache/kafka/common/serialization/Deserializer.java).
     3. Write a _serde_ for `T` by implementing [org.apache.kafka.common.serialization.Serde](https://github.com/apache/kafka/blob/1.0/clients/src/main/java/org/apache/kafka/common/serialization/Serde.java), which you either do manually (see existing SerDes in the previous section) or by leveraging helper functions in [Serdes](https://github.com/apache/kafka/blob/1.0/clients/src/main/java/org/apache/kafka/common/serialization/Serdes.java) such as `Serdes.serdeFrom(Serializer<T>, Deserializer<T>)`.
-
-[Previous](/10/streams/developer-guide/processor-api) [Next](/10/streams/developer-guide/interactive-queries)
 
     * [Documentation](/documentation)
     * [Kafka Streams](/streams)

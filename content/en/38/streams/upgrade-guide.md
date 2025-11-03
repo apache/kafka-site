@@ -10,8 +10,6 @@ type: docs
 
 # Upgrade Guide and API Changes
 
-[Introduction](/38/streams/) [Run Demo App](/38/streams/quickstart) [Tutorial: Write App](/38/streams/tutorial) [Concepts](/38/streams/core-concepts) [Architecture](/38/streams/architecture) [Developer Guide](/38/streams/developer-guide/) [Upgrade](/38/streams/upgrade-guide)
-
 Upgrading from any older version to 3.8.1 is possible: if upgrading from 3.4 or below, you will need to do two rolling bounces, where during the first rolling bounce phase you set the config `upgrade.from="older version"` (possible values are `"0.10.0" - "3.4"`) and during the second you remove it. This is required to safely handle 3 changes. The first is introduction of the new cooperative rebalancing protocol of the embedded consumer. The second is a change in foreign-key join serialization format. Note that you will remain using the old eager rebalancing protocol if you skip or delay the second rolling bounce, but you can safely switch over to cooperative at any time once the entire group is on 2.4+ by removing the config value and bouncing. For more details please refer to [KIP-429](https://cwiki.apache.org/confluence/x/vAclBg). The third is a change in the serialization format for an internal repartition topic. For more details, please refer to [KIP-904](https://cwiki.apache.org/confluence/x/P5VbDg): 
 
   * prepare your application instances for a rolling bounce and make sure that config `upgrade.from` is set to the version from which it is being upgrade.

@@ -8,17 +8,8 @@ keywords:
 type: docs
 ---
 
-# Streams DSL
-
 The Kafka Streams DSL (Domain Specific Language) is built on top of the Streams Processor API. It is the recommended for most users, especially beginners. Most data processing operations can be expressed in just a few lines of DSL code.
 
-**Table of Contents**
-
-  * Overview
-  * Creating source streams from Kafka
-  * Transform a stream
-    * Stateless transformations
-    * Stateful transformations
       * Aggregating
       * Joining
         * Join co-partitioning requirements
@@ -66,7 +57,7 @@ After the application is run, the defined processor topologies are continuously 
 
 For a complete list of available API functionality, see also the [Streams](/27/javadoc/org/apache/kafka/streams/package-summary.html) API docs.
 
-## KStream
+### KStream
 
 Only the **Kafka Streams DSL** has the notion of a `KStream`. 
 
@@ -78,7 +69,7 @@ To illustrate, let's imagine the following two data records are being sent to th
 
 If your stream processing application were to sum the values per user, it would return `4` for `alice`. Why? Because the second data record would not be considered an update of the previous record. Compare this behavior of KStream to `KTable` below, which would return `3` for `alice`. 
 
-## KTable
+### KTable
 
 Only the **Kafka Streams DSL** has the notion of a `KTable`. 
 
@@ -98,7 +89,7 @@ We have already seen an example of a changelog stream in the section [streams an
 
 KTable also provides an ability to look up _current_ values of data records by keys. This table-lookup functionality is available through **join operations** (see also **Joining** in the Developer Guide) as well as through **Interactive Queries**. 
 
-## GlobalKTable
+### GlobalKTable
 
 Only the **Kafka Streams DSL** has the notion of a **GlobalKTable**.
 
@@ -199,7 +190,7 @@ These transformation operations are described in the following subsections:
 
 
 
-# Stateless transformations
+## Stateless transformations
 
 Stateless transformations do not require state for processing and they do not require a state store associated with the stream processor. Kafka 0.11.0 and later allows you to materialize the result from a stateless `KTable` transformation. This allows the result to be queried through [interactive queries](interactive-queries.html#streams-developer-guide-interactive-queries). To materialize a `KTable`, each of the below stateless operations [can be augmented](interactive-queries.html#streams-developer-guide-interactive-queries-local-key-value-stores) with an optional `queryableStoreName` argument.
 
@@ -581,7 +572,7 @@ Transformation | Description
     KStream<byte[], String> stream = ... ;
     KStream<byte[], String> repartitionedStream = stream.repartition(Repartitioned.numberOfPartitions(10));  
   
-# Stateful transformations
+## Stateful transformations
 
 Stateful transformations depend on state for processing inputs and producing outputs and require a [state store](../architecture.html#streams_architecture_state) associated with the stream processor. For example, in aggregating operations, a windowing state store is used to collect the latest aggregation results per window. In join operations, a windowing state store is used to collect all of the records received so far within the defined window boundary.
 
@@ -648,7 +639,7 @@ WordCount example in Java 7:
         .count()
         .toStream();
 
-## Aggregating
+### Aggregating
 
 After records are grouped by key via `groupByKey` or `groupBy` - and thus represented as either a `KGroupedStream` or a `KGroupedTable`, they can be aggregated via an operation such as `reduce`. Aggregations are key-based operations, which means that they always operate over records (notably record values) of the same key. You can perform aggregations on windowed or non-windowed data.
 
@@ -1082,7 +1073,7 @@ Timestamp | Input record | Interpreted as | Grouping | Initializer | Adder | Sub
 6 | (null, E) | _ignored_ |   |   |   |   |  (A, 8) (E, 0)  
 7 | (bob, E) | UPDATE bob | (E, 3) |   | (E, 0 + 3) | (A, 8 - 3) |  (A, **5**) (E, **3**)  
   
-## Joining
+### Joining
 
 Streams and tables can also be joined. Many stream processing applications in practice are coded as streaming joins. For example, applications backing an online shop might need to access multiple, updating database tables (e.g. sales prices, inventory, customer information) in order to enrich a new data record (e.g. customer transaction) with context information. That is, scenarios where you need to perform table lookups at very large scale and with a low processing latency. Here, a popular pattern is to make the information in the databases available in Kafka through so-called _change data capture_ in combination with [Kafka's Connect API](../../#connect), and then implementing applications that leverage the Streams API to perform very fast and efficient local joins of such tables and streams, rather than requiring the application to make a query to a remote database over the network for each record. In this example, the KTable concept in Kafka Streams would enable you to track the latest state (e.g., snapshot) of each table in a local state store, thus greatly reducing the processing latency as well as reducing the load of the remote databases when doing such streaming joins.
 
@@ -1099,7 +1090,7 @@ KTable-to-GlobalKTable | N/A | Not Supported | Not Supported | Not Supported
   
 Each case is explained in more detail in the subsequent sections.
 
-### Join co-partitioning requirements
+#### Join co-partitioning requirements
 
 For equi-joins, input data must be co-partitioned when joining. This ensures that input records with the same key from both sides of the join, are delivered to the same stream task during processing. **It is your responsibility to ensure data co-partitioning when joining**. Co-partitioning is not required when performing KTable-KTable Foreign-Key joins and Global KTable joins. 
 
@@ -1132,7 +1123,7 @@ There are two exceptions where co-partitioning is not required. For KStream-Glob
 
 
 
-### KStream-KStream Join
+#### KStream-KStream Join
 
 KStream-KStream joins are always windowed joins, because otherwise the size of the internal state store used to perform the join - e.g., a sliding window or "buffer" - would grow indefinitely. For stream-stream joins it's important to highlight that a new input record on one side will produce a join output _for each_ matching record on the other side, and there can be _multiple_ such matching records in a given join window (cf. the row with timestamp 15 in the join semantics table below, for example).
 
@@ -1308,7 +1299,7 @@ Timestamp | Left (KStream) | Right (KStream) | (INNER) JOIN | LEFT JOIN | OUTER 
 14 |   | d | [A, d], [B, d], [C, d] | [A, d], [B, d], [C, d] | [A, d], [B, d], [C, d]  
 15 | D |   | [D, a], [D, b], [D, c], [D, d] | [D, a], [D, b], [D, c], [D, d] | [D, a], [D, b], [D, c], [D, d]  
   
-### KTable-KTable Equi-Join
+#### KTable-KTable Equi-Join
 
 KTable-KTable equi-joins are always _non-windowed_ joins. They are designed to be consistent with their counterparts in relational databases. The changelog streams of both KTables are materialized into local state stores to represent the latest snapshot of their table duals. The join result is a new KTable that represents the changelog stream of the join operation.
 
@@ -1451,7 +1442,7 @@ Timestamp | Left (KTable) | Right (KTable) | (INNER) JOIN | LEFT JOIN | OUTER JO
 14 |   | d |   |   | [null, d]  
 15 | D |   | [D, d] | [D, d] | [D, d]  
   
-### KTable-KTable Foreign-Key Join
+#### KTable-KTable Foreign-Key Join
 
 KTable-KTable foreign-key joins are always _non-windowed_ joins. Foreign-key joins are analogous to joins in SQL. As a rough example: 
 
@@ -1562,7 +1553,7 @@ Record Offset | Left KTable (K, extracted-FK) | Right KTable (FK, VR) | (INNER) 
 9 |   
 | (10,baz) | (q,10,baz), (r,10,baz) | (q,10,baz), (r,10,baz)  
   
-### KStream-KTable Join
+#### KStream-KTable Join
 
 KStream-KTable joins are always _non-windowed_ joins. They allow you to perform _table lookups_ against a KTable (changelog stream) upon receiving a new record from the KStream (record stream). An example use case would be to enrich a stream of user activities (KStream) with the latest user profile information (KTable).
 
@@ -1682,7 +1673,7 @@ Timestamp | Left (KStream) | Right (KTable) | (INNER) JOIN | LEFT JOIN
 14 |   | d |   |    
 15 | D |   | [D, d] | [D, d]  
   
-### KStream-GlobalKTable Join
+#### KStream-GlobalKTable Join
 
 KStream-GlobalKTable joins are always _non-windowed_ joins. They allow you to perform _table lookups_ against a GlobalKTable (entire changelog stream) upon receiving a new record from the KStream (record stream). An example use case would be "star queries" or "star joins", where you would enrich a stream of user activities (KStream) with the latest user profile information (GlobalKTable) and further context information (further GlobalKTables). However, because GlobalKTables have no notion of time, a KStream-GlobalKTable join is not a temporal join, and there is no event-time synchronization between updates to a GlobalKTable and processing of KStream records.
 
@@ -1798,7 +1789,7 @@ Detailed behavior:
   
 **Semantics of stream-global-table joins:** The join semantics are different to KStream-KTable joins because it's not a temporal join. Another difference is that, for KStream-GlobalKTable joins, the left input record is first "mapped" with a user-supplied `KeyValueMapper` into the table's keyspace prior to the table lookup.
 
-## Windowing
+### Windowing
 
 Windowing lets you control how to group records that have the same key for stateful operations such as aggregations or joins into so-called windows. Windows are tracked per record key.
 
@@ -1817,7 +1808,7 @@ Tumbling time window | Time-based | Fixed-size, non-overlapping, gap-less window
 Sliding time window | Time-based | Fixed-size, overlapping windows that work on differences between record timestamps  
 Session window | Session-based | Dynamically-sized, non-overlapping, data-driven windows  
   
-### Hopping time windows
+#### Hopping time windows
 
 Hopping time windows are windows based on time intervals. They model fixed-sized, (possibly) overlapping windows. A hopping window is defined by two properties: the window's _size_ and its _advance interval_ (aka "hop"). The advance interval specifies by how much a window moves forward relative to the previous one. For example, you can configure a hopping window with a size 5 minutes and an advance interval of 1 minute. Since hopping windows can overlap - and in general they do - a data record may belong to more than one such windows.
 
@@ -1845,7 +1836,7 @@ Hopping time windows are _aligned to the epoch_ , with the lower interval bound 
 
 Unlike non-windowed aggregates that we have seen previously, windowed aggregates return a _windowed KTable_ whose keys type is `Windowed<K>`. This is to differentiate aggregate values with the same key from different windows. The corresponding window instance and the embedded key can be retrieved as `Windowed#window()` and `Windowed#key()`, respectively.
 
-### Tumbling time windows
+#### Tumbling time windows
 
 Tumbling time windows are a special case of hopping time windows and, like the latter, are windows based on time intervals. They model fixed-size, non-overlapping, gap-less windows. A tumbling window is defined by a single property: the window's _size_. A tumbling window is a hopping window whose window size is equal to its advance interval. Since tumbling windows never overlap, a data record will belong to one and only one window.
 
@@ -1871,7 +1862,7 @@ The following code defines a tumbling window with a size of 5 minutes:
     // The above is equivalent to the following code:
     TimeWindows.of(windowSizeMs).advanceBy(windowSizeMs).grace(gracePeriodMs);
 
-### Sliding time windows
+#### Sliding time windows
 
 Sliding windows are actually quite different from hopping and tumbling windows. In Kafka Streams, sliding windows are used for join operations, specified by using the `JoinWindows` class, and windowed aggregations, specified by using the `SlidingWindows` class.
 
@@ -1898,7 +1889,7 @@ This diagram shows windowing a stream of data records with sliding windows. The 
 
 Sliding windows are aligned to the data record timestamps, not to the epoch. In contrast to hopping and tumbling windows, the lower and upper window time interval bounds of sliding windows are both inclusive.
 
-### Session Windows
+#### Session Windows
 
 Session windows are used to aggregate key-based events into so-called _sessions_ , the process of which is referred to as _sessionization_. Sessions represent a **period of activity** separated by a defined **gap of inactivity** (or "idleness"). Any events processed that fall within the inactivity gap of any existing sessions are merged into the existing sessions. If an event falls outside of the session gap, then a new session will be created.
 
@@ -1932,7 +1923,7 @@ If we then receive three additional records (including two out-of-order records)
 
 Detected sessions after having received six input records. Note the two out-of-order data records at t=4 (green) and t=5 (blue), which lead to a merge of sessions and an extension of a session, respectively.
 
-### Window Final Results
+#### Window Final Results
 
 In Kafka Streams, windowed computations update their results continuously. As new data arrives for a window, freshly computed results are emitted downstream. For many applications, this is ideal, since fresh results are always available. and Kafka Streams is designed to make programming continuous computations seamless. However, some applications need to take action **only** on the final result of a windowed computation. Common examples of this are sending alerts or delivering results to a system that doesn't support updates. 
 
@@ -1965,7 +1956,7 @@ One thing to note is that suppression is just like any other Kafka Streams opera
 
 For more detailed information, see the JavaDoc on the `Suppressed` config object and [KIP-328](https://cwiki.apache.org/confluence/x/sQU0BQ "KIP-328"). 
 
-# Applying processors and transformers (Processor API integration)
+## Applying processors and transformers (Processor API integration)
 
 Beyond the aforementioned stateless and stateful transformations, you may also leverage the [Processor API](processor-api.html#streams-developer-guide-processor-api) from the DSL. There are a number of scenarios where this may be helpful:
 
@@ -2210,7 +2201,7 @@ When using SBT then you can reference the correct library using the following:
     
                   libraryDependencies += "org.apache.kafka" %% "kafka-streams-scala" % "2.7.2"
 
-# Sample Usage
+## Sample Usage
 
 The library works by wrapping the original Java abstractions of Kafka Streams within a Scala wrapper object and then using implicit conversions between them. All the Scala abstractions are named identically as the corresponding Java abstraction, but they reside in a different package of the library e.g. the Scala class `org.apache.kafka.streams.scala.StreamsBuilder` is a wrapper around `org.apache.kafka.streams.StreamsBuilder`, `org.apache.kafka.streams.scala.kstream.KStream` is a wrapper around `org.apache.kafka.streams.kstream.KStream`, and so on.
 
@@ -2256,7 +2247,7 @@ The net result is that the following code is structured just like using the Java
 
 In the above code snippet, we don't have to provide any SerDes, `Grouped`, `Produced`, `Consumed` or `Joined` explicitly. They will also not be dependent on any SerDes specified in the config. **In fact all SerDes specified in the config will be ignored by the Scala APIs**. All SerDes and `Grouped`, `Produced`, `Consumed` or `Joined` will be handled through implicit SerDes as discussed later in the Implicit SerDes section. The complete independence from configuration based SerDes is what makes this library completely typesafe. Any missing instances of SerDes, `Grouped`, `Produced`, `Consumed` or `Joined` will be flagged as a compile time error.
 
-# Implicit SerDes
+## Implicit SerDes
 
 One of the common complaints of Scala users with the Java API has been the repetitive usage of the SerDes in API invocations. Many of the APIs need to take the SerDes through abstractions like `Grouped`, `Produced`, `Repartitioned`, `Consumed` or `Joined`. And the user has to supply them every time through the with function of these classes.
 
@@ -2300,7 +2291,7 @@ Quite a few things are going on in the above code snippet that may warrant a few
 
 
 
-# User-Defined SerDes
+## User-Defined SerDes
 
 When the default primitive SerDes are not enough and we need to define custom SerDes, the usage is exactly the same as above. Just define the implicit SerDes and start building the stream transformation. Here's an example with `AvroSerde`:
     
@@ -2339,8 +2330,6 @@ When the default primitive SerDes are not enough and we need to define custom Se
     clicksPerRegion.toStream.to(outputTopic)
 
 A complete example of user-defined SerDes can be found in a test class within the library.
-
-[Previous](/27/streams/developer-guide/config-streams) [Next](/27/streams/developer-guide/processor-api)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

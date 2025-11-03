@@ -10,8 +10,6 @@ type: docs
 
 # Upgrade Guide and API Changes
 
-[Introduction](/33/streams/) [Run Demo App](/33/streams/quickstart) [Tutorial: Write App](/33/streams/tutorial) [Concepts](/33/streams/core-concepts) [Architecture](/33/streams/architecture) [Developer Guide](/33/streams/developer-guide/) [Upgrade](/33/streams/upgrade-guide)
-
 Upgrading from any older version to 3.3.1 is possible: if upgrading from 3.2 or below, you will need to do two rolling bounces, where during the first rolling bounce phase you set the config `upgrade.from="older version"` (possible values are `"0.10.0" - "3.2"`) and during the second you remove it. This is required to safely handle 2 changes. The first is introduction of the new cooperative rebalancing protocol of the embedded consumer. The second is a change in foreign-key join serialization format. Note that you will remain using the old eager rebalancing protocol if you skip or delay the second rolling bounce, but you can safely switch over to cooperative at any time once the entire group is on 2.4+ by removing the config value and bouncing. For more details please refer to [KIP-429](https://cwiki.apache.org/confluence/x/vAclBg): 
 
   * prepare your application instances for a rolling bounce and make sure that config `upgrade.from` is set to the version from which it is being upgrade.

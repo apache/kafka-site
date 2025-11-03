@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Managing Streams Application Topics
-
 A Kafka Streams application continuously reads from Kafka topics, processes the read data, and then writes the processing results back into Kafka topics. The application may also auto-create other Kafka topics in the Kafka brokers, for example state store changelogs topics. This section describes the differences these topic types and how to manage the topics and your applications.
 
 Kafka Streams distinguishes between user topics and internal topics.
@@ -55,8 +53,6 @@ The following settings apply to the default configuration for internal topics:
   * For internal changelog topics for versioned state stores, the cleanup policy is `compact`, and `min.compaction.lag.ms` is set to 24 hours plus the store's historyRetentionMs` value.
 
 
-
-[Previous](/38/streams/developer-guide/running-app) [Next](/38/streams/developer-guide/security)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

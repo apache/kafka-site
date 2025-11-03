@@ -10,8 +10,6 @@ type: docs
 
 # Upgrade Guide and API Changes
 
-[Introduction](/21/streams/) [Run Demo App](/21/streams/quickstart) [Tutorial: Write App](/21/streams/tutorial) [Concepts](/21/streams/core-concepts) [Architecture](/21/streams/architecture) [Developer Guide](/21/streams/developer-guide/) [Upgrade](/21/streams/upgrade-guide)
-
 Upgrading from any older version to 2.1.0 is possible: (1) if you are upgrading from 2.0.x to 2.1.0 then a single rolling bounce is needed to swap in the new jar, (2) if you are upgrading from older versions than 2.0.x in the online mode, you would need two rolling bounces where the first rolling bounce phase you need to set config `upgrade.from="older version"` (possible values are `"0.10.0", "0.10.1", "0.10.2", "0.11.0", "1.0", and "1.1"`) (cf. [KIP-268](https://cwiki.apache.org/confluence/display/KAFKA/KIP-268%3A+Simplify+Kafka+Streams+Rebalance+Metadata+Upgrade)): 
 
   * prepare your application instances for a rolling bounce and make sure that config `upgrade.from` is set to the version from which it is being upgrade.

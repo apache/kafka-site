@@ -10,8 +10,6 @@ type: docs
 
 # Run Kafka Streams Demo Application
 
-[Introduction](/36/streams/) [Run Demo App](/36/streams/quickstart) [Tutorial: Write App](/36/streams/tutorial) [Concepts](/36/streams/core-concepts) [Architecture](/36/streams/architecture) [Developer Guide](/36/streams/developer-guide/) [Upgrade](/36/streams/upgrade-guide)
-
 This tutorial assumes you are starting fresh and have no existing Kafka or ZooKeeper data. However, if you have already started Kafka, feel free to skip the first two steps. 
 
 Kafka Streams is a client library for building mission-critical real-time applications and microservices, where the input and/or output data is stored in Kafka clusters. Kafka Streams combines the simplicity of writing and deploying standard Java and Scala applications on the client side with the benefits of Kafka's server-side cluster technology to make these applications highly scalable, elastic, fault-tolerant, distributed, and much more. 
@@ -253,8 +251,6 @@ Looking beyond the scope of this concrete example, what Kafka Streams is doing h
 ## Step 6: Teardown the application
 
 You can now stop the console consumer, the console producer, the Wordcount application, the Kafka broker and the ZooKeeper server (if one was started) in order via **Ctrl-C**.
-
-[Previous](/36/streams) [Next](/36/streams/tutorial)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

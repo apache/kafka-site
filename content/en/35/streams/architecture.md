@@ -8,10 +8,6 @@ keywords:
 type: docs
 ---
 
-# Architecture
-
-[Introduction](/35/streams/) [Run Demo App](/35/streams/quickstart) [Tutorial: Write App](/35/streams/tutorial) [Concepts](/35/streams/core-concepts) [Architecture](/35/streams/architecture) [Developer Guide](/35/streams/developer-guide/) [Upgrade](/35/streams/upgrade-guide)
-
 Kafka Streams simplifies application development by building on the Kafka producer and consumer libraries and leveraging the native capabilities of Kafka to offer data parallelism, distributed coordination, fault tolerance, and operational simplicity. In this section, we describe how Kafka Streams works underneath the covers. 
 
 The picture below shows the anatomy of an application that uses the Kafka Streams library. Let's walk through some details. 
@@ -76,8 +72,6 @@ In addition, Kafka Streams makes sure that the local state stores are robust to 
 Note that the cost of task (re)initialization typically depends primarily on the time for restoring the state by replaying the state stores' associated changelog topics. To minimize this restoration time, users can configure their applications to have **standby replicas** of local states (i.e. fully replicated copies of the state). When a task migration happens, Kafka Streams will assign a task to an application instance where such a standby replica already exists in order to minimize the task (re)initialization cost. See `num.standby.replicas` in the [**Kafka Streams Configs**](/35/#streamsconfigs) section. Starting in 2.6, Kafka Streams will guarantee that a task is only ever assigned to an instance with a fully caught-up local copy of the state, if such an instance exists. Standby tasks will increase the likelihood that a caught-up instance exists in the case of a failure. 
 
 You can also configure standby replicas with rack awareness. When configured, Kafka Streams will attempt to distribute a standby task on a different "rack" than the active one, thus having a faster recovery time when the rack of the active tasks fails. See `rack.aware.assignment.tags` in the [**Kafka Streams Developer Guide**](/35/streams/developer-guide/config-streams.html#rack-aware-assignment-tags) section. 
-
-[Previous](/35/streams/core-concepts) [Next](/35/streams/developer-guide)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

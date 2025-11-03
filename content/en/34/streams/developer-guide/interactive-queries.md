@@ -8,21 +8,8 @@ keywords:
 type: docs
 ---
 
-# Interactive Queries
-
 Interactive queries allow you to leverage the state of your application from outside your application. The Kafka Streams enables your applications to be queryable.
 
-**Table of Contents**
-
-  * Querying local state stores for an app instance
-    * Querying local key-value stores
-    * Querying local window stores
-    * Querying local custom state stores
-  * Querying remote state stores for the entire app
-    * Adding an RPC layer to your application
-    * Exposing the RPC endpoints of your application
-    * Discovering and accessing application instances and their local state stores
-  * Demo applications
 
 
 
@@ -83,7 +70,7 @@ You can also implement your own QueryableStoreType as described in section Query
 
 Kafka Streams materializes one state store per stream partition. This means your application will potentially manage many underlying state stores. The API enables you to query all of the underlying stores without having to know which partition the data is in.
 
-# Querying local key-value stores
+## Querying local key-value stores
 
 To query a local key-value store, you must first create a topology with a key-value store. This example creates a key-value store named "CountsKeyValueStore". This store will hold the latest count for any word that is found on the topic "word-count-input".
     
@@ -143,7 +130,7 @@ You can also materialize the results of stateless operators by using the overloa
     // this means that these results will not be materialized and cannot be queried.
     KTable<String, Integer> oddCounts = numberLines.filter((region, count) -> (count % 2 == 0));
 
-# Querying local window stores
+## Querying local window stores
 
 A window store will potentially have many results for any given key because the key can be present in multiple windows. However, there is only one result per window for a given key.
 
@@ -180,7 +167,7 @@ After the application has started, you can get access to "CountsWindowStore" and
       System.out.println("Count of 'world' @ time " + windowTimestamp + " is " + next.value);
     }
 
-# Querying local custom state stores
+## Querying local custom state stores
 
 **Note**
 
@@ -313,11 +300,11 @@ For example, you have a Kafka Streams application that processes user events in 
 
 Discover any running instances of the same application as well as the respective RPC endpoints they expose for interactive queries
 
-# Adding an RPC layer to your application
+## Adding an RPC layer to your application
 
 There are many ways to add an RPC layer. The only requirements are that the RPC layer is embedded within the Kafka Streams application and that it exposes an endpoint that other application instances and applications can connect to.
 
-# Exposing the RPC endpoints of your application
+## Exposing the RPC endpoints of your application
 
 To enable remote state store discovery in a distributed Kafka Streams application, you must set the [configuration property](config-streams.html#streams-developer-guide-required-configs) in the config properties. The `application.server` property defines a unique `host:port` pair that points to the RPC endpoint of the respective instance of a Kafka Streams application. The value of this configuration property will vary across the instances of your application. When this property is set, Kafka Streams will keep track of the RPC endpoint information for every instance of an application, its state stores, and assigned stream partitions through instances of [StreamsMetadata](/34/javadoc/org/apache/kafka/streams/state/StreamsMetadata.html).
 
@@ -362,7 +349,7 @@ This example shows how to configure and run a Kafka Streams application that sup
     MyRPCService rpcService = ...;
     rpcService.listenAt(rpcEndpoint);
 
-# Discovering and accessing application instances and their local state stores
+## Discovering and accessing application instances and their local state stores
 
 The following methods return [StreamsMetadata](/34/javadoc/org/apache/kafka/streams/state/StreamsMetadata.html) objects, which provide meta-information about application instances such as their RPC endpoint and locally available state stores.
 
@@ -423,8 +410,6 @@ At this point the full state of the application is interactively queryable:
 
 
 To see an end-to-end application with interactive queries, review the demo applications.
-
-[Previous](/34/streams/developer-guide/testing) [Next](/34/streams/developer-guide/memory-mgmt)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

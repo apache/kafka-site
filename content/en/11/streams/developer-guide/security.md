@@ -8,12 +8,6 @@ keywords:
 type: docs
 ---
 
-# Streams Security
-
-**Table of Contents**
-
-  * Required ACL setting for secure Kafka clusters
-  * Security example
 
 
 
@@ -95,8 +89,6 @@ If you incorrectly configure a security setting in your application, it will fai
     
 
 Monitor your Kafka Streams application log files for such error messages to spot any misconfigured applications quickly.
-
-[Previous](/11/streams/developer-guide/manage-topics) [Next](/11/streams/developer-guide/app-reset-tool)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

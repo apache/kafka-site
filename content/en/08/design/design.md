@@ -8,7 +8,7 @@ keywords:
 type: docs
 ---
 
-# Motivation
+## Motivation
 
 We designed Kafka to be able to act as a unified platform for handling all the real-time data feeds a large company might have. To do this we had to think through a fairly broad set of use cases. 
 
@@ -24,9 +24,9 @@ Finally in cases where the stream is fed into other data systems for serving we 
 
 Supporting these uses led us to a design with a number of unique elements, more akin to a database log then a traditional messaging system. We will outline some elements of the design in the following sections. 
 
-# Persistence
+## Persistence
 
-## Don't fear the filesystem!
+### Don't fear the filesystem!
 
 Kafka relies heavily on the filesystem for storing and caching messages. There is a general perception that "disks are slow" which makes people skeptical that a persistent structure can offer competitive performance. In fact disks are both much slower and much faster than people expect depending on how they are used; and a properly designed disk structure can often be as fast as the network. 
 
@@ -47,7 +47,7 @@ This suggests a design which is very simple: rather than maintain as much as pos
 
 This style of pagecache-centric design is described in an [article](http://varnish.projects.linpro.no/wiki/ArchitectNotes) on the design of Varnish here (along with a healthy dose of arrogance). 
 
-## Constant Time Suffices
+### Constant Time Suffices
 
 The persistent data structure used in messaging systems are often a per-consumer queue with an associated BTree or other general-purpose random access data structures to maintain metadata about messages. BTrees are the most versatile data structure available, and make it possible to support a wide variety of transactional and non-transactional semantics in the messaging system. They do come with a fairly high cost, though: Btree operations are O(log N). Normally O(log N) is considered essentially equivalent to constant time, but this is not true for disk operations. Disk seeks come at 10 ms a pop, and each disk can do only one seek at a time so parallelism is limited. Hence even a handful of disk seeks leads to very high overhead. Since storage systems mix very fast cached operations with very slow physical disk operations, the observed performance of tree structures is often superlinear as data increases with fixed cache--i.e. doubling your data makes things much worse then twice as slow. 
 
@@ -55,7 +55,7 @@ Intuitively a persistent queue could be built on simple reads and appends to fil
 
 Having access to virtually unlimited disk space without any performance penalty means that we can provide some features not usually found in a messaging system. For example, in Kafka, instead of attempting to deleting messages as soon as they are consumed, we can retain messages for a relative long period (say a week). This leads to a great deal of flexibility for consumers, as we will describe. 
 
-# Efficiency
+## Efficiency
 
 We have put significant effort into efficiency. One of our primary use cases is handling web activity data, which is very high volume: each page view may generate dozens of writes. Furthermore we assume each message published is read by at least one consumer (often many), hence we strive to make consumption as cheap as possible. 
 
@@ -90,7 +90,7 @@ This combination of pagecache and sendfile means that on a Kafka cluster where t
 
 For more background on the sendfile and zero-copy support in Java, see this [article](https://developer.ibm.com/articles/j-zerocopy/). 
 
-## End-to-end Batch Compression
+### End-to-end Batch Compression
 
 In some cases the bottleneck is actually not CPU or disk but network bandwidth. This is particularly true for a data pipeline that needs to send messages between data centers over a wide-area network. Of course the user can always compress its messages one at a time without any support needed from Kafka, but this can lead to very poor compression ratios as much of the redundancy is due to repetition between messages of the same type (e.g. field names in JSON or user agents in web logs or common string values). Efficient compression requires compressing multiple messages together rather than compressing each message individually. 
 
@@ -98,23 +98,23 @@ Kafka supports this by allowing recursive message sets. A batch of messages can 
 
 Kafka supports GZIP and Snappy compression protocols. More details on compression can be found [here](https://cwiki.apache.org/confluence/display/KAFKA/Compression). 
 
-# The Producer
+## The Producer
 
-## Load balancing
+### Load balancing
 
 The producer sends data directly to the broker that is the leader for the partition without any intervening routing tier. To help the producer do this all Kafka nodes can answer a request for metadata about which servers are alive and where the leaders for the partitions of a topic are at any given time to allow the producer to appropriate direct its requests. 
 
 The client controls which partition it publishes messages to. This can be done at random, implementing a kind of random load balancing, or it can be done by some semantic partitioning function. We expose the interface for semantic partitioning by allowing the user to specify a key to partition by and using this to hash to a partition (there is also an option to override the partition function if need be). For example if the key chosen was a user id then all data for a given user would be sent to the same partition. This in turn will allow consumers to make locality assumptions about their consumption. This style of partitioning is explicitly designed to allow locality-sensitive processing in consumers. 
 
-## Asynchronous send
+### Asynchronous send
 
 Batching is one of the big drivers of efficiency, and to enable batching the Kafka producer has an asynchronous mode that accumulates data in memory and sends out larger batches in a single request. The batching can be configured to accumulate no more than a fixed number of messages and to wait no longer than some fixed latency bound (say 100 messages or 5 seconds). This allows the accumulation of more bytes to send, and few larger I/O operations on the servers. Since this buffering happens in the client it obviously reduces the durability as any data buffered in memory and not yet sent will be lost in the event of a producer crash. 
 
-# The Consumer
+## The Consumer
 
 The Kafka consumer works by issuing "fetch" requests to the brokers leading the partitions it wants to consume. The consumer specifies its position in the log with each request and receives back a chunk of log beginning at that position. The consumer thus has significant control over this position and can rewind it to re-consume data if need be. 
 
-## Push vs. pull
+### Push vs. pull
 
 An initial question we considered is whether consumers should pull data from brokers or brokers should push data to the consumer. In this respect Kafka follows a more traditional design, shared by most messaging systems, where data is pushed to the broker from the producer and pulled from the broker by the consumer. Some logging-centric systems, such as [scribe](http://github.com/facebook/scribe) and [flume](http://github.com/cloudera/flume) follow a very different push based path where data is pushed downstream. There are pros and cons to both approaches. However a push-based system has difficulty dealing with diverse consumers as the broker controls the rate at which data is transferred. The goal is generally for the consumer to be able to consume at the maximum possible rate; unfortunately in a push system this means the consumer tends to be overwhelmed when its rate of consumption falls below the rate of production (a denial of service attack, in essence). A pull-based system has the nicer property that the consumer simply falls behind and catches up when it can. This can be mitigated with some kind of backoff protocol by which the consumer can indicate it is overwhelmed, but getting the rate of transfer to fully utilize (but never over-utilize) the consumer is trickier than it seems. Previous attempts at building systems in this fashion led us to go with a more traditional pull model. 
 
@@ -124,7 +124,7 @@ The deficiency of a naive pull-based system is that if the broker has no data th
 
 You could imagine other possible designs which would be only pull, end-to-end. The producer would locally write to a local log, and brokers would pull from that with consumers pulling from them. A similar type of "store-and-forward" producer is often proposed. This is intriguing but we felt not very suitable for our target use cases which have thousands of producers. Our experience running persistent data systems at scale led us to feel that involving thousands of disks in the system across many applications would not actually make things more reliable and would be a nightmare to operate. And in practice we have found that we can run a pipeline with strong SLAs at large scale without a need for producer persistence. 
 
-## Consumer Position
+### Consumer Position
 
 Keeping track of _what_ has been consumed, is, surprisingly, one of the key performance points of a messaging system. 
 
@@ -136,13 +136,13 @@ Kafka handles this differently. Our topic is divided into a set of totally order
 
 There is a side benefit of this decision. A consumer can deliberately _rewind_ back to an old offset and re-consume data. This violates the common contract of a queue, but turns out to be an essential feature for many consumers. For example, if the consumer code has a bug and is discovered after some messages are consumed, the consumer can re-consume those messages once the bug is fixed. 
 
-## Offline Data Load
+### Offline Data Load
 
 Scalable persistence allows for the possibility of consumers that only periodically consume such as batch data loads that periodically bulk-load data into an offline system such as Hadoop or a relational data warehouse. 
 
 In the case of Hadoop we parallelize the data load by splitting the load over individual map tasks, one for each node/topic/partition combination, allowing full parallelism in the loading. Hadoop provides the task management, and tasks which fail can restart without danger of duplicate data--they simply restart from their original position. 
 
-# Message Delivery Semantics
+## Message Delivery Semantics
 
 Now that we understand a little about how producers and consumers work, let's discuss the semantic guarantees Kafka provides between producer and consumer. Clearly there are multiple possible message delivery guarantees that could be provided: 
 
@@ -169,7 +169,7 @@ Now let's describe the semantics from the point-of-view of the consumer. All rep
 
 So effectively Kafka guarantees at-least-once delivery by default and allows the user to implement at most once delivery by disabling retries on the producer and committing its offset prior to processing a batch of messages. Exactly-once delivery requires co-operation with the destination storage system but Kafka provides the offset which makes implementing this straight-forward. 
 
-# Replication
+## Replication
 
 Kafka replicates the log for each topic's partitions across a configurable number of servers (you can set this replication factor on a topic-by-topic basis). This allows automatic failover to these replicas when a server in the cluster fails so messages remain available in the presence of failures. 
 
@@ -193,7 +193,7 @@ The guarantee that Kafka offers is that a committed message will not be lost, as
 
 Kafka will remain available in the presence of node failures after a short fail-over period, but may not remain available in the presence of network partitions. 
 
-## Replicated Logs: Quorums, ISRs, and State Machines (Oh my!)
+### Replicated Logs: Quorums, ISRs, and State Machines (Oh my!)
 
 At its heart a Kafka partition is a replicated log. The replicated log is one of the most basic primitives in distributed data systems, and there are many approaches for implementing one. A replicated log can be used by other systems as a primitive for implementing other distributed systems in the [state-machine style](http://en.wikipedia.org/wiki/State_machine_replication). 
 
@@ -217,7 +217,7 @@ For most use cases we hope to handle, we think this tradeoff is a reasonable one
 
 Another important design distinction is that Kafka does not require that crashed nodes recover with all their data intact. It is not uncommon for replication algorithms in this space to depend on the existence of "stable storage" that cannot be lost in any failure-recovery scenario without potential consistency violations. There are two primary problems with this assumption. First, disk errors are the most common problem we observe in real operation of persistent data systems and they often do not leave data intact. Secondly, even if this were not a problem, we do not want to require the use of fsync on every write for our consistency guarantees as this can reduce performance by two to three orders of magnitude. Our protocol for allowing a replica to rejoin the ISR ensures that before rejoining, it must fully re-sync again even if it lost unflushed data in its crash. 
 
-## Unclean leader election: What if they all die?
+### Unclean leader election: What if they all die?
 
 Note that Kafka's guarantee with respect to data loss is predicated on at least on replica remaining in sync. If the current leader dies and no remaining live replicas are in the ISR, this guarantee no longer holds. If your have more than one replica assigned to a partiiton, this should be relatively rare since at least two brokers have to fail for this to happen. 
 
@@ -231,7 +231,7 @@ This is a simple tradeoff between availability and consistency. If we wait for r
 
 This dilemma is not specific to Kafka. It exists in any quorum-based scheme. For example in a majority voting scheme, if a majority of servers suffer a permanent failure, then you must either choose to lose 100% of your data or violate consistency by taking what remains on an existing server as your new source of truth. 
 
-## Replica Management
+### Replica Management
 
 The above discussion on replicated logs really covers only a single log, i.e. one topic partition. However a Kafka cluster will manage hundreds or thousands of these partitions. We attempt to balance partitions within a cluster in a round-robin fashion to avoid clustering all partitions for high-volume topics on a small number of nodes. Likewise we try to balance leadership so that each node is the leader for a proportional share of its partitions. 
 

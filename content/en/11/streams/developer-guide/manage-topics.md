@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Managing Streams Application Topics
-
 A Kafka Streams application continuously reads from Kafka topics, processes the read data, and then writes the processing results back into Kafka topics. The application may also auto-create other Kafka topics in the Kafka brokers, for example state store changelogs topics. This section describes the differences these topic types and how to manage the topics and your applications.
 
 Kafka Streams distinguishes between user topics and internal topics.
@@ -54,8 +52,6 @@ Kafka Streams automatically creates internal repartitioning and changelog topics
 Note
 
 The internal topics follow the naming convention `<application.id>-<operatorName>-<suffix>`, but this convention is not guaranteed for future releases.
-
-[Previous](/11/streams/developer-guide/running-app) [Next](/11/streams/developer-guide/security)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

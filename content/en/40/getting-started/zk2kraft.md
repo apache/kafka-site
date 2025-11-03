@@ -14,7 +14,7 @@ type: docs
 
 This section documents differences in behavior between KRaft mode and ZooKeeper mode. Specifically, several configurations, metrics and features have changed or are no longer required in KRaft mode. To migrate an existing cluster from ZooKeeper mode to KRaft mode, please refer to the [ZooKeeper to KRaft Migration](/39/documentation.html#kraft_zk_migration) section. 
 
-# Configurations
+## Configurations
 
   * Removed password encoder-related configurations. These configurations were used in ZooKeeper mode to define the key and backup key for encrypting sensitive data (e.g., passwords), specify the algorithm and key generation method for password encryption (e.g., AES, RSA), and control the key length and encryption strength. 
 
@@ -82,7 +82,7 @@ Kafka uses the node id in KRaft mode to identify servers.
 
 
 
-# Dynamic Log Levels
+## Dynamic Log Levels
 
   * The dynamic log levels feature allows you to change the log4j settings of a running broker or controller process without restarting it. The command-line syntax for setting dynamic log levels on brokers has not changed in KRaft mode. Here is an example of setting the log level on a broker:  
 
@@ -112,7 +112,7 @@ Note that the entity-type must be specified as `broker-loggers`, even though we 
 
 
 
-# Dynamic Controller Configurations
+## Dynamic Controller Configurations
 
   * Some Kafka configurations can be changed dynamically, without restarting the process. The command-line syntax for setting dynamic log levels on brokers has not changed in KRaft mode. Here is an example of setting the number of IO threads on a broker:  
 

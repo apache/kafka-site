@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Compatibility
-
 With the release of Kafka 4.0, significant changes have been introduced that impact compatibility across various components. To assist users in planning upgrades and ensuring seamless interoperability, a comprehensive compatibility matrix has been prepared. 
 
 # JDK Compatibility Across Kafka Versions
@@ -39,7 +37,7 @@ before 3.2.x | ❌ | ❌
   
 **Note: Can’t upgrade server from static voter to dynamic voter, see[KAFKA-16538](https://issues.apache.org/jira/browse/KAFKA-16538).**
 
-## Client/Broker Forward Compatibility
+### Client/Broker Forward Compatibility
 
 Kafka Version | Module | Compatibility with Kafka 4.0 | Key Differences/Limitations  
 ---|---|---|---  

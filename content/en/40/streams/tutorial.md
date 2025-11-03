@@ -10,8 +10,6 @@ type: docs
 
 # Tutorial: Write a Kafka Streams Application
 
-[Introduction](/40/streams/) [Run Demo App](/40/streams/quickstart) [Tutorial: Write App](/40/streams/tutorial) [Concepts](/40/streams/core-concepts) [Architecture](/40/streams/architecture) [Developer Guide](/40/streams/developer-guide/) [Upgrade](/40/streams/upgrade-guide)
-
 In this guide we will start from scratch on setting up your own project to write a stream processing application using Kafka Streams. It is highly recommended to read the [quickstart](/40/streams/quickstart) first on how to run a Streams application written in Kafka Streams if you have not done so. 
 
 ## Setting up a Maven Project
@@ -22,7 +20,7 @@ We are going to use a Kafka Streams Maven Archetype for creating a Streams proje
     $ mvn archetype:generate \
     -DarchetypeGroupId=org.apache.kafka \
     -DarchetypeArtifactId=streams-quickstart-java \
-    -DarchetypeVersion=4.0.0 \
+    -DarchetypeVersion=4.0.1 \
     -DgroupId=streams.examples \
     -DartifactId=streams-quickstart \
     -Dversion=0.1 \
@@ -441,8 +439,6 @@ The complete code looks like this (assuming lambda expression is used):
             // ... same as Pipe.java above
         }
     }
-
-[Previous](/40/streams/quickstart) [Next](/40/streams/core-concepts)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

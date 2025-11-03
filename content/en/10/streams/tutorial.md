@@ -10,8 +10,6 @@ type: docs
 
 # Tutorial: Write a Streams Application
 
-[Introduction](/10/streams/) [Run Demo App](/10/streams/quickstart) [Tutorial: Write App](/10/streams/tutorial) [Concepts](/10/streams/core-concepts) [Architecture](/10/streams/architecture) [Developer Guide](/10/streams/developer-guide/) [Upgrade](/10/streams/upgrade-guide)
-
 In this guide we will start from scratch on setting up your own project to write a stream processing application using Kafka Streams. It is highly recommended to read the [quickstart](/10/streams/quickstart) first on how to run a Streams application written in Kafka Streams if you have not done so. 
 
 ## Setting up a Maven Project
@@ -466,8 +464,6 @@ The complete code looks like this (assuming lambda expression is used):
                 }
             }
         
-
-[Previous](/10/streams/quickstart) [Next](/10/streams/core-concepts)
 
   * [Documentation](/documentation)
   * [Streams](/streams)

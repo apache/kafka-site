@@ -10,8 +10,6 @@ type: docs
 
 # Upgrade Guide and API Changes
 
-[Introduction](/11/streams/) [Run Demo App](/11/streams/quickstart) [Tutorial: Write App](/11/streams/tutorial) [Concepts](/11/streams/core-concepts) [Architecture](/11/streams/architecture) [Developer Guide](/11/streams/developer-guide/) [Upgrade](/11/streams/upgrade-guide)
-
 If you want to upgrade from 1.0.x to 1.1.0 and you have customized window store implementations on the `ReadOnlyWindowStore` interface you'd need to update your code to incorporate the newly added public APIs. Otherwise, if you are using Java 7 you don't need to make any code changes as the public API is fully backward compatible; but if you are using Java 8 method references in your Kafka Streams code you might need to update your code to resolve method ambiguities. Hot-swapping the jar-file only might not work for this case. See below for a complete list of 1.1.0 API and semantic changes that allow you to advance your application and/or simplify your code base. 
 
 If you want to upgrade from 0.11.0.x to 1.0.0 you don't need to make any code changes as the public API is fully backward compatible. However, some public APIs were deprecated and thus it is recommended to update your code eventually to allow for future upgrades. See below for a complete list of 1.0.0 API and semantic changes that allow you to advance your application and/or simplify your code base. 

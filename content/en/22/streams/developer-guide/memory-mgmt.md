@@ -8,17 +8,10 @@ keywords:
 type: docs
 ---
 
-# Memory Management
-
 You can specify the total memory (RAM) size used for internal caching and compacting of records. This caching happens before the records are written to state stores or forwarded downstream to other nodes.
 
 The record caches are implemented slightly different in the DSL and Processor API.
 
-**Table of Contents**
-
-  * Record caches in the DSL
-  * Record caches in the Processor API
-  * Other memory usage
 
 
 
@@ -138,8 +131,6 @@ There are other modules inside Apache Kafka that allocate memory during runtime.
 **Iterators should be closed explicitly to release resources:** Store iterators (e.g., `KeyValueIterator` and `WindowStoreIterator`) must be closed explicitly upon completeness to release resources such as open file handlers and in-memory read buffers, or use try-with-resources statement (available since JDK7) for this Closeable class.
 
 Otherwise, stream application's memory usage keeps increasing when running until it hits an OOM.
-
-[Previous](/22/streams/developer-guide/interactive-queries) [Next](/22/streams/developer-guide/running-app)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

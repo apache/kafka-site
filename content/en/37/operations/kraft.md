@@ -198,6 +198,8 @@ Here is a sample config for a KRaft controller that is ready for migration:
     
     # Other configs ...
 
+Note: The migration can stall if the ZooKeeper Security Migration Tool was previously executed (see [KAFKA-19480](https://issues.apache.org/jira/browse/KAFKA-19480) for more details). As a workaround, the malformed "/migration" node can be removed from ZooKeeper by running `delete /migration` with the `zookeeper-shell.sh` CLI tool.
+
 _Note: The KRaft cluster`node.id` values must be different from any existing ZK broker `broker.id`. In KRaft-mode, the brokers and controllers share the same Node ID namespace._
 
 ### Enter Migration Mode on the Brokers

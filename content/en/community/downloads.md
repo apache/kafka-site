@@ -4,7 +4,6 @@ type: docs
 ---
 
 
-# Download
 
 The project goal is to have 3 releases a year, which means a release every 4 months. Bugfix releases are made as needed for supported releases only. It is possible to verify every download by following these [procedures](https://www.apache.org/info/verification.html) and using these [KEYS](https://downloads.apache.org/kafka/KEYS). 
 
@@ -23,6 +22,21 @@ The project goal is to have 3 releases a year, which means a release every 4 mon
 
 Kafka 4.1.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_410_release_announcement), the detailed [Upgrade Notes](https://kafka.apache.org/documentation#upgrade_4_1_0) and the [Release Notes](https://dlcdn.apache.org/kafka/4.1.0/RELEASE_NOTES.html). 
 
+
+### 4.0.1
+
+  * Released October 13, 2025 
+  * [Release Notes](https://dlcdn.apache.org/kafka/4.0.1/RELEASE_NOTES.html)
+  * Docker image: [apache/kafka:4.0.1](https://hub.docker.com/layers/apache/kafka/4.0.1/images/sha256-9d71149303e87843482fa0e2095ed2a991739bfdbcd5333f4295a53d667338b4). 
+  * Docker Native image: [apache/kafka-native:4.0.1](https://hub.docker.com/layers/apache/kafka-native/4.0.1/images/sha256-35b36477b2edec2b60be9a0fd19a5489fe878cc2df173931a97b140968d42ea2). 
+  * Source download: [kafka-4.0.1-src.tgz](https://dlcdn.apache.org/kafka/4.0.1/kafka-4.0.1-src.tgz) ([asc](https://downloads.apache.org/kafka/4.0.1/kafka-4.0.1-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.0.1/kafka-4.0.1-src.tgz.sha512)) 
+  * Binary download: [kafka_2.13-4.0.1.tgz](https://dlcdn.apache.org/kafka/4.0.1/kafka_2.13-4.0.1.tgz) ([asc](https://downloads.apache.org/kafka/4.0.1/kafka_2.13-4.0.1.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.0.1/kafka_2.13-4.0.1.tgz.sha512)) 
+
+
+
+Kafka 4.0.1 fixes 49 issues since the 4.0.0 release. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_401_release_announcement) and the detailed [Release Notes](https://dlcdn.apache.org/kafka/4.0.1/RELEASE_NOTES.html). 
+
+
 ### 3.9.1
 
   * Released May 21, 2025 
@@ -38,6 +52,8 @@ We build for multiple versions of Scala. This only matters if you are using Scal
 
 
 Kafka 3.9.1 fixes 66 issues since the 3.9.0 release. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_391_release_announcement) and the detailed [Release Notes](https://dlcdn.apache.org/kafka/3.9.1/RELEASE_NOTES.html). 
+
+## Archived Releases 
 
 ### 4.0.0
 
@@ -97,7 +113,6 @@ We build for multiple versions of Scala. This only matters if you are using Scal
 
 Kafka 3.7.1 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_371_release_announcement) and the detailed [Release Notes](https://downloads.apache.org/kafka/3.7.1/RELEASE_NOTES.html). 
 
-## Archived releases
 
 ### 3.8.0 
 

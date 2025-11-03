@@ -10,8 +10,6 @@ type: docs
 
 # Upgrade Guide & API Changes
 
-[Introduction](/10/streams/) [Run Demo App](/10/streams/quickstart) [Tutorial: Write App](/10/streams/tutorial) [Concepts](/10/streams/core-concepts) [Architecture](/10/streams/architecture) [Developer Guide](/10/streams/developer-guide/) [Upgrade](/10/streams/upgrade-guide)
-
 If you want to upgrade from 0.10.2.x or 0.11.0.x to 1.0.x you don't need to do any code changes as the public API is fully backward compatible. However, some public APIs were deprecated and thus it is recommended to update your code eventually to allow for future upgrades. See below a complete list of 1.0 and 0.11.0 API and semantic changes that allow you to advance your application and/or simplify your code base, including the usage of new features. Additionally, Streams API 1.0.x requires broker on-disk message format version 0.10 or higher; thus, you need to make sure that the message format is configured correctly before you upgrade your Kafka Streams application. 
 
 If you want to upgrade from 0.10.1.x to 1.0.x see the Upgrade Sections for [**0.10.2**](/10/#upgrade_1020_streams), [**0.11.0**](/10/#upgrade_1100_streams), and [**1.0**](/10/#upgrade_100_streams). Note, that a brokers on-disk message format must be on version 0.10 or higher to run a Kafka Streams application version 1.0 or higher. See below a complete list of 0.10.2, 0.11.0, and 1.0 API and semantical changes that allow you to advance your application and/or simplify your code base, including the usage of new features. 

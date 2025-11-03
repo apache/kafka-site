@@ -8,10 +8,6 @@ keywords:
 type: docs
 ---
 
-# Architecture
-
-[Introduction](/31/streams/) [Run Demo App](/31/streams/quickstart) [Tutorial: Write App](/31/streams/tutorial) [Concepts](/31/streams/core-concepts) [Architecture](/31/streams/architecture) [Developer Guide](/31/streams/developer-guide/) [Upgrade](/31/streams/upgrade-guide)
-
 Kafka Streams simplifies application development by building on the Kafka producer and consumer libraries and leveraging the native capabilities of Kafka to offer data parallelism, distributed coordination, fault tolerance, and operational simplicity. In this section, we describe how Kafka Streams works underneath the covers. 
 
 The picture below shows the anatomy of an application that uses the Kafka Streams library. Let's walk through some details. 
@@ -74,8 +70,6 @@ Kafka Streams builds on fault-tolerance capabilities integrated natively within 
 In addition, Kafka Streams makes sure that the local state stores are robust to failures, too. For each state store, it maintains a replicated changelog Kafka topic in which it tracks any state updates. These changelog topics are partitioned as well so that each local state store instance, and hence the task accessing the store, has its own dedicated changelog topic partition. [Log compaction](/31/#compaction) is enabled on the changelog topics so that old data can be purged safely to prevent the topics from growing indefinitely. If tasks run on a machine that fails and are restarted on another machine, Kafka Streams guarantees to restore their associated state stores to the content before the failure by replaying the corresponding changelog topics prior to resuming the processing on the newly started tasks. As a result, failure handling is completely transparent to the end user. 
 
 Note that the cost of task (re)initialization typically depends primarily on the time for restoring the state by replaying the state stores' associated changelog topics. To minimize this restoration time, users can configure their applications to have **standby replicas** of local states (i.e. fully replicated copies of the state). When a task migration happens, Kafka Streams will assign a task to an application instance where such a standby replica already exists in order to minimize the task (re)initialization cost. See `num.standby.replicas` in the [**Kafka Streams Configs**](/31/#streamsconfigs) section. Starting in 2.6, Kafka Streams will guarantee that a task is only ever assigned to an instance with a fully caught-up local copy of the state, if such an instance exists. Standby tasks will increase the likelihood that a caught-up instance exists in the case of a failure. 
-
-[Previous](/31/streams/core-concepts) [Next](/31/streams/developer-guide)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

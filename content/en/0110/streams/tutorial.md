@@ -387,8 +387,6 @@ The complete code looks like this (assuming lambda expression is used):
             }
         
 
-[Previous](/0110/streams/quickstart) [Next](/0110/streams/developer-guide)
-
   * [Documentation](/documentation)
   * [Streams](/streams)
 
