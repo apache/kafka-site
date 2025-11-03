@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Testing a Streams Application
-
 To test a Kafka Streams application, Kafka provides a test-utils artifact that can be added as regular dependency to your test code base. Example `pom.xml` snippet when using Maven: 
     
     
@@ -227,8 +225,6 @@ The following example demonstrates how to use the test driver and helper classes
         public void close() {}
     }
         
-
-[Previous](/11/streams/developer-guide/datatypes) [Next](/11/streams/developer-guide/interactive-queries)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

@@ -8,17 +8,10 @@ keywords:
 type: docs
 ---
 
-# Memory Management
-
 You can specify the total memory (RAM) size used for internal caching and compacting of records. This caching happens before the records are written to state stores or forwarded downstream to other nodes.
 
 The record caches are implemented slightly different in the DSL and Processor API.
 
-**Table of Contents**
-
-  * Record caches in the DSL
-  * Record caches in the Processor API
-  * Other memory usage
 
 
 

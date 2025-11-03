@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Data Types and Serialization
-
 Every Kafka Streams application must provide Serdes (Serializer/Deserializer) for the data types of record keys and record values (e.g. `java.lang.String`) to materialize the data when necessary. Operations that require such Serdes information include: `stream()`, `table()`, `to()`, `repartition()`, `groupByKey()`, `groupBy()`.
 
 You can provide Serdes by using either of these methods, but you must use at least one:
@@ -19,15 +17,6 @@ You can provide Serdes by using either of these methods, but you must use at lea
 
 
 
-**Table of Contents**
-
-  * Configuring Serdes
-  * Overriding default Serdes
-  * Available Serdes
-    * Primitive and basic types
-    * JSON
-    * Implementing custom serdes
-  * Kafka Streams DSL for Scala Implicit Serdes
 
 
 
@@ -77,7 +66,7 @@ If some of your incoming records are corrupted or ill-formatted, they will cause
 
 # Available Serdes
 
-# Primitive and basic types
+## Primitive and basic types
 
 Apache Kafka includes several built-in serde implementations for Java primitives and basic types such as `byte[]` in its `kafka-clients` Maven artifact:
     
@@ -85,7 +74,7 @@ Apache Kafka includes several built-in serde implementations for Java primitives
     <dependency>
         <groupId>org.apache.kafka</groupId>
         <artifactId>kafka-clients</artifactId>
-        <version>4.0.0</version>
+        <version>4.0.1</version>
     </dependency>
 
 This artifact provides the following serde implementations under the package [org.apache.kafka.common.serialization](https://github.com/apache/kafka/blob/4.0/clients/src/main/java/org/apache/kafka/common/serialization), which you can leverage when e.g., defining default serializers in your Streams configuration.
@@ -107,7 +96,7 @@ Boolean | `Serdes.Boolean()`
 
 [Bytes](https://github.com/apache/kafka/blob/4.0/clients/src/main/java/org/apache/kafka/common/utils/Bytes.java) is a wrapper for Java's `byte[]` (byte array) that supports proper equality and ordering semantics. You may want to consider using `Bytes` instead of `byte[]` in your applications.
 
-# JSON
+## JSON
 
 You can use `JsonSerializer` and `JsonDeserializer` from Kafka Connect to construct JSON compatible serializers and deserializers using `Serdes.serdeFrom(<serializerInstance>, <deserializerInstance>)`. Note, that Kafka Connect's Json (de)serializer requires Java 17. 
 
@@ -124,8 +113,6 @@ If you need to implement custom Serdes, your best starting point is to take a lo
 # Kafka Streams DSL for Scala Implicit Serdes[](scala-dsl-serdes "Permalink to this headline")
 
 When using the [Kafka Streams DSL for Scala](dsl-api.html#scala-dsl) you're not required to configure a default Serdes. In fact, it's not supported. Serdes are instead provided implicitly by default implementations for common primitive datatypes. See the [Implicit Serdes](dsl-api.html#scala-dsl-implicit-serdes) and [User-Defined Serdes](dsl-api.html#scala-dsl-user-defined-serdes) sections in the DSL API documentation for details
-
-[Previous](/40/streams/developer-guide/processor-api) [Next](/40/streams/developer-guide/testing)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

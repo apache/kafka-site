@@ -8,12 +8,6 @@ keywords:
 type: docs
 ---
 
-# Writing a Streams Application
-
-**Table of Contents**
-
-  * Libraries and Maven artifacts
-  * Using Kafka Streams within your application code
 
 
 
@@ -154,8 +148,6 @@ To allow your application to gracefully shutdown in response to SIGTERM, it is r
 
 
 After an application is stopped, Kafka Streams will migrate any tasks that had been running in this instance to available remaining instances.
-
-[Previous](/11/streams/developer-guide/) [Next](/11/streams/developer-guide/config-streams)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

@@ -10,8 +10,6 @@ type: docs
 
 # Upgrade Guide and API Changes
 
-[Introduction](/20/streams/) [Run Demo App](/20/streams/quickstart) [Tutorial: Write App](/20/streams/tutorial) [Concepts](/20/streams/core-concepts) [Architecture](/20/streams/architecture) [Developer Guide](/20/streams/developer-guide/) [Upgrade](/20/streams/upgrade-guide)
-
 Upgrading from any older version to 2.0.0 is possible: (1) you need to make sure to update you code and config accordingly, because there are some minor non-compatible API changes since older releases (the code changes are expected to be minimal, please see below for the details), (2) upgrading to 2.0.0 in the online mode requires two rolling bounces. For (2), in the first rolling bounce phase users need to set config `upgrade.from="older version"` (possible values are `"0.10.0", "0.10.1", "0.10.2", "0.11.0", "1.0", and "1.1"`) (cf. [KIP-268](https://cwiki.apache.org/confluence/display/KAFKA/KIP-268%3A+Simplify+Kafka+Streams+Rebalance+Metadata+Upgrade)): 
 
   * prepare your application instances for a rolling bounce and make sure that config `upgrade.from` is set to the version from which it is being upgrade to new version 2.0.0

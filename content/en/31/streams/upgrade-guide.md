@@ -10,8 +10,6 @@ type: docs
 
 # Upgrade Guide and API Changes
 
-[Introduction](/31/streams/) [Run Demo App](/31/streams/quickstart) [Tutorial: Write App](/31/streams/tutorial) [Concepts](/31/streams/core-concepts) [Architecture](/31/streams/architecture) [Developer Guide](/31/streams/developer-guide/) [Upgrade](/31/streams/upgrade-guide)
-
 Upgrading from any older version to 3.1.1-SNAPSHOT is possible: if upgrading from 2.3 or below, you will need to do two rolling bounces, where during the first rolling bounce phase you set the config `upgrade.from="older version"` (possible values are `"0.10.0" - "2.3"`) and during the second you remove it. This is required to safely upgrade to the new cooperative rebalancing protocol of the embedded consumer. Note that you will remain using the old eager rebalancing protocol if you skip or delay the second rolling bounce, but you can safely switch over to cooperative at any time once the entire group is on 2.4+ by removing the config value and bouncing. For more details please refer to [KIP-429](https://cwiki.apache.org/confluence/x/vAclBg): 
 
   * prepare your application instances for a rolling bounce and make sure that config `upgrade.from` is set to the version from which it is being upgrade.

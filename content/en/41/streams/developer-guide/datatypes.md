@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Data Types and Serialization
-
 Every Kafka Streams application must provide Serdes (Serializer/Deserializer) for the data types of record keys and record values (e.g. `java.lang.String`) to materialize the data when necessary. Operations that require such Serdes information include: `stream()`, `table()`, `to()`, `repartition()`, `groupByKey()`, `groupBy()`.
 
 You can provide Serdes by using either of these methods, but you must use at least one:
@@ -19,16 +17,6 @@ You can provide Serdes by using either of these methods, but you must use at lea
 
 
 
-**Table of Contents**
-
-  * Configuring Serdes
-  * Overriding default Serdes
-  * Available Serdes
-    * Primitive and basic types
-    * JSON
-    * Window Serdes
-    * Implementing custom serdes
-  * Kafka Streams DSL for Scala Implicit Serdes
 
 
 
@@ -78,7 +66,7 @@ If some of your incoming records are corrupted or ill-formatted, they will cause
 
 # Available Serdes
 
-# Primitive and basic types
+## Primitive and basic types
 
 Apache Kafka includes several built-in serde implementations for Java primitives and basic types such as `byte[]` in its `kafka-clients` Maven artifact:
     
@@ -108,7 +96,7 @@ Boolean | `Serdes.Boolean()`
 
 [Bytes](https://github.com/apache/kafka/blob/4.1/clients/src/main/java/org/apache/kafka/common/utils/Bytes.java) is a wrapper for Java's `byte[]` (byte array) that supports proper equality and ordering semantics. You may want to consider using `Bytes` instead of `byte[]` in your applications.
 
-# JSON
+## JSON
 
 The Kafka Streams code examples also include a basic serde implementation for JSON:
 
@@ -118,7 +106,7 @@ The Kafka Streams code examples also include a basic serde implementation for JS
 
 As shown in the example, you can use JSONSerdes inner classes `Serdes.serdeFrom(<serializerInstance>, <deserializerInstance>)` to construct JSON compatible serializers and deserializers. 
 
-# Window Serdes
+## Window Serdes
 
 Apache Kafka Streams includes serde implementations for windowed types in its `kafka-streams` Maven artifact:
     
@@ -152,7 +140,7 @@ This artifact provides the following windowed serde implementations under the pa
 
 
 
-## Usage in Code
+### Usage in Code
 
 When using windowed serdes in your application code, you typically create instances via constructors or factory methods:
     
@@ -177,7 +165,7 @@ When using windowed serdes in your application code, you typically create instan
     TimeWindowedSerializer<String> serializer = new TimeWindowedSerializer<>(Serdes.String().serializer());
     TimeWindowedDeserializer<String> deserializer = new TimeWindowedDeserializer<>(Serdes.String().deserializer(), 500L);
 
-## Usage in Command Line
+### Usage in Command Line
 
 When using command-line tools (like `bin/kafka-console-consumer.sh`), you can configure windowed deserializers by passing the inner class and window size via configuration properties. The property names use a prefix pattern:
     
@@ -193,7 +181,7 @@ When using command-line tools (like `bin/kafka-console-consumer.sh`), you can co
     --property key.deserializer=org.apache.kafka.streams.kstream.SessionWindowedDeserializer \
     --property key.deserializer.windowed.inner.deserializer.class=org.apache.kafka.common.serialization.StringDeserializer
 
-## Deprecated Configs
+### Deprecated Configs
 
 The following `StreamsConfig` parameters are deprecated in favor of passing parameters directly to serializer/deserializer constructors:
 
@@ -215,8 +203,6 @@ If you need to implement custom Serdes, your best starting point is to take a lo
 # Kafka Streams DSL for Scala Implicit Serdes[](scala-dsl-serdes "Permalink to this headline")
 
 When using the [Kafka Streams DSL for Scala](dsl-api.html#scala-dsl) you're not required to configure a default Serdes. In fact, it's not supported. Serdes are instead provided implicitly by default implementations for common primitive datatypes. See the [Implicit Serdes](dsl-api.html#scala-dsl-implicit-serdes) and [User-Defined Serdes](dsl-api.html#scala-dsl-user-defined-serdes) sections in the DSL API documentation for details
-
-[Previous](/41/streams/developer-guide/processor-api) [Next](/41/streams/developer-guide/testing)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

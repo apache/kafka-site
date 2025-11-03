@@ -14,8 +14,6 @@ type: docs
 
 ![](/0110/images/streams-welcome.png)
 
-[Write your first app](/0110/streams/tutorial) [Play with demo app](/0110/streams/quickstart)
-
   * Write standard Java applications
   * Exactly-once processing semantics
   * No seperate processing cluster required

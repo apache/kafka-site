@@ -8,18 +8,8 @@ keywords:
 type: docs
 ---
 
-# Running Streams Applications
-
 You can run Java applications that use the Kafka Streams library without any additional configuration or requirements. Kafka Streams also provides the ability to receive notification of the various states of the application. The ability to monitor the runtime status is discussed in [the monitoring guide](/#kafka_streams_monitoring).
 
-**Table of Contents**
-
-  * Starting a Kafka Streams application
-  * Elastic scaling of your application
-    * Adding capacity to your application
-    * Removing capacity from your application
-    * State restoration during workload rebalance
-    * Determining how many application instances to run
 
 
 
@@ -42,7 +32,7 @@ Kafka Streams makes your stream processing applications elastic and scalable. Yo
 
 For more information about this elasticity, see the [Parallelism Model](../architecture.html#streams_architecture_tasks) section. Kafka Streams leverages the Kafka group management functionality, which is built right into the [Kafka wire protocol](https://cwiki.apache.org/confluence/display/KAFKA/A+Guide+To+The+Kafka+Protocol). It is the foundation that enables the elasticity of Kafka Streams applications: members of a group coordinate and collaborate jointly on the consumption and processing of data in Kafka. Additionally, Kafka Streams provides stateful processing and allows for fault-tolerant state in environments where application instances may come and go at any time.
 
-# Adding capacity to your application
+## Adding capacity to your application
 
 If you need more processing capacity for your stream processing application, you can simply start another instance of your stream processing application, e.g. on another machine, in order to scale out. The instances of your application will become aware of each other and automatically begin to share the processing work. More specifically, what will be handed over from the existing instances to the new instances is (some of) the stream tasks that have been run by the existing instances. Moving stream tasks from one instance to another results in moving the processing work plus any internal state of these stream tasks (the state of a stream task will be re-created in the target instance by restoring the state from its corresponding changelog topic).
 
@@ -56,13 +46,13 @@ Before adding capacity: only a single instance of your Kafka Streams application
 
 After adding capacity: now two additional instances of your Kafka Streams application are running, and they have automatically joined the application's Kafka consumer group for a total of three current members. These three instances are automatically splitting the processing work between each other. The splitting is based on the Kafka topic partitions from which data is being read.
 
-# Removing capacity from your application
+## Removing capacity from your application
 
 To remove processing capacity, you can stop running stream processing application instances (e.g., shut down two of the four instances), it will automatically leave the application’s consumer group, and the remaining instances of your application will automatically take over the processing work. The remaining instances take over the stream tasks that were run by the stopped instances. Moving stream tasks from one instance to another results in moving the processing work plus any internal state of these stream tasks. The state of a stream task is recreated in the target instance from its changelog topic.
 
 ![](/26/images/streams-elastic-scaling-3.png)
 
-# State restoration during workload rebalance
+## State restoration during workload rebalance
 
 When a task is migrated, the task processing state is fully restored before the application instance resumes processing. This guarantees the correct processing results. In Kafka Streams, state restoration is usually done by replaying the corresponding changelog topic to reconstruct the state store. To minimize changelog-based restoration latency by using replicated local state stores, you can specify `num.standby.replicas`. When a stream task is initialized or re-initialized on the application instance, its state store is restored like this:
 
@@ -77,7 +67,7 @@ As of version 2.6, Streams will now do most of a task's restoration in the backg
 
 Note, the one exception to this task availability is if none of the instances have a caught up version of that task. In that case, we have no choice but to assign the active task to an instance that is not caught up and will have to block further processing on restoration of the task's state from the changelog. If high availability is important for your application, you are highly recommended to enable standbys. 
 
-# Determining how many application instances to run
+## Determining how many application instances to run
 
 The parallelism of a Kafka Streams application is primarily determined by how many partitions the input topics have. For example, if your application reads from a single topic that has ten partitions, then you can run up to ten instances of your applications. You can run further instances, but these will be idle.
 
@@ -89,8 +79,6 @@ To achieve balanced workload processing across application instances and to prev
   * Processing workload should be equally distributed across topic partitions. For example, if the time to process messages varies widely, then it is better to spread the processing-intensive messages across partitions rather than storing these messages within the same partition.
 
 
-
-[Previous](/26/streams/developer-guide/memory-mgmt) [Next](/26/streams/developer-guide/manage-topics)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

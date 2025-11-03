@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Use Cases
-
 Here is a description of a few of the popular use cases for Apache Kafka. For an overview of a number of these areas in action, see [this paper](http://sites.computer.org/debull/A12june/pipeline.pdf). 
 
 ## Messaging

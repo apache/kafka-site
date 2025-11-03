@@ -8,10 +8,6 @@ keywords:
 type: docs
 ---
 
-# Architecture
-
-[Introduction](/39/streams/) [Run Demo App](/39/streams/quickstart) [Tutorial: Write App](/39/streams/tutorial) [Concepts](/39/streams/core-concepts) [Architecture](/39/streams/architecture) [Developer Guide](/39/streams/developer-guide/) [Upgrade](/39/streams/upgrade-guide)
-
 Kafka Streams simplifies application development by building on the Kafka producer and consumer libraries and leveraging the native capabilities of Kafka to offer data parallelism, distributed coordination, fault tolerance, and operational simplicity. In this section, we describe how Kafka Streams works underneath the covers. 
 
 The picture below shows the anatomy of an application that uses the Kafka Streams library. Let's walk through some details. 
@@ -78,8 +74,6 @@ Note that the cost of task (re)initialization typically depends primarily on the
 You can also configure standby replicas with rack awareness. When configured, Kafka Streams will attempt to distribute a standby task on a different "rack" than the active one, thus having a faster recovery time when the rack of the active tasks fails. See `rack.aware.assignment.tags` in the [**Kafka Streams Developer Guide**](/39/streams/developer-guide/config-streams.html#rack-aware-assignment-tags) section. 
 
 There is also a client config `client.rack` which can set the rack for a Kafka consumer. If brokers also have their rack set via `broker.rack`, then rack aware task assignment can be enabled via `rack.aware.assignment.strategy` (cf. [**Kafka Streams Developer Guide**](/39/streams/developer-guide/config-streams.html#rack-aware-assignment-strategy)) to compute a task assignment which can reduce cross rack traffic by trying to assign tasks to clients with the same rack. Note that `client.rack` can also be used to distribute standby tasks to different racks from the active ones, which has a similar functionality as `rack.aware.assignment.tags`. Currently, `rack.aware.assignment.tag` takes precedence in distributing standby tasks which means if both configs present, `rack.aware.assignment.tag` will be used for distributing standby tasks on different racks from the active ones because it can configure more tag keys. 
-
-[Previous](/39/streams/core-concepts) [Next](/39/streams/developer-guide)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

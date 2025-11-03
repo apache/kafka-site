@@ -8,20 +8,8 @@ keywords:
 type: docs
 ---
 
-# Processor API
-
 The Processor API allows developers to define and connect custom processors and to interact with state stores. With the Processor API, you can define arbitrary stream processors that process one received record at a time, and connect these processors with their associated state stores to compose the processor topology that represents a customized processing logic.
 
-**Table of Contents**
-
-  * Overview
-  * Defining a Stream Processor
-  * State Stores
-    * Defining and creating a State Store
-    * Fault-tolerant State Stores
-    * Enable or Disable Fault Tolerance of State Stores (Store Changelogs)
-    * Implementing Custom State Stores
-  * Connecting Processors and State Stores
 
 
 
@@ -114,7 +102,7 @@ To implement a **stateful** `Processor` or `Transformer`, you must provide one o
 
 The available state store types in Kafka Streams have fault tolerance enabled by default.
 
-# Defining and creating a State Store
+## Defining and creating a State Store
 
 You can either use one of the available store types or implement your own custom store type. It's common practice to leverage an existing store type via the `Stores` factory.
 
@@ -172,7 +160,7 @@ In-memory `KeyValueStore<K, V>` | - | Yes (enabled by default) |
     KeyValueStore<String, Long> countStore = countStoreSupplier.build();
       
   
-# Fault-tolerant State Stores
+## Fault-tolerant State Stores
 
 To make state stores fault-tolerant and to allow for state store migration without data loss, a state store can be continuously backed up to a Kafka topic behind the scenes. For example, to migrate a stateful stream task from one machine to another when [elastically adding or removing capacity from your application](running-app.html#streams-developer-guide-execution-scaling). This topic is sometimes referred to as the state store's associated _changelog topic_ , or its _changelog_. For example, if you experience machine failure, the state store and the application's state can be fully restored from its changelog. You can enable or disable this backup feature for a state store.
 
@@ -182,7 +170,7 @@ Similarly, persistent window stores are fault-tolerant. They are backed by a top
 
 When you open an `Iterator` from a state store you must call `close()` on the iterator when you are done working with it to reclaim resources; or you can use the iterator from within a try-with-resources statement. If you do not close an iterator, you may encounter an OOM error.
 
-# Enable or Disable Fault Tolerance of State Stores (Store Changelogs)
+## Enable or Disable Fault Tolerance of State Stores (Store Changelogs)
 
 You can enable or disable fault tolerance for a state store by enabling or disabling the change logging of the store through `enableLogging()` and `disableLogging()`. You can also fine-tune the associated topic’s configuration if needed.
 
@@ -220,7 +208,7 @@ Here is an example for enabling fault tolerance, with additional changelog-topic
       .withLoggingEnabled(changlogConfig); // enable changelogging, with custom changelog settings
     
 
-# Implementing Custom State Stores
+## Implementing Custom State Stores
 
 You can use the built-in state store types or implement your own. The primary interface to implement for the store is `org.apache.kafka.streams.processor.StateStore`. Kafka Streams also has a few extended interfaces such as `KeyValueStore`.
 
@@ -261,8 +249,6 @@ Here is a quick explanation of this example:
 In this topology, the `"Process"` stream processor node is considered a downstream processor of the `"Source"` node, and an upstream processor of the `"Sink"` node. As a result, whenever the `"Source"` node forwards a newly fetched record from Kafka to its downstream `"Process"` node, the `WordCountProcessor#process()` method is triggered to process the record and update the associated state store. Whenever `context#forward()` is called in the `WordCountProcessor#punctuate()` method, the aggregate key-value pair will be sent via the `"Sink"` processor node to the Kafka topic `"sink-topic"`. Note that in the `WordCountProcessor` implementation, you must refer to the same store name `"Counts"` when accessing the key-value store, otherwise an exception will be thrown at runtime, indicating that the state store cannot be found. If the state store is not associated with the processor in the `Topology` code, accessing it in the processor's `init()` method will also throw an exception at runtime, indicating the state store is not accessible from this processor.
 
 Now that you have fully defined your processor topology in your application, you can proceed to [running the Kafka Streams application](running-app.html#streams-developer-guide-execution).
-
-[Previous](/11/streams/developer-guide/dsl-api) [Next](/11/streams/developer-guide/datatypes)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

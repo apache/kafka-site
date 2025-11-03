@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Data Types and Serialization
-
 Every Kafka Streams application must provide SerDes (Serializer/Deserializer) for the data types of record keys and record values (e.g. `java.lang.String`) to materialize the data when necessary. Operations that require such SerDes information include: `stream()`, `table()`, `to()`, `repartition()`, `groupByKey()`, `groupBy()`.
 
 You can provide SerDes by using either of these methods:
@@ -19,15 +17,6 @@ You can provide SerDes by using either of these methods:
 
 
 
-**Table of Contents**
-
-  * Configuring SerDes
-  * Overriding default SerDes
-  * Available SerDes
-    * Primitive and basic types
-    * JSON
-    * Implementing custom serdes
-  * Kafka Streams DSL for Scala Implicit SerDes
 
 
 
@@ -77,7 +66,7 @@ If some of your incoming records are corrupted or ill-formatted, they will cause
 
 # Available SerDes
 
-# Primitive and basic types
+## Primitive and basic types
 
 Apache Kafka includes several built-in serde implementations for Java primitives and basic types such as `byte[]` in its `kafka-clients` Maven artifact:
     
@@ -105,7 +94,7 @@ Void | `Serdes.Void()`
 
 [Bytes](https://github.com/apache/kafka/blob/2.6/clients/src/main/java/org/apache/kafka/common/utils/Bytes.java) is a wrapper for Java's `byte[]` (byte array) that supports proper equality and ordering semantics. You may want to consider using `Bytes` instead of `byte[]` in your applications.
 
-# JSON
+## JSON
 
 The Kafka Streams code examples also include a basic serde implementation for JSON:
 
@@ -128,8 +117,6 @@ If you need to implement custom SerDes, your best starting point is to take a lo
 # Kafka Streams DSL for Scala Implicit SerDes[](scala-dsl-serdes "Permalink to this headline")
 
 When using the [Kafka Streams DSL for Scala](dsl-api.html#scala-dsl) you're not required to configure a default SerDes. In fact, it's not supported. SerDes are instead provided implicitly by default implementations for common primitive datatypes. See the [Implicit SerDes](dsl-api.html#scala-dsl-implicit-serdes) and [User-Defined SerDes](dsl-api.html#scala-dsl-user-defined-serdes) sections in the DSL API documentation for details
-
-[Previous](/26/streams/developer-guide/processor-api) [Next](/26/streams/developer-guide/testing)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

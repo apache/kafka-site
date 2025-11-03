@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Application Reset Tool
-
 You can reset an application and force it to reprocess its data from scratch by using the application reset tool. This can be useful for development and testing, or when fixing bugs.
 
 The application reset tool handles the Kafka Streams [user topics](manage-topics.html#streams-developer-guide-topics-user) (input, and output) and [internal topics](manage-topics.html#streams-developer-guide-topics-internal) differently when resetting the application.
@@ -114,8 +112,6 @@ For a complete application reset, you must delete the application's local state 
   * Manually delete the corresponding local state directory (default location: `/${java.io.tmpdir}/kafka-streams/<application.id>`). For more information, see [Streams](/40/javadoc/org/apache/kafka/streams/StreamsConfig.html#STATE_DIR_CONFIG) javadocs.
 
 
-
-[Previous](/40/streams/developer-guide/security) [Next](/40/streams/upgrade-guide)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

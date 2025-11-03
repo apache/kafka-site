@@ -31,9 +31,9 @@ This document covers the wire protocol implemented in Kafka. It is meant to give
 
 
 
-## Preliminaries
+### Preliminaries
 
-### Network
+#### Network
 
 Kafka uses a binary protocol over TCP. The protocol defines all apis as request response message pairs. All messages are size delimited and are made up of the following primitive types.
 
@@ -45,7 +45,7 @@ The server guarantees that on a single TCP connection, requests will be processe
 
 The server has a configurable maximum limit on request size and any request that exceeds this limit will result in the socket being disconnected.
 
-### Partitioning and bootstrapping
+#### Partitioning and bootstrapping
 
 Kafka is a partitioned system so not all servers have the complete data set. Instead recall that topics are split into a pre-defined number of partitions, P, and each partition is replicated with some replication factor, N. Topic partitions themselves are just ordered "commit logs" numbered 0, 1, ..., P.
 
@@ -65,7 +65,7 @@ The client does not need to keep polling to see if the cluster has changed; it c
 
 
 
-### Partitioning Strategies
+#### Partitioning Strategies
 
 As mentioned above the assignment of messages to partitions is something the producing client controls. That said, how should this functionality be exposed to the end-user?
 
@@ -82,13 +82,13 @@ To accomplish simple load balancing a simple approach would be for the client to
 
 Semantic partitioning means using some key in the message to assign messages to partitions. For example if you were processing a click message stream you might want to partition the stream by the user id so that all data for a particular user would go to a single consumer. To accomplish this the client can take a key associated with the message and use some hash of this key to choose the partition to which to deliver the message.
 
-### Batching
+#### Batching
 
 Our apis encourage batching small things together for efficiency. We have found this is a very significant performance win. Both our API to send messages and our API to fetch messages always work with a sequence of messages not a single message to encourage this. A clever client can make use of this and support an "asynchronous" mode in which it batches together messages sent individually and sends them in larger clumps. We go even further with this and allow the batching across multiple topics and partitions, so a produce request may contain data to append to many partitions and a fetch request may pull data from many partitions all at once.
 
 The client implementer can choose to ignore this and send everything one at a time if they like.
 
-### Versioning and Compatibility
+#### Versioning and Compatibility
 
 The protocol is designed to enable incremental evolution in a backward compatible fashion. Our versioning is on a per API basis, each version consisting of a request and response pair. Each request contains an API key that identifies the API being invoked and a version number that indicates the format of the request and the expected format of the response.
 
@@ -100,7 +100,7 @@ Our goal is primarily to allow API evolution in an environment where downtime is
 
 Currently all versions are baselined at 0, as we evolve these APIs we will indicate the format for each version individually.
 
-### Retrieving Supported API versions
+#### Retrieving Supported API versions
 
 In order to work against multiple broker versions, clients need to know what versions of various APIs a broker supports. The broker exposes this information since 0.10.0.0 as described in [KIP-35](https://cwiki.apache.org/confluence/display/KAFKA/KIP-35+-+Retrieving+protocol+version). Clients should use the supported API versions information to choose the highest API version supported by both client and broker. If no such version exists, an error should be reported to the user.
 
@@ -114,7 +114,7 @@ The following sequence may be used by a client to obtain supported API versions 
 
 
 
-### SASL Authentication Sequence
+#### SASL Authentication Sequence
 
 The following sequence is used for SASL authentication: 
 
@@ -127,19 +127,19 @@ The following sequence is used for SASL authentication:
 
 For interoperability with 0.9.0.x clients, the first packet received by the server is handled as a SASL/GSSAPI client token if it is not a valid Kafka request. SASL/GSSAPI authentication is performed starting with this packet, skipping the first two steps above.
 
-## The Protocol
+### The Protocol
 
-### Protocol Primitive Types
+#### Protocol Primitive Types
 
 The protocol is built out of the following primitive types.
 
 {{< include-html file="/static/20/generated/protocol_types.html" >}} 
 
-### Notes on reading the request format grammars
+#### Notes on reading the request format grammars
 
 The [BNF](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form)s below give an exact context free grammar for the request and response binary format. The BNF is intentionally not compact in order to give human-readable name. As always in a BNF a sequence of productions indicates concatenation. When there are multiple possible productions these are separated with '|' and may be enclosed in parenthesis for grouping. The top-level definition is always given first and subsequent sub-parts are indented.
 
-### Common Request and Response Structure
+#### Common Request and Response Structure
 
 All requests and responses originate from the following grammar which will be incrementally describe through the rest of this document:
     
@@ -152,31 +152,31 @@ Field| Description
 ---|---  
 message_size| The message_size field gives the size of the subsequent request or response message in bytes. The client can read requests by first reading this 4 byte size as an integer N, and then reading and parsing the subsequent N bytes of the request.  
   
-### Record Batch
+#### Record Batch
 
 A description of the record batch format can be found [here](/#recordbatch).
 
-## Constants
+### Constants
 
-### Error Codes
+#### Error Codes
 
 We use numeric codes to indicate what problem occurred on the server. These can be translated by the client into exceptions or whatever the appropriate error handling mechanism in the client language. Here is a table of the error codes currently in use:
 
 {{< include-html file="/static/20/generated/protocol_errors.html" >}} 
 
-### Api Keys
+#### Api Keys
 
 The following are the numeric codes that the ApiKey in the request can take for each of the below request types.
 
 {{< include-html file="/static/20/generated/protocol_api_keys.html" >}} 
 
-## The Messages
+### The Messages
 
 This section gives details on each of the individual API Messages, their usage, their binary format, and the meaning of their fields.
 
 {{< include-html file="/static/20/generated/protocol_messages.html" >}} 
 
-## Some Common Philosophical Questions
+### Some Common Philosophical Questions
 
 Some people have asked why we don't use HTTP. There are a number of reasons, the best is that client implementors can make use of some of the more advanced TCP features--the ability to multiplex requests, the ability to simultaneously poll many connections, etc. We have also found HTTP libraries in many languages to be surprisingly shabby.
 

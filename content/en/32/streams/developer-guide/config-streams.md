@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Configuring a Streams Application
-
 Kafka and Kafka Streams configuration options must be configured before using Streams. You can configure Kafka Streams by specifying parameters in a `java.util.Properties` instance.
 
   1. Create a `java.util.Properties` instance.
@@ -67,7 +65,7 @@ This section contains the most common Streams configuration parameters. For a fu
 
 
 
-# Required configuration parameters
+## Required configuration parameters
 
 Here are the required Streams configuration parameters.
 
@@ -76,7 +74,7 @@ Parameter Name | Importance | Description | Default Value
 application.id | Required | An identifier for the stream processing application. Must be unique within the Kafka cluster. | None  
 bootstrap.servers | Required | A list of host/port pairs to use for establishing the initial connection to the Kafka cluster. | None  
   
-## application.id
+### application.id
 
 > (Required) The application ID. Each stream processing application must have a unique ID. The same ID must be given to all instances of the application. It is recommended to use only alphanumeric characters, `.` (dot), `-` (hyphen), and `_` (underscore). Examples: `"hello_world"`, `"hello_world-v1.0.0"`
 > 
@@ -92,11 +90,11 @@ bootstrap.servers | Required | A list of host/port pairs to use for establishing
 > Tip:
 >     When an application is updated, the `application.id` should be changed unless you want to reuse the existing data in internal topics and state stores. For example, you could embed the version information within `application.id`, as `my-app-v1.0.0` and `my-app-v1.0.2`.
 
-## bootstrap.servers
+### bootstrap.servers
 
 > (Required) The Kafka bootstrap servers. This is the same [setting](http://kafka.apache.org/documentation.html#producerconfigs) that is used by the underlying producer and consumer clients to connect to the Kafka cluster. Example: `"kafka-broker1:9092,kafka-broker2:9092"`.
 
-# Recommended configuration parameters for resiliency
+## Recommended configuration parameters for resiliency
 
 There are several Kafka and Kafka Streams configuration options that need to be configured explicitly for resiliency in face of broker failures:
 
@@ -109,7 +107,7 @@ num.standby.replicas | Streams | `0` | `1`
   
 Increasing the replication factor to 3 ensures that the internal Kafka Streams topic can tolerate up to 2 broker failures. Changing the acks setting to "all" guarantees that a record will not be lost as long as one replica is alive. The tradeoff from moving to the default values to the recommended ones is that some performance and more storage space (3x with the replication factor of 3) are sacrificed for more resiliency.
 
-## acks
+### acks
 
 > The number of acknowledgments that the leader must have received before considering a request complete. This controls the durability of records that are sent. The possible values are:
 > 
@@ -121,11 +119,11 @@ Increasing the replication factor to 3 ensures that the internal Kafka Streams t
 > 
 > For more information, see the [Kafka Producer documentation](https://kafka.apache.org/#producerconfigs).
 
-## replication.factor
+### replication.factor
 
 > See the description here.
 
-## num.standby.replicas
+### num.standby.replicas
 
 > See the description here.
     
@@ -137,7 +135,7 @@ Increasing the replication factor to 3 ensures that the internal Kafka Streams t
     streamsSettings.put(StreamsConfig.producerPrefix(ProducerConfig.ACKS_CONFIG), "all");
     streamsSettings.put(StreamsConfig.NUM_STANDBY_REPLICAS_CONFIG), 1);
 
-# Optional configuration parameters
+## Optional configuration parameters
 
 Here are the optional [Streams](/32/javadoc/org/apache/kafka/streams/StreamsConfig.html) javadocs, sorted by level of importance:
 
@@ -186,13 +184,13 @@ upgrade.from | Medium | The version you are upgrading from during a rolling upgr
 windowstore.changelog.additional.retention.ms | Low | Added to a windows maintainMs to ensure data is not deleted from the log prematurely. Allows for clock drift. | 86400000 milliseconds (1 day)  
 window.size.ms | Low | Sets window size for the deserializer in order to calculate window end times. | null  
   
-## acceptable.recovery.lag
+### acceptable.recovery.lag
 
 > The maximum acceptable lag (total number of offsets to catch up from the changelog) for an instance to be considered caught-up and able to receive an active task. Streams will only assign stateful active tasks to instances whose state stores are within the acceptable recovery lag, if any exist, and assign warmup replicas to restore state in the background for instances that are not yet caught up. Should correspond to a recovery time of well under a minute for a given workload. Must be at least 0. 
 > 
 > Note: if you set this to `Long.MAX_VALUE` it effectively disables the warmup replicas and task high availability, allowing Streams to immediately produce a balanced assignment and migrate tasks to a new instance without first warming them up. 
 
-## default.deserialization.exception.handler
+### default.deserialization.exception.handler
 
 > The default deserialization exception handler allows you to manage record exceptions that fail to deserialize. This can be caused by corrupt data, incorrect serialization logic, or unhandled record types. The implemented exception handler needs to return a `FAIL` or `CONTINUE` depending on the record and the exception thrown. Returning `FAIL` will signal that Streams should shut down and `CONTINUE` will signal that Streams should ignore the issue and continue processing. The following library built-in exception handlers are available:
 > 
@@ -230,7 +228,7 @@ window.size.ms | Low | Sets window size for the deserializer in order to calcula
 >         }
 >     }
 
-## default.production.exception.handler
+### default.production.exception.handler
 
 > The default production exception handler allows you to manage exceptions triggered when trying to interact with a broker such as attempting to produce a record that is too large. By default, Kafka provides and uses the [DefaultProductionExceptionHandler](/32/javadoc/org/apache/kafka/streams/errors/DefaultProductionExceptionHandler.html) that always fails when these exceptions occur.
 > 
@@ -263,7 +261,7 @@ window.size.ms | Low | Sets window size for the deserializer in order to calcula
 >     settings.put(StreamsConfig.DEFAULT_PRODUCTION_EXCEPTION_HANDLER_CLASS_CONFIG,
 >                  IgnoreRecordTooLargeHandler.class);
 
-## default.timestamp.extractor
+### default.timestamp.extractor
 
 > A timestamp extractor pulls a timestamp from an instance of [ConsumerRecord](/32/javadoc/org/apache/kafka/clients/consumer/ConsumerRecord.html). Timestamps are used to control the progress of streams.
 > 
@@ -325,7 +323,7 @@ window.size.ms | Low | Sets window size for the deserializer in order to calcula
 >     Properties streamsConfiguration = new Properties();
 >     streamsConfiguration.put(StreamsConfig.DEFAULT_TIMESTAMP_EXTRACTOR_CLASS_CONFIG, MyEventTimeExtractor.class);
 
-## default.key.serde
+### default.key.serde
 
 > The default Serializer/Deserializer class for record keys, null unless set by user. Serialization and deserialization in Kafka Streams happens whenever data needs to be materialized, for example:
 > 
@@ -336,7 +334,7 @@ window.size.ms | Low | Sets window size for the deserializer in order to calcula
 > 
 > This is discussed in more detail in [Data types and serialization](datatypes.html#streams-developer-guide-serdes).
 
-## default.value.serde
+### default.value.serde
 
 > The default Serializer/Deserializer class for record values, null unless set by user. Serialization and deserialization in Kafka Streams happens whenever data needs to be materialized, for example:
 > 
@@ -347,7 +345,7 @@ window.size.ms | Low | Sets window size for the deserializer in order to calcula
 > 
 > This is discussed in more detail in [Data types and serialization](datatypes.html#streams-developer-guide-serdes).
 
-## default.windowed.key.serde.inner
+### default.windowed.key.serde.inner
 
 > The default Serializer/Deserializer class for the inner class of windowed keys. Serialization and deserialization in Kafka Streams happens whenever data needs to be materialized, for example:
 > 
@@ -358,7 +356,7 @@ window.size.ms | Low | Sets window size for the deserializer in order to calcula
 > 
 > This is discussed in more detail in [Data types and serialization](datatypes.html#streams-developer-guide-serdes).
 
-## default.windowed.value.serde.inner
+### default.windowed.value.serde.inner
 
 > The default Serializer/Deserializer class for the inner class of windowed values. Serialization and deserialization in Kafka Streams happens happens whenever data needs to be materialized, for example:
 > 
@@ -369,7 +367,7 @@ window.size.ms | Low | Sets window size for the deserializer in order to calcula
 > 
 > This is discussed in more detail in [Data types and serialization](datatypes.html#streams-developer-guide-serdes).
 
-## rack.aware.assignment.tags
+### rack.aware.assignment.tags
 
 > This configuration sets a list of tag keys used to distribute standby replicas across Kafka Streams clients. When configured, Kafka Streams will make a best-effort to distribute the standby tasks over clients with different tag values. 
 > 
@@ -391,7 +389,7 @@ window.size.ms | Low | Sets window size for the deserializer in order to calcula
 > 
 > In the above example, we have four Kafka Streams clients across two zones (`eu-central-1a`, `eu-central-1b`) and across two clusters (`k8s-cluster1`, `k8s-cluster2`). For an active task located on `Client-1`, Kafka Streams will allocate a standby task on `Client-4`, since `Client-4` has a different `zone` and a different `cluster` than `Client-1`. 
 
-## max.task.idle.ms
+### max.task.idle.ms
 
 > This configuration controls how long Streams will wait to fetch data in order to provide in-order processing semantics. 
 > 
@@ -405,11 +403,11 @@ window.size.ms | Low | Sets window size for the deserializer in order to calcula
 > 
 > The config value of `-1` indicates that Streams will never wait to buffer empty partitions before choosing the next record by timestamp, which achieves maximum throughput at the expense of introducing out-of-order processing. 
 
-## max.warmup.replicas
+### max.warmup.replicas
 
 > The maximum number of warmup replicas (extra standbys beyond the configured num.standbys) that can be assigned at once for the purpose of keeping the task available on one instance while it is warming up on another instance it has been reassigned to. Used to throttle how much extra broker traffic and cluster state can be used for high availability. Increasing this will allow Streams to warm up more tasks at once, speeding up the time for the reassigned warmups to restore sufficient state for them to be transitioned to active tasks. Must be at least 1. 
 
-## num.standby.replicas
+### num.standby.replicas
 
 > The number of standby replicas. Standby replicas are shadow copies of local state stores. Kafka Streams attempts to create the specified number of replicas per store and keep them up to date as long as there are enough instances running. Standby replicas are used to minimize the latency of task failover. A task that was previously running on a failed instance is preferred to restart on an instance that has standby replicas so that the local state store restoration process from its changelog can be minimized. Details about how Kafka Streams makes use of the standby replicas to minimize the cost of resuming tasks on failover can be found in the [State](../architecture.html#streams_architecture_state) section. 
 > 
@@ -419,33 +417,33 @@ window.size.ms | Low | Sets window size for the deserializer in order to calcula
 > Note:
 >     If you enable n standby tasks, you need to provision n+1 `KafkaStreams` instances.
 
-## num.stream.threads
+### num.stream.threads
 
 > This specifies the number of stream threads in an instance of the Kafka Streams application. The stream processing code runs in these thread. For more information about Kafka Streams threading model, see [Threading Model](../architecture.html#streams_architecture_threads).
 
-## partition.grouper
+### partition.grouper
 
 > **[DEPRECATED]** A partition grouper creates a list of stream tasks from the partitions of source topics, where each created task is assigned with a group of source topic partitions. The default implementation provided by Kafka Streams is [DefaultPartitionGrouper](/32/javadoc/org/apache/kafka/streams/processor/DefaultPartitionGrouper.html). It assigns each task with one partition for each of the source topic partitions. The generated number of tasks equals the largest number of partitions among the input topics. Usually an application does not need to customize the partition grouper. 
 
-## probing.rebalance.interval.ms
+### probing.rebalance.interval.ms
 
 > The maximum time to wait before triggering a rebalance to probe for warmup replicas that have restored enough to be considered caught up. Streams will only assign stateful active tasks to instances that are caught up and within the acceptable.recovery.lag, if any exist. Probing rebalances are used to query the latest total lag of warmup replicas and transition them to active tasks if ready. They will continue to be triggered as long as there are warmup tasks, and until the assignment is balanced. Must be at least 1 minute. 
 
-## processing.guarantee
+### processing.guarantee
 
 > The processing guarantee that should be used. Possible values are `"at_least_once"` (default) and `"exactly_once_v2"` (for EOS version 2). Deprecated config options are `"exactly_once"` (for EOS alpha), and `"exactly_once_beta"` (for EOS version 2). Using `"exactly_once_v2"` (or the deprecated `"exactly_once_beta"`) requires broker version 2.5 or newer, while using the deprecated `"exactly_once"` requires broker version 0.11.0 or newer. Note that if exactly-once processing is enabled, the default for parameter `commit.interval.ms` changes to 100ms. Additionally, consumers are configured with `isolation.level="read_committed"` and producers are configured with `enable.idempotence=true` per default. Note that by default exactly-once processing requires a cluster of at least three brokers what is the recommended setting for production. For development, you can change this configuration by adjusting broker setting `transaction.state.log.replication.factor` and `transaction.state.log.min.isr` to the number of brokers you want to use. For more details see [Processing Guarantees](../core-concepts#streams_processing_guarantee). 
 > 
 > Recommendation:
 >     While it is technically possible to use EOS with any replication factor, using a replication factor lower than 3 effectively voids EOS. Thus it is strongly recommended to use a replication factor of 3 (together with `min.in.sync.replicas=2`). This recommendation applies to all topics (i.e. `__transaction_state`, `__consumer_offsets`, Kafka Streams internal topics, and user topics).
 
-## replication.factor
+### replication.factor
 
 > This specifies the replication factor of internal topics that Kafka Streams creates when local states are used or a stream is repartitioned for aggregation. Replication is important for fault tolerance. Without replication even a single broker failure may prevent progress of the stream processing application. It is recommended to use a similar replication factor as source topics.
 > 
 > Recommendation:
 >     Increase the replication factor to 3 to ensure that the internal Kafka Streams topic can tolerate up to 2 broker failures. Note that you will require more storage space as well (3x with the replication factor of 3).
 
-## rocksdb.config.setter
+### rocksdb.config.setter
 
 > The RocksDB configuration. Kafka Streams uses RocksDB as the default storage engine for persistent stores. To change the default configuration for RocksDB, you can implement `RocksDBConfigSetter` and provide your custom class via [rocksdb.config.setter](/32/javadoc/org/apache/kafka/streams/state/RocksDBConfigSetter.html).
 > 

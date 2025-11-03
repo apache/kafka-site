@@ -10,8 +10,6 @@ type: docs
 
 # Kafka Streams
 
-[Introduction](/20/streams/) [Run Demo App](/20/streams/quickstart) [Tutorial: Write App](/20/streams/tutorial) [Concepts](/20/streams/core-concepts) [Architecture](/20/streams/architecture) [Developer Guide](/20/streams/developer-guide/) [Upgrade](/20/streams/upgrade-guide)
-
 # The easiest way to write mission-critical real-time applications and microservices
 
 Kafka Streams is a client library for building applications and microservices, where the input and output data are stored in Kafka clusters. It combines the simplicity of writing and deploying standard Java and Scala applications on the client side with the benefits of Kafka's server-side cluster technology.
@@ -205,8 +203,6 @@ Java 8+ Java 7 Scala
       }
     }
                    
-
-[Previous](/20/documentation) [Next](/20/streams/quickstart)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

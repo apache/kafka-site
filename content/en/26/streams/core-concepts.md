@@ -8,10 +8,6 @@ keywords:
 type: docs
 ---
 
-# Core Concepts
-
-[Introduction](/26/streams/) [Run Demo App](/26/streams/quickstart) [Tutorial: Write App](/26/streams/tutorial) [Concepts](/26/streams/core-concepts) [Architecture](/26/streams/architecture) [Developer Guide](/26/streams/developer-guide/) [Upgrade](/26/streams/upgrade-guide)
-
 Kafka Streams is a client library for processing and analyzing data stored in Kafka. It builds upon important stream processing concepts such as properly distinguishing between event time and processing time, windowing support, and simple yet efficient management and real-time querying of application state. 
 
 Kafka Streams has a **low barrier to entry** : You can quickly write and run a small-scale proof-of-concept on a single machine; and you only need to run additional instances of your application on multiple machines to scale up to high-volume production workloads. Kafka Streams transparently handles the load balancing of multiple instances of the same application by leveraging Kafka's parallelism model. 
@@ -136,8 +132,6 @@ For stateless operations, out-of-order data will not impact processing logic sin
   * For Table-Table joins, out-of-order records are not handled (i.e., Streams applications don't check for out-of-order records and just process all records in offset order). However, the join result is a changelog stream and hence will be eventually consistent. 
 
 
-
-[Previous](/26/streams/tutorial) [Next](/26/streams/architecture)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

@@ -8,10 +8,6 @@ keywords:
 type: docs
 ---
 
-# Core Concepts
-
-[Introduction](/37/streams/) [Run Demo App](/37/streams/quickstart) [Tutorial: Write App](/37/streams/tutorial) [Concepts](/37/streams/core-concepts) [Architecture](/37/streams/architecture) [Developer Guide](/37/streams/developer-guide/) [Upgrade](/37/streams/upgrade-guide)
-
 Kafka Streams is a client library for processing and analyzing data stored in Kafka. It builds upon important stream processing concepts such as properly distinguishing between event time and processing time, windowing support, and simple yet efficient management and real-time querying of application state. 
 
 Kafka Streams has a **low barrier to entry** : You can quickly write and run a small-scale proof-of-concept on a single machine; and you only need to run additional instances of your application on multiple machines to scale up to high-volume production workloads. Kafka Streams transparently handles the load balancing of multiple instances of the same application by leveraging Kafka's parallelism model. 
@@ -155,8 +151,6 @@ For stateless operations, out-of-order data will not impact processing logic sin
   * For Table-Table joins, if not using versioned stores, then out-of-order records are not handled (i.e., Streams applications don't check for out-of-order records and just process all records in offset order). However, the join result is a changelog stream and hence will be eventually consistent. With versioned stores, table-table join semantics change from offset-based semantics to [timestamp-based semantics](/37/streams/developer-guide/dsl-api.html#versioned-state-stores) and out-of-order records are handled accordingly.
 
 
-
-[Previous](/37/streams/tutorial) [Next](/37/streams/architecture)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

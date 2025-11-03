@@ -10,8 +10,6 @@ type: docs
 
 # Run Kafka Streams Demo Application
 
-[Introduction](/40/streams/) [Run Demo App](/40/streams/quickstart) [Tutorial: Write App](/40/streams/tutorial) [Concepts](/40/streams/core-concepts) [Architecture](/40/streams/architecture) [Developer Guide](/40/streams/developer-guide/) [Upgrade](/40/streams/upgrade-guide)
-
 This tutorial assumes you are starting fresh and have no existing Kafka data. However, if you have already started Kafka, feel free to skip the first two steps. 
 
 Kafka Streams is a client library for building mission-critical real-time applications and microservices, where the input and/or output data is stored in Kafka clusters. Kafka Streams combines the simplicity of writing and deploying standard Java and Scala applications on the client side with the benefits of Kafka's server-side cluster technology to make these applications highly scalable, elastic, fault-tolerant, distributed, and much more. 
@@ -50,11 +48,11 @@ As the first step, we will start Kafka (unless you already have it started) and 
 
 ## Step 1: Download the code
 
-[Download](https://www.apache.org/dyn/closer.cgi?path=/kafka/4.0.0/kafka_2.13-4.0.0.tgz "Kafka downloads") the 4.0.0 release and un-tar it. Note that there are multiple downloadable Scala versions and we choose to use the recommended version (2.13) here: 
+[Download](https://www.apache.org/dyn/closer.cgi?path=/kafka/4.0.1/kafka_2.13-4.0.1.tgz "Kafka downloads") the 4.0.1 release and un-tar it. Note that there are multiple downloadable Scala versions and we choose to use the recommended version (2.13) here: 
     
     
-    $ tar -xzf kafka_2.13-4.0.0.tgz
-    $ cd kafka_2.13-4.0.0
+    $ tar -xzf kafka_2.13-4.0.1.tgz
+    $ cd kafka_2.13-4.0.1
 
 ## Step 2: Start the Kafka server
 
@@ -232,8 +230,6 @@ Looking beyond the scope of this concrete example, what Kafka Streams is doing h
 ## Step 6: Teardown the application
 
 You can now stop the console consumer, the console producer, the Wordcount application, the Kafka broker in order via **Ctrl-C**.
-
-[Previous](/40/streams) [Next](/40/streams/tutorial)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)

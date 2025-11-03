@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Quick Start
-
 This tutorial assumes you are starting fresh and have no existing Kafka or ZooKeeper data. 
 
 ## Step 1: Download the code 

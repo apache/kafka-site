@@ -10,23 +10,25 @@ type: docs
 
 # Kafka Streams
 
-[Introduction](/40/streams/) [Run Demo App](/40/streams/quickstart) [Tutorial: Write App](/40/streams/tutorial) [Concepts](/40/streams/core-concepts) [Architecture](/40/streams/architecture) [Developer Guide](/40/streams/developer-guide/) [Javadoc](/40/javadoc/index.html?org/apache/kafka/streams/KafkaStreams.html) [Upgrade](/40/streams/upgrade-guide)
-
 # The easiest way to write mission-critical real-time applications and microservices
 
 Kafka Streams is a client library for building applications and microservices, where the input and output data are stored in Kafka clusters. It combines the simplicity of writing and deploying standard Java and Scala applications on the client side with the benefits of Kafka's server-side cluster technology.
 
-![](/40/images/intro_to_streams-iframe-placeholder.png) (Clicking the image will load a video from YouTube) ![](/40/images/creating-streams-iframe-placeholder.png) (Clicking the image will load a video from YouTube) ![](/40/images/transforming_part_1-iframe-placeholder.png) (Clicking the image will load a video from YouTube) ![](/40/images/transforming_part_2-iframe-placeholder.png) (Clicking the image will load a video from YouTube)
+# Intro to Streams
 
-# TOUR OF THE STREAMS API
+{{< youtube "ni3XPsYC5cQ" >}} 
 
-1Intro to Streams
+# Creating a Streams Application
 
-2Creating a Streams Application
+{{< youtube "9ZhsnXM2OVM" >}} 
 
-3Transforming Data Pt. 1
+# Transforming Data Pt. 1
 
-4Transforming Data Pt. 2
+{{< youtube "SYmqwvE8umM" >}} 
+
+# Transforming Data Pt. 2
+
+{{< youtube "Vk55Kl9x_Fw" >}} 
 
 * * *
 
@@ -152,8 +154,6 @@ Java Scala
          streams.close(10, TimeUnit.SECONDS)
       }
     }
-
-[Previous](/40/documentation) [Next](/40/streams/quickstart)
 
   * [Documentation](/documentation)
   * [Kafka Streams](/streams)
