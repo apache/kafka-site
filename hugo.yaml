@@ -323,7 +323,7 @@ params:
 
   search:
     indexing_directories:
-      - "40"
+      - "41"
       - "blog"
       - "community"
       - "testimonials"
