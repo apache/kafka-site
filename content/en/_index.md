@@ -19,22 +19,24 @@ title: Apache Kafka
 
 {{% blocks/lead %}}
 
+# Apache Kafka
+
 Apache Kafka is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications. 
 {{% /blocks/lead %}}
 
-{{< blocks/section color="primary" type="row" url="https://github.com/" >}}
+{{< blocks/section color="primary" type="row" >}}
 {{% blocks/feature icon="fa-solid fa-industry" title="Manufacturing" %}}
 **10 OUT OF 10**
 {{% /blocks/feature %}}
-{{% blocks/feature icon="fa-solid fa-building-columns" title="Manufacturing" %}}
+{{% blocks/feature icon="fa-solid fa-building-columns" title="Banks" %}}
 **7 OUT OF 10**
 {{% /blocks/feature %}}
 {{% blocks/feature icon="fa-solid fa-house-crack" title="Insurance" %}}
 **10 OUT OF 10**
 {{% /blocks/feature %}}
-{{< /blocks/section >}}
 
-{{< blocks/section color="primary" type="row" >}}
+
+
 {{% blocks/feature icon="fa-solid fa-tower-cell" title="Telecom" %}}
 **8 OUT OF 10**
 {{% /blocks/feature %}}
@@ -49,7 +51,9 @@ Apache Kafka is an open-source distributed event streaming platform used by thou
 
 {{% blocks/lead %}}
 
-# Kafka boasts core capabilities that are battle tested and ready to power businesses in the digital world.
+# Core capabilities
+
+Kafka boasts core capabilities that are battle tested and ready to power businesses in the digital world.
 
 {.text-center}
 
@@ -86,7 +90,9 @@ Kafka's out-of-the-box Connect interface integrates with hundreds of event sourc
 
 {{% blocks/lead color="primary" %}}
 
-# Kafka is simple to use and is trusted by thousands of organizations around the world.
+# Trust and Ease of Use
+
+Kafka is simple to use and is trusted by thousands of organizations around the world.
 
 {.text-center}
 
@@ -106,5 +112,18 @@ Thousands of organizations use Kafka, from internet giants to car manufacturers 
 {{% blocks/feature icon="fa-solid fa-people-group" title="Vast User Community" %}}
 Kafka is one of the five most active projects of the Apache Software Foundation, with hundreds of meetups around the world. 
 {{% /blocks/feature %}}
+
+{{% blocks/feature icon="fa-solid fa-code" title="Client Libraries" %}}
+Read, write and process streams of events in a vast array of programming languages.
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fa-solid fa-globe" title="Rich Online Resources" %}}
+Rich documentation, online training, guided tutorials, videos, sample projects, Stack overflow, etc.
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fa-solid fa-toolbox" title="Large Ecosystem Open Source Tools" %}}
+Large ecosystem of open source tools: Leverage a vast array of community-driven tooling.
+{{% /blocks/feature %}}
+
 
 {{% /blocks/section %}}

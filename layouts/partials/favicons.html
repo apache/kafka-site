@@ -1,0 +1,12 @@
+{{ if .Site.Params.favicon }}
+<link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Params.favicon | relURL }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon | relURL }}">
+<link rel="shortcut icon" href="{{ .Site.Params.favicon | relURL }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon | relURL }}">
+{{ else }}
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "logos/kafka-logo-no-text.png" | relURL }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ "logos/kafka-logo-no-text.png" | relURL }}">
+<link rel="shortcut icon" href="{{ "logos/kafka-logo-no-text.png" | relURL }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "logos/kafka-logo-no-text.png" | relURL }}">
+{{ end }}
+
