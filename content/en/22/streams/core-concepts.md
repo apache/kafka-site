@@ -25,7 +25,7 @@ Some highlights of Kafka Streams:
 
 We first summarize the key concepts of Kafka Streams. 
 
-# Stream Processing Topology
+## Stream Processing Topology
 
   * A **stream** is the most important abstraction provided by Kafka Streams: it represents an unbounded, continuously updating data set. A stream is an ordered, replayable, and fault-tolerant sequence of immutable data records, where a **data record** is defined as a key-value pair.
   * A **stream processing application** is any program that makes use of the Kafka Streams library. It defines its computational logic through one or more **processor topologies** , where a processor topology is a graph of stream processors (nodes) that are connected by streams (edges).
@@ -41,7 +41,7 @@ Kafka Streams offers two ways to define the stream processing topology: the [**K
 
 A processor topology is merely a logical abstraction for your stream processing code. At runtime, the logical topology is instantiated and replicated inside the application for parallel processing (see [**Stream Partitions and Tasks**](/22/streams/architecture#streams_architecture_tasks) for details). 
 
-# Time
+## Time
 
 A critical aspect in stream processing is the notion of **time** , and how it is modeled and integrated. For example, some operations such as **windowing** are defined based on time boundaries. 
 
@@ -67,13 +67,13 @@ Finally, whenever a Kafka Streams application writes records to Kafka, then it w
 
 Note, that the describe default behavior can be changed in the Processor API by assigning timestamps to output records explicitly when calling `#forward()`. 
 
-# Aggregations
+## Aggregations
 
 An **aggregation** operation takes one input stream or table, and yields a new table by combining multiple input records into a single output record. Examples of aggregations are computing counts or sum. 
 
 In the `Kafka Streams DSL`, an input stream of an `aggregation` can be a KStream or a KTable, but the output stream will always be a KTable. This allows Kafka Streams to update an aggregate value upon the late arrival of further records after the value was produced and emitted. When such late arrival happens, the aggregating KStream or KTable emits a new aggregate value. Because the output is a KTable, the new value is considered to overwrite the old value with the same key in subsequent processing steps. 
 
-# Windowing
+## Windowing
 
 Windowing lets you control how to _group records that have the same key_ for stateful operations such as `aggregations` or `joins` into so-called _windows_. Windows are tracked per record key. 
 
@@ -81,7 +81,7 @@ Windowing lets you control how to _group records that have the same key_ for sta
 
 Late-arriving records are always possible in the real world and should be properly accounted for in your applications. It depends on the effective `time semantics ` how late records are handled. In the case of processing-time, the semantics are "when the record is being processed", which means that the notion of late records is not applicable as, by definition, no record can be late. Hence, late-arriving records can only be considered as such (i.e. as arriving "late") for event-time or ingestion-time semantics. In both cases, Kafka Streams is able to properly handle late-arriving records. 
 
-# Duality of Streams and Tables
+## Duality of Streams and Tables
 
 When implementing stream processing use cases in practice, you typically need both **streams** and also **databases**. An example use case that is very common in practice is an e-commerce application that enriches an incoming _stream_ of customer transactions with the latest customer information from a _database table_. In other words, streams are everywhere, but databases are everywhere, too. 
 
@@ -89,7 +89,7 @@ Any stream processing technology must therefore provide **first-class support fo
 
 Before we discuss concepts such as [aggregations](/22/streams/developer-guide/dsl-api#aggregating) in Kafka Streams, we must first introduce **tables** in more detail, and talk about the aforementioned stream-table duality. Essentially, this duality means that a stream can be viewed as a table, and a table can be viewed as a stream. 
 
-# States
+## States
 
 Some stream processing applications don't require state, which means the processing of a message is independent from the processing of all other messages. However, being able to maintain state opens up many possibilities for sophisticated stream processing applications: you can join input streams, or group and aggregate data records. Many such stateful operators are provided by the [**Kafka Streams DSL**](/22/streams/developer-guide/dsl-api.html). 
 
@@ -104,7 +104,7 @@ Kafka Streams allows direct read-only queries of the state stores by methods, th
 
 In stream processing, one of the most frequently asked question is "does my stream processing system guarantee that each record is processed once and only once, even if some failures are encountered in the middle of processing?" Failing to guarantee exactly-once stream processing is a deal-breaker for many applications that cannot tolerate any data-loss or data duplicates, and in that case a batch-oriented framework is usually used in addition to the stream processing pipeline, known as the [Lambda Architecture](https://en.wikipedia.org/wiki/Lambda_architecture). Prior to 0.11.0.0, Kafka only provides at-least-once delivery guarantees and hence any stream processing systems that leverage it as the backend storage could not guarantee end-to-end exactly-once semantics. In fact, even for those stream processing systems that claim to support exactly-once processing, as long as they are reading from / writing to Kafka as the source / sink, their applications cannot actually guarantee that no duplicates will be generated throughout the pipeline. Since the 0.11.0.0 release, Kafka has added support to allow its producers to send messages to different topic partitions in a [transactional and idempotent manner](/#semantics), and Kafka Streams has hence added the end-to-end exactly-once processing semantics by leveraging these features. More specifically, it guarantees that for any record read from the source Kafka topics, its processing results will be reflected exactly once in the output Kafka topic as well as in the state stores for stateful operations. Note the key difference between Kafka Streams end-to-end exactly-once guarantee with other stream processing frameworks' claimed guarantees is that Kafka Streams tightly integrates with the underlying Kafka storage system and ensure that commits on the input topic offsets, updates on the state stores, and writes to the output topics will be completed atomically instead of treating Kafka as an external system that may have side-effects. To read more details on how this is done inside Kafka Streams, readers are recommended to read [KIP-129](https://cwiki.apache.org/confluence/display/KAFKA/KIP-129%3A+Streams+Exactly-Once+Semantics). In order to achieve exactly-once semantics when running Kafka Streams applications, users can simply set the `processing.guarantee` config value to **exactly_once** (default value is **at_least_once**). More details can be found in the [**Kafka Streams Configs**](/22/documentation#streamsconfigs) section. 
 
-# Out-of-Order Handling
+## Out-of-Order Handling
 
 Besides the guarantee that each record will be processed exactly-once, another issue that many stream processing application will face is how to handle [out-of-order data](https://dl.acm.org/citation.cfm?id=3242155) that may impact their business logic. In Kafka Streams, there are two causes that could potentially result in out-of-order data arrivals with respect to their timestamps: 
 

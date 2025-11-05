@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Zookeeper
-
 ## Stable version
 
 At LinkedIn, we are running Zookeeper 3.3.*. Version 3.3.3 has known serious issues regarding ephemeral node deletion and session expirations. After running into those issues in production, we upgraded to 3.3.4 and have been running that smoothly for over a year now. 

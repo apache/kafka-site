@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# KRaft
-
 ## Configuration
 
 ### Process Roles

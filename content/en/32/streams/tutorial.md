@@ -12,7 +12,7 @@ type: docs
 
 In this guide we will start from scratch on setting up your own project to write a stream processing application using Kafka Streams. It is highly recommended to read the [quickstart](/32/streams/quickstart) first on how to run a Streams application written in Kafka Streams if you have not done so. 
 
-## Setting up a Maven Project
+### Setting up a Maven Project
 
 We are going to use a Kafka Streams Maven Archetype for creating a Streams project structure with the following commands: 
     
@@ -50,7 +50,7 @@ There are already several example programs written with Streams library under `s
     > cd streams-quickstart
     > rm src/main/java/myapps/*.java
 
-## Writing a first Streams application: Pipe
+### Writing a first Streams application: Pipe
 
 It's coding time now! Feel free to open your favorite IDE and import this Maven project, or simply open a text editor and create a java file under `src/main/java/myapps`. Let's name it `Pipe.java`: 
     
@@ -211,7 +211,7 @@ If you already have the Kafka broker up and running at `localhost:9092`, and the
 
 For detailed instructions on how to run a Streams application and observe its computing results, please read the [Play with a Streams Application](/32/streams/quickstart) section. We will not talk about this in the rest of this section. 
 
-## Writing a second Streams application: Line Split
+### Writing a second Streams application: Line Split
 
 We have learned how to construct a Streams client with its two key components: the `StreamsConfig` and `Topology`. Now let's move on to add some real processing logic by augmenting the current topology. We can first create another program by first copy the existing `Pipe.java` class: 
     
@@ -308,7 +308,7 @@ The complete code looks like this (assuming lambda expression is used):
         }
     }
 
-## Writing a third Streams application: Wordcount
+### Writing a third Streams application: Wordcount
 
 Let's now take a step further to add some "stateful" computations to the topology by counting the occurrence of the words split from the source text stream. Following similar steps let's create another program based on the `LineSplit.java` class: 
     

@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Authentication using SASL
-
   1. #### JAAS configuration
 
 Kafka uses the Java Authentication and Authorization Service ([JAAS](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jaas/JAASRefGuide.html)) for SASL configuration.

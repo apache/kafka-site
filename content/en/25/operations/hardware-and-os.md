@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Hardware and OS 
-
 We are using dual quad-core Intel Xeon machines with 24GB of memory. 
 
 You need sufficient memory to buffer active readers and writers. You can do a back-of-the-envelope estimate of memory needs by assuming you want to be able to buffer for 30 seconds and compute your memory need as write_throughput*30. 

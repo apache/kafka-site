@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Kafka Configuration
-
 ## Important Client Configurations
 
 The most important old Scala producer configurations control 

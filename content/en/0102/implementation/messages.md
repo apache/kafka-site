@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Messages
-
 Messages consist of a fixed-size header, a variable length opaque key byte array and a variable length opaque value byte array. The header contains the following fields: 
 
   * A CRC32 checksum to detect corruption or truncation. 

@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Datacenters
-
 Some deployments will need to manage a data pipeline that spans multiple datacenters. Our approach to this is to deploy a local Kafka cluster in each datacenter and machines in each location interact only with their local cluster. 
 
 For applications that need a global view of all data we use the [mirror maker tool](/08/tools.html) to provide clusters which have aggregate data mirrored from all datacenters. These aggregator clusters are used for reads by applications that require this. 

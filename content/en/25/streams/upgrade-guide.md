@@ -33,7 +33,7 @@ Since 2.2.0 release, Kafka Streams depends on a RocksDBs version that requires M
 
 Another important thing to keep in mind: in deprecated `KStreamBuilder` class, when a `KTable` is created from a source topic via `KStreamBuilder.table()`, its materialized state store will reuse the source topic as its changelog topic for restoring, and will disable logging to avoid appending new updates to the source topic; in the `StreamsBuilder` class introduced in 1.0, this behavior was changed accidentally: we still reuse the source topic as the changelog topic for restoring, but will also create a separate changelog topic to append the update records from source topic to. In the 2.0 release, we have fixed this issue and now users can choose whether or not to reuse the source topic based on the `StreamsConfig#TOPOLOGY_OPTIMIZATION`: if you are upgrading from the old `KStreamBuilder` class and hence you need to change your code to use the new `StreamsBuilder`, you should set this config value to `StreamsConfig#OPTIMIZE` to continue reusing the source topic; if you are upgrading from 1.0 or 1.1 where you are already using `StreamsBuilder` and hence have already created a separate changelog topic, you should set this config value to `StreamsConfig#NO_OPTIMIZATION` when upgrading to 2.5.0 in order to use that changelog topic for restoring the state store. More details about the new config `StreamsConfig#TOPOLOGY_OPTIMIZATION` can be found in [KIP-295](https://cwiki.apache.org/confluence/display/KAFKA/KIP-295%3A+Add+Streams+Configuration+Allowing+for+Optional+Topology+Optimization). 
 
-# Streams API changes in 2.5.0 
+## Streams API changes in 2.5.0 
 
 We add a new `cogroup()` operator (via [KIP-150](https://cwiki.apache.org/confluence/display/KAFKA/KIP-150+-+Kafka-Streams+Cogroup)) that allows to aggregate multiple streams in a single operation. Cogrouped streams can also be windowed before they are aggregated. Please refer to the [developer guide](/25/streams/developer-guide/dsl-api.html) for more details. 
 
@@ -45,7 +45,7 @@ Deprecated `UsePreviousTimeOnInvalidTimestamp` and replaced it with `UsePartitio
 
 Deprecated `KafkaStreams.store(String, QueryableStoreType)` and replaced it with `KafkaStreams.store(StoreQueryParameters)` to allow querying for a store with variety of parameters, including querying a specific task and stale stores, as per [KIP-562](https://cwiki.apache.org/confluence/display/KAFKA/KIP-562%3A+Allow+fetching+a+key+from+a+single+partition+rather+than+iterating+over+all+the+stores+on+an+instance) and [KIP-535](https://cwiki.apache.org/confluence/display/KAFKA/KIP-535%3A+Allow+state+stores+to+serve+stale+reads+during+rebalance) respectively. 
 
-# Streams API changes in 2.4.0 
+## Streams API changes in 2.4.0 
 
 As of 2.4.0 Kafka Streams offers a KTable-KTable foreign-key join (as per [KIP-213](https://cwiki.apache.org/confluence/display/KAFKA/KIP-213+Support+non-key+joining+in+KTable)). This joiner allows for records to be joined between two KTables with different keys. Both [INNER and LEFT foreign-key joins](/25/streams/developer-guide/dsl-api.html#ktable-ktable-fk-join) are supported. 
 
@@ -66,7 +66,7 @@ In 2.4.0, we deprecated `WindowStore#put(K key, V value)` that should never be u
 
 Furthermore, the `PartitionGrouper` interface and its corresponding configuration parameter `partition.grouper` were deprecated ([KIP-528](https://cwiki.apache.org/confluence/display/KAFKA/KIP-528%3A+Deprecate+PartitionGrouper+configuration+and+interface)) and will be removed in the next major release ([KAFKA-7785](https://issues.apache.org/jira/browse/KAFKA-7785). Hence, this feature won't be supported in the future any longer and you need to updated your code accordingly. If you use a custom `PartitionGrouper` and stop to use it, the created tasks might change. Hence, you will need to reset your application to upgrade it. 
 
-# Streams API changes in 2.3.0 
+## Streams API changes in 2.3.0 
 
 Version 2.3.0 adds the Suppress operator to the `kafka-streams-scala` Ktable API.
 
@@ -88,11 +88,11 @@ To avoid memory leaks, `RocksDBConfigSetter` has a new `close()` method that is 
 
 RocksDB dependency was updated to version `5.18.3`. The new version allows to specify more RocksDB configurations, including `WriteBufferManager` which helps to limit RocksDB off-heap memory usage. For more details please read [KAFKA-8215](https://issues.apache.org/jira/browse/KAFKA-8215). 
 
-# Notable changes in Kafka Streams 2.2.1 
+## Notable changes in Kafka Streams 2.2.1 
 
 As of Kafka Streams 2.2.1 a message format 0.11 or higher is required; this implies that brokers must be on version 0.11.0 or higher. 
 
-# Streams API changes in 2.2.0 
+## Streams API changes in 2.2.0 
 
 We've simplified the `KafkaStreams#state` transition diagram during the starting up phase a bit in 2.2.0: in older versions the state will transit from `CREATED` to `RUNNING`, and then to `REBALANCING` to get the first stream task assignment, and then back to `RUNNING`; starting in 2.2.0 it will transit from `CREATED` directly to `REBALANCING` and then to `RUNNING`. If you have registered a `StateListener` that captures state transition events, you may need to adjust your listener implementation accordingly for this simplification (in practice, your listener logic should be very unlikely to be affected at all). 
 
@@ -100,7 +100,7 @@ In `WindowedSerdes`, we've added a new static constructor to return a `TimeWindo
 
 In 2.2.0 we have extended a few public interfaces including `KafkaStreams` to extend `AutoCloseable` so that they can be used in a try-with-resource statement. For a full list of public interfaces that get impacted please read [KIP-376](https://cwiki.apache.org/confluence/display/KAFKA/KIP-376%3A+Implement+AutoClosable+on+appropriate+classes+that+want+to+be+used+in+a+try-with-resource+statement). 
 
-# Streams API changes in 2.1.0 
+## Streams API changes in 2.1.0 
 
 We updated `TopologyDescription` API to allow for better runtime checking. Users are encouraged to use `#topicSet()` and `#topicPattern()` accordingly on `TopologyDescription.Source` nodes, instead of using `#topics()`, which has since been deprecated. Similarly, use `#topic()` and `#topicNameExtractor()` to get descriptions of `TopologyDescription.Sink` nodes. For more details, see [KIP-321](https://cwiki.apache.org/confluence/display/KAFKA/KIP-321%3A+Update+TopologyDescription+to+better+represent+Source+and+Sink+Nodes). 
 
@@ -125,7 +125,7 @@ We've added an overloaded `StreamsBuilder#build` method that accepts an instance
 
 We are introducing static membership towards Kafka Streams user. This feature reduces unnecessary rebalances during normal application upgrades or rolling bounces. For more details on how to use it, checkout [static membership design](/25/#static_membership). Note, Kafka Streams uses the same `ConsumerConfig#GROUP_INSTANCE_ID_CONFIG`, and you only need to make sure it is uniquely defined across different stream instances in one application. 
 
-# Streams API changes in 2.0.0 
+## Streams API changes in 2.0.0 
 
 In 2.0.0 we have added a few new APIs on the `ReadOnlyWindowStore` interface (for details please read Streams API changes below). If you have customized window store implementations that extends the `ReadOnlyWindowStore` interface you need to make code changes. 
 
@@ -186,7 +186,7 @@ We have removed these deprecated APIs:
 
 
 
-# Streams API changes in 1.1.0 
+## Streams API changes in 1.1.0 
 
 We have added support for methods in `ReadOnlyWindowStore` which allows for querying `WindowStore`s without the necessity of providing keys. For users who have customized window store implementations on the above interface, they'd need to update their code to implement the newly added method as well. For more details, see [KIP-205](https://cwiki.apache.org/confluence/display/KAFKA/KIP-205%3A+Add+all%28%29+and+range%28%29+API+to+ReadOnlyWindowStore). 
 
@@ -232,7 +232,7 @@ Changes in `StreamsResetter`:
 
 
 
-# Streams API changes in 1.0.0 
+## Streams API changes in 1.0.0 
 
 With 1.0 a major API refactoring was accomplished and the new API is cleaner and easier to use. This change includes the five main classes `KafkaStreams`, `KStreamBuilder`, `KStream`, `KTable`, and `TopologyBuilder` (and some more others). All changes are fully backward compatible as old API is only deprecated but not removed. We recommend to move to the new API as soon as you can. We will summarize all API changes in the next paragraphs. 
 
@@ -282,7 +282,7 @@ The introduction of [KIP-161](https://cwiki.apache.org/confluence/display/KAFKA/
 
 The introduction of [KIP-173](https://cwiki.apache.org/confluence/display/KAFKA/KIP-173%3A+Add+prefix+to+StreamsConfig+to+enable+setting+default+internal+topic+configs) enables you to provide topic configuration parameters for any topics created by Kafka Streams. This includes repartition and changelog topics. You can provide the configs via the `StreamsConfig` by adding the configs with the prefix as defined by `StreamsConfig#topicPrefix(String)`. Any properties in the `StreamsConfig` with the prefix will be applied when creating internal topics. Any configs that aren't topic configs will be ignored. If you already use `StateStoreSupplier` or `Materialized` to provide configs for changelogs, then they will take precedence over those supplied in the config. 
 
-# Streams API changes in 0.11.0.0 
+## Streams API changes in 0.11.0.0 
 
 Updates in `StreamsConfig`: 
 
@@ -347,7 +347,7 @@ Producer's `client.id` naming schema:
 
 `[client.Id]` is either set via Streams configuration parameter `client.id` or defaults to `[application.id]-[processId]` (`[processId]` is a random UUID). 
 
-# Notable changes in 0.10.2.1 
+## Notable changes in 0.10.2.1 
 
 Parameter updates in `StreamsConfig`: 
 
@@ -355,7 +355,7 @@ Parameter updates in `StreamsConfig`:
 
 
 
-# Streams API changes in 0.10.2.0 
+## Streams API changes in 0.10.2.0 
 
 New methods in `KafkaStreams`: 
 
@@ -425,7 +425,7 @@ Changes to `TimestampExtractor`:
 
 Relaxed type constraints of many DSL interfaces, classes, and methods (cf. [KIP-100](https://cwiki.apache.org/confluence/display/KAFKA/KIP-100+-+Relax+Type+constraints+in+Kafka+Streams+API)). 
 
-# Streams API changes in 0.10.1.0 
+## Streams API changes in 0.10.1.0 
 
 Stream grouping and aggregation split into two methods: 
 

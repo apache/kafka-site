@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Java Version 
-
 From a security perspective, we recommend you use the latest released version of JDK 1.8 as older freely available versions have disclosed security vulnerabilities. LinkedIn is currently running JDK 1.8 u5 (looking to upgrade to a newer version) with the G1 collector. LinkedIn's tuning looks like this: 
     
     

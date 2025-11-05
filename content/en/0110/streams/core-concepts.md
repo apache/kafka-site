@@ -25,7 +25,7 @@ Some highlights of Kafka Streams:
 
 We first summarize the key concepts of Kafka Streams. 
 
-# Stream Processing Topology
+## Stream Processing Topology
 
   * A **stream** is the most important abstraction provided by Kafka Streams: it represents an unbounded, continuously updating data set. A stream is an ordered, replayable, and fault-tolerant sequence of immutable data records, where a **data record** is defined as a key-value pair.
   * A **stream processing application** is any program that makes use of the Kafka Streams library. It defines its computational logic through one or more **processor topologies** , where a processor topology is a graph of stream processors (nodes) that are connected by streams (edges).
@@ -41,7 +41,7 @@ Kafka Streams offers two ways to define the stream processing topology: the [**K
 
 A processor topology is merely a logical abstraction for your stream processing code. At runtime, the logical topology is instantiated and replicated inside the application for parallel processing (see **Stream Partitions and Tasks** for details). 
 
-# Time
+## Time
 
 A critical aspect in stream processing is the notion of **time** , and how it is modeled and integrated. For example, some operations such as **windowing** are defined based on time boundaries. 
 
@@ -65,7 +65,7 @@ Finally, whenever a Kafka Streams application writes records to Kafka, then it w
 
 
 
-# States
+## States
 
 Some stream processing applications don't require state, which means the processing of a message is independent from the processing of all other messages. However, being able to maintain state opens up many possibilities for sophisticated stream processing applications: you can join input streams, or group and aggregate data records. Many such stateful operators are provided by the [**Kafka Streams DSL**](/0110/streams/developer-guide#streams_dsl). 
 

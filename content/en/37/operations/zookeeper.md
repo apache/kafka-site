@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# ZooKeeper
-
 ## Stable version
 
 The current stable branch is 3.8. Kafka is regularly updated to include the latest release in the 3.8 series. 

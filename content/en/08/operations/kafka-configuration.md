@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Kafka Configuration
-
 Kafka 0.8 is the version we currently run. We are currently running with replication but with producers acks = 1. 
 
 ## Important Server Configurations

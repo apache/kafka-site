@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Java Version
-
 Java 17 and Java 21 are fully supported while Java 11 is supported for a subset of modules (clients, streams and related). Support for versions newer than the most recent LTS version are best-effort and the project typically only tests with the most recent non LTS version. 
 
 We generally recommend running Apache Kafka with the most recent LTS release (Java 21 at the time of writing) for performance, efficiency and support reasons. From a security perspective, we recommend the latest released patch version as older versions typically have disclosed security vulnerabilities. 

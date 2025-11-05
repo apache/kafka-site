@@ -8,9 +8,6 @@ keywords:
 type: docs
 ---
 
-# Message Format
-    
-    
     	/**
     	 * A message. The format of an N byte message is the following:
     	 *

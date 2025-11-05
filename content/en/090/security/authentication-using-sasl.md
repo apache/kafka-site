@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Authentication using SASL
-
   1. #### Prerequisites
 
     1. **Kerberos**  

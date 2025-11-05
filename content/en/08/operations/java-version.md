@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Java Version
-
 Any version of Java 1.6 or later should work fine, we are using 1.6.0_21. Here are our command line options: 
     
     

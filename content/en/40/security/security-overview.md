@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Security Overview
-
 The following security measures are currently supported: 
 
   1. Authentication of connections to brokers from clients (producers and consumers), other brokers and tools, using either SSL or SASL. Kafka supports the following SASL mechanisms: 

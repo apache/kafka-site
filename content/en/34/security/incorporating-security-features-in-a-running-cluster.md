@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Incorporating Security Features in a Running Cluster
-
 You can secure a running cluster via one or more of the supported protocols discussed previously. This is done in phases: 
 
   * Incrementally bounce the cluster nodes to open additional secured port(s).

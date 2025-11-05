@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Authorization and ACLs
-
 Kafka ships with a pluggable authorization framework, which is configured with the `authorizer.class.name` property in the server confgiuration. Configured implementations must extend `org.apache.kafka.server.authorizer.Authorizer`. Kafka provides default implementations which store ACLs in the cluster metadata (either Zookeeper or the KRaft metadata log). For Zookeeper-based clusters, the provided implementation is configured as follows: 
     
     

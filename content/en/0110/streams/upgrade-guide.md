@@ -31,7 +31,7 @@ Upgrading from 0.10.0.x to 0.11.0.0, 0.11.0.1, or 0.11.0.2 requires an offline u
 
 
 
-# Streams API changes in 0.11.0.0
+## Streams API changes in 0.11.0.0
 
 Updates in `StreamsConfig`: 
 
@@ -96,7 +96,7 @@ Producer's `client.id` naming schema:
 
 `[client.Id]` is either set via Streams configuration parameter `client.id` or defaults to `[application.id]-[processId]` (`[processId]` is a random UUID). 
 
-# Notable changes in 0.10.2.1
+## Notable changes in 0.10.2.1
 
 Parameter updates in `StreamsConfig`: 
 
@@ -104,7 +104,7 @@ Parameter updates in `StreamsConfig`:
 
 
 
-# Streams API changes in 0.10.2.0
+## Streams API changes in 0.10.2.0
 
 New methods in `KafkaStreams`: 
 
@@ -174,7 +174,7 @@ Changes to `TimestampExtractor`:
 
 Relaxed type constraints of many DSL interfaces, classes, and methods (cf. [KIP-100](https://cwiki.apache.org/confluence/display/KAFKA/KIP-100+-+Relax+Type+constraints+in+Kafka+Streams+API)). 
 
-# Streams API changes in 0.10.1.0
+## Streams API changes in 0.10.1.0
 
 Stream grouping and aggregation split into two methods: 
 

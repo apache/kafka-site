@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Multi-Tenancy
-
 ## Multi-Tenancy Overview
 
 As a highly scalable event streaming platform, Kafka is used by many users as their central nervous system, connecting in real-time a wide range of different systems and applications from various teams and lines of businesses. Such multi-tenant cluster environments command proper control and management to ensure the peaceful coexistence of these different needs. This section highlights features and best practices to set up such shared environments, which should help you operate clusters that meet SLAs/OLAs and that minimize potential collateral damage caused by "noisy neighbors". 

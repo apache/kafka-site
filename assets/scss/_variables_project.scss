@@ -15,27 +15,68 @@ $primary: #ffffff;
   
 .grid__item__logo {
     margin: auto;
-    width: 16rem;
-    height: 6rem;
+    width: 100%;
+    max-width: 12rem;
+    height: 5rem;
     display: block;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
 }
 
 .c-testimonials {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
 }
 
   
 .c-testimonials__testimonial {
-    text-align: left;
-    margin-bottom: 1rem;
-  
+    text-align: center;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
     a {
       display: block;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
+    }
+  
+    .c-testimonials__description {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      margin-bottom: 0;
+      text-align: left;
+      flex-grow: 1;
+      
+      a {
+        display: inline;
+        margin-bottom: 0;
+        color: #0066cc;
+        text-decoration: underline;
+        
+        &:hover {
+          color: #0052a3;
+        }
+      }
+    }
+    
+    // Responsive adjustments
+    @media (max-width: 576px) {
+      margin-bottom: 1.5rem;
+      
+      .c-testimonials__description {
+        font-size: 0.8125rem;
+      }
     }
 }
 

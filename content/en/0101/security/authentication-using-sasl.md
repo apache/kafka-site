@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Authentication using SASL
-
   1. #### SASL configuration for Kafka brokers
 
     1. Select one or more supported mechanisms to enable in the broker. `GSSAPI` and `PLAIN` are the mechanisms currently supported in Kafka.

@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# ZooKeeper
-
 ## Stable version
 
 The current stable branch is 3.4 and the latest release of that branch is 3.4.9. 

@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Connector Development Guide
-
 This guide describes how developers can write new connectors for Kafka Connect to move data between Kafka and other systems. It briefly reviews a few key concepts and then describes how to create a simple connector.
 
 ## Core Concepts and APIs

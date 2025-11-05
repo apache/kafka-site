@@ -14,7 +14,7 @@ The picture below shows the anatomy of an application that uses the Kafka Stream
 
 ![](/0110/images/streams-architecture-overview.jpg)
 
-# Stream Partitions and Tasks
+## Stream Partitions and Tasks
 
 The messaging layer of Kafka partitions data for storing and transporting it. Kafka Streams partitions data for processing it. In both cases, this partitioning is what enables data locality, elasticity, scalability, high performance, and fault tolerance. Kafka Streams uses the concepts of **partitions** and **tasks** as logical units of its parallelism model based on Kafka topic partitions. There are close links between Kafka Streams and Kafka in the context of parallelism: 
 
@@ -35,7 +35,7 @@ The following diagram shows two tasks each assigned with one partition of the in
 ![](/0110/images/streams-architecture-tasks.jpg)   
 
 
-# Threading Model
+## Threading Model
 
 Kafka Streams allows the user to configure the number of **threads** that the library can use to parallelize processing within an application instance. Each thread can execute one or more tasks with their processor topologies independently. For example, the following diagram shows one stream thread running two stream tasks. 
 
@@ -48,7 +48,7 @@ As we described above, scaling your stream processing application with Kafka Str
   
 
 
-# Local State Stores
+## Local State Stores
 
 Kafka Streams provides so-called **state stores** , which can be used by stream processing applications to store and query data, which is an important capability when implementing stateful operations. The [Kafka Streams DSL](/0110/streams/developer-guide#streams_dsl), for example, automatically creates and manages such state stores when you are calling stateful operators such as `join()` or `aggregate()`, or when you are windowing a stream. 
 
@@ -59,7 +59,7 @@ The following diagram shows two stream tasks with their dedicated local state st
 ![](/0110/images/streams-architecture-states.jpg)   
 
 
-# Fault Tolerance
+## Fault Tolerance
 
 Kafka Streams builds on fault-tolerance capabilities integrated natively within Kafka. Kafka partitions are highly available and replicated; so when stream data is persisted to Kafka it is available even if the application fails and needs to re-process it. Tasks in Kafka Streams leverage the fault-tolerance capability offered by the [Kafka consumer client](https://www.confluent.io/blog/tutorial-getting-started-with-the-new-apache-kafka-0.9-consumer-client/) to handle failures. If a task runs on a machine that fails, Kafka Streams automatically restarts the task in one of the remaining running instances of the application. 
 

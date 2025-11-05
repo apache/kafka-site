@@ -45,7 +45,7 @@ It implements the WordCount algorithm, which computes a word occurrence histogra
 
 As the first step, we will start Kafka (unless you already have it started) and then we will prepare input data to a Kafka topic, which will subsequently be processed by a Kafka Streams application. 
 
-## Step 1: Download the code
+### Step 1: Download the code
 
 [Download](https://www.apache.org/dyn/closer.cgi?path=/kafka/2.1.0/kafka_2.11-2.1.0.tgz "Kafka downloads") the 2.1.0 release and un-tar it. Note that there are multiple downloadable Scala versions and we choose to use the recommended version (2.11) here: 
     
@@ -54,7 +54,7 @@ As the first step, we will start Kafka (unless you already have it started) and 
     > cd kafka_2.11-2.1.0
     
 
-## Step 2: Start the Kafka server
+### Step 2: Start the Kafka server
 
 Kafka uses [ZooKeeper](https://zookeeper.apache.org/) so you need to first start a ZooKeeper server if you don't already have one. You can use the convenience script packaged with kafka to get a quick-and-dirty single-node ZooKeeper instance. 
     
@@ -73,7 +73,7 @@ Now start the Kafka server:
     ...
     
 
-## Step 3: Prepare input topic and start Kafka producer
+### Step 3: Prepare input topic and start Kafka producer
 
 Next, we create the input topic named **streams-plaintext-input** and the output topic named **streams-wordcount-output** : 
     
@@ -109,7 +109,7 @@ The created topic can be described with the same **kafka-topics** tool:
     	Topic: streams-wordcount-output	Partition: 0	Leader: 0	Replicas: 0	Isr: 0
     
 
-## Step 4: Start the Wordcount Application
+### Step 4: Start the Wordcount Application
 
 The following command starts the WordCount demo application: 
     
@@ -138,7 +138,7 @@ and inspect the output of the WordCount demo application by reading from its out
         --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer
     
 
-## Step 5: Process some data
+### Step 5: Process some data
 
 Now let's write some message with the console producer into the input topic **streams-plaintext-input** by entering a single line of text and then hit <RETURN>. This will send a new message to the input topic, where the message key is null and the message value is the string encoded text line that you just entered (in practice, input data for applications will typically be streaming continuously into Kafka, rather than being manually entered as we do in this quickstart): 
     
@@ -246,7 +246,7 @@ And so on (we skip the illustration of how the third line is being processed). T
 
 Looking beyond the scope of this concrete example, what Kafka Streams is doing here is to leverage the duality between a table and a changelog stream (here: table = the KTable, changelog stream = the downstream KStream): you can publish every change of the table to a stream, and if you consume the entire changelog stream from beginning to end, you can reconstruct the contents of the table. 
 
-## Step 6: Teardown the application
+### Step 6: Teardown the application
 
 You can now stop the console consumer, the console producer, the Wordcount application, the Kafka broker and the ZooKeeper server in order via **Ctrl-C**.
 

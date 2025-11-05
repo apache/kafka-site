@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Java Version
-
 We're currently running JDK 1.7 u51, and we've switched over to the G1 collector. If you do this (and we highly recommend it), make sure you're on u51. We tried out u21 in testing, but we had a number of problems with the GC implementation in that version. Our tuning looks like this: 
     
     

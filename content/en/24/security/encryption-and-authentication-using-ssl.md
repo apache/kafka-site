@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Encryption and Authentication using SSL
-
 Apache Kafka allows clients to connect over SSL. By default, SSL is disabled but can be turned on as needed. 
 
   1. #### Generate SSL key and certificate for each Kafka broker

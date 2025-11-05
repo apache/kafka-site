@@ -10,11 +10,11 @@ type: docs
 
 # Kafka Streams
 
-# The easiest way to write mission-critical real-time applications and microservices
+## The easiest way to write mission-critical real-time applications and microservices
 
 Kafka Streams is a client library for building applications and microservices, where the input and output data are stored in Kafka clusters. It combines the simplicity of writing and deploying standard Java and Scala applications on the client side with the benefits of Kafka's server-side cluster technology.
 
-# TOUR OF THE STREAMS API
+## TOUR OF THE STREAMS API
 
 1Intro to Streams
 
@@ -26,7 +26,7 @@ Kafka Streams is a client library for building applications and microservices, w
 
 * * *
 
-# Why you'll love using Kafka Streams!
+## Why you'll love using Kafka Streams!
 
   * Elastic, highly scalable, fault-tolerant
   * Deploy to containers, VMs, bare metal, cloud
@@ -43,7 +43,7 @@ Kafka Streams is a client library for building applications and microservices, w
 
 * * *
 
-# Kafka Streams use cases
+## Kafka Streams use cases
 
 [ ](https://open.nytimes.com/publishing-with-apache-kafka-at-the-new-york-times-7f0e3b7d2077)
 
@@ -69,7 +69,7 @@ Rabobank is one of the 3 largest banks in the Netherlands. Its digital nervous s
 
 Trivago is a global hotel search platform. We are focused on reshaping the way travelers search for and compare hotels, while enabling hotel advertisers to grow their businesses by providing access to a broad audience of travelers via our websites and apps. As of 2017, we offer access to approximately 1.8 million hotels and other accommodations in over 190 countries. We use Kafka, Kafka Connect, and Kafka Streams to [enable our developers](https://speakerdeck.com/xenji/kafka-and-debezium-at-trivago-code-dot-talks-2017-edition) to access data freely in the company. Kafka Streams powers parts of our analytics pipeline and delivers endless options to explore and operate on the data sources we have at hand. 
 
-# Hello Kafka Streams
+## Hello Kafka Streams
 
 The code example below implements a WordCount application that is elastic, highly scalable, fault-tolerant, stateful, and ready to run in production at large scale
 
