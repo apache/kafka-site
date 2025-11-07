@@ -705,7 +705,7 @@
     "link": "https://www.salesforce.com/",
     "logo": "salesforce.jpg",
     "logoBgColor": "#ffffff",
-    "description": "Salesforce adopted Apache Kafka to implement a <a href='https://engineering.salesforce.com/expanding-visibility-with-apache-kafka-e305b12c4aba' , target='_blank'>pub/sub architecture system</a> and to securely add an enterprise-ready, <a href='https://engineering.salesforce.com/how-apache-kafka-inspired-our-platform-events-architecture-2f351fe4cf63', target='_blank'>event-driven layer</a> to our multi-tenant system. With Kafka as the central nervous system of our microservices architecture, <a href='https://engineering.salesforce.com/real-time-einstein-insights-using-kafka-streams-ca94008c2c6f', target='_blank'>Kafka Streams applications</a> perform a variety of operations to generate useful real-time insights for our customers."
+    "description": "Salesforce adopted Apache Kafka to implement a <a href='https://engineering.salesforce.com/expanding-visibility-with-apache-kafka-e305b12c4aba' target='_blank'>pub/sub architecture system</a> and to securely add an enterprise-ready, <a href='https://engineering.salesforce.com/how-apache-kafka-inspired-our-platform-events-architecture-2f351fe4cf63' target='_blank'>event-driven layer</a> to our multi-tenant system. With Kafka as the central nervous system of our microservices architecture, <a href='https://engineering.salesforce.com/real-time-einstein-insights-using-kafka-streams-ca94008c2c6f' target='_blank'>Kafka Streams applications</a> perform a variety of operations to generate useful real-time insights for our customers."
   },
   {
     "link": "https://www.schrodinger.com/platform",
@@ -891,7 +891,7 @@
     "link": "http://wikimediafoundation.org/wiki/Our_projects",
     "logo": "wikimedia.png",
     "logoBgColor": "#ffffff",
-    "description": "Wikimedia Foundation uses Kafka as the base of our <a href='https://wikitech.wikimedia.org/wiki/Event_Platform', target='_blank'>event data platform</a> for both production and analytics, including reactive Wikipedia cache invalidation and reliable ingestion of large data streams into Hadoop."
+    "description": "Wikimedia Foundation uses Kafka as the base of our <a href='https://wikitech.wikimedia.org/wiki/Event_Platform' target='_blank'>event data platform</a> for both production and analytics, including reactive Wikipedia cache invalidation and reliable ingestion of large data streams into Hadoop."
   },
   {
     "link": "https://www.vividcortex.com/",

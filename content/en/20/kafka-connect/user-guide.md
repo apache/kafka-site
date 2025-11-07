@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# User Guide
-
 The quickstart provides a brief example of how to run a standalone version of Kafka Connect. This section describes how to configure, run, and manage Kafka Connect in more detail.
 
 ## Running Kafka Connect

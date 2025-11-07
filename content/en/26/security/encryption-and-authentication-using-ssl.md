@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Encryption and Authentication using SSL
-
 Apache Kafka allows clients to use SSL for encryption of traffic as well as authentication. By default, SSL is disabled but can be turned on if needed. The following paragraphs explain in detail how to set up your own PKI infrastructure, use it to create certificates and configure Kafka to use these. 
 
   1. #### Generate SSL key and certificate for each Kafka broker

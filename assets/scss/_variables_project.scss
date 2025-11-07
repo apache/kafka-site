@@ -15,27 +15,68 @@ $primary: #ffffff;
   
 .grid__item__logo {
     margin: auto;
-    width: 16rem;
-    height: 6rem;
+    width: 100%;
+    max-width: 12rem;
+    height: 5rem;
     display: block;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
 }
 
 .c-testimonials {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
 }
 
   
 .c-testimonials__testimonial {
-    text-align: left;
-    margin-bottom: 1rem;
-  
+    text-align: center;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
     a {
       display: block;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
+    }
+  
+    .c-testimonials__description {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      margin-bottom: 0;
+      text-align: left;
+      flex-grow: 1;
+      
+      a {
+        display: inline;
+        margin-bottom: 0;
+        color: #0066cc;
+        text-decoration: underline;
+        
+        &:hover {
+          color: #0052a3;
+        }
+      }
+    }
+    
+    // Responsive adjustments
+    @media (max-width: 576px) {
+      margin-bottom: 1.5rem;
+      
+      .c-testimonials__description {
+        font-size: 0.8125rem;
+      }
     }
 }
 
@@ -43,4 +84,197 @@ $primary: #ffffff;
     max-height: 4rem;
     max-width: 100%;
   }
+
+// Responsive fixes for mobile and different devices
+// Ensure proper viewport behavior
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+// Navbar responsive fixes
+.td-navbar {
+  @media (max-width: 768px) {
+    .navbar-brand {
+      max-width: 150px;
+      
+      svg, img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+// Logo responsive fixes
+.td-navbar .navbar-brand {
+  svg, img {
+    max-height: 40px;
+    width: auto;
+    
+    @media (max-width: 576px) {
+      max-height: 30px;
+    }
+  }
+}
+
+// Ensure navbar items are properly responsive
+.td-navbar .navbar-nav {
+  @media (max-width: 991px) {
+    width: 100%;
+    
+    .nav-item {
+      width: 100%;
+    }
+  }
+}
+
+// Fix navbar toggle button visibility
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  
+  &:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Responsive menu improvements
+.td-navbar .navbar-collapse {
+  @media (max-width: 991px) {
+    background-color: #fff;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Version dropdown responsive fix
+.td-navbar .dropdown-menu {
+  @media (max-width: 991px) {
+    width: 100%;
+    max-height: 300px;
+  }
+}
+
+// Search box responsive behavior
+.td-search__input {
+  @media (max-width: 576px) {
+    max-width: 100%;
+  }
+}
+
+// Ensure main content is properly responsive
+.td-content {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+// Fix sidebar on mobile
+.td-sidebar {
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+}
+
+// Responsive logo for homepage cover block
+.td-cover-block {
+  figure {
+    margin: 0 auto;
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      
+      // Desktop - full size
+      @media (min-width: 992px) {
+        max-width: 400px;
+        max-height: 500px;
+      }
+      
+      // Tablet - medium size
+      @media (min-width: 768px) and (max-width: 991px) {
+        max-width: 300px;
+        max-height: 375px;
+      }
+      
+      // Mobile landscape - smaller
+      @media (min-width: 576px) and (max-width: 767px) {
+        max-width: 250px;
+        max-height: 312px;
+      }
+      
+      // Mobile portrait - smallest
+      @media (max-width: 575px) {
+        max-width: 200px;
+        max-height: 250px;
+      }
+      
+      // Extra small phones
+      @media (max-width: 375px) {
+        max-width: 160px;
+        max-height: 200px;
+      }
+    }
+  }
+  
+  // Ensure buttons stack nicely on mobile
+  .btn {
+    @media (max-width: 576px) {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.75rem !important;
+      margin-right: 0 !important;
+    }
+  }
+  
+  // Adjust lead text size on mobile
+  .lead {
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Prev/Next navigation links styling
+.td-page-nav {
+  // Ensure prev/next links are responsive
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      
+      .nav-link-prev,
+      .nav-link-next {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  
+  // Better visual separation and styling
+  padding: 2rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  
+  .nav-link-prev,
+  .nav-link-next {
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
   

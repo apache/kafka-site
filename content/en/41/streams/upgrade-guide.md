@@ -31,7 +31,7 @@ Note: The cooperative rebalancing protocol has been the default since 2.4, but w
 
 For a table that shows Streams API compatibility with Kafka broker versions, see Broker Compatibility.
 
-# Notable compatibility changes in past releases
+## Notable compatibility changes in past releases
 
 Starting in version 4.0.0, Kafka Streams will only be compatible when running against brokers on version 2.1 or higher. Additionally, exactly-once semantics (EOS) will require brokers to be at least version 2.5. 
 
@@ -49,11 +49,11 @@ To run a Kafka Streams application version 2.2.1, 2.3.0, or higher a broker vers
 
 In deprecated `KStreamBuilder` class, when a `KTable` is created from a source topic via `KStreamBuilder.table()`, its materialized state store will reuse the source topic as its changelog topic for restoring, and will disable logging to avoid appending new updates to the source topic; in the `StreamsBuilder` class introduced in 1.0, this behavior was changed accidentally: we still reuse the source topic as the changelog topic for restoring, but will also create a separate changelog topic to append the update records from source topic to. In the 2.0 release, we have fixed this issue and now users can choose whether or not to reuse the source topic based on the `StreamsConfig#TOPOLOGY_OPTIMIZATION_CONFIG`: if you are upgrading from the old `KStreamBuilder` class and hence you need to change your code to use the new `StreamsBuilder`, you should set this config value to `StreamsConfig#OPTIMIZE` to continue reusing the source topic; if you are upgrading from 1.0 or 1.1 where you are already using `StreamsBuilder` and hence have already created a separate changelog topic, you should set this config value to `StreamsConfig#NO_OPTIMIZATION` when upgrading to 4.1.0 in order to use that changelog topic for restoring the state store. More details about the new config `StreamsConfig#TOPOLOGY_OPTIMIZATION_CONFIG` can be found in [KIP-295](https://cwiki.apache.org/confluence/x/V53LB). 
 
-# Streams API changes in 4.1.0
+## Streams API changes in 4.1.0
 
 **Note:** Kafka Streams 4.1.0 contains a critical memory leak bug ([KAFKA-19748](https://issues.apache.org/jira/browse/KAFKA-19748)) that affects users of range scans and certain DSL operators (session windows, sliding windows, stream-stream joins, foreign-key joins). Users running Kafka Streams should consider upgrading directly to 4.1.1 when available.
 
-## Early Access of the Streams Rebalance Protocol
+### Early Access of the Streams Rebalance Protocol
 
 The Streams Rebalance Protocol is a broker-driven rebalancing system designed specifically for Kafka Streams applications. Following the pattern of KIP-848, which moved rebalance coordination of plain consumers from clients to brokers, KIP-1071 extends this model to Kafka Streams workloads. Instead of clients computing new assignments on the client during rebalance events involving all members of the group, assignments are computed continuously on the broker. Instead of using a consumer group, the streams application registers as a streams group with the broker, which manages and exposes all metadata required for coordination of the streams application instances. 
 
@@ -96,11 +96,11 @@ To operate the new streams groups, explore the options of `kafka-streams-groups.
 
 Please provide feedback on this feature via the [Kafka mailing lists](https://kafka.apache.org/contact) or by filing [JIRA issues](https://kafka.apache.org/contributing). 
 
-## Other changes
+### Other changes
 
 The introduction of [KIP-1111](https://cwiki.apache.org/confluence/x/4Y_MEw) enables you to enforce explicit naming for all internal resources of the topology, including internal topics (e.g., changelog and repartition topics) and their associated state stores. This ensures that every internal resource is named before the Kafka Streams application is deployed, which is essential for upgrading your topology. You can enable this feature via `StreamsConfig` using the `StreamsConfig#ENSURE_EXPLICIT_INTERNAL_RESOURCE_NAMING_CONFIG` parameter. When set to `true`, the application will refuse to start if any internal resource has an auto-generated name. 
 
-# Streams API changes in 4.0.0
+## Streams API changes in 4.0.0
 
 In this release, eos-v1 (Exactly Once Semantics version 1) is no longer supported. To use eos-v2, brokers must be running version 2.5 or later. Additionally, all deprecated methods, classes, APIs, and config parameters up to and including AK 3.5 release have been removed. A few important ones are listed below. The full list can be found in [KAFKA-12822](https://issues.apache.org/jira/browse/KAFKA-12822). 
 
@@ -142,13 +142,13 @@ You can now configure your topology with a `ProcessorWrapper`, which allows you 
 
 Upgraded RocksDB dependency to version 9.7.3 (from 7.9.2). This upgrade incorporates various improvements and optimizations within RocksDB. However, it also introduces some API changes. The `org.rocksdb.AccessHint` class, along with its associated methods, has been removed. Several methods related to compressed block cache configuration in the `BlockBasedTableConfig` class have been removed, including `blockCacheCompressedNumShardBits`, `blockCacheCompressedSize`, and their corresponding setters. These functionalities are now consolidated under the `cache` option, and developers should configure their compressed block cache using the `setCache` method instead. The `NO_FILE_CLOSES` field has been removed from the `org.rocksdb.TickerTypeenum` as a result the `number-open-files` metrics does not work as expected. Metric `number-open-files` returns constant -1 from now on until it will officially be removed. The `org.rocksdb.Options.setLogger()` method now accepts a `LoggerInterface` as a parameter instead of the previous `Logger`. Some data types used in RocksDB's Java API have been modified. These changes, along with the removed class, field, and new methods, are primarily relevant to users implementing custom RocksDB configurations. These changes are expected to be largely transparent to most Kafka Streams users. However, those employing advanced RocksDB customizations within their Streams applications, particularly through the `rocksdb.config.setter`, are advised to consult the detailed RocksDB 9.7.3 changelog to ensure a smooth transition and adapt their configurations as needed. Specifically, users leveraging the removed `AccessHint` class, the removed methods from the `BlockBasedTableConfig` class, the `NO_FILE_CLOSES` field from `TickerType`, or relying on the previous signature of `setLogger()` will need to update their implementations. 
 
-# Streams API changes in 3.9.0
+## Streams API changes in 3.9.0
 
 The introduction of [KIP-1033](https://cwiki.apache.org/confluence/x/xQniEQ) enables you to provide a processing exception handler to manage exceptions during the processing of a record rather than throwing the exception all the way out of your streams application. You can provide the configs via the `StreamsConfig` as `StreamsConfig#PROCESSING_EXCEPTION_HANDLER_CLASS_CONFIG`. The specified handler must implement the `org.apache.kafka.streams.errors.ProcessingExceptionHandler` interface. 
 
 Kafka Streams now allows to customize the logging interval of stream-thread runtime summary, via the newly added config `log.summary.interval.ms`. By default, the summary is logged every 2 minutes. More details can be found in [KIP-1049](https://cwiki.apache.org/confluence/x/fwpeEg). 
 
-# Streams API changes in 3.8.0
+## Streams API changes in 3.8.0
 
 Kafka Streams now supports customizable task assignment strategies via the `task.assignor.class` configuration. The configuration can be set to the fully qualified class name of a custom task assignor implementation that has to extend the new `org.apache.kafka.streams.processor.assignment.TaskAssignor` interface. The new configuration also allows users to bring back the behavior of the old task assignor `StickyTaskAssignor` that was used before the introduction of the `HighAvailabilityTaskAssignor`. If no custom task assignor is configured, the default task assignor `HighAvailabilityTaskAssignor` is used. If you were using the `internal.task.assignor.class` config, you should switch to using the new `task.assignor.class` config instead, as the internal config will be removed in a future release. If you were previously plugging in the `StickyTaskAssignor` via the legacy `internal.task.assignor.class` config, you will need to make sure that you are importing the new `org.apache.kafka.streams.processor.assignment.StickTaskAssignor` when you switch over to the new `task.assignor.class` config, which is a version of the `StickyTaskAssignor` that implements the new public `TaskAssignor` interface. For more details, see the public interface section of [KIP-924](https://cwiki.apache.org/confluence/x/PxU0Dw). 
 
@@ -156,7 +156,7 @@ The Processor API now support so-called read-only state stores, added via [KIP-8
 
 To improve detection of leaked state store iterators, we added new store-level metrics to track the number and age of open iterators. The new metrics are `num-open-iterators`, `iterator-duration-avg`, `iterator-duration-max` and `oldest-iterator-open-since-ms`. These metrics are available for all state stores, including RocksDB, in-memory, and custom stores. More details can be found in [KIP-989](https://cwiki.apache.org/confluence/x/9KCzDw). 
 
-# Streams API changes in 3.7.0
+## Streams API changes in 3.7.0
 
 We added a new method to `KafkaStreams`, namely `KafkaStreams#setStandbyUpdateListener()` in [KIP-988](https://cwiki.apache.org/confluence/x/yqCzDw), in which users can provide their customized implementation of the newly added `StandbyUpdateListener` interface to continuously monitor changes to standby tasks. 
 
@@ -215,7 +215,7 @@ The `default.dsl.store` config was deprecated in favor of the new `dsl.store.sup
 
 A new configuration option `balance_subtopology` for `rack.aware.assignment.strategy` was introduced in 3.7 release. For more information, including how it can be enabled and further configured, see the [**Kafka Streams Developer Guide**](/41/streams/developer-guide/config-streams.html#rack-aware-assignment-strategy). 
 
-# Streams API changes in 3.6.0
+## Streams API changes in 3.6.0
 
 Rack aware task assignment was introduced in [KIP-925](https://cwiki.apache.org/confluence/x/CQ40Dw). Rack aware task assignment can be enabled for `StickyTaskAssignor` or `HighAvailabilityTaskAssignor` to compute task assignments which can minimize cross rack traffic under certain conditions. For more information, including how it can be enabled and further configured, see the [**Kafka Streams Developer Guide**](/41/streams/developer-guide/config-streams.html#rack-aware-assignment-strategy). 
 
@@ -223,7 +223,7 @@ IQv2 supports a `RangeQuery` that allows to specify unbounded, bounded, or half-
 
 KStreams-to-KTable joins now have an option for adding a grace period. The grace period is enabled on the `Joined` object using with `withGracePeriod()` method. This change was introduced in [KIP-923](https://cwiki.apache.org/confluence/x/lAs0Dw). To use the grace period option in the Stream-Table join the table must be [versioned](/41/streams/developer-guide/dsl-api.html#versioned-state-stores). For more information, including how it can be enabled and further configured, see the [**Kafka Streams Developer Guide**](/41/streams/developer-guide/config-streams.html#rack-aware-assignment-strategy). 
 
-# Streams API changes in 3.5.0
+## Streams API changes in 3.5.0
 
 A new state store type, versioned key-value stores, was introduced in [KIP-889](https://cwiki.apache.org/confluence/x/AIwODg) and [KIP-914](https://cwiki.apache.org/confluence/x/QorFDg). Rather than storing a single record version (value and timestamp) per key, versioned state stores may store multiple record versions per key. This allows versioned state stores to support timestamped retrieval operations to return the latest record (per key) as of a specified timestamp. For more information, including how to upgrade from a non-versioned key-value store to a versioned store in an existing application, see the [Developer Guide](/41/streams/developer-guide/dsl-api.html#versioned-state-stores). Versioned key-value stores are opt-in only; existing applications will not be affected upon upgrading to 3.5 without explicit code changes. 
 
@@ -237,7 +237,7 @@ We added a new Serde type `Boolean` in [KIP-907](https://cwiki.apache.org/conflu
 
 [KIP-884](https://cwiki.apache.org/confluence/x/AZfGDQ) adds a new config `default.client.supplier` that allows to use a custom `KafkaClientSupplier` without any code changes. 
 
-# Streams API changes in 3.4.0
+## Streams API changes in 3.4.0
 
 [KIP-770](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=186878390) deprecates config `cache.max.bytes.buffering` in favor of the newly introduced config `statestore.cache.max.bytes`. To improve monitoring, two new metrics `input-buffer-bytes-total` and `cache-size-bytes-total` were added at the DEBUG level. Note, that the KIP is only partially implemented in the 3.4.0 release, and config `input.buffer.max.bytes` is not available yet. 
 
@@ -247,7 +247,7 @@ We added a new Serde type `Boolean` in [KIP-907](https://cwiki.apache.org/conflu
 
 [KIP-865](https://cwiki.apache.org/confluence/x/UY9rDQ) updates the Kafka Streams application reset tool’s server parameter name to conform to the other Kafka tooling by deprecating the `--bootstrap-servers` parameter and introducing a new `--bootstrap-server` parameter in its place. 
 
-# Streams API changes in 3.3.0
+## Streams API changes in 3.3.0
 
 Kafka Streams does not send a "leave group" request when an instance is closed. This behavior implies that a rebalance is delayed until `max.poll.interval.ms` passed. [KIP-812](https://cwiki.apache.org/confluence/x/KZvkCw) introduces `KafkaStreams.close(CloseOptions)` overload, which allows forcing an instance to leave the group immediately. Note: Due to internal limitations, `CloseOptions` only works for static consumer groups at this point (cf. [KAFKA-16514](https://issues.apache.org/jira/browse/KAFKA-16514) for more details and a fix in some future release). 
 
@@ -264,7 +264,7 @@ Emitting a windowed aggregation result only after a window is closed is currentl
 
 To improve monitoring of Kafka Streams applications, [KIP-846](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=211886093) adds four new metrics `bytes-consumed-total`, `records-consumed-total`, `bytes-produced-total`, and `records-produced-total` within a new **topic level** scope. The metrics are collected at INFO level for source and sink nodes, respectively. 
 
-# Streams API changes in 3.2.0
+## Streams API changes in 3.2.0
 
 RocksDB offers many metrics which are critical to monitor and tune its performance. Kafka Streams started to make RocksDB metrics accessible like any other Kafka metric via [KIP-471](https://cwiki.apache.org/confluence/x/A5LiBg) in 2.4.0 release. However, the KIP was only partially implemented, and is now completed with the 3.2.0 release. For a full list of available RocksDB metrics, please consult the [monitoring documentation](/41/#kafka_streams_client_monitoring). 
 
@@ -278,7 +278,7 @@ For multi-AZ deployments, it is desired to assign StandbyTasks to a KafkaStreams
 
 The Kafka Streams DSL may insert so-called repartition topics for certain DSL operators to ensure correct partitioning of data. These topics are configured with infinite retention time, and Kafka Streams purges old data explicitly via "delete record" requests, when commiting input topic offsets. [KIP-811](https://cwiki.apache.org/confluence/x/JY-kCw) adds a new config `repartition.purge.interval.ms` allowing you to configure the purge interval independently of the commit interval. 
 
-# Streams API changes in 3.1.0
+## Streams API changes in 3.1.0
 
 The semantics of left/outer stream-stream join got improved via [KIP-633](https://cwiki.apache.org/confluence/x/Ho2NCg). Previously, left-/outer stream-stream join might have emitted so-call spurious left/outer results, due to an eager-emit strategy. The implementation was changed to emit left/outer join result records only after the join window is closed. The old API to specify the join window, i.e., `JoinWindows.of()` that enables the eager-emit strategy, was deprecated in favor of a `JoinWindows.ofTimeDifferenceAndGrace()` and `JoinWindows.ofTimeDifferencWithNoGrace()`. The new semantics are only enabled if you use the new join window builders.  
 Additionally, KIP-633 makes setting a grace period also mandatory for windowed aggregations, i.e., for `TimeWindows` (hopping/tumbling), `SessionWindows`, and `SlidingWindows`. The corresponding builder methods `.of(...)` were deprecated in favor of the new `.ofTimeDifferenceAndGrace()` and `.ofTimeDifferencWithNoGrace()` methods. 
@@ -289,7 +289,7 @@ Additionally, KIP-633 makes setting a grace period also mandatory for windowed a
 
 Foreign-key table-table joins now support custom partitioners via [KIP-775](https://cwiki.apache.org/confluence/x/-QhACw). Previously, if an input table was partitioned by a non-default partitioner, joining records might fail. With KIP-775 you now can pass a custom `StreamPartitioner` into the join using the newly added `TableJoined` object. 
 
-# Streams API changes in 3.0.0
+## Streams API changes in 3.0.0
 
 We improved the semantics of [task idling (`max.task.idle.ms`)](/streams/developer-guide/config-streams.html#max-task-idle-ms). Now Streams provides stronger in-order join and merge processing semantics. Streams's new default pauses processing on tasks with multiple input partitions when one of the partitions has no data buffered locally but has a non-zero lag. In other words, Streams will wait to fetch records that are already available on the broker. This results in improved join semantics, since it allows Streams to interleave the two input partitions in timestamp order instead of just processing whichever partition happens to be buffered. There is an option to disable this new behavior, and there is also an option to make Streams wait even longer for new records to be _produced_ to the input partitions, which you can use to get stronger time semantics when you know some of your producers may be slow. See the [config reference](/streams/developer-guide/config-streams.html#max-task-idle-ms) for more information, and [KIP-695](https://cwiki.apache.org/confluence/x/JSXZCQ) for the larger context of this change. 
 
@@ -359,7 +359,7 @@ The new serde type was introduced `ListSerde`:
 
 
 
-# Streams API changes in 2.8.0
+## Streams API changes in 2.8.0
 
 We extended `StreamJoined` to include the options `withLoggingEnabled()` and `withLoggingDisabled()` in [KIP-689](https://cwiki.apache.org/confluence/x/DyrZCQ). 
 
@@ -379,7 +379,7 @@ Kafka Streams is now handling `TimeoutException` thrown by the consumer, produce
 
 We changed the default value of `default.key.serde` and `default.value.serde` to be `null` instead of `ByteArraySerde`. Users will now see a `ConfigException` if their serdes are not correctly configured through those configs or passed in explicitly. See [KIP-741](https://cwiki.apache.org/confluence/x/bIbOCg) for more details. 
 
-# Streams API changes in 2.7.0
+## Streams API changes in 2.7.0
 
 In `KeyQueryMetadata` we deprecated `getActiveHost()`, `getStandbyHosts()` as well as `getPartition()` and replaced them with `activeHost()`, `standbyHosts()` and `partition()` respectively. `KeyQueryMetadata` was introduced in Kafka Streams 2.5 release with getter methods having prefix `get`. The intend of this change is to bring the method names to Kafka custom to not use the `get` prefix for getter methods. The old methods are deprecated and is not effected. (Cf. [KIP-648](https://cwiki.apache.org/confluence/x/vyd4CQ).) 
 
@@ -391,7 +391,7 @@ We added `SlidingWindows` as an option for `windowedBy()` windowed aggregations 
 
 The end-to-end latency metrics introduced in 2.6 have been expanded to include store-level metrics. The new store-level metrics are recorded at the TRACE level, a new metrics recording level. Enabling TRACE level metrics will automatically turn on all higher levels, ie INFO and DEBUG. See [KIP-613](https://cwiki.apache.org/confluence/x/gBkRCQ) for more information. 
 
-# Streams API changes in 2.6.0
+## Streams API changes in 2.6.0
 
 We added a new processing mode, EOS version 2, that improves application scalability using exactly-once guarantees (via [KIP-447](https://cwiki.apache.org/confluence/x/vhYlBg)). You can enable this new feature by setting the configuration parameter `processing.guarantee` to the new value `"exactly_once_beta"`. Note that you need brokers with version 2.5 or newer to use this feature. 
 
@@ -407,7 +407,7 @@ We added a `--force` option in StreamsResetter to force remove left-over members
 
 We added `Suppressed.withLoggingDisabled()` and `Suppressed.withLoggingEnabled(config)` methods to allow disabling or configuring of the changelog topic and allows for configuration of the changelog topic as per [KIP-446](https://cwiki.apache.org/confluence/x/RBiGBg). 
 
-# Streams API changes in 2.5.0
+## Streams API changes in 2.5.0
 
 We add a new `cogroup()` operator (via [KIP-150](https://cwiki.apache.org/confluence/x/YxcjB)) that allows to aggregate multiple streams in a single operation. Cogrouped streams can also be windowed before they are aggregated. Please refer to the [developer guide](/41/streams/developer-guide/dsl-api.html) for more details. 
 
@@ -419,7 +419,7 @@ Deprecated `UsePreviousTimeOnInvalidTimestamp` and replaced it with `UsePartitio
 
 Deprecated `KafkaStreams.store(String, QueryableStoreType)` and replaced it with `KafkaStreams.store(StoreQueryParameters)` to allow querying for a store with variety of parameters, including querying a specific task and stale stores, as per [KIP-562](https://cwiki.apache.org/confluence/x/QYyvC) and [KIP-535](https://cwiki.apache.org/confluence/x/Xg-jBw) respectively. 
 
-# Streams API changes in 2.4.0
+## Streams API changes in 2.4.0
 
 As of 2.4.0 Kafka Streams offers a KTable-KTable foreign-key join (as per [KIP-213](https://cwiki.apache.org/confluence/x/pJlzB)). This joiner allows for records to be joined between two KTables with different keys. Both [INNER and LEFT foreign-key joins](/41/streams/developer-guide/dsl-api.html#ktable-ktable-fk-join) are supported. 
 
@@ -440,7 +440,7 @@ In 2.4.0, we deprecated `WindowStore#put(K key, V value)` that should never be u
 
 Furthermore, the `PartitionGrouper` interface and its corresponding configuration parameter `partition.grouper` were deprecated ([KIP-528](https://cwiki.apache.org/confluence/x/BwzABw)) and will be removed in the next major release ([KAFKA-7785](https://issues.apache.org/jira/browse/KAFKA-7785). Hence, this feature won't be supported in the future any longer and you need to updated your code accordingly. If you use a custom `PartitionGrouper` and stop to use it, the created tasks might change. Hence, you will need to reset your application to upgrade it. 
 
-# Streams API changes in 2.3.0
+## Streams API changes in 2.3.0
 
 Version 2.3.0 adds the Suppress operator to the `kafka-streams-scala` Ktable API.
 
@@ -462,7 +462,7 @@ To avoid memory leaks, `RocksDBConfigSetter` has a new `close()` method that is 
 
 RocksDB dependency was updated to version `5.18.3`. The new version allows to specify more RocksDB configurations, including `WriteBufferManager` which helps to limit RocksDB off-heap memory usage. For more details please read [KAFKA-8215](https://issues.apache.org/jira/browse/KAFKA-8215). 
 
-# Streams API changes in 2.2.0
+## Streams API changes in 2.2.0
 
 We've simplified the `KafkaStreams#state` transition diagram during the starting up phase a bit in 2.2.0: in older versions the state will transit from `CREATED` to `RUNNING`, and then to `REBALANCING` to get the first stream task assignment, and then back to `RUNNING`; starting in 2.2.0 it will transit from `CREATED` directly to `REBALANCING` and then to `RUNNING`. If you have registered a `StateListener` that captures state transition events, you may need to adjust your listener implementation accordingly for this simplification (in practice, your listener logic should be very unlikely to be affected at all). 
 
@@ -470,7 +470,7 @@ In `WindowedSerdes`, we've added a new static constructor to return a `TimeWindo
 
 In 2.2.0 we have extended a few public interfaces including `KafkaStreams` to extend `AutoCloseable` so that they can be used in a try-with-resource statement. For a full list of public interfaces that get impacted please read [KIP-376](https://cwiki.apache.org/confluence/x/-AeQBQ). 
 
-# Streams API changes in 2.1.0
+## Streams API changes in 2.1.0
 
 We updated `TopologyDescription` API to allow for better runtime checking. Users are encouraged to use `#topicSet()` and `#topicPattern()` accordingly on `TopologyDescription.Source` nodes, instead of using `#topics()`, which has since been deprecated. Similarly, use `#topic()` and `#topicNameExtractor()` to get descriptions of `TopologyDescription.Sink` nodes. For more details, see [KIP-321](https://cwiki.apache.org/confluence/x/NQU0BQ). 
 
@@ -495,7 +495,7 @@ We've added an overloaded `StreamsBuilder#build` method that accepts an instance
 
 We are introducing static membership towards Kafka Streams user. This feature reduces unnecessary rebalances during normal application upgrades or rolling bounces. For more details on how to use it, checkout [static membership design](/41/#static_membership). Note, Kafka Streams uses the same `ConsumerConfig#GROUP_INSTANCE_ID_CONFIG`, and you only need to make sure it is uniquely defined across different stream instances in one application. 
 
-# Streams API changes in 2.0.0
+## Streams API changes in 2.0.0
 
 In 2.0.0 we have added a few new APIs on the `ReadOnlyWindowStore` interface (for details please read Streams API changes below). If you have customized window store implementations that extends the `ReadOnlyWindowStore` interface you need to make code changes. 
 
@@ -556,7 +556,7 @@ We have removed these deprecated APIs:
 
 
 
-# Streams API changes in 1.1.0
+## Streams API changes in 1.1.0
 
 We have added support for methods in `ReadOnlyWindowStore` which allows for querying `WindowStore`s without the necessity of providing keys. For users who have customized window store implementations on the above interface, they'd need to update their code to implement the newly added method as well. For more details, see [KIP-205](https://cwiki.apache.org/confluence/x/6qdjB). 
 
@@ -602,7 +602,7 @@ Changes in `StreamsResetter`:
 
 
 
-# Streams API changes in 1.0.0
+## Streams API changes in 1.0.0
 
 With 1.0 a major API refactoring was accomplished and the new API is cleaner and easier to use. This change includes the five main classes `KafkaStreams`, `KStreamBuilder`, `KStream`, `KTable`, and `TopologyBuilder` (and some more others). All changes are fully backward compatible as old API is only deprecated but not removed. We recommend to move to the new API as soon as you can. We will summarize all API changes in the next paragraphs. 
 
@@ -652,7 +652,7 @@ The introduction of [KIP-161](https://cwiki.apache.org/confluence/x/WQgwB) enabl
 
 The introduction of [KIP-173](https://cwiki.apache.org/confluence/x/aZM7B) enables you to provide topic configuration parameters for any topics created by Kafka Streams. This includes repartition and changelog topics. You can provide the configs via the `StreamsConfig` by adding the configs with the prefix as defined by `StreamsConfig#topicPrefix(String)`. Any properties in the `StreamsConfig` with the prefix will be applied when creating internal topics. Any configs that aren't topic configs will be ignored. If you already use `StateStoreSupplier` or `Materialized` to provide configs for changelogs, then they will take precedence over those supplied in the config. 
 
-# Streams API changes in 0.11.0.0
+## Streams API changes in 0.11.0.0
 
 Updates in `StreamsConfig`: 
 
@@ -718,7 +718,7 @@ Producer's `client.id` naming schema:
 
 `[client.Id]` is either set via Streams configuration parameter `client.id` or defaults to `[application.id]-[processId]` (`[processId]` is a random UUID). 
 
-# Notable changes in 0.10.2.1
+## Notable changes in 0.10.2.1
 
 Parameter updates in `StreamsConfig`: 
 
@@ -726,7 +726,7 @@ Parameter updates in `StreamsConfig`:
 
 
 
-# Streams API changes in 0.10.2.0
+## Streams API changes in 0.10.2.0
 
 New methods in `KafkaStreams`: 
 
@@ -796,7 +796,7 @@ Changes to `TimestampExtractor`:
 
 Relaxed type constraints of many DSL interfaces, classes, and methods (cf. [KIP-100](https://cwiki.apache.org/confluence/x/dQMIB)). 
 
-# Streams API changes in 0.10.1.0
+## Streams API changes in 0.10.1.0
 
 Stream grouping and aggregation split into two methods: 
 
@@ -836,7 +836,7 @@ Windowing:
 
 
 
-# Streams API broker compatibility
+## Streams API broker compatibility
 
 The following table shows which versions of the Kafka Streams API are compatible with various Kafka broker versions. For Kafka Stream version older than 2.4.x, please check [3.9 upgrade document](/39/streams/upgrade-guide).
 

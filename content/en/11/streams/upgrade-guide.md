@@ -20,7 +20,7 @@ If you want to upgrade from 0.10.1.x to 0.10.2, see the [**Upgrade Section for 0
 
 If you want to upgrade from 0.10.0.x to 0.10.1, see the [**Upgrade Section for 0.10.1**](/11/#upgrade_1010_streams). It highlights incompatible changes you need to consider to upgrade your code and application. See below a complete list of 0.10.1 API changes that allow you to advance your application and/or simplify your code base, including the usage of new features. 
 
-# Streams API changes in 1.1.0
+## Streams API changes in 1.1.0
 
 We have added support for methods in `ReadOnlyWindowStore` which allows for querying `WindowStore`s without the necessity of providing keys. For users who have customized window store implementations on the above interface, they'd need to update their code to implement the newly added method as well. For more details, see [KIP-205](https://cwiki.apache.org/confluence/display/KAFKA/KIP-205%3A+Add+all%28%29+and+range%28%29+API+to+ReadOnlyWindowStore). 
 
@@ -60,7 +60,7 @@ Changes in `StreamsResetter`:
 
 
 
-# Streams API changes in 1.0.0
+## Streams API changes in 1.0.0
 
 With 1.0 a major API refactoring was accomplished and the new API is cleaner and easier to use. This change includes the five main classes `KafkaStreams`, `KStreamBuilder`, `KStream`, `KTable`, and `TopologyBuilder` (and some more others). All changes are fully backward compatible as old API is only deprecated but not removed. We recommend to move to the new API as soon as you can. We will summarize all API changes in the next paragraphs. 
 
@@ -110,7 +110,7 @@ The introduction of [KIP-161](https://cwiki.apache.org/confluence/display/KAFKA/
 
 The introduction of [KIP-173](https://cwiki.apache.org/confluence/display/KAFKA/KIP-173%3A+Add+prefix+to+StreamsConfig+to+enable+setting+default+internal+topic+configs) enables you to provide topic configuration parameters for any topics created by Kafka Streams. This includes repartition and changelog topics. You can provide the configs via the `StreamsConfig` by adding the configs with the prefix as defined by `StreamsConfig#topicPrefix(String)`. Any properties in the `StreamsConfig` with the prefix will be applied when creating internal topics. Any configs that aren't topic configs will be ignored. If you already use `StateStoreSupplier` or `Materialized` to provide configs for changelogs, then they will take precedence over those supplied in the config. 
 
-# Streams API changes in 0.11.0.0
+## Streams API changes in 0.11.0.0
 
 Updates in `StreamsConfig`: 
 
@@ -175,7 +175,7 @@ Producer's `client.id` naming schema:
 
 `[client.Id]` is either set via Streams configuration parameter `client.id` or defaults to `[application.id]-[processId]` (`[processId]` is a random UUID). 
 
-# Notable changes in 0.10.2.1
+## Notable changes in 0.10.2.1
 
 Parameter updates in `StreamsConfig`: 
 
@@ -183,7 +183,7 @@ Parameter updates in `StreamsConfig`:
 
 
 
-# Streams API changes in 0.10.2.0
+## Streams API changes in 0.10.2.0
 
 New methods in `KafkaStreams`: 
 
@@ -253,7 +253,7 @@ Changes to `TimestampExtractor`:
 
 Relaxed type constraints of many DSL interfaces, classes, and methods (cf. [KIP-100](https://cwiki.apache.org/confluence/display/KAFKA/KIP-100+-+Relax+Type+constraints+in+Kafka+Streams+API)). 
 
-# Streams API changes in 0.10.1.0
+## Streams API changes in 0.10.1.0
 
 Stream grouping and aggregation split into two methods: 
 

@@ -8,9 +8,6 @@ keywords:
 type: docs
 ---
 
-# Message Format
-    
-    
             /**
             * 1. 4 byte CRC32 of the message
             * 2. 1 byte "magic" identifier to allow format changes, value is 0 or 1

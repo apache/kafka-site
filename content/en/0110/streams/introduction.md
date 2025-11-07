@@ -10,7 +10,7 @@ type: docs
 
 # Kafka Streams API
 
-# The easiest way to write mission-critical real-time applications and microservices with all the benefits of Kafka's server-side cluster technology.
+## The easiest way to write mission-critical real-time applications and microservices with all the benefits of Kafka's server-side cluster technology.
 
 ![](/0110/images/streams-welcome.png)
 
@@ -27,7 +27,7 @@ type: docs
 
 [ ![](/0110/images/icons/documentation.png) ![](/0110/images/icons/documentation--white.png) Developer manual ](/0110/documentation/streams/developer-guide) [ ![](/0110/images/icons/tutorials.png) ![](/0110/images/icons/tutorials--white.png) Tutorials ](/0110/documentation/streams/tutorial) [ ![](/0110/images/icons/architecture.png) ![](/0110/images/icons/architecture--white.png) Concepts ](/0110/documentation/streams/core-concepts)
 
-# Hello Kafka Streams
+## Hello Kafka Streams
 
 The code example below implements a WordCount application that is elastic, highly scalable, fault-tolerant, stateful, and ready to run in production at large scale
 
@@ -157,7 +157,7 @@ Java 8+ Java 7 Scala
                     }
                 
 
-# See how Kafka Streams is being used
+## See how Kafka Streams is being used
 
 ![](/0110/images/icons/rabobank.png)
 

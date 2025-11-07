@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Monitoring
-
 Kafka uses Yammer Metrics for metrics reporting in both the server and the client. This can be configured to report stats using pluggable stats reporters to hook up to your monitoring system. 
 
 The easiest way to see the available metrics is to fire up jconsole and point it at a running kafka client or server; this will allow browsing all metrics with JMX. 

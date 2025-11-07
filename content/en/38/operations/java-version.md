@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Java Version
-
 Java 8, Java 11, and Java 17 are supported. 
 
 Note that Java 8 support project-wide has been deprecated since Apache Kafka 3.0 and Java 11 support for the broker and tools has been deprecated since Apache Kafka 3.7. Both will be removed in Apache Kafka 4.0. 

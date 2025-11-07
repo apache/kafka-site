@@ -1,5 +1,5 @@
 baseURL: https://example.kafka-site-md.dev
-# title: Apache Kafka
+title: Apache Kafka
 
 # cSpell:ignore goldmark github hugo readingtime docsy subdir lastmod pygments linenos catmullrom norsk gu
 
@@ -40,13 +40,13 @@ permalinks:
 imaging:
   resampleFilter: CatmullRom
   quality: 75
-  anchor: smart
+  anchor: Smart
 
 # Language configuration
 languages:
   en:
     languageName: English
-    # title: kafka
+    title: Apache Kafka
     params:
       description: Apache Kafka
 
@@ -103,6 +103,9 @@ menu:
       # Submenu items
 
 params:
+  # Favicon configuration
+  favicon: /images/apache.png
+  
   print: 
     disable_toc: false
   taxonomy:
@@ -264,6 +267,8 @@ params:
   ui:
     # Set to true to disable breadcrumb navigation.
     breadcrumb_disable: false
+    # Show prev/next navigation links at the bottom of each docs page
+    showPrevNext: true
     # Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top navbar
     navbar_logo: true
     # logo: /logos/kafka-logo-no-text.png
@@ -281,7 +286,7 @@ params:
     # If you want this feature, but occasionally need to remove the "Feedback" section from a single page,
     # add "hide_feedback: true" to the page's front matter.
     feedback:
-      enable: true
+      enable: false
       # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
       'yes': >-
         Glad to hear it! Please <a href="https://github.com/apache/kafka-site/issues/new">tell us how we can improve</a>.

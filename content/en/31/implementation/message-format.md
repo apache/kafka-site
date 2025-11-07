@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Message Format
-
 Messages (aka Records) are always written in batches. The technical term for a batch of messages is a record batch, and a record batch contains one or more records. In the degenerate case, we could have a record batch containing a single record. Record batches and records have their own headers. The format of each is described below. 
 
 ## Record Batch

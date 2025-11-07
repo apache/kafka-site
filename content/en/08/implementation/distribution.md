@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Distribution
-
 ## Zookeeper Directories
 
 The following gives the zookeeper structures and algorithms used for co-ordination between consumers and brokers. 

@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Authorization and ACLs 
-
 Kafka ships with a pluggable Authorizer and an out-of-box authorizer implementation that uses zookeeper to store all the acls. The Authorizer is configured by setting `authorizer.class.name` in server.properties. To enable the out of the box implementation use: 
     
     

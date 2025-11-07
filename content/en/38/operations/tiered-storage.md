@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Tiered Storage
-
 ## Tiered Storage Overview
 
 Kafka data is mostly consumed in a streaming fashion using tail reads. Tail reads leverage OS's page cache to serve the data instead of disk reads. Older data is typically read from the disk for backfill or failure recovery purposes and is infrequent.

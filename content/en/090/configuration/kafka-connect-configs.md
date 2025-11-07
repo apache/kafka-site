@@ -1,0 +1,11 @@
+---
+title: Kafka Connect Configs
+description: Kafka Connect Configs
+weight: 4
+tags: ['kafka', 'docs']
+aliases: 
+keywords: 
+type: docs
+---
+
+{{< include-html file="/static/0110/generated/connect_config.html" >}} 

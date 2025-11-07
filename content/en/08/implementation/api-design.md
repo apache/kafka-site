@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# API Design
-
 ## Producer APIs
 
 The Producer API that wraps the 2 low-level producers - `kafka.producer.SyncProducer` and `kafka.producer.async.AsyncProducer`. 

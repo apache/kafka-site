@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# ZooKeeper Authentication
-
 ## New clusters
 
 To enable ZooKeeper authentication on brokers, there are two necessary steps: 

@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Transaction Protocol
-
 ## Overview
 
 Starting from Apache Kafka 4.0, Transactions Server Side Defense ([KIP-890](https://cwiki.apache.org/confluence/display/KAFKA/KIP-890%3A+Transactions+Server-Side+Defense)) brings a strengthened transactional protocol. When enabled and using 4.0 producer clients, the producer epoch is bumped on every transaction to ensure every transaction includes the intended messages and duplicates are not written as part of the next transaction.

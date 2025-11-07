@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Geo-Replication (Cross-Cluster Data Mirroring)
-
 ## Geo-Replication Overview
 
 Kafka administrators can define data flows that cross the boundaries of individual Kafka clusters, data centers, or geo-regions. Such event streaming setups are often needed for organizational, technical, or legal requirements. Common scenarios include: 

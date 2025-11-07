@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Consumer Rebalance Protocol
-
 ## Overview
 
 Starting from Apache Kafka 4.0, the Next Generation of the Consumer Rebalance Protocol ([KIP-848](https://cwiki.apache.org/confluence/x/HhD1D)) is Generally Available (GA). It improves the scalability of consumer groups while simplifying consumers. It also decreases rebalance times, thanks to its fully incremental design, which no longer relies on a global synchronization barrier.

@@ -8,8 +8,6 @@ keywords:
 type: docs
 ---
 
-# Security Overview
-
 In release 0.9.0.0, the Kafka community added a number of features that, used either separately or together, increases security in a Kafka cluster. The following security measures are currently supported: 
 
   1. Authentication of connections to brokers from clients (producers and consumers), other brokers and tools, using either SSL or SASL. Kafka supports the following SASL mechanisms: 
