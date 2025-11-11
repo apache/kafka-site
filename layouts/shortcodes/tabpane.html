@@ -1,0 +1,39 @@
+{{- /* Page-scoped key to collect tabs for this pane */ -}}
+{{- $paneId := printf "tabs-%d" .Ordinal -}}
+{{- /* Make this pane the current target for child tabs */ -}}
+{{- $.Page.Scratch.Set "tabpane_current" $paneId -}}
+{{- /* Evaluate children to let them register their content under the key */ -}}
+{{- .Inner -}}
+{{- $tabs := $.Page.Scratch.Get $paneId | default (slice) -}}
+{{- /* Clear the current pointer */ -}}
+{{- $.Page.Scratch.Delete "tabpane_current" -}}
+
+<ul class="nav nav-tabs" id="{{ $paneId }}" role="tablist">
+  {{- range $i, $t := $tabs -}}
+  <li class="nav-item">
+    <button class="nav-link {{ if eq $i 0 }}active{{ end }}"
+            id="{{ $paneId }}-{{ printf "%02d" $i }}-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#{{ $paneId }}-{{ printf "%02d" $i }}"
+            role="tab"
+            aria-controls="{{ $paneId }}-{{ printf "%02d" $i }}"
+            aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}">
+      {{- index $t "header" -}}
+    </button>
+  </li>
+  {{- end -}}
+</ul>
+
+<div class="tab-content" id="{{ $paneId }}-content">
+  {{- range $i, $t := $tabs -}}
+  <div class="tab-pane fade {{ if eq $i 0 }}show active{{ end }}"
+       id="{{ $paneId }}-{{ printf "%02d" $i }}"
+       role="tabpanel"
+       aria-labelled-by="{{ $paneId }}-{{ printf "%02d" $i }}-tab"
+       tabindex="2">
+    {{- (index $t "content") | safeHTML -}}
+  </div>
+  {{- end -}}
+</div>
+
+

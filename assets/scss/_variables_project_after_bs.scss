@@ -43,3 +43,38 @@ ul.dropdown-menu {
   box-shadow: 0 0 0 .2rem rgba(206,212,218,.5) !important; /* gray focus ring */
 }
 
+.carousel-item {
+  min-height: 400px;
+  
+  .youtube-video {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h4 {
+    color: var(--td-body-text-color);
+  }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  opacity: 0.8;
+  
+  &:hover {
+    opacity: 1;
+  }
+}
+
+/* Make carousel nav buttons more obvious */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 50%;
+  padding: 1.1rem;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.85);
+}
