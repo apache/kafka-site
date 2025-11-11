@@ -1,0 +1,60 @@
+{{- if .Site.Params.ui.showPrevNext -}}
+  {{- $current := . -}}
+  {{- $section := .CurrentSection -}}
+  {{- if $section -}}
+    {{- $pages := $section.RegularPages.ByWeight -}}
+    {{- $s := newScratch -}}
+    {{- $s.Set "index" -1 -}}
+    {{- range $i, $p := $pages -}}
+      {{- if eq $p.RelPermalink $current.RelPermalink -}}
+        {{- $s.Set "index" $i -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $i := $s.Get "index" -}}
+    {{- if ge $i 0 -}}
+      {{- if gt $i 0 -}}
+        {{- $s.Set "prev" (index $pages (sub $i 1)) -}}
+      {{- end -}}
+      {{- if lt (add $i 1) (len $pages) -}}
+        {{- $s.Set "next" (index $pages (add $i 1)) -}}
+      {{- end -}}
+      <div class="td-page-meta mb-3 mt-4 d-print-none">
+        <nav class="d-flex justify-content-between align-items-center gap-3">
+          <div class="d-flex flex-column align-items-start">
+            {{- with $s.Get "prev" -}}
+              <a class="btn pager-btn rounded-3 fw-semibold py-2 px-3 d-inline-flex align-items-center gap-2"
+                 style="min-width: 12rem;"
+                 href="{{ .RelPermalink }}"
+                 rel="prev"
+                 aria-label="Previous: {{ .Title }}"
+              >
+                <span class="fw-semibold text-dark">‹ Previous:</span>
+                <span class="text-dark text-truncate d-inline-block" style="max-width: 18rem;">
+                  {{ .LinkTitle | default .Title }}
+                </span>
+              </a>
+            {{- end -}}
+          </div>
+          <div class="ms-auto d-flex flex-column align-items-end">
+            {{- with $s.Get "next" -}}
+              <a class="btn pager-btn rounded-3 fw-semibold py-2 px-3 d-inline-flex align-items-center gap-2"
+                 style="min-width: 12rem;"
+                 href="{{ .RelPermalink }}"
+                 rel="next"
+                 aria-label="Next: {{ .Title }}"
+              >
+                <span class="fw-semibold text-dark">Next:</span>
+                <span class="text-dark text-truncate d-inline-block text-end" style="max-width: 18rem;">
+                  {{ .LinkTitle | default .Title }}
+                </span>
+                <span class="fw-semibold text-dark">›</span>
+              </a>
+            {{- end -}}
+          </div>
+        </nav>
+      </div>
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+

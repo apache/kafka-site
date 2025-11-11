@@ -26,3 +26,55 @@ ul.dropdown-menu {
   border: 1px solid #bdbdbd;
 }
 
+/* Pager button explicit neutral styling to avoid theme primary/orange overrides */
+.pager-btn {
+  border: 3px solid #dee2e6 !important; /* gray-300 */
+  color: #343a40 !important;            /* text-dark */
+  background-color: #ffffff !important; /* white background */
+  box-shadow: 0 .25rem .5rem rgba(0,0,0,.05) !important; /* subtle */
+}
+.pager-btn:hover {
+  background-color: #f8f9fa !important; /* gray-100 */
+  border-color: #ced4da !important;      /* gray-400 */
+  text-decoration: none !important;
+}
+.pager-btn:focus {
+  outline: 0 !important;
+  box-shadow: 0 0 0 .2rem rgba(206,212,218,.5) !important; /* gray focus ring */
+}
+
+.carousel-item {
+  min-height: 400px;
+  
+  .youtube-video {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h4 {
+    color: var(--td-body-text-color);
+  }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  opacity: 0.8;
+  
+  &:hover {
+    opacity: 1;
+  }
+}
+
+/* Make carousel nav buttons more obvious */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 50%;
+  padding: 1.1rem;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.85);
+}

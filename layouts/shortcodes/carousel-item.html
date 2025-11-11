@@ -1,0 +1,14 @@
+{{- $title := .Get "title" -}}
+{{- $active := .Get "active" | default "" -}}
+{{- $activeClass := cond (eq $active "true") "active" "" -}}
+<div class="carousel-item {{ $activeClass }} text-center py-4">
+  {{- if $title -}}
+  <h4 class="mb-3">{{ $title }}</h4>
+  {{- end -}}
+  <div class="d-flex justify-content-center">
+    <div class="w-100" style="max-width: 900px;">
+      {{- .Inner -}}
+    </div>
+  </div>
+</div>
+

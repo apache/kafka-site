@@ -1,0 +1,18 @@
+{{ $testimonials := site.Data.testimonials -}}
+<div class="row c-testimonials">
+{{- range $testimonials -}}
+  {{- if or (in .description "Kafka Streams") (in (lower (.link | default "")) "zalando") -}}
+  {{ $img   := printf "/images/powered-by/%s" .logo | relURL -}}
+  {{ $bgColor := .logoBgColor | default "#FFFFFF" -}}
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 c-testimonials__testimonial">
+    <a href="{{ .link }}" target="_blank" rel="noopener">
+      <span class="grid__item__logo" style="background-image: url({{ $img }}); background-color: {{ $bgColor }};"></span>
+    </a>
+    <p class="c-testimonials__description">
+      {{- .description | safeHTML -}}
+    </p>
+  </div>
+  {{- end -}}
+{{ end -}}
+</div>
+

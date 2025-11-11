@@ -1,0 +1,9 @@
+{{- /* Register child tab under a page-scoped key unique to this parent */ -}}
+{{- $header := .Get "header" | default "Tab" -}}
+{{- $content := .Inner | markdownify -}}
+{{- $key := (.Page.Scratch.Get "tabpane_current") | default (printf "tabs-%d" .Parent.Ordinal) -}}
+{{- $tabs := .Page.Scratch.Get $key | default (slice) -}}
+{{- $tabs = $tabs | append (dict "header" $header "content" $content) -}}
+{{- .Page.Scratch.Set $key $tabs -}}
+
+
