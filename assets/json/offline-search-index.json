@@ -1,5 +1,7 @@
 {{- $pages := slice -}}
 {{- $sections := .Site.Params.search.indexing_directories | default slice -}}
+{{- $latestVersion := .Site.Params.latest_version -}}
+{{- $sections = $sections | append $latestVersion -}}
 
 
 {{- range $sections -}}

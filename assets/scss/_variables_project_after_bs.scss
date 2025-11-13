@@ -28,15 +28,20 @@ ul.dropdown-menu {
 
 /* Pager button explicit neutral styling to avoid theme primary/orange overrides */
 .pager-btn {
-  border: 3px solid #dee2e6 !important; /* gray-300 */
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  border: 2px solid #dee2e6 !important; /* gray-300 */
   color: #343a40 !important;            /* text-dark */
   background-color: #ffffff !important; /* white background */
   box-shadow: 0 .25rem .5rem rgba(0,0,0,.05) !important; /* subtle */
+  transition: all 0.3s ease !important;
+  font-weight: 600 !important;
 }
 .pager-btn:hover {
   background-color: #f8f9fa !important; /* gray-100 */
   border-color: #ced4da !important;      /* gray-400 */
   text-decoration: none !important;
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 .pager-btn:focus {
   outline: 0 !important;

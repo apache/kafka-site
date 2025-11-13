@@ -40,13 +40,23 @@ Apache Kafka is an open-source distributed event streaming platform used by thou
 {{% blocks/feature icon="fa-solid fa-tower-cell" title="Telecom" %}}
 **8 OUT OF 10**
 {{% /blocks/feature %}}
-{{% blocks/feature icon="fa-solid fa-plane-circle-check" title="Transportation" %}}
+{{% blocks/feature icon="fa-solid fa-plane" title="Transportation" %}}
 **8 OUT OF 10**
 {{% /blocks/feature %}}
 {{% blocks/feature icon="fa-solid fa-lightbulb" title="Energy and Utilities" %}}
 **10 OUT OF 10**
 {{% /blocks/feature %}}
 {{< /blocks/section >}}
+
+{{% blocks/lead %}}
+
+Above is a snapshot of the number of top-ten largest companies using Kafka, per-industry.
+
+<p class="text-center mt-4">
+  <a href="/testimonials/" class="btn btn-lg btn-primary">See full list <i class="fas fa-arrow-alt-circle-right ms-2"></i></a>
+</p>
+
+{{% /blocks/lead %}}
 
 
 {{% blocks/lead %}}

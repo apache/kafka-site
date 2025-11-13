@@ -1,0 +1,57 @@
+{{ $links := .Site.Params.links }}
+<footer class="td-footer d-print-none">
+  <div class="container-fluid">
+    <div class="row align-items-center py-3">
+      <!-- Social Icons on the Left -->
+      <div class="col-12 col-md-3 text-center text-md-start mb-3 mb-md-0">
+        <div class="td-footer__social-icons">
+          {{ with $links }}
+          {{ with .user }}
+          {{ range . }}
+          <a href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}" class="td-footer__social-link">
+            <i class="{{ .icon }}"></i>
+          </a>
+          {{ end }}
+          {{ end }}
+          {{ end }}
+          {{ with $links }}
+          {{ with .developer }}
+          {{ range . }}
+          <a href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}" class="td-footer__social-link">
+            <i class="{{ .icon }}"></i>
+          </a>
+          {{ end }}
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      
+      <!-- Copyright and Links in Center -->
+      <div class="col-12 col-md-6 text-center mb-3 mb-md-0">
+        <div class="td-footer__copyright">
+          The contents of this website are &copy;&nbsp;{{ now.Year }}&nbsp;Apache Software Foundation
+          under the terms of the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">Apache License v2</a>. 
+          Apache Kafka, Kafka, and the Kafka logo are either registered trademarks or trademarks of The Apache Software Foundation 
+          in the United States and other countries.
+        </div>
+        
+        <div class="td-footer__links mt-2">
+          <a href="https://www.apache.org/security/" target="_blank" rel="noopener">Security</a> | 
+          <a href="https://www.apache.org/foundation/contributing.html" target="_blank" rel="noopener">Donate</a> | 
+          <a href="https://www.apache.org/foundation/thanks.html" target="_blank" rel="noopener">Thanks</a> | 
+          <a href="https://www.apache.org/events/current-event.html" target="_blank" rel="noopener">Events</a> | 
+          <a href="https://www.apache.org/licenses/" target="_blank" rel="noopener">License</a> | 
+          <a href="{{ .Site.Params.privacy_policy }}" target="_blank" rel="noopener">Privacy</a>
+        </div>
+      </div>
+      
+      <!-- ASF Feather Logo on the Right -->
+      <div class="col-12 col-md-3 text-center text-md-end">
+        <a href="https://www.apache.org/" target="_blank" rel="noopener" class="asf-logo-link">
+          <img src="/images/apache.png" alt="Apache Software Foundation" class="asf-feather-logo" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
