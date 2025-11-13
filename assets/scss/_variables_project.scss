@@ -90,11 +90,23 @@ $primary: #ffffff;
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
-// Navbar responsive fixes
+// Navbar responsive fixes and styling
 .td-navbar {
-  @media (max-width: 768px) {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+  padding: 0.75rem 1rem;
+  
+  .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  @media (max-width: 991px) {
     .navbar-brand {
       max-width: 150px;
       
@@ -106,58 +118,253 @@ html {
   }
 }
 
-// Logo responsive fixes
-.td-navbar .navbar-brand {
-  svg, img {
-    max-height: 40px;
-    width: auto;
-    
-    @media (max-width: 576px) {
-      max-height: 30px;
-    }
+// Mobile navbar toggler (hamburger menu) - FORCE VISIBLE
+.td-navbar .navbar-toggler,
+button.navbar-toggler {
+  display: inline-block !important;  // Nuclear option - force visible
+  visibility: visible !important;
+  opacity: 1 !important;
+  padding: 0.5rem 0.75rem !important;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: #fff !important;
+  border: 2px solid #000 !important;  // Make it very obvious
+  border-radius: 0.25rem;
+  transition: box-shadow 0.15s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  z-index: 1050;
+  min-width: 44px;
+  min-height: 44px;
+  
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25) !important;
+    outline: none !important;
+  }
+  
+  &:hover {
+    background-color: #f8f9fa !important;
+  }
+  
+  .navbar-toggler-icon {
+    display: inline-block !important;
+    width: 1.5em !important;
+    height: 1.5em !important;
+    vertical-align: middle;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23000' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+  
+  // Hide on desktop only
+  @media (min-width: 992px) {
+    display: none !important;
   }
 }
 
-// Ensure navbar items are properly responsive
-.td-navbar .navbar-nav {
+// Mobile menu collapse - CRITICAL: Hide by default on mobile
+.navbar-collapse {
   @media (max-width: 991px) {
+    // HIDE by default - this is critical!
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background-color: #ffffff;
+    border-top: 1px solid #e9ecef;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    
+    // SHOW when expanded
+    &.show {
+      display: block !important;
+    }
+    
+    &.collapsing {
+      display: block !important;
+      height: 0;
+      overflow: hidden;
+      transition: height 0.35s ease;
+    }
+    
+    .navbar-nav {
+      flex-direction: column;
+      padding: 1rem 0;
     width: 100%;
     
     .nav-item {
       width: 100%;
+        border-bottom: 1px solid #f8f9fa;
+        
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+      
+      .nav-link {
+        padding: 0.75rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        text-align: left;
+        
+        &:hover {
+          background-color: #f8f9fa;
+        }
+        
+        // Show arrow for dropdown items
+        &.dropdown-toggle::after {
+          margin-left: auto;
+        }
+      }
+      
+      .dropdown-menu {
+        position: static !important;
+        float: none;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        background-color: #f8f9fa;
+        width: 100%;
+        transform: none !important;
+        
+        .dropdown-item {
+          padding: 0.75rem 2rem;
+          white-space: normal;
+          
+          &:hover {
+            background-color: #e9ecef;
+          }
+        }
+      }
+      
+      .dropdown {
+        .dropdown-menu {
+          display: none !important;
+        }
+        
+        &.show .dropdown-menu {
+          display: block !important;
+        }
+      }
+    }
+  }
+  
+  // Desktop - normal behavior
+  @media (min-width: 992px) {
+    display: flex !important;
+    flex-basis: auto;
+  }
+}
+
+// Force hide navbar items on mobile UNLESS the menu is expanded
+@media (max-width: 991px) {
+  .navbar-collapse:not(.show) {
+    .navbar-nav {
+      display: none !important;
+    }
+  }
+  
+  // CRITICAL: Prevent horizontal display of nav items on mobile
+  .td-navbar .navbar-nav {
+    display: none !important;
+  }
+  
+  .td-navbar .navbar-collapse.show .navbar-nav {
+    display: flex !important;
+    flex-direction: column;
+  }
+}
+
+// Navbar itself needs to be positioned relative for absolute children
+.td-navbar {
+  position: relative;
+  
+  @media (max-width: 991px) {
+    overflow: visible !important;
+  }
+}
+
+// Navbar container fixes for mobile
+.td-navbar .container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  
+  @media (max-width: 991px) {
+    justify-content: flex-start;
+    
+    // Ensure hamburger is visible and positioned correctly
+    > .navbar-toggler {
+      display: inline-block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      order: 0;
+      flex-shrink: 0;
+      margin-right: auto;
     }
   }
 }
 
-// Fix navbar toggle button visibility
-.navbar-toggler {
-  padding: 0.25rem 0.75rem;
-  font-size: 1.25rem;
-  line-height: 1;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 0.25rem;
+// Logo responsive fixes
+.td-navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.5rem 0;
   
-  &:focus {
-    box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.1);
+  svg, img {
+    max-height: 40px;
+    width: auto;
+    
+    @media (max-width: 991px) {
+      max-height: 32px;
+    }
+  }
+  
+  .navbar-brand__name {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    
+    @media (max-width: 991px) {
+      font-size: 1.125rem;
+    }
   }
 }
 
-// Responsive menu improvements
-.td-navbar .navbar-collapse {
-  @media (max-width: 991px) {
-    background-color: #fff;
-    padding: 1rem;
-    margin-top: 0.5rem;
-    border-radius: 0.25rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+// Navbar layout and spacing
+.td-navbar {
+  // Proper spacing between logo and menu items
+  .navbar-brand {
+    @media (min-width: 992px) {
+      margin-right: 3rem;
+    }
   }
-}
-
-// Version dropdown responsive fix
-.td-navbar .dropdown-menu {
-  @media (max-width: 991px) {
-    width: 100%;
-    max-height: 300px;
+  
+  // Menu items aligned to the right with auto margin
+  .navbar-nav.ms-auto {
+    @media (min-width: 992px) {
+      margin-left: auto !important;
+      flex-grow: 0;
+    }
+  }
+  
+  // Gap between menu and search bar
+  .navbar-search {
+    @media (min-width: 992px) {
+      margin-left: 3rem !important;
+      flex-shrink: 0;
+    }
   }
 }
 
@@ -165,6 +372,10 @@ html {
 .td-search__input {
   @media (max-width: 576px) {
     max-width: 100%;
+  }
+  
+  @media (min-width: 992px) {
+    min-width: 200px;
   }
 }
 
@@ -178,6 +389,82 @@ html {
 .td-sidebar {
   @media (max-width: 768px) {
     max-width: 100%;
+  }
+}
+
+
+// Dropdown on hover for desktop
+.td-navbar .nav-item.dropdown {
+  @media (min-width: 992px) {
+    &:hover > .dropdown-menu {
+      display: block;
+      margin-top: 0;
+    }
+    
+    // Ensure dropdown trigger stays visible
+    &:hover > .nav-link {
+      color: #007bff;
+    }
+  }
+}
+
+// Nav link styling for better visibility
+.td-navbar .nav-link {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #212529;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease;
+  letter-spacing: 0.3px;
+  
+  &:hover,
+  &:focus {
+    color: #007bff;
+  }
+  
+  &.dropdown-toggle {
+    &:hover {
+      color: #007bff;
+    }
+  }
+}
+
+// Style dropdown menus
+.td-navbar .dropdown-menu {
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  padding: 0.5rem 0;
+  
+  @media (max-width: 991px) {
+    border: none;
+    box-shadow: none;
+    padding-left: 1rem;
+    background-color: transparent;
+  }
+  
+  .dropdown-item {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 0.75rem 1.5rem;
+    color: #212529;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    
+    &:hover,
+    &:focus {
+      background-color: #e9ecef;
+      color: #000;
+      text-decoration: none;
+    }
+    
+    &.active {
+      background-color: #007bff;
+      color: #fff;
+      font-weight: 600;
+    }
   }
 }
 
@@ -242,7 +529,377 @@ html {
   }
 }
 
-// Prev/Next navigation links styling
+// Homepage use case cards - reduce size and spacing
+.td-box.td-box--primary {
+  .col-lg-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 2rem;
+    
+    @media (min-width: 992px) {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    h4 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .mb-4 {
+      margin-bottom: 0.75rem !important;
+    }
+    
+    .h1 {
+      font-size: 2rem;
+    }
+  }
+}
+
+// Remove gaps and standardize spacing for homepage sections
+.td-box {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  
+  @media (max-width: 768px) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+// Consistent typography matching kafka.apache.org
+// Using Open Sans font family as per original Kafka site
+body {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Heading styles to match kafka.apache.org
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
+  }
+}
+
+h3, .h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+h4, .h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+h5, .h5 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+h6, .h6 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+// Lead text styling matching original site
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.7;
+  
+  @media (max-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+// Paragraph text
+p {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+// Intro section text styling
+.td-box--1 .lead,
+.td-box--3 .lead,
+.td-box--5 .lead {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+// Feature cards spacing and alignment
+.td-box--dark {
+  .col {
+    max-width: 100%;
+    
+    .row {
+      margin-left: -0.75rem;
+      margin-right: -0.75rem;
+      
+      @media (min-width: 992px) {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+    }
+  }
+  
+  .col-lg-4 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+// Download button highlighting
+.btn-lg {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+  
+  &.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    
+    &:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+    }
+  }
+  
+  &.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    
+    &:hover {
+      background-color: #5a6268;
+      border-color: #5a6268;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
+    }
+  }
+}
+
+// All buttons
+.btn {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+// Feature descriptions consistent styling
+.td-box--dark .mb-0 p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #f8f9fa;
+}
+
+// Footer styling - Compact single row layout with full-width background
+.td-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #dee2e6;
+  padding: 1rem 0;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  
+  // Break out of parent container to achieve full-width background
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  
+  .container-fluid {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .td-footer__social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
+  }
+  
+  .td-footer__social-link {
+    color: #6c757d;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    
+    &:hover {
+      color: #212529;
+      transform: scale(1.15);
+    }
+  }
+  
+  .td-footer__copyright {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: #6c757d;
+    display: block;
+    margin-bottom: 0.5rem;
+    
+    a {
+      color: #007bff;
+      text-decoration: none;
+      
+      &:hover {
+        color: #0056b3;
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  .td-footer__links {
+    font-size: 0.75rem;
+    
+    a {
+      color: #007bff;
+      text-decoration: none;
+      white-space: nowrap;
+      
+      &:hover {
+        color: #0056b3;
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  // Responsive: stack on mobile
+  @media (max-width: 767px) {
+    .row > div {
+      margin-bottom: 1rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Keyframe animation for continuous spin
+@keyframes spin-continuous {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// ASF Feather Logo styling - Smaller with very rapid continuous spin effect
+.asf-feather-logo {
+  max-width: 50px;
+  width: 50px;
+  height: auto;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  
+  &:hover {
+    opacity: 1;
+    animation: spin-continuous 0.2s linear infinite;
+  }
+}
+
+.asf-logo-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+// Prev/Next navigation links styling (td-page-meta is the actual class used)
+.td-page-meta {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  
+  .pager-btn {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    border: 2px solid #dee2e6 !important;
+    color: #343a40 !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    
+    &:hover {
+      background-color: #f8f9fa !important;
+      border-color: #ced4da !important;
+      text-decoration: none !important;
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    &:focus {
+      outline: 0 !important;
+      box-shadow: 0 0 0 0.2rem rgba(206, 212, 218, 0.5) !important;
+    }
+    
+    @media (max-width: 768px) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+// Legacy support for .td-page-nav if used anywhere
 .td-page-nav {
   // Ensure prev/next links are responsive
   @media (max-width: 768px) {

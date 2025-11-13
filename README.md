@@ -52,23 +52,55 @@ Each version directory contains the complete documentation for that specific Kaf
 
 ### Adding a New Version
 
-1. Create a new directory in `content/en/` for the new version (e.g., `41/` for version 4.1)
-2. Update `hugo.yaml` to add the new version:
-   ```yaml
-   versions:
-     - version: "4.1"         # Add new version at the top
-       url: /41/
-     - version: "4.0"         # Update previous latest
-       url: /40/
-       archived_version: true  # Mark as archived
-     # ... other versions ...
-   ```
-3. Update the latest version pointer:
-   ```yaml
-   params:
-     version: 4.1             # Update version number
-     url_latest_version: /41/ # Update latest version URL
-   ```
+When releasing a new documentation version (e.g., version 4.2 / "42"), follow these steps:
+
+#### 1. Create Content Directory
+Create a new directory in `content/en/` for the new version (e.g., `42/` for version 4.2)
+
+#### 2. Update Version Parameters in `hugo.yaml`
+
+**Update the centralized version parameters (Lines 142-144):**
+```yaml
+params:
+  # Latest documentation version - UPDATE THIS WHEN RELEASING NEW VERSION
+  latest_version: "42"           # Change from "41" to "42"
+  latest_version_number: "4.2"   # Change from "4.1" to "4.2"
+```
+
+**Update the version parameter (Line ~180):**
+```yaml
+  version: 4.2  # Change from 4.1 to 4.2
+```
+
+**Update the latest version URL (Line ~283):**
+```yaml
+  url_latest_version: /42/  # Change from /41/ to /42/
+```
+
+**Add new version to versions list and mark previous as archived (Line ~184):**
+```yaml
+  versions:
+    - version: "4.2"
+      url: /42/
+    - version: "4.1"
+      url: /41/
+      archived_version: true  # Mark previous version as archived
+    # ... other versions ...
+```
+
+#### What Updates Automatically
+
+Once you update the parameters above, the following are **automatically** updated:
+
+**Menu Items:**
+- DOCS → `/42/`
+- Getting Started → `/42/getting-started/`
+- APIs, Configuration, Design, Implementation, Operations, Security, Kafka Connect, Kafka Streams → all automatically updated
+
+**Search Index:**
+- The search index automatically includes the latest version directory (no manual update needed)
+- Configured via offline search template `assets/json/offline-search-index.json`
+
 
 ### Managing Testimonials and Committers
 

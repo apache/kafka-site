@@ -1,0 +1,80 @@
+{{ $cover := .HasShortcode "blocks/cover" }}
+<nav class="navbar td-navbar js-navbar-scroll {{ if $cover }} is-dark {{ end }}" data-bs-theme="light">
+<div class="container-fluid">
+  <!-- Mobile toggle button (left side on mobile) -->
+  <button class="navbar-toggler order-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#main_navbar" aria-controls="main_navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <!-- Brand/Logo (center on mobile, left on desktop) -->
+  <a class="navbar-brand order-1 order-lg-0 mx-auto mx-lg-0" href="{{ .Site.Home.RelPermalink }}">
+    <span class="navbar-brand__logo navbar-logo">
+      {{- if .Site.Params.ui.navbar_logo -}}
+        {{ with resources.Get "icons/logo.svg" -}}
+          {{ ( . | minify).Content | safeHTML }}
+        {{- end }}
+      {{- end -}}
+    </span>
+    <span class="navbar-brand__name d-none d-lg-inline">Apache Kafka</span>
+    <span class="navbar-brand__name d-lg-none">kafka</span>
+  </a>
+  
+  <!-- Spacer for mobile to balance layout -->
+  <div class="order-2 d-lg-none" style="width: 48px;"></div>
+  
+  <!-- Collapsible menu -->
+  <div class="collapse navbar-collapse order-3 order-lg-1" id="main_navbar">
+    <ul class="navbar-nav ms-auto">
+      {{ $p := . }}
+      {{ $latestVersion := .Site.Params.latest_version }}
+      {{ range .Site.Menus.main }}
+      {{ $url := replace .URL "{{VERSION}}" (printf "/%s" $latestVersion) }}
+      <li class="nav-item{{ if .HasChildren }} dropdown{{ end }}{{ if $p.IsMenuCurrent "main" . }} active{{ end }}">
+        {{ if .HasChildren }}
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ .Name }}</a>
+          <ul class="dropdown-menu">
+            {{ range .Children }}
+              {{ $childUrl := replace .URL "{{VERSION}}" (printf "/%s" $latestVersion) }}
+              <li><a class="dropdown-item" href="{{ $childUrl }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        {{ else }}
+          <a class="nav-link" href="{{ $url }}"><span>{{ .Name }}</span></a>
+        {{ end }}
+      </li>
+      {{ end }}
+      
+      {{ if .Site.Params.versions }}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ .Site.Params.version_menu | default "Releases" }}</a>
+        <ul class="dropdown-menu">
+          {{ $p := . }}
+          {{ range .Site.Params.versions }}
+            <li><a class="dropdown-item{{ if eq .version $p.Site.Params.version }} active{{ end }}" href="{{ .url }}">{{ .version }}</a></li>
+          {{ end }}
+        </ul>
+      </li>
+      {{ end }}
+
+      <!-- Apache menu item -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Apache</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="https://www.apache.org/" target="_blank">Apache Software Foundation</a></li>
+          <li><a class="dropdown-item" href="https://www.apache.org/licenses/" target="_blank">License</a></li>
+          <li><a class="dropdown-item" href="https://www.apache.org/foundation/sponsorship" target="_blank">Sponsorship</a></li>
+          <li><a class="dropdown-item" href="https://www.apache.org/foundation/thanks.html" target="_blank">Thanks</a></li>
+          <li><a class="dropdown-item" href="https://www.apache.org/security/" target="_blank">Security</a></li>
+          <li><a class="dropdown-item" href="https://www.apache.org/events/current-event.html" target="_blank">Events</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  
+  <!-- Search (desktop only) - Far right with gap -->
+  <div class="d-none d-lg-flex order-2 navbar-search">
+    {{ partial "search-input.html" . }}
+  </div>
+</div>
+</nav>
+
