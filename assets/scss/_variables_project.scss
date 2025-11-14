@@ -213,6 +213,17 @@ button.navbar-toggler {
         align-items: center;
         width: 100%;
         text-align: left;
+        text-transform: uppercase !important;
+        
+        // Ensure text-transform applies to all children (like spans)
+        &, span {
+          text-transform: uppercase !important;
+        }
+        
+        // Explicitly target dropdown-toggle
+        &.dropdown-toggle {
+          text-transform: uppercase !important;
+        }
         
         &:hover {
           background-color: #f8f9fa;
@@ -408,6 +419,16 @@ button.navbar-toggler {
   }
 }
 
+// Force uppercase on ALL navbar navigation items
+.td-navbar .navbar-nav .nav-link,
+.td-navbar .navbar-nav .nav-link.dropdown-toggle {
+  text-transform: uppercase !important;
+  
+  &, span {
+    text-transform: uppercase !important;
+  }
+}
+
 // Nav link styling for better visibility
 .td-navbar .nav-link {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -417,16 +438,25 @@ button.navbar-toggler {
   padding: 0.5rem 1rem;
   transition: color 0.2s ease;
   letter-spacing: 0.3px;
+  text-transform: uppercase !important;
+  
+  // Ensure text-transform applies to all children (like spans)
+  &, span {
+    text-transform: uppercase !important;
+  }
+  
+  // Explicitly target dropdown-toggle to ensure uppercase
+  &.dropdown-toggle {
+    text-transform: uppercase !important;
+    
+    &:hover {
+      color: #007bff;
+    }
+  }
   
   &:hover,
   &:focus {
     color: #007bff;
-  }
-  
-  &.dropdown-toggle {
-    &:hover {
-      color: #007bff;
-    }
   }
 }
 
@@ -452,6 +482,12 @@ button.navbar-toggler {
     font-size: 0.9375rem;
     font-weight: 400;
     transition: all 0.2s ease;
+    text-transform: uppercase;
+    
+    // Ensure text-transform applies to all children (like spans)
+    &, span {
+      text-transform: uppercase;
+    }
     
     &:hover,
     &:focus {

@@ -10,13 +10,9 @@
   <a class="navbar-brand order-1 order-lg-0 mx-auto mx-lg-0" href="{{ .Site.Home.RelPermalink }}">
     <span class="navbar-brand__logo navbar-logo">
       {{- if .Site.Params.ui.navbar_logo -}}
-        {{ with resources.Get "icons/logo.svg" -}}
-          {{ ( . | minify).Content | safeHTML }}
-        {{- end }}
+        <img src="/logos/kafka_logo--simple.png" alt="Apache Kafka" class="navbar-logo-img">
       {{- end -}}
     </span>
-    <span class="navbar-brand__name d-none d-lg-inline">Apache Kafka</span>
-    <span class="navbar-brand__name d-lg-none">kafka</span>
   </a>
   
   <!-- Spacer for mobile to balance layout -->
