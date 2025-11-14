@@ -94,43 +94,43 @@ menu:
   main:
     # Point this to the latest documentation version.
     # URLs are dynamically constructed in navbar.html using params.latest_version
-    - name: "DOCS"
+    - name: "Docs"
       url: "{{VERSION}}"
       weight: 20
     - name: "Getting Started"
-      parent: "DOCS"
+      parent: "Docs"
       url: "{{VERSION}}/getting-started/"
       weight: 21
     - name: "APIs"
-      parent: "DOCS"
+      parent: "Docs"
       url: "{{VERSION}}/apis/"
       weight: 22
     - name: "Configuration"
-      parent: "DOCS"
+      parent: "Docs"
       url: "{{VERSION}}/configuration/"
       weight: 23
     - name: "Design"
-      parent: "DOCS"
+      parent: "Docs"
       url: "{{VERSION}}/design/"
       weight: 24
     - name: "Implementation"
-      parent: "DOCS"
+      parent: "Docs"
       url: "{{VERSION}}/implementation/"
       weight: 25
     - name: "Operations"
-      parent: "DOCS"
+      parent: "Docs"
       url: "{{VERSION}}/operations/"
       weight: 26
     - name: "Security"
-      parent: "DOCS"
+      parent: "Docs"
       url: "{{VERSION}}/security/"
       weight: 27
     - name: "Kafka Connect"
-      parent: "DOCS"
+      parent: "Docs"
       url: "{{VERSION}}/kafka-connect/"
       weight: 28
     - name: "Kafka Streams"
-      parent: "DOCS"
+      parent: "Docs"
       url: "{{VERSION}}/streams/"
       weight: 29
     # Add a top level menu pointing to downloads page
