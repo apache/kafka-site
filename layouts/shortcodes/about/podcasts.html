@@ -1,0 +1,19 @@
+{{ $podcasts := site.Data.podcasts -}}
+<div class="row c-podcasts">
+{{- range $podcasts -}}
+  {{ $img   := printf "/images/podcast-logos/%s" .logo | relURL -}}
+  {{ $bgColor := .logoBgColor | default "#FFFFFF" -}}
+  <div class="col-12 col-sm-6 col-md-4 col-lg-4 c-podcasts__podcast">
+    <a href="{{ .link }}" target="_blank" rel="noopener" class="c-podcasts__link">
+      <span class="c-podcasts__logo" style="background-image: url({{ $img }}); background-color: {{ $bgColor }};"></span>
+    </a>
+    <h5 class="c-podcasts__title">
+      <a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a>
+    </h5>
+    <p class="c-podcasts__description">
+      {{- .description | safeHTML -}}
+    </p>
+  </div>
+{{ end -}}
+</div>
+

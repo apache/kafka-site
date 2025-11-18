@@ -80,6 +80,100 @@ $primary: #ffffff;
     }
 }
 
+.c-podcasts {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+.c-podcasts__podcast {
+    text-align: center;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+    .c-podcasts__link {
+      display: block;
+      margin-bottom: 1rem;
+    }
+    
+    .c-podcasts__logo {
+      margin: auto;
+      width: 100%;
+      max-width: 12rem;
+      height: 12rem;
+      display: block;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+    }
+    
+    .c-podcasts__title {
+      margin-top: 1rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+      
+      a {
+        color: #212529;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        
+        &:hover {
+          color: #007bff;
+          text-decoration: underline;
+        }
+      }
+    }
+  
+    .c-podcasts__description {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+      text-align: left;
+      flex-grow: 1;
+      color: #495057;
+      
+      a {
+        display: inline;
+        margin-bottom: 0;
+        color: #0066cc;
+        text-decoration: underline;
+        
+        &:hover {
+          color: #0052a3;
+        }
+      }
+    }
+    
+    // Responsive adjustments
+    @media (max-width: 576px) {
+      margin-bottom: 2rem;
+      
+      .c-podcasts__logo {
+        max-width: 10rem;
+        height: 10rem;
+      }
+      
+      .c-podcasts__title {
+        font-size: 1rem;
+      }
+      
+      .c-podcasts__description {
+        font-size: 0.8125rem;
+      }
+    }
+}
+
 .used-by-logo {
     max-height: 4rem;
     max-width: 100%;
