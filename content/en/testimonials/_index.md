@@ -1,10 +1,10 @@
 ---
-title: Testimonials
-menu: {main: {weight: 45}}
+title: Powered By
+menu: {main: {weight: 35}}
 ---
 
 
-{{% blocks/cover title="Testimonials" image_anchor="bottom" height="auto" %}}
+{{% blocks/cover title="Powered By" image_anchor="bottom" height="auto" %}}
 
 Apache Kafka is the most popular open-source stream-processing software for collecting, processing, storing, and analyzing data at scale. Most known for its excellent performance, low latency, fault tolerance, and high throughput, it's capable of handling thousands of messages per second. With over 1,000 Kafka use cases and counting, some common benefits are building data pipelines, leveraging real-time data streams, enabling operational metrics, and data integration across countless sources. 
 

@@ -1,33 +1,33 @@
 <div class="row">
   {{ $index := 0 }}
   {{ range .Site.Data.committers }}
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card h-100 committer-card">
         {{ if .image }}
-          <img class="card-img-top" src="{{ .image }}" alt="{{ .name }}">
+          <img class="card-img-top committer-image" src="{{ .image }}" alt="{{ .name }}">
         {{ end }}
-        <div class="card-body" style="padding: 0.75rem;">
-          <h5 class="card-title">{{ .name }}</h5>
-          <p class="card-text">{{ .title }}</p>
-          <p class="card-text">
+        <div class="card-body" style="padding: 0.5rem;">
+          <h6 class="card-title mb-1" style="font-size: 0.95rem;">{{ .name }}</h6>
+          <p class="card-text mb-2" style="font-size: 0.8rem;">{{ .title }}</p>
+          <p class="card-text mb-0">
             {{ if .linkedIn }}
-              <a href="{{ .linkedIn }}" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+              <a href="{{ .linkedIn }}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
             {{ end }}
             {{ if .twitter }}
-              <a href="{{ .twitter }}" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+              <a href="{{ .twitter }}" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
             {{ end }}
             {{ if .github }}
-              <a href="{{ .github }}" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+              <a href="{{ .github }}" target="_blank"><i class="fab fa-github fa-lg"></i></a>
             {{ end }}
             {{ if .website }}
-              <a href="{{ .website }}" target="_blank"><i class="fas fa-globe fa-2x"></i></a>
+              <a href="{{ .website }}" target="_blank"><i class="fas fa-globe fa-lg"></i></a>
             {{ end }}
           </p>
         </div>
       </div>
     </div>
     {{ $index = add $index 1 }}
-    {{ if eq (mod $index 3) 0 }}
+    {{ if eq (mod $index 4) 0 }}
       </div><div class="row">
     {{ end }}
   {{ end }}

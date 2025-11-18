@@ -22,26 +22,28 @@ ul.dropdown-menu {
 }
 
 .td-navbar .td-search__input:not(:focus) {
-  background: #bdbdbd;
-  border: 1px solid #bdbdbd;
+  background: #ffffff;
+  border: 1px solid #dee2e6;
+}
+
+// Keep search input white in the dropdown wrapper too
+.search-input-wrapper .td-search__input,
+.search-input-wrapper input {
+  background: #ffffff !important;
+  border: 1px solid #dee2e6 !important;
 }
 
 /* Pager button explicit neutral styling to avoid theme primary/orange overrides */
 .pager-btn {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-  border: 2px solid #dee2e6 !important; /* gray-300 */
+  border: 3px solid #dee2e6 !important; /* gray-300 */
   color: #343a40 !important;            /* text-dark */
   background-color: #ffffff !important; /* white background */
   box-shadow: 0 .25rem .5rem rgba(0,0,0,.05) !important; /* subtle */
-  transition: all 0.3s ease !important;
-  font-weight: 600 !important;
 }
 .pager-btn:hover {
   background-color: #f8f9fa !important; /* gray-100 */
   border-color: #ced4da !important;      /* gray-400 */
   text-decoration: none !important;
-  transform: translateY(-2px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 .pager-btn:focus {
   outline: 0 !important;
@@ -82,4 +84,39 @@ ul.dropdown-menu {
 .carousel-control-prev:hover .carousel-control-prev-icon,
 .carousel-control-next:hover .carousel-control-next-icon {
   background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* Menu and submenu capitalization - ALL UPPERCASE */
+.td-navbar .nav-link,
+.navbar-nav .nav-link,
+.td-navbar .dropdown-menu .dropdown-item,
+.navbar-nav .dropdown-menu .dropdown-item {
+  text-transform: uppercase !important;
+}
+
+/* Match submenu font size to main menu */
+.td-navbar .dropdown-menu .dropdown-item,
+.navbar-nav .dropdown-menu .dropdown-item {
+  font-size: 0.875rem !important;  /* Match main menu size */
+}
+
+/* Keep gradient button text uppercase */
+.btn-gradient-download {
+  text-transform: uppercase !important;
+}
+
+/* Make dropdowns show on hover on desktop, allowing top-level links to be clickable */
+@media (min-width: 992px) {
+  .td-navbar .dropdown:hover > .dropdown-menu,
+  .navbar-nav .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+/* Mobile dropdown menu toggle with .show class */
+@media (max-width: 991.98px) {
+  .navbar-nav .dropdown-menu.show {
+    display: block;
+  }
 }

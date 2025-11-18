@@ -92,12 +92,40 @@ outputs:
 
 menu:
   main:
-    # Point this to the latest documentation version.
-    # URLs are dynamically constructed in navbar.html using params.latest_version
+    # Get Started menu
+    - name: "Get Started"
+      url: "{{VERSION}}/getting-started/"
+      weight: 10
+    - name: "Introduction"
+      parent: "Get Started"
+      url: "{{VERSION}}/getting-started/introduction/"
+      weight: 11
+    - name: "Quickstart"
+      parent: "Get Started"
+      url: "{{VERSION}}/getting-started/quickstart/"
+      weight: 12
+    - name: "Use Cases"
+      parent: "Get Started"
+      url: "{{VERSION}}/getting-started/uses/"
+      weight: 13
+    - name: "Books and Papers"
+      parent: "Get Started"
+      url: "/community/books_and_papers/"
+      weight: 14
+    - name: "Videos"
+      parent: "Get Started"
+      url: "/community/videos/"
+      weight: 15
+    - name: "Podcasts"
+      parent: "Get Started"
+      url: "/community/podcasts/"
+      weight: 16
+
+    # Docs menu
     - name: "Docs"
       url: "{{VERSION}}"
       weight: 20
-    - name: "Getting Started"
+    - name: "Key Concepts"
       parent: "Docs"
       url: "{{VERSION}}/getting-started/"
       weight: 21
@@ -133,11 +161,79 @@ menu:
       parent: "Docs"
       url: "{{VERSION}}/streams/"
       weight: 29
-    # Add a top level menu pointing to downloads page
-    - name: "Download"
-      url: "/community/downloads/"
+
+    # Powered By menu item
+    - name: "Powered By"
+      url: "/testimonials/"
+      weight: 35
+
+    # Community menu
+    - name: "Community"
+      url: "/community/"
+      weight: 40
+    - name: "Blog"
+      parent: "Community"
+      url: "/blog/"
+      weight: 41
+    - name: "Kafka Summit"
+      parent: "Community"
+      url: "https://kafka-summit.org"
+      weight: 42
+    - name: "Project Info"
+      parent: "Community"
+      url: "/community/"
+      weight: 43
+    - name: "Trademark"
+      parent: "Community"
+      url: "/community/trademark/"
+      weight: 44
+    - name: "Ecosystem"
+      parent: "Community"
+      url: "https://cwiki.apache.org/confluence/display/KAFKA/Ecosystem"
+      weight: 45
+    - name: "Events"
+      parent: "Community"
+      url: "/community/events/"
+      weight: 46
+    - name: "Contact Us"
+      parent: "Community"
+      url: "/community/contact/"
+      weight: 47
+    
+    # Apache menu
+    - name: "Apache"
+      url: "https://www.apache.org/"
       weight: 50
-      # Submenu items
+    - name: "Apache.org"
+      parent: "Apache"
+      url: "https://www.apache.org/"
+      weight: 51
+    - name: "License"
+      parent: "Apache"
+      url: "https://www.apache.org/licenses/"
+      weight: 52
+    - name: "Donate"
+      parent: "Apache"
+      url: "https://www.apache.org/foundation/contributing.html"
+      weight: 53
+    - name: "Sponsors"
+      parent: "Apache"
+      url: "https://www.apache.org/foundation/thanks.html"
+      weight: 54
+    - name: "Security"
+      parent: "Apache"
+      url: "https://www.apache.org/security/"
+      weight: 55
+    - name: "Privacy"
+      parent: "Apache"
+      url: "{{PRIVACY}}"
+      weight: 56
+    
+    # DOWNLOAD KAFKA as gradient button (handled in navbar.html)
+    - name: "DOWNLOAD KAFKA"
+      url: "/community/downloads/"
+      weight: 60
+      # This will be styled as a gradient button in navbar.html
 
 params:
   # Latest documentation version - UPDATE THIS WHEN RELEASING NEW VERSION

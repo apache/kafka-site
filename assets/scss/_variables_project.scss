@@ -460,6 +460,210 @@ button.navbar-toggler {
   }
 }
 
+// Reduce menu font size
+.td-navbar .nav-link {
+  font-size: 0.875rem;  // Reduced from 0.95rem
+}
+
+// Logo sizing - increased
+.navbar-logo-img {
+  max-height: 52px;
+  width: auto;
+  display: block;
+  
+  @media (max-width: 991px) {
+    max-height: 38px;
+  }
+}
+
+// Navbar layout - move logo closer to menu
+.td-navbar .navbar-brand {
+  @media (min-width: 992px) {
+    margin-right: 1.5rem;  // Reduced from 3rem
+  }
+}
+
+// Gap between menu and search bar
+.navbar-search {
+  @media (min-width: 992px) {
+    margin-left: 2rem !important;  // Reduced from 3rem
+  }
+}
+
+// Search toggle button
+.search-toggle-btn {
+  background: transparent;
+  border: 2px solid #6c757d;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #6c757d;
+  font-size: 1rem;
+  
+  &:hover {
+    background-color: #f8f9fa;
+    border-color: #495057;
+    color: #495057;
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25);
+  }
+  
+  i {
+    line-height: 1;
+  }
+}
+
+.search-input-wrapper {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: #ffffff !important;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+  min-width: 300px;
+  z-index: 1050;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  
+  // Override any default input background
+  input, 
+  .td-search__input,
+  .form-control,
+  [type="search"] {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    border: 1px solid #dee2e6 !important;
+    transition: none !important;
+  }
+  
+  // Ensure form groups and wrappers are also white
+  .form-group,
+  .input-group,
+  div {
+    background-color: transparent !important;
+  }
+  
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+.navbar-search {
+  position: relative;
+}
+
+// Search results overlay
+.td-search__results {
+  &.is-active {
+    animation: fadeIn 0.2s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+// Force hide search results and overlays when needed
+.td-search__results[style*="display: none"],
+.td-search__results[style*="visibility: hidden"],
+#td-search__results-container[style*="display: none"],
+.modal-backdrop[style*="display: none"],
+[class*="search"][class*="overlay"][style*="display: none"],
+[class*="search"][class*="backdrop"][style*="display: none"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+// Gradient Download Button - Dark gradient
+.btn-gradient-download {
+  background: linear-gradient(180deg, #4a5568 0%, #2d3748 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border: none !important;
+  border-radius: 0.375rem !important;
+  padding: 0.625rem 1.5rem !important;
+  font-size: 0.875rem !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  text-decoration: none !important;
+  display: inline-block;
+  
+  &:hover {
+    background: linear-gradient(180deg, #5a6678 0%, #3d4d60 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4) !important;
+    color: #ffffff !important;
+  }
+  
+  &:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 0.2rem rgba(45, 55, 72, 0.5) !important;
+  }
+}
+
+.download-btn-item {
+  @media (min-width: 992px) {
+    margin-left: 1rem;
+  }
+}
+
+// Committer cards styling - Make them more compact
+.committer-card {
+  .committer-image {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    object-position: center top;
+    
+    // On mobile, show full image without cropping
+    @media (max-width: 767.98px) {
+      max-height: none;
+      object-fit: contain;
+      aspect-ratio: 1 / 1;
+      background-color: #f8f9fa;
+    }
+  }
+  
+  .card-title {
+    font-weight: 600;
+  }
+  
+  .card-text {
+    line-height: 1.4;
+  }
+  
+  // Social icons spacing
+  a {
+    margin-right: 0.5rem;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
 // Style dropdown menus
 .td-navbar .dropdown-menu {
   border-radius: 0.25rem;
@@ -761,41 +965,109 @@ p {
   letter-spacing: 0.3px;
 }
 
+// Reduce card text sizes for all feature cards
+.td-box--dark,
+.td-box--primary {
+  .blocks-feature {
+    h4, .h4 {
+      font-size: 1.1rem !important;  // Reduced from 1.25rem
+      margin-bottom: 0.625rem;
+    }
+    
+    p {
+      font-size: 0.9rem !important;  // Reduced from 1rem
+      line-height: 1.5;
+    }
+    
+    .h1 {
+      font-size: 1.75rem !important;  // Reduced from 2rem
+    }
+  }
+  
+  .col-lg-4 {
+    h4 {
+      font-size: 1.1rem !important;
+    }
+    
+    p {
+      font-size: 0.9rem !important;
+    }
+  }
+}
+
 // Feature descriptions consistent styling
 .td-box--dark .mb-0 p {
-  font-size: 1rem;
+  font-size: 0.9rem;  // Reduced from 1rem
   line-height: 1.6;
   color: #f8f9fa;
 }
 
+// Match 'See full list' button color with 'Learn More' button
+.td-box .btn-primary,
+.btn-primary {
+  background-color: #007bff !important;
+  border-color: #007bff !important;
+  color: #ffffff !important;
+  
+  &:hover {
+    background-color: #0056b3 !important;
+    border-color: #0056b3 !important;
+    color: #ffffff !important;
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5) !important;
+  }
+}
+
 // Footer styling - Compact single row layout with full-width background
 .td-footer {
-  background-color: #ffffff;
+  background-color: #f8f9fa;  // Fair background (light gray)
   border-top: 1px solid #dee2e6;
-  padding: 1rem 0;
+  padding: 0.5rem 0 !important;  // Minimal padding - top and bottom only
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
+  min-height: auto !important;
   
-  // Break out of parent container to achieve full-width background
+  // Full-width breakout
   width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
   
   .container-fluid {
-    max-width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 100%;  // Use full width
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 auto !important;
+  }
+  
+  .row {
+    align-items: center;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    
+    // Remove all column spacing
+    > [class*="col-"] {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
   }
   
   .td-footer__social-icons {
     display: flex;
     gap: 1rem;
     justify-content: center;
+    margin: 0 !important;
+    padding: 0 !important;
     
     @media (min-width: 768px) {
       justify-content: flex-start;
@@ -804,7 +1076,7 @@ p {
   
   .td-footer__social-link {
     color: #6c757d;
-    font-size: 1.5rem;
+    font-size: 1.35rem;  // Slightly reduced from 1.5rem
     transition: color 0.3s ease, transform 0.3s ease;
     display: inline-block;
     
@@ -815,34 +1087,40 @@ p {
   }
   
   .td-footer__copyright {
-    font-size: 0.75rem;
-    line-height: 1.5;
+    font-size: 0.7rem;  // Reduced from 0.75rem
+    line-height: 1.2;  // Further reduced to tighten text
     color: #6c757d;
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0 !important;  // Remove all bottom margin
+    margin-top: 0 !important;  // Remove all top margin
+    padding: 0 !important;  // Remove all padding
     
     a {
-      color: #007bff;
+      color: #6c757d;  // Match text color
       text-decoration: none;
       
       &:hover {
-        color: #0056b3;
-        text-decoration: underline;
+        color: #6c757d;  // Keep same color on hover
+        text-decoration: underline;  // Only underline on hover
       }
     }
   }
   
   .td-footer__links {
-    font-size: 0.75rem;
+    font-size: 0.7rem;  // Reduced from 0.75rem
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    line-height: 1.2;
     
     a {
-      color: #007bff;
+      color: #6c757d;  // Match text color
       text-decoration: none;
       white-space: nowrap;
       
       &:hover {
-        color: #0056b3;
-        text-decoration: underline;
+        color: #6c757d;  // Keep same color on hover
+        text-decoration: underline;  // Only underline on hover
       }
     }
   }
@@ -850,7 +1128,7 @@ p {
   // Responsive: stack on mobile
   @media (max-width: 767px) {
     .row > div {
-      margin-bottom: 1rem;
+      margin-bottom: 0.35rem;  // Further reduced from 0.75rem
       
       &:last-child {
         margin-bottom: 0;
