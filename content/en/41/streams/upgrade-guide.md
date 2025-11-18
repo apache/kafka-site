@@ -10,20 +10,20 @@ type: docs
 
 # Upgrade Guide and API Changes
 
-Upgrading from any older version to 4.1.0 is possible: if upgrading from 3.4 or below, you will need to do two rolling bounces, where during the first rolling bounce phase you set the config `upgrade.from="older version"` (possible values are `"0.10.0" - "3.4"`) and during the second you remove it. This is required to safely handle 3 changes. The first is introduction of the new cooperative rebalancing protocol of the embedded consumer. The second is a change in foreign-key join serialization format. Note that you will remain using the old eager rebalancing protocol if you skip or delay the second rolling bounce, but you can safely switch over to cooperative at any time once the entire group is on 2.4+ by removing the config value and bouncing. For more details please refer to [KIP-429](https://cwiki.apache.org/confluence/x/vAclBg). The third is a change in the serialization format for an internal repartition topic. For more details, please refer to [KIP-904](https://cwiki.apache.org/confluence/x/P5VbDg): 
+Upgrading from any older version to 4.1.1 is possible: if upgrading from 3.4 or below, you will need to do two rolling bounces, where during the first rolling bounce phase you set the config `upgrade.from="older version"` (possible values are `"0.10.0" - "3.4"`) and during the second you remove it. This is required to safely handle 3 changes. The first is introduction of the new cooperative rebalancing protocol of the embedded consumer. The second is a change in foreign-key join serialization format. Note that you will remain using the old eager rebalancing protocol if you skip or delay the second rolling bounce, but you can safely switch over to cooperative at any time once the entire group is on 2.4+ by removing the config value and bouncing. For more details please refer to [KIP-429](https://cwiki.apache.org/confluence/x/vAclBg). The third is a change in the serialization format for an internal repartition topic. For more details, please refer to [KIP-904](https://cwiki.apache.org/confluence/x/P5VbDg): 
 
   * prepare your application instances for a rolling bounce and make sure that config `upgrade.from` is set to the version from which it is being upgrade.
   * bounce each instance of your application once 
-  * prepare your newly deployed 4.1.0 application instances for a second round of rolling bounces; make sure to remove the value for config `upgrade.from`
+  * prepare your newly deployed 4.1.1 application instances for a second round of rolling bounces; make sure to remove the value for config `upgrade.from`
   * bounce each instance of your application once more to complete the upgrade 
 
 
 
-As an alternative, an offline upgrade is also possible. Upgrading from any versions as old as 0.10.0.x to 4.1.0 in offline mode require the following steps: 
+As an alternative, an offline upgrade is also possible. Upgrading from any versions as old as 0.10.0.x to 4.1.1 in offline mode require the following steps: 
 
   * stop all old (e.g., 0.10.0.x) application instances 
   * update your code and swap old code and jar file with new code and new jar file 
-  * restart all new (4.1.0) application instances 
+  * restart all new (4.1.1) application instances 
 
 
 
@@ -47,11 +47,9 @@ Since 2.6.0 release, Kafka Streams depends on a RocksDB version that requires Ma
 
 To run a Kafka Streams application version 2.2.1, 2.3.0, or higher a broker version 0.11.0 or higher is required and the on-disk message format must be 0.11 or higher. Brokers must be on version 0.10.1 or higher to run a Kafka Streams application version 0.10.1 to 2.2.0. Additionally, on-disk message format must be 0.10 or higher to run a Kafka Streams application version 1.0 to 2.2.0. For Kafka Streams 0.10.0, broker version 0.10.0 or higher is required. 
 
-In deprecated `KStreamBuilder` class, when a `KTable` is created from a source topic via `KStreamBuilder.table()`, its materialized state store will reuse the source topic as its changelog topic for restoring, and will disable logging to avoid appending new updates to the source topic; in the `StreamsBuilder` class introduced in 1.0, this behavior was changed accidentally: we still reuse the source topic as the changelog topic for restoring, but will also create a separate changelog topic to append the update records from source topic to. In the 2.0 release, we have fixed this issue and now users can choose whether or not to reuse the source topic based on the `StreamsConfig#TOPOLOGY_OPTIMIZATION_CONFIG`: if you are upgrading from the old `KStreamBuilder` class and hence you need to change your code to use the new `StreamsBuilder`, you should set this config value to `StreamsConfig#OPTIMIZE` to continue reusing the source topic; if you are upgrading from 1.0 or 1.1 where you are already using `StreamsBuilder` and hence have already created a separate changelog topic, you should set this config value to `StreamsConfig#NO_OPTIMIZATION` when upgrading to 4.1.0 in order to use that changelog topic for restoring the state store. More details about the new config `StreamsConfig#TOPOLOGY_OPTIMIZATION_CONFIG` can be found in [KIP-295](https://cwiki.apache.org/confluence/x/V53LB). 
+In deprecated `KStreamBuilder` class, when a `KTable` is created from a source topic via `KStreamBuilder.table()`, its materialized state store will reuse the source topic as its changelog topic for restoring, and will disable logging to avoid appending new updates to the source topic; in the `StreamsBuilder` class introduced in 1.0, this behavior was changed accidentally: we still reuse the source topic as the changelog topic for restoring, but will also create a separate changelog topic to append the update records from source topic to. In the 2.0 release, we have fixed this issue and now users can choose whether or not to reuse the source topic based on the `StreamsConfig#TOPOLOGY_OPTIMIZATION_CONFIG`: if you are upgrading from the old `KStreamBuilder` class and hence you need to change your code to use the new `StreamsBuilder`, you should set this config value to `StreamsConfig#OPTIMIZE` to continue reusing the source topic; if you are upgrading from 1.0 or 1.1 where you are already using `StreamsBuilder` and hence have already created a separate changelog topic, you should set this config value to `StreamsConfig#NO_OPTIMIZATION` when upgrading to 4.1.1 in order to use that changelog topic for restoring the state store. More details about the new config `StreamsConfig#TOPOLOGY_OPTIMIZATION_CONFIG` can be found in [KIP-295](https://cwiki.apache.org/confluence/x/V53LB). 
 
 ## Streams API changes in 4.1.0
-
-**Note:** Kafka Streams 4.1.0 contains a critical memory leak bug ([KAFKA-19748](https://issues.apache.org/jira/browse/KAFKA-19748)) that affects users of range scans and certain DSL operators (session windows, sliding windows, stream-stream joins, foreign-key joins). Users running Kafka Streams should consider upgrading directly to 4.1.1 when available.
 
 ### Early Access of the Streams Rebalance Protocol
 
@@ -88,7 +86,9 @@ This Early Access release covers a subset of the functionality detailed in [KIP-
 
 
 
-Enabling the protocol requires the brokers and clients are running Apache Kafka 4.1. It should be enabled only on new clusters for testing purposes. Set `unstable.feature.versions.enable=true` for controllers and brokers, and set `unstable.api.versions.enable=true` on the brokers as well. In your Kafka Streams application configuration, set `group.protocol=streams`. After the new feature is configured, check `kafka-features.sh --bootstrap-server localhost:9092 describe` and `streams.version` should now have FinalizedVersionLevel 1. 
+Enabling the protocol requires the brokers and clients are running Apache Kafka 4.1. It should be enabled only on new clusters for testing purposes. Set `unstable.feature.versions.enable=true` for controllers and brokers, and set `unstable.api.versions.enable=true` on the brokers as well. In your Kafka Streams application configuration, set `group.protocol=streams`. 
+
+When `unstable.api.versions.enable=true` is set when the kafka storage is first created, and no explicit metadata version is set, the feature will be enabled by default. In other configurations (e.g. if the cluster already existed, or a metadata version was hardcoded), you may have to enable it explicitly. First, check the current feature level by running `kafka-features.sh --bootstrap-server localhost:9092 describe`. If `streams.version` shows `FinalizedVersionLevel` is 1, no action is needed. Otherwise, upgrade by running `kafka-features.sh --bootstrap-server localhost:9092 upgrade --feature streams.version=1`. After the upgrade, verify the change by running `kafka-features.sh --bootstrap-server localhost:9092 describe`. 
 
 Migration between the classic consumer group protocol and the Streams Rebalance Protocol is not supported in either direction. An application using this protocol must use a new `application.id` that has not been used by any application on the classic protocol. Furthermore, this ID must not be in use as a `group.id` by any consumer ("classic" or "consumer") nor share-group application. It is also possible to delete a previous consumer group using `kafka-consumer-groups.sh` before starting the application with the new protocol, which will however also delete all offsets for that group. 
 
@@ -105,9 +105,9 @@ The introduction of [KIP-1111](https://cwiki.apache.org/confluence/x/4Y_MEw) ena
 In this release, eos-v1 (Exactly Once Semantics version 1) is no longer supported. To use eos-v2, brokers must be running version 2.5 or later. Additionally, all deprecated methods, classes, APIs, and config parameters up to and including AK 3.5 release have been removed. A few important ones are listed below. The full list can be found in [KAFKA-12822](https://issues.apache.org/jira/browse/KAFKA-12822). 
 
   * [Old processor APIs](https://issues.apache.org/jira/browse/KAFKA-12829)
+  * [KStream#through() in both Java and Scala](https://issues.apache.org/jira/browse/KAFKA-12823)
   * ["transformer" methods and classes in both Java and Scala](https://issues.apache.org/jira/browse/KAFKA-16339)
     * migrating from `KStreams#transformValues()` to `KStreams.processValues()` might not be safe due to [KAFKA-19668](https://issues.apache.org/jira/browse/KAFKA-19668). Please refer to the [migration guide](/41/streams/developer-guide/dsl-api.html#transformers-removal-and-migration-to-processors) for more details. 
-  * ["transformer" methods and classes in both Java and Scala](https://issues.apache.org/jira/browse/KAFKA-16339)
   * [kstream.KStream#branch in both Java and Scala](https://issues.apache.org/jira/browse/KAFKA-12824)
   * [builder methods for Time/Session/Join/SlidingWindows](https://issues.apache.org/jira/browse/KAFKA-16332)
   * [KafkaStreams#setUncaughtExceptionHandler()](https://issues.apache.org/jira/browse/KAFKA-12827)

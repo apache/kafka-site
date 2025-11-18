@@ -8,9 +8,16 @@ keywords:
 type: docs
 ---
 
-## Upgrading to 4.1.0
+## Upgrading to 4.1.1
 
-**Note:** Kafka Streams 4.1.0 contains a critical memory leak bug ([KAFKA-19748](https://issues.apache.org/jira/browse/KAFKA-19748)) that affects users of range scans and certain DSL operators (session windows, sliding windows, stream-stream joins, foreign-key joins). Users running Kafka Streams should consider upgrading directly to 4.1.1 when available.
+### Notable changes in 4.1.1
+
+  * Includes a fix for the critical Kafka Streams bug ([KAFKA-19748](https://issues.apache.org/jira/browse/KAFKA-19748)), solving the memory leak issues that affected users of range scans and certain DSL operators (session windows, sliding windows, stream-stream joins, foreign-key joins). 
+  * Includes a fix for the critical Kafka Streams bug ([KAFKA-19479](https://issues.apache.org/jira/browse/KAFKA-19479)), related to potential data loss. 
+
+
+
+## Upgrading to 4.1.0
 
 ### Upgrading Servers to 4.1.0 from any version 3.3.x through 4.0.x
 
@@ -60,6 +67,7 @@ Note: Apache Kafka 4.0 only supports KRaft mode - ZooKeeper mode has been remove
 ### Notable changes in 4.0.1
 
   * The filename for rotated `state-change.log` files has been updated from `stage-change.log.[date]` to `state-change.log.[date]` in the log4j2.yaml configuration file. See [KAFKA-19576](https://issues.apache.org/jira/browse/KAFKA-19576) for details. 
+  * Kafka Streams include a critical fix to upgrade from `KStreams#transformValues()` (removed with 4.0.0 release) to `KStreams#processValues()`. For more details, see the [migration guide](/41/streams/developer-guide/dsl-api.html#transformers-removal-and-migration-to-processors). 
 
 
 

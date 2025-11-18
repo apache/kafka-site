@@ -28,9 +28,9 @@ You can define dependencies on the following libraries for your Kafka Streams ap
 
 Group ID | Artifact ID | Version | Description  
 ---|---|---|---  
-`org.apache.kafka` | `kafka-streams` | `4.1.0` | (Required) Base library for Kafka Streams.  
-`org.apache.kafka` | `kafka-clients` | `4.1.0` | (Required) Kafka client library. Contains built-in serializers/deserializers.  
-`org.apache.kafka` | `kafka-streams-scala` | `4.1.0` | (Optional) Kafka Streams DSL for Scala library to write Scala Kafka Streams applications. When not using SBT you will need to suffix the artifact ID with the correct version of Scala your application is using (`_2.12`, `_2.13`)  
+`org.apache.kafka` | `kafka-streams` | `4.1.1` | (Required) Base library for Kafka Streams.  
+`org.apache.kafka` | `kafka-clients` | `4.1.1` | (Required) Kafka client library. Contains built-in serializers/deserializers.  
+`org.apache.kafka` | `kafka-streams-scala` | `4.1.1` | (Optional) Kafka Streams DSL for Scala library to write Scala Kafka Streams applications. When not using SBT you will need to suffix the artifact ID with the correct version of Scala your application is using (`_2.12`, `_2.13`)  
   
 **Tip**
 
@@ -42,17 +42,17 @@ Example `pom.xml` snippet when using Maven:
     <dependency>
         <groupId>org.apache.kafka</groupId>
         <artifactId>kafka-streams</artifactId>
-        <version>4.1.0</version>
+        <version>4.1.1</version>
     </dependency>
     <dependency>
         <groupId>org.apache.kafka</groupId>
         <artifactId>kafka-clients</artifactId>
-        <version>4.1.0</version>
+        <version>4.1.1</version>
     </dependency>
         <dependency>
         <groupId>org.apache.kafka</groupId>
         <artifactId>kafka-streams-scala_2.13</artifactId>
-        <version>4.1.0</version>
+        <version>4.1.1</version>
     </dependency>
 
 # Using Kafka Streams within your application code
