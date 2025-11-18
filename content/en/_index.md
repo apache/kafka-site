@@ -17,14 +17,18 @@ title: Apache Kafka
 
 
 
-{{% blocks/lead %}}
+{{% blocks/lead color="white" %}}
 
 # Apache Kafka
 
 Apache Kafka is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications. 
+
+
+
 {{% /blocks/lead %}}
 
-{{< blocks/section color="primary" type="row" >}}
+{{< blocks/section color="dark" type="row" >}}
+
 {{% blocks/feature icon="fa-solid fa-industry" title="Manufacturing" %}}
 **10 OUT OF 10**
 {{% /blocks/feature %}}
@@ -46,26 +50,24 @@ Apache Kafka is an open-source distributed event streaming platform used by thou
 {{% blocks/feature icon="fa-solid fa-lightbulb" title="Energy and Utilities" %}}
 **10 OUT OF 10**
 {{% /blocks/feature %}}
-{{< /blocks/section >}}
 
-{{% blocks/lead %}}
-
-Above is a snapshot of the number of top-ten largest companies using Kafka, per-industry.
 
 <p class="text-center mt-4">
+  Above is a snapshot of the number of top-ten largest companies using Kafka, per-industry.
+  <br/> 
+  <br/>
   <a href="/testimonials/" class="btn btn-lg btn-primary">See full list <i class="fas fa-arrow-alt-circle-right ms-2"></i></a>
 </p>
 
-{{% /blocks/lead %}}
+{{< /blocks/section >}}
 
 
-{{% blocks/lead %}}
+{{% blocks/lead color="white" %}}
 
 # Core capabilities
 
 Kafka boasts core capabilities that are battle tested and ready to power businesses in the digital world.
 
-{.text-center}
 
 {{% /blocks/lead %}}
 
@@ -98,13 +100,13 @@ Kafka's out-of-the-box Connect interface integrates with hundreds of event sourc
 {{% /blocks/section %}}
 
 
-{{% blocks/lead color="primary" %}}
+{{% blocks/lead color="white" %}}
 
 # Trust and Ease of Use
 
 Kafka is simple to use and is trusted by thousands of organizations around the world.
 
-{.text-center}
+
 
 {{% /blocks/lead %}}
 

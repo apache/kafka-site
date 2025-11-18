@@ -1,0 +1,24 @@
+[
+    {
+      "title": "Streaming Audio Podcast",
+      "link": "https://developer.confluent.io/podcast/",
+      "logo": "streaming-audio-confluent.png",
+      "logoBgColor": "#FFFFFF",
+      "description": "by Confluent — episodes cover a variety of topics surrounding Apache Kafka, real-time data streaming, and the cloud."
+    },
+    {
+      "title": "Data Engineering Podcast",
+      "link": "https://www.dataengineeringpodcast.com/",
+      "logo": "data-engineering-podcast-logo.jpeg",
+      "logoBgColor": "#FFFFFF",
+      "description": "by Tobias Macey — each new episode provides useful and informative insights into the projects, platforms, and practices that data engineers, team leaders, and data scientists need to know about to learn and grow in their career"
+    },
+    {
+      "title": "Software Engineering Daily Podcast",
+      "link": "https://softwareengineeringdaily.com/",
+      "logo": "software-engineering-daily.png",
+      "logoBgColor": "#FFFFFF",
+      "description": "by Jeff Meyerson — while this podcast is rather broad in scope, its <a href='https://softwareengineeringdaily.com/category/data/'>data subcategory</a> is useful for Kafka practitioners"
+    }
+]
+

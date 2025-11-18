@@ -136,36 +136,26 @@ In contrast, when using a dynamic quorum, you should set `controller.quorum.boot
 If you are not sure whether you are using static or dynamic quorums, you can determine this by running something like the following:
     
     
-      $ bin/kafka-features.sh --bootstrap-controller localhost:9093 describe
-    
+    $ bin/kafka-features.sh --bootstrap-controller localhost:9093 describe
 
 If the `kraft.version` field is level 0 or absent, you are using a static quorum. If it is 1 or above, you are using a dynamic quorum. For example, here is an example of a static quorum:
     
     
     Feature: kraft.version  SupportedMinVersion: 0  SupportedMaxVersion: 1  FinalizedVersionLevel: 0 Epoch: 5
     Feature: metadata.version       SupportedMinVersion: 3.3-IV3    SupportedMaxVersion: 3.9-IV0 FinalizedVersionLevel: 3.9-IV0  Epoch: 5
-    
 
 Here is another example of a static quorum:
     
     
     Feature: metadata.version       SupportedMinVersion: 3.3-IV3    SupportedMaxVersion: 3.8-IV0 FinalizedVersionLevel: 3.8-IV0  Epoch: 5
-    
 
 Here is an example of a dynamic quorum:
     
     
     Feature: kraft.version  SupportedMinVersion: 0  SupportedMaxVersion: 1  FinalizedVersionLevel: 1 Epoch: 5
     Feature: metadata.version       SupportedMinVersion: 3.3-IV3    SupportedMaxVersion: 3.9-IV0 FinalizedVersionLevel: 3.9-IV0  Epoch: 5
-    
 
-The static versus dynamic nature of the quorum is determined at the time of formatting. Specifically, the quorum will be formatted as dynamic if `controller.quorum.voters` is **not** present, and if the software version is Apache Kafka 3.9 or newer. If you have followed the instructions earlier in this document, you will get a dynamic quorum.
-
-If you would like the formatting process to fail if a dynamic quorum cannot be achieved, format your controllers using the `--feature kraft.version=1`. (Note that you should not supply this flag when formatting brokers -- only when formatting controllers.)
-    
-    
-      $ bin/kafka-storage.sh format -t KAFKA_CLUSTER_ID --feature kraft.version=1 -c controller.properties
-    
+The static versus dynamic nature of the quorum is determined at the time of formatting. Specifically, the quorum will be formatted as dynamic if `controller.quorum.voters` is **not** present, and one of --standalone, --initial-controllers, or --no-initial-controllers is set. If you have followed the instructions earlier in this document, you will get a dynamic quorum. 
 
 Note: To migrate from static voter set to dynamic voter set, please refer to the Upgrade section. 
 
@@ -221,7 +211,7 @@ The kafka-dump-log.sh tool can be used to debug the log segments and snapshots f
     
     $ bin/kafka-dump-log.sh --cluster-metadata-decoder --files metadata_log_dir/__cluster_metadata-0/00000000000000000000.log
 
-This command decodes and prints the records in the a cluster metadata snapshot:
+This command decodes and prints the records in a cluster metadata snapshot:
     
     
     $ bin/kafka-dump-log.sh --cluster-metadata-decoder --files metadata_log_dir/__cluster_metadata-0/00000000000000000100-0000000001.checkpoint
@@ -254,7 +244,7 @@ Note: `00000000000000000000-0000000000.checkpoint` does not contain cluster meta
 
 ## Deploying Considerations
 
-  * Kafka server's `process.role` should be set to either `broker` or `controller` but not both. Combined mode can be used in development environments, but it should be avoided in critical deployment environments.
+  * Kafka server's `process.roles` should be set to either `broker` or `controller` but not both. Combined mode can be used in development environments, but it should be avoided in critical deployment environments.
   * For redundancy, a Kafka cluster should use 3 or more controllers, depending on factors like cost and the number of concurrent failures your system should withstand without availability impact. For the KRaft controller cluster to withstand `N` concurrent failures the controller cluster must include `2N + 1` controllers.
   * The Kafka controllers store all the metadata for the cluster in memory and on disk. We believe that for a typical Kafka cluster 5GB of main memory and 5GB of disk space on the metadata log director is sufficient.
 
