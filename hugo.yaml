@@ -1,4 +1,4 @@
-baseURL: https://example.kafka-site-md.dev
+baseURL: https://kafka.staged.apache.org/
 title: Apache Kafka
 
 # cSpell:ignore goldmark github hugo readingtime docsy subdir lastmod pygments linenos catmullrom norsk gu
