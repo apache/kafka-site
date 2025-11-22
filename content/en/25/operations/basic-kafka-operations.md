@@ -157,32 +157,32 @@ To view offsets, as mentioned earlier, we "describe" the consumer group like thi
 There are a number of additional "describe" options that can be used to provide more detailed information about a consumer group: 
 
   * \--members: This option provides the list of all active members in the consumer group. 
-    
-              > bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-group --members
-    
-          CONSUMER-ID                                    HOST            CLIENT-ID       #PARTITIONS
-          consumer1-3fc8d6f1-581a-4472-bdf3-3515b4aee8c1 /127.0.0.1      consumer1       2
-          consumer4-117fe4d3-c6c1-4178-8ee9-eb4a3954bee0 /127.0.0.1      consumer4       1
-          consumer2-e76ea8c3-5d30-4299-9005-47eb41f3d3c4 /127.0.0.1      consumer2       3
-          consumer3-ecea43e4-1f01-479f-8349-f9130b75d8ee /127.0.0.1      consumer3       0
+        
+        > bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-group --members
+        
+              CONSUMER-ID                                    HOST            CLIENT-ID       #PARTITIONS
+              consumer1-3fc8d6f1-581a-4472-bdf3-3515b4aee8c1 /127.0.0.1      consumer1       2
+              consumer4-117fe4d3-c6c1-4178-8ee9-eb4a3954bee0 /127.0.0.1      consumer4       1
+              consumer2-e76ea8c3-5d30-4299-9005-47eb41f3d3c4 /127.0.0.1      consumer2       3
+              consumer3-ecea43e4-1f01-479f-8349-f9130b75d8ee /127.0.0.1      consumer3       0
 
   * \--members --verbose: On top of the information reported by the "--members" options above, this option also provides the partitions assigned to each member. 
-    
-              > bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-group --members --verbose
-    
-          CONSUMER-ID                                    HOST            CLIENT-ID       #PARTITIONS     ASSIGNMENT
-          consumer1-3fc8d6f1-581a-4472-bdf3-3515b4aee8c1 /127.0.0.1      consumer1       2               topic1(0), topic2(0)
-          consumer4-117fe4d3-c6c1-4178-8ee9-eb4a3954bee0 /127.0.0.1      consumer4       1               topic3(2)
-          consumer2-e76ea8c3-5d30-4299-9005-47eb41f3d3c4 /127.0.0.1      consumer2       3               topic2(1), topic3(0,1)
-          consumer3-ecea43e4-1f01-479f-8349-f9130b75d8ee /127.0.0.1      consumer3       0               -
+        
+        > bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-group --members --verbose
+        
+              CONSUMER-ID                                    HOST            CLIENT-ID       #PARTITIONS     ASSIGNMENT
+              consumer1-3fc8d6f1-581a-4472-bdf3-3515b4aee8c1 /127.0.0.1      consumer1       2               topic1(0), topic2(0)
+              consumer4-117fe4d3-c6c1-4178-8ee9-eb4a3954bee0 /127.0.0.1      consumer4       1               topic3(2)
+              consumer2-e76ea8c3-5d30-4299-9005-47eb41f3d3c4 /127.0.0.1      consumer2       3               topic2(1), topic3(0,1)
+              consumer3-ecea43e4-1f01-479f-8349-f9130b75d8ee /127.0.0.1      consumer3       0               -
 
   * \--offsets: This is the default describe option and provides the same output as the "--describe" option.
   * \--state: This option provides useful group-level information. 
-    
-              > bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-group --state
-    
-          COORDINATOR (ID)          ASSIGNMENT-STRATEGY       STATE                #MEMBERS
-          localhost:9092 (0)        range                     Stable               4
+        
+        > bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-group --state
+        
+              COORDINATOR (ID)          ASSIGNMENT-STRATEGY       STATE                #MEMBERS
+              localhost:9092 (0)        range                     Stable               4
 
 
 To manually delete one or multiple consumer groups, the "--delete" option can be used: 

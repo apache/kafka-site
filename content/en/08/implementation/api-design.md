@@ -36,11 +36,11 @@ The goal is to expose all the producer functionality through a single API to the
 `kafka.producer.Producer` provides the ability to batch multiple produce requests (`producer.type=async`), before serializing and dispatching them to the appropriate kafka broker partition. The size of the batch can be controlled by a few config parameters. As events enter a queue, they are buffered in a queue, until either `queue.time` or `batch.size` is reached. A background thread (`kafka.producer.async.ProducerSendThread`) dequeues the batch of data and lets the `kafka.producer.DefaultEventHandler` serialize and send the data to the appropriate kafka broker partition. 
 
   * handles the serialization of data through a user-specified `Encoder` \- 
-    
+        
         interface Encoder<T> {
-      public Message toMessage(T data);
-    }
-    
+          public Message toMessage(T data);
+        }
+        
 
 The default is the no-op `kafka.serializer.DefaultEncoder`
 
@@ -51,11 +51,11 @@ The zookeeper based broker discovery and load balancing can be used by specifyin
   * provides software load balancing through an optionally user-specified `Partitioner` \- 
 
 The routing decision is influenced by the `kafka.producer.Partitioner`. 
-    
+        
         interface Partitioner<T> {
-       int partition(T key, int numPartitions);
-    }
-    
+           int partition(T key, int numPartitions);
+        }
+        
 
 The partition API uses the key and the number of available broker partitions to return a partition id. This id is used as an index into a sorted list of broker_ids and partitions to pick a broker partition for the producer request. The default partitioning strategy is `hash(key)%numPartitions`. If the key is null, then a random broker partition is picked. A custom partitioning strategy can also be plugged in using the `partitioner.class` config parameter. 
 

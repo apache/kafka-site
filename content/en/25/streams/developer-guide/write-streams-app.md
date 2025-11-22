@@ -127,20 +127,20 @@ To allow your application to gracefully shutdown in response to SIGTERM, it is r
 
   * Here is a shutdown hook example in Java 8+:
 
-> >     // Add shutdown hook to stop the Kafka Streams threads.
->     // You can optionally provide a timeout to `close`.
->     Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
+> // Add shutdown hook to stop the Kafka Streams threads.
+>         // You can optionally provide a timeout to `close`.
+>         Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
 
   * Here is a shutdown hook example in Java 7:
 
-> >     // Add shutdown hook to stop the Kafka Streams threads.
->     // You can optionally provide a timeout to `close`.
->     Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
->       @Override
->       public void run() {
->           streams.close();
->       }
->     }));
+> // Add shutdown hook to stop the Kafka Streams threads.
+>         // You can optionally provide a timeout to `close`.
+>         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+>           @Override
+>           public void run() {
+>               streams.close();
+>           }
+>         }));
 
 
 

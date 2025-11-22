@@ -59,10 +59,10 @@ Here are example settings for both parameters based on desired scenarios.
 
   * To turn off caching the cache size can be set to zero:
 
-> >     // Disable record cache
->     Properties props = new Properties();
->     props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 0);
->     
+> // Disable record cache
+>         Properties props = new Properties();
+>         props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 0);
+>         
 > 
 > Turning off caching might result in high write traffic for the underlying RocksDB store. With default settings caching is enabled within Kafka Streams but RocksDB caching is disabled. Thus, to avoid high write traffic it is recommended to enable RocksDB caching if Kafka Streams caching is turned off.
 > 
@@ -70,12 +70,12 @@ Here are example settings for both parameters based on desired scenarios.
 
   * To enable caching but still have an upper bound on how long records will be cached, you can set the commit interval. In this example, it is set to 1000 milliseconds:
 
-> >     Properties props = new Properties();
->     // Enable record cache of size 10 MB.
->     props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 10 * 1024 * 1024L);
->     // Set commit interval to 1 second.
->     props.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, 1000);
->     
+> Properties props = new Properties();
+>         // Enable record cache of size 10 MB.
+>         props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 10 * 1024 * 1024L);
+>         // Set commit interval to 1 second.
+>         props.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, 1000);
+>         
 
 
 

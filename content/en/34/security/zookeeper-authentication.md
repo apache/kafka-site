@@ -74,15 +74,15 @@ Here is a sample (partial) Kafka Broker configuration for connecting to ZooKeepe
 If you are running a version of Kafka that does not support security or simply with security disabled, and you want to make the cluster secure, then you need to execute the following steps to enable ZooKeeper authentication with minimal disruption to your operations: 
 
   1. Enable SASL and/or mTLS authentication on ZooKeeper. If enabling mTLS, you would now have both a non-TLS port and a TLS port, like this: 
-    
-        clientPort=2181
-    secureClientPort=2182
-    serverCnxnFactory=org.apache.zookeeper.server.NettyServerCnxnFactory
-    authProvider.x509=org.apache.zookeeper.server.auth.X509AuthenticationProvider
-    ssl.keyStore.location=/path/to/zk/keystore.jks
-    ssl.keyStore.password=zk-ks-passwd
-    ssl.trustStore.location=/path/to/zk/truststore.jks
-    ssl.trustStore.password=zk-ts-passwd
+         
+         clientPort=2181
+         secureClientPort=2182
+         serverCnxnFactory=org.apache.zookeeper.server.NettyServerCnxnFactory
+         authProvider.x509=org.apache.zookeeper.server.auth.X509AuthenticationProvider
+         ssl.keyStore.location=/path/to/zk/keystore.jks
+         ssl.keyStore.password=zk-ks-passwd
+         ssl.trustStore.location=/path/to/zk/truststore.jks
+         ssl.trustStore.password=zk-ts-passwd
 
   2. Perform a rolling restart of brokers setting the JAAS login file and/or defining ZooKeeper mutual TLS configurations (including connecting to the TLS-enabled ZooKeeper port) as required, which enables brokers to authenticate to ZooKeeper. At the end of the rolling restart, brokers are able to manipulate znodes with strict ACLs, but they will not create znodes with those ACLs
   3. If you enabled mTLS, disable the non-TLS port in ZooKeeper

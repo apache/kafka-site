@@ -13,16 +13,16 @@ Kafka and Kafka Streams configuration options must be configured before using St
   1. Create a `java.util.Properties` instance.
 
   2. Set the parameters. For example:
-    
-        import java.util.Properties;
-    import org.apache.kafka.streams.StreamsConfig;
-    
-    Properties settings = new Properties();
-    // Set a few key parameters
-    settings.put(StreamsConfig.APPLICATION_ID_CONFIG, "my-first-streams-application");
-    settings.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka-broker1:9092");
-    // Any further settings
-    settings.put(... , ...);
+         
+         import java.util.Properties;
+         import org.apache.kafka.streams.StreamsConfig;
+         
+         Properties settings = new Properties();
+         // Set a few key parameters
+         settings.put(StreamsConfig.APPLICATION_ID_CONFIG, "my-first-streams-application");
+         settings.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka-broker1:9092");
+         // Any further settings
+         settings.put(... , ...);
 
 
 

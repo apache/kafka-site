@@ -2033,17 +2033,17 @@ If you must use an earlier version, you may add an explicit dependency on the pr
 
 `2.0.0`
     
-    
+        
         libraryDependencies += "javax.ws.rs" % "javax.ws.rs-api" % "2.1" artifacts(Artifact("javax.ws.rs-api", "jar", "jar"))
 
 `2.0.1`
     
-    
+        
         libraryDependencies += "javax.ws.rs" % "javax.ws.rs-api" % "2.1" artifacts(Artifact("javax.ws.rs-api", "jar", "jar"))
 
 `2.1.0`
     
-    
+        
         libraryDependencies += "javax.ws.rs" % "javax.ws.rs-api" % "2.1.1" artifacts(Artifact("javax.ws.rs-api", "jar", "jar"))
 
 

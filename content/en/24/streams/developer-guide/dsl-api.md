@@ -1460,7 +1460,7 @@ Transformation | Description
 Detailed behavior:
 
   * The join is _key-based_ , i.e. with the join predicate: 
-    
+        
         foreignKeyExtractor.apply(leftRecord.value) == rightRecord.key
 
   * The join will be triggered under the conditions listed below whenever new input is received. When it is triggered, the user-supplied `ValueJoiner` will be called to produce join output records.
@@ -1492,7 +1492,7 @@ See the semantics overview at the bottom of this section for a detailed descript
 Detailed behavior:
 
   * The join is _key-based_ , i.e. with the join predicate: 
-    
+        
         foreignKeyExtractor.apply(leftRecord.value) == rightRecord.key
 
   * The join will be triggered under the conditions listed below whenever new input is received. When it is triggered, the user-supplied `ValueJoiner` will be called to produce join output records.

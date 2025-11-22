@@ -57,18 +57,18 @@ The semantics of caching is that data is flushed to the state store and forwarde
 Here are example settings for both parameters based on desired scenarios.
 
   * To turn off caching the cache size can be set to zero:
-    
+        
         // Disable record cache
-    Properties props = new Properties();
-    props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 0);
+        Properties props = new Properties();
+        props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 0);
 
   * To enable caching but still have an upper bound on how long records will be cached, you can set the commit interval. In this example, it is set to 1000 milliseconds:
-    
+        
         Properties props = new Properties();
-    // Enable record cache of size 10 MB.
-    props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 10 * 1024 * 1024L);
-    // Set commit interval to 1 second.
-    props.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, 1000);
+        // Enable record cache of size 10 MB.
+        props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 10 * 1024 * 1024L);
+        // Set commit interval to 1 second.
+        props.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, 1000);
 
 
 

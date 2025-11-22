@@ -285,44 +285,44 @@ The following are the currently supported REST API endpoints:
     * `DELETE /connectors/{name}/offsets` \- reset the offsets for a connector. The connector must exist and must be in the stopped state (see `PUT /connectors/{name}/stop`)
     * `PATCH /connectors/{name}/offsets` \- alter the offsets for a connector. The connector must exist and must be in the stopped state (see `PUT /connectors/{name}/stop`). The request body should be a JSON object containing a JSON array `offsets` field, similar to the response body of the `GET /connectors/{name}/offsets` endpoint
 An example request body for the `FileStreamSourceConnector`: 
-        
-                {
-          "offsets": [
-            {
-              "partition": {
-                "filename": "test.txt"
-              },
-              "offset": {
-                "position": 30
-              }
-            }
-          ]
+    
+    {
+      "offsets": [
+        {
+          "partition": {
+            "filename": "test.txt"
+          },
+          "offset": {
+            "position": 30
+          }
         }
-                        
+      ]
+    }
+                    
 
 An example request body for the `FileStreamSinkConnector`: 
-        
-                {
-          "offsets": [
-            {
-              "partition": {
-                "kafka_topic": "test",
-                "kafka_partition": 0
-              },
-              "offset": {
-                "kafka_offset": 5
-              }
-            },
-            {
-              "partition": {
-                "kafka_topic": "test",
-                "kafka_partition": 1
-              },
-              "offset": null
-            }
-          ]
+    
+    {
+      "offsets": [
+        {
+          "partition": {
+            "kafka_topic": "test",
+            "kafka_partition": 0
+          },
+          "offset": {
+            "kafka_offset": 5
+          }
+        },
+        {
+          "partition": {
+            "kafka_topic": "test",
+            "kafka_partition": 1
+          },
+          "offset": null
         }
-                        
+      ]
+    }
+                    
 
 The "offset" field may be null to reset the offset for a specific partition (applicable to both source and sink connectors). Note that the request body format depends on the connector implementation in the case of source connectors, whereas there is a common format across all sink connectors. 
 
