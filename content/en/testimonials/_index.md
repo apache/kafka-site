@@ -1,6 +1,5 @@
 ---
 title: Powered By
-menu: {main: {weight: 35}}
 ---
 
 
