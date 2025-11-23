@@ -125,21 +125,21 @@ To stop the application instance, call the `KafkaStreams#close()` method:
 To allow your application to gracefully shutdown in response to SIGTERM, it is recommended that you add a shutdown hook and call `KafkaStreams#close`.
 
   * Here is a shutdown hook example in Java 8+:
-    
+        
         // Add shutdown hook to stop the Kafka Streams threads.
-    // You can optionally provide a timeout to `close`.
-    Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
+        // You can optionally provide a timeout to `close`.
+        Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
 
   * Here is a shutdown hook example in Java 7:
-    
+        
         // Add shutdown hook to stop the Kafka Streams threads.
-    // You can optionally provide a timeout to `close`.
-    Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-      @Override
-      public void run() {
-          streams.close();
-      }
-    }));
+        // You can optionally provide a timeout to `close`.
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+          @Override
+          public void run() {
+              streams.close();
+          }
+        }));
 
 
 

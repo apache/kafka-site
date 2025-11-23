@@ -58,9 +58,9 @@ Here are example settings for both parameters based on desired scenarios.
 
   * To turn off caching the cache size can be set to zero:
 
-> >     // Disable record cache
->     Properties props = new Properties();
->     props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 0);
+> // Disable record cache
+>         Properties props = new Properties();
+>         props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 0);
 > 
 > Turning off caching might result in high write traffic for the underlying RocksDB store. With default settings caching is enabled within Kafka Streams but RocksDB caching is disabled. Thus, to avoid high write traffic it is recommended to enable RocksDB caching if Kafka Streams caching is turned off.
 > 
@@ -68,11 +68,11 @@ Here are example settings for both parameters based on desired scenarios.
 
   * To enable caching but still have an upper bound on how long records will be cached, you can set the commit interval. In this example, it is set to 1000 milliseconds:
 
-> >     Properties props = new Properties();
->     // Enable record cache of size 10 MB.
->     props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 10 * 1024 * 1024L);
->     // Set commit interval to 1 second.
->     props.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, 1000);
+> Properties props = new Properties();
+>         // Enable record cache of size 10 MB.
+>         props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 10 * 1024 * 1024L);
+>         // Set commit interval to 1 second.
+>         props.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, 1000);
 
 
 
@@ -189,20 +189,20 @@ As of 2.3.0 the memory usage across all instances can be bounded, limiting the t
     
     
             
-      * Producer buffering, managed by the producer config buffer.memory.
+        * Producer buffering, managed by the producer config buffer.memory.
     
             
-      * Consumer buffering, currently not strictly managed, but can be indirectly controlled by fetch size, i.e.,
-              fetch.max.bytes and fetch.max.wait.ms.
+        * Consumer buffering, currently not strictly managed, but can be indirectly controlled by fetch size, i.e.,
+                  fetch.max.bytes and fetch.max.wait.ms.
     
             
-      * Both producer and consumer also have separate TCP send / receive buffers that are not counted as the buffering memory.
-              These are controlled by the send.buffer.bytes / receive.buffer.bytes configs.
+        * Both producer and consumer also have separate TCP send / receive buffers that are not counted as the buffering memory.
+                  These are controlled by the send.buffer.bytes / receive.buffer.bytes configs.
     
             
-      * Deserialized objects buffering: after consumer.poll() returns records, they will be deserialized to extract
-              timestamp and buffered in the streams space. Currently this is only indirectly controlled by
-              buffered.records.per.partition.
+        * Deserialized objects buffering: after consumer.poll() returns records, they will be deserialized to extract
+                  timestamp and buffered in the streams space. Currently this is only indirectly controlled by
+                  buffered.records.per.partition.
     
           
     
@@ -262,13 +262,13 @@ As of 2.3.0 the memory usage across all instances can be bounded, limiting the t
     
     
           
-      * [Documentation](/documentation)
+        * [Documentation](/documentation)
     
           
-      * [Kafka Streams](/streams)
+        * [Kafka Streams](/streams)
     
           
-      * [Developer Guide](/streams/developer-guide/)
+        * [Developer Guide](/streams/developer-guide/)
     
         
     

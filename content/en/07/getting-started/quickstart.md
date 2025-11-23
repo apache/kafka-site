@@ -76,130 +76,130 @@ Below is some very simple examples of using Kafka for sending messages, more com
 Here are examples of using the producer API - `kafka.producer.Producer<T>` \- 
 
   1. First, start a local instance of the zookeeper server 
-    
-        ./bin/zookeeper-server-start.sh config/zookeeper.properties
+         
+         ./bin/zookeeper-server-start.sh config/zookeeper.properties
 
   2. Next, start a kafka broker 
-    
-        ./bin/kafka-server-start.sh config/server.properties
+         
+         ./bin/kafka-server-start.sh config/server.properties
 
   3. Now, create the producer with all configuration defaults and use zookeeper based broker discovery. 
-    
-        import java.util.Arrays;
-    import java.util.List;
-    import java.util.Properties;
-    import kafka.javaapi.producer.SyncProducer;
-    import kafka.javaapi.message.ByteBufferMessageSet;
-    import kafka.message.Message;
-    import kafka.producer.SyncProducerConfig;
-    
-    ...
-    
-    Properties props = new Properties();
-    props.put(“zk.connect”, “127.0.0.1:2181”);
-    props.put("serializer.class", "kafka.serializer.StringEncoder");
-    ProducerConfig config = new ProducerConfig(props);
-    Producer<String, String> producer = new Producer<String, String>(config);
-    
+         
+         import java.util.Arrays;
+         import java.util.List;
+         import java.util.Properties;
+         import kafka.javaapi.producer.SyncProducer;
+         import kafka.javaapi.message.ByteBufferMessageSet;
+         import kafka.message.Message;
+         import kafka.producer.SyncProducerConfig;
+         
+         ...
+         
+         Properties props = new Properties();
+         props.put(“zk.connect”, “127.0.0.1:2181”);
+         props.put("serializer.class", "kafka.serializer.StringEncoder");
+         ProducerConfig config = new ProducerConfig(props);
+         Producer<String, String> producer = new Producer<String, String>(config);
+         
 
   4. Send a single message 
-    
-        // The message is sent to a randomly selected partition registered in ZK
-    ProducerData<String, String> data = new ProducerData<String, String>("test-topic", "test-message");
-    producer.send(data);
-    
+         
+         // The message is sent to a randomly selected partition registered in ZK
+         ProducerData<String, String> data = new ProducerData<String, String>("test-topic", "test-message");
+         producer.send(data);
+         
 
   5. Send multiple messages to multiple topics in one request 
-    
-        List<String> messages = new java.util.ArrayList<String>();
-    messages.add("test-message1");
-    messages.add("test-message2");
-    ProducerData<String, String> data1 = new ProducerData<String, String>("test-topic1", messages);
-    ProducerData<String, String> data2 = new ProducerData<String, String>("test-topic2", messages);
-    List<ProducerData<String, String>> dataForMultipleTopics = new ArrayList<ProducerData<String, String>>();
-    dataForMultipleTopics.add(data1);
-    dataForMultipleTopics.add(data2);
-    producer.send(dataForMultipleTopics);
-    
+         
+         List<String> messages = new java.util.ArrayList<String>();
+         messages.add("test-message1");
+         messages.add("test-message2");
+         ProducerData<String, String> data1 = new ProducerData<String, String>("test-topic1", messages);
+         ProducerData<String, String> data2 = new ProducerData<String, String>("test-topic2", messages);
+         List<ProducerData<String, String>> dataForMultipleTopics = new ArrayList<ProducerData<String, String>>();
+         dataForMultipleTopics.add(data1);
+         dataForMultipleTopics.add(data2);
+         producer.send(dataForMultipleTopics);
+         
 
   6. Send a message with a partition key. Messages with the same key are sent to the same partition 
-    
-        ProducerData<String, String> data = new ProducerData<String, String>("test-topic", "test-key", "test-message");
-    producer.send(data);
-    
+         
+         ProducerData<String, String> data = new ProducerData<String, String>("test-topic", "test-key", "test-message");
+         producer.send(data);
+         
 
   7. Use your custom partitioner 
 
 If you are using zookeeper based broker discovery, `kafka.producer.Producer<T>` routes your data to a particular broker partition based on a `kafka.producer.Partitioner<T>`, specified through the `partitioner.class` config parameter. It defaults to `kafka.producer.DefaultPartitioner`. If you don't supply a partition key, then it sends each request to a random broker partition.
-    
-        class MemberIdPartitioner extends Partitioner[MemberIdLocation] {
-      def partition(data: MemberIdLocation, numPartitions: Int): Int = {
-        (data.location.hashCode % numPartitions)
-      }
-    }
-    // create the producer config to plug in the above partitioner
-    Properties props = new Properties();
-    props.put(“zk.connect”, “127.0.0.1:2181”);
-    props.put("serializer.class", "kafka.serializer.StringEncoder");
-    props.put("partitioner.class", "xyz.MemberIdPartitioner");
-    ProducerConfig config = new ProducerConfig(props);
-    Producer<String, String> producer = new Producer<String, String>(config);
-    
+         
+         class MemberIdPartitioner extends Partitioner[MemberIdLocation] {
+           def partition(data: MemberIdLocation, numPartitions: Int): Int = {
+             (data.location.hashCode % numPartitions)
+           }
+         }
+         // create the producer config to plug in the above partitioner
+         Properties props = new Properties();
+         props.put(“zk.connect”, “127.0.0.1:2181”);
+         props.put("serializer.class", "kafka.serializer.StringEncoder");
+         props.put("partitioner.class", "xyz.MemberIdPartitioner");
+         ProducerConfig config = new ProducerConfig(props);
+         Producer<String, String> producer = new Producer<String, String>(config);
+         
 
   8. Use custom Encoder 
 
 The producer takes in a required config parameter `serializer.class` that specifies an `Encoder<T>` to convert T to a Kafka Message. Default is the no-op kafka.serializer.DefaultEncoder. Here is an example of a custom Encoder -
-    
-        class TrackingDataSerializer extends Encoder<TrackingData> {
-      // Say you want to use your own custom Avro encoding
-      CustomAvroEncoder avroEncoder = new CustomAvroEncoder();
-      def toMessage(event: TrackingData):Message = {
-    	new Message(avroEncoder.getBytes(event));
-      }
-    }
-    
+         
+         class TrackingDataSerializer extends Encoder<TrackingData> {
+           // Say you want to use your own custom Avro encoding
+           CustomAvroEncoder avroEncoder = new CustomAvroEncoder();
+           def toMessage(event: TrackingData):Message = {
+         	new Message(avroEncoder.getBytes(event));
+           }
+         }
+         
 
 If you want to use the above Encoder, pass it in to the "serializer.class" config parameter 
-    
-        Properties props = new Properties();
-    props.put("serializer.class", "xyz.TrackingDataSerializer");
-    
+         
+         Properties props = new Properties();
+         props.put("serializer.class", "xyz.TrackingDataSerializer");
+         
 
   9. Using static list of brokers, instead of zookeeper based broker discovery 
 
 Some applications would rather not depend on zookeeper. In that case, the config parameter `broker.list` can be used to specify the list of all brokers in the Kafka cluster.- the list of all brokers in your Kafka cluster in the following format - `broker_id1:host1:port1, broker_id2:host2:port2...`
-    
-        // you can stop the zookeeper instance as it is no longer required
-    ./bin/zookeeper-server-stop.sh
-    // create the producer config object 
-    Properties props = new Properties();
-    props.put(“broker.list”, “0:localhost:9092”);
-    props.put("serializer.class", "kafka.serializer.StringEncoder");
-    ProducerConfig config = new ProducerConfig(props);
-    // send a message using default partitioner 
-    Producer<String, String> producer = new Producer<String, String>(config);
-    List<String> messages = new java.util.ArrayList<String>();
-    messages.add("test-message");
-    ProducerData<String, String> data = new ProducerData<String, String>("test-topic", messages);
-    producer.send(data);
-    
+         
+         // you can stop the zookeeper instance as it is no longer required
+         ./bin/zookeeper-server-stop.sh
+         // create the producer config object 
+         Properties props = new Properties();
+         props.put(“broker.list”, “0:localhost:9092”);
+         props.put("serializer.class", "kafka.serializer.StringEncoder");
+         ProducerConfig config = new ProducerConfig(props);
+         // send a message using default partitioner 
+         Producer<String, String> producer = new Producer<String, String>(config);
+         List<String> messages = new java.util.ArrayList<String>();
+         messages.add("test-message");
+         ProducerData<String, String> data = new ProducerData<String, String>("test-topic", messages);
+         producer.send(data);
+         
 
   10. Use the asynchronous producer along with GZIP compression. This buffers writes in memory until either `batch.size` or `queue.time` is reached. After that, data is sent to the Kafka brokers 
-    
-        Properties props = new Properties();
-    props.put("zk.connect"‚ "127.0.0.1:2181");
-    props.put("serializer.class", "kafka.serializer.StringEncoder");
-    props.put("producer.type", "async");
-    props.put("compression.codec", "1");
-    ProducerConfig config = new ProducerConfig(props);
-    Producer<String, String> producer = new Producer<String, String>(config);
-    ProducerData<String, String> data = new ProducerData<String, String>("test-topic", "test-message");
-    producer.send(data);
-    
+         
+         Properties props = new Properties();
+         props.put("zk.connect"‚ "127.0.0.1:2181");
+         props.put("serializer.class", "kafka.serializer.StringEncoder");
+         props.put("producer.type", "async");
+         props.put("compression.codec", "1");
+         ProducerConfig config = new ProducerConfig(props);
+         Producer<String, String> producer = new Producer<String, String>(config);
+         ProducerData<String, String> data = new ProducerData<String, String>("test-topic", "test-message");
+         producer.send(data);
+         
 
   11. Finally, the producer should be closed, through 
-    
-        producer.close();
+         
+         producer.close();
 
 
 

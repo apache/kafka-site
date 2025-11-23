@@ -22,7 +22,7 @@ You can provide SerDes by using either of these methods:
 
 SerDes specified in the Streams configuration via `StreamsConfig` are used as the default in your Kafka Streams application.
     
-        import org.apache.kafka.common.serialization.Serdes;
+    import org.apache.kafka.common.serialization.Serdes;
     import org.apache.kafka.streams.StreamsConfig;
     
     Properties settings = new Properties();
@@ -38,7 +38,7 @@ SerDes specified in the Streams configuration via `StreamsConfig` are used as th
 
 You can also specify SerDes explicitly by passing them to the appropriate API methods, which overrides the default serde settings:
     
-        import org.apache.kafka.common.serialization.Serde;
+    import org.apache.kafka.common.serialization.Serde;
     import org.apache.kafka.common.serialization.Serdes;
     
     final Serde<String> stringSerde = Serdes.String();
@@ -52,7 +52,7 @@ You can also specify SerDes explicitly by passing them to the appropriate API me
 
 If you want to override serdes selectively, i.e., keep the defaults for some fields, then don't specify the serde whenever you want to leverage the default settings:
     
-        import org.apache.kafka.common.serialization.Serde;
+    import org.apache.kafka.common.serialization.Serde;
     import org.apache.kafka.common.serialization.Serdes;
     
     // Use the default serializer for record keys (here: region as String) by not specifying the key serde,
@@ -68,7 +68,7 @@ If you want to override serdes selectively, i.e., keep the defaults for some fie
 
 Apache Kafka includes several built-in serde implementations for Java primitives and basic types such as `byte[]` in its `kafka-clients` Maven artifact:
     
-        <dependency>
+    <dependency>
         <groupId>org.apache.kafka</groupId>
         <artifactId>kafka-clients</artifactId>
         <version>1.0.2</version>
