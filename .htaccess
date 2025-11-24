@@ -1,1 +1,1 @@
-Header set Content-Security-Policy "style-src 'self' 'unsafe-inline' fonts.googleapis.com; script-src 'self' unpkg.com code.jquery.com"
+Header set Content-Security-Policy "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' https://unpkg.com https://code.jquery.com"
