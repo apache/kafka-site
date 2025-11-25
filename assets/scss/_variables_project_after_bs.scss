@@ -211,3 +211,64 @@ button.navbar-toggler {
   top: 9px;
   transform: rotate(-135deg);
 }
+
+// Remove bottom border from navbar
+.td-navbar {
+  border-bottom: none !important;
+}
+
+// Remove gap on home page
+.td-home {
+  header {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .td-navbar {
+    margin-bottom: 0 !important;
+    min-height: auto !important;
+    height: auto !important;
+
+    // Ensure the navbar container doesn't have extra height
+    .container-fluid {
+      min-height: auto !important;
+      height: auto !important;
+    }
+  }
+
+  .td-outer {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .td-main {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+
+    main {
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+
+      >*:first-child {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  }
+}
+
+// Ensure navbar collapse doesn't take up space when hidden
+@media (max-width: 991px) {
+  .navbar-collapse:not(.show) {
+    display: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    min-height: 0 !important;
+  }
+
+  // Reset navbar height on mobile to avoid fixed height issues
+  .td-navbar {
+    height: auto !important;
+    min-height: auto !important;
+  }
+}
