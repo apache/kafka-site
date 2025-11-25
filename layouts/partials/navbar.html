@@ -54,7 +54,7 @@
 
         <!-- Releases menu -->
         {{ if .Site.Params.versions }}
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown d-none d-lg-block">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">{{ .Site.Params.version_menu | default "Releases" }}</a>
           <ul class="dropdown-menu">
@@ -231,16 +231,22 @@
       toggle.addEventListener('click', function (e) {
         if (window.innerWidth < 992) {
           e.preventDefault();
+          e.stopPropagation(); // Stop propagation to prevent immediate closing
           const parentLi = this.parentElement;
-          const dropdownMenu = parentLi.querySelector('.dropdown-menu');
 
-          document.querySelectorAll('.navbar-nav .dropdown-menu.show').forEach(function (menu) {
-            if (menu !== dropdownMenu) {
-              menu.classList.remove('show');
+          // Close other open dropdowns
+          document.querySelectorAll('.navbar-nav .dropdown.show').forEach(function (li) {
+            if (li !== parentLi) {
+              li.classList.remove('show');
+              const menu = li.querySelector('.dropdown-menu');
+              if (menu) menu.classList.remove('show');
             }
           });
 
-          dropdownMenu.classList.toggle('show');
+          // Toggle current dropdown
+          parentLi.classList.toggle('show');
+          const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+          if (dropdownMenu) dropdownMenu.classList.toggle('show');
         }
       });
     });
