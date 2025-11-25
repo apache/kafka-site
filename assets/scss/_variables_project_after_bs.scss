@@ -7,8 +7,8 @@ $custom-colors: (
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
 .navbar-nav {
-  --bs-nav-link-color: rgb(0,0,0);
-  --bs-nav-link-hover-color: #427583; 
+  --bs-nav-link-color: rgb(0, 0, 0);
+  --bs-nav-link-hover-color: #427583;
   --bs-nav-link-disabled-color: rgba(105, 102, 102, 0.943);
   --bs-nav-link-active-color: rgb(49, 12, 236);
   --bs-navbar-active-color: rgb(49, 12, 236);
@@ -17,7 +17,8 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 // Make the releases dropdown scrollable
 ul.dropdown-menu {
-  max-height: 600px; /* Adjust this value as needed */
+  max-height: 600px;
+  /* Adjust this value as needed */
   overflow-y: scroll;
 }
 
@@ -35,29 +36,38 @@ ul.dropdown-menu {
 
 /* Pager button explicit neutral styling to avoid theme primary/orange overrides */
 .pager-btn {
-  border: 3px solid #dee2e6 !important; /* gray-300 */
-  color: #343a40 !important;            /* text-dark */
-  background-color: #ffffff !important; /* white background */
-  box-shadow: 0 .25rem .5rem rgba(0,0,0,.05) !important; /* subtle */
+  border: 3px solid #dee2e6 !important;
+  /* gray-300 */
+  color: #343a40 !important;
+  /* text-dark */
+  background-color: #ffffff !important;
+  /* white background */
+  box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .05) !important;
+  /* subtle */
 }
+
 .pager-btn:hover {
-  background-color: #f8f9fa !important; /* gray-100 */
-  border-color: #ced4da !important;      /* gray-400 */
+  background-color: #f8f9fa !important;
+  /* gray-100 */
+  border-color: #ced4da !important;
+  /* gray-400 */
   text-decoration: none !important;
 }
+
 .pager-btn:focus {
   outline: 0 !important;
-  box-shadow: 0 0 0 .2rem rgba(206,212,218,.5) !important; /* gray focus ring */
+  box-shadow: 0 0 0 .2rem rgba(206, 212, 218, .5) !important;
+  /* gray focus ring */
 }
 
 .carousel-item {
   min-height: 400px;
-  
+
   .youtube-video {
     max-width: 800px;
     margin: 0 auto;
   }
-  
+
   h4 {
     color: var(--td-body-text-color);
   }
@@ -67,7 +77,7 @@ ul.dropdown-menu {
 .carousel-control-next {
   width: 5%;
   opacity: 0.8;
-  
+
   &:hover {
     opacity: 1;
   }
@@ -81,6 +91,7 @@ ul.dropdown-menu {
   padding: 1.1rem;
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
 }
+
 .carousel-control-prev:hover .carousel-control-prev-icon,
 .carousel-control-next:hover .carousel-control-next-icon {
   background-color: rgba(0, 0, 0, 0.85);
@@ -97,7 +108,8 @@ ul.dropdown-menu {
 /* Match submenu font size to main menu */
 .td-navbar .dropdown-menu .dropdown-item,
 .navbar-nav .dropdown-menu .dropdown-item {
-  font-size: 0.875rem !important;  /* Match main menu size */
+  font-size: 0.875rem !important;
+  /* Match main menu size */
 }
 
 /* Keep gradient button text uppercase */
@@ -107,8 +119,9 @@ ul.dropdown-menu {
 
 /* Make dropdowns show on hover on desktop, allowing top-level links to be clickable */
 @media (min-width: 992px) {
-  .td-navbar .dropdown:hover > .dropdown-menu,
-  .navbar-nav .dropdown:hover > .dropdown-menu {
+
+  .td-navbar .dropdown:hover>.dropdown-menu,
+  .navbar-nav .dropdown:hover>.dropdown-menu {
     display: block;
     margin-top: 0;
   }
@@ -118,5 +131,169 @@ ul.dropdown-menu {
 @media (max-width: 991.98px) {
   .navbar-nav .dropdown-menu.show {
     display: block;
+  }
+}
+
+// Mobile navbar toggler (hamburger menu) - Custom animated icon
+.td-navbar .navbar-toggler,
+button.navbar-toggler {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  border: none !important;
+  padding: 0 !important;
+  width: 30px !important;
+  height: 30px !important;
+  position: relative;
+  outline: none !important;
+  box-shadow: none !important;
+  z-index: 1050;
+  /* Ensure it's above the menu */
+  background: transparent !important;
+  min-width: auto !important;
+  min-height: auto !important;
+
+  // Hide on desktop only
+  @media (min-width: 992px) {
+    display: none !important;
+  }
+}
+
+.hamburger-icon {
+  width: 24px;
+  height: 20px;
+  position: relative;
+  margin: 0 auto;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.hamburger-icon span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: var(--bs-navbar-color, rgba(0, 0, 0, 0.55));
+  border-radius: 2px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+/* Initial state (Hamburger) */
+.hamburger-icon span:nth-child(1) {
+  top: 0px;
+}
+
+.hamburger-icon span:nth-child(2) {
+  top: 9px;
+}
+
+.hamburger-icon span:nth-child(3) {
+  top: 18px;
+}
+
+/* Active state (X) - triggered when aria-expanded="true" on the button */
+.navbar-toggler[aria-expanded="true"] .hamburger-icon span:nth-child(1) {
+  top: 9px;
+  transform: rotate(135deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .hamburger-icon span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.navbar-toggler[aria-expanded="true"] .hamburger-icon span:nth-child(3) {
+  top: 9px;
+  transform: rotate(-135deg);
+}
+
+// Remove bottom border from navbar
+.td-navbar {
+  border-bottom: none !important;
+}
+
+// Remove gap on home page
+.td-home {
+  header {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .td-navbar {
+    margin-bottom: 0 !important;
+    min-height: auto !important;
+    height: auto !important;
+
+    // Ensure the navbar container doesn't have extra height
+    .container-fluid {
+      min-height: auto !important;
+      height: auto !important;
+    }
+  }
+
+  .td-outer {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .td-main {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+
+    main {
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+
+      >*:first-child {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  }
+}
+
+// Ensure navbar collapse doesn't take up space when hidden
+@media (max-width: 991px) {
+  .navbar-collapse:not(.show) {
+    display: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    min-height: 0 !important;
+  }
+
+  // Reset navbar height on mobile to avoid fixed height issues
+  .td-navbar {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  // Refine "DOWNLOAD KAFKA" button on mobile
+  .download-btn-item {
+    .nav-link.btn-gradient-download {
+      width: 50% !important;
+      margin-left: 1.5rem !important;
+      margin-top: 1rem !important;
+      margin-bottom: 1.5rem !important;
+      text-align: center !important;
+      justify-content: center !important;
+      display: flex !important;
+    }
+  }
+}
+
+// Table Header Styling
+table {
+  th {
+    text-transform: uppercase;
+    background-color: #6c757d !important; // Lighter gray background (secondary color)
+    color: #ffffff !important; // White text
+    font-weight: 600;
+    border-color: #dee2e6; // Lighter border
+    padding: 0.75rem; // Ensure decent padding
   }
 }

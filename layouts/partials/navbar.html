@@ -1,247 +1,319 @@
 {{ $cover := .HasShortcode "blocks/cover" }}
 <nav class="navbar td-navbar js-navbar-scroll {{ if $cover }} is-dark {{ end }}" data-bs-theme="light">
-<div class="container-fluid">
-  <!-- Mobile toggle button (left side on mobile) -->
-  <button class="navbar-toggler order-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#main_navbar" aria-controls="main_navbar" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  
-  <!-- Brand/Logo (center on mobile, left on desktop) -->
-  <a class="navbar-brand order-1 order-lg-0 mx-auto mx-lg-0" href="{{ .Site.Home.RelPermalink }}">
-    <img src="/logos/kafka_logo--simple.png" alt="Apache Kafka" class="navbar-logo-img" />
-  </a>
-  
-  <!-- Spacer for mobile to balance layout -->
-  <div class="order-2 d-lg-none" style="width: 48px;"></div>
-  
-  <!-- Collapsible menu -->
-  <div class="collapse navbar-collapse order-3 order-lg-1" id="main_navbar">
-    <ul class="navbar-nav ms-auto">
-      {{ $p := . }}
-      {{ $latestVersion := .Site.Params.latest_version }}
-      
-      <!-- Render regular menu items (not DOWNLOAD KAFKA) -->
-      {{ range .Site.Menus.main }}
-      {{ if ne .Name "DOWNLOAD KAFKA" }}
-      {{ $url := replace .URL "{{VERSION}}" (printf "/%s" $latestVersion) }}
-      {{ $url = replace $url "{{PRIVACY}}" $.Site.Params.privacy_policy }}
-      {{ $isExternal := or (hasPrefix $url "http://") (hasPrefix $url "https://") }}
-      <li class="nav-item{{ if .HasChildren }} dropdown{{ end }}{{ if $p.IsMenuCurrent "main" . }} active{{ end }}">
-        {{ if .HasChildren }}
-          <a class="nav-link dropdown-toggle" href="{{ $url }}"{{ if $isExternal }} target="_blank" rel="noopener"{{ end }} aria-haspopup="true" aria-expanded="false">{{ .Name }}</a>
+  <div class="container-fluid">
+    <!-- Mobile toggle button (left side on mobile) -->
+    <button class="navbar-toggler order-0 d-lg-none" type="button" aria-controls="main_navbar" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <div class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+
+    <!-- Brand/Logo (center on mobile, left on desktop) -->
+    <a class="navbar-brand order-1 order-lg-0 mx-auto mx-lg-0" href="{{ .Site.Home.RelPermalink }}">
+      <img src="/logos/kafka_logo--simple.png" alt="Apache Kafka" class="navbar-logo-img" />
+    </a>
+
+    <!-- Spacer for mobile to balance layout -->
+    <div class="order-2 d-lg-none" style="width: 48px;"></div>
+
+    <!-- Collapsible menu -->
+    <div class="collapse navbar-collapse order-3 order-lg-1" id="main_navbar">
+      <ul class="navbar-nav ms-auto">
+        {{ $p := . }}
+        {{ $latestVersion := .Site.Params.latest_version }}
+
+        <!-- Render regular menu items (not DOWNLOAD KAFKA) -->
+        {{ range .Site.Menus.main }}
+        {{ if ne .Name "DOWNLOAD KAFKA" }}
+        {{ $url := replace .URL "{{VERSION}}" (printf "/%s" $latestVersion) }}
+        {{ $url = replace $url "{{PRIVACY}}" $.Site.Params.privacy_policy }}
+        {{ $isExternal := or (hasPrefix $url "http://") (hasPrefix $url "https://") }}
+        <li class="nav-item{{ if .HasChildren }} dropdown{{ end }}{{ if $p.IsMenuCurrent " main" . }} active{{ end }}">
+          {{ if .HasChildren }}
+          <a class="nav-link dropdown-toggle" href="{{ $url }}" {{ if $isExternal }} target="_blank" rel="noopener" {{
+            end }} aria-haspopup="true" aria-expanded="false">{{ .Name }}</a>
           <ul class="dropdown-menu">
             {{ range .Children }}
-              {{ $childUrl := replace .URL "{{VERSION}}" (printf "/%s" $latestVersion) }}
-              {{ $childUrl = replace $childUrl "{{PRIVACY}}" $.Site.Params.privacy_policy }}
-              {{ $childIsExternal := or (hasPrefix $childUrl "http://") (hasPrefix $childUrl "https://") }}
-              <li><a class="dropdown-item" href="{{ $childUrl }}"{{ if $childIsExternal }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a></li>
+            {{ $childUrl := replace .URL "{{VERSION}}" (printf "/%s" $latestVersion) }}
+            {{ $childUrl = replace $childUrl "{{PRIVACY}}" $.Site.Params.privacy_policy }}
+            {{ $childIsExternal := or (hasPrefix $childUrl "http://") (hasPrefix $childUrl "https://") }}
+            <li><a class="dropdown-item" href="{{ $childUrl }}" {{ if $childIsExternal }} target="_blank" rel="noopener"
+                {{ end }}>{{ .Name }}</a></li>
             {{ end }}
           </ul>
-        {{ else }}
-          <a class="nav-link" href="{{ $url }}"{{ if $isExternal }} target="_blank" rel="noopener"{{ end }}><span>{{ .Name }}</span></a>
-        {{ end }}
-      </li>
-      {{ end }}
-      {{ end }}
-      
-      <!-- Releases menu -->
-      {{ if .Site.Params.versions }}
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ .Site.Params.version_menu | default "Releases" }}</a>
-        <ul class="dropdown-menu">
-          {{ $p := . }}
-          {{ range .Site.Params.versions }}
-            <li><a class="dropdown-item{{ if eq .version $p.Site.Params.version }} active{{ end }}" href="{{ .url }}">{{ .version }}</a></li>
+          {{ else }}
+          <a class="nav-link" href="{{ $url }}" {{ if $isExternal }} target="_blank" rel="noopener" {{ end }}><span>{{
+              .Name }}</span></a>
           {{ end }}
-        </ul>
-      </li>
-      {{ end }}
+        </li>
+        {{ end }}
+        {{ end }}
 
-      <!-- DOWNLOAD KAFKA button (render last) -->
-      {{ range .Site.Menus.main }}
-      {{ if eq .Name "DOWNLOAD KAFKA" }}
-      {{ $url := replace .URL "{{VERSION}}" (printf "/%s" $latestVersion) }}
-      <li class="nav-item download-btn-item">
-        <a class="nav-link btn-gradient-download" href="{{ $url }}"><span>{{ .Name }}</span></a>
-      </li>
-      {{ end }}
-      {{ end }}
-    </ul>
-  </div>
-  
-  <!-- Search (desktop only) - Far right with gap -->
-  <div class="d-none d-lg-flex order-2 navbar-search">
-    <button class="search-toggle-btn" id="searchToggle" type="button" aria-label="Toggle search">
-      <i class="fas fa-search"></i>
-    </button>
-    <div class="search-input-wrapper" id="searchInputWrapper">
-      {{ partial "search-input.html" . }}
+        <!-- Releases menu -->
+        {{ if .Site.Params.versions }}
+        <li class="nav-item dropdown d-none d-lg-block">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">{{ .Site.Params.version_menu | default "Releases" }}</a>
+          <ul class="dropdown-menu">
+            {{ $p := . }}
+            {{ range .Site.Params.versions }}
+            <li><a class="dropdown-item{{ if eq .version $p.Site.Params.version }} active{{ end }}" href="{{ .url }}">{{
+                .version }}</a></li>
+            {{ end }}
+          </ul>
+        </li>
+        {{ end }}
+
+        <!-- DOWNLOAD KAFKA button (render last) -->
+        {{ range .Site.Menus.main }}
+        {{ if eq .Name "DOWNLOAD KAFKA" }}
+        {{ $url := replace .URL "{{VERSION}}" (printf "/%s" $latestVersion) }}
+        <li class="nav-item download-btn-item">
+          <a class="nav-link btn-gradient-download" href="{{ $url }}"><span>{{ .Name }}</span></a>
+        </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+
+    <!-- Search (desktop only) - Far right with gap -->
+    <div class="d-none d-lg-flex order-2 navbar-search">
+      <button class="search-toggle-btn" id="searchToggle" type="button" aria-label="Toggle search">
+        <i class="fas fa-search"></i>
+      </button>
+      <div class="search-input-wrapper" id="searchInputWrapper">
+        {{ partial "search-input.html" . }}
+      </div>
     </div>
   </div>
-</div>
 </nav>
 
 <script>
-// Toggle search input visibility with smooth animation
-document.addEventListener('DOMContentLoaded', function() {
-  const searchToggle = document.getElementById('searchToggle');
-  const searchInputWrapper = document.getElementById('searchInputWrapper');
-  
-  function showSearch() {
-    if (searchInputWrapper) {
-      searchInputWrapper.classList.add('show');
-      // Focus on the input field after animation
-      const input = searchInputWrapper.querySelector('input');
-      if (input) {
-        setTimeout(() => input.focus(), 200);
+  // Toggle search input visibility with smooth animation
+  document.addEventListener('DOMContentLoaded', function () {
+    const searchToggle = document.getElementById('searchToggle');
+    const searchInputWrapper = document.getElementById('searchInputWrapper');
+
+    function showSearch() {
+      if (searchInputWrapper) {
+        searchInputWrapper.classList.add('show');
+        // Focus on the input field after animation
+        const input = searchInputWrapper.querySelector('input');
+        if (input) {
+          setTimeout(() => input.focus(), 200);
+        }
       }
     }
-  }
-  
-  function hideSearch() {
-    if (searchInputWrapper) {
-      searchInputWrapper.classList.remove('show');
-      // Clear any search input
-      const input = searchInputWrapper.querySelector('input');
-      if (input) {
-        input.value = '';
-        input.blur();
-      }
-      // Clear any search results
-      hideSearchResults();
-    }
-  }
-  
-  function hideSearchResults() {
-    // Hide Docsy/Algolia search results
-    const searchResults = document.querySelector('.td-search__results');
-    if (searchResults) {
-      searchResults.classList.remove('is-active');
-      searchResults.style.display = 'none';
-      searchResults.style.visibility = 'hidden';
-    }
-    
-    // Hide DocSearch modal if it exists
-    const docSearchModal = document.querySelector('.DocSearch-Modal');
-    if (docSearchModal) {
-      docSearchModal.style.display = 'none';
-      const backdrop = document.querySelector('.DocSearch-Backdrop');
-      if (backdrop) {
-        backdrop.style.display = 'none';
+
+    function hideSearch() {
+      if (searchInputWrapper) {
+        searchInputWrapper.classList.remove('show');
+        // Clear any search input
+        const input = searchInputWrapper.querySelector('input');
+        if (input) {
+          input.value = '';
+          input.blur();
+        }
+        // Clear any search results
+        hideSearchResults();
       }
     }
-    
-    // Hide any other search overlays
-    const searchOverlay = document.querySelector('.td-search-overlay');
-    if (searchOverlay) {
-      searchOverlay.style.display = 'none';
-    }
-    
-    // Hide Algolia autocomplete
-    const algoliaAutocomplete = document.querySelector('.algolia-autocomplete .aa-dropdown-menu');
-    if (algoliaAutocomplete) {
-      algoliaAutocomplete.style.display = 'none';
-    }
-    
-    // Hide Lunr search results container
-    const lunrResults = document.querySelector('#td-search__results-container');
-    if (lunrResults) {
-      lunrResults.style.display = 'none';
-    }
-    
-    // Hide any modal overlay/backdrop
-    const overlays = document.querySelectorAll('.modal-backdrop, [class*="search"][class*="overlay"], [class*="search"][class*="backdrop"]');
-    overlays.forEach(function(overlay) {
-      overlay.style.display = 'none';
-      overlay.style.visibility = 'hidden';
-      if (overlay.classList.contains('show')) {
-        overlay.classList.remove('show');
+
+    function hideSearchResults() {
+      // Hide Docsy/Algolia search results
+      const searchResults = document.querySelector('.td-search__results');
+      if (searchResults) {
+        searchResults.classList.remove('is-active');
+        searchResults.style.display = 'none';
+        searchResults.style.visibility = 'hidden';
       }
-    });
-    
-    // Remove any body classes that prevent scrolling
-    document.body.classList.remove('modal-open', 'search-open');
-    document.body.style.overflow = '';
-    
-    // Try to click any close buttons in search results
-    const closeButtons = document.querySelectorAll('.td-search__close, [class*="search"][class*="close"], .modal-close');
-    closeButtons.forEach(function(btn) {
-      if (btn.offsetParent !== null) {
-        btn.click();
+
+      // Hide DocSearch modal if it exists
+      const docSearchModal = document.querySelector('.DocSearch-Modal');
+      if (docSearchModal) {
+        docSearchModal.style.display = 'none';
+        const backdrop = document.querySelector('.DocSearch-Backdrop');
+        if (backdrop) {
+          backdrop.style.display = 'none';
+        }
       }
-    });
-    
-    // If using Docsy's offline search, trigger close event
-    const searchCloseEvent = new CustomEvent('td.search.close');
-    document.dispatchEvent(searchCloseEvent);
-  }
-  
-  if (searchToggle && searchInputWrapper) {
-    // Toggle search on button click
-    searchToggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      if (searchInputWrapper.classList.contains('show')) {
-        hideSearch();
-      } else {
-        showSearch();
+
+      // Hide any other search overlays
+      const searchOverlay = document.querySelector('.td-search-overlay');
+      if (searchOverlay) {
+        searchOverlay.style.display = 'none';
       }
-    });
-    
-    // Prevent clicks inside search wrapper from closing it
-    searchInputWrapper.addEventListener('click', function(e) {
-      e.stopPropagation();
-    });
-    
-    // Close search when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.navbar-search') && 
-          !e.target.closest('.td-search__results') &&
-          !e.target.closest('.DocSearch-Modal') &&
-          !e.target.closest('.algolia-autocomplete')) {
+
+      // Hide Algolia autocomplete
+      const algoliaAutocomplete = document.querySelector('.algolia-autocomplete .aa-dropdown-menu');
+      if (algoliaAutocomplete) {
+        algoliaAutocomplete.style.display = 'none';
+      }
+
+      // Hide Lunr search results container
+      const lunrResults = document.querySelector('#td-search__results-container');
+      if (lunrResults) {
+        lunrResults.style.display = 'none';
+      }
+
+      // Hide any modal overlay/backdrop
+      const overlays = document.querySelectorAll('.modal-backdrop, [class*="search"][class*="overlay"], [class*="search"][class*="backdrop"]');
+      overlays.forEach(function (overlay) {
+        overlay.style.display = 'none';
+        overlay.style.visibility = 'hidden';
+        if (overlay.classList.contains('show')) {
+          overlay.classList.remove('show');
+        }
+      });
+
+      // Remove any body classes that prevent scrolling
+      document.body.classList.remove('modal-open', 'search-open');
+      document.body.style.overflow = '';
+
+      // Try to click any close buttons in search results
+      const closeButtons = document.querySelectorAll('.td-search__close, [class*="search"][class*="close"], .modal-close');
+      closeButtons.forEach(function (btn) {
+        if (btn.offsetParent !== null) {
+          btn.click();
+        }
+      });
+
+      // If using Docsy's offline search, trigger close event
+      const searchCloseEvent = new CustomEvent('td.search.close');
+      document.dispatchEvent(searchCloseEvent);
+    }
+
+    if (searchToggle && searchInputWrapper) {
+      // Toggle search on button click
+      searchToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
         if (searchInputWrapper.classList.contains('show')) {
           hideSearch();
         } else {
-          hideSearchResults();
+          showSearch();
         }
-      }
-    });
-    
-    // Close search on ESC key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' || e.key === 'Esc') {
-        hideSearch();
-      }
-    });
-  }
-  
-  // Mobile dropdown toggle functionality
-  const dropdownToggles = document.querySelectorAll('.navbar-nav .dropdown > .dropdown-toggle');
-  
-  dropdownToggles.forEach(function(toggle) {
-    toggle.addEventListener('click', function(e) {
-      if (window.innerWidth < 992) {
-        e.preventDefault();
-        const parentLi = this.parentElement;
-        const dropdownMenu = parentLi.querySelector('.dropdown-menu');
-        
-        document.querySelectorAll('.navbar-nav .dropdown-menu.show').forEach(function(menu) {
-          if (menu !== dropdownMenu) {
-            menu.classList.remove('show');
+      });
+
+      // Prevent clicks inside search wrapper from closing it
+      searchInputWrapper.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+
+      // Close search when clicking outside
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.navbar-search') &&
+          !e.target.closest('.td-search__results') &&
+          !e.target.closest('.DocSearch-Modal') &&
+          !e.target.closest('.algolia-autocomplete')) {
+          if (searchInputWrapper.classList.contains('show')) {
+            hideSearch();
+          } else {
+            hideSearchResults();
           }
+        }
+      });
+
+      // Close search on ESC key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' || e.key === 'Esc') {
+          hideSearch();
+        }
+      });
+    }
+
+    // Mobile dropdown toggle functionality
+    const dropdownToggles = document.querySelectorAll('.navbar-nav .dropdown > .dropdown-toggle');
+
+    dropdownToggles.forEach(function (toggle) {
+      toggle.addEventListener('click', function (e) {
+        if (window.innerWidth < 992) {
+          e.preventDefault();
+          e.stopPropagation(); // Stop propagation to prevent immediate closing
+          const parentLi = this.parentElement;
+
+          // Close other open dropdowns
+          document.querySelectorAll('.navbar-nav .dropdown.show').forEach(function (li) {
+            if (li !== parentLi) {
+              li.classList.remove('show');
+              const menu = li.querySelector('.dropdown-menu');
+              if (menu) menu.classList.remove('show');
+            }
+          });
+
+          // Toggle current dropdown
+          parentLi.classList.toggle('show');
+          const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+          if (dropdownMenu) dropdownMenu.classList.toggle('show');
+        }
+      });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.navbar-nav .dropdown')) {
+        document.querySelectorAll('.navbar-nav .dropdown-menu.show').forEach(function (menu) {
+          menu.classList.remove('show');
         });
-        
-        dropdownMenu.classList.toggle('show');
       }
     });
-  });
-  
-  // Close dropdowns when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.navbar-nav .dropdown')) {
-      document.querySelectorAll('.navbar-nav .dropdown-menu.show').forEach(function(menu) {
-        menu.classList.remove('show');
+
+    // Close mobile menu when clicking outside or on the X
+    const mainNavbar = document.getElementById('main_navbar');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+
+    if (mainNavbar && navbarToggler) {
+      // Function to close the menu
+      const closeMenu = () => {
+        if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+          const bsCollapse = bootstrap.Collapse.getInstance(mainNavbar) || new bootstrap.Collapse(mainNavbar, { toggle: false });
+          bsCollapse.hide();
+        } else {
+          mainNavbar.classList.remove('show');
+        }
+        // Always update state for the icon animation
+        navbarToggler.setAttribute('aria-expanded', 'false');
+        navbarToggler.classList.add('collapsed');
+      };
+
+      // Function to open the menu
+      const openMenu = () => {
+        if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+          const bsCollapse = bootstrap.Collapse.getInstance(mainNavbar) || new bootstrap.Collapse(mainNavbar, { toggle: false });
+          bsCollapse.show();
+        } else {
+          mainNavbar.classList.add('show');
+        }
+        // Always update state for the icon animation
+        navbarToggler.setAttribute('aria-expanded', 'true');
+        navbarToggler.classList.remove('collapsed');
+      };
+
+      document.addEventListener('click', function (e) {
+        const isMenuOpen = mainNavbar.classList.contains('show');
+        const isCollapsing = mainNavbar.classList.contains('collapsing');
+
+        if (isMenuOpen && !isCollapsing) {
+          // Case 1: Click outside the menu AND outside the toggler -> Close menu
+          if (!mainNavbar.contains(e.target) && !navbarToggler.contains(e.target)) {
+            closeMenu();
+          }
+        }
+      });
+
+      // Explicit listener for the toggler to handle BOTH open and close
+      navbarToggler.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (mainNavbar.classList.contains('show')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
       });
     }
   });
-});
 </script>
