@@ -285,3 +285,15 @@ button.navbar-toggler {
     }
   }
 }
+
+// Table Header Styling
+table {
+  th {
+    text-transform: uppercase;
+    background-color: #6c757d !important; // Lighter gray background (secondary color)
+    color: #ffffff !important; // White text
+    font-weight: 600;
+    border-color: #dee2e6; // Lighter border
+    padding: 0.75rem; // Ensure decent padding
+  }
+}
