@@ -9,175 +9,175 @@ $primary: #ffffff;
 
 // Layout
 .l-container--padded {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-  
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .grid__item__logo {
+  margin: auto;
+  width: 100%;
+  max-width: 12rem;
+  height: 5rem;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.c-testimonials {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+
+.c-testimonials__testimonial {
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  a {
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .c-testimonials__description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+    text-align: left;
+    flex-grow: 1;
+
+    a {
+      display: inline;
+      margin-bottom: 0;
+      color: #0066cc;
+      text-decoration: underline;
+
+      &:hover {
+        color: #0052a3;
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 576px) {
+    margin-bottom: 1.5rem;
+
+    .c-testimonials__description {
+      font-size: 0.8125rem;
+    }
+  }
+}
+
+.c-podcasts {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.c-podcasts__podcast {
+  text-align: center;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .c-podcasts__link {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .c-podcasts__logo {
     margin: auto;
     width: 100%;
     max-width: 12rem;
-    height: 5rem;
+    height: 12rem;
     display: block;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    border-radius: 0.25rem;
-    padding: 0.5rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    
+
     &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
-}
+  }
 
-.c-testimonials {
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-    padding-top: 2rem;
-}
+  .c-podcasts__title {
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 600;
 
-  
-.c-testimonials__testimonial {
-    text-align: center;
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    
     a {
-      display: block;
-      margin-bottom: 0.75rem;
-    }
-  
-    .c-testimonials__description {
-      font-size: 0.875rem;
-      line-height: 1.5;
-      margin-bottom: 0;
-      text-align: left;
-      flex-grow: 1;
-      
-      a {
-        display: inline;
-        margin-bottom: 0;
-        color: #0066cc;
-        text-decoration: underline;
-        
-        &:hover {
-          color: #0052a3;
-        }
-      }
-    }
-    
-    // Responsive adjustments
-    @media (max-width: 576px) {
-      margin-bottom: 1.5rem;
-      
-      .c-testimonials__description {
-        font-size: 0.8125rem;
-      }
-    }
-}
+      color: #212529;
+      text-decoration: none;
+      transition: color 0.2s ease;
 
-.c-podcasts {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding-top: 2rem;
-}
-
-.c-podcasts__podcast {
-    text-align: center;
-    margin-bottom: 3rem;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    
-    .c-podcasts__link {
-      display: block;
-      margin-bottom: 1rem;
-    }
-    
-    .c-podcasts__logo {
-      margin: auto;
-      width: 100%;
-      max-width: 12rem;
-      height: 12rem;
-      display: block;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center center;
-      border-radius: 0.5rem;
-      padding: 1rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      
       &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      }
-    }
-    
-    .c-podcasts__title {
-      margin-top: 1rem;
-      margin-bottom: 0.75rem;
-      font-size: 1.125rem;
-      font-weight: 600;
-      
-      a {
-        color: #212529;
-        text-decoration: none;
-        transition: color 0.2s ease;
-        
-        &:hover {
-          color: #007bff;
-          text-decoration: underline;
-        }
-      }
-    }
-  
-    .c-podcasts__description {
-      font-size: 0.875rem;
-      line-height: 1.6;
-      margin-bottom: 0;
-      text-align: left;
-      flex-grow: 1;
-      color: #495057;
-      
-      a {
-        display: inline;
-        margin-bottom: 0;
-        color: #0066cc;
+        color: #007bff;
         text-decoration: underline;
-        
-        &:hover {
-          color: #0052a3;
-        }
       }
     }
-    
-    // Responsive adjustments
-    @media (max-width: 576px) {
-      margin-bottom: 2rem;
-      
-      .c-podcasts__logo {
-        max-width: 10rem;
-        height: 10rem;
-      }
-      
-      .c-podcasts__title {
-        font-size: 1rem;
-      }
-      
-      .c-podcasts__description {
-        font-size: 0.8125rem;
+  }
+
+  .c-podcasts__description {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: left;
+    flex-grow: 1;
+    color: #495057;
+
+    a {
+      display: inline;
+      margin-bottom: 0;
+      color: #0066cc;
+      text-decoration: underline;
+
+      &:hover {
+        color: #0052a3;
       }
     }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 576px) {
+    margin-bottom: 2rem;
+
+    .c-podcasts__logo {
+      max-width: 10rem;
+      height: 10rem;
+    }
+
+    .c-podcasts__title {
+      font-size: 1rem;
+    }
+
+    .c-podcasts__description {
+      font-size: 0.8125rem;
+    }
+  }
 }
 
 .used-by-logo {
-    max-height: 4rem;
-    max-width: 100%;
-  }
+  max-height: 4rem;
+  max-width: 100%;
+}
 
 // Responsive fixes for mobile and different devices
 // Ensure proper viewport behavior
@@ -192,23 +192,24 @@ html {
   background-color: #ffffff;
   border-bottom: 1px solid #e9ecef;
   padding: 0.5rem 1rem;
-  
+
   @media (max-width: 991px) {
     padding: 0.75rem 1rem;
   }
-  
+
   .container-fluid {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
   }
-  
+
   @media (max-width: 991px) {
     .navbar-brand {
       max-width: 150px;
-      
-      svg, img {
+
+      svg,
+      img {
         max-width: 100%;
         height: auto;
       }
@@ -216,50 +217,7 @@ html {
   }
 }
 
-// Mobile navbar toggler (hamburger menu) - FORCE VISIBLE
-.td-navbar .navbar-toggler,
-button.navbar-toggler {
-  display: inline-block !important;  // Nuclear option - force visible
-  visibility: visible !important;
-  opacity: 1 !important;
-  padding: 0.5rem 0.75rem !important;
-  font-size: 1.25rem;
-  line-height: 1;
-  background-color: #fff !important;
-  border: 2px solid #000 !important;  // Make it very obvious
-  border-radius: 0.25rem;
-  transition: box-shadow 0.15s ease-in-out;
-  cursor: pointer;
-  position: relative;
-  z-index: 1050;
-  min-width: 44px;
-  min-height: 44px;
-  
-  &:focus {
-    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25) !important;
-    outline: none !important;
-  }
-  
-  &:hover {
-    background-color: #f8f9fa !important;
-  }
-  
-  .navbar-toggler-icon {
-    display: inline-block !important;
-    width: 1.5em !important;
-    height: 1.5em !important;
-    vertical-align: middle;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23000' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-  }
-  
-  // Hide on desktop only
-  @media (min-width: 992px) {
-    display: none !important;
-  }
-}
+
 
 // Mobile menu collapse - CRITICAL: Hide by default on mobile
 .navbar-collapse {
@@ -277,33 +235,33 @@ button.navbar-toggler {
     z-index: 1000;
     max-height: calc(100vh - 60px);
     overflow-y: auto;
-    
+
     // SHOW when expanded
     &.show {
       display: block !important;
     }
-    
+
     &.collapsing {
       display: block !important;
       height: 0;
       overflow: hidden;
       transition: height 0.35s ease;
     }
-    
+
     .navbar-nav {
       flex-direction: column;
       padding: 1rem 0;
-    width: 100%;
-    
-    .nav-item {
       width: 100%;
+
+      .nav-item {
+        width: 100%;
         border-bottom: 1px solid #f8f9fa;
-        
+
         &:last-child {
           border-bottom: none;
         }
       }
-      
+
       .nav-link {
         padding: 0.75rem 1.5rem;
         display: flex;
@@ -312,27 +270,28 @@ button.navbar-toggler {
         width: 100%;
         text-align: left;
         text-transform: uppercase !important;
-        
+
         // Ensure text-transform applies to all children (like spans)
-        &, span {
+        &,
+        span {
           text-transform: uppercase !important;
         }
-        
+
         // Explicitly target dropdown-toggle
         &.dropdown-toggle {
           text-transform: uppercase !important;
         }
-        
+
         &:hover {
           background-color: #f8f9fa;
         }
-        
+
         // Show arrow for dropdown items
         &.dropdown-toggle::after {
           margin-left: auto;
         }
       }
-      
+
       .dropdown-menu {
         position: static !important;
         float: none;
@@ -343,29 +302,29 @@ button.navbar-toggler {
         background-color: #f8f9fa;
         width: 100%;
         transform: none !important;
-        
+
         .dropdown-item {
           padding: 0.75rem 2rem;
           white-space: normal;
-          
+
           &:hover {
             background-color: #e9ecef;
           }
         }
       }
-      
+
       .dropdown {
         .dropdown-menu {
           display: none !important;
         }
-        
+
         &.show .dropdown-menu {
           display: block !important;
         }
       }
     }
   }
-  
+
   // Desktop - normal behavior
   @media (min-width: 992px) {
     display: flex !important;
@@ -380,12 +339,12 @@ button.navbar-toggler {
       display: none !important;
     }
   }
-  
+
   // CRITICAL: Prevent horizontal display of nav items on mobile
   .td-navbar .navbar-nav {
     display: none !important;
   }
-  
+
   .td-navbar .navbar-collapse.show .navbar-nav {
     display: flex !important;
     flex-direction: column;
@@ -395,7 +354,7 @@ button.navbar-toggler {
 // Navbar itself needs to be positioned relative for absolute children
 .td-navbar {
   position: relative;
-  
+
   @media (max-width: 991px) {
     overflow: visible !important;
   }
@@ -408,12 +367,12 @@ button.navbar-toggler {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  
+
   @media (max-width: 991px) {
     justify-content: flex-start;
-    
+
     // Ensure hamburger is visible and positioned correctly
-    > .navbar-toggler {
+    >.navbar-toggler {
       display: inline-block !important;
       visibility: visible !important;
       opacity: 1 !important;
@@ -430,21 +389,22 @@ button.navbar-toggler {
   align-items: center;
   gap: 10px;
   padding: 0.25rem 0;
-  
-  svg, img {
+
+  svg,
+  img {
     max-height: 50px;
     width: auto;
-    
+
     @media (max-width: 991px) {
       max-height: 50px;
     }
   }
-  
+
   .navbar-brand__name {
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 1.25rem;
     font-weight: 700;
-    
+
     @media (max-width: 991px) {
       font-size: 1.125rem;
     }
@@ -453,13 +413,14 @@ button.navbar-toggler {
 
 // Navbar layout and spacing
 .td-navbar {
+
   // Proper spacing between logo and menu items
   .navbar-brand {
     @media (min-width: 992px) {
       margin-right: 3rem;
     }
   }
-  
+
   // Menu items aligned to the right with auto margin
   .navbar-nav.ms-auto {
     @media (min-width: 992px) {
@@ -467,7 +428,7 @@ button.navbar-toggler {
       flex-grow: 0;
     }
   }
-  
+
   // Gap between menu and search bar
   .navbar-search {
     @media (min-width: 992px) {
@@ -482,7 +443,7 @@ button.navbar-toggler {
   @media (max-width: 576px) {
     max-width: 100%;
   }
-  
+
   @media (min-width: 992px) {
     min-width: 200px;
   }
@@ -505,13 +466,13 @@ button.navbar-toggler {
 // Dropdown on hover for desktop
 .td-navbar .nav-item.dropdown {
   @media (min-width: 992px) {
-    &:hover > .dropdown-menu {
+    &:hover>.dropdown-menu {
       display: block;
       margin-top: 0;
     }
-    
+
     // Ensure dropdown trigger stays visible
-    &:hover > .nav-link {
+    &:hover>.nav-link {
       color: #007bff;
     }
   }
@@ -521,8 +482,9 @@ button.navbar-toggler {
 .td-navbar .navbar-nav .nav-link,
 .td-navbar .navbar-nav .nav-link.dropdown-toggle {
   text-transform: uppercase !important;
-  
-  &, span {
+
+  &,
+  span {
     text-transform: uppercase !important;
   }
 }
@@ -537,21 +499,22 @@ button.navbar-toggler {
   transition: color 0.2s ease;
   letter-spacing: 0.3px;
   text-transform: uppercase !important;
-  
+
   // Ensure text-transform applies to all children (like spans)
-  &, span {
+  &,
+  span {
     text-transform: uppercase !important;
   }
-  
+
   // Explicitly target dropdown-toggle to ensure uppercase
   &.dropdown-toggle {
     text-transform: uppercase !important;
-    
+
     &:hover {
       color: #007bff;
     }
   }
-  
+
   &:hover,
   &:focus {
     color: #007bff;
@@ -560,7 +523,7 @@ button.navbar-toggler {
 
 // Reduce menu font size
 .td-navbar .nav-link {
-  font-size: 0.875rem;  // Reduced from 0.95rem
+  font-size: 0.875rem; // Reduced from 0.95rem
 }
 
 // Logo sizing - increased
@@ -568,7 +531,7 @@ button.navbar-toggler {
   max-height: 70px;
   width: auto;
   display: block;
-  
+
   @media (max-width: 991px) {
     max-height: 50px;
   }
@@ -577,14 +540,14 @@ button.navbar-toggler {
 // Navbar layout - move logo closer to menu
 .td-navbar .navbar-brand {
   @media (min-width: 992px) {
-    margin-right: 1.5rem;  // Reduced from 3rem
+    margin-right: 1.5rem; // Reduced from 3rem
   }
 }
 
 // Gap between menu and search bar
 .navbar-search {
   @media (min-width: 992px) {
-    margin-left: 2rem !important;  // Reduced from 3rem
+    margin-left: 2rem !important; // Reduced from 3rem
   }
 }
 
@@ -602,18 +565,18 @@ button.navbar-toggler {
   transition: all 0.3s ease;
   color: #6c757d;
   font-size: 1rem;
-  
+
   &:hover {
     background-color: #f8f9fa;
     border-color: #495057;
     color: #495057;
   }
-  
+
   &:focus {
     outline: none;
     box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25);
   }
-  
+
   i {
     line-height: 1;
   }
@@ -634,9 +597,9 @@ button.navbar-toggler {
   transform: translateY(-10px);
   transition: opacity 0.2s ease, transform 0.2s ease;
   pointer-events: none;
-  
+
   // Override any default input background
-  input, 
+  input,
   .td-search__input,
   .form-control,
   [type="search"] {
@@ -645,14 +608,14 @@ button.navbar-toggler {
     border: 1px solid #dee2e6 !important;
     transition: none !important;
   }
-  
+
   // Ensure form groups and wrappers are also white
   .form-group,
   .input-group,
   div {
     background-color: transparent !important;
   }
-  
+
   &.show {
     opacity: 1;
     transform: translateY(0);
@@ -669,11 +632,12 @@ button.navbar-toggler {
   &.is-active {
     animation: fadeIn 0.2s ease;
   }
-  
+
   @keyframes fadeIn {
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
@@ -706,14 +670,14 @@ button.navbar-toggler {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
   text-decoration: none !important;
   display: inline-block;
-  
+
   &:hover {
     background: linear-gradient(180deg, #5a6678 0%, #3d4d60 100%) !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4) !important;
     color: #ffffff !important;
   }
-  
+
   &:focus {
     outline: none !important;
     box-shadow: 0 0 0 0.2rem rgba(45, 55, 72, 0.5) !important;
@@ -734,7 +698,7 @@ button.navbar-toggler {
     max-height: 250px;
     object-fit: cover;
     object-position: center top;
-    
+
     // On mobile, show full image without cropping
     @media (max-width: 767.98px) {
       max-height: none;
@@ -743,19 +707,19 @@ button.navbar-toggler {
       background-color: #f8f9fa;
     }
   }
-  
+
   .card-title {
     font-weight: 600;
   }
-  
+
   .card-text {
     line-height: 1.4;
   }
-  
+
   // Social icons spacing
   a {
     margin-right: 0.5rem;
-    
+
     &:last-child {
       margin-right: 0;
     }
@@ -769,14 +733,14 @@ button.navbar-toggler {
   border: 1px solid rgba(0, 0, 0, 0.15);
   background-color: #ffffff;
   padding: 0.5rem 0;
-  
+
   @media (max-width: 991px) {
     border: none;
     box-shadow: none;
     padding-left: 1rem;
     background-color: transparent;
   }
-  
+
   .dropdown-item {
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     padding: 0.75rem 1.5rem;
@@ -785,19 +749,20 @@ button.navbar-toggler {
     font-weight: 400;
     transition: all 0.2s ease;
     text-transform: uppercase;
-    
+
     // Ensure text-transform applies to all children (like spans)
-    &, span {
+    &,
+    span {
       text-transform: uppercase;
     }
-    
+
     &:hover,
     &:focus {
       background-color: #e9ecef;
       color: #000;
       text-decoration: none;
     }
-    
+
     &.active {
       background-color: #007bff;
       color: #fff;
@@ -810,37 +775,37 @@ button.navbar-toggler {
 .td-cover-block {
   figure {
     margin: 0 auto;
-    
+
     img {
       max-width: 100%;
       height: auto;
       display: block;
       margin: 0 auto;
-      
+
       // Desktop - full size
       @media (min-width: 992px) {
         max-width: 400px;
         max-height: 500px;
       }
-      
+
       // Tablet - medium size
       @media (min-width: 768px) and (max-width: 991px) {
         max-width: 300px;
         max-height: 375px;
       }
-      
+
       // Mobile landscape - smaller
       @media (min-width: 576px) and (max-width: 767px) {
         max-width: 250px;
         max-height: 312px;
       }
-      
+
       // Mobile portrait - smallest
       @media (max-width: 575px) {
         max-width: 200px;
         max-height: 250px;
       }
-      
+
       // Extra small phones
       @media (max-width: 375px) {
         max-width: 160px;
@@ -848,7 +813,7 @@ button.navbar-toggler {
       }
     }
   }
-  
+
   // Ensure buttons stack nicely on mobile
   .btn {
     @media (max-width: 576px) {
@@ -858,7 +823,7 @@ button.navbar-toggler {
       margin-right: 0 !important;
     }
   }
-  
+
   // Adjust lead text size on mobile
   .lead {
     @media (max-width: 768px) {
@@ -873,22 +838,22 @@ button.navbar-toggler {
     padding-left: 1rem;
     padding-right: 1rem;
     margin-bottom: 2rem;
-    
+
     @media (min-width: 992px) {
       padding-left: 0.75rem;
       padding-right: 0.75rem;
       margin-bottom: 1.5rem;
     }
-    
+
     h4 {
       font-size: 1.25rem;
       margin-bottom: 0.75rem;
     }
-    
+
     .mb-4 {
       margin-bottom: 0.75rem !important;
     }
-    
+
     .h1 {
       font-size: 2rem;
     }
@@ -899,7 +864,7 @@ button.navbar-toggler {
 .td-box {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  
+
   @media (max-width: 768px) {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -918,7 +883,12 @@ body {
 }
 
 // Heading styles to match kafka.apache.org
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   line-height: 1.2;
@@ -929,7 +899,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  
+
   @media (max-width: 768px) {
     font-size: 2rem;
   }
@@ -938,32 +908,36 @@ h1 {
 h2 {
   font-size: 2rem;
   font-weight: 700;
-  
+
   @media (max-width: 768px) {
     font-size: 1.75rem;
   }
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  
+
   @media (max-width: 768px) {
     font-size: 1.25rem;
   }
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: 1.25rem;
   font-weight: 600;
 }
 
-h5, .h5 {
+h5,
+.h5 {
   font-size: 1.125rem;
   font-weight: 600;
 }
 
-h6, .h6 {
+h6,
+.h6 {
   font-size: 1rem;
   font-weight: 600;
 }
@@ -973,7 +947,7 @@ h6, .h6 {
   font-size: 1.25rem;
   font-weight: 300;
   line-height: 1.7;
-  
+
   @media (max-width: 768px) {
     font-size: 1.125rem;
   }
@@ -1003,18 +977,18 @@ p {
 .td-box--dark {
   .col {
     max-width: 100%;
-    
+
     .row {
       margin-left: -0.75rem;
       margin-right: -0.75rem;
-      
+
       @media (min-width: 992px) {
         padding-left: 3rem;
         padding-right: 3rem;
       }
     }
   }
-  
+
   .col-lg-4 {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
@@ -1030,11 +1004,11 @@ p {
   border-radius: 0.375rem;
   transition: all 0.3s ease;
   letter-spacing: 0.3px;
-  
+
   &.btn-primary {
     background-color: #007bff;
     border-color: #007bff;
-    
+
     &:hover {
       background-color: #0056b3;
       border-color: #0056b3;
@@ -1042,11 +1016,11 @@ p {
       box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
     }
   }
-  
+
   &.btn-secondary {
     background-color: #6c757d;
     border-color: #6c757d;
-    
+
     &:hover {
       background-color: #5a6268;
       border-color: #5a6268;
@@ -1067,26 +1041,28 @@ p {
 .td-box--dark,
 .td-box--primary {
   .blocks-feature {
-    h4, .h4 {
-      font-size: 1.1rem !important;  // Reduced from 1.25rem
+
+    h4,
+    .h4 {
+      font-size: 1.1rem !important; // Reduced from 1.25rem
       margin-bottom: 0.625rem;
     }
-    
+
     p {
-      font-size: 0.9rem !important;  // Reduced from 1rem
+      font-size: 0.9rem !important; // Reduced from 1rem
       line-height: 1.5;
     }
-    
+
     .h1 {
-      font-size: 1.75rem !important;  // Reduced from 2rem
+      font-size: 1.75rem !important; // Reduced from 2rem
     }
   }
-  
+
   .col-lg-4 {
     h4 {
       font-size: 1.1rem !important;
     }
-    
+
     p {
       font-size: 0.9rem !important;
     }
@@ -1095,7 +1071,7 @@ p {
 
 // Feature descriptions consistent styling
 .td-box--dark .mb-0 p {
-  font-size: 0.9rem;  // Reduced from 1rem
+  font-size: 0.9rem; // Reduced from 1rem
   line-height: 1.6;
   color: #f8f9fa;
 }
@@ -1106,13 +1082,13 @@ p {
   background-color: #007bff !important;
   border-color: #007bff !important;
   color: #ffffff !important;
-  
+
   &:hover {
     background-color: #0056b3 !important;
     border-color: #0056b3 !important;
     color: #ffffff !important;
   }
-  
+
   &:focus {
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5) !important;
   }
@@ -1120,13 +1096,13 @@ p {
 
 // Footer styling - Compact single row layout with full-width background
 .td-footer {
-  background-color: #f8f9fa;  // Fair background (light gray)
+  background-color: #f8f9fa; // Fair background (light gray)
   border-top: 1px solid #dee2e6;
-  padding: 0.5rem 0 !important;  // Minimal padding - top and bottom only
+  padding: 0.5rem 0 !important; // Minimal padding - top and bottom only
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
   min-height: auto !important;
-  
+
   // Full-width breakout
   width: 100vw;
   position: relative;
@@ -1134,100 +1110,100 @@ p {
   right: 50%;
   margin-left: -50vw !important;
   margin-right: -50vw !important;
-  
+
   .container-fluid {
-    max-width: 100%;  // Use full width
+    max-width: 100%; // Use full width
     padding-left: 2rem !important;
     padding-right: 2rem !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     margin: 0 auto !important;
   }
-  
+
   .row {
     align-items: center;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    
+
     // Remove all column spacing
-    > [class*="col-"] {
+    >[class*="col-"] {
       padding-top: 0 !important;
       padding-bottom: 0 !important;
       margin-top: 0 !important;
       margin-bottom: 0 !important;
     }
   }
-  
+
   .td-footer__social-icons {
     display: flex;
     gap: 1rem;
     justify-content: center;
     margin: 0 !important;
     padding: 0 !important;
-    
+
     @media (min-width: 768px) {
       justify-content: flex-start;
     }
   }
-  
+
   .td-footer__social-link {
     color: #6c757d;
-    font-size: 1.35rem;  // Slightly reduced from 1.5rem
+    font-size: 1.35rem; // Slightly reduced from 1.5rem
     transition: color 0.3s ease, transform 0.3s ease;
     display: inline-block;
-    
+
     &:hover {
       color: #212529;
       transform: scale(1.15);
     }
   }
-  
+
   .td-footer__copyright {
-    font-size: 0.7rem;  // Reduced from 0.75rem
-    line-height: 1.2;  // Further reduced to tighten text
+    font-size: 0.7rem; // Reduced from 0.75rem
+    line-height: 1.2; // Further reduced to tighten text
     color: #6c757d;
     display: block;
-    margin-bottom: 0 !important;  // Remove all bottom margin
-    margin-top: 0 !important;  // Remove all top margin
-    padding: 0 !important;  // Remove all padding
-    
+    margin-bottom: 0 !important; // Remove all bottom margin
+    margin-top: 0 !important; // Remove all top margin
+    padding: 0 !important; // Remove all padding
+
     a {
-      color: #6c757d;  // Match text color
+      color: #6c757d; // Match text color
       text-decoration: none;
-      
+
       &:hover {
-        color: #6c757d;  // Keep same color on hover
-        text-decoration: underline;  // Only underline on hover
+        color: #6c757d; // Keep same color on hover
+        text-decoration: underline; // Only underline on hover
       }
     }
   }
-  
+
   .td-footer__links {
-    font-size: 0.7rem;  // Reduced from 0.75rem
+    font-size: 0.7rem; // Reduced from 0.75rem
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     padding-top: 0 !important;
     line-height: 1.2;
-    
+
     a {
-      color: #6c757d;  // Match text color
+      color: #6c757d; // Match text color
       text-decoration: none;
       white-space: nowrap;
-      
+
       &:hover {
-        color: #6c757d;  // Keep same color on hover
-        text-decoration: underline;  // Only underline on hover
+        color: #6c757d; // Keep same color on hover
+        text-decoration: underline; // Only underline on hover
       }
     }
   }
-  
+
   // Responsive: stack on mobile
   @media (max-width: 767px) {
-    .row > div {
-      margin-bottom: 0.35rem;  // Further reduced from 0.75rem
-      
+    .row>div {
+      margin-bottom: 0.35rem; // Further reduced from 0.75rem
+
       &:last-child {
         margin-bottom: 0;
       }
@@ -1240,6 +1216,7 @@ p {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -1252,7 +1229,7 @@ p {
   height: auto;
   opacity: 0.7;
   transition: opacity 0.3s ease;
-  
+
   &:hover {
     opacity: 1;
     animation: spin-continuous 0.2s linear infinite;
@@ -1269,17 +1246,17 @@ p {
   padding: 2rem 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
-  
+
   nav {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    
+
     @media (max-width: 768px) {
       flex-direction: column;
     }
   }
-  
+
   .pager-btn {
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     border: 2px solid #dee2e6 !important;
@@ -1290,7 +1267,7 @@ p {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    
+
     &:hover {
       background-color: #f8f9fa !important;
       border-color: #ced4da !important;
@@ -1298,12 +1275,12 @@ p {
       transform: translateY(-2px);
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
     }
-    
+
     &:focus {
       outline: 0 !important;
       box-shadow: 0 0 0 0.2rem rgba(206, 212, 218, 0.5) !important;
     }
-    
+
     @media (max-width: 768px) {
       width: 100%;
       justify-content: center;
@@ -1313,11 +1290,12 @@ p {
 
 // Legacy support for .td-page-nav if used anywhere
 .td-page-nav {
+
   // Ensure prev/next links are responsive
   @media (max-width: 768px) {
     .nav-links {
       flex-direction: column;
-      
+
       .nav-link-prev,
       .nav-link-next {
         width: 100%;
@@ -1325,19 +1303,19 @@ p {
       }
     }
   }
-  
+
   // Better visual separation and styling
   padding: 2rem 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
-  
+
   .nav-link-prev,
   .nav-link-next {
     padding: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 0.25rem;
     transition: all 0.3s ease;
-    
+
     &:hover {
       background-color: rgba(0, 0, 0, 0.05);
       text-decoration: none;
@@ -1346,4 +1324,3 @@ p {
     }
   }
 }
-  
