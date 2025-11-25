@@ -271,4 +271,17 @@ button.navbar-toggler {
     height: auto !important;
     min-height: auto !important;
   }
+
+  // Refine "DOWNLOAD KAFKA" button on mobile
+  .download-btn-item {
+    .nav-link.btn-gradient-download {
+      width: 50% !important;
+      margin-left: 1.5rem !important;
+      margin-top: 1rem !important;
+      margin-bottom: 1.5rem !important;
+      text-align: center !important;
+      justify-content: center !important;
+      display: flex !important;
+    }
+  }
 }
