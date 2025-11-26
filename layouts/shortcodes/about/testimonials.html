@@ -1,15 +1,45 @@
 {{ $testimonials := site.Data.testimonials -}}
-<div class="row c-testimonials">
+{{/* Extract and sort testimonials by company name from domain */}}
+{{ $sortedTestimonials := slice }}
 {{- range $testimonials -}}
-  {{ $img   := printf "/images/powered-by/%s" .logo | relURL -}}
-  {{ $bgColor := .logoBgColor | default "#FFFFFF" -}}
-  <div class="col-12 col-sm-6 col-md-4 col-lg-3 c-testimonials__testimonial">
-    <a href="{{ .link }}" target="_blank" rel="noopener">
-      <span class="grid__item__logo" style="background-image: url({{ $img }}); background-color: {{ $bgColor }};"></span>
-    </a>
-    <p class="c-testimonials__description">
-      {{- .description | safeHTML -}}
-    </p>
+  {{/* Extract domain from link URL */}}
+  {{ $link := .link }}
+  {{/* Remove protocol (http://, https://) */}}
+  {{ $domain := replaceRE "^https?://" "" $link }}
+  {{/* Remove www. prefix */}}
+  {{ $domain = replaceRE "^www\\." "" $domain }}
+  {{/* Remove path (everything after first /) */}}
+  {{ $domain = replaceRE "/.*$" "" $domain }}
+  {{/* Remove trailing slash if any */}}
+  {{ $domain = strings.TrimSuffix "/" $domain }}
+  {{/* Extract company name (first part of domain before first dot, or full domain if no dots) */}}
+  {{ $domainParts := split $domain "." }}
+  {{ $companyName := index $domainParts 0 }}
+  {{/* If domain has multiple parts, use the main domain (second-to-last part for .com, .org, etc.) */}}
+  {{ $domainPartsCount := len $domainParts }}
+  {{ if gt $domainPartsCount 2 }}
+    {{ $companyName = index $domainParts (sub $domainPartsCount 2) }}
+  {{ end }}
+  {{/* Create a map with company name (lowercase for case-insensitive sorting) and original data */}}
+  {{ $sortedTestimonials = $sortedTestimonials | append (dict "company" (lower $companyName) "data" .) }}
+{{- end -}}
+{{/* Sort by company name alphabetically */}}
+{{ $sortedTestimonials = sort $sortedTestimonials "company" "asc" }}
+
+<div class="container">
+  <div class="row c-testimonials">
+  {{- range $sortedTestimonials -}}
+    {{ $testimonial := .data }}
+    {{ $img   := printf "/images/powered-by/%s" $testimonial.logo | relURL -}}
+    {{ $bgColor := $testimonial.logoBgColor | default "#FFFFFF" -}}
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 c-testimonials__testimonial">
+      <a href="{{ $testimonial.link }}" target="_blank" rel="noopener">
+        <span class="grid__item__logo" style="background-image: url({{ $img }}); background-color: {{ $bgColor }};"></span>
+      </a>
+      <p class="c-testimonials__description">
+        {{- $testimonial.description | safeHTML -}}
+      </p>
+    </div>
+  {{ end -}}
   </div>
-{{ end -}}
 </div>
