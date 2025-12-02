@@ -6,3 +6,12 @@
 <!-- Carousel YouTube video control - pauses videos when carousel slides change -->
 <script src="/js/carousel-youtube.js"></script>
 
+{{ $stickySmart := resources.Get "js/sticky-smart.js" }}
+{{ if $stickySmart }}
+<script src="{{ $stickySmart.RelPermalink }}"></script>
+{{ end }}
+
+{{ $tocScrollspy := resources.Get "js/toc-scrollspy.js" }}
+{{ if $tocScrollspy }}
+<script src="{{ $tocScrollspy.RelPermalink }}"></script>
+{{ end }}

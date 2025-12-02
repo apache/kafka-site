@@ -297,3 +297,113 @@ table {
     padding: 0.75rem; // Ensure decent padding
   }
 }
+
+/* Sticky Sidebar and TOC */
+.td-sidebar,
+.td-sidebar-toc {
+  align-self: stretch;
+  /* Ensure parent has no overflow hidden */
+  overflow: visible !important;
+  height: auto !important;
+}
+
+/* TOC Scrollspy Active State */
+.td-toc-content {
+  a {
+    transition: all 0.2s ease-in-out;
+    border-left: 2px solid transparent;
+    padding-left: 0.5rem;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    opacity: 0.8;
+    margin-bottom: 0.2rem;
+
+    &:hover {
+      opacity: 1;
+      color: var(--bs-primary);
+    }
+
+    &.active {
+      font-weight: 700;
+      color: var(--bs-primary);
+      border-left: 3px solid var(--bs-primary);
+      opacity: 1;
+      background: linear-gradient(90deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+  }
+
+  /* Indent nested items */
+  ul {
+    padding-left: 1rem;
+    list-style: none;
+  }
+}
+
+.td-sticky-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4rem;
+  height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.td-sticky-header {
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  padding-bottom: 1rem;
+  z-index: 11;
+}
+
+.td-sticky-content {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding-bottom: 2rem;
+  /* Hide scrollbar for cleaner look but keep functionality */
+  scrollbar-width: thin;
+}
+
+.td-sticky-wrapper {
+  position: -webkit-sticky;
+  position: sticky;
+  /* Default to top sticky, JS will override if tall */
+  top: var(--sticky-top, 4rem);
+  z-index: 10;
+  /* Ensure it stays above other content if needed */
+  padding-bottom: 2rem;
+  width: 100%;
+  /* Seamless scrolling: No internal scrollbars */
+  max-height: none;
+  overflow-y: visible;
+}
+
+/* Fix for sticky positioning: Ensure no ancestor has overflow: hidden */
+html,
+body,
+.td-outer,
+.td-main,
+.row {
+  overflow: visible !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+}
+
+/* Restore overflow-x hidden on html/body if needed for mobile, but be careful */
+@media (max-width: 767.98px) {
+
+  html,
+  body {
+    overflow-x: hidden !important;
+  }
+}
+
+/* Fix for internal sidebar scrolling: Override theme styles that might trap scroll */
+#td-sidebar-menu,
+.td-sidebar__inner,
+.td-sidebar-nav {
+  max-height: none !important;
+  overflow-y: visible !important;
+  height: auto !important;
+}
