@@ -340,43 +340,50 @@ table {
   }
 }
 
-.td-sticky-container {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 4rem;
-  height: calc(100vh - 4rem);
-  display: flex;
-  flex-direction: column;
-  z-index: 10;
-}
+/* Sticky Sidebar and TOC - Desktop Only */
+@media (min-width: 768px) {
+  .td-sticky-container {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 4rem;
+    height: calc(100vh - 4rem);
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+  }
 
-.td-sticky-header {
-  flex: 0 0 auto;
-  background-color: #ffffff;
-  padding-bottom: 1rem;
-  z-index: 11;
-}
+  .td-sticky-header {
+    flex: 0 0 auto;
+    background-color: #ffffff;
+    padding-bottom: 1rem;
+    z-index: 11;
+  }
 
-.td-sticky-content {
-  flex: 1 1 auto;
-  overflow-y: auto;
-  padding-bottom: 2rem;
-  /* Hide scrollbar for cleaner look but keep functionality */
-  scrollbar-width: thin;
+  .td-sticky-content {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding-bottom: 2rem;
+    /* Hide scrollbar for cleaner look but keep functionality */
+    scrollbar-width: thin;
+  }
 }
 
 .td-sticky-wrapper {
+  /* Legacy wrapper if used anywhere else, or keep for safety */
   position: -webkit-sticky;
   position: sticky;
-  /* Default to top sticky, JS will override if tall */
   top: var(--sticky-top, 4rem);
   z-index: 10;
-  /* Ensure it stays above other content if needed */
   padding-bottom: 2rem;
   width: 100%;
-  /* Seamless scrolling: No internal scrollbars */
   max-height: none;
   overflow-y: visible;
+}
+
+/* Ensure mobile menu is visible when expanded */
+.td-sidebar-nav.collapse.show {
+  display: block !important;
+  height: auto !important;
 }
 
 /* Fix for sticky positioning: Ensure no ancestor has overflow: hidden */

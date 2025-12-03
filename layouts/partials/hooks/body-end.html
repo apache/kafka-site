@@ -8,10 +8,15 @@
 
 {{ $stickySmart := resources.Get "js/sticky-smart.js" }}
 {{ if $stickySmart }}
-<script src="{{ $stickySmart.RelPermalink }}"></script>
+<script src="{{ $stickySmart.Permalink }}"></script>
+{{ end }}
+
+{{ $sidebarToggle := resources.Get "js/sidebar-toggle.js" }}
+{{ if $sidebarToggle }}
+<script src="{{ $sidebarToggle.Permalink }}"></script>
 {{ end }}
 
 {{ $tocScrollspy := resources.Get "js/toc-scrollspy.js" }}
 {{ if $tocScrollspy }}
-<script src="{{ $tocScrollspy.RelPermalink }}"></script>
+<script src="{{ $tocScrollspy.Permalink }}"></script>
 {{ end }}
