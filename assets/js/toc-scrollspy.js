@@ -27,7 +27,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Add active class to the corresponding link
                 const id = entry.target.id;
-                const activeLink = linkMap.get(id);
+                let activeLink = linkMap.get(id);
+
+                // If the current heading isn't in the TOC (e.g. h4/h5), find the closest preceding heading that is
+                if (!activeLink) {
+                    const currentIndex = headings.indexOf(entry.target);
+                    if (currentIndex > 0) {
+                        for (let i = currentIndex - 1; i >= 0; i--) {
+                            const prevHeading = headings[i];
+                            if (linkMap.has(prevHeading.id)) {
+                                activeLink = linkMap.get(prevHeading.id);
+                                break;
+                            }
+                        }
+                    }
+                }
+
                 if (activeLink) {
                     activeLink.classList.add('active');
 
@@ -42,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             const parentLink = parent.querySelector(':scope > a');
                             if (parentLink) parentLink.classList.add('active');
                         }
-                        if (parent.classList.contains('td-sidebar-toc')) break;
+                        if (parent.classList.contains('td-toc-content')) break;
                         parent = parent.parentElement;
                     }
                 }
