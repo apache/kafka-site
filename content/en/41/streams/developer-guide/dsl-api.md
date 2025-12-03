@@ -1911,7 +1911,7 @@ The following deprecated methods are no longer available in Kafka Streams:
 
 The Processor API now serves as a unified replacement for all these methods. It simplifies the API surface while maintaining support for both stateless and stateful operations.
 
-**CAUTION:** If you are using `KStream.transformValues()` and you have the "merge repartition topics" optimization enabled, rewriting your program to `KStream.processValues()` might not be safe due to [KAFKA-19668](https://issues.apache.org/jira/browse/KAFKA-19668). For this case, you should not upgrade to Kafka Streams 4.0.0 or 4.1.0, but use Kafka Streams 4.0.1 instead, which contains a fix. Note, that the fix is not enabled by default for backward compatibility reasons, and you would need to enable the fix by setting config `__enable.process.processValue.fix__ = true` and pass it into `StreamsBuilder()` constructor.
+**CAUTION:** If you are using `KStream.transformValues()` or `KStream.flatTransformValues()` and you have the "merge repartition topics" optimization enabled, rewriting your program to `KStream.processValues()` might not be safe due to [KAFKA-19668](https://issues.apache.org/jira/browse/KAFKA-19668). For this case, you should not upgrade to Kafka Streams 4.0.0 or 4.1.0, but use Kafka Streams 4.0.1 or 4.1.1 instead, which contain a fix. Note, that the fix is not enabled by default for backward compatibility reasons, and you would need to enable the fix by setting config `__enable.process.processValue.fix__ = true` and pass it into `StreamsBuilder()` constructor.
     
     
     final Properties properties = new Properties();
@@ -2097,6 +2097,8 @@ Below, methods `replaceWithFlatTransformValues` and `replaceWithProcessValues` s
     }
 
 #### Cumulative Discounts for a Loyalty Program
+
+Below, methods `applyDiscountWithTransform` and `applyDiscountWithProcess` show how you can migrate from `transform` to `process`.
     
     
     public class CumulativeDiscountsForALoyaltyProgramExample {

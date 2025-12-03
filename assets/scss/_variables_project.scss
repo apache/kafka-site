@@ -38,6 +38,9 @@ $primary: #ffffff;
   padding-top: 2rem;
 }
 
+// Align testimonials section with cover block content padding on testimonials page
+// The testimonials shortcode now wraps content in a .container to match cover block structure
+
 
 .c-testimonials__testimonial {
   text-align: center;
@@ -828,6 +831,36 @@ html {
   .lead {
     @media (max-width: 768px) {
       font-size: 1rem;
+    }
+  }
+}
+
+// Left-align cover block content for testimonials page
+body.testimonials-page {
+  .td-cover-block {
+    .display-1,
+    .display-2,
+    .display-3,
+    .display-4,
+    .display-5,
+    .display-6,
+    h1 {
+      text-align: left !important;
+    }
+
+    .lead,
+    p {
+      text-align: left !important;
+    }
+
+    .td-overlay__inner {
+      text-align: left !important;
+    }
+
+    // Ensure content container is left-aligned
+    .container,
+    .container-fluid {
+      text-align: left;
     }
   }
 }
