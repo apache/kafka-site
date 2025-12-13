@@ -8,7 +8,7 @@ keywords:
 type: docs
 ---
 
-Java 8, Java 11, Java 17, Java 21 and Java 23 are supported. 
+Java 8, 11, 17, and 21 are fully supported while Java 25 has received limited validation and support is best-effort. 
 
 Note that Java 8 support project-wide has been deprecated since Apache Kafka 3.0 and Java 11 support for the broker and tools has been deprecated since Apache Kafka 3.7. Both have been removed in Apache Kafka 4.0. 
 
