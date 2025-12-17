@@ -1,13 +1,1 @@
-Options +Includes
-RewriteEngine On
-AddType text/html .html
-AddHandler server-parsed .html
-Redirect 301 /design.html /documentation#design
-
-RewriteRule ^/?(\d+)/generated/ - [S=4]
-RewriteRule ^/?(\d+)/documentation(\.html)? - [S=3]
-RewriteRule ^/?(\d+)/javadoc - [S=2]
-RewriteRule ^/?(\d+)/images/ - [S=1]
-RewriteCond $2 !=protocol
-RewriteRule ^/?(\d+)/([a-z]+)(\.html)? /$1/documentation#$2 [R=302,L,NE]
-Header set Content-Security-Policy "frame-src https://youtube.com https://www.youtube.com"
+Header set Content-Security-Policy "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://unpkg.com https://code.jquery.com"
