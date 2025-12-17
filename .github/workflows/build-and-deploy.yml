@@ -5,11 +5,10 @@ on:
     branches: [ markdown ]
   workflow_dispatch:
     inputs:
-      target_branches:
-        description: 'Comma-separated list of branches to build (e.g., markdown,main)'
-        required: false
-        default: 'markdown'
-        type: string
+      deploy-to-asf-site:
+        description: 'Check to update live website'
+        default: false
+        type: boolean
 
 env:
   # Default branches - can be overridden by repository variables
@@ -50,11 +49,18 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-html
     steps:
+    - name: Env
+      run: printenv
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+    - name: Configure
+      id: configure
+      run: echo "ref=${{ inputs.deploy-to-asf-site && 'asf-site' || 'asf-staging' }}" >> "$GITHUB_OUTPUT"
     - name: Checkout staging
       uses: actions/checkout@v5
       with:
         persist-credentials: true  # Needed to commit and push later
-        ref: asf-site
+        ref: 'asf-staging'
     - name: Reset HTML
       run: |
         rm -rf *
@@ -88,7 +94,7 @@ jobs:
         echo "## Deployment Summary" >> $GITHUB_STEP_SUMMARY
         echo "- **Source Branch**: ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
         echo "- **Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
-        echo "- **Target Branch**: asf-site" >> $GITHUB_STEP_SUMMARY
+        echo "- **Target Branch**: ${{ steps.configure.outputs.ref }}" >> $GITHUB_STEP_SUMMARY
         echo "- **Build Time**: $(date)" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### Build Output" >> $GITHUB_STEP_SUMMARY
