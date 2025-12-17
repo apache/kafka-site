@@ -45,7 +45,7 @@ jobs:
         if-no-files-found: error
         retention-days: 7
 
-  deploy-to-staging:
+  deploy:
     runs-on: ubuntu-latest
     needs: build-html
     steps:
@@ -56,11 +56,11 @@ jobs:
     - name: Configure
       id: configure
       run: echo "ref=${{ inputs.deploy-to-asf-site && 'asf-site' || 'asf-staging' }}" >> "$GITHUB_OUTPUT"
-    - name: Checkout staging
+    - name: Checkout
       uses: actions/checkout@v5
       with:
         persist-credentials: true  # Needed to commit and push later
-        ref: 'asf-staging'
+        ref: ${{ steps.configure.outputs.ref }}
     - name: Reset HTML
       run: |
         rm -rf *
@@ -78,7 +78,7 @@ jobs:
     - name: Commit and push HTML
       env:
         COMMIT_MSG: |
-          Updated asf staging from GHA workflow run ${{ github.run_id }}
+          Updated ${{ steps.configure.outputs.ref }} from GHA workflow run ${{ github.run_id }}
 
           Commit: https://github.com/apache/kafka-site/commit/${{ github.sha }}
           GitHub Run: https://github.com/apache/kafka-site/actions/runs/${{ github.run_id }}
