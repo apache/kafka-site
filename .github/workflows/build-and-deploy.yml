@@ -54,7 +54,7 @@ jobs:
       uses: actions/checkout@v5
       with:
         persist-credentials: true  # Needed to commit and push later
-        ref: asf-staging
+        ref: asf-site
     - name: Reset HTML
       run: |
         rm -rf *
@@ -88,7 +88,7 @@ jobs:
         echo "## Deployment Summary" >> $GITHUB_STEP_SUMMARY
         echo "- **Source Branch**: ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
         echo "- **Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
-        echo "- **Target Branch**: asf-staging" >> $GITHUB_STEP_SUMMARY
+        echo "- **Target Branch**: asf-site" >> $GITHUB_STEP_SUMMARY
         echo "- **Build Time**: $(date)" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### Build Output" >> $GITHUB_STEP_SUMMARY
