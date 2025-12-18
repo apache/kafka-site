@@ -1,6 +1,9 @@
 ---
 title: Contact
 type: docs
+aliases:
+  - "/contact"
+  - "/contact.html"
 ---
 
 ## Mailing Lists

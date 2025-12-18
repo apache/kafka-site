@@ -1,5 +1,8 @@
 ---
-title: "Books And Papers"
+title: Books and Papers
+aliases:
+  - "/books-and-papers"
+  - "/books-and-papers.html"
 type: docs
 ---
 

@@ -1,6 +1,9 @@
 ---
 title: "Events"
 type: docs
+aliases:
+  - "/events"
+  - "/events.html"
 ---
 
 

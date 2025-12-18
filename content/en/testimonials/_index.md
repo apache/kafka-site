@@ -1,6 +1,10 @@
 ---
 title: Powered By
+url: "/powered-by"
 body_class: testimonials-page
+aliases:
+  - "/powered-by.html"
+  - "/testimonials"
 ---
 
 {{% blocks/cover title="Powered By" image_anchor="bottom" height="auto" align="left" %}}

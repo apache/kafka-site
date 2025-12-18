@@ -1,6 +1,9 @@
 ---
 title: Community
 type: docs
+aliases:
+  - "/project"
+  - "/project.html"
 # Add blocks of content here to add more sections to the community page
 ---
 

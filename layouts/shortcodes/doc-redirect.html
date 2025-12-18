@@ -1,0 +1,117 @@
+<script>
+    (function () {
+        // 1. Get version from Hugo config
+        var latestVersion = "{{ .Site.Params.latest_version }}";
+
+        // 2. Define the Mapping
+        var hashIncludedMap = {
+            //Getting Started menu
+            "#gettingStarted": "getting-started",
+            "#introduction": "getting-started/introduction",
+            "#uses": "getting-started/uses",
+            "#quickstart": "getting-started/quickstart",
+            "#ecosystem": "getting-started/ecosystem",
+            "#upgrade": "getting-started/upgrade",
+            "#zk2kraft-summary": "getting-started/zk2kraft",
+            "#compatibility-summary": "getting-started/compatibility",
+            "#docker": "getting-started/docker",
+
+            //APIs menu
+            "#api": "apis",
+            "#producerapi": "apis/#producer-api",
+            "#consumerapi": "apis/#consumer-api",
+            "#shareconsumerapi": "apis/#share-consumer-api",
+            "#streamsapi": "apis/#streams-api",
+            "#connectapi": "apis/#connect-api",
+            "#adminapi": "apis/#admin-api",
+
+            //Configuration menu
+            "#configuration": "configuration",
+            "#brokerconfigs": "configuration/broker-configs/",
+            "#topicconfigs": "configuration/topic-configs/",
+            "#groupconfigs": "configuration/group-configs/",
+            "#producerconfigs": "configuration/producer-configs/",
+            "#consumerconfigs": "configuration/consumer-configs/",
+            "#connectconfigs": "configuration/kafka-connect-configs/",
+            "#sourceconnectconfigs": "configuration/kafka-connect-configs/#source-connector-configs",
+            "#sinkconnectconfigs": "configuration/kafka-connect-configs/#sink-connector-configs",
+            "#streamsconfigs": "configuration/kafka-streams-configs/",
+            "#adminclientconfigs": "configuration/admin-configs/",
+            "#mirrormakerconfigs": "configuration/mirrormaker-configs/",
+            "#systemproperties": "configuration/system-properties/",
+            "#tieredstorageconfigs": "configuration/tiered-storage-configs/",
+            "#config_providers": "configuration/configuration-providers/",
+
+            //Design menu
+            "#design": "design/design/",
+            "#majordesignelements": "design/design/#motivation",
+            "#persistence": "design/design/#persistence",
+            "#maximizingefficiency": "design/design/#efficiency",
+            "#theproducer": "design/design/#the-producer",
+            "#theconsumer": "design/design/#the-consumer",
+            "#semantics": "design/design/#message-delivery-semantics",
+            "#usingtransactions": "design/design/#using-transactions",
+            "#sharegroups": "design/design/#share-groups",
+            "#replication": "design/design/#replication",
+            "#compaction": "design/design/#log-compaction",
+            "#design_quotas": "design/design/#quotas",
+
+            //Implementation menu
+            "#implementation": "implementation",
+            "#networklayer": "implementation/network-layer/",
+            "#messages": "implementation/messages/",
+            "#messageformat": "implementation/message-format/",
+            "#log": "implementation/log/",
+            "#distributionimpl": "implementation/distribution/",
+
+            //Operations menu
+            "#operations": "operations",
+            "#basic_ops": "operations/basic-kafka-operations/",
+            "#datacenters": "operations/datacenters/",
+            "#georeplication": "operations/geo-replication-cross-cluster-data-mirroring/",
+            "#multitenancy": "operations/multi-tenancy/",
+            "#java": "operations/java-version/",
+            "#hwandos": "operations/hardware-and-os/",
+            "#monitoring": "operations/monitoring/",
+            "#kraft": "operations/kraft/",
+            "#tiered_storage": "operations/tiered-storage/",
+            "#consumer_rebalance_protocol": "operations/consumer-rebalance-protocol/",
+            "#transaction_protocol": "operations/transaction-protocol/",
+            "#eligible_leader_replicas": "operations/eligible-leader-replicas/",
+
+            //Security menu
+            "#security": "security",
+            "#security_overview": "security/security-overview/",
+            "#listener_configuration": "security/listener-configuration/",
+            "#security_ssl": "security/encryption-and-authentication-using-ssl/",
+            "#security_sasl": "security/authentication-using-sasl/",
+            "#security_authz": "security/authorization-and-acls/",
+            "#security_rolling_upgrade": "security/incorporating-security-features-in-a-running-cluster/",
+
+            //Connect menu
+            "#connect": "kafka-connect",
+            "#connect_overview": "kafka-connect/overview/",
+            "#connect_user": "kafka-connect/user-guide/",
+            "#connect_development": "kafka-connect/connector-development-guide/",
+            "#connect_administration": "kafka-connect/administration/",
+
+            //Streams menu
+            "#streams": "streams"
+
+        };
+
+        var currentHash = window.location.hash;
+
+        // 3. Logic:
+        // IF hash matches map -> Go to Deep Link
+        // ELSE -> Go to legitimate Docs Homepage 
+
+        if (currentHash && hashIncludedMap[currentHash]) {
+            window.location.replace("/" + latestVersion + "/" + hashIncludedMap[currentHash]);
+        } else {
+            // Default Fallback 
+            window.location.replace("/" + latestVersion + "/getting-started/introduction");
+        }
+    })();
+</script>
+<p>Redirecting...</p>

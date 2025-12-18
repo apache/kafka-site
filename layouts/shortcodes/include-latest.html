@@ -1,0 +1,8 @@
+{{- $path := .Get "path" -}}
+{{- $latestVersion := site.Params.latest_version -}}
+{{- $fullPath := printf "/%s/%s" $latestVersion $path -}}
+{{- with site.GetPage $fullPath -}}
+{{ .Content }}
+{{- else -}}
+{{ errorf "Unable to find page at %q" $fullPath }}
+{{- end -}}

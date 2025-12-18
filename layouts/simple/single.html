@@ -1,0 +1,31 @@
+{{ define "main" }}
+<section class="section">
+    <div class="container py-4" style="margin-top: 1rem;">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <h1 class="mb-4">{{ .Title }}</h1>
+                <div class="td-content">
+                    <style>
+                        /* Force content to take full width of container */
+                        .td-content {
+                            max-width: 100%;
+                        }
+
+                        /* Force all children (paragraphs, headers) to fill the container */
+                        .td-content>* {
+                            max-width: 100% !important;
+                        }
+
+                        /* Responsive images */
+                        .td-content img {
+                            max-width: 100%;
+                            height: auto;
+                        }
+                    </style>
+                    {{ .Content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

@@ -1,6 +1,9 @@
 ---
 title: "Project Security"
 type: docs
+aliases:
+    - "/project-security"
+    - "/project-security.html"
 ---
 
 # Kafka security
