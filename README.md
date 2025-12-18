@@ -50,7 +50,7 @@ Each version directory contains the complete documentation for that specific Kaf
 
 ## Updating the Documentation Website
 
-### Adding a New Version
+### Adding documentation for a new release
 
 When releasing a new documentation version (e.g., version 4.2 / "42"), follow these steps:
 
@@ -58,35 +58,39 @@ When releasing a new documentation version (e.g., version 4.2 / "42"), follow th
 Create a new directory in `content/en/` for the new version (e.g., `42/` for version 4.2)
 
 #### 2. Update Version Parameters in `hugo.yaml`
-
-**Update the centralized version parameters (Lines 142-144):**
-```yaml
-params:
-  # Latest documentation version - UPDATE THIS WHEN RELEASING NEW VERSION
-  latest_version: "42"           # Change from "41" to "42"
-  latest_version_number: "4.2"   # Change from "4.1" to "4.2"
-```
-
-**Update the version parameter (Line ~180):**
-```yaml
-  version: 4.2  # Change from 4.1 to 4.2
-```
-
-**Update the latest version URL (Line ~283):**
-```yaml
-  url_latest_version: /42/  # Change from /41/ to /42/
-```
-
-**Add new version to versions list and mark previous as archived (Line ~184):**
-```yaml
-  versions:
-    - version: "4.2"
-      url: /42/
-    - version: "4.1"
-      url: /41/
-      archived_version: true  # Mark previous version as archived
-    # ... other versions ...
-```
+ 
+ Locate the **Version Configuration** block at the top of the `params` section (around line 245). Update the following fields:
+ 
+ 1.  `latest_version`: Set to the new version string (e.g., "42").
+ 2.  `latest_version_number`: Set to the new version number (e.g., "4.2").
+ 3.  `version`: Update to the new version (e.g., 4.2).
+ 4.  `url_latest_version`: Update the link (e.g., `/42/`).
+ 5.  `versions`:
+     -   Add the new version to the top of the list.
+     -   Mark the previous version as `archived_version: true`.
+ 
+ ```yaml
+   # Latest documentation version - UPDATE THIS WHEN RELEASING NEW VERSION
+   latest_version: "42"
+   latest_version_number: "4.2"
+   
+   # ...
+   
+   version: 4.2
+ 
+   # ...
+ 
+   url_latest_version: /42/
+ 
+   # ...
+ 
+   versions:
+     - version: "4.2"
+       url: /42/
+     - version: "4.1"
+       url: /41/
+       archived_version: true
+ ```
 
 #### What Updates Automatically
 
@@ -144,6 +148,44 @@ The website uses Hugo's data templates to automatically generate the testimonial
 
 2. For common content (e.g., landing page, community docs):
    - Edit files directly in `content/en/`
+
+### Front Matter Guide
+
+Detailed information about the Front Matter fields used in this site:
+
+- `title`: The title of the page or post.
+- `linkTitle`: (Optional) Short title used in sidebars and menus.
+- `date`: Publication date (YYYY-MM-DD).
+- `author`: Author name (often with GitHub handle). Typically used for blogs.
+- `weight`: (Optional) Controls ordering in lists/menus (lower numbers appear first).
+- `description`: (Optional) Brief summary for SEO and previews.
+- `type`: Used to specify the layout type (e.g., `type: docs` for documentation pages).
+- `aliases`: (Optional) List of old URLs that should redirect to this page.
+- `url`: (Optional) Overrides the default URL path constructed from the filename.
+
+For more details, see the [Hugo Front Matter Documentation](https://gohugo.io/content-management/front-matter/).
+
+### Adding a New Blog Post
+
+Blog posts are located in `content/en/blog/`. The most common use case is adding a release announcement.
+
+#### Adding a Release Blog Post
+
+1. Create a new markdown file in `content/en/blog/releases/` using kebab-case for the filename (e.g., `ak-4.3.0.md`).
+2. Add the required Front Matter. See the [Front Matter Guide](#front-matter-guide) for details on fields.
+
+**Example Front Matter for a Release Post:**
+
+```yaml
+---
+date: 2025-01-01
+title: "Apache Kafka 4.3.0 Release Announcement"
+linkTitle: "AK 4.3.0"
+author: "Author Name (@github_handle)"
+---
+```
+
+3. Write your content below the Front Matter.
 
 ## Build and Test
 
