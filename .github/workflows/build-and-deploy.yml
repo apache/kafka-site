@@ -10,10 +10,6 @@ on:
         default: false
         type: boolean
 
-env:
-  # Default branches - can be overridden by repository variables
-  BUILD_BRANCHES: 'markdown'
-
 jobs:
   build-html:
     runs-on: ubuntu-latest
