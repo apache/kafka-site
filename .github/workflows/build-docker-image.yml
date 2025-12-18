@@ -1,15 +1,11 @@
-name: Build and Push Production Image
+name: Build and Push Docker Image
 
 on:
   push:
     branches: [ markdown ]
-  workflow_dispatch:
-    inputs:
-      target_branches:
-        description: 'Comma-separated list of branches to build (e.g., markdown,main)'
-        required: false
-        default: 'markdown,main'
-        type: string
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+    branches: [ markdown ]
 
 env:
   # GitHub Container Registry
