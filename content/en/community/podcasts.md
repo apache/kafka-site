@@ -1,6 +1,9 @@
 ---
 title: "Podcasts"
 type: docs
+aliases:
+  - "/podcasts"
+  - "/podcasts.html"
 ---
 
 

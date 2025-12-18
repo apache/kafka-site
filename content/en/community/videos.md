@@ -1,6 +1,9 @@
 ---
 title: "Videos"
 type: docs
+aliases:
+  - "/videos"
+  - "/videos.html"
 ---
 
 # Best Kafka Summit Videos

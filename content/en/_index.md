@@ -7,7 +7,7 @@ title: Apache Kafka
 <a class="btn btn-lg btn-primary me-3 mb-4" href="{{< param "url_latest_version" >}}">
   Learn More <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
-<a class="btn btn-lg btn-secondary me-3 mb-4" href="/community/downloads/">
+<a class="btn btn-lg btn-secondary me-3 mb-4" href="/downloads/">
   Download <i class="fa-solid fa-download ms-2 "></i>
 </a>
 <p class="lead mt-5"><i>More than 80% of all Fortune 100 companies trust, and use Apache Kafka.</i></p>
@@ -56,7 +56,7 @@ Apache Kafka is an open-source distributed event streaming platform used by thou
   Above is a snapshot of the number of top-ten largest companies using Kafka, per-industry.
   <br/> 
   <br/>
-  <a href="/testimonials/" class="btn btn-lg btn-primary">See full list <i class="fas fa-arrow-alt-circle-right ms-2"></i></a>
+  <a href="/powered-by/" class="btn btn-lg btn-primary">See full list <i class="fas fa-arrow-alt-circle-right ms-2"></i></a>
 </p>
 
 {{< /blocks/section >}}

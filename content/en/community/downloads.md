@@ -1,9 +1,10 @@
 ---
 title: "Downloads"
 type: docs
+aliases:
+  - "/downloads"
+  - "/downloads.html"
 ---
-
-
 
 The project goal is to have 3 releases a year, which means a release every 4 months. Bugfix releases are made as needed for supported releases only. It is possible to verify every download by following these [procedures](https://www.apache.org/info/verification.html) and using these [KEYS](https://downloads.apache.org/kafka/KEYS). 
 

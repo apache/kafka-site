@@ -98,73 +98,78 @@ menu:
       weight: 10
     - name: "Introduction"
       parent: "Get Started"
-      url: "{{VERSION}}/getting-started/introduction/"
+      url: "/intro"
       weight: 11
     - name: "Quickstart"
       parent: "Get Started"
-      url: "{{VERSION}}/getting-started/quickstart/"
+      url: "/quickstart"
       weight: 12
     - name: "Use Cases"
       parent: "Get Started"
-      url: "{{VERSION}}/getting-started/uses/"
+      url: "/uses"
       weight: 13
     - name: "Books and Papers"
       parent: "Get Started"
-      url: "/community/books_and_papers/"
+      url: "/books-and-papers"
       weight: 14
     - name: "Videos"
       parent: "Get Started"
-      url: "/community/videos/"
+      url: "/videos"
       weight: 15
     - name: "Podcasts"
       parent: "Get Started"
-      url: "/community/podcasts/"
+      url: "/podcasts"
       weight: 16
 
     # Docs menu
     - name: "Docs"
-      url: "{{VERSION}}"
+      url: "/documentation"
       weight: 20
     - name: "Key Concepts"
       parent: "Docs"
-      url: "{{VERSION}}/getting-started/"
+      url: "/documentation#gettingStarted"
       weight: 21
     - name: "APIs"
       parent: "Docs"
-      url: "{{VERSION}}/apis/"
+      url: "/documentation#api"
       weight: 22
     - name: "Configuration"
       parent: "Docs"
-      url: "{{VERSION}}/configuration/"
+      url: "/documentation#configuration"
       weight: 23
     - name: "Design"
       parent: "Docs"
-      url: "{{VERSION}}/design/"
+      url: "/documentation#design"
       weight: 24
     - name: "Implementation"
       parent: "Docs"
-      url: "{{VERSION}}/implementation/"
+      url: "/documentation#implementation"
       weight: 25
     - name: "Operations"
       parent: "Docs"
-      url: "{{VERSION}}/operations/"
+      url: "/documentation#operations"
       weight: 26
     - name: "Security"
+      identifier: "docs_security"
       parent: "Docs"
-      url: "{{VERSION}}/security/"
+      url: "/documentation#security"
       weight: 27
+    - name: "Clients"
+      parent: "Docs"
+      url: "https://cwiki.apache.org/confluence/display/KAFKA/Clients"
+      weight: 28
     - name: "Kafka Connect"
       parent: "Docs"
-      url: "{{VERSION}}/kafka-connect/"
-      weight: 28
+      url: "/documentation#connect"
+      weight: 29
     - name: "Kafka Streams"
       parent: "Docs"
-      url: "{{VERSION}}/streams/"
-      weight: 29
+      url: "/documentation/streams"
+      weight: 30
 
     # Powered By menu item
     - name: "Powered By"
-      url: "/testimonials/"
+      url: "/powered-by/"
       weight: 35
 
     # Community menu
@@ -181,7 +186,7 @@ menu:
       weight: 42
     - name: "Project Info"
       parent: "Community"
-      url: "/community/"
+      url: "/project/"
       weight: 43
     - name: "Trademark"
       parent: "Community"
@@ -221,6 +226,7 @@ menu:
       url: "https://www.apache.org/foundation/thanks.html"
       weight: 54
     - name: "Security"
+      identifier: "apache_security"
       parent: "Apache"
       url: "https://www.apache.org/security/"
       weight: 55
@@ -240,25 +246,16 @@ params:
   latest_version: "41"
   latest_version_number: "4.1"
   
-  # Favicon configuration
-  favicon: /images/apache.png
-  
-  print: 
-    disable_toc: false
-  taxonomy:
-    # set taxonomyCloud = [] to hide taxonomy clouds
-    taxonomyCloud: [tags, categories]
+  # The version number for the version of the docs represented in this doc set.
+  # Used in the "version-banner" partial to display a version number for the
+  # current doc set.
+  # NOTE: This is automatically set from latest_version_number parameter above
+  version: 4.1
 
-    # If used, must have same length as taxonomyCloud
-    taxonomyCloudTitle: [Tag Cloud, Categories]
-
-    # set taxonomyPageHeader = [] to hide taxonomies on the page headers
-    taxonomyPageHeader: [tags, categories]
-
-  privacy_policy: https://privacy.apache.org/policies/privacy-policy-public.html
-
-  # First one is picked as the Twitter card image if not set on page.
-  # images: [images/project-illustration.png]
+  # A link to latest version of the docs. Used in the "version-banner" partial to
+  # point people to the main doc site.
+  # NOTE: When updating to version 42, change this to /42/
+  url_latest_version: /41/
 
   # Menu title if your navbar has a versions selector to access old versions of your site.
   # This menu appears only if you have at least one [params.versions] set.
@@ -269,11 +266,6 @@ params:
   # Set this flag to "true" if you want to display the banner.
   archived_version: true
 
-  # The version number for the version of the docs represented in this doc set.
-  # Used in the "version-banner" partial to display a version number for the
-  # current doc set.
-  # NOTE: This is automatically set from latest_version_number parameter above
-  version: 4.1
   versions:
     # NOTE: When adding version 42, update params.latest_version to "42" 
     # and params.latest_version_number to "4.2" at the top
@@ -372,11 +364,26 @@ params:
     - version: "0.7"
       url: /07/
       archived_version: true
+  
+  # Favicon configuration
+  favicon: /images/apache.png
+  
+  print: 
+    disable_toc: false
+  taxonomy:
+    # set taxonomyCloud = [] to hide taxonomy clouds
+    taxonomyCloud: [tags, categories]
 
-  # A link to latest version of the docs. Used in the "version-banner" partial to
-  # point people to the main doc site.
-  # NOTE: When updating to version 42, change this to /42/
-  url_latest_version: /41/
+    # If used, must have same length as taxonomyCloud
+    taxonomyCloudTitle: [Tag Cloud, Categories]
+
+    # set taxonomyPageHeader = [] to hide taxonomies on the page headers
+    taxonomyPageHeader: [tags, categories]
+
+  privacy_policy: https://privacy.apache.org/policies/privacy-policy-public.html
+
+  # First one is picked as the Twitter card image if not set on page.
+  # images: [images/project-illustration.png]
 
   # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
   github_repo: https://github.com/apache/kafka-site/

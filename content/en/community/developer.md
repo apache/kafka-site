@@ -1,6 +1,13 @@
 ---
 title: Developer Guide
 type: docs
+aliases:
+    - "/contributing"
+    - "/contributing.html"
+    - "/coding-guide"
+    - "/coding-guide.html"
+    - "/code"
+    - "/code.html"
 ---
 
 ## Getting the code

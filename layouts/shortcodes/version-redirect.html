@@ -1,0 +1,11 @@
+{{/*
+Shortcode: version-redirect
+Description: Redirects to a path prefixed with the site's latest_version parameter.
+Usage: {{< version-redirect path="design/protocol">}}
+    */}}
+    {{ $latest := site.Params.latest_version }}
+    {{ $path := .Get "path" }}
+    <script>
+        window.location.href = "\/" + "{{ $latest }}" + "\/" + "{{ $path }}";
+    </script>
+    <p>Redirecting to <a href="/{{ $latest }}/{{ $path }}">/{{ $latest }}/{{ $path }}</a>...</p>
