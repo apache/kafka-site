@@ -221,6 +221,30 @@ def main():
             if not res["t_ok"]: msg.append(f"Target missing ({res['t_msg']})")
             print(f"[FAIL] {source} -> {target} : {', '.join(msg)}")
             results.append(res)
+            
+    print("-" * 50)
+    print("Verifying Legacy documentation.html")
+    # /documentation.html#design -> /41/design/design/#motivation (hash map check)
+    # We check source existence
+    source_legacy = "/documentation.html"
+    l_res = verify_single_redirect(source_legacy, source_legacy, "Legacy Root") # Target is itself for existence check, or verify redirect target?
+    # verify_single_redirect checks content at target.
+    # To verify partial functionality we can just check if source returns 200.
+    # But verify_single_redirect logic: source_url check (s_ok), target_url check (t_ok).
+    # We can check a known mapping.
+    
+    known_hash = "#design"
+    # From doc-redirect: "#design": "design/design/"
+    target_path = f"/{LATEST_VERSION}/design/design/" 
+    
+    # We can't verify hash client side logic with this script easily, but we verify page existence.
+    l_res = verify_single_redirect(source_legacy, target_path, "Legacy documentation.html link")
+    
+    if l_res["s_ok"]:
+         print(f"[PASS] {source_legacy} exists.")
+    else:
+         print(f"[FAIL] {source_legacy} missing.")
+         results.append(l_res) # Force failure if missing
 
     print("-" * 50)
     if not results:
