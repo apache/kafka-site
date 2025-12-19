@@ -53,7 +53,7 @@ The following settings apply to the default configuration for internal topics:
 
 
   * [Documentation](/documentation)
-  * [Kafka Streams](/streams)
-  * [Developer Guide](/streams/developer-guide/)
+  * [Kafka Streams](/documentation/streams)
+  * [Developer Guide](/documentation/streams/developer-guide/)
 
 

@@ -55,7 +55,7 @@ The Streams API allows transforming streams of data from input topics to output 
 
 Examples showing how to use this library are given in the [javadocs](/0110/javadoc/index.html?org/apache/kafka/streams/KafkaStreams.html "Kafka 0.11.0 Javadoc")
 
-Additional documentation on using the Streams API is available [here](/0110/streams). 
+Additional documentation on using the Streams API is available [here](/0110/documentation/streams). 
 
 To use Kafka Streams you can use the following maven dependency: 
     

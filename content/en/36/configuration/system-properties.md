@@ -20,10 +20,26 @@ If users want to enable JndiLoginModule, users need to explicitly reset the syst
 
 To disable more loginModules, update the system property with comma-separated loginModule names. Make sure to explicitly add **JndiLoginModule** module name to the comma-separated list like below. 
         
-        -Dorg.apache.kafka.disallowed.login.modules=com.sun.security.auth.module.JndiLoginModule,com.ibm.security.auth.module.LdapLoginModule,com.ibm.security.auth.module.Krb5LoginModule
+        -Dorg.apache.kafka.disallowed.login.modules=com.sun.security.auth.module.JndiLoginModule,com.ibm.security.auth.module.LdapLoginModule,com.ibm.security.auth.module.Krb5LoginModule  
+  
+<table>  
+<tr>  
+<th>
 
-Since:| 3.4.0  
----|---  
-Default Value:| com.sun.security.auth.module.JndiLoginModule  
+Since:
+</th>  
+<td>
+
+3.4.0
+</td></tr>  
+<tr>  
+<th>
+
+Default Value:
+</th>  
+<td>
+
+com.sun.security.auth.module.JndiLoginModule
+</td></tr> </table>
 
 

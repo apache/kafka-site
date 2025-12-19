@@ -36,7 +36,7 @@ Kafka has four core APIs:
 
   * The [Producer API](/documentation.html#producerapi) allows an application to publish a stream of records to one or more Kafka topics. 
   * The [Consumer API](/documentation.html#consumerapi) allows an application to subscribe to one or more topics and process the stream of records produced to them. 
-  * The [Streams API](/streams) allows an application to act as a _stream processor_ , consuming an input stream from one or more topics and producing an output stream to one or more output topics, effectively transforming the input streams to output streams. 
+  * The [Streams API](/documentation/streams) allows an application to act as a _stream processor_ , consuming an input stream from one or more topics and producing an output stream to one or more output topics, effectively transforming the input streams to output streams. 
   * The [Connector API](/documentation.html#connect) allows building and running reusable producers or consumers that connect Kafka topics to existing applications or data systems. For example, a connector to a relational database might capture every change to a table. 
 ![](/0110/images/kafka-apis.png)
 
@@ -98,7 +98,7 @@ Kafka only provides a total order over records _within_ a partition, not between
 
 ## Multi-tenancy
 
-You can deploy Kafka as a multi-tenant solution. Multi-tenancy is enabled by configuring which topics can produce or consume data. There is also operations support for quotas. Administrators can define and enforce quotas on requests to control the broker resources that are used by clients. For more information, see the [security documentation](/#security). 
+You can deploy Kafka as a multi-tenant solution. Multi-tenancy is enabled by configuring which topics can produce or consume data. There is also operations support for quotas. Administrators can define and enforce quotas on requests to control the broker resources that are used by clients. For more information, see the [security documentation](/documentation/#security). 
 
 ## Guarantees
 
@@ -137,7 +137,7 @@ The disk structures Kafka uses scale well--Kafka will perform the same whether y
 
 As a result of taking storage seriously and allowing the clients to control their read position, you can think of Kafka as a kind of special purpose distributed filesystem dedicated to high-performance, low-latency commit log storage, replication, and propagation. 
 
-For details about the Kafka's commit log storage and replication design, please read [this](/#design) page. 
+For details about the Kafka's commit log storage and replication design, please read [this](/documentation/#design) page. 
 
 ## Kafka for Stream Processing
 
@@ -147,7 +147,7 @@ In Kafka a stream processor is anything that takes continual streams of data fro
 
 For example, a retail application might take in input streams of sales and shipments, and output a stream of reorders and price adjustments computed off this data. 
 
-It is possible to do simple processing directly using the producer and consumer APIs. However for more complex transformations Kafka provides a fully integrated [Streams API](/streams). This allows building applications that do non-trivial processing that compute aggregations off of streams or join streams together. 
+It is possible to do simple processing directly using the producer and consumer APIs. However for more complex transformations Kafka provides a fully integrated [Streams API](/documentation/streams). This allows building applications that do non-trivial processing that compute aggregations off of streams or join streams together. 
 
 This facility helps solve the hard problems this type of application faces: handling out-of-order data, reprocessing input as code changes, performing stateful computations, etc. 
 

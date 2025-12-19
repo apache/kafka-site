@@ -332,7 +332,7 @@ Processors can schedule punctuators to handle periodic tasks. The mock context d
 If you need to write tests involving automatic firing of scheduled punctuators, we recommend creating a simple topology with your processor and using the [`TopologyTestDriver`](testing.html#testing-topologytestdriver). 
 
   * [Documentation](/documentation)
-  * [Kafka Streams](/streams)
-  * [Developer Guide](/streams/developer-guide/)
+  * [Kafka Streams](/documentation/streams)
+  * [Developer Guide](/documentation/streams/developer-guide/)
 
 

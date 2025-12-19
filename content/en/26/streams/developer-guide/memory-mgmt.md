@@ -241,8 +241,8 @@ As of 2.3.0 the memory usage across all instances can be bounded, limiting the t
       
     
     
-        [Previous](/26/streams/developer-guide/interactive-queries)
-        [Next](/26/streams/developer-guide/running-app)
+        [Previous](/26/documentation/streams/developer-guide/interactive-queries)
+        [Next](/26/documentation/streams/developer-guide/running-app)
       
     
     
@@ -265,10 +265,10 @@ As of 2.3.0 the memory usage across all instances can be bounded, limiting the t
         * [Documentation](/documentation)
     
           
-        * [Kafka Streams](/streams)
+        * [Kafka Streams](/documentation/streams)
     
           
-        * [Developer Guide](/streams/developer-guide/)
+        * [Developer Guide](/documentation/streams/developer-guide/)
     
         
     

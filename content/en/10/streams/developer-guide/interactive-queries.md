@@ -36,15 +36,75 @@ Connecting these fragments enables communication between instances of the same a
 
 Kafka Streams natively provides all of the required functionality for interactively querying the state of your application, except if you want to expose the full state of your application via interactive queries. To allow application instances to communicate over the network, you must add a Remote Procedure Call (RPC) layer to your application (e.g., REST API).
 
-This table shows the Kafka Streams native communication support for various procedures.
-
-Procedure | Application instance | Entire application  
----|---|---  
-Query local state stores of an app instance | Supported | Supported  
-Make an app instance discoverable to others | Supported | Supported  
-Discover all running app instances and their state stores | Supported | Supported  
-Communicate with app instances over the network (RPC) | Supported | Not supported (you must configure)  
+This table shows the Kafka Streams native communication support for various procedures.  
   
+<table>  
+<tr>  
+<th>
+
+Procedure
+</th>  
+<th>
+
+Application instance
+</th>  
+<th>
+
+Entire application
+</th> </tr>  
+<tr>  
+<td>
+
+Query local state stores of an app instance
+</td>  
+<td>
+
+Supported
+</td>  
+<td>
+
+Supported
+</td> </tr>  
+<tr>  
+<td>
+
+Make an app instance discoverable to others
+</td>  
+<td>
+
+Supported
+</td>  
+<td>
+
+Supported
+</td> </tr>  
+<tr>  
+<td>
+
+Discover all running app instances and their state stores
+</td>  
+<td>
+
+Supported
+</td>  
+<td>
+
+Supported
+</td> </tr>  
+<tr>  
+<td>
+
+Communicate with app instances over the network (RPC)
+</td>  
+<td>
+
+Supported
+</td>  
+<td>
+
+Not supported (you must configure)
+</td> </tr> </table>
+
 # Querying local state stores for an app instance
 
 A Kafka Streams application typically runs on multiple instances. The state that is locally available on any given instance is only a subset of the [application's entire state](../architecture.html#streams-architecture-state). Querying the local stores on an instance will only return data locally available on that particular instance.
@@ -427,7 +487,7 @@ At this point the full state of the application is interactively queryable:
 To see an end-to-end application with interactive queries, review the demo applications.
 
   * [Documentation](/documentation)
-  * [Kafka Streams](/streams)
-  * [Developer Guide](/streams/developer-guide/)
+  * [Kafka Streams](/documentation/streams)
+  * [Developer Guide](/documentation/streams/developer-guide/)
 
 

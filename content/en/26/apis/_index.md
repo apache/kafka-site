@@ -53,7 +53,7 @@ The Streams API allows transforming streams of data from input topics to output 
 
 Examples showing how to use this library are given in the [javadocs](/26/javadoc/index.html?org/apache/kafka/streams/KafkaStreams.html "Kafka 2.6 Javadoc")
 
-Additional documentation on using the Streams API is available [here](/26/streams). 
+Additional documentation on using the Streams API is available [here](/26/documentation/streams). 
 
 To use Kafka Streams you can use the following maven dependency: 
     
@@ -64,7 +64,7 @@ To use Kafka Streams you can use the following maven dependency:
     			<version>2.6.3</version>
     		</dependency>
 
-When using Scala you may optionally include the `kafka-streams-scala` library. Additional documentation on using the Kafka Streams DSL for Scala is available [in the developer guide](/26/streams/developer-guide/dsl-api.html#scala-dsl). 
+When using Scala you may optionally include the `kafka-streams-scala` library. Additional documentation on using the Kafka Streams DSL for Scala is available [in the developer guide](/26/documentation/streams/developer-guide/dsl-api.html#scala-dsl). 
 
 To use Kafka Streams DSL for Scala for Scala 2.13 you can use the following maven dependency: 
     

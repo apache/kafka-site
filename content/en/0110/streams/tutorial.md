@@ -10,7 +10,7 @@ type: docs
 
 # Write your own Streams Applications
 
-In this guide we will start from scratch on setting up your own project to write a stream processing application using Kafka's Streams API. It is highly recommended to read the [quickstart](/0110/streams/quickstart) first on how to run a Streams application written in Kafka Streams if you have not done so. 
+In this guide we will start from scratch on setting up your own project to write a stream processing application using Kafka's Streams API. It is highly recommended to read the [quickstart](/0110/documentation/streams/quickstart) first on how to run a Streams application written in Kafka Streams if you have not done so. 
 
 ### Setting up a Maven Project
 
@@ -83,7 +83,7 @@ In addition, you can customize other configurations in the same map, for example
             props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         
 
-For a full list of configurations of Kafka Streams please refer to this [table](/0110/#streamsconfigs). 
+For a full list of configurations of Kafka Streams please refer to this [table](/0110/documentation/#streamsconfigs). 
 
 Next we will define the computational logic of our Streams application. In Kafka Streams this computational logic is defined as a `topology` of connected processor nodes. We can use a topology builder to construct such a topology, 
     
@@ -194,7 +194,7 @@ If you already have the Kafka broker up and running at `localhost:9092`, and the
             > mvn exec:java -Dexec.mainClass=myapps.Pipe
         
 
-For detailed instructions on how to run a Streams application and observe its computing results, please read the [Play with a Streams Application](/0110/streams/quickstart) section. We will not talk about this in the rest of this section. 
+For detailed instructions on how to run a Streams application and observe its computing results, please read the [Play with a Streams Application](/0110/documentation/streams/quickstart) section. We will not talk about this in the rest of this section. 
 
 ### Writing a second Streams application: Line Split
 
@@ -327,7 +327,7 @@ In order to do the counting aggregation we have to first specify that we want to
                   .count("Counts");
         
 
-Note that the `count` operator has a `String` typed parameter `Counts`, which stores the running counts that keep being updated as more records are piped and processed from the source Kafka topic. This `Counts` store can be queried in real-time, with details described in the [Developer Manual](/0110/streams/developer-guide#streams_interactive_queries). 
+Note that the `count` operator has a `String` typed parameter `Counts`, which stores the running counts that keep being updated as more records are piped and processed from the source Kafka topic. This `Counts` store can be queried in real-time, with details described in the [Developer Manual](/0110/documentation/streams/developer-guide#streams_interactive_queries). 
 
 We can also write the `counts` KTable's changelog stream back into another Kafka topic, say `streams-wordcount-output`. Note that this time the value type is no longer `String` but `Long`, so the default serialization classes are not viable for writing it to Kafka anymore. We need to provide overridden serialization methods for `Long` types, otherwise a runtime exception will be thrown: 
     
@@ -335,7 +335,7 @@ We can also write the `counts` KTable's changelog stream back into another Kafka
             counts.to(Serdes.String(), Serdes.Long(), "streams-wordcount-output");
         
 
-Note that in order to read the changelog stream from topic `streams-wordcount-output`, one needs to set the value deserialization as `org.apache.kafka.common.serialization.LongDeserializer`. Details of this can be found in the [Play with a Streams Application](/0110/streams/quickstart) section. Assuming lambda expression from JDK 8 can be used, the above code can be simplified as: 
+Note that in order to read the changelog stream from topic `streams-wordcount-output`, one needs to set the value deserialization as `org.apache.kafka.common.serialization.LongDeserializer`. Details of this can be found in the [Play with a Streams Application](/0110/documentation/streams/quickstart) section. Assuming lambda expression from JDK 8 can be used, the above code can be simplified as: 
     
     
             KStream<String, String> source = builder.stream("streams-plaintext-input");
@@ -388,6 +388,6 @@ The complete code looks like this (assuming lambda expression is used):
         
 
   * [Documentation](/documentation)
-  * [Streams](/streams)
+  * [Streams](/documentation/streams)
 
 

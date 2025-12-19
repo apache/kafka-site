@@ -37,7 +37,7 @@ Starting with version 0.10.2, Java clients (producer and consumer) have acquired
   * You need to recompile your code. Just swapping the Kafka Streams library jar file will not work and will break your application. 
   * If you use a custom (i.e., user implemented) timestamp extractor, you will need to update this code, because the `TimestampExtractor` interface was changed. 
   * If you register custom metrics, you will need to update this code, because the `StreamsMetric` interface was changed. 
-  * See [Streams API changes in 0.10.2](/0102/streams#streams_api_changes_0102) for more details. 
+  * See [Streams API changes in 0.10.2](/0102/documentation/streams#streams_api_changes_0102) for more details. 
 
 
 
@@ -61,7 +61,7 @@ Starting with version 0.10.2, Java clients (producer and consumer) have acquired
   * Multiple regular expressions separated by commas can be passed to MirrorMaker with the new Java consumer via the --whitelist option. This makes the behaviour consistent with MirrorMaker when used the old Scala consumer.
   * Upgrading your Streams application from 0.10.1 to 0.10.2 does not require a broker upgrade. A Kafka Streams 0.10.2 application can connect to 0.10.2 and 0.10.1 brokers (it is not possible to connect to 0.10.0 brokers though).
   * The Zookeeper dependency was removed from the Streams API. The Streams API now uses the Kafka protocol to manage internal topics instead of modifying Zookeeper directly. This eliminates the need for privileges to access Zookeeper directly and "StreamsConfig.ZOOKEEPER_CONFIG" should not be set in the Streams app any more. If the Kafka cluster is secured, Streams apps must have the required security privileges to create new topics.
-  * Several new fields including "security.protocol", "connections.max.idle.ms", "retry.backoff.ms", "reconnect.backoff.ms" and "request.timeout.ms" were added to StreamsConfig class. User should pay attention to the default values and set these if needed. For more details please refer to [3.5 Kafka Streams Configs](/0102/#streamsconfigs).
+  * Several new fields including "security.protocol", "connections.max.idle.ms", "retry.backoff.ms", "reconnect.backoff.ms" and "request.timeout.ms" were added to StreamsConfig class. User should pay attention to the default values and set these if needed. For more details please refer to [3.5 Kafka Streams Configs](/0102/documentation/#streamsconfigs).
 
 
 
@@ -110,7 +110,7 @@ Note: Because new protocols are introduced, it is important to upgrade your Kafk
 ### Upgrading a 0.10.0 Kafka Streams Application
 
   * Upgrading your Streams application from 0.10.0 to 0.10.1 does require a broker upgrade because a Kafka Streams 0.10.1 application can only connect to 0.10.1 brokers. 
-  * There are couple of API changes, that are not backward compatible (cf. [Streams API changes in 0.10.1](/0102/streams#streams_api_changes_0101) for more details). Thus, you need to update and recompile your code. Just swapping the Kafka Streams library jar file will not work and will break your application. 
+  * There are couple of API changes, that are not backward compatible (cf. [Streams API changes in 0.10.1](/0102/documentation/streams#streams_api_changes_0101) for more details). Thus, you need to update and recompile your code. Just swapping the Kafka Streams library jar file will not work and will break your application. 
   * Upgrading from 0.10.0.x to 0.10.1.0 or 0.10.1.1 requires an offline upgrade (rolling bounce upgrade is not supported) 
     * stop all old (0.10.0.x) application instances 
     * update your code and swap old code and jar file with new code and new jar file 
@@ -195,7 +195,7 @@ For clients that are upgraded to 0.10.0.0, there is no performance impact.
 
 ### Notable changes in 0.10.0.0
 
-  * Starting from Kafka 0.10.0.0, a new client library named **Kafka Streams** is available for stream processing on data stored in Kafka topics. This new client library only works with 0.10.x and upward versioned brokers due to message format changes mentioned above. For more information please read [Streams documentation](/0102/streams).
+  * Starting from Kafka 0.10.0.0, a new client library named **Kafka Streams** is available for stream processing on data stored in Kafka topics. This new client library only works with 0.10.x and upward versioned brokers due to message format changes mentioned above. For more information please read [Streams documentation](/0102/documentation/streams).
   * The default value of the configuration parameter `receive.buffer.bytes` is now 64K for the new consumer.
   * The new consumer now exposes the configuration parameter `exclude.internal.topics` to restrict internal topics (such as the consumer offsets topic) from accidentally being included in regular expression subscriptions. By default, it is enabled.
   * The old Scala producer has been deprecated. Users should migrate their code to the Java producer included in the kafka-clients JAR as soon as possible. 

@@ -74,13 +74,61 @@ This section contains the most common Streams configuration parameters. For a fu
 
 ## Required configuration parameters
 
-Here are the required Streams configuration parameters.
-
-Parameter Name | Importance | Description | Default Value  
----|---|---|---  
-application.id | Required | An identifier for the stream processing application. Must be unique within the Kafka cluster. | None  
-bootstrap.servers | Required | A list of host/port pairs to use for establishing the initial connection to the Kafka cluster. | None  
+Here are the required Streams configuration parameters.  
   
+<table>  
+<tr>  
+<th>
+
+Parameter Name
+</th>  
+<th>
+
+Importance
+</th>  
+<th>
+
+Description
+</th>  
+<th>
+
+Default Value
+</th> </tr>  
+<tr>  
+<td>
+
+application.id
+</td>  
+<td>
+
+Required
+</td>  
+<td>
+
+An identifier for the stream processing application. Must be unique within the Kafka cluster.
+</td>  
+<td>
+
+None
+</td> </tr>  
+<tr>  
+<td>
+
+bootstrap.servers
+</td>  
+<td>
+
+Required
+</td>  
+<td>
+
+A list of host/port pairs to use for establishing the initial connection to the Kafka cluster.
+</td>  
+<td>
+
+None
+</td> </tr> </table>
+
 ### application.id
 
 > (Required) The application ID. Each stream processing application must have a unique ID. The same ID must be given to all instances of the application. It is recommended to use only alphanumeric characters, `.` (dot), `-` (hyphen), and `_` (underscore). Examples: `"hello_world"`, `"hello_world-v1.0.0"`
@@ -103,15 +151,94 @@ bootstrap.servers | Required | A list of host/port pairs to use for establishing
 
 ## Recommended configuration parameters for resiliency
 
-There are several Kafka and Kafka Streams configuration options that need to be configured explicitly for resiliency in face of broker failures:
-
-Parameter Name | Corresponding Client | Default value | Consider setting to  
----|---|---|---  
-acks | Producer | `acks=1` | `acks=all`  
-replication.factor (for broker version 2.3 or older)/td> | Streams | `-1` | `3`  
-min.insync.replicas | Broker | `1` | `2`  
-num.standby.replicas | Streams | `0` | `1`  
+There are several Kafka and Kafka Streams configuration options that need to be configured explicitly for resiliency in face of broker failures:  
   
+<table>  
+<tr>  
+<th>
+
+Parameter Name
+</th>  
+<th>
+
+Corresponding Client
+</th>  
+<th>
+
+Default value
+</th>  
+<th>
+
+Consider setting to
+</th> </tr>  
+<tr>  
+<td>
+
+acks
+</td>  
+<td>
+
+Producer
+</td>  
+<td>
+
+`acks=1`
+</td>  
+<td>
+
+`acks=all`
+</td> </tr>  
+<tr>  
+<td>
+
+replication.factor (for broker version 2.3 or older)/td>   
+<td>
+
+Streams
+</td>  
+<td>
+
+`-1`
+</td>  
+<td>
+
+`3`
+</td> </tr>  
+<tr>  
+<td>
+
+min.insync.replicas
+</td>  
+<td>
+
+Broker
+</td>  
+<td>
+
+`1`
+</td>  
+<td>
+
+`2`
+</td> </tr>  
+<tr>  
+<td>
+
+num.standby.replicas
+</td>  
+<td>
+
+Streams
+</td>  
+<td>
+
+`0`
+</td>  
+<td>
+
+`1`
+</td> </tr> </table>
+
 Increasing the replication factor to 3 ensures that the internal Kafka Streams topic can tolerate up to 2 broker failures. Changing the acks setting to "all" guarantees that a record will not be lost as long as one replica is alive. The tradeoff from moving to the default values to the recommended ones is that some performance and more storage space (3x with the replication factor of 3) are sacrificed for more resiliency.
 
 ### acks
@@ -124,7 +251,7 @@ Increasing the replication factor to 3 ensures that the internal Kafka Streams t
 > 
 
 > 
-> For more information, see the [Kafka Producer documentation](https://kafka.apache.org/#producerconfigs).
+> For more information, see the [Kafka Producer documentation](https://kafka.apache.org/documentation/#producerconfigs).
 
 ### replication.factor
 
@@ -150,52 +277,728 @@ Here are the optional [Streams](/39/javadoc/org/apache/kafka/streams/StreamsConf
 >   * Medium: These parameters can have some impact on performance. Your specific environment will determine how much tuning effort should be focused on these parameters.
 >   * Low: These parameters have a less general or less significant impact on performance.
 > 
-
-
-Parameter Name | Importance | Description | Default Value  
----|---|---|---  
-acceptable.recovery.lag | Medium | The maximum acceptable lag (number of offsets to catch up) for an instance to be considered caught-up and ready for the active task. | `10000`  
-application.server | Low | A host:port pair pointing to an embedded user defined endpoint that can be used for discovering the locations of state stores within a single Kafka Streams application. The value of this must be different for each instance of the application. | the empty string  
-buffered.records.per.partition | Low | The maximum number of records to buffer per partition. | `1000`  
-statestore.cache.max.bytes | Medium | Maximum number of memory bytes to be used for record caches across all threads. | 10485760  
-cache.max.bytes.buffering (Deprecated. Use statestore.cache.max.bytes instead.) | Medium | Maximum number of memory bytes to be used for record caches across all threads. | 10485760 bytes  
-client.id | Medium | An ID string to pass to the server when making requests. (This setting is passed to the consumer/producer clients used internally by Kafka Streams.) | the empty string  
-commit.interval.ms | Low | The frequency in milliseconds with which to save the position (offsets in source topics) of tasks. | 30000 milliseconds  
-default.deserialization.exception.handler | Medium | Exception handling class that implements the `DeserializationExceptionHandler` interface. | `LogAndContinueExceptionHandler`  
-default.key.serde | Medium | Default serializer/deserializer class for record keys, implements the `Serde` interface. Must be set by the user or all serdes must be passed in explicitly (see also default.value.serde). | `null`  
-default.production.exception.handler | Medium | Exception handling class that implements the `ProductionExceptionHandler` interface. | `DefaultProductionExceptionHandler`  
-default.timestamp.extractor | Medium | Timestamp extractor class that implements the `TimestampExtractor` interface. | See Timestamp Extractor  
-default.value.serde | Medium | Default serializer/deserializer class for record values, implements the `Serde` interface. Must be set by the user or all serdes must be passed in explicitly (see also default.key.serde). | `null`  
-default.windowed.key.serde.inner (Deprecated. Use windowed.inner.class.serde instead.) | Medium | Default serializer/deserializer for the inner class of windowed keys, implementing the `Serde` interface. | `null`  
-default.windowed.value.serde.inner (Deprecated. Use windowed.inner.class.serde instead.) | Medium | Default serializer/deserializer for the inner class of windowed values, implementing the `Serde` interface. | `null`  
-default.dsl.store | Low |  [DEPRECATED] The default state store type used by DSL operators. Deprecated in favor of `dsl.store.suppliers.class` | `ROCKS_DB`  
-dsl.store.suppliers.class | Low |  Defines a default state store implementation to be used by any stateful DSL operator that has not explicitly configured the store implementation type. Must implement the `org.apache.kafka.streams.state.DslStoreSuppliers` interface.  | `BuiltInDslStoreSuppliers.RocksDBDslStoreSuppliers`  
-max.task.idle.ms | Medium |  This config controls whether joins and merges may produce out-of-order results. The config value is the maximum amount of time in milliseconds a stream task will stay idle when it is fully caught up on some (but not all) input partitions to wait for producers to send additional records and avoid potential out-of-order record processing across multiple input streams. The default (zero) does not wait for producers to send more records, but it does wait to fetch data that is already present on the brokers. This default means that for records that are already present on the brokers, Streams will process them in timestamp order. Set to -1 to disable idling entirely and process any locally available data, even though doing so may produce out-of-order processing.  | 0 milliseconds  
-max.warmup.replicas | Medium | The maximum number of warmup replicas (extra standbys beyond the configured num.standbys) that can be assigned at once. | `2`  
-metric.reporters | Low | A list of classes to use as metrics reporters. | the empty list  
-metrics.num.samples | Low | The number of samples maintained to compute metrics. | `2`  
-metrics.recording.level | Low | The highest recording level for metrics. | `INFO`  
-metrics.sample.window.ms | Low | The window of time in milliseconds a metrics sample is computed over. | 30000 milliseconds (30 seconds)  
-num.standby.replicas | High | The number of standby replicas for each task. | `0`  
-num.stream.threads | Medium | The number of threads to execute stream processing. | `1`  
-probing.rebalance.interval.ms | Low | The maximum time in milliseconds to wait before triggering a rebalance to probe for warmup replicas that have sufficiently caught up. | 600000 milliseconds (10 minutes)  
-processing.exception.handler | Medium | Exception handling class that implements the `ProcessingExceptionHandler` interface. | `LogAndFailProcessingExceptionHandler`  
-processing.guarantee | Medium | The processing mode. Can be either `"at_least_once"` (default) or `"exactly_once_v2"` (for EOS version 2, requires broker version 2.5+). Deprecated config options are `"exactly_once"` (for EOS version 1) and `"exactly_once_beta"` (for EOS version 2, requires broker version 2.5+). | See Processing Guarantee  
-poll.ms | Low | The amount of time in milliseconds to block waiting for input. | 100 milliseconds  
-rack.aware.assignment.tags | Medium | List of tag keys used to distribute standby replicas across Kafka Streams clients. When configured, Kafka Streams will make a best-effort to distribute the standby tasks over clients with different tag values. | the empty list  
-replication.factor | Medium | The replication factor for changelog topics and repartition topics created by the application. The default of `-1` (meaning: use broker default replication factor) requires broker version 2.4 or newer. | `-1`  
-retry.backoff.ms | Medium | The amount of time in milliseconds, before a request is retried. This applies if the `retries` parameter is configured to be greater than 0.  | `100`  
-rocksdb.config.setter | Medium | The RocksDB configuration. |   
-state.cleanup.delay.ms | Low | The amount of time in milliseconds to wait before deleting state when a partition has migrated. | 600000 milliseconds (10 minutes)  
-state.dir | High | Directory location for state stores. | `/${java.io.tmpdir}/kafka-streams`  
-task.assignor.class | Medium | A task assignor class or class name implementing the `TaskAssignor` interface. | The high-availability task assignor.  
-task.timeout.ms | Medium | The maximum amount of time in milliseconds a task might stall due to internal errors and retries until an error is raised. For a timeout of `0 ms`, a task would raise an error for the first internal error. For any timeout larger than `0 ms`, a task will retry at least once before an error is raised. | 300000 milliseconds (5 minutes)  
-topology.optimization | Medium | A configuration telling Kafka Streams if it should optimize the topology and what optimizations to apply. Acceptable values are: `StreamsConfig.NO_OPTIMIZATION` (`none`), `StreamsConfig.OPTIMIZE` (`all`) or a comma separated list of specific optimizations: `StreamsConfig.REUSE_KTABLE_SOURCE_TOPICS` (`reuse.ktable.source.topics`), `StreamsConfig.MERGE_REPARTITION_TOPICS` (`merge.repartition.topics`), `StreamsConfig.SINGLE_STORE_SELF_JOIN` (`single.store.self.join`).  | `NO_OPTIMIZATION`  
-upgrade.from | Medium | The version you are upgrading from during a rolling upgrade. | See Upgrade From  
-windowstore.changelog.additional.retention.ms | Low | Added to a windows maintainMs to ensure data is not deleted from the log prematurely. Allows for clock drift. | 86400000 milliseconds (1 day)  
-window.size.ms | Low | Sets window size for the deserializer in order to calculate window end times. | `null`  
-log.summary.interval.ms | Low | Added to a windows maintainMs to ensure data is not deleted from the log prematurely. Allows for clock drift. | 120000milliseconds (2 minutes)  
   
+  
+<table>  
+<tr>  
+<th>
+
+Parameter Name
+</th>  
+<th>
+
+Importance
+</th>  
+<th>
+
+Description
+</th>  
+<th>
+
+Default Value
+</th> </tr>  
+<tr>  
+<td>
+
+acceptable.recovery.lag
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+The maximum acceptable lag (number of offsets to catch up) for an instance to be considered caught-up and ready for the active task.
+</td>  
+<td>
+
+`10000`
+</td> </tr>  
+<tr>  
+<td>
+
+application.server
+</td>  
+<td>
+
+Low
+</td>  
+<td>
+
+A host:port pair pointing to an embedded user defined endpoint that can be used for discovering the locations of state stores within a single Kafka Streams application. The value of this must be different for each instance of the application.
+</td>  
+<td>
+
+the empty string
+</td> </tr>  
+<tr>  
+<td>
+
+buffered.records.per.partition
+</td>  
+<td>
+
+Low
+</td>  
+<td>
+
+The maximum number of records to buffer per partition.
+</td>  
+<td>
+
+`1000`
+</td> </tr>  
+<tr>  
+<td>
+
+statestore.cache.max.bytes
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+Maximum number of memory bytes to be used for record caches across all threads.
+</td>  
+<td>
+
+10485760
+</td> </tr>  
+<tr>  
+<td>
+
+cache.max.bytes.buffering (Deprecated. Use statestore.cache.max.bytes instead.)
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+Maximum number of memory bytes to be used for record caches across all threads.
+</td>  
+<td>
+
+10485760 bytes
+</td> </tr>  
+<tr>  
+<td>
+
+client.id
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+An ID string to pass to the server when making requests. (This setting is passed to the consumer/producer clients used internally by Kafka Streams.)
+</td>  
+<td>
+
+the empty string
+</td> </tr>  
+<tr>  
+<td>
+
+commit.interval.ms
+</td>  
+<td>
+
+Low
+</td>  
+<td>
+
+The frequency in milliseconds with which to save the position (offsets in source topics) of tasks.
+</td>  
+<td>
+
+30000 milliseconds
+</td> </tr>  
+<tr>  
+<td>
+
+default.deserialization.exception.handler
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+Exception handling class that implements the `DeserializationExceptionHandler` interface.
+</td>  
+<td>
+
+`LogAndContinueExceptionHandler`
+</td> </tr>  
+<tr>  
+<td>
+
+default.key.serde
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+Default serializer/deserializer class for record keys, implements the `Serde` interface. Must be set by the user or all serdes must be passed in explicitly (see also default.value.serde).
+</td>  
+<td>
+
+`null`
+</td> </tr>  
+<tr>  
+<td>
+
+default.production.exception.handler
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+Exception handling class that implements the `ProductionExceptionHandler` interface.
+</td>  
+<td>
+
+`DefaultProductionExceptionHandler`
+</td> </tr>  
+<tr>  
+<td>
+
+default.timestamp.extractor
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+Timestamp extractor class that implements the `TimestampExtractor` interface.
+</td>  
+<td>
+
+See Timestamp Extractor
+</td> </tr>  
+<tr>  
+<td>
+
+default.value.serde
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+Default serializer/deserializer class for record values, implements the `Serde` interface. Must be set by the user or all serdes must be passed in explicitly (see also default.key.serde).
+</td>  
+<td>
+
+`null`
+</td> </tr>  
+<tr>  
+<td>
+
+default.windowed.key.serde.inner (Deprecated. Use windowed.inner.class.serde instead.)
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+Default serializer/deserializer for the inner class of windowed keys, implementing the `Serde` interface.
+</td>  
+<td>
+
+`null`
+</td> </tr>  
+<tr>  
+<td>
+
+default.windowed.value.serde.inner (Deprecated. Use windowed.inner.class.serde instead.)
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+Default serializer/deserializer for the inner class of windowed values, implementing the `Serde` interface.
+</td>  
+<td>
+
+`null`
+</td> </tr>  
+<tr>  
+<td>
+
+default.dsl.store
+</td>  
+<td>
+
+Low
+</td>  
+<td>
+
+[DEPRECATED] The default state store type used by DSL operators. Deprecated in favor of `dsl.store.suppliers.class` 
+</td>  
+<td>
+
+`ROCKS_DB`
+</td> </tr>  
+<tr>  
+<td>
+
+dsl.store.suppliers.class
+</td>  
+<td>
+
+Low
+</td>  
+<td>
+
+Defines a default state store implementation to be used by any stateful DSL operator that has not explicitly configured the store implementation type. Must implement the `org.apache.kafka.streams.state.DslStoreSuppliers` interface. 
+</td>  
+<td>
+
+`BuiltInDslStoreSuppliers.RocksDBDslStoreSuppliers`
+</td> </tr>  
+<tr>  
+<td>
+
+max.task.idle.ms
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+
+
+This config controls whether joins and merges may produce out-of-order results. The config value is the maximum amount of time in milliseconds a stream task will stay idle when it is fully caught up on some (but not all) input partitions to wait for producers to send additional records and avoid potential out-of-order record processing across multiple input streams. The default (zero) does not wait for producers to send more records, but it does wait to fetch data that is already present on the brokers. This default means that for records that are already present on the brokers, Streams will process them in timestamp order. Set to -1 to disable idling entirely and process any locally available data, even though doing so may produce out-of-order processing. 
+
+
+</td>  
+<td>
+
+0 milliseconds
+</td> </tr>  
+<tr>  
+<td>
+
+max.warmup.replicas
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+The maximum number of warmup replicas (extra standbys beyond the configured num.standbys) that can be assigned at once.
+</td>  
+<td>
+
+`2`
+</td> </tr>  
+<tr>  
+<td>
+
+metric.reporters
+</td>  
+<td>
+
+Low
+</td>  
+<td>
+
+A list of classes to use as metrics reporters.
+</td>  
+<td>
+
+the empty list
+</td> </tr>  
+<tr>  
+<td>
+
+metrics.num.samples
+</td>  
+<td>
+
+Low
+</td>  
+<td>
+
+The number of samples maintained to compute metrics.
+</td>  
+<td>
+
+`2`
+</td> </tr>  
+<tr>  
+<td>
+
+metrics.recording.level
+</td>  
+<td>
+
+Low
+</td>  
+<td>
+
+The highest recording level for metrics.
+</td>  
+<td>
+
+`INFO`
+</td> </tr>  
+<tr>  
+<td>
+
+metrics.sample.window.ms
+</td>  
+<td>
+
+Low
+</td>  
+<td>
+
+The window of time in milliseconds a metrics sample is computed over.
+</td>  
+<td>
+
+30000 milliseconds (30 seconds)
+</td> </tr>  
+<tr>  
+<td>
+
+num.standby.replicas
+</td>  
+<td>
+
+High
+</td>  
+<td>
+
+The number of standby replicas for each task.
+</td>  
+<td>
+
+`0`
+</td> </tr>  
+<tr>  
+<td>
+
+num.stream.threads
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+The number of threads to execute stream processing.
+</td>  
+<td>
+
+`1`
+</td> </tr>  
+<tr>  
+<td>
+
+probing.rebalance.interval.ms
+</td>  
+<td>
+
+Low
+</td>  
+<td>
+
+The maximum time in milliseconds to wait before triggering a rebalance to probe for warmup replicas that have sufficiently caught up.
+</td>  
+<td>
+
+600000 milliseconds (10 minutes)
+</td> </tr>  
+<tr>  
+<td>
+
+processing.exception.handler
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+Exception handling class that implements the `ProcessingExceptionHandler` interface.
+</td>  
+<td>
+
+`LogAndFailProcessingExceptionHandler`
+</td> </tr>  
+<tr>  
+<td>
+
+processing.guarantee
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+The processing mode. Can be either `"at_least_once"` (default) or `"exactly_once_v2"` (for EOS version 2, requires broker version 2.5+). Deprecated config options are `"exactly_once"` (for EOS version 1) and `"exactly_once_beta"` (for EOS version 2, requires broker version 2.5+)
+</td>.   
+<td>
+
+See Processing Guarantee
+</td> </tr>  
+<tr>  
+<td>
+
+poll.ms
+</td>  
+<td>
+
+Low
+</td>  
+<td>
+
+The amount of time in milliseconds to block waiting for input.
+</td>  
+<td>
+
+100 milliseconds
+</td> </tr>  
+<tr>  
+<td>
+
+rack.aware.assignment.tags
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+List of tag keys used to distribute standby replicas across Kafka Streams clients. When configured, Kafka Streams will make a best-effort to distribute the standby tasks over clients with different tag values.
+</td>  
+<td>
+
+the empty list
+</td> </tr>  
+<tr>  
+<td>
+
+replication.factor
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+The replication factor for changelog topics and repartition topics created by the application. The default of `-1` (meaning: use broker default replication factor) requires broker version 2.4 or newer.
+</td>  
+<td>
+
+`-1`
+</td> </tr>  
+<tr>  
+<td>
+
+retry.backoff.ms
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+The amount of time in milliseconds, before a request is retried. This applies if the `retries` parameter is configured to be greater than 0. 
+</td>  
+<td>
+
+`100`
+</td> </tr>  
+<tr>  
+<td>
+
+rocksdb.config.setter
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+The RocksDB configuration.
+</td>  
+<td>
+
+
+</td> </tr>  
+<tr>  
+<td>
+
+state.cleanup.delay.ms
+</td>  
+<td>
+
+Low
+</td>  
+<td>
+
+The amount of time in milliseconds to wait before deleting state when a partition has migrated.
+</td>  
+<td>
+
+600000 milliseconds (10 minutes)
+</td> </tr>  
+<tr>  
+<td>
+
+state.dir
+</td>  
+<td>
+
+High
+</td>  
+<td>
+
+Directory location for state stores.
+</td>  
+<td>
+
+`/${java.io.tmpdir}/kafka-streams`
+</td> </tr>  
+<tr>  
+<td>
+
+task.assignor.class
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+A task assignor class or class name implementing the `TaskAssignor` interface.
+</td>  
+<td>
+
+The high-availability task assignor.
+</td> </tr>  
+<tr>  
+<td>
+
+task.timeout.ms
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+The maximum amount of time in milliseconds a task might stall due to internal errors and retries until an error is raised. For a timeout of `0 ms`, a task would raise an error for the first internal error. For any timeout larger than `0 ms`, a task will retry at least once before an error is raised.
+</td>  
+<td>
+
+300000 milliseconds (5 minutes)
+</td> </tr>  
+<tr>  
+<td>
+
+topology.optimization
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+A configuration telling Kafka Streams if it should optimize the topology and what optimizations to apply. Acceptable values are: `StreamsConfig.NO_OPTIMIZATION` (`none`), `StreamsConfig.OPTIMIZE` (`all`) or a comma separated list of specific optimizations: `StreamsConfig.REUSE_KTABLE_SOURCE_TOPICS` (`reuse.ktable.source.topics`), `StreamsConfig.MERGE_REPARTITION_TOPICS` (`merge.repartition.topics`), `StreamsConfig.SINGLE_STORE_SELF_JOIN` (`single.store.self.join`). 
+</td>  
+<td>
+
+`NO_OPTIMIZATION`
+</td> </tr>  
+<tr>  
+<td>
+
+upgrade.from
+</td>  
+<td>
+
+Medium
+</td>  
+<td>
+
+The version you are upgrading from during a rolling upgrade.
+</td>  
+<td>
+
+See Upgrade From
+</td> </tr>  
+<tr>  
+<td>
+
+windowstore.changelog.additional.retention.ms
+</td>  
+<td>
+
+Low
+</td>  
+<td>
+
+Added to a windows maintainMs to ensure data is not deleted from the log prematurely. Allows for clock drift.
+</td>  
+<td>
+
+86400000 milliseconds (1 day)
+</td> </tr>  
+<tr>  
+<td>
+
+window.size.ms
+</td>  
+<td>
+
+Low
+</td>  
+<td>
+
+Sets window size for the deserializer in order to calculate window end times.
+</td>  
+<td>
+
+`null`
+</td> </tr>  
+<tr>  
+<td>
+
+log.summary.interval.ms
+</td>  
+<td>
+
+Low
+</td>  
+<td>
+
+Added to a windows maintainMs to ensure data is not deleted from the log prematurely. Allows for clock drift.
+</td>  
+<td>
+
+120000milliseconds (2 minutes)
+</td> </tr> </table>
+
 ### acceptable.recovery.lag
 
 > The maximum acceptable lag (total number of offsets to catch up from the changelog) for an instance to be considered caught-up and able to receive an active task. Streams will only assign stateful active tasks to instances whose state stores are within the acceptable recovery lag, if any exist, and assign warmup replicas to restore state in the background for instances that are not yet caught up. Should correspond to a recovery time of well under a minute for a given workload. Must be at least 0. 
@@ -444,7 +1247,7 @@ log.summary.interval.ms | Low | Added to a windows maintainMs to ensure data is 
 
 > The maximum number of warmup replicas (extra standbys beyond the configured `num.standbys`) that can be assigned at once for the purpose of keeping the task available on one instance while it is warming up on another instance it has been reassigned to. Used to throttle how much extra broker traffic and cluster state can be used for high availability. Increasing this will allow Streams to warm up more tasks at once, speeding up the time for the reassigned warmups to restore sufficient state for them to be transitioned to active tasks. Must be at least 1. 
 > 
-> Note that one warmup replica corresponds to one [Stream Task](https://kafka.apache.org/34/streams/architecture#streams_architecture_tasks). Furthermore, note that each warmup task can only be promoted to an active task during a rebalance (normally during a so-called probing rebalance, which occur at a frequency specified by the `probing.rebalance.interval.ms` config). This means that the maximum rate at which active tasks can be migrated from one Kafka Streams instance to another instance can be determined by (`max.warmup.replicas` / `probing.rebalance.interval.ms`). 
+> Note that one warmup replica corresponds to one [Stream Task](https://kafka.apache.org/34/documentation/streams/architecture#streams_architecture_tasks). Furthermore, note that each warmup task can only be promoted to an active task during a rebalance (normally during a so-called probing rebalance, which occur at a frequency specified by the `probing.rebalance.interval.ms` config). This means that the maximum rate at which active tasks can be migrated from one Kafka Streams instance to another instance can be determined by (`max.warmup.replicas` / `probing.rebalance.interval.ms`). 
 
 ### num.standby.replicas
 
@@ -657,63 +1460,307 @@ Note that this config is only used by plain consumer/producer clients that set a
  
  #### Default Values
  
- Kafka Streams uses different default values for some of the underlying client configs, which are summarized below. For detailed descriptions of these configs, see [Producer Configs](https://kafka.apache.org/documentation.html#producerconfigs) and [Consumer Configs](https://kafka.apache.org/documentation.html#consumerconfigs).
- 
- Parameter Name | Corresponding Client | Streams Default  
- ---|---|---  
- auto.offset.reset | Consumer | `earliest`  
- linger.ms | Producer | `100`  
- max.poll.records | Consumer | `1000`  
- client.id | - | `<application.id>-<random-UUID>`  
+ Kafka Streams uses different default values for some of the underlying client configs, which are summarized below. For detailed descriptions of these configs, see [Producer Configs](https://kafka.apache.org/documentation.html#producerconfigs) and [Consumer Configs](https://kafka.apache.org/documentation.html#consumerconfigs).  
    
- If EOS is enabled, other parameters have the following default values.
+ <table>  
+ <tr>  
+ <th>
+
+Parameter Name
+</th>  
+ <th>
+
+Corresponding Client
+</th>  
+ <th>
+
+Streams Default
+</th> </tr>  
+ <tr>  
+ <td>
+
+auto.offset.reset
+</td>  
+ <td>
+
+Consumer
+</td>  
+ <td>
+
+`earliest`
+</td> </tr>  
+ <tr>  
+ <td>
+
+linger.ms
+</td>  
+ <td>
+
+Producer
+</td>  
+ <td>
+
+`100`
+</td> </tr>  
+ <tr>  
+ <td>
+
+max.poll.records
+</td>  
+ <td>
+
+Consumer
+</td>  
+ <td>
+
+`1000`
+</td> </tr>  
+ <tr>  
+ <td>
+
+client.id
+</td>  
+ <td>
+
+-
+</td>  
+ <td>
+
+`<application.id>-<random-UUID>`
+</td> </tr> </table>
  
- Parameter Name | Corresponding Client | Streams Default  
- ---|---|---  
- transaction.timeout.ms | Producer | `10000`  
- delivery.timeout.ms | Producer | `Integer.MAX_VALUE`  
+ If EOS is enabled, other parameters have the following default values.  
    
+ <table>  
+ <tr>  
+ <th>
+
+Parameter Name
+</th>  
+ <th>
+
+Corresponding Client
+</th>  
+ <th>
+
+Streams Default
+</th> </tr>  
+ <tr>  
+ <td>
+
+transaction.timeout.ms
+</td>  
+ <td>
+
+Producer
+</td>  
+ <td>
+
+`10000`
+</td> </tr>  
+ <tr>  
+ <td>
+
+delivery.timeout.ms
+</td>  
+ <td>
+
+Producer
+</td>  
+ <td>
+
+`Integer.MAX_VALUE`
+</td> </tr> </table>
+ 
  ### Parameters controlled by Kafka Streams
  
- Some parameters are not configurable by the user. If you supply a value that is different from the default value, your value is ignored. Below is a list of some of these parameters.
- 
- Parameter Name | Corresponding Client | Streams Default  
- ---|---|---  
- allow.auto.create.topics | Consumer | `false`  
- group.id | Consumer | `application.id`  
- enable.auto.commit | Consumer | `false`  
- partition.assignment.strategy | Consumer | `StreamsPartitionAssignor`  
+ Some parameters are not configurable by the user. If you supply a value that is different from the default value, your value is ignored. Below is a list of some of these parameters.  
    
- If EOS is enabled, other parameters are set with the following values.
+ <table>  
+ <tr>  
+ <th>
+
+Parameter Name
+</th>  
+ <th>
+
+Corresponding Client
+</th>  
+ <th>
+
+Streams Default
+</th> </tr>  
+ <tr>  
+ <td>
+
+allow.auto.create.topics
+</td>  
+ <td>
+
+Consumer
+</td>  
+ <td>
+
+`false`
+</td> </tr>  
+ <tr>  
+ <td>
+
+group.id
+</td>  
+ <td>
+
+Consumer
+</td>  
+ <td>
+
+`application.id`
+</td> </tr>  
+ <tr>  
+ <td>
+
+enable.auto.commit
+</td>  
+ <td>
+
+Consumer
+</td>  
+ <td>
+
+`false`
+</td> </tr>  
+ <tr>  
+ <td>
+
+partition.assignment.strategy
+</td>  
+ <td>
+
+Consumer
+</td>  
+ <td>
+
+`StreamsPartitionAssignor`
+</td> </tr> </table>
  
- Parameter Name | Corresponding Client | Streams Default  
- ---|---|---  
- isolation.level | Consumer | `READ_COMMITTED`  
- enable.idempotence | Producer | `true`  
+ If EOS is enabled, other parameters are set with the following values.  
    
+ <table>  
+ <tr>  
+ <th>
+
+Parameter Name
+</th>  
+ <th>
+
+Corresponding Client
+</th>  
+ <th>
+
+Streams Default
+</th> </tr>  
+ <tr>  
+ <td>
+
+isolation.level
+</td>  
+ <td>
+
+Consumer
+</td>  
+ <td>
+
+`READ_COMMITTED`
+</td> </tr>  
+ <tr>  
+ <td>
+
+enable.idempotence
+</td>  
+ <td>
+
+Producer
+</td>  
+ <td>
+
+`true`
+</td> </tr> </table>
+ 
  ### client.id
  
  Kafka Streams uses the `client.id` parameter to compute derived client IDs for internal clients. If you don't set `client.id`, Kafka Streams sets it to `<application.id>-<random-UUID>`.
  
- This value will be used to derive the client IDs of the following internal clients.
- 
- Client | client.id  
- ---|---  
- Consumer | `<client.id>-StreamThread-<threadIdx>-consumer`  
- Restore consumer | `<client.id>-StreamThread-<threadIdx>-restore-consumer`  
- Global consumer | `<client.id>-global-consumer`  
- Producer |  **For Non-EOS and EOS v2:**` <client.id>-StreamThread-<threadIdx>-producer`  
- **For EOS v1:**` <client.id>-StreamThread-<threadIdx>-<taskId>-producer`  
- Admin | `<client.id>-admin`  
+ This value will be used to derive the client IDs of the following internal clients.  
    
+ <table>  
+ <tr>  
+ <th>
+
+Client
+</th>  
+ <th>
+
+client.id
+</th> </tr>  
+ <tr>  
+ <td>
+
+Consumer
+</td>  
+ <td>
+
+`<client.id>-StreamThread-<threadIdx>-consumer`
+</td> </tr>  
+ <tr>  
+ <td>
+
+Restore consumer
+</td>  
+ <td>
+
+`<client.id>-StreamThread-<threadIdx>-restore-consumer`
+</td> </tr>  
+ <tr>  
+ <td>
+
+Global consumer
+</td>  
+ <td>
+
+`<client.id>-global-consumer`
+</td> </tr>  
+ <tr>  
+ <td>
+
+Producer
+</td>  
+ <td>
+
+**For Non-EOS and EOS v2:**` <client.id>-StreamThread-<threadIdx>-producer` 
+</td> </tr>  
+ <tr>  
+ <td>
+
+**For EOS v1:**` <client.id>-StreamThread-<threadIdx>-<taskId>-producer` 
+</td> </tr>  
+ <tr>  
+ <td>
+
+Admin
+</td>  
+ <td>
+
+`<client.id>-admin`
+</td> </tr> </table>
+ 
  #### enable.auto.commit
 
 > The consumer auto commit. To guarantee at-least-once processing semantics and turn off auto commits, Kafka Streams overrides this consumer config value to `false`. Consumers will only commit explicitly via _commitSync_ calls when the Kafka Streams library or a user decides to commit the current processing state.
  
- [Previous](/39/streams/developer-guide/write-streams) [Next](/39/streams/developer-guide/dsl-api)
+ [Previous](/39/documentation/streams/developer-guide/write-streams) [Next](/39/documentation/streams/developer-guide/dsl-api)
  
    * [Documentation](/documentation)
-   * [Kafka Streams](/streams)
-   * [Developer Guide](/streams/developer-guide/)
+   * [Kafka Streams](/documentation/streams)
+   * [Developer Guide](/documentation/streams/developer-guide/)
  
 

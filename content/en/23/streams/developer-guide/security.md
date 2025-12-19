@@ -32,7 +32,7 @@ For more information about the security features in Apache Kafka, see [Kafka Sec
 
 Kafka clusters can use ACLs to control access to resources (like the ability to create topics), and for such clusters each client, including Kafka Streams, is required to authenticate as a particular user in order to be authorized with appropriate access. In particular, when Streams applications are run against a secured Kafka cluster, the principal running the application must have the ACL set so that the application has the permissions to create, read and write [internal topics](manage-topics.html#streams-developer-guide-topics-internal).
 
-Since all internal topics as well as the embedded consumer group name are prefixed with the [application id](/23/streams/developer-guide/config-streams.html#required-configuration-parameters), it is recommended to use ACLs on prefixed resource pattern to configure control lists to allow client to manage all topics and consumer groups started with this prefix as `--resource-pattern-type prefixed --topic your.application.id --operation All ` (see [KIP-277](https://cwiki.apache.org/confluence/display/KAFKA/KIP-277+-+Fine+Grained+ACL+for+CreateTopics+API) and [KIP-290](https://cwiki.apache.org/confluence/display/KAFKA/KIP-290%3A+Support+for+Prefixed+ACLs) for details). 
+Since all internal topics as well as the embedded consumer group name are prefixed with the [application id](/23/documentation/streams/developer-guide/config-streams.html#required-configuration-parameters), it is recommended to use ACLs on prefixed resource pattern to configure control lists to allow client to manage all topics and consumer groups started with this prefix as `--resource-pattern-type prefixed --topic your.application.id --operation All ` (see [KIP-277](https://cwiki.apache.org/confluence/display/KAFKA/KIP-277+-+Fine+Grained+ACL+for+CreateTopics+API) and [KIP-290](https://cwiki.apache.org/confluence/display/KAFKA/KIP-290%3A+Support+for+Prefixed+ACLs) for details). 
 
 # Security example
 
@@ -90,7 +90,7 @@ If you incorrectly configure a security setting in your application, it will fai
 Monitor your Kafka Streams application log files for such error messages to spot any misconfigured applications quickly.
 
   * [Documentation](/documentation)
-  * [Kafka Streams](/streams)
-  * [Developer Guide](/streams/developer-guide/)
+  * [Kafka Streams](/documentation/streams)
+  * [Developer Guide](/documentation/streams/developer-guide/)
 
 

@@ -59,6 +59,6 @@ Kafka Streams provides so-called **state stores** , which can be used by stream 
 Kafka Streams allows direct read-only queries of the state stores by methods, threads, processes or applications external to the stream processing application that created the state stores. This is provided through a feature called **Interactive Queries**. All stores are named and Interactive Queries exposes only the read operations of the underlying implementation. 
 
   * [Documentation](/documentation)
-  * [Streams](/streams)
+  * [Streams](/documentation/streams)
 
 

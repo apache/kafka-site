@@ -8,7 +8,7 @@ keywords:
 type: docs
 ---
 
-  1. #### SASL configuration for Kafka brokers
+### SASL configuration for Kafka brokers
 
      1. Select one or more supported mechanisms to enable in the broker. `GSSAPI` and `PLAIN` are the mechanisms currently supported in Kafka.
      2. Add a JAAS config file for the selected mechanisms as described in the examples for setting up GSSAPI (Kerberos) or PLAIN.
@@ -37,7 +37,7 @@ _Important notes:_
         1. `KafkaServer` is the section name in the JAAS file used by each KafkaServer/Broker. This section provides SASL configuration options for the broker including any SASL client connections made by the broker for inter-broker communication.
         2. `Client` section is used to authenticate a SASL connection with zookeeper. It also allows the brokers to set SASL ACL on zookeeper nodes which locks these nodes down so that only the brokers can modify it. It is necessary to have the same principal name across all brokers. If you want to use a section name other than Client, set the system property `zookeeper.sasl.client` to the appropriate name (_e.g._ , `-Dzookeeper.sasl.client=ZkClient`).
         3. ZooKeeper uses "zookeeper" as the service name by default. If you want to change this, set the system property `zookeeper.sasl.client.username` to the appropriate name (_e.g._ , `-Dzookeeper.sasl.client.username=zk`).
-  2. #### SASL configuration for Kafka clients
+### SASL configuration for Kafka clients
 
 SASL authentication is only supported for the new Java Kafka producer and consumer, the older API is not supported. To configure SASL authentication on the clients: 
      1. Select a SASL mechanism for authentication.
@@ -52,12 +52,12 @@ SASL authentication is only supported for the new Java Kafka producer and consum
                     sasl.mechanism=GSSAPI (or PLAIN)
 
      5. Follow the steps in GSSAPI (Kerberos) or PLAIN to configure SASL for the selected mechanism.
-  3. #### Authentication using SASL/Kerberos
+### Authentication using SASL/Kerberos
 
-     1. ##### Prerequisites
+#### Prerequisites
 
         1. **Kerberos**  
-If your organization is already using a Kerberos server (for example, by using Active Directory), there is no need to install a new server just for Kafka. Otherwise you will need to install one, your Linux vendor likely has packages for Kerberos and a short guide on how to install and configure it ([Ubuntu](https://help.ubuntu.com/community/Kerberos), [Redhat](https://access.redhat.com/en-US/Red_Hat_Enterprise_Linux/6/html/Managing_Smart_Cards/installing-kerberos.html)). Note that if you are using Oracle Java, you will need to download JCE policy files for your Java version and copy them to $JAVA_HOME/jre/lib/security.
+If your organization is already using a Kerberos server (for example, by using Active Directory), there is no need to install a new server just for Kafka. Otherwise you will need to install one, your Linux vendor likely has packages for Kerberos and a short guide on how to install and configure it ([Ubuntu](https://help.ubuntu.com/community/Kerberos), [Redhat](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Managing_Smart_Cards/installing-kerberos.html)). Note that if you are using Oracle Java, you will need to download JCE policy files for your Java version and copy them to $JAVA_HOME/jre/lib/security.
         2. **Create Kerberos Principals**  
 If you are using the organization's Kerberos or Active Directory server, ask your Kerberos administrator for a principal for each Kafka broker in your cluster and for every operating system user that will access Kafka with Kerberos authentication (via clients and tools). If you have installed your own Kerberos, you will need to create these principals yourself using the following commands: 
                
@@ -65,7 +65,7 @@ If you are using the organization's Kerberos or Active Directory server, ask you
                        sudo /usr/sbin/kadmin.local -q "ktadd -k /etc/security/keytabs/{keytabname}.keytab kafka/{hostname}@{REALM}"
 
         3. **Make sure all hosts can be reachable using hostnames** \- it is a Kerberos requirement that all your hosts can be resolved with their FQDNs.
-     2. ##### Configuring Kafka Brokers
+#### Configuring Kafka Brokers
 
         1. Add a suitably modified JAAS file similar to the one below to each Kafka broker's config directory, let's call it kafka_server_jaas.conf for this example (note that each broker should have its own keytab): 
                
@@ -107,7 +107,7 @@ We must also configure the service name in server.properties, which should match
     
     sasl.kerberos.service.name=kafka
 
-     3. ##### Configuring Kafka Clients
+#### Configuring Kafka Clients
 
 To configure SASL authentication on the clients: 
         1. Clients (producers, consumers, connect workers, etc) will authenticate to the cluster with their own principal (usually with the same name as the user running the client), so obtain or create these principals as needed. Then create a JAAS file for each principal. The KafkaClient section describes how the clients like producer and consumer can connect to the Kafka Broker. The following is an example configuration for a client using a keytab (recommended for long-running processes): 
@@ -139,12 +139,12 @@ For command-line utilities like kafka-console-consumer or kafka-console-producer
                        sasl.mechanism=GSSAPI
                        sasl.kerberos.service.name=kafka
 
-  4. #### Authentication using SASL/PLAIN
+### Authentication using SASL/PLAIN
 
 SASL/PLAIN is a simple username/password authentication mechanism that is typically used with TLS for encryption to implement secure authentication. Kafka supports a default implementation for SASL/PLAIN which can be extended for production use as described here.
 
 The username is used as the authenticated `Principal` for configuration of ACLs etc. 
-     1. ##### Configuring Kafka Brokers
+#### Configuring Kafka Brokers
 
         1. Add a suitably modified JAAS file similar to the one below to each Kafka broker's config directory, let's call it kafka_server_jaas.conf for this example: 
                
@@ -170,7 +170,7 @@ For example:
                        sasl.mechanism.inter.broker.protocol=PLAIN
                        sasl.enabled.mechanisms=PLAIN
 
-     2. ##### Configuring Kafka Clients
+#### Configuring Kafka Clients
 
 To configure SASL authentication on the clients: 
         1. The `KafkaClient` section describes how the clients like producer and consumer can connect to the Kafka Broker. The following is an example configuration for a client for the PLAIN mechanism: 
@@ -191,7 +191,7 @@ The properties `username` and `password` in the `KafkaClient` section are used b
                security.protocol=SASL_SSL
                        sasl.mechanism=PLAIN
 
-     3. ##### Use of SASL/PLAIN in production
+#### Use of SASL/PLAIN in production
 
         * SASL/PLAIN should be used only with SSL as transport layer to ensure that clear passwords are not transmitted on the wire without encryption.
         * The default implementation of SASL/PLAIN in Kafka specifies usernames and passwords in the JAAS configuration file as shown here. To avoid storing passwords on disk, you can plug in your own implementation of `javax.security.auth.spi.LoginModule` that provides usernames and passwords from an external source. The login module implementation should provide username as the public credential and password as the private credential of the `Subject`. The default implementation `org.apache.kafka.common.security.plain.PlainLoginModule` can be used as an example.
@@ -207,7 +207,7 @@ where _providerClassName_ is the fully qualified name of the new provider and _n
                 Security.addProvider(new PlainSaslServerProvider());
 
           * For more details, see [JCA Reference](http://docs.oracle.com/javase/8/docs/technotes/guides/security/crypto/CryptoSpec.html).
-  5. #### Enabling multiple SASL mechanisms in a broker
+### Enabling multiple SASL mechanisms in a broker
 
      1. Specify configuration for the login modules of all enabled mechanisms in the `KafkaServer` section of the JAAS config file. For example: 
             
@@ -235,7 +235,7 @@ where _providerClassName_ is the fully qualified name of the new provider and _n
                     sasl.mechanism.inter.broker.protocol=GSSAPI (or PLAIN)
 
      4. Follow the mechanism-specific steps in GSSAPI (Kerberos) and PLAIN to configure SASL for the enabled mechanisms.
-  6. #### Modifying SASL mechanism in a Running Cluster
+### Modifying SASL mechanism in a Running Cluster
 
 SASL mechanism can be modified in a running cluster using the following sequence:
 

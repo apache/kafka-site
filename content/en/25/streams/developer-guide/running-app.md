@@ -8,7 +8,7 @@ keywords:
 type: docs
 ---
 
-You can run Java applications that use the Kafka Streams library without any additional configuration or requirements. Kafka Streams also provides the ability to receive notification of the various states of the application. The ability to monitor the runtime status is discussed in [the monitoring guide](/#kafka_streams_monitoring).
+You can run Java applications that use the Kafka Streams library without any additional configuration or requirements. Kafka Streams also provides the ability to receive notification of the various states of the application. The ability to monitor the runtime status is discussed in [the monitoring guide](/documentation/#kafka_streams_monitoring).
 
 
 
@@ -77,7 +77,7 @@ To achieve balanced workload processing across application instances and to prev
 
 
   * [Documentation](/documentation)
-  * [Kafka Streams](/streams)
-  * [Developer Guide](/streams/developer-guide/)
+  * [Kafka Streams](/documentation/streams)
+  * [Developer Guide](/documentation/streams/developer-guide/)
 
 

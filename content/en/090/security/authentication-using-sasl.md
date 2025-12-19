@@ -8,10 +8,10 @@ keywords:
 type: docs
 ---
 
-  1. #### Prerequisites
+### Prerequisites
 
      1. **Kerberos**  
-If your organization is already using a Kerberos server (for example, by using Active Directory), there is no need to install a new server just for Kafka. Otherwise you will need to install one, your Linux vendor likely has packages for Kerberos and a short guide on how to install and configure it ([Ubuntu](https://help.ubuntu.com/community/Kerberos), [Redhat](https://access.redhat.com/en-US/Red_Hat_Enterprise_Linux/6/html/Managing_Smart_Cards/installing-kerberos.html)). Note that if you are using Oracle Java, you will need to download JCE policy files for your Java version and copy them to $JAVA_HOME/jre/lib/security.
+If your organization is already using a Kerberos server (for example, by using Active Directory), there is no need to install a new server just for Kafka. Otherwise you will need to install one, your Linux vendor likely has packages for Kerberos and a short guide on how to install and configure it ([Ubuntu](https://help.ubuntu.com/community/Kerberos), [Redhat](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Managing_Smart_Cards/installing-kerberos.html)). Note that if you are using Oracle Java, you will need to download JCE policy files for your Java version and copy them to $JAVA_HOME/jre/lib/security.
      2. **Create Kerberos Principals**  
 If you are using the organization's Kerberos or Active Directory server, ask your Kerberos administrator for a principal for each Kafka broker in your cluster and for every operating system user that will access Kafka with Kerberos authentication (via clients and tools). If you have installed your own Kerberos, you will need to create these principals yourself using the following commands: 
             
@@ -19,7 +19,7 @@ If you are using the organization's Kerberos or Active Directory server, ask you
                 sudo /usr/sbin/kadmin.local -q "ktadd -k /etc/security/keytabs/{keytabname}.keytab kafka/{hostname}@{REALM}"
 
      3. **Make sure all hosts can be reachable using hostnames** \- it is a Kerberos requirement that all your hosts can be resolved with their FQDNs.
-  2. #### Configuring Kafka Brokers
+### Configuring Kafka Brokers
 
      1. Add a suitably modified JAAS file similar to the one below to each Kafka broker's config directory, let's call it kafka_server_jaas.conf for this example (note that each broker should have its own keytab): 
             
@@ -62,7 +62,7 @@ _Important notes:_
         1. KafkaServer is a section name in JAAS file used by each KafkaServer/Broker. This section tells the broker which principal to use and the location of the keytab where this principal is stored. It allows the broker to login using the keytab specified in this section.
         2. Client section is used to authenticate a SASL connection with zookeeper. It also allows the brokers to set SASL ACL on zookeeper nodes which locks these nodes down so that only the brokers can modify it. It is necessary to have the same principal name across all brokers. If you want to use a section name other than Client, set the system property `zookeeper.sasl.client` to the appropriate name (_e.g._ , `-Dzookeeper.sasl.client=ZkClient`).
         3. ZooKeeper uses "zookeeper" as the service name by default. If you want to change this, set the system property `zookeeper.sasl.client.username` to the appropriate name (_e.g._ , `-Dzookeeper.sasl.client.username=zk`).
-  3. #### Configuring Kafka Clients
+### Configuring Kafka Clients
 
 SASL authentication is only supported for the new kafka producer and consumer, the older API is not supported. To configure SASL authentication on the clients: 
      1. Clients (producers, consumers, connect workers, etc) will authenticate to the cluster with their own principal (usually with the same name as the user running the client), so obtain or create these principals as needed. Then create a JAAS file for each principal. The KafkaClient section describes how the clients like producer and consumer can connect to the Kafka Broker. The following is an example configuration for a client using a keytab (recommended for long-running processes): 
@@ -93,7 +93,7 @@ For command-line utilities like kafka-console-consumer or kafka-console-producer
             security.protocol=SASL_PLAINTEXT (or SASL_SSL)
                 sasl.kerberos.service.name=kafka
 
-  4. #### Incorporating Security Features in a Running Cluster
+### Incorporating Security Features in a Running Cluster
 
 You can secure a running cluster via one or more of the supported protocols discussed previously. This is done in phases: 
 

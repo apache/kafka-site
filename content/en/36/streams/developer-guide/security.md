@@ -34,7 +34,7 @@ Kafka clusters can use ACLs to control access to resources (like the ability to 
 
 To avoid providing this permission to your application, you can create the required internal topics manually. If the internal topics exist, Kafka Streams will not try to recreate them. Note, that the internal repartition and changelog topics must be created with the correct number of partitions--otherwise, Kafka Streams will fail on startup. The topics must be created with the same number of partitions as your input topic, or if there are multiple topics, the maximum number of partitions across all input topics. Additionally, changelog topics must be created with log compaction enabled--otherwise, your application might lose data. For changelog topics for windowed KTables, apply "delete,compact" and set the retention time based on the corresponding store retention time. To avoid premature deletion, add a delta to the store retention time. By default, Kafka Streams adds 24 hours to the store retention time. You can find out more about the names of the required internal topics via `Topology#describe()`. All internal topics follow the naming pattern `<application.id>-<operatorName>-<suffix>` where the `suffix` is either `repartition` or `changelog`. Note, that there is no guarantee about this naming pattern in future releases--it's not part of the public API.
 
-Since all internal topics as well as the embedded consumer group name are prefixed with the [application id](/36/streams/developer-guide/config-streams.html#required-configuration-parameters), it is recommended to use ACLs on prefixed resource pattern to configure control lists to allow client to manage all topics and consumer groups started with this prefix as `--resource-pattern-type prefixed --topic your.application.id --operation All ` (see [KIP-277](https://cwiki.apache.org/confluence/display/KAFKA/KIP-277+-+Fine+Grained+ACL+for+CreateTopics+API) and [KIP-290](https://cwiki.apache.org/confluence/display/KAFKA/KIP-290%3A+Support+for+Prefixed+ACLs) for details). 
+Since all internal topics as well as the embedded consumer group name are prefixed with the [application id](/36/documentation/streams/developer-guide/config-streams.html#required-configuration-parameters), it is recommended to use ACLs on prefixed resource pattern to configure control lists to allow client to manage all topics and consumer groups started with this prefix as `--resource-pattern-type prefixed --topic your.application.id --operation All ` (see [KIP-277](https://cwiki.apache.org/confluence/display/KAFKA/KIP-277+-+Fine+Grained+ACL+for+CreateTopics+API) and [KIP-290](https://cwiki.apache.org/confluence/display/KAFKA/KIP-290%3A+Support+for+Prefixed+ACLs) for details). 
 
 # Security example
 
@@ -89,7 +89,7 @@ If you incorrectly configure a security setting in your application, it will fai
 Monitor your Kafka Streams application log files for such error messages to spot any misconfigured applications quickly.
 
   * [Documentation](/documentation)
-  * [Kafka Streams](/streams)
-  * [Developer Guide](/streams/developer-guide/)
+  * [Kafka Streams](/documentation/streams)
+  * [Developer Guide](/documentation/streams/developer-guide/)
 
 

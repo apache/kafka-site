@@ -75,17 +75,73 @@ Apache Kafka includes several built-in serde implementations for Java primitives
     </dependency>
     
 
-This artifact provides the following serde implementations under the package [org.apache.kafka.common.serialization](https://github.com/apache/kafka/blob/1.0/clients/src/main/java/org/apache/kafka/common/serialization), which you can leverage when e.g., defining default serializers in your Streams configuration.
-
-Data type | Serde  
----|---  
-byte[] | `Serdes.ByteArray()`, `Serdes.Bytes()` (see tip below)  
-ByteBuffer | `Serdes.ByteBuffer()`  
-Double | `Serdes.Double()`  
-Integer | `Serdes.Integer()`  
-Long | `Serdes.Long()`  
-String | `Serdes.String()`  
+This artifact provides the following serde implementations under the package [org.apache.kafka.common.serialization](https://github.com/apache/kafka/blob/1.0/clients/src/main/java/org/apache/kafka/common/serialization), which you can leverage when e.g., defining default serializers in your Streams configuration.  
   
+<table>  
+<tr>  
+<th>
+
+Data type
+</th>  
+<th>
+
+Serde
+</th> </tr>  
+<tr>  
+<td>
+
+byte[]
+</td>  
+<td>
+
+`Serdes.ByteArray()`, `Serdes.Bytes()` (see tip below)
+</td> </tr>  
+<tr>  
+<td>
+
+ByteBuffer
+</td>  
+<td>
+
+`Serdes.ByteBuffer()`
+</td> </tr>  
+<tr>  
+<td>
+
+Double
+</td>  
+<td>
+
+`Serdes.Double()`
+</td> </tr>  
+<tr>  
+<td>
+
+Integer
+</td>  
+<td>
+
+`Serdes.Integer()`
+</td> </tr>  
+<tr>  
+<td>
+
+Long
+</td>  
+<td>
+
+`Serdes.Long()`
+</td> </tr>  
+<tr>  
+<td>
+
+String
+</td>  
+<td>
+
+`Serdes.String()`
+</td> </tr> </table>
+
 **Tip**
 
 [Bytes](https://github.com/apache/kafka/blob/1.0/clients/src/main/java/org/apache/kafka/common/utils/Bytes.java) is a wrapper for Java's `byte[]` (byte array) that supports proper equality and ordering semantics. You may want to consider using `Bytes` instead of `byte[]` in your applications.
@@ -108,5 +164,5 @@ If you need to implement custom SerDes, your best starting point is to take a lo
     3. Write a _serde_ for `T` by implementing [org.apache.kafka.common.serialization.Serde](https://github.com/apache/kafka/blob/1.0/clients/src/main/java/org/apache/kafka/common/serialization/Serde.java), which you either do manually (see existing SerDes in the previous section) or by leveraging helper functions in [Serdes](https://github.com/apache/kafka/blob/1.0/clients/src/main/java/org/apache/kafka/common/serialization/Serdes.java) such as `Serdes.serdeFrom(Serializer<T>, Deserializer<T>)`.
 
     * [Documentation](/documentation)
-    * [Kafka Streams](/streams)
-    * [Developer Guide](/streams/developer-guide/)
+    * [Kafka Streams](/documentation/streams)
+    * [Developer Guide](/documentation/streams/developer-guide/)

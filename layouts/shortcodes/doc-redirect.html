@@ -1,7 +1,7 @@
 <script>
     (function () {
-        // 1. Get version from Hugo config
-        var latestVersion = "{{ .Site.Params.latest_version }}";
+        // 1. Get version from Hugo config or Current Section
+        var targetVersion = "{{ if ne .Page.Section "documentation" }}{{ .Page.Section }}{{ else }}{{ .Site.Params.latest_version }}{{ end }}";
 
         // 2. Define the Mapping
         var hashIncludedMap = {
@@ -28,7 +28,7 @@
             //Configuration menu
             "#configuration": "configuration",
             "#brokerconfigs": "configuration/broker-configs/",
-            "#topicconfigs": "configuration/topic-configs/",
+            "#topicconfigs": "configuration/topic-level-configs/",
             "#groupconfigs": "configuration/group-configs/",
             "#producerconfigs": "configuration/producer-configs/",
             "#consumerconfigs": "configuration/consumer-configs/",
@@ -63,6 +63,7 @@
             "#messageformat": "implementation/message-format/",
             "#log": "implementation/log/",
             "#distributionimpl": "implementation/distribution/",
+            "#recordbatch": "implementation/message-format/#record-batch",
 
             //Operations menu
             "#operations": "operations",
@@ -107,10 +108,46 @@
         // ELSE -> Go to legitimate Docs Homepage 
 
         if (currentHash && hashIncludedMap[currentHash]) {
-            window.location.replace("/" + latestVersion + "/" + hashIncludedMap[currentHash]);
+            window.location.replace("/" + targetVersion + "/" + hashIncludedMap[currentHash]);
         } else {
+            // Check for deep link redirects
+            var currentPath = window.location.pathname;
+            if (currentPath.includes("/documentation/streams/")) {
+                // remove "/documentation" from the path
+                // e.g. /37/documentation/streams/foo -> /37/streams/foo
+                // e.g. /documentation/streams/foo -> /streams/foo (but creates issue if no version prefix)
+
+                // If we are in a versioned section (targetVersion is like "37"), 
+                // the path is likely /37/documentation/streams/...
+                // modifying standard logic: replace "/documentation/" with "/"
+
+                var newPath = currentPath.replace("/documentation/", "/");
+
+                // If targetVersion is actually the latest version (because we are in global /documentation),
+                // currentPath is /documentation/streams/...
+                // newPath becomes /streams/... which might not be valid if we need /41/streams/... or if /streams/... is a valid alias?
+                // Actually /streams/ redirects to latest usually? checking hugo config... 
+                // Hugo config has streams in menu url: "/documentation/streams"
+
+                // Wait, if I am at /documentation/streams/foo, I want to go to /41/streams/foo (if 41 is latest).
+                // existing logic: targetVersion is 41 (latest).
+                // currentPath: /documentation/streams/foo
+                // replace: /streams/foo
+                // BUT /streams/foo might not be the canonical path, usually it is /{version}/streams/foo.
+                // Let's prepend version if it is missing?
+
+                if (targetVersion === "{{ .Site.Params.latest_version }}" && !currentPath.match(/^\/\d+/)) {
+                    // We are at root /documentation/streams...
+                    // We want /41/streams...
+                    newPath = "/" + targetVersion + newPath;
+                }
+
+                window.location.replace(newPath + currentHash);
+                return;
+            }
+
             // Default Fallback 
-            window.location.replace("/" + latestVersion + "/getting-started/introduction");
+            window.location.replace("/" + targetVersion + "/getting-started/introduction");
         }
     })();
 </script>

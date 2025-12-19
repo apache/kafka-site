@@ -15,7 +15,7 @@ type: docs
 **For a rolling upgrade:**
 
   1. Upgrade the clients one at a time: shut down the client, update the code, and restart it.
-  2. Clients (including Streams and Connect) must be on version 2.1 or higher before upgrading to 4.0. Many deprecated APIs were removed in Kafka 4.0. For more information about the compatibility, please refer to the [compatibility matrix](/40/compatibility.html) or [KIP-1124](https://cwiki.apache.org/confluence/x/y4kgF).
+  2. Clients (including Streams and Connect) must be on version 2.1 or higher before upgrading to 4.0. Many deprecated APIs were removed in Kafka 4.0. For more information about the compatibility, please refer to the [compatibility matrix](/40/documentation/compatibility.html) or [KIP-1124](https://cwiki.apache.org/confluence/x/y4kgF).
 
 
 
@@ -34,7 +34,7 @@ Note: Apache Kafka 4.0 only supports KRaft mode - ZooKeeper mode has been remove
 ### Notable changes in 4.0.1
 
   * The filename for rotated `state-change.log` files has been updated from `stage-change.log.[date]` to `state-change.log.[date]` in the log4j2.yaml configuration file. See [KAFKA-19576](https://issues.apache.org/jira/browse/KAFKA-19576) for details. 
-  * Kafka Streams include a critical fix to upgrade from `KStreams#transformValues()` (removed with 4.0.0 release) to `KStreams#processValues()`. For more details, see the [migration guide](/40/streams/developer-guide/dsl-api.html#transformers-removal-and-migration-to-processors). 
+  * Kafka Streams include a critical fix to upgrade from `KStreams#transformValues()` (removed with 4.0.0 release) to `KStreams#processValues()`. For more details, see the [migration guide](/40/documentation/streams/developer-guide/dsl-api.html#transformers-removal-and-migration-to-processors). 
 
 
 
@@ -72,7 +72,7 @@ Note: Apache Kafka 4.0 only supports KRaft mode - ZooKeeper mode has been remove
       * The `remote.log.manager.thread.pool.size` configuration default value was changed to 2 from 10. See [KIP-1030](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1030%3A+Change+constraints+and+default+values+for+various+configurations)
       * The minimum `segment.bytes/log.segment.bytes` has changed from 14 bytes to 1MB. See [KIP-1030](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1030%3A+Change+constraints+and+default+values+for+various+configurations)
     * **MirrorMaker**
-      * The original MirrorMaker (MM1) and related classes were removed. Please use the Connect-based MirrorMaker (MM2), as described in the [Geo-Replication section.](/40/#georeplication). 
+      * The original MirrorMaker (MM1) and related classes were removed. Please use the Connect-based MirrorMaker (MM2), as described in the [Geo-Replication section.](/40/documentation/#georeplication). 
       * The `use.incremental.alter.configs` configuration was removed from `MirrorSourceConnector`. The modified behavior is identical to the previous `required` configuration, therefore users should ensure that brokers in the target cluster are at least running 2.3.0. 
       * The `add.source.alias.to.metrics` configuration was removed from `MirrorSourceConnector`. The source cluster alias is now always added to the metrics. 
       * The `config.properties.blacklist` was removed from the `org.apache.kafka.connect.mirror.MirrorSourceConfig` Please use `config.properties.exclude` instead. 
@@ -121,9 +121,9 @@ Note: Apache Kafka 4.0 only supports KRaft mode - ZooKeeper mode has been remove
       * The `all()` method was removed from the `org.apache.kafka.clients.admin.DescribeTopicsResult`. Please use `allTopicNames()` instead. 
     * **Kafka Streams**
       * All public API, deprecated in Apache Kafka 3.6 or an earlier release, have been removed, with the exception of `JoinWindows.of()` and `JoinWindows#grace()`. See [KAFKA-17531](https://issues.apache.org/jira/browse/KAFKA-17531) for details. 
-      * The most important changes are highlighted in the [Kafka Streams upgrade guide](/40/streams/upgrade-guide.html#streams_api_changes_400). 
+      * The most important changes are highlighted in the [Kafka Streams upgrade guide](/40/documentation/streams/upgrade-guide.html#streams_api_changes_400). 
       * For a full list of changes, see [KAFKA-12822](https://issues.apache.org/jira/browse/KAFKA-12822). 
-      * If you are using `KStream#transformValues()` which was removed with Apache Kafka 4.0.0 release, and you need to rewrite your program to use `KStreams#processValues()` instead, pay close attention to the [migration guide](/40/streams/developer-guide/dsl-api.html#transformers-removal-and-migration-to-processors). 
+      * If you are using `KStream#transformValues()` which was removed with Apache Kafka 4.0.0 release, and you need to rewrite your program to use `KStreams#processValues()` instead, pay close attention to the [migration guide](/40/documentation/streams/developer-guide/dsl-api.html#transformers-removal-and-migration-to-processors). 
   * Other changes: 
     * The minimum Java version required by clients and Kafka Streams applications has been increased from Java 8 to Java 11 while brokers, connect and tools now require Java 17. See [KIP-750](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=181308223) and [KIP-1013](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=284789510) for more details. 
     * Java 23 support has been added in Apache Kafka 4.0 
@@ -133,7 +133,7 @@ Note: Apache Kafka 4.0 only supports KRaft mode - ZooKeeper mode has been remove
     * The `--delete-config` option in the `kafka-topics` command line tool has been deprecated. 
     * For implementors of RemoteLogMetadataManager (RLMM), a new API `nextSegmentWithTxnIndex` is introduced in RLMM to allow the implementation to return the next segment metadata with a transaction index. This API is used when the consumers are enabled with isolation level as READ_COMMITTED. See [KIP-1058](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1058:+Txn+consumer+exerts+pressure+on+remote+storage+when+collecting+aborted+transactions) for more details. 
     * The criteria for identifying internal topics in ReplicationPolicy and DefaultReplicationPolicy have been updated to enable the replication of topics that appear to be internal but aren't truly internal to Kafka and Mirror Maker 2. See [KIP-1074](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1074%3A+Allow+the+replication+of+user+internal+topics) for more details. 
-    * KIP-714 is now enabled for Kafka Streams via [KIP-1076](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1076%3A++Metrics+for+client+applications+KIP-714+extension). This allows to not only collect the metric of the internally used clients of a Kafka Streams appliction via a broker-side plugin, but also to collect the [metrics](/40/#kafka_streams_monitoring) of the Kafka Streams runtime itself. 
+    * KIP-714 is now enabled for Kafka Streams via [KIP-1076](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1076%3A++Metrics+for+client+applications+KIP-714+extension). This allows to not only collect the metric of the internally used clients of a Kafka Streams appliction via a broker-side plugin, but also to collect the [metrics](/40/documentation/#kafka_streams_monitoring) of the Kafka Streams runtime itself. 
     * The default value of 'num.recovery.threads.per.data.dir' has been changed from 1 to 2. The impact of this is faster recovery post unclean shutdown at the expense of extra IO cycles. See [KIP-1030](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1030%3A+Change+constraints+and+default+values+for+various+configurations)
     * The default value of 'message.timestamp.after.max.ms' has been changed from Long.Max to 1 hour. The impact of this messages with a timestamp of more than 1 hour in the future will be rejected when message.timestamp.type=CreateTime is set. See [KIP-1030](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1030%3A+Change+constraints+and+default+values+for+various+configurations)
     * Introduced in KIP-890, the `TransactionAbortableException` enhances error handling within transactional operations by clearly indicating scenarios where transactions should be aborted due to errors. It is important for applications to properly manage both `TimeoutException` and `TransactionAbortableException` when working with transaction producers.
@@ -147,4 +147,4 @@ Note: Apache Kafka 4.0 only supports KRaft mode - ZooKeeper mode has been remove
 
 ## Upgrading to 3.9.0 and older versions
 
-See [Upgrading From Previous Versions](/39/#upgrade) in the 3.9 documentation.
+See [Upgrading From Previous Versions](/39/documentation/#upgrade) in the 3.9 documentation.

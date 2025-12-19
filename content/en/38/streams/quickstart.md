@@ -248,6 +248,6 @@ Looking beyond the scope of this concrete example, what Kafka Streams is doing h
 You can now stop the console consumer, the console producer, the Wordcount application, the Kafka broker and the ZooKeeper server (if one was started) in order via **Ctrl-C**.
 
   * [Documentation](/documentation)
-  * [Kafka Streams](/streams)
+  * [Kafka Streams](/documentation/streams)
 
 

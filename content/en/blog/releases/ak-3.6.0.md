@@ -66,12 +66,53 @@ Previously, RangeQuery did not support null to specify â€œno upper/lower boundâ€
   * **[KIP-793](https://cwiki.apache.org/confluence/display/KAFKA/KIP-793%3A+Allow+sink+connectors+to+be+used+with+topic-mutating+SMTs): Allow sink connectors to be used with topic-mutating SMTs: **  
 Adds support for topic-mutating SMTs for async sink connectors. This is to address an incompatibility between sink connectors overriding the SinkTask::preCommit method and SMTs that mutate the topic field of a SinkRecord .
   * **[KIP-875](https://cwiki.apache.org/confluence/display/KAFKA/KIP-875%3A+First-class+offsets+support+in+Kafka+Connect): First-class offsets support in Kafka Connect: **  
-Provides first-class admin support for offsets in Kafka Connect. KIP-875 Part 1 added endpoints to get offsets and a new STOPPED state for connectors. The alter offsets and reset offsets endpoints have now been added.  Action | Description  
----|---  
-GET /connectors/{connector}/offsets | Retrieve the offsets for a connector; the connector must exist  
-PATCH /connectors/{connector}/offsets | Alter the offsets for a connector; the connector must exist, and must be in the STOPPED state   
-DELETE /connectors/{connector}/offsets | Reset the offsets for a connector; the connector must exist, and must be in the STOPPED state   
-PUT /connectors/{connector}/pause | Pause the connector; the connector must exist  
+Provides first-class admin support for offsets in Kafka Connect. KIP-875 Part 1 added endpoints to get offsets and a new STOPPED state for connectors. The alter offsets and reset offsets endpoints have now been added.   
+<table>  
+<tr>  
+<th>
+
+Action
+</th>  
+<th>
+
+Description
+</th> </tr>  
+<tr>  
+<td>
+
+GET /connectors/{connector}/offsets
+</td>  
+<td>
+
+Retrieve the offsets for a connector; the connector must exist
+</td> </tr>  
+<tr>  
+<td>
+
+PATCH /connectors/{connector}/offsets
+</td>  
+<td>
+
+Alter the offsets for a connector; the connector must exist, and must be in the STOPPED state 
+</td> </tr>  
+<tr>  
+<td>
+
+DELETE /connectors/{connector}/offsets
+</td>  
+<td>
+
+Reset the offsets for a connector; the connector must exist, and must be in the STOPPED state 
+</td> </tr>  
+<tr>  
+<td>
+
+PUT /connectors/{connector}/pause
+</td>  
+<td>
+
+Pause the connector; the connector must exist
+</td> </tr> </table>
   * **[KIP-898](https://cwiki.apache.org/confluence/display/KAFKA/KIP-898%3A+Modernize+Connect+plugin+discovery): Modernize Connect plugin discovery: **  
 With KIP-898, Connect workers can now read from ServiceLoader manifests and module info directly during startup for more efficient plugin class discovery. Note that this update allows connector developers to add service declarations to their plugins.
 

@@ -174,7 +174,7 @@ Rabobank is one of the 3 largest banks in the Netherlands. Its digital nervous s
 
 As the leading online fashion retailer in Europe, Zalando uses Kafka as an ESB (Enterprise Service Bus), which helps us in transitioning from a monolithic to a micro services architecture. Using Kafka for processing event streams enables our technical team to do near-real time business intelligence. [Learn More](https://kafka-summit.org/sessions/using-kstreams-ktables-calculate-real-time-domain-rankings/)
 
-Previous [Next](/0110/streams/quickstart)
+Previous [Next](/0110/documentation/streams/quickstart)
 
   * [Documentation](/documentation)
 
