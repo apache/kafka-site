@@ -57,7 +57,7 @@ Kafka Streams is a client library for building applications and microservices, w
 
 
 
-[Write your first app](/41/streams/tutorial)
+[Write your first app](/41/documentation/streams/tutorial)
 
 * * *
 

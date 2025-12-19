@@ -179,7 +179,7 @@ There are other modules inside Apache Kafka that allocate memory during runtime.
 Otherwise, stream application's memory usage keeps increasing when running until it hits an OOM.
 
   * [Documentation](/documentation)
-  * [Kafka Streams](/streams)
-  * [Developer Guide](/streams/developer-guide/)
+  * [Kafka Streams](/documentation/streams)
+  * [Developer Guide](/documentation/streams/developer-guide/)
 
 

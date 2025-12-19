@@ -54,7 +54,7 @@ Note
 The internal topics follow the naming convention `<application.id>-<operatorName>-<suffix>`, but this convention is not guaranteed for future releases.
 
   * [Documentation](/documentation)
-  * [Kafka Streams](/streams)
-  * [Developer Guide](/streams/developer-guide/)
+  * [Kafka Streams](/documentation/streams)
+  * [Developer Guide](/documentation/streams/developer-guide/)
 
 

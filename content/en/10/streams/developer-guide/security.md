@@ -91,7 +91,7 @@ If you incorrectly configure a security setting in your application, it will fai
 Monitor your Kafka Streams application log files for such error messages to spot any misconfigured applications quickly.
 
   * [Documentation](/documentation)
-  * [Kafka Streams](/streams)
-  * [Developer Guide](/streams/developer-guide/)
+  * [Kafka Streams](/documentation/streams)
+  * [Developer Guide](/documentation/streams/developer-guide/)
 
 

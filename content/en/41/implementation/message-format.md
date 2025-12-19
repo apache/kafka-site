@@ -90,4 +90,4 @@ We use the same varint encoding as Protobuf. More information on the latter can 
 
 ## Old Message Format
 
-Prior to Kafka 0.11, messages were transferred and stored in _message sets_. See [Old Message Format](https://kafka.apache.org/39/#messageset) for more details. 
+Prior to Kafka 0.11, messages were transferred and stored in _message sets_. See [Old Message Format](https://kafka.apache.org/39/documentation/#messageset) for more details. 

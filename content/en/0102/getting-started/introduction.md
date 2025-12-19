@@ -38,7 +38,7 @@ Kafka has four core APIs:
 
   * The [Producer API](/documentation.html#producerapi) allows an application to publish a stream of records to one or more Kafka topics. 
   * The [Consumer API](/documentation.html#consumerapi) allows an application to subscribe to one or more topics and process the stream of records produced to them. 
-  * The [Streams API](/streams) allows an application to act as a _stream processor_ , consuming an input stream from one or more topics and producing an output stream to one or more output topics, effectively transforming the input streams to output streams. 
+  * The [Streams API](/documentation/streams) allows an application to act as a _stream processor_ , consuming an input stream from one or more topics and producing an output stream to one or more output topics, effectively transforming the input streams to output streams. 
   * The [Connector API](/documentation.html#connect) allows building and running reusable producers or consumers that connect Kafka topics to existing applications or data systems. For example, a connector to a relational database might capture every change to a table. 
 ![](/0102/images/kafka-apis.png)
 
@@ -139,7 +139,7 @@ In Kafka a stream processor is anything that takes continual streams of data fro
 
 For example, a retail application might take in input streams of sales and shipments, and output a stream of reorders and price adjustments computed off this data. 
 
-It is possible to do simple processing directly using the producer and consumer APIs. However for more complex transformations Kafka provides a fully integrated [Streams API](/streams). This allows building applications that do non-trivial processing that compute aggregations off of streams or join streams together. 
+It is possible to do simple processing directly using the producer and consumer APIs. However for more complex transformations Kafka provides a fully integrated [Streams API](/documentation/streams). This allows building applications that do non-trivial processing that compute aggregations off of streams or join streams together. 
 
 This facility helps solve the hard problems this type of application faces: handling out-of-order data, reprocessing input as code changes, performing stateful computations, etc. 
 

@@ -356,23 +356,214 @@ For new Connect clusters, set the `exactly.once.source.support` property to `ena
 
 #### ACL requirements
 
-With exactly-once source support enabled, the principal for each Connect worker will require the following ACLs:
-
-Operation | Resource Type | Resource Name | Note  
----|---|---|---  
-Write | TransactionalId | `connect-cluster-${groupId}`, where `${groupId}` is the `group.id` of the cluster |   
-Describe | TransactionalId | `connect-cluster-${groupId}`, where `${groupId}` is the `group.id` of the cluster |   
-IdempotentWrite | Cluster | ID of the Kafka cluster that hosts the worker's config topic | The IdempotentWrite ACL has been deprecated as of 2.8 and will only be necessary for Connect clusters running on pre-2.8 Kafka clusters  
+With exactly-once source support enabled, the principal for each Connect worker will require the following ACLs:  
   
-And the principal for each individual connector will require the following ACLs:
+<table>  
+<tr>  
+<th>
 
-Operation | Resource Type | Resource Name | Note  
----|---|---|---  
-Write | TransactionalId | `${groupId}-${connector}-${taskId}`, for each task that the connector will create, where `${groupId}` is the `group.id` of the Connect cluster, `${connector}` is the name of the connector, and `${taskId}` is the ID of the task (starting from zero) | A wildcard prefix of `${groupId}-${connector}*` can be used for convenience if there is no risk of conflict with other transactional IDs or if conflicts are acceptable to the user.  
-Describe | TransactionalId | `${groupId}-${connector}-${taskId}`, for each task that the connector will create, where `${groupId}` is the `group.id` of the Connect cluster, `${connector}` is the name of the connector, and `${taskId}` is the ID of the task (starting from zero) | A wildcard prefix of `${groupId}-${connector}*` can be used for convenience if there is no risk of conflict with other transactional IDs or if conflicts are acceptable to the user.  
-Write | Topic | Offsets topic used by the connector, which is either the value of the `offsets.storage.topic` property in the connector’s configuration if provided, or the value of the `offsets.storage.topic` property in the worker’s configuration if not. |   
-Read | Topic | Offsets topic used by the connector, which is either the value of the `offsets.storage.topic` property in the connector’s configuration if provided, or the value of the `offsets.storage.topic` property in the worker’s configuration if not. |   
-Describe | Topic | Offsets topic used by the connector, which is either the value of the `offsets.storage.topic` property in the connector’s configuration if provided, or the value of the `offsets.storage.topic` property in the worker’s configuration if not. |   
-Create | Topic | Offsets topic used by the connector, which is either the value of the `offsets.storage.topic` property in the connector’s configuration if provided, or the value of the `offsets.storage.topic` property in the worker’s configuration if not. | Only necessary if the offsets topic for the connector does not exist yet  
-IdempotentWrite | Cluster | ID of the Kafka cluster that the source connector writes to | The IdempotentWrite ACL has been deprecated as of 2.8 and will only be necessary for Connect clusters running on pre-2.8 Kafka clusters  
+Operation
+</th>  
+<th>
+
+Resource Type
+</th>  
+<th>
+
+Resource Name
+</th>  
+<th>
+
+Note
+</th> </tr>  
+<tr>  
+<td>
+
+Write
+</td>  
+<td>
+
+TransactionalId
+</td>  
+<td>
+
+`connect-cluster-${groupId}`, where `${groupId}` is the `group.id` of the cluster
+</td>  
+<td>
+
+
+</td> </tr>  
+<tr>  
+<td>
+
+Describe
+</td>  
+<td>
+
+TransactionalId
+</td>  
+<td>
+
+`connect-cluster-${groupId}`, where `${groupId}` is the `group.id` of the cluster
+</td>  
+<td>
+
+
+</td> </tr>  
+<tr>  
+<td>
+
+IdempotentWrite
+</td>  
+<td>
+
+Cluster
+</td>  
+<td>
+
+ID of the Kafka cluster that hosts the worker's config topic
+</td>  
+<td>
+
+The IdempotentWrite ACL has been deprecated as of 2.8 and will only be necessary for Connect clusters running on pre-2.8 Kafka clusters
+</td> </tr> </table>
+
+And the principal for each individual connector will require the following ACLs:  
   
+<table>  
+<tr>  
+<th>
+
+Operation
+</th>  
+<th>
+
+Resource Type
+</th>  
+<th>
+
+Resource Name
+</th>  
+<th>
+
+Note
+</th> </tr>  
+<tr>  
+<td>
+
+Write
+</td>  
+<td>
+
+TransactionalId
+</td>  
+<td>
+
+`${groupId}-${connector}-${taskId}`, for each task that the connector will create, where `${groupId}` is the `group.id` of the Connect cluster, `${connector}` is the name of the connector, and `${taskId}` is the ID of the task (starting from zero)
+</td>  
+<td>
+
+A wildcard prefix of `${groupId}-${connector}*` can be used for convenience if there is no risk of conflict with other transactional IDs or if conflicts are acceptable to the user.
+</td> </tr>  
+<tr>  
+<td>
+
+Describe
+</td>  
+<td>
+
+TransactionalId
+</td>  
+<td>
+
+`${groupId}-${connector}-${taskId}`, for each task that the connector will create, where `${groupId}` is the `group.id` of the Connect cluster, `${connector}` is the name of the connector, and `${taskId}` is the ID of the task (starting from zero)
+</td>  
+<td>
+
+A wildcard prefix of `${groupId}-${connector}*` can be used for convenience if there is no risk of conflict with other transactional IDs or if conflicts are acceptable to the user.
+</td> </tr>  
+<tr>  
+<td>
+
+Write
+</td>  
+<td>
+
+Topic
+</td>  
+<td>
+
+Offsets topic used by the connector, which is either the value of the `offsets.storage.topic` property in the connector’s configuration if provided, or the value of the `offsets.storage.topic` property in the worker’s configuration if not.
+</td>  
+<td>
+
+
+</td> </tr>  
+<tr>  
+<td>
+
+Read
+</td>  
+<td>
+
+Topic
+</td>  
+<td>
+
+Offsets topic used by the connector, which is either the value of the `offsets.storage.topic` property in the connector’s configuration if provided, or the value of the `offsets.storage.topic` property in the worker’s configuration if not.
+</td>  
+<td>
+
+
+</td> </tr>  
+<tr>  
+<td>
+
+Describe
+</td>  
+<td>
+
+Topic
+</td>  
+<td>
+
+Offsets topic used by the connector, which is either the value of the `offsets.storage.topic` property in the connector’s configuration if provided, or the value of the `offsets.storage.topic` property in the worker’s configuration if not.
+</td>  
+<td>
+
+
+</td> </tr>  
+<tr>  
+<td>
+
+Create
+</td>  
+<td>
+
+Topic
+</td>  
+<td>
+
+Offsets topic used by the connector, which is either the value of the `offsets.storage.topic` property in the connector’s configuration if provided, or the value of the `offsets.storage.topic` property in the worker’s configuration if not.
+</td>  
+<td>
+
+Only necessary if the offsets topic for the connector does not exist yet
+</td> </tr>  
+<tr>  
+<td>
+
+IdempotentWrite
+</td>  
+<td>
+
+Cluster
+</td>  
+<td>
+
+ID of the Kafka cluster that the source connector writes to
+</td>  
+<td>
+
+The IdempotentWrite ACL has been deprecated as of 2.8 and will only be necessary for Connect clusters running on pre-2.8 Kafka clusters
+</td> </tr> </table>

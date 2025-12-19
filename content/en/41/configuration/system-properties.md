@@ -16,22 +16,54 @@ This system property is used to determine which files, if any, are allowed to be
 
 If users want to enable some files, users need to explicitly set the system property like below. 
         
-        -Dorg.apache.kafka.sasl.oauthbearer.allowed.files=/tmp/token,/tmp/private_key.pem
+        -Dorg.apache.kafka.sasl.oauthbearer.allowed.files=/tmp/token,/tmp/private_key.pem  
+  
+<table>  
+<tr>  
+<th>
 
-Since:| 4.1.0  
----|---  
-Default Value:|   
+Since:
+</th>  
+<td>
+
+4.1.0
+</td></tr>  
+<tr>  
+<th>
+
+Default Value:
+</th>  
+<td>
+
+
+</td></tr> </table>
   * #### org.apache.kafka.sasl.oauthbearer.allowed.urls
 
 This system property is used to set the allowed URLs as SASL OAUTHBEARER token or jwks endpoints. This property accepts comma-separated list of URLs. By default the value is an empty list. 
 
 If users want to enable some URLs, users need to explicitly set the system property like below. 
         
-        -Dorg.apache.kafka.sasl.oauthbearer.allowed.urls=https://www.example.com,file:///tmp/token
+        -Dorg.apache.kafka.sasl.oauthbearer.allowed.urls=https://www.example.com,file:///tmp/token  
+  
+<table>  
+<tr>  
+<th>
 
-Since:| 4.0.0  
----|---  
-Default Value:|   
+Since:
+</th>  
+<td>
+
+4.0.0
+</td></tr>  
+<tr>  
+<th>
+
+Default Value:
+</th>  
+<td>
+
+
+</td></tr> </table>
   * #### org.apache.kafka.disallowed.login.modules
 
 This system property is used to disable the problematic login modules usage in SASL JAAS configuration. This property accepts comma-separated list of loginModule names. By default **com.sun.security.auth.module.JndiLoginModule** loginModule is disabled. 
@@ -42,11 +74,27 @@ If users want to enable JndiLoginModule, users need to explicitly reset the syst
 
 To disable more loginModules, update the system property with comma-separated loginModule names. Make sure to explicitly add **JndiLoginModule** module name to the comma-separated list like below. 
         
-        -Dorg.apache.kafka.disallowed.login.modules=com.sun.security.auth.module.JndiLoginModule,com.ibm.security.auth.module.LdapLoginModule,com.ibm.security.auth.module.Krb5LoginModule
+        -Dorg.apache.kafka.disallowed.login.modules=com.sun.security.auth.module.JndiLoginModule,com.ibm.security.auth.module.LdapLoginModule,com.ibm.security.auth.module.Krb5LoginModule  
+  
+<table>  
+<tr>  
+<th>
 
-Since:| 3.4.0  
----|---  
-Default Value:| com.sun.security.auth.module.JndiLoginModule  
+Since:
+</th>  
+<td>
+
+3.4.0
+</td></tr>  
+<tr>  
+<th>
+
+Default Value:
+</th>  
+<td>
+
+com.sun.security.auth.module.JndiLoginModule
+</td></tr> </table>
   * #### org.apache.kafka.automatic.config.providers
 
 This system property controls the automatic loading of ConfigProvider implementations in Apache Kafka. ConfigProviders are used to dynamically supply configuration values from sources such as files, directories, or environment variables. This property accepts a comma-separated list of ConfigProvider names. By default, all built-in ConfigProviders are enabled, including **FileConfigProvider** , **DirectoryConfigProvider** , and **EnvVarConfigProvider**.
@@ -61,10 +109,26 @@ To allow specific ConfigProviders, update the system property with a comma-separ
 
 To use multiple ConfigProviders, include their names in a comma-separated list as shown below:
         
-        -Dorg.apache.kafka.automatic.config.providers=org.apache.kafka.common.config.provider.FileConfigProvider,org.apache.kafka.common.config.provider.EnvVarConfigProvider
+        -Dorg.apache.kafka.automatic.config.providers=org.apache.kafka.common.config.provider.FileConfigProvider,org.apache.kafka.common.config.provider.EnvVarConfigProvider  
+  
+<table>  
+<tr>  
+<th>
 
-Since:| 3.8.0  
----|---  
-Default Value:| All built-in ConfigProviders are enabled  
+Since:
+</th>  
+<td>
+
+3.8.0
+</td></tr>  
+<tr>  
+<th>
+
+Default Value:
+</th>  
+<td>
+
+All built-in ConfigProviders are enabled
+</td></tr> </table>
 
 

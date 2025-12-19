@@ -16,9 +16,9 @@ If you want to upgrade from 0.11.0.x to 1.0.0 you don't need to make any code ch
 
 If you want to upgrade from 0.10.2.x to 0.11.0 you don't need to make any code changes as the public API is fully backward compatible. However, some configuration parameters were deprecated and thus it is recommended to update your code eventually to allow for future upgrades. See below for a complete list of 0.11.0 API and semantic changes that allow you to advance your application and/or simplify your code base. 
 
-If you want to upgrade from 0.10.1.x to 0.10.2, see the [**Upgrade Section for 0.10.2**](/11/#upgrade_1020_streams). It highlights incompatible changes you need to consider to upgrade your code and application. See below for a complete list of 0.10.2 API and semantic changes that allow you to advance your application and/or simplify your code base. 
+If you want to upgrade from 0.10.1.x to 0.10.2, see the [**Upgrade Section for 0.10.2**](/11/documentation/#upgrade_1020_streams). It highlights incompatible changes you need to consider to upgrade your code and application. See below for a complete list of 0.10.2 API and semantic changes that allow you to advance your application and/or simplify your code base. 
 
-If you want to upgrade from 0.10.0.x to 0.10.1, see the [**Upgrade Section for 0.10.1**](/11/#upgrade_1010_streams). It highlights incompatible changes you need to consider to upgrade your code and application. See below a complete list of 0.10.1 API changes that allow you to advance your application and/or simplify your code base, including the usage of new features. 
+If you want to upgrade from 0.10.0.x to 0.10.1, see the [**Upgrade Section for 0.10.1**](/11/documentation/#upgrade_1010_streams). It highlights incompatible changes you need to consider to upgrade your code and application. See below a complete list of 0.10.1 API changes that allow you to advance your application and/or simplify your code base, including the usage of new features. 
 
 ## Streams API changes in 1.1.0
 
@@ -66,7 +66,7 @@ With 1.0 a major API refactoring was accomplished and the new API is cleaner and
 
 The two main classes to specify a topology via the DSL (`KStreamBuilder`) or the Processor API (`TopologyBuilder`) were deprecated and replaced by `StreamsBuilder` and `Topology` (both new classes are located in package `org.apache.kafka.streams`). Note, that `StreamsBuilder` does not extend `Topology`, i.e., the class hierarchy is different now. The new classes have basically the same methods as the old ones to build a topology via DSL or Processor API. However, some internal methods that were public in `KStreamBuilder` and `TopologyBuilder` but not part of the actual API are not present in the new classes any longer. Furthermore, some overloads were simplified compared to the original classes. See [KIP-120](https://cwiki.apache.org/confluence/display/KAFKA/KIP-120%3A+Cleanup+Kafka+Streams+builder+API) and [KIP-182](https://cwiki.apache.org/confluence/display/KAFKA/KIP-182%3A+Reduce+Streams+DSL+overloads+and+allow+easier+use+of+custom+storage+engines) for full details. 
 
-Changing how a topology is specified also affects `KafkaStreams` constructors, that now only accept a `Topology`. Using the DSL builder class `StreamsBuilder` one can get the constructed `Topology` via `StreamsBuilder#build()`. Additionally, a new class `org.apache.kafka.streams.TopologyDescription` (and some more dependent classes) were added. Those can be used to get a detailed description of the specified topology and can be obtained by calling `Topology#describe()`. An example using this new API is shown in the [quickstart section](/11/streams/quickstart). 
+Changing how a topology is specified also affects `KafkaStreams` constructors, that now only accept a `Topology`. Using the DSL builder class `StreamsBuilder` one can get the constructed `Topology` via `StreamsBuilder#build()`. Additionally, a new class `org.apache.kafka.streams.TopologyDescription` (and some more dependent classes) were added. Those can be used to get a detailed description of the specified topology and can be obtained by calling `Topology#describe()`. An example using this new API is shown in the [quickstart section](/11/documentation/streams/quickstart). 
 
 New methods in `KStream`: 
 
@@ -97,7 +97,7 @@ Deprecated methods in `KGroupedStream`
 
 Modified methods in `Processor`: 
 
-  * The Processor API was extended to allow users to schedule `punctuate` functions either based on data-driven **stream time** or wall-clock time. As a result, the original `ProcessorContext#schedule` is deprecated with a new overloaded function that accepts a user customizable `Punctuator` callback interface, which triggers its `punctuate` API method periodically based on the `PunctuationType`. The `PunctuationType` determines what notion of time is used for the punctuation scheduling: either [stream time](/11/streams/core-concepts#streams_time) or wall-clock time (by default, **stream time** is configured to represent event time via `TimestampExtractor`). In addition, the `punctuate` function inside `Processor` is also deprecated. 
+  * The Processor API was extended to allow users to schedule `punctuate` functions either based on data-driven **stream time** or wall-clock time. As a result, the original `ProcessorContext#schedule` is deprecated with a new overloaded function that accepts a user customizable `Punctuator` callback interface, which triggers its `punctuate` API method periodically based on the `PunctuationType`. The `PunctuationType` determines what notion of time is used for the punctuation scheduling: either [stream time](/11/documentation/streams/core-concepts#streams_time) or wall-clock time (by default, **stream time** is configured to represent event time via `TimestampExtractor`). In addition, the `punctuate` function inside `Processor` is also deprecated. 
 
 Before this, users could only schedule based on stream time (i.e. `PunctuationType.STREAM_TIME`) and hence the `punctuate` function was data-driven only because stream time is determined (and advanced forward) by the timestamps derived from the input data. If there is no data arriving at the processor, the stream time would not advance and hence punctuation will not be triggered. On the other hand, When wall-clock time (i.e. `PunctuationType.WALL_CLOCK_TIME`) is used, `punctuate` will be triggered purely based on wall-clock time. So for example if the `Punctuator` function is scheduled based on `PunctuationType.WALL_CLOCK_TIME`, if these 60 records were processed within 20 seconds, `punctuate` would be called 2 times (one time every 10 seconds); if these 60 records were processed within 5 seconds, then no `punctuate` would be called at all. Users can schedule multiple `Punctuator` callbacks with different `PunctuationType`s within the same processor by simply calling `ProcessorContext#schedule` multiple times inside processor's `init()` method. 
 
@@ -293,9 +293,9 @@ Windowing:
 
 
 
-[Previous](/11/streams/developer-guide/app-reset-tool) Next
+[Previous](/11/documentation/streams/developer-guide/app-reset-tool) Next
 
   * [Documentation](/documentation)
-  * [Kafka Streams](/streams)
+  * [Kafka Streams](/documentation/streams)
 
 

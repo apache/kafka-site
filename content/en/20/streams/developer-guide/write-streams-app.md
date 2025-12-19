@@ -24,14 +24,78 @@ You can define the processor topology with the Kafka Streams APIs:
 
 This section lists the Kafka Streams related libraries that are available for writing your Kafka Streams applications.
 
-You can define dependencies on the following libraries for your Kafka Streams applications.
-
-Group ID | Artifact ID | Version | Description  
----|---|---|---  
-`org.apache.kafka` | `kafka-streams` | `2.0.0` | (Required) Base library for Kafka Streams.  
-`org.apache.kafka` | `kafka-clients` | `2.0.0` | (Required) Kafka client library. Contains built-in serializers/deserializers.  
-`org.apache.kafka` | `kafka-streams-scala` | `2.0.0` | (Optional) Kafka Streams DSL for Scala library to write Scala Kafka Streams applications. When not using SBT you will need to suffix the artifact ID with the correct version of Scala your application is using (`_2.11`, `_2.12`)  
+You can define dependencies on the following libraries for your Kafka Streams applications.  
   
+<table>  
+<tr>  
+<th>
+
+Group ID
+</th>  
+<th>
+
+Artifact ID
+</th>  
+<th>
+
+Version
+</th>  
+<th>
+
+Description
+</th> </tr>  
+<tr>  
+<td>
+
+`org.apache.kafka`
+</td>  
+<td>
+
+`kafka-streams`
+</td>  
+<td>
+
+`2.0.0`
+</td>  
+<td>
+
+(Required) Base library for Kafka Streams.
+</td> </tr>  
+<tr>  
+<td>
+
+`org.apache.kafka`
+</td>  
+<td>
+
+`kafka-clients`
+</td>  
+<td>
+
+`2.0.0`
+</td>  
+<td>
+
+(Required) Kafka client library. Contains built-in serializers/deserializers.
+</td> </tr>  
+<tr>  
+<td>
+
+`org.apache.kafka`
+</td>  
+<td>
+
+`kafka-streams-scala`
+</td>  
+<td>
+
+`2.0.0`
+</td>  
+<td>
+
+(Optional) Kafka Streams DSL for Scala library to write Scala Kafka Streams applications. When not using SBT you will need to suffix the artifact ID with the correct version of Scala your application is using (`_2.11`, `_2.12`)
+</td> </tr> </table>
+
 **Tip**
 
 See the section [Data Types and Serialization](datatypes.html#streams-developer-guide-serdes) for more information about Serializers/Deserializers.
@@ -158,7 +222,7 @@ Testing a Streams application
 Kafka Streams comes with a `test-utils` module to help you test your application [here](testing.html). 
 
   * [Documentation](/documentation)
-  * [Kafka Streams](/streams)
-  * [Developer Guide](/streams/developer-guide/)
+  * [Kafka Streams](/documentation/streams)
+  * [Developer Guide](/documentation/streams/developer-guide/)
 
 

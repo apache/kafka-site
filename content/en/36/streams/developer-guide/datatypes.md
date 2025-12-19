@@ -77,21 +77,109 @@ Apache Kafka includes several built-in serde implementations for Java primitives
         <version>3.6.2</version>
     </dependency>
 
-This artifact provides the following serde implementations under the package [org.apache.kafka.common.serialization](https://github.com/apache/kafka/blob/3.6/clients/src/main/java/org/apache/kafka/common/serialization), which you can leverage when e.g., defining default serializers in your Streams configuration.
-
-Data type | Serde  
----|---  
-byte[] | `Serdes.ByteArray()`, `Serdes.Bytes()` (see tip below)  
-ByteBuffer | `Serdes.ByteBuffer()`  
-Double | `Serdes.Double()`  
-Integer | `Serdes.Integer()`  
-Long | `Serdes.Long()`  
-String | `Serdes.String()`  
-UUID | `Serdes.UUID()`  
-Void | `Serdes.Void()`  
-List | `Serdes.ListSerde()`  
-Boolean | `Serdes.Boolean()`  
+This artifact provides the following serde implementations under the package [org.apache.kafka.common.serialization](https://github.com/apache/kafka/blob/3.6/clients/src/main/java/org/apache/kafka/common/serialization), which you can leverage when e.g., defining default serializers in your Streams configuration.  
   
+<table>  
+<tr>  
+<th>
+
+Data type
+</th>  
+<th>
+
+Serde
+</th> </tr>  
+<tr>  
+<td>
+
+byte[]
+</td>  
+<td>
+
+`Serdes.ByteArray()`, `Serdes.Bytes()` (see tip below)
+</td> </tr>  
+<tr>  
+<td>
+
+ByteBuffer
+</td>  
+<td>
+
+`Serdes.ByteBuffer()`
+</td> </tr>  
+<tr>  
+<td>
+
+Double
+</td>  
+<td>
+
+`Serdes.Double()`
+</td> </tr>  
+<tr>  
+<td>
+
+Integer
+</td>  
+<td>
+
+`Serdes.Integer()`
+</td> </tr>  
+<tr>  
+<td>
+
+Long
+</td>  
+<td>
+
+`Serdes.Long()`
+</td> </tr>  
+<tr>  
+<td>
+
+String
+</td>  
+<td>
+
+`Serdes.String()`
+</td> </tr>  
+<tr>  
+<td>
+
+UUID
+</td>  
+<td>
+
+`Serdes.UUID()`
+</td> </tr>  
+<tr>  
+<td>
+
+Void
+</td>  
+<td>
+
+`Serdes.Void()`
+</td> </tr>  
+<tr>  
+<td>
+
+List
+</td>  
+<td>
+
+`Serdes.ListSerde()`
+</td> </tr>  
+<tr>  
+<td>
+
+Boolean
+</td>  
+<td>
+
+`Serdes.Boolean()`
+</td> </tr> </table>
+
 **Tip**
 
 [Bytes](https://github.com/apache/kafka/blob/3.6/clients/src/main/java/org/apache/kafka/common/utils/Bytes.java) is a wrapper for Java's `byte[]` (byte array) that supports proper equality and ordering semantics. You may want to consider using `Bytes` instead of `byte[]` in your applications.
@@ -121,7 +209,7 @@ If you need to implement custom Serdes, your best starting point is to take a lo
 When using the [Kafka Streams DSL for Scala](dsl-api.html#scala-dsl) you're not required to configure a default Serdes. In fact, it's not supported. Serdes are instead provided implicitly by default implementations for common primitive datatypes. See the [Implicit Serdes](dsl-api.html#scala-dsl-implicit-serdes) and [User-Defined Serdes](dsl-api.html#scala-dsl-user-defined-serdes) sections in the DSL API documentation for details
 
   * [Documentation](/documentation)
-  * [Kafka Streams](/streams)
-  * [Developer Guide](/streams/developer-guide/)
+  * [Kafka Streams](/documentation/streams)
+  * [Developer Guide](/documentation/streams/developer-guide/)
 
 

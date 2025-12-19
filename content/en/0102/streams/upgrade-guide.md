@@ -10,9 +10,9 @@ type: docs
 
 # Upgrade Guide & API Changes
 
-If you want to upgrade from 0.10.1.x to 0.10.2, see the [Upgrade Section for 0.10.2](/0102/#upgrade_1020_streams). It highlights incompatible changes you need to consider to upgrade your code and application. See below a complete list of 0.10.2 API and semantical changes that allow you to advance your application and/or simplify your code base, including the usage of new features. 
+If you want to upgrade from 0.10.1.x to 0.10.2, see the [Upgrade Section for 0.10.2](/0102/documentation/#upgrade_1020_streams). It highlights incompatible changes you need to consider to upgrade your code and application. See below a complete list of 0.10.2 API and semantical changes that allow you to advance your application and/or simplify your code base, including the usage of new features. 
 
-If you want to upgrade from 0.10.0.x to 0.10.1, see the [Upgrade Section for 0.10.1](/0102/#upgrade_1010_streams). It highlights incompatible changes you need to consider to upgrade your code and application. See below a complete list of 0.10.1 API changes that allow you to advance your application and/or simplify your code base, including the usage of new features. 
+If you want to upgrade from 0.10.0.x to 0.10.1, see the [Upgrade Section for 0.10.1](/0102/documentation/#upgrade_1010_streams). It highlights incompatible changes you need to consider to upgrade your code and application. See below a complete list of 0.10.1 API changes that allow you to advance your application and/or simplify your code base, including the usage of new features. 
 
 ## Notable changes in 0.10.2.1
 
@@ -132,9 +132,9 @@ Windowing:
 
 
 
-[Previous](/0102/streams/developer-guide) Next
+[Previous](/0102/documentation/streams/developer-guide) Next
 
   * [Documentation](/documentation)
-  * [Streams](/streams)
+  * [Streams](/documentation/streams)
 
 

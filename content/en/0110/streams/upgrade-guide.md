@@ -214,9 +214,9 @@ Windowing:
 
 
 
-[Previous](/0110/streams/architecture) Next
+[Previous](/0110/documentation/streams/architecture) Next
 
   * [Documentation](/documentation)
-  * [Kafka Streams API](/streams)
+  * [Kafka Streams API](/documentation/streams)
 
 

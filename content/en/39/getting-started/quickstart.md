@@ -87,16 +87,16 @@ Once all services have successfully launched, you will have a basic Kafka enviro
 
 ## Step 3: Create a topic to store your events
 
-Kafka is a distributed _event streaming platform_ that lets you read, write, store, and process [_events_](/#messages) (also called _records_ or _messages_ in the documentation) across many machines. 
+Kafka is a distributed _event streaming platform_ that lets you read, write, store, and process [_events_](/documentation/#messages) (also called _records_ or _messages_ in the documentation) across many machines. 
 
-Example events are payment transactions, geolocation updates from mobile phones, shipping orders, sensor measurements from IoT devices or medical equipment, and much more. These events are organized and stored in [_topics_](/#intro_concepts_and_terms). Very simplified, a topic is similar to a folder in a filesystem, and the events are the files in that folder. 
+Example events are payment transactions, geolocation updates from mobile phones, shipping orders, sensor measurements from IoT devices or medical equipment, and much more. These events are organized and stored in [_topics_](/documentation/#intro_concepts_and_terms). Very simplified, a topic is similar to a folder in a filesystem, and the events are the files in that folder. 
 
 So before you can write your first events, you must create a topic. Open another terminal session and run: 
     
     
     $ bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
 
-All of Kafka's command line tools have additional options: run the `kafka-topics.sh` command without any arguments to display usage information. For example, it can also show you [details such as the partition count](/#intro_concepts_and_terms) of the new topic: 
+All of Kafka's command line tools have additional options: run the `kafka-topics.sh` command without any arguments to display usage information. For example, it can also show you [details such as the partition count](/documentation/#intro_concepts_and_terms) of the new topic: 
     
     
     $ bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
@@ -133,11 +133,11 @@ Because events are durably stored in Kafka, they can be read as many times and b
 
 ## Step 6: Import/export your data as streams of events with Kafka Connect
 
-You probably have lots of data in existing systems like relational databases or traditional messaging systems, along with many applications that already use these systems. [Kafka Connect](/#connect) allows you to continuously ingest data from external systems into Kafka, and vice versa. It is an extensible tool that runs _connectors_ , which implement the custom logic for interacting with an external system. It is thus very easy to integrate existing systems with Kafka. To make this process even easier, there are hundreds of such connectors readily available. 
+You probably have lots of data in existing systems like relational databases or traditional messaging systems, along with many applications that already use these systems. [Kafka Connect](/documentation/#connect) allows you to continuously ingest data from external systems into Kafka, and vice versa. It is an extensible tool that runs _connectors_ , which implement the custom logic for interacting with an external system. It is thus very easy to integrate existing systems with Kafka. To make this process even easier, there are hundreds of such connectors readily available. 
 
 In this quickstart we'll see how to run Kafka Connect with simple connectors that import data from a file to a Kafka topic and export data from a Kafka topic to a file. 
 
-First, make sure to add `connect-file-3.9.1.jar` to the `plugin.path` property in the Connect worker's configuration. For the purpose of this quickstart we'll use a relative path and consider the connectors' package as an uber jar, which works when the quickstart commands are run from the installation directory. However, it's worth noting that for production deployments using absolute paths is always preferable. See [plugin.path](/#connectconfigs_plugin.path) for a detailed description of how to set this config. 
+First, make sure to add `connect-file-3.9.1.jar` to the `plugin.path` property in the Connect worker's configuration. For the purpose of this quickstart we'll use a relative path and consider the connectors' package as an uber jar, which works when the quickstart commands are run from the installation directory. However, it's worth noting that for production deployments using absolute paths is always preferable. See [plugin.path](/documentation/#connectconfigs_plugin.path) for a detailed description of how to set this config. 
 
 Edit the `config/connect-standalone.properties` file, add or change the `plugin.path` configuration property match the following, and save the file: 
     
@@ -187,7 +187,7 @@ You should see the line appear in the console consumer output and in the sink fi
 
 ## Step 7: Process your events with Kafka Streams
 
-Once your data is stored in Kafka as events, you can process the data with the [Kafka Streams](/streams) client library for Java/Scala. It allows you to implement mission-critical real-time applications and microservices, where the input and/or output data is stored in Kafka topics. Kafka Streams combines the simplicity of writing and deploying standard Java and Scala applications on the client side with the benefits of Kafka's server-side cluster technology to make these applications highly scalable, elastic, fault-tolerant, and distributed. The library supports exactly-once processing, stateful operations and aggregations, windowing, joins, processing based on event-time, and much more. 
+Once your data is stored in Kafka as events, you can process the data with the [Kafka Streams](/documentation/streams) client library for Java/Scala. It allows you to implement mission-critical real-time applications and microservices, where the input and/or output data is stored in Kafka topics. Kafka Streams combines the simplicity of writing and deploying standard Java and Scala applications on the client side with the benefits of Kafka's server-side cluster technology to make these applications highly scalable, elastic, fault-tolerant, and distributed. The library supports exactly-once processing, stateful operations and aggregations, windowing, joins, processing based on event-time, and much more. 
 
 To give you a first taste, here's how one would implement the popular `WordCount` algorithm:
     
@@ -201,7 +201,7 @@ To give you a first taste, here's how one would implement the popular `WordCount
     
     wordCounts.toStream().to("output-topic", Produced.with(Serdes.String(), Serdes.Long()));
 
-The [Kafka Streams demo](/streams/quickstart) and the [app development tutorial](/39/streams/tutorial) demonstrate how to code and run such a streaming application from start to finish. 
+The [Kafka Streams demo](/documentation/streams/quickstart) and the [app development tutorial](/39/documentation/streams/tutorial) demonstrate how to code and run such a streaming application from start to finish. 
 
 ## Step 8: Terminate the Kafka environment
 
@@ -224,7 +224,7 @@ You have successfully finished the Apache Kafka quickstart.
 
 To learn more, we suggest the following next steps:
 
-  * Read through the brief [Introduction](/intro) to learn how Kafka works at a high level, its main concepts, and how it compares to other technologies. To understand Kafka in more detail, head over to the [Documentation](/). 
+  * Read through the brief [Introduction](/intro) to learn how Kafka works at a high level, its main concepts, and how it compares to other technologies. To understand Kafka in more detail, head over to the [Documentation](/documentation/). 
   * Browse through the [Use Cases](/powered-by) to learn how other users in our world-wide community are getting value out of Kafka. 
   * Join a [local Kafka meetup group](/events) and [watch talks from Kafka Summit](https://kafka-summit.org/past-events/), the main conference of the Kafka community. 
 

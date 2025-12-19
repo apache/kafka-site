@@ -44,34 +44,322 @@ An example of adding a rule to properly translate user@MYDOMAIN.COM to user whil
 
 ## Command Line Interface
 
-Kafka Authorization management CLI can be found under bin directory with all the other CLIs. The CLI script is called **kafka-acls.sh**. Following lists all the options that the script supports: 
+Kafka Authorization management CLI can be found under bin directory with all the other CLIs. The CLI script is called **kafka-acls.sh**. Following lists all the options that the script supports:   
+  
+<table>  
+<tr>  
+<th>
 
-Option | Description | Default | Option type  
----|---|---|---  
-\--add | Indicates to the script that user is trying to add an acl. |  | Action  
-\--remove | Indicates to the script that user is trying to remove an acl. |  | Action  
-\--list | Indicates to the script that user is trying to list acls. |  | Action  
-\--authorizer | Fully qualified class name of the authorizer. | kafka.security.auth.SimpleAclAuthorizer | Configuration  
-\--authorizer-properties | key=val pairs that will be passed to authorizer for initialization. For the default authorizer the example values are: zookeeper.connect=localhost:2181 |  | Configuration  
-\--cluster | Indicates to the script that the user is trying to interact with acls on the singular cluster resource. |  | ResourcePattern  
-\--topic [topic-name] | Indicates to the script that the user is trying to interact with acls on topic resource pattern(s). |  | ResourcePattern  
-\--group [group-name] | Indicates to the script that the user is trying to interact with acls on consumer-group resource pattern(s) |  | ResourcePattern  
-\--resource-pattern-type [pattern-type] | Indicates to the script the type of resource pattern, (for --add), or resource pattern filter, (for --list and --remove), the user wishes to use.  
+Option
+</th>  
+<th>
+
+Description
+</th>  
+<th>
+
+Default
+</th>  
+<th>
+
+Option type
+</th> </tr>  
+<tr>  
+<td>
+
+\--add
+</td>  
+<td>
+
+Indicates to the script that user is trying to add an acl.
+</td>  
+<td>
+
+
+</td>  
+<td>
+
+Action
+</td> </tr>  
+<tr>  
+<td>
+
+\--remove
+</td>  
+<td>
+
+Indicates to the script that user is trying to remove an acl.
+</td>  
+<td>
+
+
+</td>  
+<td>
+
+Action
+</td> </tr>  
+<tr>  
+<td>
+
+\--list
+</td>  
+<td>
+
+Indicates to the script that user is trying to list acls.
+</td>  
+<td>
+
+
+</td>  
+<td>
+
+Action
+</td> </tr>  
+<tr>  
+<td>
+
+\--authorizer
+</td>  
+<td>
+
+Fully qualified class name of the authorizer.
+</td>  
+<td>
+
+kafka.security.auth.SimpleAclAuthorizer
+</td>  
+<td>
+
+Configuration
+</td> </tr>  
+<tr>  
+<td>
+
+\--authorizer-properties
+</td>  
+<td>
+
+key=val pairs that will be passed to authorizer for initialization. For the default authorizer the example values are: zookeeper.connect=localhost:2181
+</td>  
+<td>
+
+
+</td>  
+<td>
+
+Configuration
+</td> </tr>  
+<tr>  
+<td>
+
+\--cluster
+</td>  
+<td>
+
+Indicates to the script that the user is trying to interact with acls on the singular cluster resource.
+</td>  
+<td>
+
+
+</td>  
+<td>
+
+ResourcePattern
+</td> </tr>  
+<tr>  
+<td>
+
+\--topic [topic-name]
+</td>  
+<td>
+
+Indicates to the script that the user is trying to interact with acls on topic resource pattern(s).
+</td>  
+<td>
+
+
+</td>  
+<td>
+
+ResourcePattern
+</td> </tr>  
+<tr>  
+<td>
+
+\--group [group-name]
+</td>  
+<td>
+
+Indicates to the script that the user is trying to interact with acls on consumer-group resource pattern(s)
+</td>  
+<td>
+
+
+</td>  
+<td>
+
+ResourcePattern
+</td> </tr>  
+<tr>  
+<td>
+
+\--resource-pattern-type [pattern-type]
+</td>  
+<td>
+
+Indicates to the script the type of resource pattern, (for --add), or resource pattern filter, (for --list and --remove), the user wishes to use.  
 When adding acls, this should be a specific pattern type, e.g. 'literal' or 'prefixed'.  
 When listing or removing acls, a specific pattern type filter can be used to list or remove acls from a specific type of resource pattern, or the filter values of 'any' or 'match' can be used, where 'any' will match any pattern type, but will match the resource name exactly, and 'match' will perform pattern matching to list or remove all acls that affect the supplied resource(s).  
-WARNING: 'match', when used in combination with the '--remove' switch, should be used with care.  | literal | Configuration  
-\--allow-principal | Principal is in PrincipalType:name format that will be added to ACL with Allow permission.   
-You can specify multiple --allow-principal in a single command. |  | Principal  
-\--deny-principal | Principal is in PrincipalType:name format that will be added to ACL with Deny permission.   
-You can specify multiple --deny-principal in a single command. |  | Principal  
-\--allow-host | IP address from which principals listed in --allow-principal will have access. |  if --allow-principal is specified defaults to * which translates to "all hosts" | Host  
-\--deny-host | IP address from which principals listed in --deny-principal will be denied access. | if --deny-principal is specified defaults to * which translates to "all hosts" | Host  
-\--operation | Operation that will be allowed or denied.  
-Valid values are : Read, Write, Create, Delete, Alter, Describe, ClusterAction, All | All | Operation  
-\--producer |  Convenience option to add/remove acls for producer role. This will generate acls that allows WRITE, DESCRIBE and CREATE on topic. |  | Convenience  
-\--consumer |  Convenience option to add/remove acls for consumer role. This will generate acls that allows READ, DESCRIBE on topic and READ on consumer-group. |  | Convenience  
-\--force |  Convenience option to assume yes to all queries and do not prompt. |  | Convenience  
-  
+WARNING: 'match', when used in combination with the '--remove' switch, should be used with care. 
+</td>  
+<td>
+
+literal
+</td>  
+<td>
+
+Configuration
+</td> </tr>  
+<tr>  
+<td>
+
+\--allow-principal
+</td>  
+<td>
+
+Principal is in PrincipalType:name format that will be added to ACL with Allow permission.   
+You can specify multiple --allow-principal in a single command.
+</td>  
+<td>
+
+
+</td>  
+<td>
+
+Principal
+</td> </tr>  
+<tr>  
+<td>
+
+\--deny-principal
+</td>  
+<td>
+
+Principal is in PrincipalType:name format that will be added to ACL with Deny permission.   
+You can specify multiple --deny-principal in a single command.
+</td>  
+<td>
+
+
+</td>  
+<td>
+
+Principal
+</td> </tr>  
+<tr>  
+<td>
+
+\--allow-host
+</td>  
+<td>
+
+IP address from which principals listed in --allow-principal will have access.
+</td>  
+<td>
+
+if --allow-principal is specified defaults to * which translates to "all hosts"
+</td>  
+<td>
+
+Host
+</td> </tr>  
+<tr>  
+<td>
+
+\--deny-host
+</td>  
+<td>
+
+IP address from which principals listed in --deny-principal will be denied access.
+</td>  
+<td>
+
+if --deny-principal is specified defaults to * which translates to "all hosts"
+</td>  
+<td>
+
+Host
+</td> </tr>  
+<tr>  
+<td>
+
+\--operation
+</td>  
+<td>
+
+Operation that will be allowed or denied.  
+Valid values are : Read, Write, Create, Delete, Alter, Describe, ClusterAction, All
+</td>  
+<td>
+
+All
+</td>  
+<td>
+
+Operation
+</td> </tr>  
+<tr>  
+<td>
+
+\--producer
+</td>  
+<td>
+
+Convenience option to add/remove acls for producer role. This will generate acls that allows WRITE, DESCRIBE and CREATE on topic.
+</td>  
+<td>
+
+
+</td>  
+<td>
+
+Convenience
+</td> </tr>  
+<tr>  
+<td>
+
+\--consumer
+</td>  
+<td>
+
+Convenience option to add/remove acls for consumer role. This will generate acls that allows READ, DESCRIBE on topic and READ on consumer-group.
+</td>  
+<td>
+
+
+</td>  
+<td>
+
+Convenience
+</td> </tr>  
+<tr>  
+<td>
+
+\--force
+</td>  
+<td>
+
+Convenience option to assume yes to all queries and do not prompt.
+</td>  
+<td>
+
+
+</td>  
+<td>
+
+Convenience
+</td> </tr> </table>
+
 ## Examples
 
   * **Adding Acls**  

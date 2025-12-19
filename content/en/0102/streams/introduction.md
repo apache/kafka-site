@@ -10,13 +10,13 @@ type: docs
 
 # Streams
 
-  1. [Core Concepts](/0102/streams/core-concepts)
-  2. [Architecture](/0102/streams/architecture)
-  3. [Developer Guide](/0102/streams/developer-guide)
-     * [Low-level Processor API](/0102/streams/developer-guide#streams_processor)
-     * [High-level Streams DSL](/0102/streams/developer-guide#streams_dsl)
-     * [Application Configuration and Execution](/0102/streams/developer-guide#streams_execute)
-  4. [Upgrade Guide and API Changes](/0102/streams/upgrade-guide)
+  1. [Core Concepts](/0102/documentation/streams/core-concepts)
+  2. [Architecture](/0102/documentation/streams/architecture)
+  3. [Developer Guide](/0102/documentation/streams/developer-guide)
+     * [Low-level Processor API](/0102/documentation/streams/developer-guide#streams_processor)
+     * [High-level Streams DSL](/0102/documentation/streams/developer-guide#streams_dsl)
+     * [Application Configuration and Execution](/0102/documentation/streams/developer-guide#streams_execute)
+  4. [Upgrade Guide and API Changes](/0102/documentation/streams/upgrade-guide)
 
 
 
@@ -36,7 +36,7 @@ Some highlights of Kafka Streams:
 
 
 
-Previous [Next](/0102/streams/core-concepts)
+Previous [Next](/0102/documentation/streams/core-concepts)
 
   * [Documentation](/documentation)
 

@@ -38,7 +38,7 @@ If you are upgrading from 0.11.0.x or 1.0.x and you have not overridden the mess
 
   * The kafka artifact in Maven no longer depends on log4j or slf4j-log4j12. Similarly to the kafka-clients artifact, users can now choose the logging back-end by including the appropriate slf4j module (slf4j-log4j12, logback, etc.). The release tarball still includes log4j and slf4j-log4j12.
   * [KIP-225](https://cwiki.apache.org/confluence/x/uaBzB) changed the metric "records.lag" to use tags for topic and partition. The original version with the name format "{topic}-{partition}.records-lag" is deprecated and will be removed in 2.0.0.
-  * Kafka Streams is more robust against broker communication errors. Instead of stopping the Kafka Streams client with a fatal exception, Kafka Streams tries to self-heal and reconnect to the cluster. Using the new `AdminClient` you have better control of how often Kafka Streams retries and can [configure](/11/streams/developer-guide/config-streams) fine-grained timeouts (instead of hard coded retries as in older version).
+  * Kafka Streams is more robust against broker communication errors. Instead of stopping the Kafka Streams client with a fatal exception, Kafka Streams tries to self-heal and reconnect to the cluster. Using the new `AdminClient` you have better control of how often Kafka Streams retries and can [configure](/11/documentation/streams/developer-guide/config-streams) fine-grained timeouts (instead of hard coded retries as in older version).
   * Kafka Streams rebalance time was reduced further making Kafka Streams more responsive.
   * Kafka Connect now supports message headers in both sink and source connectors, and to manipulate them via simple message transforms. Connectors must be changed to explicitly use them. A new `HeaderConverter` is introduced to control how headers are (de)serialized, and the new "SimpleHeaderConverter" is used by default to use string representations of values.
   * kafka.tools.DumpLogSegments now automatically sets deep-iteration option if print-data-log is enabled explicitly or implicitly due to any of the other options like decoder.
@@ -55,7 +55,7 @@ If you are upgrading from 0.11.0.x or 1.0.x and you have not overridden the mess
 ### Upgrading a 1.1.0 Kafka Streams Application
 
   * Upgrading your Streams application from 1.0.0 to 1.1.0 does not require a broker upgrade. A Kafka Streams 1.1.0 application can connect to 1.0, 0.11.0, 0.10.2 and 0.10.1 brokers (it is not possible to connect to 0.10.0 brokers though). 
-  * See [Streams API changes in 1.1.0](/11/streams/upgrade-guide#streams_api_changes_110) for more details. 
+  * See [Streams API changes in 1.1.0](/11/documentation/streams/upgrade-guide#streams_api_changes_110) for more details. 
 
 
 
@@ -130,7 +130,7 @@ If you are upgrading from 0.11.0.x and you have not overridden the message forma
   * Upgrading your Streams application from 0.11.0 to 1.0.0 does not require a broker upgrade. A Kafka Streams 1.0.0 application can connect to 0.11.0, 0.10.2 and 0.10.1 brokers (it is not possible to connect to 0.10.0 brokers though). However, Kafka Streams 1.0 requires 0.10 message format or newer and does not work with older message formats. 
   * If you are monitoring on streams metrics, you will need make some changes to the metrics names in your reporting and monitoring code, because the metrics sensor hierarchy was changed. 
   * There are a few public APIs including `ProcessorContext#schedule()`, `Processor#punctuate()` and `KStreamBuilder`, `TopologyBuilder` are being deprecated by new APIs. We recommend making corresponding code changes, which should be very minor since the new APIs look quite similar, when you upgrade. 
-  * See [Streams API changes in 1.0.0](/11/streams/upgrade-guide#streams_api_changes_100) for more details. 
+  * See [Streams API changes in 1.0.0](/11/documentation/streams/upgrade-guide#streams_api_changes_100) for more details. 
 
 
 
@@ -165,7 +165,7 @@ Starting with version 0.10.2, Java clients (producer and consumer) have acquired
 
   * Upgrading your Streams application from 0.10.2 to 0.11.0 does not require a broker upgrade. A Kafka Streams 0.11.0 application can connect to 0.11.0, 0.10.2 and 0.10.1 brokers (it is not possible to connect to 0.10.0 brokers though). 
   * If you specify customized `key.serde`, `value.serde` and `timestamp.extractor` in configs, it is recommended to use their replaced configure parameter as these configs are deprecated. 
-  * See [Streams API changes in 0.11.0](/11/streams/upgrade-guide#streams_api_changes_0110) for more details. 
+  * See [Streams API changes in 0.11.0](/11/documentation/streams/upgrade-guide#streams_api_changes_0110) for more details. 
 
 
 
@@ -247,7 +247,7 @@ Starting with version 0.10.2, Java clients (producer and consumer) have acquired
   * You need to recompile your code. Just swapping the Kafka Streams library jar file will not work and will break your application. 
   * If you use a custom (i.e., user implemented) timestamp extractor, you will need to update this code, because the `TimestampExtractor` interface was changed. 
   * If you register custom metrics, you will need to update this code, because the `StreamsMetric` interface was changed. 
-  * See [Streams API changes in 0.10.2](/11/streams/upgrade-guide#streams_api_changes_0102) for more details. 
+  * See [Streams API changes in 0.10.2](/11/documentation/streams/upgrade-guide#streams_api_changes_0102) for more details. 
 
 
 
@@ -265,7 +265,7 @@ Starting with version 0.10.2, Java clients (producer and consumer) have acquired
   * Multiple regular expressions separated by commas can be passed to MirrorMaker with the new Java consumer via the --whitelist option. This makes the behaviour consistent with MirrorMaker when used the old Scala consumer.
   * Upgrading your Streams application from 0.10.1 to 0.10.2 does not require a broker upgrade. A Kafka Streams 0.10.2 application can connect to 0.10.2 and 0.10.1 brokers (it is not possible to connect to 0.10.0 brokers though).
   * The Zookeeper dependency was removed from the Streams API. The Streams API now uses the Kafka protocol to manage internal topics instead of modifying Zookeeper directly. This eliminates the need for privileges to access Zookeeper directly and "StreamsConfig.ZOOKEEPER_CONFIG" should not be set in the Streams app any more. If the Kafka cluster is secured, Streams apps must have the required security privileges to create new topics.
-  * Several new fields including "security.protocol", "connections.max.idle.ms", "retry.backoff.ms", "reconnect.backoff.ms" and "request.timeout.ms" were added to StreamsConfig class. User should pay attention to the default values and set these if needed. For more details please refer to [3.5 Kafka Streams Configs](/11/#streamsconfigs).
+  * Several new fields including "security.protocol", "connections.max.idle.ms", "retry.backoff.ms", "reconnect.backoff.ms" and "request.timeout.ms" were added to StreamsConfig class. User should pay attention to the default values and set these if needed. For more details please refer to [3.5 Kafka Streams Configs](/11/documentation/#streamsconfigs).
 
 
 
@@ -314,7 +314,7 @@ Note: Because new protocols are introduced, it is important to upgrade your Kafk
 ### Upgrading a 0.10.0 Kafka Streams Application
 
   * Upgrading your Streams application from 0.10.0 to 0.10.1 does require a broker upgrade because a Kafka Streams 0.10.1 application can only connect to 0.10.1 brokers. 
-  * There are couple of API changes, that are not backward compatible (cf. [Streams API changes in 0.10.1](/11/streams/upgrade-guide#streams_api_changes_0101) for more details). Thus, you need to update and recompile your code. Just swapping the Kafka Streams library jar file will not work and will break your application. 
+  * There are couple of API changes, that are not backward compatible (cf. [Streams API changes in 0.10.1](/11/documentation/streams/upgrade-guide#streams_api_changes_0101) for more details). Thus, you need to update and recompile your code. Just swapping the Kafka Streams library jar file will not work and will break your application. 
 
 
 
@@ -395,7 +395,7 @@ For clients that are upgraded to 0.10.0.0, there is no performance impact.
 
 ### Notable changes in 0.10.0.0
 
-  * Starting from Kafka 0.10.0.0, a new client library named **Kafka Streams** is available for stream processing on data stored in Kafka topics. This new client library only works with 0.10.x and upward versioned brokers due to message format changes mentioned above. For more information please read [Streams documentation](/11/streams).
+  * Starting from Kafka 0.10.0.0, a new client library named **Kafka Streams** is available for stream processing on data stored in Kafka topics. This new client library only works with 0.10.x and upward versioned brokers due to message format changes mentioned above. For more information please read [Streams documentation](/11/documentation/streams).
   * The default value of the configuration parameter `receive.buffer.bytes` is now 64K for the new consumer.
   * The new consumer now exposes the configuration parameter `exclude.internal.topics` to restrict internal topics (such as the consumer offsets topic) from accidentally being included in regular expression subscriptions. By default, it is enabled.
   * The old Scala producer has been deprecated. Users should migrate their code to the Java producer included in the kafka-clients JAR as soon as possible. 

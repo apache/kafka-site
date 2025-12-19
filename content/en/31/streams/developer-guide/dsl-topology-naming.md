@@ -130,7 +130,7 @@ And the corresponding topology:
     	  Sink: KSTREAM-SINK-0000000005 (topic: output)
     	   <-- KTABLE-TOSTREAM-0000000004
 
-Notice that since you've added an operation _before_ the `count` operation, the state store (and the changelog topic) names have changed. This name change means you can't do a rolling re-deployment of your updated topology. Also, you must use the [Streams Reset Tool](/31/streams/developer-guide/app-reset-tool) to re-calculate the aggregations, because the changelog topic has changed on start-up and the new changelog topic contains no data. Fortunately, there's an easy solution to remedy this situation. Give the state store a user-defined name instead of relying on the generated one, so you don't have to worry about topology changes shifting the name of the state store. You've had the ability to name repartition topics with the `Joined`, `StreamJoined`, and`Grouped` classes, and name state store and changelog topics with `Materialized`. But it's worth reiterating the importance of naming these DSL topology operations again. Here's how your DSL code looks now giving a specific name to your state store: 
+Notice that since you've added an operation _before_ the `count` operation, the state store (and the changelog topic) names have changed. This name change means you can't do a rolling re-deployment of your updated topology. Also, you must use the [Streams Reset Tool](/31/documentation/streams/developer-guide/app-reset-tool) to re-calculate the aggregations, because the changelog topic has changed on start-up and the new changelog topic contains no data. Fortunately, there's an easy solution to remedy this situation. Give the state store a user-defined name instead of relying on the generated one, so you don't have to worry about topology changes shifting the name of the state store. You've had the ability to name repartition topics with the `Joined`, `StreamJoined`, and`Grouped` classes, and name state store and changelog topics with `Materialized`. But it's worth reiterating the importance of naming these DSL topology operations again. Here's how your DSL code looks now giving a specific name to your state store: 
     
     
     KStream<String,String> stream = builder.stream("input");
@@ -167,20 +167,77 @@ It's a good practice to name your processing nodes when using the DSL, and it's 
 
 Here are a couple of points to remember when naming your DSL topology: 
 
-  1. If you have an _existing topology_ and you _haven't_ named your state stores (and changelog topics) and repartition topics, we recommended that you do so. But this will be a topology breaking change, so you'll need to shut down all application instances, make the changes, and run the [Streams Reset Tool](/31/streams/developer-guide/app-reset-tool). Although this may be inconvenient at first, it's worth the effort to protect your application from unexpected errors due to topology changes. 
+  1. If you have an _existing topology_ and you _haven't_ named your state stores (and changelog topics) and repartition topics, we recommended that you do so. But this will be a topology breaking change, so you'll need to shut down all application instances, make the changes, and run the [Streams Reset Tool](/31/documentation/streams/developer-guide/app-reset-tool). Although this may be inconvenient at first, it's worth the effort to protect your application from unexpected errors due to topology changes. 
   2. If you have a _new topology_ , make sure you name the persistent parts of your topology: state stores (changelog topics) and repartition topics. This way, when you deploy your application, you're protected from topology changes that otherwise would break your Kafka Streams application. If you don't want to add names to stateless processors at first, that's fine as you can always go back and add the names later. 
 
-Here's a quick reference on naming the critical parts of your Kafka Streams application to prevent topology name changes from breaking your application:  Operation| Naming Class  
----|---  
-Aggregation repartition topics| Grouped  
-KStream-KStream Join repartition topics| StreamJoined  
-KStream-KTable Join repartition topic| Joined  
-KStream-KStream Join state stores| StreamJoined  
-State Stores (for aggregations and KTable-KTable joins)| Materialized  
-Stream/Table non-stateful operations| Named  
-  
+Here's a quick reference on naming the critical parts of your Kafka Streams application to prevent topology name changes from breaking your application:   
+<table>  
+<tr>  
+<th>
+
+Operation
+</th>  
+<th>
+
+Naming Class
+</th> </tr>  
+<tr>  
+<td>
+
+Aggregation repartition topics
+</td>  
+<td>
+
+Grouped
+</td> </tr>  
+<tr>  
+<td>
+
+KStream-KStream Join repartition topics
+</td>  
+<td>
+
+StreamJoined
+</td> </tr>  
+<tr>  
+<td>
+
+KStream-KTable Join repartition topic
+</td>  
+<td>
+
+Joined
+</td> </tr>  
+<tr>  
+<td>
+
+KStream-KStream Join state stores
+</td>  
+<td>
+
+StreamJoined
+</td> </tr>  
+<tr>  
+<td>
+
+State Stores (for aggregations and KTable-KTable joins)
+</td>  
+<td>
+
+Materialized
+</td> </tr>  
+<tr>  
+<td>
+
+Stream/Table non-stateful operations
+</td>  
+<td>
+
+Named
+</td> </tr> </table>
+
   * [Documentation](/documentation)
-  * [Kafka Streams](/streams)
-  * [Developer Guide](/streams/developer-guide/)
+  * [Kafka Streams](/documentation/streams)
+  * [Developer Guide](/documentation/streams/developer-guide/)
 
 

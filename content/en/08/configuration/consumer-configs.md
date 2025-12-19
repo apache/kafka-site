@@ -12,30 +12,293 @@ The essential consumer configurations are the following:
 
   * `group.id`
   * `zookeeper.connect` 
-Property | Default | Description  
----|---|---  
-group.id |  | A string that uniquely identifies the group of consumer processes to which this consumer belongs. By setting the same group id multiple processes indicate that they are all part of the same consumer group.  
-zookeeper.connect |  | Specifies the zookeeper connection string in the form `hostname:port` where host and port are the host and port of a zookeeper server. To allow connecting through other zookeeper nodes when that zookeeper machine is down you can also specify multiple hosts in the form `hostname1:port1,hostname2:port2,hostname3:port3`.  The server may also have a zookeeper chroot path as part of it's zookeeper connection string which puts its data under some path in the global zookeeper namespace. If so the consumer should use the same chroot path in its connection string. For example to give a chroot path of `/chroot/path` you would give the connection string as `hostname1:port1,hostname2:port2,hostname3:port3/chroot/path`.  
-consumer.id | null |  Generated automatically if not set.  
-socket.timeout.ms | 30 * 1000 | The socket timeout for network requests. The actual timeout set will be max.fetch.wait + socket.timeout.ms.  
-socket.receive.buffer.bytes | 64 * 1024 | The socket receive buffer for network requests  
-fetch.message.max.bytes | 1024 * 1024 | The number of byes of messages to attempt to fetch for each topic-partition in each fetch request. These bytes will be read into memory for each partition, so this helps control the memory used by the consumer. The fetch request size must be at least as large as the maximum message size the server allows or else it is possible for the producer to send messages larger than the consumer can fetch.  
-auto.commit.enable | true | If true, periodically commit to zookeeper the offset of messages already fetched by the consumer. This committed offset will be used when the process fails as the position from which the new consumer will begin.  
-auto.commit.interval.ms | 60 * 1000 | The frequency in ms that the consumer offsets are committed to zookeeper.  
-queued.max.message.chunks | 10 | Max number of message chunks buffered for consumption. Each chunk can be up to fetch.message.max.bytes.  
-rebalance.max.retries | 4 | When a new consumer joins a consumer group the set of consumers attempt to "rebalance" the load to assign partitions to each consumer. If the set of consumers changes while this assignment is taking place the rebalance will fail and retry. This setting controls the maximum number of attempts before giving up.  
-fetch.min.bytes | 1 | The minimum amount of data the server should return for a fetch request. If insufficient data is available the request will wait for that much data to accumulate before answering the request.  
-fetch.wait.max.ms | 100 | The maximum amount of time the server will block before answering the fetch request if there isn't sufficient data to immediately satisfy fetch.min.bytes  
-rebalance.backoff.ms | 2000 | Backoff time between retries during rebalance.  
-refresh.leader.backoff.ms | 200 | Backoff time to wait before trying to determine the leader of a partition that has just lost its leader.  
-auto.offset.reset | largest |  What to do when there is no initial offset in Zookeeper or if an offset is out of range:  
+  
+<table>  
+<tr>  
+<th>
+
+Property
+</th>  
+<th>
+
+Default
+</th>  
+<th>
+
+Description
+</th> </tr>  
+<tr>  
+<td>
+
+group.id
+</td>  
+<td>
+
+
+</td>  
+<td>
+
+A string that uniquely identifies the group of consumer processes to which this consumer belongs. By setting the same group id multiple processes indicate that they are all part of the same consumer group.
+</td> </tr>  
+<tr>  
+<td>
+
+zookeeper.connect
+</td>  
+<td>
+
+
+</td>  
+<td>
+
+Specifies the zookeeper connection string in the form `hostname:port` where host and port are the host and port of a zookeeper server. To allow connecting through other zookeeper nodes when that zookeeper machine is down you can also specify multiple hosts in the form `hostname1:port1,hostname2:port2,hostname3:port3`. 
+
+The server may also have a zookeeper chroot path as part of it's zookeeper connection string which puts its data under some path in the global zookeeper namespace. If so the consumer should use the same chroot path in its connection string. For example to give a chroot path of `/chroot/path` you would give the connection string as `hostname1:port1,hostname2:port2,hostname3:port3/chroot/path`.
+</td> </tr>  
+<tr>  
+<td>
+
+consumer.id
+</td>  
+<td>
+
+null
+</td>  
+<td>
+
+
+
+Generated automatically if not set.
+
+
+</td> </tr>  
+<tr>  
+<td>
+
+socket.timeout.ms
+</td>  
+<td>
+
+30 * 1000
+</td>  
+<td>
+
+The socket timeout for network requests. The actual timeout set will be max.fetch.wait + socket.timeout.ms.
+</td> </tr>  
+<tr>  
+<td>
+
+socket.receive.buffer.bytes
+</td>  
+<td>
+
+64 * 1024
+</td>  
+<td>
+
+The socket receive buffer for network requests
+</td> </tr>  
+<tr>  
+<td>
+
+fetch.message.max.bytes
+</td>  
+<td>
+
+1024 * 1024
+</td>  
+<td>
+
+The number of byes of messages to attempt to fetch for each topic-partition in each fetch request. These bytes will be read into memory for each partition, so this helps control the memory used by the consumer. The fetch request size must be at least as large as the maximum message size the server allows or else it is possible for the producer to send messages larger than the consumer can fetch.
+</td> </tr>  
+<tr>  
+<td>
+
+auto.commit.enable
+</td>  
+<td>
+
+true
+</td>  
+<td>
+
+If true, periodically commit to zookeeper the offset of messages already fetched by the consumer. This committed offset will be used when the process fails as the position from which the new consumer will begin.
+</td> </tr>  
+<tr>  
+<td>
+
+auto.commit.interval.ms
+</td>  
+<td>
+
+60 * 1000
+</td>  
+<td>
+
+The frequency in ms that the consumer offsets are committed to zookeeper.
+</td> </tr>  
+<tr>  
+<td>
+
+queued.max.message.chunks
+</td>  
+<td>
+
+10
+</td>  
+<td>
+
+Max number of message chunks buffered for consumption. Each chunk can be up to fetch.message.max.bytes.
+</td> </tr>  
+<tr>  
+<td>
+
+rebalance.max.retries
+</td>  
+<td>
+
+4
+</td>  
+<td>
+
+When a new consumer joins a consumer group the set of consumers attempt to "rebalance" the load to assign partitions to each consumer. If the set of consumers changes while this assignment is taking place the rebalance will fail and retry. This setting controls the maximum number of attempts before giving up.
+</td> </tr>  
+<tr>  
+<td>
+
+fetch.min.bytes
+</td>  
+<td>
+
+1
+</td>  
+<td>
+
+The minimum amount of data the server should return for a fetch request. If insufficient data is available the request will wait for that much data to accumulate before answering the request.
+</td> </tr>  
+<tr>  
+<td>
+
+fetch.wait.max.ms
+</td>  
+<td>
+
+100
+</td>  
+<td>
+
+The maximum amount of time the server will block before answering the fetch request if there isn't sufficient data to immediately satisfy fetch.min.bytes
+</td> </tr>  
+<tr>  
+<td>
+
+rebalance.backoff.ms
+</td>  
+<td>
+
+2000
+</td>  
+<td>
+
+Backoff time between retries during rebalance.
+</td> </tr>  
+<tr>  
+<td>
+
+refresh.leader.backoff.ms
+</td>  
+<td>
+
+200
+</td>  
+<td>
+
+Backoff time to wait before trying to determine the leader of a partition that has just lost its leader.
+</td> </tr>  
+<tr>  
+<td>
+
+auto.offset.reset
+</td>  
+<td>
+
+largest
+</td>  
+<td>
+
+
+
+What to do when there is no initial offset in Zookeeper or if an offset is out of range:  
 * smallest : automatically reset the offset to the smallest offset  
 * largest : automatically reset the offset to the largest offset  
-* anything else: throw exception to the consumer. If this is set to largest, the consumer may lose some messages when the number of partitions, for the topics it subscribes to, changes on the broker. To prevent data loss during partition addition, set auto.offset.reset to smallest  
-consumer.timeout.ms | -1 | Throw a timeout exception to the consumer if no message is available for consumption after the specified interval  
-client.id | group id value | The client id is a user-specified string sent in each request to help trace calls. It should logically identify the application making the request.  
-zookeeper.session.timeout.ms  | 6000 | Zookeeper session timeout. If the consumer fails to heartbeat to zookeeper for this period of time it is considered dead and a rebalance will occur.  
-zookeeper.connection.timeout.ms | 6000 | The max time that the client waits while establishing a connection to zookeeper.  
-zookeeper.sync.time.ms  | 2000 | How far a ZK follower can be behind a ZK leader  
-  
+* anything else: throw exception to the consumer. If this is set to largest, the consumer may lose some messages when the number of partitions, for the topics it subscribes to, changes on the broker. To prevent data loss during partition addition, set auto.offset.reset to smallest
+
+
+</td> </tr>  
+<tr>  
+<td>
+
+consumer.timeout.ms
+</td>  
+<td>
+
+-1
+</td>  
+<td>
+
+Throw a timeout exception to the consumer if no message is available for consumption after the specified interval
+</td> </tr>  
+<tr>  
+<td>
+
+client.id
+</td>  
+<td>
+
+group id value
+</td>  
+<td>
+
+The client id is a user-specified string sent in each request to help trace calls. It should logically identify the application making the request.
+</td> </tr>  
+<tr>  
+<td>
+
+zookeeper.session.timeout.ms 
+</td>  
+<td>
+
+6000
+</td>  
+<td>
+
+Zookeeper session timeout. If the consumer fails to heartbeat to zookeeper for this period of time it is considered dead and a rebalance will occur.
+</td> </tr>  
+<tr>  
+<td>
+
+zookeeper.connection.timeout.ms
+</td>  
+<td>
+
+6000
+</td>  
+<td>
+
+The max time that the client waits while establishing a connection to zookeeper.
+</td> </tr>  
+<tr>  
+<td>
+
+zookeeper.sync.time.ms 
+</td>  
+<td>
+
+2000
+</td>  
+<td>
+
+How far a ZK follower can be behind a ZK leader
+</td> </tr> </table>
+
 More details about consumer configuration can be found in the scala class `kafka.consumer.ConsumerConfig`.

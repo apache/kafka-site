@@ -115,11 +115,42 @@ You can either use one of the available store types or implement your own custom
 
 Note that, when using Kafka Streams, you normally don't create or instantiate state stores directly in your code. Rather, you define state stores indirectly by creating a so-called `StoreBuilder`. This builder is used by Kafka Streams as a factory to instantiate the actual state stores locally in application instances when and where needed.
 
-The following store types are available out of the box.
+The following store types are available out of the box.  
+  
+<table>  
+<tr>  
+<th>
 
-Store Type | Storage Engine | Fault-tolerant? | Description  
----|---|---|---  
-Persistent `KeyValueStore<K, V>` | RocksDB | Yes (enabled by default) | 
+Store Type
+</th>  
+<th>
+
+Storage Engine
+</th>  
+<th>
+
+Fault-tolerant?
+</th>  
+<th>
+
+Description
+</th> </tr>  
+<tr>  
+<td>
+
+Persistent `KeyValueStore<K, V>`
+</td>  
+<td>
+
+RocksDB
+</td>  
+<td>
+
+Yes (enabled by default)
+</td>  
+<td>
+
+
 
   * **The recommended store type for most use cases.**
   * Stores its data on local disk.
@@ -141,9 +172,26 @@ Persistent `KeyValueStore<K, V>` | RocksDB | Yes (enabled by default) |
         Stores.persistentKeyValueStore("persistent-counts"),
         Serdes.String(),
         Serdes.Long());
-    KeyValueStore<String, Long> countStore = countStoreSupplier.build();  
-  
-In-memory `KeyValueStore<K, V>` | - | Yes (enabled by default) | 
+    KeyValueStore<String, Long> countStore = countStoreSupplier.build();
+
+
+</td> </tr>  
+<tr>  
+<td>
+
+In-memory `KeyValueStore<K, V>`
+</td>  
+<td>
+
+-
+</td>  
+<td>
+
+Yes (enabled by default)
+</td>  
+<td>
+
+
 
   * Stores its data in memory.
   * Storage capacity: managed local state must fit into memory (heap space) of an application instance.
@@ -164,8 +212,11 @@ In-memory `KeyValueStore<K, V>` | - | Yes (enabled by default) |
         Stores.inMemoryKeyValueStore("inmemory-counts"),
         Serdes.String(),
         Serdes.Long());
-    KeyValueStore<String, Long> countStore = countStoreSupplier.build();  
-  
+    KeyValueStore<String, Long> countStore = countStoreSupplier.build();
+
+
+</td> </tr> </table>
+
 ## Fault-tolerant State Stores
 
 To make state stores fault-tolerant and to allow for state store migration without data loss, a state store can be continuously backed up to a Kafka topic behind the scenes. For example, to migrate a stateful stream task from one machine to another when [elastically adding or removing capacity from your application](running-app.html#streams-developer-guide-execution-scaling). This topic is sometimes referred to as the state store's associated _changelog topic_ , or its _changelog_. For example, if you experience machine failure, the state store and the application's state can be fully restored from its changelog. You can enable or disable this backup feature for a state store.
@@ -271,7 +322,7 @@ In this topology, the `"Process"` stream processor node is considered a downstre
 Now that you have fully defined your processor topology in your application, you can proceed to [running the Kafka Streams application](running-app.html#streams-developer-guide-execution).
 
   * [Documentation](/documentation)
-  * [Kafka Streams](/streams)
-  * [Developer Guide](/streams/developer-guide/)
+  * [Kafka Streams](/documentation/streams)
+  * [Developer Guide](/documentation/streams/developer-guide/)
 
 

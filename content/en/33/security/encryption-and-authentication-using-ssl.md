@@ -10,7 +10,7 @@ type: docs
 
 Apache Kafka allows clients to use SSL for encryption of traffic as well as authentication. By default, SSL is disabled but can be turned on if needed. The following paragraphs explain in detail how to set up your own PKI infrastructure, use it to create certificates and configure Kafka to use these. 
 
-  1. #### Generate SSL key and certificate for each Kafka broker
+### Generate SSL key and certificate for each Kafka broker
 
 The first step of deploying one or more brokers with SSL support is to generate a public/private keypair for every server. Since Kafka expects all keys and certificates to be stored in keystores we will use Java's keytool command for this task. The tool supports two different keystore formats, the Java specific jks format which has been deprecated by now, as well as PKCS12. PKCS12 is the default format as of Java version 9, to ensure this format is being used regardless of the Java version in use all following commands explicitly specify the PKCS12 format. 
          
@@ -52,7 +52,7 @@ To add a SAN field append the following argument ` -ext SAN=DNS:{FQDN},IP:{IPADD
     
     > keytool -keystore server.keystore.jks -alias localhost -validity {validity} -genkey -keyalg RSA -destkeystoretype pkcs12 -ext SAN=DNS:{FQDN},IP:{IPADDRESS1}
 
-  2. #### Creating your own CA
+### Creating your own CA
 
 After this step each machine in the cluster has a public/private key pair which can already be used to encrypt traffic and a certificate signing request, which is the basis for creating a certificate. To add authentication capabilities this signing request needs to be signed by a trusted authority, which will be created in this step. 
 
@@ -165,7 +165,7 @@ The next step is to add the generated CA to the **clients' truststore** so that 
          > keytool -keystore server.truststore.jks -alias CARoot -import -file ca-cert
 
 In contrast to the keystore in step 1 that stores each machine's own identity, the truststore of a client stores all the certificates that the client should trust. Importing a certificate into one's truststore also means trusting all certificates that are signed by that certificate. As the analogy above, trusting the government (CA) also means trusting all passports (certificates) that it has issued. This attribute is called the chain of trust, and it is particularly useful when deploying SSL on a large Kafka cluster. You can sign all certificates in the cluster with a single CA, and have all machines share the same truststore that trusts the CA. That way all machines can authenticate all other machines. 
-  3. #### Signing the certificate
+### Signing the certificate
 
 Then sign it with the CA: 
          
@@ -192,7 +192,7 @@ From 2.7.0 onwards, SSL key and trust stores can be configured for Kafka brokers
 
 Store password configs `ssl.keystore.password` and `ssl.truststore.password` are not used for PEM. If private key is encrypted using a password, the key password must be provided in `ssl.key.password`. Private keys may be provided in unencrypted form without a password. In production deployments, configs should be encrypted or externalized using password protection feature in Kafka in this case. Note that the default SSL engine factory has limited capabilities for decryption of encrypted private keys when external tools like OpenSSL are used for encryption. Third party libraries like BouncyCastle may be integrated witn a custom `SslEngineFactory` to support a wider range of encrypted private keys.
 
-  4. #### Common Pitfalls in Production
+### Common Pitfalls in Production
 
 The above paragraphs show the process to create your own CA and use it to sign certificates for your cluster. While very useful for sandbox, dev, test, and similar systems, this is usually not the correct process to create certificates for a production cluster in a corporate environment. Enterprises will normally operate their own CA and users can send in CSRs to be signed with this CA, which has the benefit of users not being responsible to keep the CA secure as well as a central authority that everybody can trust. However it also takes away a lot of control over the process of signing certificates from the user. Quite often the persons operating corporate CAs will apply tight restrictions on certificates that can cause issues when trying to use these certificates with Kafka. 
      1. **[Extended Key Usage](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)**  
@@ -208,7 +208,7 @@ CA operators are often hesitant to copy and requested extension fields from CSRs
             
             > openssl x509 -in certificate.crt -text -noout
 
-  5. #### Configuring Kafka Brokers
+### Configuring Kafka Brokers
 
 If SSL is not enabled for inter-broker communication (see below for how to enable it), both PLAINTEXT and SSL ports will be necessary. 
          
@@ -255,7 +255,7 @@ In the output of this command you should see server's certificate:
     issuer=/C=US/ST=CA/L=Santa Clara/O=org/OU=org/CN=kafka/emailAddress=test@test.com
 
 If the certificate does not show up or if there are any other error messages then your keystore is not setup properly.
-  6. #### Configuring Kafka Clients
+### Configuring Kafka Clients
 
 SSL is supported only for the new Kafka Producer and Consumer, the older API is not supported. The configs for SSL will be the same for both producer and consumer.  
 If client authentication is not required in the broker, then the following is a minimal configuration example: 

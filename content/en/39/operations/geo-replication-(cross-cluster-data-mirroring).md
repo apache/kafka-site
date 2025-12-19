@@ -150,20 +150,20 @@ For new MirrorMaker clusters, set the `exactly.once.source.support` property to 
 
 For existing MirrorMaker clusters, a two-step upgrade is necessary. Instead of immediately setting the `exactly.once.source.support` property to enabled, first set it to `preparing` on all nodes in the cluster. Once this is complete, it can be set to `enabled` on all nodes in the cluster, in a second round of restarts. 
 
-In either case, it is also necessary to enable intra-cluster communication between the MirrorMaker nodes, as described in [KIP-710](https://cwiki.apache.org/confluence/display/KAFKA/KIP-710%3A+Full+support+for+distributed+mode+in+dedicated+MirrorMaker+2.0+clusters). To do this, the `dedicated.mode.enable.internal.rest` property must be set to `true`. In addition, many of the REST-related [configuration properties available for Kafka Connect](https://kafka.apache.org/#connectconfigs) can be specified the MirrorMaker config. For example, to enable intra-cluster communication in MirrorMaker cluster with each node listening on port 8080 of their local machine, the following should be added to the MirrorMaker config file: 
+In either case, it is also necessary to enable intra-cluster communication between the MirrorMaker nodes, as described in [KIP-710](https://cwiki.apache.org/confluence/display/KAFKA/KIP-710%3A+Full+support+for+distributed+mode+in+dedicated+MirrorMaker+2.0+clusters). To do this, the `dedicated.mode.enable.internal.rest` property must be set to `true`. In addition, many of the REST-related [configuration properties available for Kafka Connect](https://kafka.apache.org/documentation/#connectconfigs) can be specified the MirrorMaker config. For example, to enable intra-cluster communication in MirrorMaker cluster with each node listening on port 8080 of their local machine, the following should be added to the MirrorMaker config file: 
     
     
     dedicated.mode.enable.internal.rest = true
     listeners = http://localhost:8080
 
-**Note that, if intra-cluster communication is enabled in production environments, it is highly recommended to secure the REST servers brought up by each MirrorMaker node. See the[configuration properties for Kafka Connect](https://kafka.apache.org/#connectconfigs) for information on how this can be accomplished. **
+**Note that, if intra-cluster communication is enabled in production environments, it is highly recommended to secure the REST servers brought up by each MirrorMaker node. See the[configuration properties for Kafka Connect](https://kafka.apache.org/documentation/#connectconfigs) for information on how this can be accomplished. **
 
 It is also recommended to filter records from aborted transactions out from replicated data when running MirrorMaker. To do this, ensure that the consumer used to read from source clusters is configured with `isolation.level` set to `read_committed`. If replicating data from cluster `us-west`, this can be done for all replication flows that read from that cluster by adding the following to the MirrorMaker config file: 
     
     
     us-west.consumer.isolation.level = read_committed
 
-As a final note, under the hood, MirrorMaker uses Kafka Connect source connectors to replicate data. For more information on exactly-once support for these kinds of connectors, see the [relevant docs page](https://kafka.apache.org/#connect_exactlyoncesource). 
+As a final note, under the hood, MirrorMaker uses Kafka Connect source connectors to replicate data. For more information on exactly-once support for these kinds of connectors, see the [relevant docs page](https://kafka.apache.org/documentation/#connect_exactlyoncesource). 
 
 ### Creating and Enabling Replication Flows
 
@@ -218,7 +218,7 @@ Example:
     us-west->us-east.groups = bar.*
     us-west->us-east.emit.heartbeats = false
 
-Additional configuration settings are supported which can be left with their default values in most cases. See [MirrorMaker Configs](/#mirrormakerconfigs). 
+Additional configuration settings are supported which can be left with their default values in most cases. See [MirrorMaker Configs](/documentation/#mirrormakerconfigs). 
 
 ### Securing Replication Flows
 
