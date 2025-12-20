@@ -8,6 +8,24 @@ keywords:
 type: docs
 ---
 
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+
 # Upgrade Guide and API Changes
 
 If you want to upgrade from 1.0.x to 1.1.0 and you have customized window store implementations on the `ReadOnlyWindowStore` interface you'd need to update your code to incorporate the newly added public APIs. Otherwise, if you are using Java 7 you don't need to make any code changes as the public API is fully backward compatible; but if you are using Java 8 method references in your Kafka Streams code you might need to update your code to resolve method ambiguities. Hot-swapping the jar-file only might not work for this case. See below for a complete list of 1.1.0 API and semantic changes that allow you to advance your application and/or simplify your code base. 

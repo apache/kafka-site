@@ -8,6 +8,24 @@ keywords:
 type: docs
 ---
 
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+
 # Upgrade Guide & API Changes
 
 If you want to upgrade from 0.10.2.x or 0.11.0.x to 1.0.x you don't need to do any code changes as the public API is fully backward compatible. However, some public APIs were deprecated and thus it is recommended to update your code eventually to allow for future upgrades. See below a complete list of 1.0 and 0.11.0 API and semantic changes that allow you to advance your application and/or simplify your code base, including the usage of new features. Additionally, Streams API 1.0.x requires broker on-disk message format version 0.10 or higher; thus, you need to make sure that the message format is configured correctly before you upgrade your Kafka Streams application. 
