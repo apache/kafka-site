@@ -13,7 +13,7 @@ Description
 group.id
 A string that uniquely identifies the group of consumer processes to which this consumer belongs. By setting the same group id multiple processes indicate that they are all part of the same consumer group.
 zookeeper.connect
-Specifies the zookeeper connection string in the form hostname:port where host and port are the host and port of a zookeeper server. To allow connecting through other zookeeper nodes when that zookeeper machine is down you can also specify multiple hosts in the form hostname1:port1,hostname2:port2,hostname3:port3.</description></item><item><title>Producer Configs</title><link>https://kafka.apache.org/08/configuration/producer-configs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kafka.apache.org/08/configuration/producer-configs/</guid><description>Essential configuration properties for the producer include:
+Specifies the zookeeper connection string in the form hostname:port where host and port are the host and port of a zookeeper server.</description></item><item><title>Producer Configs</title><link>https://kafka.apache.org/08/configuration/producer-configs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kafka.apache.org/08/configuration/producer-configs/</guid><description>Essential configuration properties for the producer include:
 metadata.broker.list request.required.acks producer.type serializer.class Property
 Default
 Description
