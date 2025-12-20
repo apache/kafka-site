@@ -10,7 +10,7 @@ on:
 env:
   # GitHub Container Registry
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: kafka-site
 
 jobs:
   build-and-push:
@@ -20,6 +20,11 @@ jobs:
       packages: write
     
     steps:
+    - name: Env
+      run: printenv
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
@@ -40,14 +45,6 @@ jobs:
       uses: docker/metadata-action@v5
       with:
         images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-        tags: |
-          type=ref,event=branch
-          type=ref,event=pr
-          type=sha,prefix={{branch}}-
-          type=raw,value=latest,enable={{is_default_branch}}
-          type=raw,value=prod-{{branch}}
-          type=raw,value=prod-{{date 'YYYYMMDD-HHmmss'}}
-          type=raw,value=prod-{{sha}},enable={{is_default_branch}}
     
     - name: Build Hugo site
       run: |
