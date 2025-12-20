@@ -246,6 +246,49 @@ def main():
          print(f"[FAIL] {source_legacy} missing.")
          results.append(l_res) # Force failure if missing
 
+    # Versioned Legacy .html
+    print("Verifying Versioned documentation.html (Sample: First and Last version)")
+    if versions:
+        # Check first, last to sample
+        sample_versions = [versions[0], versions[-1]]
+        for v in sample_versions:
+             url = urljoin(ROOT_URL, f"/{v}/documentation.html")
+             status, _, _ = check_url(url)
+             if status == 200:
+                 print(f"[PASS] /{v}/documentation.html exists.")
+             else:
+                 print(f"[FAIL] /{v}/documentation.html : HTTP {status}")
+                 results.append({"source": f"/{v}/documentation.html", "s_ok": False, "s_msg": f"HTTP {status}"})
+
+    print("-" * 50)
+    print("Verifying Streams .html Alias")
+    # /documentation/streams/architecture.html -> /41/streams/architecture (via populating streams + alias)
+    # The source is the alias path. 
+    # Since verifying actual redirect chain is hard without browser, we verify the alias target eventually resolves.
+    # But verify_single_redirect takes source and target.
+    # Source: /documentation/streams/architecture.html
+    # Target: /43/streams/architecture/ (Latest version is 4.3 now per user edit)
+    # The content logic redirects path /documentation/streams/... to /{latest/version}/streams/...
+    
+    # Check one example
+    s_html = "/documentation/streams/architecture.html"
+    t_html = f"/{LATEST_VERSION}/streams/architecture/"
+    
+    # We anticipate:
+    # 1. architecture.html -> architecture/ (Hugo Alias) -> 200 OK (with doc-redirect)
+    # 2. architecture/ executes JS -> redirects to /{latest}/streams/architecture/
+    # This script verifies static reachability.
+    
+    # Note: Hugo aliases are HTML files with meta refresh. verify_redirects check_url might just return 200 for the alias file itself.
+    # That is sufficient to prove the alias FILE exists.
+    
+    a_res = verify_single_redirect(s_html, s_html, "Streams .html Alias Existence")
+    if a_res["s_ok"]:
+        print(f"[PASS] {s_html} alias exists.")
+    else:
+        print(f"[FAIL] {s_html} alias missing.")
+        results.append(a_res)
+
     print("-" * 50)
     if not results:
         print("SUCCESS: All checked redirects passed verification.")

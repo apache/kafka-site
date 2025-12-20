@@ -28,7 +28,7 @@
             //Configuration menu
             "#configuration": "configuration",
             "#brokerconfigs": "configuration/broker-configs/",
-            "#topicconfigs": "configuration/topic-level-configs/",
+            "#topicconfigs": "configuration/topic-configs/",
             "#groupconfigs": "configuration/group-configs/",
             "#producerconfigs": "configuration/producer-configs/",
             "#consumerconfigs": "configuration/consumer-configs/",
@@ -141,6 +141,9 @@
                     // We want /41/streams...
                     newPath = "/" + targetVersion + newPath;
                 }
+
+                // Ensure we strip .html if present (to handle cases where path includes it)
+                newPath = newPath.replace(".html", "");
 
                 window.location.replace(newPath + currentHash);
                 return;

@@ -8,6 +8,24 @@ keywords:
 type: docs
 ---
 
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+
 # Upgrade Guide and API Changes
 
 Upgrading from any older version to 2.2.0 is possible: (1) if you are upgrading from 2.0.x to 2.2.0 then a single rolling bounce is needed to swap in the new jar, (2) if you are upgrading from older versions than 2.0.x in the online mode, you would need two rolling bounces where the first rolling bounce phase you need to set config `upgrade.from="older version"` (possible values are `"0.10.0", "0.10.1", "0.10.2", "0.11.0", "1.0", and "1.1"`) (cf. [KIP-268](https://cwiki.apache.org/confluence/display/KAFKA/KIP-268%3A+Simplify+Kafka+Streams+Rebalance+Metadata+Upgrade)): 
