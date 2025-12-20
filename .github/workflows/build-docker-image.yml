@@ -10,7 +10,7 @@ on:
 env:
   # GitHub Container Registry
   REGISTRY: ghcr.io
-  IMAGE_NAME: kafka-site
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build-and-push:
