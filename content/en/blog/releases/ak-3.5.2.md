@@ -5,6 +5,24 @@ linkTitle: AK 3.5.2
 author: Luke Chen (@showuon1)
 ---
 
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+
 
 
 We are proud to announce the release of Apache Kafka 3.5.2. This is a bugfix release. It contains many bug fixes including upgrades the Snappy and Rocksdb dependencies. For a full list of changes, be sure to check the [release notes](https://archive.apache.org/dist/kafka/3.5.2/RELEASE_NOTES.html).
