@@ -828,6 +828,12 @@
     "description": "The Platform and Content Group (PCG) at Tencent built essential cross-region asynchronous data pipelines around Apache Kafka to support the operation and growth of business  that integrates Tencent's internet, social, and content platforms as microservices."
   },
   {
+    "link": "https://thingsboard.io/",
+    "logo": "thingsboard_logo_blue.svg",
+    "logoBgColor": "#ffffff",
+    "description": "We use Apache Kafka as the backbone of ThingsBoard's microservices architecture to orchestrate communication between transport layers and core processing nodes. It acts as a persistent message queue for incoming IoT telemetry, ensuring high throughput and fault tolerance for the Rule Engine during load spikes. "
+  },
+  {
     "link": "https://www.tokenanalyst.io/",
     "logo": "tokenanalyst.png",
     "logoBgColor": "#ffffff",
