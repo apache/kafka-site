@@ -1,5 +1,7 @@
 ---
 title: Apache Kafka
+description:
+  Apache Kafka is a distributed event streaming platform used worldwide.
 ---
 
 <!--
