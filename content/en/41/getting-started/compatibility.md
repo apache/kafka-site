@@ -50,7 +50,7 @@ Java 17
 </th>  
 <th>
 
-Java 23
+Java 21
 </th> </tr>  
 <tr>  
 <td>
