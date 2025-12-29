@@ -59,7 +59,7 @@ Clients
 </td>  
 <td>
 
-4.0.0
+4.x
 </td>  
 <td>
 
@@ -80,7 +80,7 @@ Streams
 </td>  
 <td>
 
-4.0.0
+4.x
 </td>  
 <td>
 
@@ -101,7 +101,7 @@ Connect
 </td>  
 <td>
 
-4.0.0
+4.x
 </td>  
 <td>
 
@@ -122,7 +122,7 @@ Server
 </td>  
 <td>
 
-4.0.0
+4.x
 </td>  
 <td>
 
@@ -149,11 +149,11 @@ KRaft Cluster Version
 </th>  
 <th>
 
-Compatibility 4.0 Server (dynamic voter)
+Compatibility 4.x Server (dynamic voter)
 </th>  
 <th>
 
-Compatibility 4.0 Server (static voter)
+Compatibility 4.x Server (static voter)
 </th> </tr>  
 <tr>  
 <td>
@@ -262,18 +262,21 @@ before 3.2.x
 <tr>  
 <td>
 
-4.0.x
+4.x
 </td>  
 <td>
 
 ✅
 </td>  
 <td>
-
 ✅
+</td> </tr>  
+<tr>  
+<td>
+
 </td> </tr> </table>
 
-**Note: Can’t upgrade server from static voter to dynamic voter, see[KAFKA-16538](https://issues.apache.org/jira/browse/KAFKA-16538).**
+**Note: Can’t upgrade server from static voter to dynamic voter, see [KAFKA-16538](https://issues.apache.org/jira/browse/KAFKA-16538).**
 
 ## Client/Broker Forward Compatibility  
   
@@ -289,7 +292,7 @@ Module
 </th>  
 <th>
 
-Compatibility with Kafka 4.0
+Compatibility with Kafka 4.x
 </th>  
 <th>
 
@@ -314,7 +317,8 @@ Pre-0.10.x protocols are fully removed in Kafka 4.0 ([KIP-896](https://cwiki.apa
 </td> </tr>  
 <tr>  
 <td>
-
+</td>  
+<td>
 Streams
 </td>  
 <td>
@@ -326,6 +330,8 @@ Streams
 Pre-0.10.x protocols are fully removed in Kafka 4.0 ([KIP-896](https://cwiki.apache.org/confluence/x/K5sODg)). 
 </td> </tr>  
 <tr>  
+<td>
+</td>  
 <td>
 
 Connect
@@ -357,6 +363,8 @@ More details in the [Consumer](/40/documentation.html#upgrade_400_notable_consum
 </td> </tr>  
 <tr>  
 <td>
+</td>  
+<td>
 
 Streams
 </td>  
@@ -369,6 +377,8 @@ Streams
 More details in the [Kafka Streams](/40/documentation.html#upgrade_400_notable_kafka_streams) section. 
 </td> </tr>  
 <tr>  
+<td>
+</td>  
 <td>
 
 Connect
@@ -400,6 +410,8 @@ Client
 </td> </tr>  
 <tr>  
 <td>
+</td>  
+<td>
 
 Streams
 </td>  
@@ -412,6 +424,8 @@ Streams
 
 </td> </tr>  
 <tr>  
+<td>
+</td>  
 <td>
 
 Connect
