@@ -79,7 +79,7 @@ outputs:
 #     - name: doc
 #       url: /latest/docs/
 #       weight: 1
-      
+
 #     - name: "Documentation"
 #       url: "/latest/docs/"
 #       weight: 1
@@ -204,7 +204,7 @@ menu:
       parent: "Community"
       url: "/community/contact/"
       weight: 47
-    
+
     # Apache menu
     - name: "Apache"
       url: "https://www.apache.org/"
@@ -234,7 +234,7 @@ menu:
       parent: "Apache"
       url: "{{PRIVACY}}"
       weight: 56
-    
+
     # DOWNLOAD KAFKA as gradient button (handled in navbar.html)
     - name: "DOWNLOAD KAFKA"
       url: "/community/downloads/"
@@ -245,7 +245,7 @@ params:
   # Latest documentation version - UPDATE THIS WHEN RELEASING NEW VERSION
   latest_version: "41"
   latest_version_number: "4.1"
-  
+
   # The version number for the version of the docs represented in this doc set.
   # Used in the "version-banner" partial to display a version number for the
   # current doc set.
@@ -267,7 +267,7 @@ params:
   archived_version: true
 
   versions:
-    # NOTE: When adding version 42, update params.latest_version to "42" 
+    # NOTE: When adding version 42, update params.latest_version to "42"
     # and params.latest_version_number to "4.2" at the top
     - version: "4.1"
       url: /41/
@@ -301,7 +301,7 @@ params:
     - version: "3.1"
       url: /31/
       archived_version: true
-    - version: "3.0"  
+    - version: "3.0"
       url: /30/
       archived_version: true
     - version: "2.8"
@@ -310,7 +310,7 @@ params:
     - version: "2.7"
       url: /27/
       archived_version: true
-    - version: "2.6"  
+    - version: "2.6"
       url: /26/
       archived_version: true
     - version: "2.5"
@@ -319,7 +319,7 @@ params:
     - version: "2.4"
       url: /24/
       archived_version: true
-    - version: "2.3"  
+    - version: "2.3"
       url: /23/
       archived_version: true
     - version: "2.2"
@@ -328,7 +328,7 @@ params:
     - version: "2.1"
       url: /21/
       archived_version: true
-    - version: "2.0"  
+    - version: "2.0"
       url: /20/
       archived_version: true
     - version: "1.1"
@@ -364,11 +364,11 @@ params:
     - version: "0.7"
       url: /07/
       archived_version: true
-  
+
   # Favicon configuration
   favicon: /images/apache.png
-  
-  print: 
+
+  print:
     disable_toc: false
   taxonomy:
     # set taxonomyCloud = [] to hide taxonomy clouds
@@ -386,7 +386,7 @@ params:
   # images: [images/project-illustration.png]
 
   # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-  github_repo: https://github.com/apache/kafka-site/
+  github_repo: https://github.com/apache/kafka-site
 
   # An optional link to a related project repo. For example, the sibling repository where your product code lives.
   # github_project_repo: https://github.com/google/docsy
@@ -437,9 +437,9 @@ params:
       enable: false
       # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
       'yes': >-
-        Glad to hear it! Please <a href="https://github.com/apache/kafka-site/issues/new">tell us how we can improve</a>.
+        Glad to hear it! Please <a href="https://issues.apache.org/jira/browse/KAFKA">tell us how we can improve</a>.
       'no': >-
-        Sorry to hear that. Please <a href="https://github.com/apache/kafka-site/issues/new">tell us how we can improve</a>.
+        Sorry to hear that. Please <a href="https://issues.apache.org/jira/browse/KAFKA">tell us how we can improve</a>.
 
     # Adds a reading time to the top of each doc.
     # If you want this feature, but occasionally need to remove the Reading time from a single page,
