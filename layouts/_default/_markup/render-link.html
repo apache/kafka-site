@@ -1,5 +1,5 @@
-{{- $file := .Get "file" -}}
-{{- if in $file "{version}" -}}
+{{- $dest := .Destination -}}
+{{- if in $dest "{version}" -}}
 {{- $version := "" -}}
 {{- /* Try to infer version from the top-level section (e.g. "43" from content/en/43/...) */ -}}
 {{- $sectionName := .Page.Section -}}
@@ -9,7 +9,9 @@
 {{- /* Fallback to site variable if section is not a version number */ -}}
 {{- $version = site.Params.latest_version -}}
 {{- end -}}
-{{- $file = replace $file "{version}" $version -}}
+{{- $dest = replace $dest "{version}" $version -}}
 {{- end -}}
-{{- $content := readFile $file -}}
-{{- $content | safeHTML -}}
+<a href="{{ $dest | safeURL }}" {{- with .Title }} title="{{ . }}" {{ end -}} {{- if strings.HasPrefix $dest "http" }}
+    target="_blank" rel="noopener" {{ end -}}>
+    {{- .Text | safeHTML -}}
+</a>

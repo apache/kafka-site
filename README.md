@@ -50,14 +50,45 @@ Each version directory contains the complete documentation for that specific Kaf
 
 ## Updating the Documentation Website
 
+
 ### Adding documentation for a new release
 
-When releasing a new documentation version (e.g., version 4.2 / "42"), follow these steps:
+When releasing a new documentation version (e.g., version 4.2 / "42"), follow these steps. For this example, we assume you are adding version **42** from the Kafka source branch `4.2`.
 
-#### 1. Create Content Directory
-Create a new directory in `content/en/` for the new version (e.g., `42/` for version 4.2)
+In the below examples, we assume the `apache/kafka` repository is checked out at `../kafka` relative to the `kafka-site` root.
 
-#### 2. Update Version Parameters in `hugo.yaml`
+#### 1. Setup Content Directory
+Copy the documentation source files from the Kafka codebase to the website content directory, excluding images (which go to static). 
+
+```bash
+# Verify you are in the kafka-site root
+mkdir -p content/en/42
+
+# Copy docs from kafka repo (excluding images)
+rsync -av --exclude 'images' ../kafka/docs/ content/en/42/
+```
+
+#### 2. Setup Static Assets
+Copy the generated artifacts, images, and Javadocs to the static directory.
+
+```bash
+# Create versioned static directory
+mkdir -p static/42
+
+# Copy assets from kafka repo
+cp -r ../kafka/docs/images static/42/
+# Copy `generated` directory into `static/42`
+# Copy `javadoc` directory into `static/42`
+```
+
+#### 3. Run Replacement Script
+Run the helper script to replace hardcoded version strings with dynamic placeholders (`{version}`) in the new content if needed. If we don't have any hardcoded version strings, we can skip this step.
+
+```bash
+./scripts/replace-version-links.sh 42
+```
+
+#### 4. Update Version Parameters in `hugo.yaml`
  
  Locate the **Version Configuration** block at the top of the `params` section (around line 245). Update the following fields:
  
@@ -164,6 +195,49 @@ Detailed information about the Front Matter fields used in this site:
 - `url`: (Optional) Overrides the default URL path constructed from the filename.
 
 For more details, see the [Hugo Front Matter Documentation](https://gohugo.io/content-management/front-matter/).
+
+### Dynamic Version Linking
+
+To maintain version-agnostic documentation, we use a custom system that dynamically resolves version numbers in links and included files. This avoids the need to manually update hundreds of version strings (e.g., from "43" to "44") when releasing a new version.
+
+The system relies on the special placeholder `{version}`.
+
+#### How it Works
+
+When the site is built, Hugo identifies the context of the current page (e.g., a file located in `content/en/43/`).
+- If the page is in a versioned directory (like `43/`), `{version}` resolves to that version (`43`).
+- If the page is outside a versioned directory (like `content/en/community/`), `{version}` falls back to the `latest_version` defined in `hugo.yaml`.
+
+#### Supported Features
+
+1.  **Markdown Links**:
+    Use `{version}` in standard Markdown links.
+    ```markdown
+    [ConfigProvider]({version}/javadoc/org/apache/kafka/common/config/provider/ConfigProvider.html)
+    => /43/javadoc/org/apache/kafka/common/config/provider/ConfigProvider.html
+    ```
+    *Implemented via the Render Hook: `layouts/_default/_markup/render-link.html`*
+
+2.  **Include HTML Shortcode**:
+    Use `{version}` in the `file` path for the `include-html` shortcode.
+    ```markdown
+    {{< include-html file="/static/{version}/generated/admin_client_config.html" >}}
+    => reads content from /static/43/generated/admin_client_config.html
+    ```
+    *Implemented in: `layouts/shortcodes/include-html.html`*
+
+#### Helper Script
+
+A script is available to automate the replacement of hardcoded version strings with dynamic placeholders for a specific version directory.
+
+```bash
+# Usage: ./scripts/replace-version-links.sh <version>
+./scripts/replace-version-links.sh 43
+```
+
+This will recursively find and replace:
+- `/<version>/javadoc` -> `/{version}/javadoc`
+- `static/<version>/generated` -> `static/{version}/generated`
 
 ### Adding a New Blog Post
 
