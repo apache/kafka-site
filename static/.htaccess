@@ -1,0 +1,5 @@
+# CSP Settings
+Header set Content-Security-Policy "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://unpkg.com https://code.jquery.com"
+
+# Backward compatibility redirections
+Redirect 301 /KEYS https://downloads.apache.org/kafka/KEYS
