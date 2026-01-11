@@ -193,8 +193,25 @@ Detailed information about the Front Matter fields used in this site:
 - `type`: Used to specify the layout type (e.g., `type: docs` for documentation pages).
 - `aliases`: (Optional) List of old URLs that should redirect to this page.
 - `url`: (Optional) Overrides the default URL path constructed from the filename.
+- `redirect_to`: (Optional) Sets up a client-side meta-refresh redirect to an external URL.
 
 For more details, see the [Hugo Front Matter Documentation](https://gohugo.io/content-management/front-matter/).
+
+### Managing Redirects
+
+To create a client-side redirect to an external URL, use the `redirect_to` Front Matter field.
+
+1. Create a markdown file at the desired path (e.g., `content/en/KEYS.md` for `/KEYS`).
+2. Add the `redirect_to` field in the Front Matter.
+
+```yaml
+---
+title: KEYS Redirect
+redirect_to: https://downloads.apache.org/kafka/KEYS
+---
+```
+
+This generates a standard HTML meta-refresh redirect. Note that this is a client-side redirect; command-line tools like `curl` will not follow it automatically unless they parse the HTML.
 
 ### Dynamic Version Linking
 
