@@ -200,7 +200,7 @@ The kafka-dump-log.sh tool can be used to debug the log segments and snapshots f
     
     $ bin/kafka-dump-log.sh --cluster-metadata-decoder --files metadata_log_dir/__cluster_metadata-0/00000000000000000000.log
 
-This command decodes and prints the records in the a cluster metadata snapshot:
+This command decodes and prints the records in a cluster metadata snapshot:
     
     
     $ bin/kafka-dump-log.sh --cluster-metadata-decoder --files metadata_log_dir/__cluster_metadata-0/00000000000000000100-0000000001.checkpoint
