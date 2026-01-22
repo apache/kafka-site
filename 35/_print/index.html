@@ -5136,7 +5136,7 @@ MaxFollowerLagTimeMs:   -1
 CurrentVoters:          [3000,3001,3002]
 CurrentObservers:       [0,1,2]
 </code></pre><h3 id=dump-log-tool>Dump Log Tool<a class=td-heading-self-link href=#dump-log-tool aria-label="Heading self-link"></a></h3><p>The <code>kafka-dump-log</code> tool can be used to debug the log segments and snapshots for the cluster metadata directory. The tool will scan the provided files and decode the metadata records. For example, this command decodes and prints the records in the first log segment:</p><pre><code>  &gt; bin/kafka-dump-log.sh --cluster-metadata-decoder --files metadata_log_dir/__cluster_metadata-0/00000000000000000000.log
-</code></pre><p>This command decodes and prints the recrods in the a cluster metadata snapshot:</p><pre><code>  &gt; bin/kafka-dump-log.sh --cluster-metadata-decoder --files metadata_log_dir/__cluster_metadata-0/00000000000000000100-0000000001.checkpoint
+</code></pre><p>This command decodes and prints the records in a cluster metadata snapshot:</p><pre><code>  &gt; bin/kafka-dump-log.sh --cluster-metadata-decoder --files metadata_log_dir/__cluster_metadata-0/00000000000000000100-0000000001.checkpoint
 </code></pre><h3 id=metadata-shell>Metadata Shell<a class=td-heading-self-link href=#metadata-shell aria-label="Heading self-link"></a></h3><p>The <code>kafka-metadata-shell</code> tool can be used to interactively inspect the state of the cluster metadata partition:</p><pre><code>  &gt; bin/kafka-metadata-shell.sh  --snapshot metadata_log_dir/__cluster_metadata-0/00000000000000000000.log
 &gt;&gt; ls /
 brokers  local  metadataQuorum  topicIds  topics
