@@ -41,7 +41,7 @@ You need to specify two parameters in the above command:
 To obtain a certificate that can be used with the private key that was just created a certificate signing request needs to be created. This signing request, when signed by a trusted CA results in the actual certificate which can then be installed in the keystore and used for authentication purposes.  
 To generate certificate signing requests run the following command for all server keystores created so far. 
     
-    $ keytool -keystore server.keystore.jks -alias localhost -validity {validity} -genkey -keyalg RSA -destkeystoretype pkcs12 -ext SAN=DNS:{FQDN},IP:{IPADDRESS1}
+    $ keytool -keystore server.keystore.jks -alias localhost -validity {validity} -genkey -keyalg RSA -storetype pkcs12 -ext SAN=DNS:{FQDN},IP:{IPADDRESS1}
 
 This command assumes that you want to add hostname information to the certificate, if this is not the case, you can omit the extension parameter `-ext SAN=DNS:{FQDN},IP:{IPADDRESS1}`. Please see below for more information on this. 
 
