@@ -66,7 +66,7 @@ To submit a change for inclusion, please do the following:
 
   * If the change is non-trivial please include some unit tests that cover the new functionality.
   * If you are introducing a completely new feature or API it is a good idea to start a wiki and get consensus on the basic design first.
-  * Make sure you have observed the recommendations in the [style guide](coding-guide.html).
+  * Make sure you have observed the recommendations in the [style guide](#coding-guidelines).
   * Follow the detailed instructions in [Contributing Code Changes](https://cwiki.apache.org/confluence/display/KAFKA/Contributing+Code+Changes).
   * Note that if the change is related to user-facing protocols / interface / configs, etc, you need to make the corresponding change on the documentation as well. For wiki page changes feel free to edit the page content directly (you may need to contact us to get the permission first if it is your first time to edit on wiki); website docs live in the code repo under `docs` so that changes to that can be done in the same PR as changes to the code. Website doc change instructions are given below. 
   * It is our job to follow up on patches in a timely fashion. [Nag us](mailto:dev@kafka.apache.org) if we aren't doing our job (sometimes we drop things).
