@@ -100,8 +100,8 @@ Kafka 4.0.0 includes a significant number of new features and fixes. For more in
 
   * Released November 6, 2024 
   * [Release Notes](https://downloads.apache.org/kafka/3.9.0/RELEASE_NOTES.html)
-  * Docker image: [apache/kafka:3.9.0](https://hub.docker.com/layers/apache/kafka/3.9.0/images/sha256-be37a49a4466f6620e2b67614dc2185e35d0e02e5cdc04ad5735ddd368a76b3e). 
-  * Docker Native image: [apache/kafka-native:3.9.0](https://hub.docker.com/layers/apache/kafka-native/3.9.0/images/sha256-ecf23c833391b00803876332b8642e261e675237e133cba8bc6a59ab8292a4a6). 
+  * Docker image: [apache/kafka:3.9.0](https://hub.docker.com/layers/apache/kafka/3.9.0/images/sha256-515a27c1fef65dab7ea736d27369d866e2bcb0ab7e28273541e7280842fe0128). 
+  * Docker Native image: [apache/kafka-native:3.9.0](https://hub.docker.com/layers/apache/kafka-native/3.9.0/images/sha256-bae25017a77b527756749c714ba3b6e5df48062bc8803b2689b28f002c3965ca). 
   * Source download: [kafka-3.9.0-src.tgz](https://downloads.apache.org/kafka/3.9.0/kafka-3.9.0-src.tgz) ([asc](https://downloads.apache.org/kafka/3.9.0/kafka-3.9.0-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.9.0/kafka-3.9.0-src.tgz.sha512)) 
   * Binary downloads: 
     * Scala 2.12  \- [kafka_2.12-3.9.0.tgz](https://downloads.apache.org/kafka/3.9.0/kafka_2.12-3.9.0.tgz) ([asc](https://downloads.apache.org/kafka/3.9.0/kafka_2.12-3.9.0.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.9.0/kafka_2.12-3.9.0.tgz.sha512))
@@ -126,22 +126,6 @@ We build for multiple versions of Scala. This only matters if you are using Scal
 
 Kafka 3.8.1 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_381_release_announcement) and the detailed [Release Notes](https://downloads.apache.org/kafka/3.8.1/RELEASE_NOTES.html). 
 
-### 3.7.1 
-
-  * Released Jun 28, 2024 
-  * [Release Notes](https://downloads.apache.org/kafka/3.7.1/RELEASE_NOTES.html)
-  * Docker image: [apache/kafka:3.7.1](https://hub.docker.com/layers/apache/kafka/3.7.1/images/sha256-3940ef8e220ead51db7057e9ee0554bfe7c7faac725bb49ac5fcf3b8d0db33b9). 
-  * Source download: [kafka-3.7.1-src.tgz](https://downloads.apache.org/kafka/3.7.1/kafka-3.7.1-src.tgz) ([asc](https://downloads.apache.org/kafka/3.7.1/kafka-3.7.1-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.7.1/kafka-3.7.1-src.tgz.sha512)) 
-  * Binary downloads: 
-    * Scala 2.12  \- [kafka_2.12-3.7.1.tgz](https://downloads.apache.org/kafka/3.7.1/kafka_2.12-3.7.1.tgz) ([asc](https://downloads.apache.org/kafka/3.7.1/kafka_2.12-3.7.1.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.7.1/kafka_2.12-3.7.1.tgz.sha512))
-    * Scala 2.13  \- [kafka_2.13-3.7.1.tgz](https://downloads.apache.org/kafka/3.7.1/kafka_2.13-3.7.1.tgz) ([asc](https://downloads.apache.org/kafka/3.7.1/kafka_2.13-3.7.1.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.7.1/kafka_2.13-3.7.1.tgz.sha512))
-We build for multiple versions of Scala. This only matters if you are using Scala and you want a version built for the same Scala version you use. Otherwise any version should work (2.13 is recommended). 
-
-
-
-Kafka 3.7.1 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_371_release_announcement) and the detailed [Release Notes](https://downloads.apache.org/kafka/3.7.1/RELEASE_NOTES.html). 
-
-
 ### 3.8.0 
 
   * Released July 29, 2024 
@@ -157,6 +141,36 @@ We build for multiple versions of Scala. This only matters if you are using Scal
 
 
 Kafka 3.8.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_380_release_announcement) and the detailed [Release Notes](https://archive.apache.org/dist/kafka/3.8.0/RELEASE_NOTES.html). 
+
+### 3.7.2
+
+  * Released Dec 13, 2024
+  * [Release Notes](https://downloads.apache.org/kafka/3.7.2/RELEASE_NOTES.html)
+  * Docker image: [apache/kafka:3.7.2](https://hub.docker.com/layers/apache/kafka/3.7.2/images/sha256-8bd63e1bd445e5e19427a4bdbcc3d23bf6efd774b058a41b36ba87fda7623e34).
+  * Source download: [kafka-3.7.2-src.tgz](https://downloads.apache.org/kafka/3.7.2/kafka-3.7.2-src.tgz) ([asc](https://downloads.apache.org/kafka/3.7.2/kafka-3.7.2-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.7.2/kafka-3.7.2-src.tgz.sha512))
+  * Binary downloads:
+    * Scala 2.12  \- [kafka_2.12-3.7.2.tgz](https://downloads.apache.org/kafka/3.7.2/kafka_2.12-3.7.2.tgz) ([asc](https://downloads.apache.org/kafka/3.7.2/kafka_2.12-3.7.2.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.7.2/kafka_2.12-3.7.2.tgz.sha512))
+    * Scala 2.13  \- [kafka_2.13-3.7.2.tgz](https://downloads.apache.org/kafka/3.7.2/kafka_2.13-3.7.2.tgz) ([asc](https://downloads.apache.org/kafka/3.7.2/kafka_2.13-3.7.2.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.7.2/kafka_2.13-3.7.2.tgz.sha512))
+We build for multiple versions of Scala. This only matters if you are using Scala and you want a version built for the same Scala version you use. Otherwise any version should work (2.13 is recommended).
+
+
+
+Kafka 3.7.2 fixes 21 issues since the 3.7.1 release. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_372_release_announcement) and the detailed [Release Notes](https://downloads.apache.org/kafka/3.7.2/RELEASE_NOTES.html).
+
+### 3.7.1
+
+  * Released Jun 28, 2024
+  * [Release Notes](https://archive.apache.org/dist/kafka/3.7.1/RELEASE_NOTES.html)
+  * Docker image: [apache/kafka:3.7.1](https://hub.docker.com/layers/apache/kafka/3.7.1/images/sha256-3940ef8e220ead51db7057e9ee0554bfe7c7faac725bb49ac5fcf3b8d0db33b9).
+  * Source download: [kafka-3.7.1-src.tgz](https://archive.apache.org/dist/kafka/3.7.1/kafka-3.7.1-src.tgz) ([asc](https://archive.apache.org/dist/kafka/3.7.1/kafka-3.7.1-src.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/3.7.1/kafka-3.7.1-src.tgz.sha512))
+  * Binary downloads:
+    * Scala 2.12  \- [kafka_2.12-3.7.1.tgz](https://archive.apache.org/dist/kafka/3.7.1/kafka_2.12-3.7.1.tgz) ([asc](https://archive.apache.org/dist/kafka/3.7.1/kafka_2.12-3.7.1.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/3.7.1/kafka_2.12-3.7.1.tgz.sha512))
+    * Scala 2.13  \- [kafka_2.13-3.7.1.tgz](https://archive.apache.org/dist/kafka/3.7.1/kafka_2.13-3.7.1.tgz) ([asc](https://archive.apache.org/dist/kafka/3.7.1/kafka_2.13-3.7.1.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/3.7.1/kafka_2.13-3.7.1.tgz.sha512))
+We build for multiple versions of Scala. This only matters if you are using Scala and you want a version built for the same Scala version you use. Otherwise any version should work (2.13 is recommended).
+
+
+
+Kafka 3.7.1 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_371_release_announcement) and the detailed [Release Notes](https://archive.apache.org/dist/kafka/3.7.1/RELEASE_NOTES.html).
 
 ### 3.7.0 
 
@@ -185,7 +199,7 @@ We build for multiple versions of Scala. This only matters if you are using Scal
 
 
 
-Kafka 3.6.2 fixes 28 issues since the 3.6.1 release. For more information, please read the detailed [Release Notes](https://downloads.apache.org/kafka/3.6.2/RELEASE_NOTES.html). 
+Kafka 3.6.2 fixes 28 issues since the 3.6.1 release. For more information, please read the detailed [Release Notes](https://archive.apache.org/dist/kafka/3.6.2/RELEASE_NOTES.html). 
 
 ### 3.6.1 
 
@@ -233,7 +247,7 @@ Kafka 3.5.2 contains security fixes and bug fixes. For more information, please 
 
   * Released Jul 21, 2023 
   * [Release Notes](https://archive.apache.org/dist/kafka/3.5.1/RELEASE_NOTES.html)
-  * Source download: [kafka-3.5.1-src.tgz](https://archive.apache.org/dist/kafka/3.5.1/kafka-3.5.1-src.tgz) ([asc](https://archive.apache.org/dist/3.5.1/kafka-3.5.1-src.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/3.5.1/kafka-3.5.1-src.tgz.sha512)) 
+  * Source download: [kafka-3.5.1-src.tgz](https://archive.apache.org/dist/kafka/3.5.1/kafka-3.5.1-src.tgz) ([asc](https://archive.apache.org/dist/kafka/3.5.1/kafka-3.5.1-src.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/3.5.1/kafka-3.5.1-src.tgz.sha512)) 
   * Binary downloads: 
     * Scala 2.12  \- [kafka_2.12-3.5.1.tgz](https://archive.apache.org/dist/kafka/3.5.1/kafka_2.12-3.5.1.tgz) ([asc](https://archive.apache.org/dist/kafka/3.5.1/kafka_2.12-3.5.1.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/3.5.1/kafka_2.12-3.5.1.tgz.sha512))
     * Scala 2.13  \- [kafka_2.13-3.5.1.tgz](https://archive.apache.org/dist/kafka/3.5.1/kafka_2.13-3.5.1.tgz) ([asc](https://archive.apache.org/dist/kafka/3.5.1/kafka_2.13-3.5.1.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/3.5.1/kafka_2.13-3.5.1.tgz.sha512))
@@ -1293,7 +1307,7 @@ We build for multiple versions of Scala. This only matters if you are using Scal
 
   * Released December 3, 2013 
   * [Release Notes](https://archive.apache.org/dist/kafka/0.8.0/RELEASE_NOTES.html)
-  * Source download: [kafka-0.8.0-src.tgz](https://archive.apache.org/dist/kafka/0.8.0/kafka-0.8.0-src.tgz) ([asc](https://archive.apache.org/dist/kafka/0.8.0/kafka-0.8.0-src.tgz.asc), [md5](https://archive.apache.org/dist/kafka/0.8.0/0.8.0/kafka-0.8.0-src.tgz.md5)) 
+  * Source download: [kafka-0.8.0-src.tgz](https://archive.apache.org/dist/kafka/0.8.0/kafka-0.8.0-src.tgz) ([asc](https://archive.apache.org/dist/kafka/0.8.0/kafka-0.8.0-src.tgz.asc), [md5](https://archive.apache.org/dist/kafka/0.8.0/kafka-0.8.0-src.tgz.md5)) 
   * Binary download: [kafka_2.8.0-0.8.0.tar.gz](https://archive.apache.org/dist/kafka/0.8.0/kafka_2.8.0-0.8.0.tar.gz) ([asc](https://archive.apache.org/dist/kafka/0.8.0/kafka_2.8.0-0.8.0.tar.gz.asc), [md5](https://archive.apache.org/dist/kafka/0.8.0/kafka_2.8.0-0.8.0.tar.gz.md5)) 
 
 
