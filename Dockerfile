@@ -69,4 +69,4 @@ RUN node --version && \
 
 EXPOSE 1313
 
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"] 
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
