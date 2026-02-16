@@ -27,7 +27,7 @@ author: Christo Lolov
 
 We are proud to announce the release of Apache Kafka® 4.2. This release contains many new features and improvements. This blog post will highlight some of the more prominent ones. For a full list of changes, be sure to check the [release notes](https://downloads.apache.org/kafka/4.2.0/RELEASE_NOTES.html).
 
-Kafka Queues (Share Groups) is now production-ready with new features like the RENEW acknowledgement type for extended processing times, adaptive batching for coordinators, and comprehensive lag metrics.
+Kafka Queues (Share Groups) is now production-ready with new features like the RENEW acknowledgement type for extended processing times, adaptive batching for share coordinators, soft and strict enforcements of quantity of fetched records, and comprehensive lag metrics.
 
 Kafka Streams brings the server-side rebalance protocol to GA with a limited feature set, adds dead letter queue support in exception handlers, introduces anchored wall-clock punctuation for deterministic scheduling, and gives users full control over whether to send a leave group request on closing.
 
@@ -35,7 +35,7 @@ This release also delivers significant improvements to consistency and observabi
 
 Security is enhanced with a new allowlist connector client configuration override policy, while thread-safety improvements to RecordHeader eliminate concurrency risks.
 
-Additional highlights include external schema support in JsonConverter for reduced message sizes, dynamic configuration for remote log manager thread pools, and rack ID exposure in the Admin API for consumer and share group members.
+Additional highlights include external schema support in JsonConverter for reduced message sizes, dynamic configuration for remote log manager thread pools, adaptive batching in group coordinators, and rack ID exposure in the Admin API for consumer and share group members.
 
 See the [Upgrading to 4.2](https://kafka.apache.org/documentation.html#upgrade_4_2_0) section in the documentation for the list of notable changes and detailed upgrade steps.
 
