@@ -11,19 +11,19 @@ The documentation is organized by Kafka versions in the `content/en` directory:
 ```
 content/en/
 ├── _index.md                 # Landing page
-├── 40/                       # Latest version (4.0)
+├── 42/                       # Latest version (4.2)
 │   ├── apis/
 │   ├── configuration/
 │   ├── design/
 │   └── ...
-├── 39/                       # Previous version (3.9)
-├── 38/                       # Version 3.8
+├── 41/                       # Previous version (4.1)
+├── 40/                       # Version 4.0
 └── ...
 ```
 
-Each version directory contains the complete documentation for that specific Kafka release. The latest version (currently 4.0) is the default documentation shown to users.
+Each version directory contains the complete documentation for that specific Kafka release. The latest version (currently 4.2) is the default documentation shown to users.
 
-> **Important**: The version-specific documentation (under directories like `40/`, `39/`, etc.) is sourced from the corresponding release branches in the [apache/kafka](https://github.com/apache/kafka) repository. The `docs` directory in each branch serves as the source of truth. During the website build process, this content is copied to the appropriate version directory. For more details, see [KIP-1133](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1133%3A+AK+Documentation+and+Website+in+Markdown).
+> **Important**: The version-specific documentation (under directories like `42/`, `41/`, etc.) is sourced from the corresponding release branches in the [apache/kafka](https://github.com/apache/kafka) repository. The `docs` directory in each branch serves as the source of truth. During the website build process, this content is copied to the appropriate version directory. For more details, see [KIP-1133](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1133%3A+AK+Documentation+and+Website+in+Markdown).
 
 ### Key Directories
 
@@ -53,7 +53,7 @@ Each version directory contains the complete documentation for that specific Kaf
 
 ### Adding documentation for a new release
 
-When releasing a new documentation version (e.g., version 4.2 / "42"), follow these steps. For this example, we assume you are adding version **42** from the Kafka source branch `4.2`.
+When releasing a new documentation version (e.g., version 4.3 / "43"), follow these steps. For this example, we assume you are adding version **43** from the Kafka source branch `4.3`.
 
 In the below examples, we assume the `apache/kafka` repository is checked out at `../kafka` relative to the `kafka-site` root.
 
@@ -62,10 +62,10 @@ Copy the documentation source files from the Kafka codebase to the website conte
 
 ```bash
 # Verify you are in the kafka-site root
-mkdir -p content/en/42
+mkdir -p content/en/43
 
 # Copy docs from kafka repo (excluding images)
-rsync -av --exclude 'images' ../kafka/docs/ content/en/42/
+rsync -av --exclude 'images' ../kafka/docs/ content/en/43/
 ```
 
 #### 2. Setup Static Assets
@@ -73,53 +73,53 @@ Copy the generated artifacts, images, and Javadocs to the static directory.
 
 ```bash
 # Create versioned static directory
-mkdir -p static/42
+mkdir -p static/43
 
 # Copy assets from kafka repo
-cp -r ../kafka/docs/images static/42/
-# Copy `generated` directory into `static/42`
-# Copy `javadoc` directory into `static/42`
+cp -r ../kafka/docs/images static/43/
+# Copy `generated` directory into `static/43`
+# Copy `javadoc` directory into `static/43`
 ```
 
 #### 3. Run Replacement Script
 Run the helper script to replace hardcoded version strings with dynamic placeholders (`{version}`) in the new content if needed. If we don't have any hardcoded version strings, we can skip this step.
 
 ```bash
-./scripts/replace-version-links.sh 42
+./scripts/replace-version-links.sh 43
 ```
 
 #### 4. Update Version Parameters in `hugo.yaml`
  
  Locate the **Version Configuration** block at the top of the `params` section (around line 245). Update the following fields:
  
- 1.  `latest_version`: Set to the new version string (e.g., "42").
- 2.  `latest_version_number`: Set to the new version number (e.g., "4.2").
- 3.  `version`: Update to the new version (e.g., 4.2).
- 4.  `url_latest_version`: Update the link (e.g., `/42/`).
+ 1.  `latest_version`: Set to the new version string (e.g., "43").
+ 2.  `latest_version_number`: Set to the new version number (e.g., "4.3").
+ 3.  `version`: Update to the new version (e.g., 4.3).
+ 4.  `url_latest_version`: Update the link (e.g., `/43/`).
  5.  `versions`:
      -   Add the new version to the top of the list.
      -   Mark the previous version as `archived_version: true`.
  
  ```yaml
    # Latest documentation version - UPDATE THIS WHEN RELEASING NEW VERSION
-   latest_version: "42"
-   latest_version_number: "4.2"
+   latest_version: "43"
+   latest_version_number: "4.3"
    
    # ...
    
-   version: 4.2
+   version: 4.3
  
    # ...
  
-   url_latest_version: /42/
+   url_latest_version: /43/
  
    # ...
  
    versions:
+     - version: "4.3"
+       url: /43/
      - version: "4.2"
        url: /42/
-     - version: "4.1"
-       url: /41/
        archived_version: true
  ```
 
@@ -128,8 +128,8 @@ Run the helper script to replace hardcoded version strings with dynamic placehol
 Once you update the parameters above, the following are **automatically** updated:
 
 **Menu Items:**
-- DOCS → `/42/`
-- Getting Started → `/42/getting-started/`
+- DOCS → `/43/`
+- Getting Started → `/43/getting-started/`
 - APIs, Configuration, Design, Implementation, Operations, Security, Kafka Connect, Kafka Streams → all automatically updated
 
 **Search Index:**
