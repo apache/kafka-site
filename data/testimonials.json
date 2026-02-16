@@ -828,6 +828,12 @@
     "description": "The Platform and Content Group (PCG) at Tencent built essential cross-region asynchronous data pipelines around Apache Kafka to support the operation and growth of business  that integrates Tencent's internet, social, and content platforms as microservices."
   },
   {
+    "link": "https://thingsboard.io/products/mqtt-broker/",
+    "logo": "tbmq_logo.svg",
+    "logoBgColor": "#ffffff",
+    "description": "TBMQ uses Apache Kafka as its core distributed infrastructure to provide high-performance, fault-tolerant MQTT messaging. By leveraging Kafka as the primary storage layer, TBMQ ensures maximum data durability and reliability for IoT telemetry, persisting all client sessions, subscriptions, and unprocessed messages. This architecture allows to support over 100 million concurrent connections while maintaining horizontal scalability and multi-million message-per-second throughput."
+  },
+  {
     "link": "https://thingsboard.io/",
     "logo": "thingsboard_logo_blue.svg",
     "logoBgColor": "#ffffff",
