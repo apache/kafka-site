@@ -146,7 +146,7 @@ Kafka 3.8.0 includes a significant number of new features and fixes. For more in
 
   * Released Dec 13, 2024
   * [Release Notes](https://downloads.apache.org/kafka/3.7.2/RELEASE_NOTES.html)
-  * Docker image: [apache/kafka:3.7.2](https://hub.docker.com/layers/apache/kafka/3.7.2/images/sha256-8bd63e1bd445e5e19427a4bdbcc3d23bf6efd774b058a41b36ba87fda7623e34).
+  * Docker image: [apache/kafka:3.7.2](https://hub.docker.com/layers/apache/kafka/3.7.2/images/sha256-e81f67cd3ca9c018d9b6a2d2354dc6067a5a25908c642383c652f0c6b3e8c4a4).
   * Source download: [kafka-3.7.2-src.tgz](https://downloads.apache.org/kafka/3.7.2/kafka-3.7.2-src.tgz) ([asc](https://downloads.apache.org/kafka/3.7.2/kafka-3.7.2-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.7.2/kafka-3.7.2-src.tgz.sha512))
   * Binary downloads:
     * Scala 2.12  \- [kafka_2.12-3.7.2.tgz](https://downloads.apache.org/kafka/3.7.2/kafka_2.12-3.7.2.tgz) ([asc](https://downloads.apache.org/kafka/3.7.2/kafka_2.12-3.7.2.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.7.2/kafka_2.12-3.7.2.tgz.sha512))
