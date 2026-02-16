@@ -7,3 +7,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+{{ if .Params.redirect_to }}
+<meta http-equiv="refresh" content="0; url={{ .Params.redirect_to }}" />
+<link rel="canonical" href="{{ .Params.redirect_to }}" />
+{{ end }}
