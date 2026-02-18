@@ -1,5 +1,5 @@
 ---
-date: 2026-01-14
+date: 2026-02-17
 title: Apache Kafka 4.2.0 Release Announcement
 linkTitle: AK 4.2.0
 author: Christo Lolov
