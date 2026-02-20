@@ -32,7 +32,7 @@ Note that this security address should be used only for undisclosed vulnerabilit
 
 The ASF Security team maintains a page with a description of how vulnerabilities are handled, check their [Web page](http://www.apache.org/security/) for more information. 
 
-For a list of security issues fixed in released versions of Apache Kafka, see [CVE list](cve-list). 
+For a list of security issues fixed in released versions of Apache Kafka, see [CVE list](/cve-list.html). 
 
 ## Advisories for dependencies
 
