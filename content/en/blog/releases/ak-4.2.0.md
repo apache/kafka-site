@@ -37,7 +37,7 @@ This release also delivers significant improvements to consistency and observabi
 
 Security is enhanced with a new allowlist connector client configuration override policy, while thread-safety improvements to RecordHeader eliminate concurrency risks.
 
-Additional highlights include external schema support in JsonConverter for reduced message sizes, dynamic configuration for remote log manager thread pools, adaptive batching in group coordinators, and rack ID exposure in the Admin API for consumer and share group members.
+Additional highlights include support for Java 25, external schema support in JsonConverter for reduced message sizes, dynamic configuration for remote log manager thread pools, adaptive batching in group coordinators, and rack ID exposure in the Admin API for consumer and share group members.
 
 See the [Upgrading to 4.2](https://kafka.apache.org/documentation.html#upgrade_4_2_0) section in the documentation for the list of notable changes and detailed upgrade steps.
 
