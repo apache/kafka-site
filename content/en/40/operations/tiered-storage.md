@@ -63,7 +63,7 @@ To adopt the `LocalTieredStorage`, the test library needs to be built locally
     
     
     # please checkout to the specific version tag you're using before building it
-    # ex: `git checkout 4.0.1`
+    # ex: `git checkout 4.0.2`
     $ ./gradlew clean :storage:testJar
 
 After build successfully, there should be a `kafka-storage-x.x.x-test.jar` file under `storage/build/libs`. Next, setting configurations in the broker side to enable tiered storage feature.
@@ -79,7 +79,7 @@ After build successfully, there should be a `kafka-storage-x.x.x-test.jar` file 
     # This is the mandatory configuration for tiered storage.
     # Here, we use the `LocalTieredStorage` built above.
     remote.log.storage.manager.class.name=org.apache.kafka.server.log.remote.storage.LocalTieredStorage
-    remote.log.storage.manager.class.path=/PATH/TO/kafka-storage-4.0.1-test.jar
+    remote.log.storage.manager.class.path=/PATH/TO/kafka-storage-4.0.2-test.jar
     
     # These 2 prefix are default values, but customizable
     remote.log.storage.manager.impl.prefix=rsm.config.

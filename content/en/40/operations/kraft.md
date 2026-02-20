@@ -200,7 +200,7 @@ The kafka-dump-log.sh tool can be used to debug the log segments and snapshots f
     
     $ bin/kafka-dump-log.sh --cluster-metadata-decoder --files metadata_log_dir/__cluster_metadata-0/00000000000000000000.log
 
-This command decodes and prints the records in a cluster metadata snapshot:
+This command decodes and prints the records in the a cluster metadata snapshot:
     
     
     $ bin/kafka-dump-log.sh --cluster-metadata-decoder --files metadata_log_dir/__cluster_metadata-0/00000000000000000100-0000000001.checkpoint
@@ -239,4 +239,4 @@ The kafka-metadata-shell.sh tool can be used to interactively inspect the state 
 
 ## ZooKeeper to KRaft Migration
 
-In order to migrate from ZooKeeper to KRaft you need to use a bridge release. The last bridge release is Kafka 3.9. See the [ZooKeeper to KRaft Migration steps](/39/documentation/#kraft_zk_migration) in the 3.9 documentation.
+In order to migrate from ZooKeeper to KRaft you need to use a bridge release. The last bridge release is Kafka 3.9. See the [ZooKeeper to KRaft Migration steps](/39/operations/kraft/#zookeeper-to-kraft-migration) in the 3.9 documentation.
