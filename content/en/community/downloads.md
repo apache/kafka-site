@@ -30,7 +30,7 @@ The project goal is to have 3 releases a year, which means a release every 4 mon
 
 ### 4.2.0
 
-* Released February 17, 2025
+* Released February 17, 2026
 * [Release Notes](https://dlcdn.apache.org/kafka/4.2.0/RELEASE_NOTES.html)
 * Docker image: [apache/kafka:4.2.0](https://hub.docker.com/layers/apache/kafka/4.2.0).
 * Docker Native image: [apache/kafka-native:4.2.0](https://hub.docker.com/layers/apache/kafka-native/4.2.0).
