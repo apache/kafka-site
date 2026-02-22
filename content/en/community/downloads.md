@@ -31,67 +31,67 @@ The project goal is to have 3 releases a year, which means a release every 4 mon
 ### 4.2.0
 
 * Released February 17, 2026
-* [Release Notes](https://dlcdn.apache.org/kafka/4.2.0/RELEASE_NOTES.html)
+* [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.2.0/RELEASE_NOTES.html?action=download)
 * Docker image: [apache/kafka:4.2.0](https://hub.docker.com/layers/apache/kafka/4.2.0).
 * Docker Native image: [apache/kafka-native:4.2.0](https://hub.docker.com/layers/apache/kafka-native/4.2.0).
-* Source download: [kafka-4.2.0-src.tgz](https://dlcdn.apache.org/kafka/4.2.0/kafka-4.2.0-src.tgz) ([asc](https://downloads.apache.org/kafka/4.2.0/kafka-4.2.0-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.2.0/kafka-4.2.0-src.tgz.sha512))
-* Binary download: [kafka_2.13-4.2.0.tgz](https://dlcdn.apache.org/kafka/4.2.0/kafka_2.13-4.2.0.tgz) ([asc](https://downloads.apache.org/kafka/4.2.0/kafka_2.13-4.2.0.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.2.0/kafka_2.13-4.2.0.tgz.sha512))
+* Source download: [kafka-4.2.0-src.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.2.0/kafka-4.2.0-src.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.2.0/kafka-4.2.0-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.2.0/kafka-4.2.0-src.tgz.sha512))
+* Binary download: [kafka_2.13-4.2.0.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.2.0/kafka_2.13-4.2.0.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.2.0/kafka_2.13-4.2.0.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.2.0/kafka_2.13-4.2.0.tgz.sha512))
 
 
-Kafka 4.2.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_420_release_announcement), the detailed [Upgrade Notes](https://kafka.apache.org/documentation#upgrade_4_2_0) and the [Release Notes](https://dlcdn.apache.org/kafka/4.2.0/RELEASE_NOTES.html).
+Kafka 4.2.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_420_release_announcement), the detailed [Upgrade Notes](https://kafka.apache.org/documentation#upgrade_4_2_0) and the [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.2.0/RELEASE_NOTES.html?action=download).
 
 
 ### 4.1.1
 
   * Released November 12, 2025
-  * [Release Notes](https://dlcdn.apache.org/kafka/4.1.1/RELEASE_NOTES.html)
+  * [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.1.1/RELEASE_NOTES.html?action=download)
   * Docker image: [apache/kafka:4.1.1](https://hub.docker.com/layers/apache/kafka/4.1.1/images/sha256-7240ff4534bd23dac2f215ba03a2d0aa9d041b45b830804bbdec3b81c2bdf479).
   * Docker Native image: [apache/kafka-native:4.1.1](https://hub.docker.com/layers/apache/kafka-native/4.1.1/images/sha256-017871b0ef2ad665030fc66596b4b9ce583c7faee530829d17d02d16c141d43c).
-  * Source download: [kafka-4.1.1-src.tgz](https://dlcdn.apache.org/kafka/4.1.1/kafka-4.1.1-src.tgz) ([asc](https://downloads.apache.org/kafka/4.1.1/kafka-4.1.1-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.1.1/kafka-4.1.1-src.tgz.sha512))
-  * Binary download: [kafka_2.13-4.1.1.tgz](https://dlcdn.apache.org/kafka/4.1.1/kafka_2.13-4.1.1.tgz) ([asc](https://downloads.apache.org/kafka/4.1.1/kafka_2.13-4.1.1.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.1.1/kafka_2.13-4.1.1.tgz.sha512))
+  * Source download: [kafka-4.1.1-src.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.1.1/kafka-4.1.1-src.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.1.1/kafka-4.1.1-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.1.1/kafka-4.1.1-src.tgz.sha512))
+  * Binary download: [kafka_2.13-4.1.1.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.1.1/kafka_2.13-4.1.1.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.1.1/kafka_2.13-4.1.1.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.1.1/kafka_2.13-4.1.1.tgz.sha512))
 
 
 ### 4.0.1
 
   * Released October 13, 2025
-  * [Release Notes](https://dlcdn.apache.org/kafka/4.0.1/RELEASE_NOTES.html)
+  * [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.0.1/RELEASE_NOTES.html?action=download)
   * Docker image: [apache/kafka:4.0.1](https://hub.docker.com/layers/apache/kafka/4.0.1/images/sha256-9d71149303e87843482fa0e2095ed2a991739bfdbcd5333f4295a53d667338b4).
   * Docker Native image: [apache/kafka-native:4.0.1](https://hub.docker.com/layers/apache/kafka-native/4.0.1/images/sha256-35b36477b2edec2b60be9a0fd19a5489fe878cc2df173931a97b140968d42ea2).
-  * Source download: [kafka-4.0.1-src.tgz](https://dlcdn.apache.org/kafka/4.0.1/kafka-4.0.1-src.tgz) ([asc](https://downloads.apache.org/kafka/4.0.1/kafka-4.0.1-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.0.1/kafka-4.0.1-src.tgz.sha512))
-  * Binary download: [kafka_2.13-4.0.1.tgz](https://dlcdn.apache.org/kafka/4.0.1/kafka_2.13-4.0.1.tgz) ([asc](https://downloads.apache.org/kafka/4.0.1/kafka_2.13-4.0.1.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.0.1/kafka_2.13-4.0.1.tgz.sha512))
+  * Source download: [kafka-4.0.1-src.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.0.1/kafka-4.0.1-src.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.0.1/kafka-4.0.1-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.0.1/kafka-4.0.1-src.tgz.sha512))
+  * Binary download: [kafka_2.13-4.0.1.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.0.1/kafka_2.13-4.0.1.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.0.1/kafka_2.13-4.0.1.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.0.1/kafka_2.13-4.0.1.tgz.sha512))
 
 
-Kafka 4.0.1 fixes 49 issues since the 4.0.0 release. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_401_release_announcement) and the detailed [Release Notes](https://dlcdn.apache.org/kafka/4.0.1/RELEASE_NOTES.html).
+Kafka 4.0.1 fixes 49 issues since the 4.0.0 release. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_401_release_announcement) and the detailed [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.0.1/RELEASE_NOTES.html?action=download).
 
 
 ### 3.9.2
 
   * Released Feburary 21, 2026
-  * [Release Notes](https://dlcdn.apache.org/kafka/3.9.2/RELEASE_NOTES.html)
-  * Docker image: [apache/kafka:3.9.2](https://hub.docker.com/layers/apache/kafka/3.9.2/images/sha256-f5f8605794dce59d1d566f63667682771c2fec9e96088b0d6a5ef0f8476dd4b2).
-  * Docker Native image: [apache/kafka-native:3.9.2](https://hub.docker.com/layers/apache/kafka-native/3.9.2/images/sha256-56a46c0fb9246d632e68e9c4ecc99fa44f5c39412844aa4ee58afe64e6941381).
-  * Source download: [kafka-3.9.2-src.tgz](https://dlcdn.apache.org/kafka/3.9.2/kafka-3.9.2-src.tgz) ([asc](https://downloads.apache.org/kafka/3.9.2/kafka-3.9.2-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.9.2/kafka-3.9.2-src.tgz.sha512))
+  * [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/3.9.2/RELEASE_NOTES.html?action=download)
+  * Docker image: [apache/kafka:3.9.2](https://hub.docker.com/layers/apache/kafka/3.9.2/images/sha256-5862db4a63a6dd7d46fd14771b10a1b39e069c2c47f17d8e4640f960720a0ead).
+  * Docker Native image: [apache/kafka-native:3.9.2](https://hub.docker.com/layers/apache/kafka-native/3.9.2/images/sha256-985da4a187ec9439df26a945984f894048ea67b2936d85a0cef273b16e32a113).
+  * Source download: [kafka-3.9.2-src.tgz](https://www.apache.org/dyn/closer.lua/kafka/3.9.2/kafka-3.9.2-src.tgz?action=download) ([asc](https://downloads.apache.org/kafka/3.9.2/kafka-3.9.2-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.9.2/kafka-3.9.2-src.tgz.sha512))
   * Binary downloads:
-    * Scala 2.12  \- [kafka_2.12-3.9.2.tgz](https://dlcdn.apache.org/kafka/3.9.2/kafka_2.12-3.9.2.tgz) ([asc](https://downloads.apache.org/kafka/3.9.2/kafka_2.12-3.9.2.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.9.2/kafka_2.12-3.9.2.tgz.sha512))
-    * Scala 2.13  \- [kafka_2.13-3.9.2.tgz](https://dlcdn.apache.org/kafka/3.9.2/kafka_2.13-3.9.2.tgz) ([asc](https://downloads.apache.org/kafka/3.9.2/kafka_2.13-3.9.2.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.9.2/kafka_2.13-3.9.2.tgz.sha512))
+    * Scala 2.12  \- [kafka_2.12-3.9.2.tgz](https://www.apache.org/dyn/closer.lua/kafka/3.9.2/kafka_2.12-3.9.2.tgz?action=download) ([asc](https://downloads.apache.org/kafka/3.9.2/kafka_2.12-3.9.2.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.9.2/kafka_2.12-3.9.2.tgz.sha512))
+    * Scala 2.13  \- [kafka_2.13-3.9.2.tgz](https://www.apache.org/dyn/closer.lua/kafka/3.9.2/kafka_2.13-3.9.2.tgz?action=download) ([asc](https://downloads.apache.org/kafka/3.9.2/kafka_2.13-3.9.2.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.9.2/kafka_2.13-3.9.2.tgz.sha512))
 We build for multiple versions of Scala. This only matters if you are using Scala and you want a version built for the same Scala version you use. Otherwise, any version should work (2.13 is recommended).
 
 
-Kafka 3.9.2 fixes 35 issues since the 3.9.1 release. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_392_release_announcement) and the detailed [Release Notes](https://dlcdn.apache.org/kafka/3.9.2/RELEASE_NOTES.html).
+Kafka 3.9.2 fixes 35 issues since the 3.9.2 release. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_392_release_announcement) and the detailed [Release Notes](https://dlcdn.apache.org/kafka/3.9.2/RELEASE_NOTES.html).
 
 ## Archived Releases
 
 ### 4.1.0
 
 * Released September 2, 2025
-* [Release Notes](https://dlcdn.apache.org/kafka/4.1.0/RELEASE_NOTES.html)
+* [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.1.0/RELEASE_NOTES.html?action=download)
 * Docker image: [apache/kafka:4.1.0](https://hub.docker.com/layers/apache/kafka/4.1.0/images/sha256-bce21a1a56707320ce239d743143bf4359ba45da27d31a5236f2169001eec751).
 * Docker Native image: [apache/kafka-native:4.1.0](https://hub.docker.com/layers/apache/kafka-native/4.1.0/images/sha256-65d2078ae11c42356d3da7a088b96faab3faca3e738856df1a1829ae3829d9e2).
-* Source download: [kafka-4.1.0-src.tgz](https://dlcdn.apache.org/kafka/4.1.0/kafka-4.1.0-src.tgz) ([asc](https://downloads.apache.org/kafka/4.1.0/kafka-4.1.0-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.1.0/kafka-4.1.0-src.tgz.sha512))
-* Binary download: [kafka_2.13-4.1.0.tgz](https://dlcdn.apache.org/kafka/4.1.0/kafka_2.13-4.1.0.tgz) ([asc](https://downloads.apache.org/kafka/4.1.0/kafka_2.13-4.1.0.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.1.0/kafka_2.13-4.1.0.tgz.sha512))
+* Source download: [kafka-4.1.0-src.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.1.0/kafka-4.1.0-src.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.1.0/kafka-4.1.0-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.1.0/kafka-4.1.0-src.tgz.sha512))
+* Binary download: [kafka_2.13-4.1.0.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.1.0/kafka_2.13-4.1.0.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.1.0/kafka_2.13-4.1.0.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.1.0/kafka_2.13-4.1.0.tgz.sha512))
 
 
-Kafka 4.1.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_410_release_announcement), the detailed [Upgrade Notes](https://kafka.apache.org/documentation#upgrade_4_1_0) and the [Release Notes](https://dlcdn.apache.org/kafka/4.1.0/RELEASE_NOTES.html).
+Kafka 4.1.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_410_release_announcement), the detailed [Upgrade Notes](https://kafka.apache.org/documentation#upgrade_4_1_0) and the [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.1.0/RELEASE_NOTES.html?action=download).
 
 
 ### 4.0.0
@@ -104,12 +104,17 @@ Kafka 4.1.0 includes a significant number of new features and fixes. For more in
   * Binary download: [kafka_2.13-4.0.0.tgz](https://dlcdn.apache.org/kafka/4.0.0/kafka_2.13-4.0.0.tgz) ([asc](https://downloads.apache.org/kafka/4.0.0/kafka_2.13-4.0.0.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.0.0/kafka_2.13-4.0.0.tgz.sha512))
 
 
-Kafka 4.0.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_400_release_announcement), the detailed [Upgrade Notes](https://kafka.apache.org/documentation#upgrade_4_0_0) and and the [Release Notes](https://dlcdn.apache.org/kafka/4.0.0/RELEASE_NOTES.html).
+Kafka 4.0.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_400_release_announcement), the detailed [Upgrade Notes](https://kafka.apache.org/documentation#upgrade_4_0_0) and and the [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.0.0/RELEASE_NOTES.html?action=download).
 
 
 ### 3.9.1
 
   * Released May 21, 2025
+  * [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/3.9.1/RELEASE_NOTES.html?action=download)
+  * Docker image: [apache/kafka:3.9.1](https://hub.docker.com/layers/apache/kafka/3.9.1/images/sha256-01b9a4030e54c6068e66eb3ba4cb82c0d89238629ef1c30d79b86036bf89b1b7).
+  * Docker Native image: [apache/kafka-native:3.9.1](https://hub.docker.com/layers/apache/kafka-native/3.9.1/images/sha256-94061e3c94f33ae18011e0f4e96c03a6ec4def97bbbad41ff68473e0a04c4ad8).
+  * Source download: [kafka-3.9.1-src.tgz](https://www.apache.org/dyn/closer.lua/kafka/3.9.1/kafka-3.9.1-src.tgz?action=download) ([asc](https://downloads.apache.org/kafka/3.9.1/kafka-3.9.1-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.9.1/kafka-3.9.1-src.tgz.sha512))
+  * Binary download: [kafka_2.13-3.9.1.tgz](https://www.apache.org/dyn/closer.lua/kafka/3.9.1/kafka_2.13-3.9.1.tgz?action=download) ([asc](https://downloads.apache.org/kafka/3.9.1/kafka_2.13-3.9.1.tgz.asc), [sha512](https://downloads.apache.org/kafka/3.9.1/kafka_2.13-3.9.1.tgz.sha512))
   * [Release Notes](https://dlcdn.apache.org/kafka/3.9.1/RELEASE_NOTES.html)
   * Docker image: [apache/kafka:3.9.1](https://hub.docker.com/layers/apache/kafka/3.9.1/images/sha256-5862db4a63a6dd7d46fd14771b10a1b39e069c2c47f17d8e4640f960720a0ead).
   * Docker Native image: [apache/kafka-native:3.9.1](https://hub.docker.com/layers/apache/kafka-native/3.9.1/images/sha256-985da4a187ec9439df26a945984f894048ea67b2936d85a0cef273b16e32a113).
@@ -121,6 +126,8 @@ We build for multiple versions of Scala. This only matters if you are using Scal
 
 
 Kafka 3.9.1 fixes 66 issues since the 3.9.0 release. For more information, please read our [blog post](https://kafka.apache.org/blog#apache_kafka_391_release_announcement) and the detailed [Release Notes](https://dlcdn.apache.org/kafka/3.9.1/RELEASE_NOTES.html).
+
+
 
 
 ### 3.9.0
