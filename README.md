@@ -199,6 +199,23 @@ For more details, see the [Hugo Front Matter Documentation](https://gohugo.io/co
 
 ### Managing Redirects
 
+#### Redirecting to an Internal URL
+
+To redirect to an internal URL use the `aliases` Front Matter field.
+
+Add one or more aliases to the page that should be the redirect destination.
+See example in 4.2 blog entry content/en/blog/releases/ak-4.2.0.md (aliases used to preserve the initial blog url after it changed)
+
+```yaml
+---
+title: Apache Kafka 4.2.0 Release Announcement
+aliases:
+  - /blog/2026/01/14/apache-kafka-4.2.0-release-announcement/
+---
+```
+
+#### Redirecting to an External URL
+
 To create a client-side redirect to an external URL, use the `redirect_to` Front Matter field.
 
 1. Create a markdown file at the desired path (e.g., `content/en/KEYS.md` for `/KEYS`).
