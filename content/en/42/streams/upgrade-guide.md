@@ -70,7 +70,7 @@ Since 2.6.0 release, Kafka Streams depends on a RocksDB version that requires Ma
 The Streams Rebalance Protocol is a broker-driven rebalancing system designed specifically for Kafka Streams applications. 
 This release marks the General Availability for the core functionality detailed in [KIP-1071](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1071%3A+Streams+Rebalance+Protocol).
 For more information about the feature set, design, usage and migration, 
-please refer to the [developer guide](/{version}/documentation/streams/developer-guide/streams-rebalance-protocol.html).
+please refer to the [developer guide](/{version}/streams/developer-guide/streams-rebalance-protocol).
 
 ### Other changes
 
