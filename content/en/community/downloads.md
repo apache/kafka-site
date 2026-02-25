@@ -66,7 +66,7 @@ Kafka 4.0.1 fixes 49 issues since the 4.0.0 release. For more information, pleas
 
 ### 3.9.2
 
-  * Released Feburary 21, 2026
+  * Released February 21, 2026
   * [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/3.9.2/RELEASE_NOTES.html?action=download)
   * Docker image: [apache/kafka:3.9.2](https://hub.docker.com/layers/apache/kafka/3.9.2/images/sha256-f5f8605794dce59d1d566f63667682771c2fec9e96088b0d6a5ef0f8476dd4b2).
   * Docker Native image: [apache/kafka-native:3.9.2](https://hub.docker.com/layers/apache/kafka-native/3.9.2/images/sha256-56a46c0fb9246d632e68e9c4ecc99fa44f5c39412844aa4ee58afe64e6941381).
@@ -100,7 +100,7 @@ Kafka 4.1.0 includes a significant number of new features and fixes. For more in
   * [Release Notes](https://archive.apache.org/dist/kafka/4.0.0/RELEASE_NOTES.html)
   * Docker image: [apache/kafka:4.0.0](https://hub.docker.com/layers/apache/kafka/4.0.0/images/sha256-01b9a4030e54c6068e66eb3ba4cb82c0d89238629ef1c30d79b86036bf89b1b7).
   * Docker Native image: [apache/kafka-native:4.0.0](https://hub.docker.com/layers/apache/kafka-native/4.0.0/images/sha256-94061e3c94f33ae18011e0f4e96c03a6ec4def97bbbad41ff68473e0a04c4ad8).
-  * Source download: [kafka-4.0.0-src.tgz](https://archive.apache.org/dist/4.0.0/kafka-4.0.0-src.tgz) ([asc](https://archive.apache.org/dist/kafka/4.0.0/kafka-4.0.0-src.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/4.0.0/kafka-4.0.0-src.tgz.sha512))
+  * Source download: [kafka-4.0.0-src.tgz](https://archive.apache.org/dist/kafka/4.0.0/kafka-4.0.0-src.tgz) ([asc](https://archive.apache.org/dist/kafka/4.0.0/kafka-4.0.0-src.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/4.0.0/kafka-4.0.0-src.tgz.sha512))
   * Binary download: [kafka_2.13-4.0.0.tgz](https://archive.apache.org/dist/kafka/4.0.0/kafka_2.13-4.0.0.tgz) ([asc](https://archive.apache.org/dist/kafka/4.0.0/kafka_2.13-4.0.0.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/4.0.0/kafka_2.13-4.0.0.tgz.sha512))
 
 Kafka 4.0.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog/2025/03/18/apache-kafka-4.0.0-release-announcement/) and the detailed [Release Notes](https://archive.apache.org/dist/kafka/4.0.0/RELEASE_NOTES.html).
