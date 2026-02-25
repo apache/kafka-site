@@ -100,7 +100,7 @@ Kafka 4.1.0 includes a significant number of new features and fixes. For more in
   * [Release Notes](https://archive.apache.org/dist/kafka/4.0.0/RELEASE_NOTES.html)
   * Docker image: [apache/kafka:4.0.0](https://hub.docker.com/layers/apache/kafka/4.0.0/images/sha256-01b9a4030e54c6068e66eb3ba4cb82c0d89238629ef1c30d79b86036bf89b1b7).
   * Docker Native image: [apache/kafka-native:4.0.0](https://hub.docker.com/layers/apache/kafka-native/4.0.0/images/sha256-94061e3c94f33ae18011e0f4e96c03a6ec4def97bbbad41ff68473e0a04c4ad8).
-  * Source download: [kafka-4.0.0-src.tgz](https://archive.apache.org/dist/kafka-4.0.0-src.tgz) ([asc](https://archive.apache.org/dist/kafka/4.0.0/kafka-4.0.0-src.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/4.0.0/kafka-4.0.0-src.tgz.sha512))
+  * Source download: [kafka-4.0.0-src.tgz](https://archive.apache.org/dist/4.0.0/kafka-4.0.0-src.tgz) ([asc](https://archive.apache.org/dist/kafka/4.0.0/kafka-4.0.0-src.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/4.0.0/kafka-4.0.0-src.tgz.sha512))
   * Binary download: [kafka_2.13-4.0.0.tgz](https://archive.apache.org/dist/kafka/4.0.0/kafka_2.13-4.0.0.tgz) ([asc](https://archive.apache.org/dist/kafka/4.0.0/kafka_2.13-4.0.0.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/4.0.0/kafka_2.13-4.0.0.tgz.sha512))
 
 Kafka 4.0.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog/2025/03/18/apache-kafka-4.0.0-release-announcement/) and the detailed [Release Notes](https://archive.apache.org/dist/kafka/4.0.0/RELEASE_NOTES.html).
@@ -244,7 +244,7 @@ Kafka 3.6.1 fixes 30 issues since the 3.6.0 release. For more information, pleas
     * Scala 2.13  \- [kafka_2.13-3.6.0.tgz](https://archive.apache.org/dist/kafka/3.6.0/kafka_2.13-3.6.0.tgz) ([asc](https://archive.apache.org/dist/kafka/3.6.0/kafka_2.13-3.6.0.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/3.6.0/kafka_2.13-3.6.0.tgz.sha512))
 We build for multiple versions of Scala. This only matters if you are using Scala and you want a version built for the same Scala version you use. Otherwise any version should work (2.13 is recommended).
 
-Kafka 3.6.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog/2023/12/07/apache-kafka-3.6.1-release-announcement/) and the detailed [Release Notes](https://archive.apache.org/dist/kafka/3.6.0/RELEASE_NOTES.html).
+Kafka 3.6.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog/2023/10/10/apache-kafka-3.6.0-release-announcement/) and the detailed [Release Notes](https://archive.apache.org/dist/kafka/3.6.0/RELEASE_NOTES.html).
 
 
 ### 3.5.2
