@@ -341,6 +341,13 @@ Remove built files and Docker images:
 make clean
 ```
 
+## Updating the website
+
+After a GitHub PR was merged, the "Build and Deploy Site" GitHub Actions job, updates the [staging website](https://kafka.staged.apache.org/).
+Please verify if all changes are correct.
+Afterwards, you can re-run the same job manually via the GitHub WebUI, selecting "Check to update live website".
+
+
 ## Contributing
 
 1. Fork the repository
