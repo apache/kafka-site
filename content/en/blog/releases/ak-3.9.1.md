@@ -25,7 +25,7 @@ author: Luke Chen (@showuon1)
 
 
 
-We are proud to announce the release of Apache Kafka 3.9.1. This bug-fix release has several fixes, and most importantly, it adds Java 23 support. For a full list of changes, be sure to check the [release notes](https://downloads.apache.org/kafka/3.9.1/RELEASE_NOTES.html).
+We are proud to announce the release of Apache Kafka 3.9.1. This bug-fix release has several fixes, and most importantly, it adds Java 23 support. For a full list of changes, be sure to check the [release notes](https://archive.apache.org/dist/kafka/3.9.1/RELEASE_NOTES.html).
 
 See the [Upgrading to 3.9.1 from any version 0.8.x through 3.8.x](https://kafka.apache.org/39/documentation.html#upgrade_3_9_1) section in the documentation for the list of notable changes and detailed upgrade steps.
 
