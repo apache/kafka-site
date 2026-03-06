@@ -362,7 +362,7 @@ params:
       url: /081/
       archived_version: true
     - version: "0.8.0"
-      url: /080/
+      url: /08/
       archived_version: true
     - version: "0.7"
       url: /07/
