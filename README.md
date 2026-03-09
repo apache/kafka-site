@@ -88,7 +88,17 @@ Run the helper script to replace hardcoded version strings with dynamic placehol
 ./scripts/replace-version-links.sh 43
 ```
 
-#### 4. Update Version Parameters in `hugo.yaml`
+#### 4. Update Javadoc Canonical URLs
+
+After copying the Javadoc files, run the canonical URL script to ensure all Javadoc HTML files across all versions point to the latest version for SEO purposes:
+
+```bash
+./scripts/add-javadoc-canonical-urls.sh 43
+```
+
+This adds `<link rel="canonical">` tags pointing to the latest version, pointing search engines to use the latest stable versions of the API docs.
+
+#### 5. Update Version Parameters in `hugo.yaml`
  
  Locate the **Version Configuration** block at the top of the `params` section (around line 245). Update the following fields:
  
