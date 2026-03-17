@@ -3,8 +3,6 @@ date: 2026-03-17
 title: Apache Kafka 4.1.2 Release Announcement
 linkTitle: AK 4.1.2
 author: Andrew Schofield
-aliases:
-  - /blog/2026/03/17/apache-kafka-4-1-2-release-announcement/
 ---
 
 <!--
@@ -29,7 +27,7 @@ aliases:
 
 We are proud to announce the release of Apache Kafka 4.1.2. This is a bugfix release that includes several critical fixes. For a full list of changes, be sure to check the [release notes](https://downloads.apache.org/kafka/4.1.2/RELEASE_NOTES.html).
 
-See the [Upgrading to 4.1.2 from any version 0.8.x through 4.0.x](https://kafka.apache.org/41/documentation.html#upgrade_4_1_2) section in the documentation for the list of notable changes and detailed upgrade steps.
+See the [Upgrading to 4.1.2 from any version 0.8.x through 4.0.x](https://kafka.apache.org/41/getting-started/upgrade/#upgrading-to-412) section in the documentation for the list of notable changes and detailed upgrade steps.
 
 ## Summary
 
