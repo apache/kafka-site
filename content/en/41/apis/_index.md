@@ -47,7 +47,7 @@ To use the producer, add the following Maven dependency to your project:
     <dependency>
     	<groupId>org.apache.kafka</groupId>
     	<artifactId>kafka-clients</artifactId>
-    	<version>4.1.1</version>
+    	<version>4.1.2</version>
     </dependency>
 
 # Consumer API
@@ -62,7 +62,7 @@ To use the consumer, add the following Maven dependency to your project:
     <dependency>
     	<groupId>org.apache.kafka</groupId>
     	<artifactId>kafka-clients</artifactId>
-    	<version>4.1.1</version>
+    	<version>4.1.2</version>
     </dependency>
 
 # Share Consumer API (Preview)
@@ -77,7 +77,7 @@ To use the share consumer, add the following Maven dependency to your project:
     <dependency>
     	<groupId>org.apache.kafka</groupId>
     	<artifactId>kafka-clients</artifactId>
-    	<version>4.1.1</version>
+    	<version>4.1.2</version>
     </dependency>
 
 # Streams API
@@ -94,7 +94,7 @@ To use Kafka Streams, add the following Maven dependency to your project:
     <dependency>
     	<groupId>org.apache.kafka</groupId>
     	<artifactId>kafka-streams</artifactId>
-    	<version>4.1.1</version>
+    	<version>4.1.2</version>
     </dependency>
 
 When using Scala you may optionally include the `kafka-streams-scala` library. Additional documentation on using the Kafka Streams DSL for Scala is available [in the developer guide](/41/documentation/streams/developer-guide/dsl-api.html#scala-dsl). 
@@ -105,7 +105,7 @@ To use Kafka Streams DSL for Scala 2.13, add the following Maven dependency to y
     <dependency>
     	<groupId>org.apache.kafka</groupId>
     	<artifactId>kafka-streams-scala_2.13</artifactId>
-    	<version>4.1.1</version>
+    	<version>4.1.2</version>
     </dependency>
 
 # Connect API
@@ -126,7 +126,7 @@ To use the Admin API, add the following Maven dependency to your project:
     <dependency>
     	<groupId>org.apache.kafka</groupId>
     	<artifactId>kafka-clients</artifactId>
-    	<version>4.1.1</version>
+    	<version>4.1.2</version>
     </dependency>
 
 For more information about the Admin APIs, see the [javadoc](/41/javadoc/index.html?org/apache/kafka/clients/admin/Admin.html "Kafka 4.1 Javadoc"). 
