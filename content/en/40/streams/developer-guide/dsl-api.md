@@ -4994,7 +4994,7 @@ Stateful
 
 
 
-Transformers removal and migration to processors
+### Transformers removal and migration to processors
 
 As of Kafka 4.0, several deprecated methods in the Kafka Streams API, such as `transform`, `flatTransform`, `transformValues`, `flatTransformValues`, and `process` have been removed. These methods have been replaced with the more versatile Processor API. This guide provides detailed steps for migrating existing code to use the new Processor API and explains the benefits of the changes.
 
@@ -5010,7 +5010,7 @@ The following deprecated methods are no longer available in Kafka Streams:
 
 The Processor API now serves as a unified replacement for all these methods. It simplifies the API surface while maintaining support for both stateless and stateful operations.
 
-**CAUTION:** If you are using `KStream.transformValues()` or `KStream.flatTransformValues()` and you have the "merge repartition topics" optimization enabled, rewriting your program to `KStream.processValues()` might not be safe due to [KAFKA-19668](https://issues.apache.org/jira/browse/KAFKA-19668). For this case, you should not upgrade to Kafka Streams 4.0.0 or 4.1.0, but use Kafka Streams 4.0.1 or 4.1.1 instead, which contain a fix. Note, that the fix is not enabled by default for backward compatibility reasons, and you would need to enable the fix by setting config `__enable.process.processValue.fix__ = true` and pass it into `StreamsBuilder()` constructor.
+**CAUTION:** If you are using `KStream.transformValues()` or `KStream.flatTransformValues()` and you have the "merge repartition topics" optimization enabled, rewriting your program to `KStream.processValues()` might not be safe due to [KAFKA-19668](https://issues.apache.org/jira/browse/KAFKA-19668). For this case, you should not upgrade to Kafka Streams 4.0.0 or 4.1.0, but use Kafka Streams 4.0.2 or 4.1.1 instead, which contain a fix. Note, that the fix is not enabled by default for backward compatibility reasons, and you would need to enable the fix by setting config `__enable.process.processValue.fix__ = true` and pass it into `StreamsBuilder()` constructor.
     
     
     final Properties properties = new Properties();
@@ -5785,7 +5785,7 @@ The library is cross-built with Scala 2.12 and 2.13. To reference the library co
     <dependency>
       <groupId>org.apache.kafka</groupId>
       <artifactId>kafka-streams-scala_2.13</artifactId>
-      <version>4.0.1</version>
+      <version>4.0.2</version>
     </dependency>
 
 To use the library compiled against Scala 2.12 replace the `artifactId` with `kafka-streams-scala_2.12`.
@@ -5793,7 +5793,7 @@ To use the library compiled against Scala 2.12 replace the `artifactId` with `ka
 When using SBT then you can reference the correct library using the following:
     
     
-    libraryDependencies += "org.apache.kafka" %% "kafka-streams-scala" % "4.0.1"
+    libraryDependencies += "org.apache.kafka" %% "kafka-streams-scala" % "4.0.2"
 
 ## Sample Usage
 
