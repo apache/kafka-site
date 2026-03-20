@@ -9,27 +9,27 @@ The Producer API allows applications to send streams of data to topics in the Ka
 Kafka exposes all its functionality over a language independent protocol which has clients available in many programming languages. However only the Java clients are maintained as part of the main Kafka project, the others are available as independent open source projects. A list of non-Java clients is available <a href=https://cwiki.apache.org/confluence/display/KAFKA/Clients target=_blank rel=noopener>here</a>.</li></ol><h1 id=producer-api>Producer API<a class=td-heading-self-link href=#producer-api aria-label="Heading self-link"></a></h1><p>The Producer API allows applications to send streams of data to topics in the Kafka cluster.</p><p>Examples showing how to use the producer are given in the <a href=/40/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html title="Kafka 4.0 Javadoc">javadocs</a>.</p><p>To use the producer, you can use the following maven dependency:</p><pre><code>&lt;dependency&gt;
 	&lt;groupId&gt;org.apache.kafka&lt;/groupId&gt;
 	&lt;artifactId&gt;kafka-clients&lt;/artifactId&gt;
-	&lt;version&gt;4.0.1&lt;/version&gt;
+	&lt;version&gt;4.0.2&lt;/version&gt;
 &lt;/dependency&gt;
 </code></pre><h1 id=consumer-api>Consumer API<a class=td-heading-self-link href=#consumer-api aria-label="Heading self-link"></a></h1><p>The Consumer API allows applications to read streams of data from topics in the Kafka cluster.</p><p>Examples showing how to use the consumer are given in the <a href=/40/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html title="Kafka 4.0 Javadoc">javadocs</a>.</p><p>To use the consumer, you can use the following maven dependency:</p><pre><code>&lt;dependency&gt;
 	&lt;groupId&gt;org.apache.kafka&lt;/groupId&gt;
 	&lt;artifactId&gt;kafka-clients&lt;/artifactId&gt;
-	&lt;version&gt;4.0.1&lt;/version&gt;
+	&lt;version&gt;4.0.2&lt;/version&gt;
 &lt;/dependency&gt;
 </code></pre><h1 id=streams-api>Streams API<a class=td-heading-self-link href=#streams-api aria-label="Heading self-link"></a></h1><p>The <a href=/40/documentation/streams>Streams</a> API allows transforming streams of data from input topics to output topics.</p><p>Examples showing how to use this library are given in the <a href=/40/javadoc/index.html?org/apache/kafka/streams/KafkaStreams.html title="Kafka 4.0 Javadoc">javadocs</a>.</p><p>Additional documentation on using the Streams API is available <a href=/40/documentation/streams>here</a>.</p><p>To use Kafka Streams you can use the following maven dependency:</p><pre><code>&lt;dependency&gt;
 	&lt;groupId&gt;org.apache.kafka&lt;/groupId&gt;
 	&lt;artifactId&gt;kafka-streams&lt;/artifactId&gt;
-	&lt;version&gt;4.0.1&lt;/version&gt;
+	&lt;version&gt;4.0.2&lt;/version&gt;
 &lt;/dependency&gt;
 </code></pre><p>When using Scala you may optionally include the <code>kafka-streams-scala</code> library. Additional documentation on using the Kafka Streams DSL for Scala is available <a href=/40/documentation/streams/developer-guide/dsl-api.html#scala-dsl>in the developer guide</a>.</p><p>To use Kafka Streams DSL for Scala 2.13 you can use the following maven dependency:</p><pre><code>&lt;dependency&gt;
 	&lt;groupId&gt;org.apache.kafka&lt;/groupId&gt;
 	&lt;artifactId&gt;kafka-streams-scala_2.13&lt;/artifactId&gt;
-	&lt;version&gt;4.0.1&lt;/version&gt;
+	&lt;version&gt;4.0.2&lt;/version&gt;
 &lt;/dependency&gt;
 </code></pre><h1 id=connect-api>Connect API<a class=td-heading-self-link href=#connect-api aria-label="Heading self-link"></a></h1><p>The Connect API allows implementing connectors that continually pull from some source data system into Kafka or push from Kafka into some sink data system.</p><p>Many users of Connect won&rsquo;t need to use this API directly, though, they can use pre-built connectors without needing to write any code. Additional information on using Connect is available <a href=/documentation.html#connect>here</a>.</p><p>Those who want to implement custom connectors can see the <a href=/40/javadoc/index.html?org/apache/kafka/connect title="Kafka 4.0 Javadoc">javadoc</a>.</p><h1 id=admin-api>Admin API<a class=td-heading-self-link href=#admin-api aria-label="Heading self-link"></a></h1><p>The Admin API supports managing and inspecting topics, brokers, acls, and other Kafka objects.</p><p>To use the Admin API, add the following Maven dependency:</p><pre><code>&lt;dependency&gt;
 	&lt;groupId&gt;org.apache.kafka&lt;/groupId&gt;
 	&lt;artifactId&gt;kafka-clients&lt;/artifactId&gt;
-	&lt;version&gt;4.0.1&lt;/version&gt;
+	&lt;version&gt;4.0.2&lt;/version&gt;
 &lt;/dependency&gt;
 </code></pre><p>For more information about the Admin APIs, see the <a href=/40/javadoc/index.html?org/apache/kafka/clients/admin/Admin.html title="Kafka 4.0 Javadoc">javadoc</a>.</p></div></div></main></div></div><footer class="td-footer d-print-none"><div class=container-fluid><div class="row align-items-center"><div class="col-12 col-md-3 text-center text-md-start"><div class=td-footer__social-icons><a href=/community/contact/ target=_blank rel=noopener aria-label=Contact class=td-footer__social-link><i class="fa fa-envelope"></i>
 </a><a href=https://twitter.com/apachekafka target=_blank rel=noopener aria-label=Twitter class=td-footer__social-link><i class="fab fa-twitter"></i>
