@@ -201,7 +201,7 @@
 </li>
 <li>
 <h4><a id="processing.exception.handler"></a><a id="streamsconfigs_processing.exception.handler" href="#streamsconfigs_processing.exception.handler">processing.exception.handler</a></h4>
-<p>Exception handling class that implements the <code>org.apache.kafka.streams.errors.ProcessingExceptionHandler</code> interface.</p>
+<p>Exception handling class that implements the <code>org.apache.kafka.streams.errors.ProcessingExceptionHandler</code> interface. Note: This handler applies only to regular stream processing tasks. It does not apply to global state store updates (global threads). Exceptions occurring in global threads will bubble up to the configured uncaught exception handler.</p>
 <table><tbody>
 <tr><th>Type:</th><td>class</td></tr>
 <tr><th>Default:</th><td>org.apache.kafka.streams.errors.LogAndFailProcessingExceptionHandler</td></tr>
