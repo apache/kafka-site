@@ -108,13 +108,13 @@ Kafka 4.1.0 includes a significant number of new features and fixes. For more in
 ### 4.0.1
 
 * Released October 13, 2025
-* [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.0.1/RELEASE_NOTES.html?action=download)
+* [Release Notes](https://archive.apache.org/dist/kafka/4.0.1/RELEASE_NOTES.html)
 * Docker image: [apache/kafka:4.0.1](https://hub.docker.com/layers/apache/kafka/4.0.1/images/sha256-9d71149303e87843482fa0e2095ed2a991739bfdbcd5333f4295a53d667338b4).
 * Docker Native image: [apache/kafka-native:4.0.1](https://hub.docker.com/layers/apache/kafka-native/4.0.1/images/sha256-35b36477b2edec2b60be9a0fd19a5489fe878cc2df173931a97b140968d42ea2).
-* Source download: [kafka-4.0.1-src.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.0.1/kafka-4.0.1-src.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.0.1/kafka-4.0.1-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.0.1/kafka-4.0.1-src.tgz.sha512))
-* Binary download: [kafka_2.13-4.0.1.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.0.1/kafka_2.13-4.0.1.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.0.1/kafka_2.13-4.0.1.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.0.1/kafka_2.13-4.0.1.tgz.sha512))
+* Source download: [kafka-4.0.1-src.tgz](https://archive.apache.org/dist/kafka/4.0.1/kafka-4.0.1-src.tgz) ([asc](https://archive.apache.org/dist/kafka/4.0.1/kafka-4.0.1-src.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/4.0.1/kafka-4.0.1-src.tgz.sha512))
+* Binary download: [kafka_2.13-4.0.1.tgz](https://archive.apache.org/dist/kafka/4.0.1/kafka_2.13-4.0.1.tgz) ([asc](https://archive.apache.org/dist/kafka/4.0.1/kafka_2.13-4.0.1.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/4.0.1/kafka_2.13-4.0.1.tgz.sha512))
 
-Kafka 4.0.1 fixes 49 issues since the 4.0.0 release. For more information, please read our [blog post](https://kafka.apache.org/blog/2025/10/13/apache-kafka-4.0.1-release-announcement/), the detailed [Upgrade Notes](https://kafka.apache.org/40/getting-started/upgrade/) and the [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.0.1/RELEASE_NOTES.html?action=download).
+Kafka 4.0.1 fixes 49 issues since the 4.0.0 release. For more information, please read our [blog post](https://kafka.apache.org/blog/2025/10/13/apache-kafka-4.0.1-release-announcement/), the detailed [Upgrade Notes](https://kafka.apache.org/40/getting-started/upgrade/) and the [Release Notes](https://archive.apache.org/dist/kafka/4.0.1/RELEASE_NOTES.html).
 
 ### 4.0.0
 
