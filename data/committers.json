@@ -471,5 +471,13 @@
     "linkedIn": "https://www.linkedin.com/in/poan-yang/",
     "twitter": null,
     "github": "https://github.com/FrankYang0529"
+  },
+  {
+    "image": "/images/kirktrue.jpg",
+    "name": "Kirk True",
+    "title": "Committer",
+    "linkedIn": "https://www.linkedin.com/in/kirktrue/",
+    "twitter": null,
+    "github": "https://github.com/kirktrue"
   }
 ]
