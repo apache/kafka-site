@@ -3,10 +3,8 @@ OUTPUT_DIR := output
 HUGO_VERSION := 0.123.7
 HUGO_BASE_IMAGE := ghcr.io/apache/kafka-site/hugo:v$(HUGO_VERSION)-ext-multiplatform
 DOCKER_IMAGE := $(HUGO_BASE_IMAGE)
-#PROD_IMAGE := hvishwanath/kafka-site-md:1.2.0
-PROD_IMAGE := us-west1-docker.pkg.dev/play-394201/kafka-site-md/kafka-site-md:1.6.0
 
-.PHONY: build serve clean docker-image ensure-hugo-image hugo-base-multi-platform prod-image prod-run buildx-setup ghcr-prod-image
+.PHONY: build serve clean docker-image ensure-hugo-image hugo-base-multi-platform buildx-setup ghcr-prod-image
 
 # Setup buildx for multi-arch builds
 buildx-setup:
@@ -49,20 +47,6 @@ serve: ensure-hugo-image
 		--buildDrafts \
 		--buildFuture
 
-# Build production Nginx image for multiple architectures
-prod-image: build buildx-setup
-	docker buildx build \
-		--platform linux/amd64,linux/arm64 \
-		--tag $(PROD_IMAGE) \
-		--file Dockerfile.prod \
-		--push \
-		.
-
-# Run production image locally
-prod-run: prod-image
-	docker pull $(PROD_IMAGE)
-	docker run --rm -p 8080:80 $(PROD_IMAGE)
-
 # Build and push production image to GHCR
 ghcr-prod-image: build buildx-setup
 	docker buildx build \
@@ -77,5 +61,5 @@ ghcr-prod-image: build buildx-setup
 # Clean the output directory and remove Docker images
 clean:
 	rm -rf $(OUTPUT_DIR)
-	docker rmi $(DOCKER_IMAGE) $(HUGO_BASE_IMAGE) $(PROD_IMAGE)
+	docker rmi $(DOCKER_IMAGE) $(HUGO_BASE_IMAGE)
 	docker buildx rm multiarch || true
