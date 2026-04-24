@@ -35,16 +35,16 @@ Our code is kept in Apache GitHub repo. You can check it out like this:
     
     git clone https://github.com/apache/kafka.git kafka
 
-Information on contributing patches can be found [here](contributing.html). 
+Information on contributing patches can be found [here](#how-to-contribute). 
 
-Official releases are available [here](downloads.html). 
+Official releases are available [here](/downloads.html). 
 
 The source code for the web site and documentation can be checked out from Apache GitHub repo: 
     
     
     git clone -b asf-site https://github.com/apache/kafka-site.git
 
-We are happy to received patches for the website and documentation. We think documentation is a core part of the project and welcome any improvements, suggestions, or clarifications. The procedure of contributing to the documentation can also be found [here](contributing.html). 
+We are happy to received patches for the website and documentation. We think documentation is a core part of the project and welcome any improvements, suggestions, or clarifications. The procedure of contributing to the documentation can also be found [here](#contributing-a-change-to-the-website). 
 
 To setup IDEs for development, following [this guide](https://cwiki.apache.org/confluence/display/KAFKA/Developer+Setup) on the wiki. 
 
