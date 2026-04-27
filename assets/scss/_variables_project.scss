@@ -1255,7 +1255,7 @@ p {
   }
 }
 
-// ASF Feather Logo styling - Smaller with very rapid continuous spin effect
+// ASF Feather Logo styling
 .asf-feather-logo {
   max-width: 50px;
   width: 50px;
@@ -1265,7 +1265,6 @@ p {
 
   &:hover {
     opacity: 1;
-    animation: spin-continuous 0.2s linear infinite;
   }
 }
 
