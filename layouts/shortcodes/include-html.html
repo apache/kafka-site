@@ -1,5 +1,4 @@
 {{- $file := .Get "file" -}}
-{{- if in $file "{version}" -}}
 {{- $version := "" -}}
 {{- /* Try to infer version from the top-level section (e.g. "43" from content/en/43/...) */ -}}
 {{- $sectionName := .Page.Section -}}
@@ -10,6 +9,16 @@
 {{- $version = site.Params.latest_version -}}
 {{- end -}}
 {{- $file = replace $file "{version}" $version -}}
+{{- /* Prefer version-relative form (content/en/<v>/generated/...); fall back to
+       legacy absolute /static/... form for pre-4.2 versions. */ -}}
+{{- $contentPath := printf "/content/en/%s/%s" $version $file -}}
+{{- $resolved := "" -}}
+{{- if fileExists $contentPath -}}
+{{- $resolved = $contentPath -}}
+{{- else if fileExists $file -}}
+{{- $resolved = $file -}}
+{{- else -}}
+{{- errorf "include-html: file not found (tried %q and %q)" $contentPath $file -}}
 {{- end -}}
-{{- $content := readFile $file -}}
+{{- $content := readFile $resolved -}}
 {{- $content | safeHTML -}}
