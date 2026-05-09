@@ -501,9 +501,11 @@ module:
   imports:
     - path: github.com/google/docsy
       disable: false
-  # Keep versioned `generated/` next to the docs (matches apache/kafka's layout).
-  # Exclude it from content (raw HTML fragments aren't standalone pages) and mount
-  # it as static so URLs like /42/generated/connect_rest.yaml keep working.
+  # From 4.3 onward, each release ships its `generated/` artifacts under
+  # content/en/<v>/generated/ (matching apache/kafka's docs/generated layout).
+  # The catch-all mount below re-exposes them at /<v>/generated/ URLs without
+  # per-release hugo.yaml edits. Pre-4.3 versions keep their files in
+  # static/<v>/generated/ and are unaffected.
   mounts:
     - source: content/en
       target: content
@@ -518,5 +520,12 @@ module:
       target: assets
     - source: static
       target: static
-    - source: content/en/42/generated
-      target: static/42/generated
+    - source: content/en
+      target: static
+      includeFiles:
+        - "[0-9]*/generated/**"
+      excludeFiles:
+        # 4.2 is a one-off: its content/en/42/generated/ holds 25 empty stubs +
+        # connect_rest.yaml that all duplicate the real files in static/42/generated/.
+        # Keep the catch-all inert for 4.2 so the real files in static/ keep serving.
+        - "42/generated/**"

@@ -58,29 +58,26 @@ When releasing a new documentation version (e.g., version 4.3 / "43"), follow th
 In the below examples, we assume the `apache/kafka` repository is checked out at `../kafka` relative to the `kafka-site` root.
 
 #### 1. Setup Content Directory
-Copy the documentation source files (including `generated/`) from the Kafka codebase, excluding images.
+Copy the documentation source files from the Kafka codebase to the website content directory, excluding images (which go to static). From 4.3 onward this includes the `generated/` folder, which stays alongside the docs.
 
 ```bash
 # Verify you are in the kafka-site root
 mkdir -p content/en/43
+
+# Copy docs from kafka repo (excluding images)
 rsync -av --exclude 'images' ../kafka/docs/ content/en/43/
 ```
 
 #### 2. Setup Static Assets
-Copy images and Javadocs into `static/`. Do **not** copy `generated/` here — it stays under `content/en/<version>/generated/`.
+Copy images and Javadocs to the static directory. From 4.3 onward, do **not** copy `generated/` here — it stays under `content/en/<version>/generated/` and is re-exposed at `/<version>/generated/` URLs by a catch-all mount in `hugo.yaml` (no per-release edit needed).
 
 ```bash
+# Create versioned static directory
 mkdir -p static/43
+
+# Copy assets from kafka repo
 cp -r ../kafka/docs/images static/43/
 # Copy `javadoc` directory into `static/43`
-```
-
-#### 2a. Expose the new version's `generated/` as a static path
-Add a mount under `module.mounts` in `hugo.yaml` so `/43/generated/<file>` URLs (e.g. `connect_rest.yaml`) resolve:
-
-```yaml
-    - source: content/en/43/generated
-      target: static/43/generated
 ```
 
 #### 3. Run Replacement Script
@@ -255,10 +252,10 @@ When the site is built, Hugo identifies the context of the current page (e.g., a
     *Implemented via the Render Hook: `layouts/_default/_markup/render-link.html`*
 
 2.  **Include HTML Shortcode**:
-    Pass a version-relative path; the shortcode resolves it against `content/en/<version>/generated/`. The legacy `file="/static/{version}/generated/..."` form is still accepted for pre-4.2 versions.
+    Use `{version}` in the `file` path for the `include-html` shortcode.
     ```markdown
-    {{< include-html file="generated/admin_client_config.html" >}}
-    => reads content/en/43/generated/admin_client_config.html
+    {{< include-html file="/static/{version}/generated/admin_client_config.html" >}}
+    => reads content from /static/43/generated/admin_client_config.html
     ```
     *Implemented in: `layouts/shortcodes/include-html.html`*
 
@@ -273,7 +270,7 @@ A script is available to automate the replacement of hardcoded version strings w
 
 This will recursively find and replace:
 - `/<version>/javadoc` -> `/{version}/javadoc`
-- `file="/static/<version>/generated/` -> `file="generated/` (include-html paths become version-relative)
+- `static/<version>/generated` -> `static/{version}/generated`
 
 ### Adding a New Blog Post
 

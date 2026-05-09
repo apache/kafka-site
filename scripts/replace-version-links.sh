@@ -26,11 +26,9 @@ echo "Processing version: $VERSION in $CONTENT_DIR"
 echo "Replacing /$VERSION/javadoc with /{version}/javadoc..."
 find "$CONTENT_DIR" -name "*.md" -type f -print0 | xargs -0 sed -i '' "s|/$VERSION/javadoc|/{version}/javadoc|g"
 
-# 2. Strip the legacy static include prefix so include-html calls become
-#    version-relative (resolved by the shortcode against content/en/<v>/generated).
-# Pattern: file="/static/<VERSION>/generated/ -> file="generated/
-echo "Rewriting include-html paths to version-relative form..."
-find "$CONTENT_DIR" -name "*.md" -type f -print0 | xargs -0 sed -i '' "s|file=\"/static/$VERSION/generated/|file=\"generated/|g"
-find "$CONTENT_DIR" -name "*.md" -type f -print0 | xargs -0 sed -i '' "s|file=\"/static/{version}/generated/|file=\"generated/|g"
+# 2. Replace generated static include paths
+# Pattern: static/<VERSION>/generated -> static/{version}/generated
+echo "Replacing static/$VERSION/generated with static/{version}/generated..."
+find "$CONTENT_DIR" -name "*.md" -type f -print0 | xargs -0 sed -i '' "s|static/$VERSION/generated|static/{version}/generated|g"
 
 echo "Done!"
