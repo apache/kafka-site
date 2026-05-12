@@ -243,19 +243,19 @@ menu:
 
 params:
   # Latest documentation version - UPDATE THIS WHEN RELEASING NEW VERSION
-  latest_version: "42"
-  latest_version_number: "4.2"
+  latest_version: "43"
+  latest_version_number: "4.3"
   
   # The version number for the version of the docs represented in this doc set.
   # Used in the "version-banner" partial to display a version number for the
   # current doc set.
   # NOTE: This is automatically set from latest_version_number parameter above
-  version: 4.2
+  version: 4.3
 
   # A link to latest version of the docs. Used in the "version-banner" partial to
   # point people to the main doc site.
   # NOTE: When updating to version 43, change this to /43/
-  url_latest_version: /42/
+  url_latest_version: /43/
 
   # Menu title if your navbar has a versions selector to access old versions of your site.
   # This menu appears only if you have at least one [params.versions] set.
@@ -267,10 +267,13 @@ params:
   archived_version: true
 
   versions:
-    # NOTE: When adding version 43, update params.latest_version to "43"
-    # and params.latest_version_number to "4.3" at the top
+    # NOTE: When adding version 44, update params.latest_version to "44"
+    # and params.latest_version_number to "4.4" at the top
+    - version: "4.3"
+      url: /43/
     - version: "4.2"
       url: /42/
+      archived_version: true
     - version: "4.1"
       url: /41/
       archived_version: true
