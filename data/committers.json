@@ -479,5 +479,13 @@
     "linkedIn": "https://www.linkedin.com/in/kirktrue/",
     "twitter": null,
     "github": "https://github.com/kirktrue"
+  },
+  {
+    "image": "/images/squah.jpg",
+    "name": "Sean Quah",
+    "title": "Committer",
+    "linkedIn": "https://www.linkedin.com/in/sean-quah/",
+    "twitter": null,
+    "github": "https://github.com/squah-confluent"
   }
 ]
