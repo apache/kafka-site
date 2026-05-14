@@ -276,7 +276,7 @@ In general, the migration process passes through several phases.
   * During the migration, if a ZK broker is running with multiple log directories, any directory failure will cause the broker to shutdown. Brokers with broken log directories will only be able to migrate to KRaft once the directories are repaired. For further details refer to [KAFKA-16431](https://issues.apache.org/jira/browse/KAFKA-16431). 
   * As noted above, some features are not fully implemented in KRaft mode. If you are using one of those features, you will not be able to migrate to KRaft yet.
   * There is a known inconsistency between ZK and KRaft modes in the arguments passed to an `AlterConfigPolicy`, when operations of type `SUBTRACT`, `DELETE` or `APPEND` are processed. This has been addressed with a compatibility flag in version 3.9.2. For further details see [KIP-1252](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=399279475).
-
+  * Reverting back to ZK mode during the migration may cause issues if the KRaft controller epoch exceeds the previous ZK controller epoch. A workaround to prevent this is documented in [Reverting to ZooKeeper mode During the Migration](/39/operations/kraft/#reverting-to-zookeeper-mode-during-the-migration). For further details refer to [KAFKA-20488](https://issues.apache.org/jira/browse/KAFKA-20488).
 
 
 ### Preparing for migration
@@ -487,6 +487,7 @@ Enter Migration Mode on the brokers
 
 
 
+  * Using `zookeeper-shell.sh`, compare the ZooKeeper controller epoch (`get /controller_epoch`) to the KRaft controller epoch (the `kraft_controller_epoch` field in `get /migration`). If the KRaft epoch is higher, run `set /controller_epoch <value>` (where `<value>` exceeds the KRaft epoch) to ensure the ZooKeeper controller will start with a higher epoch after reverting. 
   * Deprovision the KRaft controller quorum. 
   * Using `zookeeper-shell.sh`, run `delete /controller` so that one of the brokers can become the new old-style controller. Additionally, run `get /migration` followed by `delete /migration` to clear the migration state from ZooKeeper. This will allow you to re-attempt the migration in the future. The data read from "/migration" can be useful for debugging. 
   * On each broker, remove the `zookeeper.metadata.migration.enable`, `controller.listener.names`, and `controller.quorum.bootstrap.servers` configurations, and replace `node.id` with `broker.id`. Then perform a rolling restart of all brokers. 
@@ -496,7 +497,9 @@ Enter Migration Mode on the brokers
 </td>  
 <td>
 
-It is important to perform the `zookeeper-shell.sh` step **quickly** , to minimize the amount of time that the cluster lacks a controller. Until the ` /controller` znode is deleted, you can also ignore any errors in the broker log about failing to connect to the Kraft controller. Those error logs should disappear after second roll to pure zookeeper mode. 
+  * As partition state znodes are updated with the KRaft controller epoch during migration, it is important to ensure the ZooKeeper controller which takes over after reverting has a higher epoch. This prevents issues where a ZooKeeper controller is elected with a lower epoch, and will fail to perform partition state change operations, as it assumes another controller with a higher epoch exists. 
+  * It is important to perform the `delete /controller` step **quickly** after deprovisioning the quorum, to minimize the amount of time that the cluster lacks a controller. Until the ` /controller` znode is deleted, you can also ignore any errors in the broker log about failing to connect to the Kraft controller. Those error logs should disappear after second roll to pure zookeeper mode. 
+
 </td> </tr>  
 <tr>  
 <td>
@@ -508,6 +511,7 @@ Migrating brokers to KRaft
 
 
   * On each broker, remove the `process.roles` configuration, replace the `node.id` with `broker.id` and restore the `zookeeper.connect` configuration to its previous value. If your cluster requires other ZooKeeper configurations for brokers, such as `zookeeper.ssl.protocol`, re-add those configurations as well. Then perform a rolling restart of all brokers. 
+  * Using `zookeeper-shell.sh`, compare the ZooKeeper controller epoch (`get /controller_epoch`) to the KRaft controller epoch (the `kraft_controller_epoch` field in `get /migration`). If the KRaft epoch is higher, run `set /controller_epoch <value>` (where `<value>` exceeds the KRaft epoch) to ensure the ZooKeeper controller will start with a higher epoch after reverting. 
   * Deprovision the KRaft controller quorum. 
   * Using `zookeeper-shell.sh`, run `delete /controller` so that one of the brokers can become the new old-style controller. Additionally, run `get /migration` followed by `delete /migration` to clear the migration state from ZooKeeper. This will allow you to re-attempt the migration in the future. The data read from "/migration" can be useful for debugging. 
   * On each broker, remove the `zookeeper.metadata.migration.enable`, `controller.listener.names`, and `controller.quorum.bootstrap.servers` configurations. Then perform a second rolling restart of all brokers. 
@@ -519,7 +523,8 @@ Migrating brokers to KRaft
 
 
 
-  * It is important to perform the `zookeeper-shell.sh` step **quickly** , to minimize the amount of time that the cluster lacks a controller. Until the ` /controller` znode is deleted, you can also ignore any errors in the broker log about failing to connect to the Kraft controller. Those error logs should disappear after second roll to pure zookeeper mode. 
+  * As partition state znodes are updated with the KRaft controller epoch during migration, it is important to ensure the ZooKeeper controller which takes over after reverting has a higher epoch. This prevents issues where a ZooKeeper controller is elected with a lower epoch, and will fail to perform partition state change operations, as it assumes another controller with a higher epoch exists. 
+  * It is important to perform the `delete /controller` step **quickly** after deprovisioning the quorum, to minimize the amount of time that the cluster lacks a controller. Until the ` /controller` znode is deleted, you can also ignore any errors in the broker log about failing to connect to the Kraft controller. Those error logs should disappear after second roll to pure zookeeper mode. 
   * Make sure that on the first cluster roll, `zookeeper.metadata.migration.enable` remains set to `true`. **Do not set it to false until the second cluster roll.**
 
 
