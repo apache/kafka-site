@@ -85,7 +85,7 @@ See the [Upgrading to 4.3](https://kafka.apache.org/documentation.html#upgrade_4
 ## Kafka Streams
 
 * [KIP-1035: StateStore managed changelog offsets](https://cwiki.apache.org/confluence/x/aQviEQ)    
-  Adds methods to the `StateStore` API to manage changelog offsets.
+  Adds methods to the `StateStore` API to manage changelog offsets. This is an internal runtime change, and only relevant for custom `StateStore` implementations.
 
 * [KIP-1247: Make Bytes utils class part of the public API](https://cwiki.apache.org/confluence/x/DYTMFw)    
   Exposes the `Bytes` class as part of the public API so it appears in the javadoc.
