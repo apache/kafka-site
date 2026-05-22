@@ -1,10 +1,10 @@
 ---
-date: TBD
+date: 2026-05-22
 title: Apache Kafka 4.3.0 Release Announcement
 linkTitle: AK 4.3.0
 author: Mickael Maison
 aliases:
-  - /blog/T/B/D/apache-kafka-4.3.0-release-announcement/
+  - /blog/2026/05/22/apache-kafka-4.3.0-release-announcement/
 ---
 
 <!--
