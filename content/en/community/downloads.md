@@ -37,7 +37,7 @@ The project goal is to have 3 releases a year, which means a release every 4 mon
 * Source download: [kafka-4.3.0-src.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.3.0/kafka-4.3.0-src.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.3.0/kafka-4.3.0-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.3.0/kafka-4.3.0-src.tgz.sha512))
 * Binary download: [kafka_2.13-4.3.0.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.3.0/kafka_2.13-4.3.0.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.3.0/kafka_2.13-4.3.0.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.3.0/kafka_2.13-4.3.0.tgz.sha512))
 
-Kafka 4.3.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog/T/B/D/apache-kafka-4.3.0-release-announcement/), the detailed [Upgrade Notes](https://kafka.apache.org/43/getting-started/upgrade/) and the [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.3.0/RELEASE_NOTES.html?action=download).
+Kafka 4.3.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog/2026/05/22/apache-kafka-4.3.0-release-announcement/), the detailed [Upgrade Notes](https://kafka.apache.org/43/getting-started/upgrade/) and the [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.3.0/RELEASE_NOTES.html?action=download).
 
 ### 4.2.0
 
