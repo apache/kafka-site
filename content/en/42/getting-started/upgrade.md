@@ -25,10 +25,18 @@ type: docs
  limitations under the License.
 -->
 
+## Upgrading to 4.2.1
+
+### Notable changes in 4.2.1
+
+  * Includes a fix for a critical deadlock in the [KIP-932](https://cwiki.apache.org/confluence/x/4hA0Dw) Share Group path ([KAFKA-20505](https://issues.apache.org/jira/browse/KAFKA-20505)).
+  * Includes a fix for a rolling upgrade issue ([KAFKA-20322](https://issues.apache.org/jira/browse/KAFKA-20322)) that could cause `UnsupportedVersionException` for clusters using transactional producers.
 
 ## Upgrading to 4.2.0
 
 ### Upgrading Servers to 4.2.0 from any version 3.3.x through 4.1.x
+
+  * If you wish to use share groups in a cluster with fewer than 3 brokers, you must set the broker configurations `share.coordinator.state.topic.replication.factor` and `share.coordinator.state.topic.min.isr` to 1 before you start using share groups. This is because share groups make use of a new internal topic called `__share_group_state` which is automatically created when you first use share groups. In common with the other internal topics, the default configuration uses 3 replicas and requires at least 3 brokers.
 
 ### Notable changes in 4.2.0
 
@@ -88,11 +96,31 @@ For further details, please refer to [KIP-1120](https://cwiki.apache.org/conflue
   * Added an optional `--node-id` flag to the `FeatureCommand` command. It specifies the node to describe. If not provided, an arbitrary node is used.
 
 
+
+## Upgrading to 4.1.2
+
+### Notable changes in 4.1.2
+
+* Includes a fix for the rare Kafka producer bug ([KAFKA-19012](https://issues.apache.org/jira/browse/KAFKA-19012)), in which a record could end up on the incorrect topic.
+
+
+
+## Upgrading to 4.1.1
+
+### Notable changes in 4.1.1
+
+* Includes a fix for the critical Kafka Streams bug ([KAFKA-19748](https://issues.apache.org/jira/browse/KAFKA-19748)), solving the memory leak issues that affected users of range scans and certain DSL operators (session windows, sliding windows, stream-stream joins, foreign-key joins).
+* Includes a fix for the critical Kafka Streams bug ([KAFKA-19479](https://issues.apache.org/jira/browse/KAFKA-19479)), related to potential data loss.
+
+
+
 ## Upgrading to 4.1.0
 
 **Note:** Kafka Streams 4.1.0 contains a critical memory leak bug ([KAFKA-19748](https://issues.apache.org/jira/browse/KAFKA-19748)) that affects users of range scans and certain DSL operators (session windows, sliding windows, stream-stream joins, foreign-key joins). Users running Kafka Streams should consider upgrading directly to 4.1.1, which includes the fix for it.
 
 ### Upgrading Servers to 4.1.0 from any version 3.3.x through 4.0.x
+
+The rolling upgrade procedure for 4.1.x is identical to the 4.0 upgrade. Please refer to the [Upgrading Servers to 4.0.x](#upgrading-servers-to-401-from-any-version-33x-through-39x) section for detailed step-by-step instructions.
 
 ### Notable changes in 4.1.0
 
