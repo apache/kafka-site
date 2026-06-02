@@ -2210,7 +2210,7 @@ CONSUMER_GROUP_DESCRIBE (69)
 </td>  
 <td>
 
-Read
+Describe
 </td>  
 <td>
 
