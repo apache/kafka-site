@@ -58,7 +58,7 @@ When releasing a new documentation version (e.g., version 4.3 / "43"), follow th
 In the below examples, we assume the `apache/kafka` repository is checked out at `../kafka` relative to the `kafka-site` root.
 
 #### 1. Setup Content Directory
-Copy the documentation source files from the Kafka codebase to the website content directory, excluding images (which go to static). From 4.3 onward this includes the `generated/` folder, which stays alongside the docs.
+Copy the documentation source files from the Kafka codebase to the website content directory, excluding images (which go to static). 
 
 ```bash
 # Verify you are in the kafka-site root
@@ -69,7 +69,7 @@ rsync -av --exclude 'images' ../kafka/docs/ content/en/43/
 ```
 
 #### 2. Setup Static Assets
-Copy images and Javadocs to the static directory. From 4.3 onward, do **not** copy `generated/` here — it stays under `content/en/<version>/generated/` and is re-exposed at `/<version>/generated/` URLs by a catch-all mount in `hugo.yaml` (no per-release edit needed).
+Copy the generated artifacts, images, and Javadocs to the static directory.
 
 ```bash
 # Create versioned static directory
@@ -77,6 +77,7 @@ mkdir -p static/43
 
 # Copy assets from kafka repo
 cp -r ../kafka/docs/images static/43/
+# Copy `generated` directory into `static/43`
 # Copy `javadoc` directory into `static/43`
 ```
 

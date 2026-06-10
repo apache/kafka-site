@@ -524,8 +524,3 @@ module:
       target: static
       includeFiles:
         - "[0-9]*/generated/**"
-      excludeFiles:
-        # 4.2 is a one-off: its content/en/42/generated/ holds 25 empty stubs +
-        # connect_rest.yaml that all duplicate the real files in static/42/generated/.
-        # Keep the catch-all inert for 4.2 so the real files in static/ keep serving.
-        - "42/generated/**"
