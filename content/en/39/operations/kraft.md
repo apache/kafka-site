@@ -340,7 +340,7 @@ Once the KRaft controller quorum has been started, the brokers will need to be r
   * broker.id: Ensure `broker.id` is set to a non-negative integer even if `broker.id.generation.enable` is enabled (default is enabled). Additionally, ensure `broker.id` does not exceed `reserved.broker.max.id` to avoid failure.
   * controller.quorum.bootstrap.servers
   * controller.listener.names
-  * The controller.listener.name should also be added to listener.security.property.map
+  * The controller.listener.name should also be added to listener.security.protocol.map
   * zookeeper.metadata.migration.enable
 
 
