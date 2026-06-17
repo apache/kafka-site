@@ -26,9 +26,16 @@ echo "Processing version: $VERSION in $CONTENT_DIR"
 echo "Replacing /$VERSION/javadoc with /{version}/javadoc..."
 find "$CONTENT_DIR" -name "*.md" -type f -print0 | xargs -0 sed -i '' "s|/$VERSION/javadoc|/{version}/javadoc|g"
 
-# 2. Replace generated static include paths
-# Pattern: static/<VERSION>/generated -> static/{version}/generated
+# 2. Replace generated include paths.
+# Patterns:
+#   static/<VERSION>/generated -> static/{version}/generated
+#   content/en/<VERSION>/generated -> content/en/{version}/generated
+# The include-html shortcode prefers content/en/<v>/generated/ and falls back
+# to /static/<v>/generated/ for older versions whose files still live there.
 echo "Replacing static/$VERSION/generated with static/{version}/generated..."
 find "$CONTENT_DIR" -name "*.md" -type f -print0 | xargs -0 sed -i '' "s|static/$VERSION/generated|static/{version}/generated|g"
+
+echo "Replacing content/en/$VERSION/generated with content/en/{version}/generated..."
+find "$CONTENT_DIR" -name "*.md" -type f -print0 | xargs -0 sed -i '' "s|content/en/$VERSION/generated|content/en/{version}/generated|g"
 
 echo "Done!"
