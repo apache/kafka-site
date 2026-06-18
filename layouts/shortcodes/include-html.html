@@ -1,15 +1,25 @@
 {{- $file := .Get "file" -}}
-{{- if in $file "{version}" -}}
 {{- $version := "" -}}
-{{- /* Try to infer version from the top-level section (e.g. "43" from content/en/43/...) */ -}}
+{{- /* Infer version from the top-level section (e.g. "43" from content/en/43/...) */ -}}
 {{- $sectionName := .Page.Section -}}
 {{- if findRE "^\\d+$" $sectionName -}}
 {{- $version = $sectionName -}}
 {{- else -}}
-{{- /* Fallback to site variable if section is not a version number */ -}}
 {{- $version = site.Params.latest_version -}}
 {{- end -}}
 {{- $file = replace $file "{version}" $version -}}
+{{- /* From 4.2+, generated/ artifacts live under content/en/<v>/generated/.
+       Translate the legacy /static/<v>/generated/ path to the content path
+       and prefer that; fall back to the original /static/ path for older
+       versions whose files still live under static/. */ -}}
+{{- $contentPath := replace $file (printf "/static/%s/" $version) (printf "/content/en/%s/" $version) -}}
+{{- $resolved := "" -}}
+{{- if fileExists $contentPath -}}
+{{- $resolved = $contentPath -}}
+{{- else if fileExists $file -}}
+{{- $resolved = $file -}}
+{{- else -}}
+{{- errorf "include-html: file not found (tried %q and %q)" $contentPath $file -}}
 {{- end -}}
-{{- $content := readFile $file -}}
+{{- $content := readFile $resolved -}}
 {{- $content | safeHTML -}}

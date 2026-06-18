@@ -69,7 +69,7 @@ rsync -av --exclude 'images' ../kafka/docs/ content/en/43/
 ```
 
 #### 2. Setup Static Assets
-Copy the generated artifacts, images, and Javadocs to the static directory.
+Copy images and Javadocs to the static directory. (`generated/` ships alongside the docs under `content/en/<version>/generated/` and is brought in by step 1's rsync.)
 
 ```bash
 # Create versioned static directory
@@ -77,7 +77,6 @@ mkdir -p static/43
 
 # Copy assets from kafka repo
 cp -r ../kafka/docs/images static/43/
-# Copy `generated` directory into `static/43`
 # Copy `javadoc` directory into `static/43`
 ```
 
@@ -256,7 +255,8 @@ When the site is built, Hugo identifies the context of the current page (e.g., a
     Use `{version}` in the `file` path for the `include-html` shortcode.
     ```markdown
     {{< include-html file="/static/{version}/generated/admin_client_config.html" >}}
-    => reads content from /static/43/generated/admin_client_config.html
+    => reads content/en/43/generated/admin_client_config.html (4.2+)
+       or /static/<v>/generated/... for older versions
     ```
     *Implemented in: `layouts/shortcodes/include-html.html`*
 
@@ -272,6 +272,9 @@ A script is available to automate the replacement of hardcoded version strings w
 This will recursively find and replace:
 - `/<version>/javadoc` -> `/{version}/javadoc`
 - `static/<version>/generated` -> `static/{version}/generated`
+- `content/en/<version>/generated` -> `content/en/{version}/generated`
+
+The `include-html` shortcode prefers the `content/en/<v>/generated/` location and falls back to `/static/<v>/generated/` for older versions whose files still live under `static/`.
 
 ### Adding a New Blog Post
 
