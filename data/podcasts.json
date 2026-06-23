@@ -19,6 +19,13 @@
       "logo": "software-engineering-daily.png",
       "logoBgColor": "#FFFFFF",
       "description": "by Jeff Meyerson — while this podcast is rather broad in scope, its <a href='https://softwareengineeringdaily.com/category/data/'>data subcategory</a> is useful for Kafka practitioners"
+    },
+    {
+      "title": "Get Kafka-Nated",
+      "link": "https://getkafkanated.substack.com/",
+      "logo": "get-kafka-nated.jpg",
+      "logoBgColor": "#FF6719",
+      "description": "by Hugh Evans — a newsletter and podcast that covers the latest news, trends, and best practices in the world of Apache Kafka and event streaming featuring guests from the Kafka community and beyond"
     }
 ]
 
