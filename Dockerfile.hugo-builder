@@ -1,0 +1,32 @@
+ARG HUGO_VERSION=0.123.7
+
+FROM alpine:3.21
+
+RUN apk add --no-cache \
+    bash \
+    ca-certificates \
+    curl \
+    git \
+    go \
+    libc6-compat \
+    nodejs \
+    npm
+
+ARG HUGO_VERSION
+ARG TARGETARCH
+RUN HUGO_ARCH=$([ "$TARGETARCH" = "arm64" ] && echo "arm64" || echo "amd64") && \
+    curl -fsSL "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-${HUGO_ARCH}.tar.gz" \
+    | tar -xz -C /usr/local/bin hugo && \
+    chmod +x /usr/local/bin/hugo && \
+    hugo version
+
+WORKDIR /src
+
+RUN git config --global --add safe.directory /src
+
+COPY scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+EXPOSE 1313
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

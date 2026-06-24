@@ -320,6 +320,24 @@ author: "Author Name (@github_handle)"
    ```
    The built site will be available in the `output` directory.
 
+### Building with the official Hugo binary (experimental)
+
+`Dockerfile.hugo-builder` defines an alternative build image that installs the
+official Hugo extended release binary from the Hugo project (pinned via the
+`HUGO_VERSION` variable in the `Makefile`) together with the Node.js/PostCSS and
+Go toolchains the Docsy theme needs. Unlike the current build image, it does not
+depend on any externally-hosted or personal image.
+
+```bash
+make build-official
+```
+
+This builds the image locally and renders the site into `output`, producing
+output that is byte-for-byte identical to `make build`. It is **not** used by any
+CI workflow yet; the existing `make build`/`make serve` flow and the deployment
+pipeline are unchanged. The intent is to validate the official-binary image
+before switching the build over to it in a follow-up change.
+
 ### Production Build
 
 1. Build and test the production image locally:
