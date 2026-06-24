@@ -325,7 +325,7 @@ author: "Author Name (@github_handle)"
 `Dockerfile.hugo-builder` defines an alternative build image that installs the
 official Hugo extended release binary from the Hugo project (pinned via the
 `HUGO_VERSION` variable in the `Makefile`) together with the Node.js/PostCSS and
-Go toolchains the Docsy theme needs. Unlike the current build image, it does not
+Go toolchains. Unlike the current build image, it does not
 depend on any externally-hosted or personal image.
 
 ```bash
