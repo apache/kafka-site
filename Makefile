@@ -3,8 +3,12 @@ OUTPUT_DIR := output
 HUGO_VERSION := 0.123.7
 HUGO_BASE_IMAGE := ghcr.io/apache/kafka-site/hugo:v$(HUGO_VERSION)-ext-multiplatform
 DOCKER_IMAGE := $(HUGO_BASE_IMAGE)
+# Experimental image built locally from Dockerfile.hugo-builder using the
+# official Hugo release binary. Not used by CI; produces byte-identical output
+# to $(DOCKER_IMAGE). See the `hugo-image` and `build-official` targets.
+HUGO_IMAGE := apache/kafka-site/hugo:v$(HUGO_VERSION)
 
-.PHONY: build serve clean docker-image ensure-hugo-image hugo-base-multi-platform buildx-setup ghcr-prod-image
+.PHONY: build serve clean docker-image ensure-hugo-image hugo-base-multi-platform hugo-image build-official buildx-setup ghcr-prod-image
 
 # Setup buildx for multi-arch builds
 buildx-setup:
@@ -46,6 +50,20 @@ serve: ensure-hugo-image
 		--appendPort=true \
 		--buildDrafts \
 		--buildFuture
+
+# Build the experimental Hugo image from the official Hugo release binary
+hugo-image:
+	docker build \
+		--build-arg HUGO_VERSION=$(HUGO_VERSION) \
+		--file Dockerfile.hugo-builder \
+		--tag $(HUGO_IMAGE) \
+		.
+
+# Build the static site with the official-Hugo image (parity check; not used by CI)
+build-official: hugo-image
+	docker run --rm -v $(PWD):/src $(HUGO_IMAGE) \
+		--minify \
+		--destination $(OUTPUT_DIR)
 
 # Build and push production image to GHCR
 ghcr-prod-image: build buildx-setup
