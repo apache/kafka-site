@@ -26,7 +26,7 @@ aliases:
 
 We are proud to announce the release of Apache Kafka 3.9.2. This bug-fix release contains several critical fixes and security updates. Notably, this release includes KIP-1252, which addresses inconsistent behavior between ZooKeeper and KRaft modes.
 
-For a full list of changes, be sure to check the [release notes](https://downloads.apache.org/kafka/3.9.2/RELEASE_NOTES.html).
+For a full list of changes, be sure to check the [release notes](https://archive.apache.org/dist/kafka/3.9.2/RELEASE_NOTES.html).
 
 ## Kafka Broker, Controller
 
