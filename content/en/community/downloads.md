@@ -68,13 +68,13 @@ Kafka 4.1.2 fixes 30 issues since the 4.1.1 release. For more information, pleas
 ### 4.3.0
 
 * Released May 22, 2026
-* [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.3.0/RELEASE_NOTES.html?action=download)
+* [Release Notes](https://archive.apache.org/dist/kafka/4.3.0/RELEASE_NOTES.html)
 * Docker image: [apache/kafka:4.3.0](https://hub.docker.com/layers/apache/kafka/4.3.0).
 * Docker Native image: [apache/kafka-native:4.3.0](https://hub.docker.com/layers/apache/kafka-native/4.3.0).
-* Source download: [kafka-4.3.0-src.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.3.0/kafka-4.3.0-src.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.3.0/kafka-4.3.0-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.3.0/kafka-4.3.0-src.tgz.sha512))
-* Binary download: [kafka_2.13-4.3.0.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.3.0/kafka_2.13-4.3.0.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.3.0/kafka_2.13-4.3.0.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.3.0/kafka_2.13-4.3.0.tgz.sha512))
+* Source download: [kafka-4.3.0-src.tgz](https://archive.apache.org/dist/kafka/4.3.0/kafka-4.3.0-src.tgz) ([asc](https://archive.apache.org/dist/kafka/4.3.0/kafka-4.3.0-src.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/4.3.0/kafka-4.3.0-src.tgz.sha512))
+* Binary download: [kafka_2.13-4.3.0.tgz](https://archive.apache.org/dist/kafka/4.3.0/kafka_2.13-4.3.0.tgz) ([asc](https://archive.apache.org/dist/kafka/4.3.0/kafka_2.13-4.3.0.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/4.3.0/kafka_2.13-4.3.0.tgz.sha512))
 
-Kafka 4.3.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog/2026/05/22/apache-kafka-4.3.0-release-announcement/), the detailed [Upgrade Notes](https://kafka.apache.org/43/getting-started/upgrade/) and the [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.3.0/RELEASE_NOTES.html?action=download).
+Kafka 4.3.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog/2026/05/22/apache-kafka-4.3.0-release-announcement/), the detailed [Upgrade Notes](https://kafka.apache.org/43/getting-started/upgrade/) and the [Release Notes](https://archive.apache.org/dist/kafka/4.3.0/RELEASE_NOTES.html).
 
 ### 4.2.0
 
