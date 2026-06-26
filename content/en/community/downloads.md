@@ -37,7 +37,7 @@ The project goal is to have 3 releases a year, which means a release every 4 mon
 * Source download: [kafka-4.3.1-src.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.3.1/kafka-4.3.1-src.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.3.1/kafka-4.3.1-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.3.1/kafka-4.3.1-src.tgz.sha512))
 * Binary download: [kafka_2.13-4.3.1.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.3.1/kafka_2.13-4.3.1.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.3.1/kafka_2.13-4.3.1.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.3.1/kafka_2.13-4.3.1.tgz.sha512))
 
-Kafka 4.3.1 fixes around 15 issues since the 4.3.0 release, most notably a critical Kafka Streams RocksDB native memory leak (KAFKA-20616). For more information, please read the detailed [Upgrade Notes](https://kafka.apache.org/43/getting-started/upgrade/#upgrading-to-431) and the [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.3.1/RELEASE_NOTES.html?action=download).
+Kafka 4.3.1 fixes around 15 issues since the 4.3.0 release, most notably a critical Kafka Streams RocksDB native memory leak (KAFKA-20616). For more information, please read our [blog post](https://kafka.apache.org/blog/2026/06/25/apache-kafka-4.3.1-release-announcement/), the detailed [Upgrade Notes](https://kafka.apache.org/43/getting-started/upgrade/#upgrading-to-431) and the [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.3.1/RELEASE_NOTES.html?action=download).
 
 ### 4.2.1
 
