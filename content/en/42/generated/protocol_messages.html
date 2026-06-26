@@ -17,7 +17,7 @@
 <tr>
 <td>client_id</td><td>The client ID string.</td></tr>
 </tbody></table>
-<pre>Request Header v2 => request_api_key request_api_version correlation_id client_id 
+<pre>Request Header v2 => request_api_key request_api_version correlation_id client_id _tagged_fields 
   request_api_key => INT16
   request_api_version => INT16
   correlation_id => INT32
@@ -35,7 +35,7 @@
 <tr>
 <td>client_id</td><td>The client ID string.</td></tr>
 <tr>
-</td></tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 <pre>Response Header v0 => correlation_id 
   correlation_id => INT32
@@ -46,7 +46,7 @@
 </tr><tr>
 <td>correlation_id</td><td>The correlation ID of this response.</td></tr>
 </tbody></table>
-<pre>Response Header v1 => correlation_id 
+<pre>Response Header v1 => correlation_id _tagged_fields 
   correlation_id => INT32
 </pre>
 <table class="data-table"><tbody>
@@ -55,7 +55,7 @@
 </tr><tr>
 <td>correlation_id</td><td>The correlation ID of this response.</td></tr>
 <tr>
-</td></tr>
+<td>_tagged_fields</td><td>The tagged fields</td></tr>
 </tbody></table>
 <h5><a name="The_Messages_Produce">Produce API (Key: 0):</a></h5>
 
