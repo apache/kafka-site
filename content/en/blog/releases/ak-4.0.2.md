@@ -25,7 +25,7 @@ author: Viktor Somogyi-Vass
 
 
 
-We are proud to announce the release of Apache Kafka 4.0.2. This is a bugfix release that includes several critical fixes. For a full list of changes, be sure to check the [release notes](https://downloads.apache.org/kafka/4.0.2/RELEASE_NOTES.html).
+We are proud to announce the release of Apache Kafka 4.0.2. This is a bugfix release that includes several critical fixes. For a full list of changes, be sure to check the [release notes](https://archive.apache.org/dist/kafka/4.0.2/RELEASE_NOTES.html).
 
 See the [Upgrading to 4.0.2 from any version 0.8.x through 4.0.x](https://kafka.apache.org/40/documentation.html#upgrade_4_0_2) section in the documentation for the list of notable changes and detailed upgrade steps.
 
