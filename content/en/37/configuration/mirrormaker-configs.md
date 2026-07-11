@@ -1,6 +1,6 @@
 ---
 title: MirrorMaker Configs
-description: MirrorMaker Configs
+description: 
 weight: 8
 tags: ['kafka', 'docs']
 aliases: 

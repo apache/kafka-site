@@ -1,6 +1,6 @@
 ---
 title: Connector Development Guide
-description: Connector Development Guide
+description: 
 weight: 3
 tags: ['kafka', 'docs']
 aliases: 

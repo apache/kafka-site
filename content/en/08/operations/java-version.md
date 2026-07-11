@@ -1,6 +1,6 @@
 ---
 title: Java Version
-description: Java Version
+description: 
 weight: 3
 tags: ['kafka', 'docs']
 aliases: 

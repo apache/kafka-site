@@ -1,6 +1,6 @@
 ---
 title: Overview
-description: Overview
+description: 
 weight: 1
 tags: ['kafka', 'docs']
 aliases: 

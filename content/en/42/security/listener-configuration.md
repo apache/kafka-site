@@ -1,6 +1,6 @@
 ---
 title: Listener Configuration
-description: Listener Configuration
+description: 
 weight: 2
 tags: ['kafka', 'docs']
 aliases: 

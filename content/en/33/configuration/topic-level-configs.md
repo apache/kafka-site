@@ -1,6 +1,6 @@
 ---
 title: Topic-Level Configs
-description: Topic-Level Configs
+description: 
 weight: 2
 tags: ['kafka', 'docs']
 aliases: 

@@ -1,6 +1,6 @@
 ---
 title: Consumer Rebalance Protocol
-description: Consumer Rebalance Protocol
+description: 
 weight: 10
 tags: ['kafka', 'docs']
 aliases: 

@@ -1,6 +1,6 @@
 ---
 title: Tiered Storage Configs
-description: Tiered Storage Configs
+description: 
 weight: 10
 tags: ['kafka', 'docs']
 aliases: 

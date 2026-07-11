@@ -1,6 +1,6 @@
 ---
 title: Multi-Tenancy
-description: Multi-Tenancy
+description: 
 weight: 4
 tags: ['kafka', 'docs']
 aliases: 

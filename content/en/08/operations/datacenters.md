@@ -1,6 +1,6 @@
 ---
 title: Datacenters
-description: Datacenters
+description: 
 weight: 1
 tags: ['kafka', 'docs']
 aliases: 

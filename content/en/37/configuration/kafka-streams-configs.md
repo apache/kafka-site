@@ -1,6 +1,6 @@
 ---
 title: Kafka Streams Configs
-description: Kafka Streams Configs
+description: 
 weight: 6
 tags: ['kafka', 'docs']
 aliases: 

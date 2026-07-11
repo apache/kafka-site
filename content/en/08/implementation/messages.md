@@ -1,6 +1,6 @@
 ---
 title: Messages
-description: Messages
+description: 
 weight: 3
 tags: ['kafka', 'docs']
 aliases: 

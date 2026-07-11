@@ -1,6 +1,6 @@
 ---
 title: Network Layer
-description: Network Layer
+description: 
 weight: 2
 tags: ['kafka', 'docs']
 aliases: 

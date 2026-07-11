@@ -1,6 +1,6 @@
 ---
 title: Admin Configs
-description: Admin Configs
+description: 
 weight: 8
 tags: ['kafka', 'docs']
 aliases: 

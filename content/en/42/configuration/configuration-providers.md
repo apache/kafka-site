@@ -1,6 +1,6 @@
 ---
 title: Configuration Providers
-description: Configuration Providers
+description: 
 weight: 12
 tags: ['kafka', 'docs']
 aliases: 

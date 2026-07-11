@@ -1,6 +1,6 @@
 ---
 title: Important configuration properties for the high-level consumer
-description: Important configuration properties for the high-level consumer
+description: 
 weight: 2
 tags: ['kafka', 'docs']
 aliases: 

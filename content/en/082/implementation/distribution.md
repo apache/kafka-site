@@ -1,6 +1,6 @@
 ---
 title: Distribution
-description: Distribution
+description: 
 weight: 6
 tags: ['kafka', 'docs']
 aliases: 

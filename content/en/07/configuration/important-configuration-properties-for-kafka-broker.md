@@ -1,6 +1,6 @@
 ---
 title: Important configuration properties for Kafka broker
-description: Important configuration properties for Kafka broker
+description: 
 weight: 1
 tags: ['kafka', 'docs']
 aliases: 

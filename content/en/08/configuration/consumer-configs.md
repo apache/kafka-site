@@ -1,6 +1,6 @@
 ---
 title: Consumer Configs
-description: Consumer Configs
+description: 
 weight: 2
 tags: ['kafka', 'docs']
 aliases: 

@@ -1,6 +1,6 @@
 ---
 title: System Properties
-description: System Properties
+description: 
 weight: 8
 tags: ['kafka', 'docs']
 aliases: 

@@ -1,6 +1,6 @@
 ---
 title: Kafka Configuration
-description: Kafka Configuration
+description: 
 weight: 5
 tags: ['kafka', 'docs']
 aliases: 

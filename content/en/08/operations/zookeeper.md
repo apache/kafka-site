@@ -1,6 +1,6 @@
 ---
 title: Zookeeper
-description: Zookeeper
+description: 
 weight: 6
 tags: ['kafka', 'docs']
 aliases: 

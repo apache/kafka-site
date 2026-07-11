@@ -1,6 +1,6 @@
 ---
 title: Producer Configs
-description: Producer Configs
+description: 
 weight: 3
 tags: ['kafka', 'docs']
 aliases: 

@@ -1,6 +1,6 @@
 ---
 title: Eligible Leader Replicas
-description: Eligible Leader Replicas
+description: 
 weight: 12
 tags: ['kafka', 'docs']
 aliases: 

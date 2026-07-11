@@ -1,6 +1,6 @@
 ---
 title: API Design
-description: API Design
+description: 
 weight: 1
 tags: ['kafka', 'docs']
 aliases: 

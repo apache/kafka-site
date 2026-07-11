@@ -1,6 +1,6 @@
 ---
 title: Authentication using SASL
-description: Authentication using SASL
+description: 
 weight: 4
 tags: ['kafka', 'docs']
 aliases: 

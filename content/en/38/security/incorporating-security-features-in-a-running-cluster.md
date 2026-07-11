@@ -1,6 +1,6 @@
 ---
 title: Incorporating Security Features in a Running Cluster
-description: Incorporating Security Features in a Running Cluster
+description: 
 weight: 6
 tags: ['kafka', 'docs']
 aliases: 

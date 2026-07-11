@@ -1,6 +1,6 @@
 ---
 title: KRaft
-description: KRaft
+description: 
 weight: 8
 tags: ['kafka', 'docs']
 aliases: 

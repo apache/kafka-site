@@ -1,6 +1,6 @@
 ---
 title: Transaction Protocol
-description: Transaction Protocol
+description: 
 weight: 11
 tags: ['kafka', 'docs']
 aliases: 

@@ -1,6 +1,6 @@
 ---
 title: Group Configs
-description: Group Configs
+description: 
 weight: 3
 tags: ['kafka', 'docs']
 aliases: 

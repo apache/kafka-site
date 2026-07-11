@@ -1,6 +1,6 @@
 ---
 title: Geo-Replication (Cross-Cluster Data Mirroring)
-description: Geo-Replication (Cross-Cluster Data Mirroring)
+description: 
 weight: 3
 tags: ['kafka', 'docs']
 aliases: 

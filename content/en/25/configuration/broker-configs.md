@@ -1,6 +1,6 @@
 ---
 title: Broker Configs
-description: Broker Configs
+description: 
 weight: 1
 tags: ['kafka', 'docs']
 aliases: 

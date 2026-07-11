@@ -1,6 +1,6 @@
 ---
 title: Important configuration properties for the producer
-description: Important configuration properties for the producer
+description: 
 weight: 3
 tags: ['kafka', 'docs']
 aliases: 

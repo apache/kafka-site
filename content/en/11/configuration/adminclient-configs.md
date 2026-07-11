@@ -1,6 +1,6 @@
 ---
 title: AdminClient Configs
-description: AdminClient Configs
+description: 
 weight: 7
 tags: ['kafka', 'docs']
 aliases: 
