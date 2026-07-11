@@ -29,7 +29,7 @@ type: docs
 
 
 
-Kafka Streams natively integrates with the [Kafka's security features](../../kafka/security.html#kafka-security) and supports all of the client-side security features in Kafka. Streams leverages the [Java Producer and Consumer API](../../clients/index.html#kafka-clients).
+Kafka Streams natively integrates with the [Kafka's security features](../../../security/#kafka-security) and supports all of the client-side security features in Kafka. Streams leverages the [Java Producer and Consumer API](../../../apis/#kafka-clients).
 
 To secure your Stream processing applications, configure the security settings in the corresponding Kafka producer and consumer clients, and then specify the corresponding configuration settings in your Kafka Streams application.
 
@@ -44,11 +44,11 @@ Client authentication
 Client authorization
     You can enable client authorization of read and write operations by your applications. For example, you can define that only specific applications are allowed to read from a Kafka topic. You can also restrict write access to Kafka topics to prevent data pollution or fraudulent activities.
 
-For more information about the security features in Apache Kafka, see [Kafka Security](../../kafka/security.html#kafka-security).
+For more information about the security features in Apache Kafka, see [Kafka Security](../../../security/#kafka-security).
 
 # Required ACL setting for secure Kafka clusters
 
-Kafka clusters can use ACLs to control access to resources (like the ability to create topics), and for such clusters each client, including Kafka Streams, is required to authenticate as a particular user in order to be authorized with appropriate access. In particular, when Streams applications are run against a secured Kafka cluster, the principal running the application must have the ACL `--cluster --operation Create` set so that the application has the permissions to create [internal topics](manage-topics.html#streams-developer-guide-topics-internal).
+Kafka clusters can use ACLs to control access to resources (like the ability to create topics), and for such clusters each client, including Kafka Streams, is required to authenticate as a particular user in order to be authorized with appropriate access. In particular, when Streams applications are run against a secured Kafka cluster, the principal running the application must have the ACL `--cluster --operation Create` set so that the application has the permissions to create [internal topics](../manage-topics#streams-developer-guide-topics-internal).
 
 Since all internal topics as well as the embedded consumer group name are prefixed with the [application id](/20/documentation/streams/developer-guide/config-streams.html#required-configuration-parameters), it is recommended to use ACLs on prefixed resource pattern to configure control lists to allow client to manage all topics and consumer groups started with this prefix (see [KIP-277](https://cwiki.apache.org/confluence/display/KAFKA/KIP-277+-+Fine+Grained+ACL+for+CreateTopics+API) and [KIP-290](https://cwiki.apache.org/confluence/display/KAFKA/KIP-290%3A+Support+for+Prefixed+ACLs) for details). For example, given the following setup of your Streams application: 
 

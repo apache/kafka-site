@@ -41,7 +41,7 @@ Output topics
 Intermediate topics
     Topics that are both input and output topics of the application's topology.
 
-User topics must be created and manually managed ahead of time (e.g., via the [topic tools](../../kafka/post-deployment.html#kafka-operations-admin)). If user topics are shared among multiple applications for reading and writing, the application users must coordinate topic management. If user topics are centrally managed, then application users then would not need to manage topics themselves but simply obtain access to them.
+User topics must be created and manually managed ahead of time (e.g., via the [topic tools](../../../operations/basic-kafka-operations/#kafka-operations-admin)). If user topics are shared among multiple applications for reading and writing, the application users must coordinate topic management. If user topics are centrally managed, then application users then would not need to manage topics themselves but simply obtain access to them.
 
 Note
 
@@ -56,7 +56,7 @@ You should not use the auto-create topic feature on the brokers to create user t
 
 Internal topics are used internally by the Kafka Streams application while executing, for example the changelog topics for state stores. These topics are created by the application and are only used by that stream application.
 
-If security is enabled on the Kafka brokers, you must grant the underlying clients admin permissions so that they can create internal topics set. For more information, see [Streams Security](security.html#streams-developer-guide-security).
+If security is enabled on the Kafka brokers, you must grant the underlying clients admin permissions so that they can create internal topics set. For more information, see [Streams Security](../security#streams-developer-guide-security).
 
 Note
 

@@ -29,7 +29,7 @@ type: docs
 
 
 
-Kafka Streams natively integrates with the [Kafka's security features](../../documentation.html#security) and supports all of the client-side security features in Kafka. Streams leverages the [Java Producer and Consumer API](../../clients/index.html#kafka-clients).
+Kafka Streams natively integrates with the [Kafka's security features](../../../security/#security) and supports all of the client-side security features in Kafka. Streams leverages the [Java Producer and Consumer API](../../../apis/#kafka-clients).
 
 To secure your Stream processing applications, configure the security settings in the corresponding Kafka producer and consumer clients, and then specify the corresponding configuration settings in your Kafka Streams application.
 
@@ -44,11 +44,11 @@ Client authentication
 Client authorization
     You can enable client authorization of read and write operations by your applications. For example, you can define that only specific applications are allowed to read from a Kafka topic. You can also restrict write access to Kafka topics to prevent data pollution or fraudulent activities.
 
-For more information about the security features in Apache Kafka, see [Kafka Security](../../documentation.html#security).
+For more information about the security features in Apache Kafka, see [Kafka Security](../../../security/#security).
 
 # Required ACL setting for secure Kafka clusters
 
-Kafka clusters can use ACLs to control access to resources (like the ability to create topics), and for such clusters each client, including Kafka Streams, is required to authenticate as a particular user in order to be authorized with appropriate access. In particular, when Streams applications are run against a secured Kafka cluster, the principal running the application must have the ACL set so that the application has the permissions to create, read and write [internal topics](manage-topics.html#streams-developer-guide-topics-internal).
+Kafka clusters can use ACLs to control access to resources (like the ability to create topics), and for such clusters each client, including Kafka Streams, is required to authenticate as a particular user in order to be authorized with appropriate access. In particular, when Streams applications are run against a secured Kafka cluster, the principal running the application must have the ACL set so that the application has the permissions to create, read and write [internal topics](../manage-topics#streams-developer-guide-topics-internal).
 
 To avoid providing this permission to your application, you can create the required internal topics manually. If the internal topics exist, Kafka Streams will not try to recreate them. Note, that the internal repartition and changelog topics must be created with the correct number of partitions--otherwise, Kafka Streams will fail on startup. The topics must be created with the same number of partitions as your input topic, or if there are multiple topics, the maximum number of partitions across all input topics. Additionally, changelog topics must be created with log compaction enabled--otherwise, your application might lose data. For changelog topics for windowed KTables, apply "delete,compact" and set the retention time based on the corresponding store retention time. To avoid premature deletion, add a delta to the store retention time. By default, Kafka Streams adds 24 hours to the store retention time. You can find out more about the names of the required internal topics via `Topology#describe()`. All internal topics follow the naming pattern `<application.id>-<operatorName>-<suffix>` where the `suffix` is either `repartition` or `changelog`. Note, that there is no guarantee about this naming pattern in future releases--it's not part of the public API.
 

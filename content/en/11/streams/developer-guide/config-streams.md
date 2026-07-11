@@ -614,7 +614,7 @@ Added to a windows maintainMs to ensure data is not deleted from the log prematu
 >> 
 
 >> 
->> This is discussed in more detail in [Data types and serialization](datatypes.html#streams-developer-guide-serdes).
+>> This is discussed in more detail in [Data types and serialization](../datatypes#streams-developer-guide-serdes).
 
 ### default.value.serde
 
@@ -625,15 +625,15 @@ Added to a windows maintainMs to ensure data is not deleted from the log prematu
 > 
 
 > 
-> This is discussed in more detail in [Data types and serialization](datatypes.html#streams-developer-guide-serdes).
+> This is discussed in more detail in [Data types and serialization](../datatypes#streams-developer-guide-serdes).
 
 ### num.standby.replicas
 
-> The number of standby replicas. Standby replicas are shadow copies of local state stores. Kafka Streams attempts to create the specified number of replicas and keep them up to date as long as there are enough instances running. Standby replicas are used to minimize the latency of task failover. A task that was previously running on a failed instance is preferred to restart on an instance that has standby replicas so that the local state store restoration process from its changelog can be minimized. Details about how Kafka Streams makes use of the standby replicas to minimize the cost of resuming tasks on failover can be found in the [State](../architecture.html#streams_architecture_state) section.
+> The number of standby replicas. Standby replicas are shadow copies of local state stores. Kafka Streams attempts to create the specified number of replicas and keep them up to date as long as there are enough instances running. Standby replicas are used to minimize the latency of task failover. A task that was previously running on a failed instance is preferred to restart on an instance that has standby replicas so that the local state store restoration process from its changelog can be minimized. Details about how Kafka Streams makes use of the standby replicas to minimize the cost of resuming tasks on failover can be found in the [State](../../architecture#streams_architecture_state) section.
 
 ### num.stream.threads
 
-> This specifies the number of stream threads in an instance of the Kafka Streams application. The stream processing code runs in these thread. For more information about Kafka Streams threading model, see [Threading Model](../architecture.html#streams-architecture-threads).
+> This specifies the number of stream threads in an instance of the Kafka Streams application. The stream processing code runs in these thread. For more information about Kafka Streams threading model, see [Threading Model](../../architecture#streams-architecture-threads).
 
 ### partition.grouper
 

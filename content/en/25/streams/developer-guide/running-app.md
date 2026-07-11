@@ -40,7 +40,7 @@ You can package your Java application as a fat JAR file and then start the appli
     # from the fat JAR named `path-to-app-fatjar.jar`.
     $ java -cp path-to-app-fatjar.jar com.example.MyStreamsApp
 
-When you start your application you are launching a Kafka Streams instance of your application. You can run multiple instances of your application. A common scenario is that there are multiple instances of your application running in parallel. For more information, see [Parallelism Model](../architecture.html#streams_architecture_tasks).
+When you start your application you are launching a Kafka Streams instance of your application. You can run multiple instances of your application. A common scenario is that there are multiple instances of your application running in parallel. For more information, see [Parallelism Model](../../architecture#streams_architecture_tasks).
 
 When the application instance starts running, the defined processor topology will be initialized as one or more stream tasks. If the processor topology defines any state stores, these are also constructed during the initialization period. For more information, see the State restoration during workload rebalance section).
 
@@ -48,7 +48,7 @@ When the application instance starts running, the defined processor topology wil
 
 Kafka Streams makes your stream processing applications elastic and scalable. You can add and remove processing capacity dynamically during application runtime without any downtime or data loss. This makes your applications resilient in the face of failures and for allows you to perform maintenance as needed (e.g. rolling upgrades).
 
-For more information about this elasticity, see the [Parallelism Model](../architecture.html#streams_architecture_tasks) section. Kafka Streams leverages the Kafka group management functionality, which is built right into the [Kafka wire protocol](https://cwiki.apache.org/confluence/display/KAFKA/A+Guide+To+The+Kafka+Protocol). It is the foundation that enables the elasticity of Kafka Streams applications: members of a group coordinate and collaborate jointly on the consumption and processing of data in Kafka. Additionally, Kafka Streams provides stateful processing and allows for fault-tolerant state in environments where application instances may come and go at any time.
+For more information about this elasticity, see the [Parallelism Model](../../architecture#streams_architecture_tasks) section. Kafka Streams leverages the Kafka group management functionality, which is built right into the [Kafka wire protocol](https://cwiki.apache.org/confluence/display/KAFKA/A+Guide+To+The+Kafka+Protocol). It is the foundation that enables the elasticity of Kafka Streams applications: members of a group coordinate and collaborate jointly on the consumption and processing of data in Kafka. Additionally, Kafka Streams provides stateful processing and allows for fault-tolerant state in environments where application instances may come and go at any time.
 
 ## Adding capacity to your application
 
@@ -79,7 +79,7 @@ When a task is migrated, the task processing state is fully restored before the 
 
 
 
-For more information, see [Standby Replicas](config-streams.html#num-standby-replicas).
+For more information, see [Standby Replicas](../config-streams#num-standby-replicas).
 
 ## Determining how many application instances to run
 

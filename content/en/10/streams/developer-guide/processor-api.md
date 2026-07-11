@@ -37,19 +37,19 @@ The Processor API can be used to implement both **stateless** as well as **state
 
 **Tip**
 
-**Combining the DSL and the Processor API:** You can combine the convenience of the DSL with the power and flexibility of the Processor API as described in the section [Applying processors and transformers (Processor API integration)](dsl-api.html#streams-developer-guide-dsl-process).
+**Combining the DSL and the Processor API:** You can combine the convenience of the DSL with the power and flexibility of the Processor API as described in the section [Applying processors and transformers (Processor API integration)](../dsl-api#streams-developer-guide-dsl-process).
 
 For a complete list of available API functionality, see the [Streams](/../../../javadoc/org/apache/kafka/streams/package-summary.html) API docs.
 
 # Defining a Stream Processor
 
-A [stream processor](../core-concepts.html#streams_processor_node) is a node in the processor topology that represents a single processing step. With the Processor API, you can define arbitrary stream processors that processes one received record at a time, and connect these processors with their associated state stores to compose the processor topology.
+A [stream processor](../../core-concepts#streams_processor_node) is a node in the processor topology that represents a single processing step. With the Processor API, you can define arbitrary stream processors that processes one received record at a time, and connect these processors with their associated state stores to compose the processor topology.
 
 You can define a customized stream processor by implementing the `Processor` interface, which provides the `process()` API method. The `process()` method is called on each of the received records.
 
 The `Processor` interface also has an `init()` method, which is called by the Kafka Streams library during task construction phase. Processor instances should perform any required initialization in this method. The `init()` method passes in a `ProcessorContext` instance, which provides access to the metadata of the currently processed record, including its source Kafka topic and partition, its corresponding message offset, and further such information. You can also use this context instance to schedule a punctuation function (via `ProcessorContext#schedule()`), to forward a new record as a key-value pair to the downstream processors (via `ProcessorContext#forward()`), and to commit the current processing progress (via `ProcessorContext#commit()`).
 
-Specifically, `ProcessorContext#schedule()` accepts a user `Punctuator` callback interface, which triggers its `punctuate()` API method periodically based on the `PunctuationType`. The `PunctuationType` determines what notion of time is used for the punctuation scheduling: either [stream-time](../concepts.html#streams-concepts-time) or wall-clock-time (by default, stream-time is configured to represent event-time via `TimestampExtractor`). When stream-time is used, `punctuate()` is triggered purely by data because stream-time is determined (and advanced forward) by the timestamps derived from the input data. When there is no new input data arriving, stream-time is not advanced and thus `punctuate()` is not called.
+Specifically, `ProcessorContext#schedule()` accepts a user `Punctuator` callback interface, which triggers its `punctuate()` API method periodically based on the `PunctuationType`. The `PunctuationType` determines what notion of time is used for the punctuation scheduling: either [stream-time](../../core-concepts#streams-concepts-time) or wall-clock-time (by default, stream-time is configured to represent event-time via `TimestampExtractor`). When stream-time is used, `punctuate()` is triggered purely by data because stream-time is determined (and advanced forward) by the timestamps derived from the input data. When there is no new input data arriving, stream-time is not advanced and thus `punctuate()` is not called.
 
 For example, if you schedule a `Punctuator` function every 10 seconds based on `PunctuationType.STREAM_TIME` and if you process a stream of 60 records with consecutive timestamps from 1 (first record) to 60 seconds (last record), then `punctuate()` would be called 6 times. This happens regardless of the time required to actually process those records. `punctuate()` would be called 6 times regardless of whether processing these 60 records takes a second, a minute, or an hour.
 
@@ -116,7 +116,7 @@ The following example `Processor` defines a simple word-count algorithm and the 
 
 # State Stores
 
-To implement a **stateful** `Processor` or `Transformer`, you must provide one or more state stores to the processor or transformer (_stateless_ processors or transformers do not need state stores). State stores can be used to remember recently received input records, to track rolling aggregates, to de-duplicate input records, and more. Another feature of state stores is that they can be [interactively queried](interactive-queries.html#streams-developer-guide-interactive-queries) from other applications, such as a NodeJS-based dashboard or a microservice implemented in Scala or Go.
+To implement a **stateful** `Processor` or `Transformer`, you must provide one or more state stores to the processor or transformer (_stateless_ processors or transformers do not need state stores). State stores can be used to remember recently received input records, to track rolling aggregates, to de-duplicate input records, and more. Another feature of state stores is that they can be [interactively queried](../interactive-queries#streams-developer-guide-interactive-queries) from other applications, such as a NodeJS-based dashboard or a microservice implemented in Scala or Go.
 
 The available state store types in Kafka Streams have fault tolerance enabled by default.
 
@@ -166,7 +166,7 @@ Yes (enabled by default)
   * **The recommended store type for most use cases.**
   * Stores its data on local disk.
   * Storage capacity: managed local state can be larger than the memory (heap space) of an application instance, but must fit into the available local disk space.
-  * RocksDB settings can be fine-tuned, see [RocksDB configuration](config-streams.html#streams-developer-guide-rocksdb-config).
+  * RocksDB settings can be fine-tuned, see [RocksDB configuration](../config-streams#streams-developer-guide-rocksdb-config).
   * Available [store variants](/../../../javadoc/org/apache/kafka/streams/state/Stores.PersistentKeyValueFactory.html): time window key-value store, session window key-value store.
 
 
@@ -231,7 +231,7 @@ Yes (enabled by default)
 
 ## Fault-tolerant State Stores
 
-To make state stores fault-tolerant and to allow for state store migration without data loss, a state store can be continuously backed up to a Kafka topic behind the scenes. For example, to migrate a stateful stream task from one machine to another when [elastically adding or removing capacity from your application](running-app.html#streams-developer-guide-execution-scaling). This topic is sometimes referred to as the state store's associated _changelog topic_ , or its _changelog_. For example, if you experience machine failure, the state store and the application's state can be fully restored from its changelog. You can enable or disable this backup feature for a state store.
+To make state stores fault-tolerant and to allow for state store migration without data loss, a state store can be continuously backed up to a Kafka topic behind the scenes. For example, to migrate a stateful stream task from one machine to another when [elastically adding or removing capacity from your application](../running-app#streams-developer-guide-execution-scaling). This topic is sometimes referred to as the state store's associated _changelog topic_ , or its _changelog_. For example, if you experience machine failure, the state store and the application's state can be fully restored from its changelog. You can enable or disable this backup feature for a state store.
 
 By default, persistent key-value stores are fault-tolerant. They are backed by a [compacted](/documentation.html#compaction) changelog topic. The purpose of compacting this topic is to prevent the topic from growing indefinitely, to reduce the storage consumed in the associated Kafka cluster, and to minimize recovery time if a state store needs to be restored from its changelog topic.
 
@@ -258,7 +258,7 @@ Example for disabling fault-tolerance:
 
 Attention
 
-If the changelog is disabled then the attached state store is no longer fault tolerant and it can't have any [standby replicas](config-streams.html#streams-developer-guide-standby-replicas).
+If the changelog is disabled then the attached state store is no longer fault tolerant and it can't have any [standby replicas](../config-streams#streams-developer-guide-standby-replicas).
 
 Here is an example for enabling fault tolerance, with additional changelog-topic configuration: You can add any log config from [kafka.log.LogConfig](https://github.com/apache/kafka/blob/1.0/core/src/main/scala/kafka/log/LogConfig.scala#L61). Unrecognized configs will be ignored.
     
@@ -317,7 +317,7 @@ Here is a quick explanation of this example:
 
 In this topology, the `"Process"` stream processor node is considered a downstream processor of the `"Source"` node, and an upstream processor of the `"Sink"` node. As a result, whenever the `"Source"` node forwards a newly fetched record from Kafka to its downstream `"Process"` node, the `WordCountProcessor#process()` method is triggered to process the record and update the associated state store. Whenever `context#forward()` is called in the `WordCountProcessor#punctuate()` method, the aggregate key-value pair will be sent via the `"Sink"` processor node to the Kafka topic `"sink-topic"`. Note that in the `WordCountProcessor` implementation, you must refer to the same store name `"Counts"` when accessing the key-value store, otherwise an exception will be thrown at runtime, indicating that the state store cannot be found. If the state store is not associated with the processor in the `Topology` code, accessing it in the processor's `init()` method will also throw an exception at runtime, indicating the state store is not accessible from this processor.
 
-Now that you have fully defined your processor topology in your application, you can proceed to [running the Kafka Streams application](running-app.html#streams-developer-guide-execution).
+Now that you have fully defined your processor topology in your application, you can proceed to [running the Kafka Streams application](../running-app#streams-developer-guide-execution).
 
   * [Documentation](/documentation)
   * [Kafka Streams](/documentation/streams)

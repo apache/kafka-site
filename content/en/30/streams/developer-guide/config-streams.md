@@ -935,7 +935,7 @@ null
 > 
 
 > 
-> This is discussed in more detail in [Data types and serialization](datatypes.html#streams-developer-guide-serdes).
+> This is discussed in more detail in [Data types and serialization](../datatypes#streams-developer-guide-serdes).
 
 ### default.value.serde
 
@@ -946,7 +946,7 @@ null
 > 
 
 > 
-> This is discussed in more detail in [Data types and serialization](datatypes.html#streams-developer-guide-serdes).
+> This is discussed in more detail in [Data types and serialization](../datatypes#streams-developer-guide-serdes).
 
 ### default.windowed.key.serde.inner
 
@@ -957,7 +957,7 @@ null
 > 
 
 > 
-> This is discussed in more detail in [Data types and serialization](datatypes.html#streams-developer-guide-serdes).
+> This is discussed in more detail in [Data types and serialization](../datatypes#streams-developer-guide-serdes).
 
 ### default.windowed.value.serde.inner
 
@@ -968,7 +968,7 @@ null
 > 
 
 > 
-> This is discussed in more detail in [Data types and serialization](datatypes.html#streams-developer-guide-serdes).
+> This is discussed in more detail in [Data types and serialization](../datatypes#streams-developer-guide-serdes).
 
 ### max.task.idle.ms
 
@@ -990,7 +990,7 @@ null
 
 ### num.standby.replicas
 
-> The number of standby replicas. Standby replicas are shadow copies of local state stores. Kafka Streams attempts to create the specified number of replicas per store and keep them up to date as long as there are enough instances running. Standby replicas are used to minimize the latency of task failover. A task that was previously running on a failed instance is preferred to restart on an instance that has standby replicas so that the local state store restoration process from its changelog can be minimized. Details about how Kafka Streams makes use of the standby replicas to minimize the cost of resuming tasks on failover can be found in the [State](../architecture.html#streams_architecture_state) section. 
+> The number of standby replicas. Standby replicas are shadow copies of local state stores. Kafka Streams attempts to create the specified number of replicas per store and keep them up to date as long as there are enough instances running. Standby replicas are used to minimize the latency of task failover. A task that was previously running on a failed instance is preferred to restart on an instance that has standby replicas so that the local state store restoration process from its changelog can be minimized. Details about how Kafka Streams makes use of the standby replicas to minimize the cost of resuming tasks on failover can be found in the [State](../../architecture#streams_architecture_state) section. 
 
 Note
 
@@ -998,7 +998,7 @@ If you enable n standby tasks, you need to provision n+1 `KafkaStreams` instance
 
 ### num.stream.threads
 
-> This specifies the number of stream threads in an instance of the Kafka Streams application. The stream processing code runs in these thread. For more information about Kafka Streams threading model, see [Threading Model](../architecture.html#streams_architecture_threads).
+> This specifies the number of stream threads in an instance of the Kafka Streams application. The stream processing code runs in these thread. For more information about Kafka Streams threading model, see [Threading Model](../../architecture#streams_architecture_threads).
 
 ### partition.grouper
 
@@ -1010,7 +1010,7 @@ If you enable n standby tasks, you need to provision n+1 `KafkaStreams` instance
 
 ### processing.guarantee
 
-> The processing guarantee that should be used. Possible values are `"at_least_once"` (default) and `"exactly_once_v2"` (for EOS version 2). Deprecated config options are `"exactly_once"` (for EOS alpha), and `"exactly_once_beta"` (for EOS version 2). Using `"exactly_once_v2"` (or the deprecated `"exactly_once_beta"`) requires broker version 2.5 or newer, while using the deprecated `"exactly_once"` requires broker version 0.11.0 or newer. Note that if exactly-once processing is enabled, the default for parameter `commit.interval.ms` changes to 100ms. Additionally, consumers are configured with `isolation.level="read_committed"` and producers are configured with `enable.idempotence=true` per default. Note that by default exactly-once processing requires a cluster of at least three brokers what is the recommended setting for production. For development, you can change this configuration by adjusting broker setting `transaction.state.log.replication.factor` and `transaction.state.log.min.isr` to the number of brokers you want to use. For more details see [Processing Guarantees](../core-concepts#streams_processing_guarantee). 
+> The processing guarantee that should be used. Possible values are `"at_least_once"` (default) and `"exactly_once_v2"` (for EOS version 2). Deprecated config options are `"exactly_once"` (for EOS alpha), and `"exactly_once_beta"` (for EOS version 2). Using `"exactly_once_v2"` (or the deprecated `"exactly_once_beta"`) requires broker version 2.5 or newer, while using the deprecated `"exactly_once"` requires broker version 0.11.0 or newer. Note that if exactly-once processing is enabled, the default for parameter `commit.interval.ms` changes to 100ms. Additionally, consumers are configured with `isolation.level="read_committed"` and producers are configured with `enable.idempotence=true` per default. Note that by default exactly-once processing requires a cluster of at least three brokers what is the recommended setting for production. For development, you can change this configuration by adjusting broker setting `transaction.state.log.replication.factor` and `transaction.state.log.min.isr` to the number of brokers you want to use. For more details see [Processing Guarantees](../../core-concepts#streams_processing_guarantee). 
 
 ### replication.factor
 
