@@ -1,6 +1,6 @@
 ---
 title: AK 4.2.X
-description: Documentation for AK 4.2.X
+description: Apache Kafka documentation for version 4.2.x.
 weight: 
 tags: ['kafka', 'docs']
 aliases: 

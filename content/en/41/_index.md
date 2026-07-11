@@ -1,6 +1,6 @@
 ---
 title: AK 4.1.X
-description: Documentation for AK 4.1.X
+description: Apache Kafka documentation for version 4.1.x.
 weight: 
 tags: ['kafka', 'docs']
 aliases: 

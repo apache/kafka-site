@@ -1,6 +1,6 @@
 ---
 title: Consumer Configs
-description: Consumer Configs
+description: Kafka consumer configuration reference.
 weight: 5
 tags: ['kafka', 'docs']
 aliases: 
