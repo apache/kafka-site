@@ -418,7 +418,7 @@ A significant bug was found in the 3.3.0 release after artifacts were pushed to 
     * Scala 2.13  \- [kafka_2.13-3.2.3.tgz](https://archive.apache.org/dist/kafka/3.2.3/kafka_2.13-3.2.3.tgz) ([asc](https://archive.apache.org/dist/kafka/3.2.3/kafka_2.13-3.2.3.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/3.2.3/kafka_2.13-3.2.3.tgz.sha512))
 We build for multiple versions of Scala. This only matters if you are using Scala and you want a version built for the same Scala version you use. Otherwise any version should work (2.13 is recommended).
 
-Kafka 3.2.3 fixes [CVE-2022-34917](cve-list#CVE-2022-34917) and 7 other issues since the 3.2.1 release. For more information, please read the detailed [Release Notes](https://archive.apache.org/dist/kafka/3.2.3/RELEASE_NOTES.html).
+Kafka 3.2.3 fixes [CVE-2022-34917](/community/cve-list/#CVE-2022-34917) and 7 other issues since the 3.2.1 release. For more information, please read the detailed [Release Notes](https://archive.apache.org/dist/kafka/3.2.3/RELEASE_NOTES.html).
 
 
 ### 3.2.2
@@ -477,7 +477,7 @@ For more information, please read the detailed [Release Notes](https://archive.a
     * Scala 2.13  \- [kafka_2.13-3.1.2.tgz](https://archive.apache.org/dist/kafka/3.1.2/kafka_2.13-3.1.2.tgz) ([asc](https://archive.apache.org/dist/kafka/3.1.2/kafka_2.13-3.1.2.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/3.1.2/kafka_2.13-3.1.2.tgz.sha512))
 We build for multiple versions of Scala. This only matters if you are using Scala and you want a version built for the same Scala version you use. Otherwise any version should work (2.13 is recommended).
 
-Kafka 3.1.2 fixes [CVE-2022-34917](cve-list#CVE-2022-34917) and 4 other issues since the 3.1.1 release. For more information, please read the detailed [Release Notes](https://archive.apache.org/dist/kafka/3.1.2/RELEASE_NOTES.html).
+Kafka 3.1.2 fixes [CVE-2022-34917](/community/cve-list/#CVE-2022-34917) and 4 other issues since the 3.1.1 release. For more information, please read the detailed [Release Notes](https://archive.apache.org/dist/kafka/3.1.2/RELEASE_NOTES.html).
 
 
 ### 3.1.1
@@ -531,7 +531,7 @@ For more information, please read the detailed [Release Notes](https://archive.a
     * Scala 2.13  \- [kafka_2.13-3.0.2.tgz](https://archive.apache.org/dist/kafka/3.0.2/kafka_2.13-3.0.2.tgz) ([asc](https://archive.apache.org/dist/kafka/3.0.2/kafka_2.13-3.0.2.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/3.0.2/kafka_2.13-3.0.2.tgz.sha512))
 We build for multiple versions of Scala. This only matters if you are using Scala and you want a version built for the same Scala version you use. Otherwise any version should work (2.13 is recommended).
 
-Kafka 3.0.2 fixes [CVE-2022-34917](cve-list#CVE-2022-34917) and 10 other issues since the 3.0.1 release. For more information, please read the detailed [Release Notes](https://archive.apache.org/dist/kafka/3.0.2/RELEASE_NOTES.html).
+Kafka 3.0.2 fixes [CVE-2022-34917](/community/cve-list/#CVE-2022-34917) and 10 other issues since the 3.0.1 release. For more information, please read the detailed [Release Notes](https://archive.apache.org/dist/kafka/3.0.2/RELEASE_NOTES.html).
 
 
 ### 3.0.1
@@ -584,7 +584,7 @@ For more information, please read the detailed [Release Notes](https://archive.a
     * Scala 2.13  \- [kafka_2.13-2.8.2.tgz](https://archive.apache.org/dist/kafka/2.8.2/kafka_2.13-2.8.2.tgz) ([asc](https://archive.apache.org/dist/kafka/2.8.2/kafka_2.13-2.8.2.tgz.asc), [sha512](https://archive.apache.org/dist/kafka/2.8.2/kafka_2.13-2.8.2.tgz.sha512))
 We build for multiple versions of Scala. This only matters if you are using Scala and you want a version built for the same Scala version you use. Otherwise any version should work (2.13 is recommended).
 
-Kafka 2.8.2 fixes [CVE-2022-34917](cve-list#CVE-2022-34917) and 11 other issues since the 2.8.1 release. For more information, please read the detailed [Release Notes](https://archive.apache.org/dist/kafka/2.8.2/RELEASE_NOTES.html).
+Kafka 2.8.2 fixes [CVE-2022-34917](/community/cve-list/#CVE-2022-34917) and 11 other issues since the 2.8.1 release. For more information, please read the detailed [Release Notes](https://archive.apache.org/dist/kafka/2.8.2/RELEASE_NOTES.html).
 
 
 ### 2.8.1
@@ -1321,7 +1321,3 @@ We build for multiple versions of Scala. This only matters if you are using Scal
   * Released January 4, 2012
   * [Release Notes](https://archive.apache.org/dist/kafka/old_releases/kafka-0.7.0-incubating/RELEASE-NOTES.html)
   * Download: [kafka-0.7.0-incubating-src.tar.gz](https://archive.apache.org/dist/kafka/old_releases/kafka-0.7.0-incubating/kafka-0.7.0-incubating-src.tar.gz) ([asc](https://archive.apache.org/dist/kafka/old_releases/kafka-0.7.0-incubating/kafka-0.7.0-incubating-src.tar.gz.asc), [md5](https://archive.apache.org/dist/kafka/old_releases/kafka-0.7.0-incubating/kafka-0.7.0-incubating-src.tar.gz.md5))
-
-
-
-You can download releases previous to 0.7.0-incubating [here](http://sna-projects.com/kafka/downloads.php).
