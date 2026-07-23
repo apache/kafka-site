@@ -1012,5 +1012,11 @@
     "logo": "trackity.png",
     "logoBgColor": "#FFFFFF",
     "description": "Trackity leverages Apache Kafka as the backbone of its real-time data pipeline, powering seamless event streaming from Shopify and ad platforms to enable accurate conversion tracking, cross-channel attribution, and instant analytics across its e-commerce intelligence platform."
+  },
+  {
+    "link": "https://www.meshiq.com/",
+    "logo": "meshiq.svg",
+    "logoBgColor": "#FFFFFF",
+    "description": "meshIQ provides observability and management for Apache Kafka and other messaging middleware, giving teams end-to-end visibility, monitoring, and control across their event streaming infrastructure to ensure reliable, high-performance data flows in production."
   }
 ]
