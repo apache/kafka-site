@@ -23,7 +23,7 @@ description: "How Apache Kafka and Apache APISIX can form a route-aware event pi
  limitations under the License.
 -->
 
-An API gateway that exports access, audit, or security events to Apache Kafka is a producer, even when its integration is called a “logger.” That producer sits beside the request path and usually sends events outside the HTTP response contract. It has queues, batch thresholds, acknowledgement settings, failure modes, and a shutdown boundary. If those details remain implicit, teams may incorrectly treat a successful HTTP response and a durable Kafka record as the same event.
+An API gateway that exports access, audit, or security events to Apache Kafka is a producer, even when its integration is called a `logger`. That producer sits beside the request path and usually sends events outside the HTTP response contract. It has queues, batch thresholds, acknowledgement settings, failure modes, and a shutdown boundary. If those details remain implicit, teams may incorrectly treat a successful HTTP response and a durable Kafka record as the same event.
 
 Kafka is valuable in this architecture because its distributed log separates event production from event processing. Retained records can be replayed after a consumer fix, partitions provide scoped ordering, consumer groups scale independent processors, and the same event stream can serve operational analytics, security detection, and other authorized uses without coupling those consumers to the gateway.
 
@@ -147,7 +147,7 @@ The overflow policy needs a business owner. Possible responses include dropping 
 
 ## Design for retries, ordering, and replay
 
-Network failures rarely divide neatly into “sent” and “not sent.” A broker can append and replicate a batch, then lose the acknowledgement when the connection closes. A retry may create another copy; declining to retry may omit a record the broker never received.
+Network failures rarely divide neatly into `sent` and `not sent`. A broker can append and replicate a batch, then lose the acknowledgement when the connection closes. A retry may create another copy; declining to retry may omit a record the broker never received.
 
 Use a stable `event_id` and make consumer side effects idempotent. A consumer can store the ID with the derived result in one database transaction, use a unique constraint to reject repeats, and record duplicate counts for diagnosis. The deduplication window should cover the maximum Kafka retention or replay period that the workflow permits.
 
