@@ -4,49 +4,56 @@
     "name": "Jun Rao",
     "title": "Committer, PMC member",
     "linkedIn": "http://www.linkedin.com/in/junrao",
-    "twitter": "http://twitter.com/junrao"
+    "twitter": "http://twitter.com/junrao",
+    "github": "https://github.com/junrao"
   },
   {
     "image": "/images/neha.jpg",
     "name": "Neha Narkhede",
     "title": "Committer, and PMC member",
     "linkedIn": "http://www.linkedin.com/in/nehanarkhede",
-    "twitter": "http://twitter.com/nehanarkhede"
+    "twitter": "http://twitter.com/nehanarkhede",
+    "github": "https://github.com/nehanarkhede"
   },
   {
     "image": "/images/joe.jpg",
     "name": "Joe Stein",
     "title": "Committer, and PMC member",
     "linkedIn": "http://www.linkedin.com/in/charmalloc",
-    "twitter": "https://twitter.com/allthingshadoop"
+    "twitter": "https://twitter.com/allthingshadoop",
+    "github": "https://github.com/joestein"
   },
   {
     "image": "/images/jay.jpg",
     "name": "Jay Kreps",
     "title": "Committer, and PMC member",
     "linkedIn": "http://www.linkedin.com/in/jaykreps",
-    "twitter": "http://twitter.com/jaykreps"
+    "twitter": "http://twitter.com/jaykreps",
+    "github": "https://github.com/jkreps"
   },
   {
     "image": "/images/joel.jpg",
     "name": "Joel Koshy",
     "title": "Committer, and PMC member",
     "linkedIn": "http://www.linkedin.com/in/jjkoshy",
-    "twitter": null
+    "twitter": null,
+    "github": "https://github.com/jjkoshy"
   },
   {
     "image": "/images/prashanth.jpg",
     "name": "Prashanth Menon",
     "title": "Committer, and PMC member",
     "linkedIn": "http://ca.linkedin.com/in/prasmenon",
-    "twitter": "https://twitter.com/prashanth_menon"
+    "twitter": "https://twitter.com/prashanth_menon",
+    "github": "https://github.com/pmenon"
   },
   {
     "image": "/images/jakob.jpg",
     "name": "Jakob Homan",
     "title": "Apache Member, Committer, and PMC member",
     "linkedIn": "http://www.linkedin.com/in/jghoman",
-    "twitter": "http://twitter.com/BlueBoxTraveler"
+    "twitter": "http://twitter.com/BlueBoxTraveler",
+    "github": "https://github.com/jghoman"
   },
   {
     "image": "/images/david.jpg",
@@ -61,98 +68,112 @@
     "name": "Sriram Subramanian",
     "title": "Committer",
     "linkedIn": "http://www.linkedin.com/pub/sriram-subramanian/3/52a/162",
-    "twitter": "http://twitter.com/sriramsub1"
+    "twitter": "http://twitter.com/sriramsub1",
+    "github": "https://github.com/sriramsub"
   },
   {
     "image": "/images/guozhang.jpg",
     "name": "Guozhang Wang",
     "title": "Committer, and PMC member",
     "linkedIn": "http://www.linkedin.com/in/guozhangwang",
-    "twitter": "https://twitter.com/guozhangwang"
+    "twitter": "https://twitter.com/guozhangwang",
+    "github": "https://github.com/guozhangwang"
   },
   {
     "image": "/images/gwenshap.jpg",
     "name": "Gwen Shapira",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/gwenshapira",
-    "twitter": "https://twitter.com/gwenshap"
+    "twitter": "https://twitter.com/gwenshap",
+    "github": "https://github.com/gwenshap"
   },
   {
     "image": "/images/harsha.jpg",
     "name": "Sriharsha Chintalapani",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/sriharsha",
-    "twitter": "https://twitter.com/d3fmacro"
+    "twitter": "https://twitter.com/d3fmacro",
+    "github": "https://github.com/harshach"
   },
   {
     "image": "/images/ewencp.jpg",
     "name": "Ewen Cheslack-Postava",
     "title": "Committer",
     "linkedIn": "https://www.linkedin.com/in/ewencp",
-    "twitter": "https://twitter.com/ewencp"
+    "twitter": "https://twitter.com/ewencp",
+    "github": "https://github.com/ewencp"
   },
   {
     "image": "/images/ijuma.jpg",
     "name": "Ismael Juma",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/ijuma",
-    "twitter": "https://twitter.com/ijuma"
+    "twitter": "https://twitter.com/ijuma",
+    "github": "https://github.com/ijuma"
   },
   {
     "image": "/images/jason.jpg",
     "name": "Jason Gustafson",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/jasongustafson",
-    "twitter": null
+    "twitter": null,
+    "github": "https://github.com/hachikuji"
   },
   {
     "image": "/images/jiangjie.jpg",
     "name": "Jiangjie (Becket) Qin",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/jiangjieqin",
-    "twitter": null
+    "twitter": null,
+    "github": "https://github.com/becketqin"
   },
   {
     "image": "/images/granthenke.jpg",
     "name": "Grant Henke",
     "title": "Committer",
     "linkedIn": "https://www.linkedin.com/in/granthenke",
-    "twitter": "https://twitter.com/gchenke"
+    "twitter": "https://twitter.com/gchenke",
+    "github": "https://github.com/granthenke"
   },
   {
     "image": "/images/rsivaram.jpg",
     "name": "Rajini Sivaram",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/rajini-sivaram",
-    "twitter": null
+    "twitter": null,
+    "github": "https://github.com/rajinisivaram"
   },
   {
     "image": "/images/damianguy.jpg",
     "name": "Damian Guy",
     "title": "Committer",
     "linkedIn": "https://www.linkedin.com/in/damianguy",
-    "twitter": "https://twitter.com/damianguy"
+    "twitter": "https://twitter.com/damianguy",
+    "github": "https://github.com/dguy"
   },
   {
     "image": "/images/onur.jpg",
     "name": "Onur Karaman",
     "title": "Committer",
     "linkedIn": "https://www.linkedin.com/in/onurkaraman",
-    "twitter": null
+    "twitter": null,
+    "github": "https://github.com/onurkaraman"
   },
   {
     "image": "/images/matthias.jpg",
     "name": "Matthias J. Sax",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/mjsax",
-    "twitter": "https://twitter.com/MatthiasJSax"
+    "twitter": "https://twitter.com/MatthiasJSax",
+    "github": "https://github.com/mjsax"
   },
   {
     "image": "/images/lindong.jpg",
     "name": "Dong Lin",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/lindong28",
-    "twitter": null
+    "twitter": null,
+    "github": "https://github.com/lindong28"
   },
   {
     "image": "/images/cmccabe.jpg",
@@ -160,112 +181,128 @@
     "title": "Committer, and PMC member",
     "linkedIn": "http://www.linkedin.com/in/mccabecolin",
     "twitter": null,
-    "website": "http://www.club.cc.cmu.edu/~cmccabe/"
+    "website": "http://www.club.cc.cmu.edu/~cmccabe/",
+    "github": "https://github.com/cmccabe"
   },
   {
     "image": "/images/manikumar.jpg",
     "name": "Manikumar Reddy",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/15mani",
-    "twitter": null
+    "twitter": null,
+    "github": "https://github.com/omkreddy"
   },
   {
     "image": "/images/vahid.jpg",
     "name": "Vahid Hashemian",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/vhashemian",
-    "twitter": "https://twitter.com/vahidh"
+    "twitter": "https://twitter.com/vahidh",
+    "github": "https://github.com/vahidhashemian"
   },
   {
     "image": "/images/bbejeck_pic.jpeg",
     "name": "Bill Bejeck",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/bbejeck/",
-    "twitter": "https://twitter.com/bbejeck"
+    "twitter": "https://twitter.com/bbejeck",
+    "github": "https://github.com/bbejeck"
   },
   {
     "image": "/images/rhauch.jpg",
     "name": "Randall Hauch",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/randallhauch/",
-    "twitter": "https://twitter.com/rhauch"
+    "twitter": "https://twitter.com/rhauch",
+    "github": "https://github.com/rhauch"
   },
   {
     "image": "/images/mickael.jpg",
     "name": "Mickael Maison",
     "title": "Committer, and PMC member, and VP of Kafka",
     "linkedIn": "https://www.linkedin.com/in/mickaelmaison/",
-    "twitter": "https://twitter.com/MickaelMaison"
+    "twitter": "https://twitter.com/MickaelMaison",
+    "github": "https://github.com/mimaison"
   },
   {
     "image": "/images/jroesler.jpg",
     "name": "John Roesler",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/john-roesler-6280755/",
-    "twitter": null
+    "twitter": null,
+    "github": "https://github.com/vvcephei"
   },
   {
     "image": "/images/konstantine.jpg",
     "name": "Konstantine Karantasis",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/karantasis/",
-    "twitter": "https://twitter.com/karantasis"
+    "twitter": "https://twitter.com/karantasis",
+    "github": "https://github.com/kkonstantine"
   },
   {
     "image": "/images/boyang.png",
     "name": "Boyang Chen",
     "title": "Committer",
     "linkedIn": "https://www.linkedin.com/in/boyangc/",
-    "twitter": null
+    "twitter": null,
+    "github": "https://github.com/abbccdda"
   },
   {
     "image": "/images/huxihx.jpg",
     "name": "Xi Hu",
     "title": "Committer",
     "linkedIn": "https://www.linkedin.com/in/xi-hu-892b5b84/",
-    "twitter": null
+    "twitter": null,
+    "github": "https://github.com/huxihx"
   },
   {
     "image": "/images/dajac.png",
     "name": "David Jacot",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/davidjacot/",
-    "twitter": "https://twitter.com/davidjacot"
+    "twitter": "https://twitter.com/davidjacot",
+    "github": "https://github.com/dajac"
   },
   {
     "image": "/images/chia7712.png",
     "name": "Chia-Ping Tsai",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/chia7712/",
-    "twitter": null
+    "twitter": null,
+    "github": "https://github.com/chia7712"
   },
   {
     "image": "/images/ableegoldman.jpg",
     "name": "Anna Sophie Blee-Goldman",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/ableegoldman/",
-    "twitter": null
+    "twitter": null,
+    "github": "https://github.com/ableegoldman"
   },
   {
     "image": "/images/tombentley.jpg",
     "name": "Tom Bentley",
     "title": "Committer, and PMC member",
     "linkedIn": null,
-    "twitter": null
+    "twitter": null,
+    "github": "https://github.com/tombentley"
   },
   {
     "image": "/images/Bruno.jpg",
     "name": "Bruno Cadonna",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/brunocadonna",
-    "twitter": null
+    "twitter": null,
+    "github": "https://github.com/cadonna"
   },
   {
     "image": "/images/lukechen.jpg",
     "name": "Luke Chen",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/showuon/",
-    "twitter": null
+    "twitter": null,
+    "github": "https://github.com/showuon"
   },
   {
     "image": "/images/jsancio.jpg",
@@ -288,7 +325,8 @@
     "name": "Ziming Deng",
     "title": "Committer",
     "linkedIn": "https://www.linkedin.com/in/ziming-deng-845a82129/",
-    "twitter": null
+    "twitter": null,
+    "github": "https://github.com/dengziming"
   },
   {
     "image": "/images/viktorsomogyi.jpg",
@@ -303,14 +341,16 @@
     "name": "Josep Prat",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/jlprat/",
-    "twitter": "https://twitter.com/jlprat/"
+    "twitter": "https://twitter.com/jlprat/",
+    "github": "https://github.com/jlprat"
   },
   {
     "image": "/images/satishd.jpg",
     "name": "Satish Duggana",
     "title": "Committer, and PMC member",
     "linkedIn": "https://www.linkedin.com/in/0xeed/",
-    "twitter": "http://twitter.com/0xeed"
+    "twitter": "http://twitter.com/0xeed",
+    "github": "https://github.com/satishd"
   },
   {
     "image": "/images/rondagostino.jpg",
