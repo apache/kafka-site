@@ -49,7 +49,7 @@ jobs:
     - name: Build Hugo site
       run: |
         # Build the site using the multi-platform Hugo image
-        docker run --rm -v $(pwd):/src hvishwanath/hugo:v0.123.7-ext-multiplatform \
+        docker run --rm -v $(pwd):/src:z hvishwanath/hugo:v0.123.7-ext-multiplatform \
           --minify \
           --destination output
     
