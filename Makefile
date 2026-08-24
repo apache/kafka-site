@@ -5,7 +5,7 @@ DOCKER_IMAGE := $(HUGO_BASE_IMAGE)
 #PROD_IMAGE := hvishwanath/kafka-site-md:1.2.0
 PROD_IMAGE := us-west1-docker.pkg.dev/play-394201/kafka-site-md/kafka-site-md:1.6.0
 
-.PHONY: build serve clean docker-image hugo-base-multi-platform prod-image prod-run buildx-setup ghcr-prod-image
+.PHONY: build serve clean docker-image hugo-base-multi-platform prod-image prod-run buildx-setup ghcr-prod-image check-archived-release-links check-archived-release-links-test
 
 # Setup buildx for multi-arch builds
 buildx-setup:
@@ -32,6 +32,12 @@ build:
 	docker run --rm -v $(PWD):/src $(DOCKER_IMAGE) \
 		--minify \
 		--destination $(OUTPUT_DIR)
+
+check-archived-release-links:
+	python3 scripts/check_archived_release_links.py
+
+check-archived-release-links-test:
+	PYTHONDONTWRITEBYTECODE=1 python3 -m unittest scripts.tests.test_check_archived_release_links
 
 # Serve the site locally using Docker (development)
 serve: 
