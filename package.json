@@ -38,7 +38,7 @@
     "autoprefixer": "^10.4.20",
     "cross-env": "^10.1.0",
     "hugo-extended": "0.164.0",
-    "postcss-cli": "^11.0.0",
+    "postcss-cli": "^12.0.0",
     "rtlcss": "^4.3.0"
   },
   "optionalDependencies": {
