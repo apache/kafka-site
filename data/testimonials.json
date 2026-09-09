@@ -1018,5 +1018,11 @@
     "logo": "meshiq.svg",
     "logoBgColor": "#FFFFFF",
     "description": "meshIQ provides observability and management for Apache Kafka and other messaging middleware, giving teams end-to-end visibility, monitoring, and control across their event streaming infrastructure to ensure reliable, high-performance data flows in production."
-  }
+  },
+  {
+    "link": "https://juit.com.br",
+    "logo": "juit.svg",
+    "logoBgColor": "#FFFFFF",
+    "description": "JUIT is a Brazilian legaltech whose platform unifies case-law search, jurimetrics, and knowledge management across court decisions, administrative and regulatory sources, legislation, and legal doctrine. Apache Kafka is the central nervous system of our data processing: every document we collect flows through Kafka in a streaming pipeline that continuously ingests, classifies, and enriches legal content with proprietary NLP, keeping our knowledge base updated in near real time."
+  }  
 ]
