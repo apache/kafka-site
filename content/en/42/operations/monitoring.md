@@ -89,34 +89,8 @@ kafka.server:type=BrokerTopicMetrics,name=ReplicationBytesInPerSec
 <td>
 
 Byte in (from the other brokers) rate across all topics.
-</td> </tr>  
-<tr>  
-<td>
-
-Controller Request rate from Broker
-</td>  
-<td>
-
-kafka.controller:type=ControllerChannelManager,name=RequestRateAndQueueTimeMs,brokerId=([0-9]+)
-</td>  
-<td>
-
-The rate (requests per second) at which the ControllerChannelManager takes requests from the queue of the given broker. And the time it takes for a request to stay in this queue before it is taken from the queue.
-</td> </tr>  
-<tr>  
-<td>
-
-Controller Event queue size
-</td>  
-<td>
-
-kafka.controller:type=ControllerEventManager,name=EventQueueSize
-</td>  
-<td>
-
-Size of the ControllerEventManager's queue.
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 Controller Event queue time
@@ -128,8 +102,21 @@ kafka.controller:type=ControllerEventManager,name=EventQueueTimeMs
 <td>
 
 Time that takes for any event (except the Idle event) to wait in the ControllerEventManager's queue before being processed
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
+<td>
+
+Controller Event thread idle ratio
+</td>
+<td>
+
+kafka.controller:type=ControllerEventManager,name=AvgIdleRatio
+</td>
+<td>
+
+The average fraction of time the controller event thread is idle as opposed to processing events. Between 0 and 1, ideally > 0.5
+</td> </tr>
+<tr>
 <td>
 
 Request rate
@@ -389,20 +376,7 @@ kafka.log:type=LogManager,name=OfflineLogDirectoryCount
 
 0
 </td> </tr>  
-<tr>  
-<td>
-
-Leader election rate
-</td>  
-<td>
-
-kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs
-</td>  
-<td>
-
-non-zero when there are broker failures
-</td> </tr>  
-<tr>  
+<tr>
 <td>
 
 Unclean leader election rate
@@ -441,59 +415,7 @@ kafka.controller:type=KafkaController,name=ActiveControllerCount
 
 only one broker in the cluster should have 1
 </td> </tr>  
-<tr>  
-<td>
-
-Pending topic deletes
-</td>  
-<td>
-
-kafka.controller:type=KafkaController,name=TopicsToDeleteCount
-</td>  
-<td>
-
-
-</td> </tr>  
-<tr>  
-<td>
-
-Pending replica deletes
-</td>  
-<td>
-
-kafka.controller:type=KafkaController,name=ReplicasToDeleteCount
-</td>  
-<td>
-
-
-</td> </tr>  
-<tr>  
-<td>
-
-Ineligible pending topic deletes
-</td>  
-<td>
-
-kafka.controller:type=KafkaController,name=TopicsIneligibleToDeleteCount
-</td>  
-<td>
-
-
-</td> </tr>  
-<tr>  
-<td>
-
-Ineligible pending replica deletes
-</td>  
-<td>
-
-kafka.controller:type=KafkaController,name=ReplicasIneligibleToDeleteCount
-</td>  
-<td>
-
-
-</td> </tr>  
-<tr>  
+<tr>
 <td>
 
 \# of under replicated partitions (|ISR| < |all replicas|)
