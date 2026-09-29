@@ -10,6 +10,26 @@
 </tbody></table>
 </li>
 <li>
+<h4><a id="sasl.oauthbearer.expected.audience"></a><a id="mirror_connector_sasl.oauthbearer.expected.audience" href="#mirror_connector_sasl.oauthbearer.expected.audience">sasl.oauthbearer.expected.audience</a></h4>
+<p>The (strongly recommended) comma-delimited setting for the broker to use to verify that the JWT was issued for one of the expected audiences. The JWT will be inspected for the standard OAuth "aud" claim and if this value is set, the broker will match the value from JWT's "aud" claim  to see if there is an exact match. If there is no match, the broker will reject the JWT and authentication will fail. If this value is not set, the broker will accept a token that has no "aud" claim, which is strongly discouraged.</p>
+<table><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.oauthbearer.expected.issuer"></a><a id="mirror_connector_sasl.oauthbearer.expected.issuer" href="#mirror_connector_sasl.oauthbearer.expected.issuer">sasl.oauthbearer.expected.issuer</a></h4>
+<p>The (strongly recommended) setting for the broker to use to verify that the JWT was created by the expected issuer. The JWT will be inspected for the standard OAuth "iss" claim and if this value is set, the broker will match it exactly against what is in the JWT's "iss" claim. If there is no match, the broker will reject the JWT and authentication will fail. If this value is not set, the broker will accept a JWT bearing any (or no) issuer, which is strongly discouraged.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
 <h4><a id="ssl.key.password"></a><a id="mirror_connector_ssl.key.password" href="#mirror_connector_ssl.key.password">ssl.key.password</a></h4>
 <p>The password of the private key in the key store file or the PEM key specified in 'ssl.keystore.key'.</p>
 <table><tbody>
@@ -610,26 +630,6 @@
 </tbody></table>
 </li>
 <li>
-<h4><a id="sasl.oauthbearer.expected.audience"></a><a id="mirror_connector_sasl.oauthbearer.expected.audience" href="#mirror_connector_sasl.oauthbearer.expected.audience">sasl.oauthbearer.expected.audience</a></h4>
-<p>The (optional) comma-delimited setting for the broker to use to verify that the JWT was issued for one of the expected audiences. The JWT will be inspected for the standard OAuth "aud" claim and if this value is set, the broker will match the value from JWT's "aud" claim  to see if there is an exact match. If there is no match, the broker will reject the JWT and authentication will fail.</p>
-<table><tbody>
-<tr><th>Type:</th><td>list</td></tr>
-<tr><th>Default:</th><td>""</td></tr>
-<tr><th>Valid Values:</th><td></td></tr>
-<tr><th>Importance:</th><td>low</td></tr>
-</tbody></table>
-</li>
-<li>
-<h4><a id="sasl.oauthbearer.expected.issuer"></a><a id="mirror_connector_sasl.oauthbearer.expected.issuer" href="#mirror_connector_sasl.oauthbearer.expected.issuer">sasl.oauthbearer.expected.issuer</a></h4>
-<p>The (optional) setting for the broker to use to verify that the JWT was created by the expected issuer. The JWT will be inspected for the standard OAuth "iss" claim and if this value is set, the broker will match it exactly against what is in the JWT's "iss" claim. If there is no match, the broker will reject the JWT and authentication will fail.</p>
-<table><tbody>
-<tr><th>Type:</th><td>string</td></tr>
-<tr><th>Default:</th><td>null</td></tr>
-<tr><th>Valid Values:</th><td></td></tr>
-<tr><th>Importance:</th><td>low</td></tr>
-</tbody></table>
-</li>
-<li>
 <h4><a id="sasl.oauthbearer.header.urlencode"></a><a id="mirror_connector_sasl.oauthbearer.header.urlencode" href="#mirror_connector_sasl.oauthbearer.header.urlencode">sasl.oauthbearer.header.urlencode</a></h4>
 <p>The (optional) setting to enable the OAuth client to URL-encode the client_id and client_secret in the authorization header in accordance with RFC6749, see <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-2.3.1">here</a> for more details. The default value is set to 'false' for backward compatibility</p>
 <table><tbody>
@@ -775,7 +775,7 @@
 <table><tbody>
 <tr><th>Type:</th><td>string</td></tr>
 <tr><th>Default:</th><td>null</td></tr>
-<tr><th>Valid Values:</th><td>org.apache.kafka.connect.runtime.ConnectorConfig$PluginVersionValidator@6ed3ef1</td></tr>
+<tr><th>Valid Values:</th><td>org.apache.kafka.connect.runtime.ConnectorConfig$PluginVersionValidator@299a06ac</td></tr>
 <tr><th>Importance:</th><td>medium</td></tr>
 </tbody></table>
 </li>
@@ -815,7 +815,7 @@
 <table><tbody>
 <tr><th>Type:</th><td>string</td></tr>
 <tr><th>Default:</th><td>null</td></tr>
-<tr><th>Valid Values:</th><td>org.apache.kafka.connect.runtime.ConnectorConfig$PluginVersionValidator@2437c6dc</td></tr>
+<tr><th>Valid Values:</th><td>org.apache.kafka.connect.runtime.ConnectorConfig$PluginVersionValidator@383534aa</td></tr>
 <tr><th>Importance:</th><td>low</td></tr>
 </tbody></table>
 </li>
@@ -835,7 +835,7 @@
 <table><tbody>
 <tr><th>Type:</th><td>string</td></tr>
 <tr><th>Default:</th><td>null</td></tr>
-<tr><th>Valid Values:</th><td>org.apache.kafka.connect.runtime.ConnectorConfig$PluginVersionValidator@1f89ab83</td></tr>
+<tr><th>Valid Values:</th><td>org.apache.kafka.connect.runtime.ConnectorConfig$PluginVersionValidator@6bc168e5</td></tr>
 <tr><th>Importance:</th><td>low</td></tr>
 </tbody></table>
 </li>
@@ -855,7 +855,7 @@
 <table><tbody>
 <tr><th>Type:</th><td>string</td></tr>
 <tr><th>Default:</th><td>null</td></tr>
-<tr><th>Valid Values:</th><td>org.apache.kafka.connect.runtime.ConnectorConfig$PluginVersionValidator@e73f9ac</td></tr>
+<tr><th>Valid Values:</th><td>org.apache.kafka.connect.runtime.ConnectorConfig$PluginVersionValidator@7b3300e5</td></tr>
 <tr><th>Importance:</th><td>low</td></tr>
 </tbody></table>
 </li>
