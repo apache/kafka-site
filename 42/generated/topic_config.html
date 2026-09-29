@@ -165,6 +165,17 @@
 </tbody></table>
 </li>
 <li>
+<h4><a id="max.decompressed.message.bytes"></a><a id="topicconfigs_max.decompressed.message.bytes" href="#topicconfigs_max.decompressed.message.bytes">max.decompressed.message.bytes</a></h4>
+<p>The maximum decompressed size, in bytes, of a single record the broker will accept; larger records are rejected with an <code>InvalidRecordException</code>. It is enforced where the broker decompresses records: produce validation of compressed batches, log compaction, and offset lookups by timestamp or max timestamp against the local log or remote storage. Unlike <code>max.message.bytes</code>, which bounds the compressed batch on the wire, this bounds the decompressed size of an individual record. Lowering it below the size of already-stored records makes compaction and timestamp offset lookups of affected partitions fail until it is raised again. The default imposes no limit beyond the largest record the broker could allocate anyway; set a smaller value to enforce a per-record cap.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>2147483639</td></tr>
+<tr><th>Valid Values:</th><td>[1,...,2147483639]</td></tr>
+<tr><th>Server Default Property:</th><td>max.decompressed.message.bytes</td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+</tbody></table>
+</li>
+<li>
 <h4><a id="max.message.bytes"></a><a id="topicconfigs_max.message.bytes" href="#topicconfigs_max.message.bytes">max.message.bytes</a></h4>
 <p>The largest record batch size allowed by Kafka (after compression if compression is enabled).</p>
 <table><tbody>
