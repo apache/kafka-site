@@ -770,6 +770,28 @@
 </tbody></table>
 </li>
 <li>
+<h4><a id="sasl.oauthbearer.expected.audience"></a><a id="brokerconfigs_sasl.oauthbearer.expected.audience" href="#brokerconfigs_sasl.oauthbearer.expected.audience">sasl.oauthbearer.expected.audience</a></h4>
+<p>The (strongly recommended) comma-delimited setting for the broker to use to verify that the JWT was issued for one of the expected audiences. The JWT will be inspected for the standard OAuth "aud" claim and if this value is set, the broker will match the value from JWT's "aud" claim  to see if there is an exact match. If there is no match, the broker will reject the JWT and authentication will fail. If this value is not set, the broker will accept a token that has no "aud" claim, which is strongly discouraged.</p>
+<table><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+<tr><th>Update Mode:</th><td>read-only</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.oauthbearer.expected.issuer"></a><a id="brokerconfigs_sasl.oauthbearer.expected.issuer" href="#brokerconfigs_sasl.oauthbearer.expected.issuer">sasl.oauthbearer.expected.issuer</a></h4>
+<p>The (strongly recommended) setting for the broker to use to verify that the JWT was created by the expected issuer. The JWT will be inspected for the standard OAuth "iss" claim and if this value is set, the broker will match it exactly against what is in the JWT's "iss" claim. If there is no match, the broker will reject the JWT and authentication will fail. If this value is not set, the broker will accept a JWT bearing any (or no) issuer, which is strongly discouraged.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+<tr><th>Update Mode:</th><td>read-only</td></tr>
+</tbody></table>
+</li>
+<li>
 <h4><a id="share.coordinator.load.buffer.size"></a><a id="brokerconfigs_share.coordinator.load.buffer.size" href="#brokerconfigs_share.coordinator.load.buffer.size">share.coordinator.load.buffer.size</a></h4>
 <p>Batch size for reading from the share-group state topic when loading state information into the cache (soft-limit, overridden if records are too large).</p>
 <table><tbody>
@@ -1233,7 +1255,7 @@
 </li>
 <li>
 <h4><a id="group.consumer.migration.policy"></a><a id="brokerconfigs_group.consumer.migration.policy" href="#brokerconfigs_group.consumer.migration.policy">group.consumer.migration.policy</a></h4>
-<p>The config that enables converting the non-empty classic group using the consumer embedded protocol to the non-empty consumer group using the consumer group protocol and vice versa; conversions of empty groups in both directions are always enabled regardless of this policy. bidirectional: both upgrade from classic group to consumer group and downgrade from consumer group to classic group are enabled, upgrade: only upgrade from classic group to consumer group is enabled, downgrade: only downgrade from consumer group to classic group is enabled, disabled: neither upgrade nor downgrade is enabled.</p>
+<p>The config that enables converting the non-empty classic group using the consumer embedded protocol to the non-empty consumer group using the consumer group protocol and vice versa; conversions of empty groups in both directions are always enabled regardless of this policy. bidirectional: both upgrade from classic group to consumer group and downgrade from consumer group to classic group are enabled, upgrade: only upgrade from classic group to consumer group is enabled, downgrade: only downgrade from consumer group to classic group is enabled, disabled: neither upgrade nor downgrade is enabled. In this mode a member using the classic protocol is not allowed to join or rejoin a non-empty consumer group; if a group is already mixed (for example because this policy was changed), its classic-protocol members are rejected when they next attempt to rejoin.</p>
 <table><tbody>
 <tr><th>Type:</th><td>string</td></tr>
 <tr><th>Default:</th><td>bidirectional</td></tr>
@@ -1898,6 +1920,17 @@
 <tr><th>Type:</th><td>string</td></tr>
 <tr><th>Default:</th><td>""</td></tr>
 <tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>medium</td></tr>
+<tr><th>Update Mode:</th><td>cluster-wide</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="max.decompressed.message.bytes"></a><a id="brokerconfigs_max.decompressed.message.bytes" href="#brokerconfigs_max.decompressed.message.bytes">max.decompressed.message.bytes</a></h4>
+<p>The maximum decompressed size, in bytes, of a single record the broker will accept; larger records are rejected with an <code>InvalidRecordException</code>. It is enforced where the broker decompresses records: produce validation of compressed batches, log compaction, and offset lookups by timestamp or max timestamp against the local log or remote storage. Unlike <code>max.message.bytes</code>, which bounds the compressed batch on the wire, this bounds the decompressed size of an individual record. Lowering it below the size of already-stored records makes compaction and timestamp offset lookups of affected partitions fail until it is raised again. The default imposes no limit beyond the largest record the broker could allocate anyway; set a smaller value to enforce a per-record cap. This can be set per topic with the topic level <code>max.decompressed.message.bytes</code> config.</p>
+<table><tbody>
+<tr><th>Type:</th><td>int</td></tr>
+<tr><th>Default:</th><td>2147483639</td></tr>
+<tr><th>Valid Values:</th><td>[1,...,2147483639]</td></tr>
 <tr><th>Importance:</th><td>medium</td></tr>
 <tr><th>Update Mode:</th><td>cluster-wide</td></tr>
 </tbody></table>
@@ -3305,28 +3338,6 @@
 <table><tbody>
 <tr><th>Type:</th><td>int</td></tr>
 <tr><th>Default:</th><td>30</td></tr>
-<tr><th>Valid Values:</th><td></td></tr>
-<tr><th>Importance:</th><td>low</td></tr>
-<tr><th>Update Mode:</th><td>read-only</td></tr>
-</tbody></table>
-</li>
-<li>
-<h4><a id="sasl.oauthbearer.expected.audience"></a><a id="brokerconfigs_sasl.oauthbearer.expected.audience" href="#brokerconfigs_sasl.oauthbearer.expected.audience">sasl.oauthbearer.expected.audience</a></h4>
-<p>The (optional) comma-delimited setting for the broker to use to verify that the JWT was issued for one of the expected audiences. The JWT will be inspected for the standard OAuth "aud" claim and if this value is set, the broker will match the value from JWT's "aud" claim  to see if there is an exact match. If there is no match, the broker will reject the JWT and authentication will fail.</p>
-<table><tbody>
-<tr><th>Type:</th><td>list</td></tr>
-<tr><th>Default:</th><td>""</td></tr>
-<tr><th>Valid Values:</th><td></td></tr>
-<tr><th>Importance:</th><td>low</td></tr>
-<tr><th>Update Mode:</th><td>read-only</td></tr>
-</tbody></table>
-</li>
-<li>
-<h4><a id="sasl.oauthbearer.expected.issuer"></a><a id="brokerconfigs_sasl.oauthbearer.expected.issuer" href="#brokerconfigs_sasl.oauthbearer.expected.issuer">sasl.oauthbearer.expected.issuer</a></h4>
-<p>The (optional) setting for the broker to use to verify that the JWT was created by the expected issuer. The JWT will be inspected for the standard OAuth "iss" claim and if this value is set, the broker will match it exactly against what is in the JWT's "iss" claim. If there is no match, the broker will reject the JWT and authentication will fail.</p>
-<table><tbody>
-<tr><th>Type:</th><td>string</td></tr>
-<tr><th>Default:</th><td>null</td></tr>
 <tr><th>Valid Values:</th><td></td></tr>
 <tr><th>Importance:</th><td>low</td></tr>
 <tr><th>Update Mode:</th><td>read-only</td></tr>

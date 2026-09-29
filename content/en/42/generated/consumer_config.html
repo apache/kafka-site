@@ -80,6 +80,26 @@
 </tbody></table>
 </li>
 <li>
+<h4><a id="sasl.oauthbearer.expected.audience"></a><a id="consumerconfigs_sasl.oauthbearer.expected.audience" href="#consumerconfigs_sasl.oauthbearer.expected.audience">sasl.oauthbearer.expected.audience</a></h4>
+<p>The (strongly recommended) comma-delimited setting for the broker to use to verify that the JWT was issued for one of the expected audiences. The JWT will be inspected for the standard OAuth "aud" claim and if this value is set, the broker will match the value from JWT's "aud" claim  to see if there is an exact match. If there is no match, the broker will reject the JWT and authentication will fail. If this value is not set, the broker will accept a token that has no "aud" claim, which is strongly discouraged.</p>
+<table><tbody>
+<tr><th>Type:</th><td>list</td></tr>
+<tr><th>Default:</th><td>""</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
+<h4><a id="sasl.oauthbearer.expected.issuer"></a><a id="consumerconfigs_sasl.oauthbearer.expected.issuer" href="#consumerconfigs_sasl.oauthbearer.expected.issuer">sasl.oauthbearer.expected.issuer</a></h4>
+<p>The (strongly recommended) setting for the broker to use to verify that the JWT was created by the expected issuer. The JWT will be inspected for the standard OAuth "iss" claim and if this value is set, the broker will match it exactly against what is in the JWT's "iss" claim. If there is no match, the broker will reject the JWT and authentication will fail. If this value is not set, the broker will accept a JWT bearing any (or no) issuer, which is strongly discouraged.</p>
+<table><tbody>
+<tr><th>Type:</th><td>string</td></tr>
+<tr><th>Default:</th><td>null</td></tr>
+<tr><th>Valid Values:</th><td></td></tr>
+<tr><th>Importance:</th><td>high</td></tr>
+</tbody></table>
+</li>
+<li>
 <h4><a id="session.timeout.ms"></a><a id="consumerconfigs_session.timeout.ms" href="#consumerconfigs_session.timeout.ms">session.timeout.ms</a></h4>
 <p>The timeout used to detect client failures when using Kafka's group management facility. The client sends periodic heartbeats to indicate its liveness to the broker. If no heartbeats are received by the broker before the expiration of this session timeout, then the broker will remove this client from the group and initiate a rebalance. Note that the value must be in the allowable range as configured in the broker configuration by <code>group.min.session.timeout.ms</code> and <code>group.max.session.timeout.ms</code>. Note that this client configuration is not supported when <code>group.protocol</code> is set to "consumer". In that case, session timeout is controlled by the broker config <code>group.consumer.session.timeout.ms</code>.</p>
 <table><tbody>
@@ -995,26 +1015,6 @@
 <table><tbody>
 <tr><th>Type:</th><td>int</td></tr>
 <tr><th>Default:</th><td>30</td></tr>
-<tr><th>Valid Values:</th><td></td></tr>
-<tr><th>Importance:</th><td>low</td></tr>
-</tbody></table>
-</li>
-<li>
-<h4><a id="sasl.oauthbearer.expected.audience"></a><a id="consumerconfigs_sasl.oauthbearer.expected.audience" href="#consumerconfigs_sasl.oauthbearer.expected.audience">sasl.oauthbearer.expected.audience</a></h4>
-<p>The (optional) comma-delimited setting for the broker to use to verify that the JWT was issued for one of the expected audiences. The JWT will be inspected for the standard OAuth "aud" claim and if this value is set, the broker will match the value from JWT's "aud" claim  to see if there is an exact match. If there is no match, the broker will reject the JWT and authentication will fail.</p>
-<table><tbody>
-<tr><th>Type:</th><td>list</td></tr>
-<tr><th>Default:</th><td>""</td></tr>
-<tr><th>Valid Values:</th><td></td></tr>
-<tr><th>Importance:</th><td>low</td></tr>
-</tbody></table>
-</li>
-<li>
-<h4><a id="sasl.oauthbearer.expected.issuer"></a><a id="consumerconfigs_sasl.oauthbearer.expected.issuer" href="#consumerconfigs_sasl.oauthbearer.expected.issuer">sasl.oauthbearer.expected.issuer</a></h4>
-<p>The (optional) setting for the broker to use to verify that the JWT was created by the expected issuer. The JWT will be inspected for the standard OAuth "iss" claim and if this value is set, the broker will match it exactly against what is in the JWT's "iss" claim. If there is no match, the broker will reject the JWT and authentication will fail.</p>
-<table><tbody>
-<tr><th>Type:</th><td>string</td></tr>
-<tr><th>Default:</th><td>null</td></tr>
 <tr><th>Valid Values:</th><td></td></tr>
 <tr><th>Importance:</th><td>low</td></tr>
 </tbody></table>
