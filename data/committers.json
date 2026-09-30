@@ -535,5 +535,13 @@
     "linkedIn": "https://www.linkedin.com/in/jiunn-yang-huang",
     "twitter": null,
     "github": "https://github.com/m1a2st"
+  },
+  {
+    "image": "/images/smjn.jpeg",
+    "name": "Sushant Mahajan",
+    "title": "Committer",
+    "linkedIn": "https://www.linkedin.com/in/smjn",
+    "twitter": null,
+    "github": "https://github.com/smjn"
   }
 ]
