@@ -1,11 +1,14 @@
 # Hugo configuration
 OUTPUT_DIR := output
-HUGO_BASE_IMAGE := hvishwanath/hugo:v0.123.7-ext-multiplatform
+HUGO_VERSION := 0.123.7
+HUGO_BASE_IMAGE := ghcr.io/apache/kafka-site/hugo:v$(HUGO_VERSION)-ext-multiplatform
 DOCKER_IMAGE := $(HUGO_BASE_IMAGE)
-#PROD_IMAGE := hvishwanath/kafka-site-md:1.2.0
-PROD_IMAGE := us-west1-docker.pkg.dev/play-394201/kafka-site-md/kafka-site-md:1.6.0
+# Experimental image built locally from Dockerfile.hugo-builder using the
+# official Hugo release binary. Not used by CI; produces byte-identical output
+# to $(DOCKER_IMAGE). See the `hugo-image` and `build-official` targets.
+HUGO_IMAGE := apache/kafka-site/hugo:v$(HUGO_VERSION)
 
-.PHONY: build serve clean docker-image hugo-base-multi-platform prod-image prod-run buildx-setup ghcr-prod-image
+.PHONY: build serve clean docker-image ensure-hugo-image hugo-base-multi-platform hugo-image build-official buildx-setup ghcr-prod-image
 
 # Setup buildx for multi-arch builds
 buildx-setup:
@@ -26,16 +29,19 @@ hugo-base-multi-platform: buildx-setup
 		--push \
 		.
 
+# Pull the published Apache-owned Hugo image, or build it locally if it is not
+# available yet (useful for first-time bootstrapping and PR validation).
+ensure-hugo-image:
+	docker pull $(DOCKER_IMAGE) || docker build -t $(DOCKER_IMAGE) -f Dockerfile.multiplatform .
+
 # Build the static site using Docker
-build: 
-	docker pull $(DOCKER_IMAGE)
+build: ensure-hugo-image
 	docker run --rm -v $(PWD):/src $(DOCKER_IMAGE) \
 		--minify \
 		--destination $(OUTPUT_DIR)
 
 # Serve the site locally using Docker (development)
-serve: 
-	docker pull $(DOCKER_IMAGE)
+serve: ensure-hugo-image
 	docker run --rm -it -v $(PWD):/src -p 1313:1313 $(DOCKER_IMAGE) \
 		server \
 		--bind 0.0.0.0 \
@@ -45,19 +51,19 @@ serve:
 		--buildDrafts \
 		--buildFuture
 
-# Build production Nginx image for multiple architectures
-prod-image: build buildx-setup
-	docker buildx build \
-		--platform linux/amd64,linux/arm64 \
-		--tag $(PROD_IMAGE) \
-		--file Dockerfile.prod \
-		--push \
+# Build the experimental Hugo image from the official Hugo release binary
+hugo-image:
+	docker build \
+		--build-arg HUGO_VERSION=$(HUGO_VERSION) \
+		--file Dockerfile.hugo-builder \
+		--tag $(HUGO_IMAGE) \
 		.
 
-# Run production image locally
-prod-run: prod-image
-	docker pull $(PROD_IMAGE)
-	docker run --rm -p 8080:80 $(PROD_IMAGE)
+# Build the static site with the official-Hugo image (parity check; not used by CI)
+build-official: hugo-image
+	docker run --rm -v $(PWD):/src $(HUGO_IMAGE) \
+		--minify \
+		--destination $(OUTPUT_DIR)
 
 # Build and push production image to GHCR
 ghcr-prod-image: build buildx-setup
@@ -73,5 +79,5 @@ ghcr-prod-image: build buildx-setup
 # Clean the output directory and remove Docker images
 clean:
 	rm -rf $(OUTPUT_DIR)
-	docker rmi $(DOCKER_IMAGE) $(HUGO_BASE_IMAGE) $(PROD_IMAGE)
+	docker rmi $(DOCKER_IMAGE) $(HUGO_BASE_IMAGE)
 	docker buildx rm multiarch || true
