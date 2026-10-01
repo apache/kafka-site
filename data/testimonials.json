@@ -1024,5 +1024,11 @@
     "logo": "juit.svg",
     "logoBgColor": "#FFFFFF",
     "description": "JUIT is a Brazilian legaltech whose platform unifies case-law search, jurimetrics, and knowledge management across court decisions, administrative and regulatory sources, legislation, and legal doctrine. Apache Kafka is the central nervous system of our data processing: every document we collect flows through Kafka in a streaming pipeline that continuously ingests, classifies, and enriches legal content with proprietary NLP, keeping our knowledge base updated in near real time."
+  },
+  {
+    "link": "https://github.com/libredb/libredb-studio",
+    "logo": "libredb-studio.svg",
+    "logoBgColor": "#FFFFFF",
+    "description": "LibreDB Studio is an open-source (MIT), web-based multi-database IDE. Its read-only Apache Kafka provider connects over the Kafka protocol to browse topics, partitions, consumer groups with their lag, brokers and configs, and to read messages by partition, offset or timestamp, without ever producing, committing offsets or joining a consumer group."
   }  
 ]
