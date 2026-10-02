@@ -29,14 +29,14 @@ hugo-base-multi-platform: buildx-setup
 # Build the static site using Docker
 build: 
 	docker pull $(DOCKER_IMAGE)
-	docker run --rm -v $(PWD):/src $(DOCKER_IMAGE) \
+	docker run --rm -v $(PWD):/src:z $(DOCKER_IMAGE) \
 		--minify \
 		--destination $(OUTPUT_DIR)
 
 # Serve the site locally using Docker (development)
 serve: 
 	docker pull $(DOCKER_IMAGE)
-	docker run --rm -it -v $(PWD):/src -p 1313:1313 $(DOCKER_IMAGE) \
+	docker run --rm -it -v $(PWD):/src:z -p 1313:1313 $(DOCKER_IMAGE) \
 		server \
 		--bind 0.0.0.0 \
 		--destination $(OUTPUT_DIR) \
