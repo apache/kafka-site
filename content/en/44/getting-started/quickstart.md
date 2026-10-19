@@ -28,11 +28,11 @@ type: docs
 
 ## Step 1: Get Kafka
 
-[Download](https://www.apache.org/dyn/closer.cgi?path=/kafka/4.3.0/kafka_2.13-4.3.0.tgz) the latest Kafka release and extract it: 
+[Download](https://www.apache.org/dyn/closer.cgi?path=/kafka/4.4.0/kafka_2.13-4.4.0.tgz) the latest Kafka release and extract it: 
 
 ```bash
-$ tar -xzf kafka_2.13-4.3.0.tgz
-$ cd kafka_2.13-4.3.0
+$ tar -xzf kafka_2.13-4.4.0.tgz
+$ cd kafka_2.13-4.4.0
 ```
 
 ## Step 2: Start the Kafka environment
@@ -68,13 +68,13 @@ Once the Kafka server has successfully launched, you will have a basic Kafka env
 Get the Docker image:
 
 ```bash
-$ docker pull apache/kafka:4.3.0
+$ docker pull apache/kafka:4.4.0
 ```
 
 Start the Kafka Docker container: 
 
 ```bash
-$ docker run -p 9092:9092 apache/kafka:4.3.0
+$ docker run -p 9092:9092 apache/kafka:4.4.0
 ```
 
 ### Using GraalVM Based Native Apache Kafka Docker Image
@@ -82,13 +82,13 @@ $ docker run -p 9092:9092 apache/kafka:4.3.0
 Get the Docker image:
 
 ```bash
-$ docker pull apache/kafka-native:4.3.0
+$ docker pull apache/kafka-native:4.4.0
 ```
 
 Start the Kafka Docker container:
 
 ```bash
-$ docker run -p 9092:9092 apache/kafka-native:4.3.0
+$ docker run -p 9092:9092 apache/kafka-native:4.4.0
 ```
 
 ## Step 3: Create a topic to store your events
@@ -152,7 +152,7 @@ First, make sure to add `connect-file-4.3.0.jar` to the `plugin.path` property i
 Edit the `config/connect-standalone.properties` file, add or change the `plugin.path` configuration property match the following, and save the file: 
 
 ```bash
-$ echo "plugin.path=libs/connect-file-4.3.0.jar" >> config/connect-standalone.properties
+$ echo "plugin.path=libs/connect-file-4.4.0.jar" >> config/connect-standalone.properties
 ```
 
 Then, start by creating some seed data to test with: 
