@@ -271,6 +271,7 @@ params:
       url: /44/
     - version: "4.3"
       url: /43/
+      archived_version: true
     - version: "4.2"
       url: /42/
       archived_version: true
