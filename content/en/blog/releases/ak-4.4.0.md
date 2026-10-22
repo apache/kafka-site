@@ -26,7 +26,7 @@ aliases:
 
 We are proud to announce the release of Apache Kafka® 4.4.0. This release contains many new features and improvements. This blog post will highlight some of the more prominent ones. For a full list of changes, be sure to check the [release notes](https://archive.apache.org/dist/kafka/4.4.0/RELEASE_NOTES.html).
 
-With 11 KIPs and over 963 commits since 4.3.0, this release introduces many new features, improvements and bug fixes to all the components.
+With 19 KIPs and over 963 commits since 4.3.0, this release introduces many new features, improvements and bug fixes to all the components.
 
 See the [Upgrading to 4.4](https://kafka.apache.org/documentation.html#upgrade_4_4_0) section in the documentation for the list of notable changes and detailed upgrade steps.
 
@@ -56,6 +56,27 @@ See the [Upgrading to 4.4](https://kafka.apache.org/documentation.html#upgrade_4
 * [KIP-1319: Align TxnOffsetCommit API with OffsetCommit API](https://cwiki.apache.org/confluence/spaces/KAFKA/pages/406622772/KIP-1319+Align+TxnOffsetCommit+API+with+OffsetCommit+API)
   Introduces `TxnOffsetCommit` v6, bringing the transactional offset commit API to parity with `OffsetCommit`: it now carries topic IDs instead of topic names, renames `GenerationId` to `GenerationIdOrMemberEpoch`, and surfaces granular error codes such as `GROUP_ID_NOT_FOUND`, `STALE_MEMBER_EPOCH`, and `UNKNOWN_TOPIC_ID` instead of collapsing them into `ILLEGAL_GENERATION`.
 
+* [KIP-1312: Support unregistering controllers](https://cwiki.apache.org/confluence/spaces/KAFKA/pages/406623954/KIP-1312+Support+unregistering+controllers)
+  Controllers can now be unregistered from the cluster metadata. A new `kafka-cluster.sh unregister-controller` command and a `--unregister` flag on `kafka-metadata-quorum.sh remove-controller` are provided, backed by the new `Admin#unregisterController` API and `UnregisterController` RPC. This introduces the error code `CONTROLLER_ID_NOT_REGISTERED` (136) and requires metadata version `4.4-IV2`.
+
+* [KIP-1220: Add an api-versions command to kafka-cluster.sh](https://cwiki.apache.org/confluence/x/-QkbFw)
+  The `kafka-cluster.sh` tool now provides an `api-versions` command to display the API versions supported by the brokers or controllers, accepting both `--bootstrap-server` and `--bootstrap-controller`. As a result, `kafka-broker-api-versions.sh` is deprecated and will be removed in the next major release; use `kafka-cluster.sh api-versions` instead.
+
+* [KIP-1241: Reduce tiered storage redundancy with delayed upload](https://cwiki.apache.org/confluence/x/A4LMFw)
+  Introduces the `remote.copy.lag.bytes` and `remote.copy.lag.ms` configs, with corresponding broker-level configurations, allowing tiered storage redundancy to be reduced with delayed upload.
+
+* [KIP-1242: Detect and handle misrouted client connections](https://cwiki.apache.org/confluence/x/W4LMFw)
+  When clients connect to the cluster, they now include cluster and node information to enable detection and handling of misrouted connections.
+
+* [KIP-1291: Expose additional Linux I/O metrics via JMX](https://cwiki.apache.org/confluence/x/co48G)
+  The Linux I/O metrics collector now exposes all 7 fields from `/proc/self/io` via JMX, adding `linux-disk-rchar`, `linux-disk-wchar`, `linux-disk-syscr`, `linux-disk-syscw`, and `linux-disk-cancelled-write-bytes` alongside the existing read/write byte metrics. These let operators calculate page-cache hit ratios, detect write amplification, identify inefficient syscall patterns, and monitor log-compaction I/O activity.
+
+* [KIP-1299: Control key distribution in kafka-producer-perf-test](https://cwiki.apache.org/confluence/x/XpQ8G)
+  The `kafka-producer-perf-test.sh` tool now supports `--record-key-range`, `--key-distribution`, and `--random-seed` options to control the distribution of record keys. Use `--key-distribution range` for sequential (round-robin) key assignment or `random` for random key selection, with `--random-seed` enabling reproducible benchmark runs.
+
+* [KIP-1323: Initialize share group offsets from a file](https://cwiki.apache.org/confluence/x/vY0mGQ)
+  The `kafka-share-groups.sh` tool can now be used to initialize share group offsets from a file, enabling a share group to be initialized from the committed offsets of a consumer group.
+
 ## Kafka Streams
 * [KIP-1340: Expose Both Mapped Key and Stream Key in Streams-GlobalKTable Joins](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1340%3A+Expose+Both+Mapped+Key+and+Stream+Key+in+Streams-GlobalKTable+Joins)
   Adds a new `ValueJoinerWithStreamAndMappedKey` joiner interface and new `KStream#join`/`leftJoin` overloads for KStream-GlobalKTable joins, giving users access to both the mapped join key and the original stream record key without having to recompute it. The existing `ValueJoinerWithKey`-based overloads are deprecated but unchanged in behavior.
@@ -63,8 +84,11 @@ See the [Upgrading to 4.4](https://kafka.apache.org/documentation.html#upgrade_4
 * [KIP-1331: Streams Group Topology Description Plugin](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1331%3A+Streams+Group+Topology+Description+Plugin)
   Lets brokers record a human-readable description of a Streams group's processing topology via a pluggable backend. When `group.streams.topology.description.plugin.class` is set, Kafka Streams clients automatically push a description equivalent to `Topology#describe()` to the group coordinator, retrievable via `Admin#describeStreamsGroups` or `kafka-streams-groups.sh --describe --topology` — without access to the application's source code.
 
+* [KIP-1357: Broker-side custom task assignors for Streams groups](https://cwiki.apache.org/confluence/x/NoSnGQ)
+  Streams groups now support broker-side custom task assignors, registered via the new broker configuration `group.streams.assignors` and selected per group with the new group configuration `streams.assignor.name`.
+
 ## Kafka Connect
-* [KIP-1209: Add configuration to control internal topic creation in Kafka Connect](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1209:+Add+configuration+to+control+internal+topic+creation+in+Kafka+Connect)
+* [KIP-1209: Add configuration to control internal topic creation in Kafka Connect](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1209%3A+Add+configuration+to+control+internal+topic+creation+in+Kafka+Connect)
   Kafka Connect distributed workers now support the `internal.topics.automatic.creation.enable` configuration (default `true`). When set to `false`, Connect will not automatically create its internal topics (offset, config, status, and connector-specific offset topics) and instead fails at startup if any are missing. A new `connect-internal-topics.sh` tool is provided for creating these topics manually.
 
 ## Summary
