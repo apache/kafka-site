@@ -1,5 +1,5 @@
 ---
-date: 2026-10-21
+date: 2026-10-23
 title: Apache Kafka 4.3.2 Release Announcement
 linkTitle: AK 4.3.2
 author: Ken Huang
