@@ -312,7 +312,8 @@ author: "Author Name (@github_handle)"
    make serve
    ```
    This will:
-   - Build the Hugo Docker image
+   - Pull the published Apache-owned Hugo build image if available
+   - Or build the Hugo build image locally from `Dockerfile.multiplatform`
    - Start a development server on http://localhost:1313
    - Watch for changes and automatically rebuild
    - Enable drafts and future posts
