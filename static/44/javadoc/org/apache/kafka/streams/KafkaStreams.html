@@ -749,7 +749,8 @@ cache size specified in configuration <a href="StreamsConfig.html#STATESTORE_CAC
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>name of the removed stream thread or empty if a stream thread could not be removed because
-        no stream threads are alive</dd>
+        no stream threads are alive, or because every alive stream thread was already shutting
+        down (for example, being replaced after an uncaught exception)</dd>
 </dl>
 </div>
 </section>
@@ -771,7 +772,8 @@ cache size specified in configuration <a href="StreamsConfig.html#STATESTORE_CAC
 <dd><code>timeout</code> - The length of time to wait for the thread to shut down</dd>
 <dt>Returns:</dt>
 <dd>name of the removed stream thread or empty if a stream thread could not be removed because
-        no stream threads are alive</dd>
+        no stream threads are alive, or because every alive stream thread was already shutting
+        down (for example, being replaced after an uncaught exception)</dd>
 </dl>
 </div>
 </section>
