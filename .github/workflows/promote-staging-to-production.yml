@@ -1,0 +1,52 @@
+name: Promote Staging to Production
+
+on:
+  schedule:
+    - cron: '0 2 * * 1'  # Monday 02:00 UTC
+    - cron: '0 2 * * 4'  # Thursday 02:00 UTC
+  workflow_dispatch:
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout asf-site
+      uses: actions/checkout@v4
+      with:
+        ref: asf-site
+        fetch-depth: 0
+        persist-credentials: true
+
+    - name: Copy asf-staging content into asf-site
+      run: |
+        # Download asf-staging refs without switching branches
+        git fetch origin asf-staging
+        # Stage deletions for every tracked file
+        git rm -rf . --quiet
+        # Overwrite working tree and index with all files from asf-staging
+        git checkout origin/asf-staging -- .
+        # Restore asf-site-specific files: .asf.yaml differs (staging vs production whoami), .gitignore only exists in asf-site
+        git checkout HEAD -- .htaccess .asf.yaml .gitignore
+
+    - name: Commit and push
+      env:
+        COMMIT_MSG: |
+          Promote asf-staging to asf-site (run ${{ github.run_id }})
+
+          GitHub Run: https://github.com/apache/kafka-site/actions/runs/${{ github.run_id }}
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        # Stage any remaining unstaged changes (e.g. restored config files)
+        git add .
+        # Skip the commit entirely if staging content is identical to what's already in asf-site
+        git diff --quiet && git diff --staged --quiet || git commit -m "$COMMIT_MSG"
+        git push
+
+    - name: Create promotion summary
+      run: |
+        echo "## Promotion Summary" >> $GITHUB_STEP_SUMMARY
+        echo "- **Source**: asf-staging" >> $GITHUB_STEP_SUMMARY
+        echo "- **Target**: asf-site" >> $GITHUB_STEP_SUMMARY
+        echo "- **Time**: $(date)" >> $GITHUB_STEP_SUMMARY
+        echo "- **Run**: ${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
