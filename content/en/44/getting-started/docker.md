@@ -71,6 +71,10 @@ To start the Kafka container using this Docker image with default configs and on
 $ docker run -p 9092:9092 apache/kafka-native:4.4.0
 ```
 
+### SASL and SSL
+
+The native image supports SASL authentication since 4.4.0; earlier native images do not. Docker Compose examples for SASL and SSL, which work with both the JVM and the native image, are described in the [usage guide](https://github.com/apache/kafka/blob/trunk/docker/examples/README.md).
+
 ## Usage guide
 
 Detailed instructions for using the Docker image are mentioned [here](https://github.com/apache/kafka/blob/trunk/docker/examples/README.md). 

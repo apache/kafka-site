@@ -28,6 +28,17 @@ The project goal is to have 3 releases a year, which means a release every 4 mon
 
 ## Supported releases
 
+### 4.4.0
+
+* Released October 22, 2026
+* [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.4.0/RELEASE_NOTES.html?action=download)
+* Docker image: [apache/kafka:4.4.0](https://hub.docker.com/layers/apache/kafka/4.4.0).
+* Docker Native image: [apache/kafka-native:4.4.0](https://hub.docker.com/layers/apache/kafka-native/4.4.0).
+* Source download: [kafka-4.4.0-src.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.4.0/kafka-4.4.0-src.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.4.0/kafka-4.4.0-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.4.0/kafka-4.4.0-src.tgz.sha512))
+* Binary download: [kafka_2.13-4.4.0.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.4.0/kafka_2.13-4.4.0.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.4.0/kafka_2.13-4.4.0.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.4.0/kafka_2.13-4.4.0.tgz.sha512))
+
+Kafka 4.4.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog/2026/10/22/apache-kafka-4.4.0-release-announcement/), the detailed [Upgrade Notes](https://kafka.apache.org/44/getting-started/upgrade/) and the [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.4.0/RELEASE_NOTES.html?action=download).
+
 ### 4.3.2
 
 * Released October 23, 2026
@@ -49,19 +60,6 @@ Kafka 4.3.2 fixes around 60 issues since the 4.3.1 release, most notably two pot
 * Binary download: [kafka_2.13-4.2.2.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.2.2/kafka_2.13-4.2.2.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.2.2/kafka_2.13-4.2.2.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.2.2/kafka_2.13-4.2.2.tgz.sha512))
 
 Kafka 4.2.2 fixes around 33 issues since the 4.2.1 release. For more information, please read our [blog post](https://kafka.apache.org/blog/2026/09/29/apache-kafka-4.2.2-release-announcement/), the detailed [Upgrade Notes](https://kafka.apache.org/42/getting-started/upgrade/#upgrading-to-422) and the [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.2.2/RELEASE_NOTES.html?action=download).
-
-
-### 4.1.2
-
-  * Released March 17, 2026
-  * [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.1.2/RELEASE_NOTES.html?action=download)
-  * Docker image: [apache/kafka:4.1.2](https://hub.docker.com/layers/apache/kafka/4.1.2/images/sha256-d50ab7b5df612b3c303f9d8afe8fee59626a5de798addfd626fe1924e3205965).
-  * Docker Native image: [apache/kafka-native:4.1.2](https://hub.docker.com/layers/apache/kafka-native/4.1.2/images/sha256-34f0f444fd95e90dda7f06a6077d62ae3f8d026c5bfede81d4cc84258ea93d56).
-  * Source download: [kafka-4.1.2-src.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.1.2/kafka-4.1.2-src.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.1.2/kafka-4.1.2-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.1.2/kafka-4.1.2-src.tgz.sha512))
-  * Binary download: [kafka_2.13-4.1.2.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.1.2/kafka_2.13-4.1.2.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.1.2/kafka_2.13-4.1.2.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.1.2/kafka_2.13-4.1.2.tgz.sha512))
-
-Kafka 4.1.2 fixes 30 issues since the 4.1.1 release. For more information, please read our [blog post](https://kafka.apache.org/blog/2026/03/17/apache-kafka-4.1.2-release-announcement/), the detailed [Upgrade Notes](https://kafka.apache.org/41/getting-started/upgrade/#upgrading-to-412) and the [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.1.2/RELEASE_NOTES.html?action=download).
-
 
 ## Archived Releases
 
@@ -109,6 +107,16 @@ Kafka 4.2.1 fixes around 25 issues since the 4.2.0 release. For more information
 
 Kafka 4.2.0 includes a significant number of new features and fixes. For more information, please read our [blog post](https://kafka.apache.org/blog/2026/02/17/apache-kafka-4.2.0-release-announcement/), the detailed [Upgrade Notes](https://kafka.apache.org/42/getting-started/upgrade/) and the [Release Notes](https://archive.apache.org/dist/kafka/4.2.0/RELEASE_NOTES.html).
 
+### 4.1.2
+
+* Released March 17, 2026
+* [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.1.2/RELEASE_NOTES.html?action=download)
+* Docker image: [apache/kafka:4.1.2](https://hub.docker.com/layers/apache/kafka/4.1.2/images/sha256-d50ab7b5df612b3c303f9d8afe8fee59626a5de798addfd626fe1924e3205965).
+* Docker Native image: [apache/kafka-native:4.1.2](https://hub.docker.com/layers/apache/kafka-native/4.1.2/images/sha256-34f0f444fd95e90dda7f06a6077d62ae3f8d026c5bfede81d4cc84258ea93d56).
+* Source download: [kafka-4.1.2-src.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.1.2/kafka-4.1.2-src.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.1.2/kafka-4.1.2-src.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.1.2/kafka-4.1.2-src.tgz.sha512))
+* Binary download: [kafka_2.13-4.1.2.tgz](https://www.apache.org/dyn/closer.lua/kafka/4.1.2/kafka_2.13-4.1.2.tgz?action=download) ([asc](https://downloads.apache.org/kafka/4.1.2/kafka_2.13-4.1.2.tgz.asc), [sha512](https://downloads.apache.org/kafka/4.1.2/kafka_2.13-4.1.2.tgz.sha512))
+
+Kafka 4.1.2 fixes 30 issues since the 4.1.1 release. For more information, please read our [blog post](https://kafka.apache.org/blog/2026/03/17/apache-kafka-4.1.2-release-announcement/), the detailed [Upgrade Notes](https://kafka.apache.org/41/getting-started/upgrade/#upgrading-to-412) and the [Release Notes](https://www.apache.org/dyn/closer.lua/kafka/4.1.2/RELEASE_NOTES.html?action=download).
 
 ### 4.1.1
 
