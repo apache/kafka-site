@@ -1,5 +1,6 @@
 {{ $cover := .HasShortcode "blocks/cover" }}
 <nav class="navbar td-navbar js-navbar-scroll {{ if $cover }} is-dark {{ end }}" data-bs-theme="light">
+<nav class="navbar td-navbar js-navbar-scroll {{ if $cover }} is-dark {{ end }}">
   <div class="container-fluid">
     <!-- Mobile toggle button (left side on mobile) -->
     <button class="navbar-toggler order-0 d-lg-none" type="button" aria-controls="main_navbar" aria-expanded="false"
@@ -18,6 +19,35 @@
 
     <!-- Spacer for mobile to balance layout -->
     <div class="order-2 d-lg-none" style="width: 48px;"></div>
+    <!-- Mobile theme toggle button on top bar -->
+    <div class="dropdown d-lg-none order-2 mobile-top-theme">
+      <button class="theme-toggle-btn" id="mobileThemeToggleBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle theme">
+        <i class="theme-toggle-active-icon fa-solid fa-circle-half-stroke"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end theme-dropdown-menu" aria-labelledby="mobileThemeToggleBtn">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <i class="fa-solid fa-sun me-2"></i>
+            <span>Light</span>
+            <i class="fa-solid fa-check ms-auto theme-check-icon d-none"></i>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <i class="fa-solid fa-moon me-2"></i>
+            <span>Dark</span>
+            <i class="fa-solid fa-check ms-auto theme-check-icon d-none"></i>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <i class="fa-solid fa-circle-half-stroke me-2"></i>
+            <span>Auto</span>
+            <i class="fa-solid fa-check ms-auto theme-check-icon"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
 
     <!-- Collapsible menu -->
     <div class="collapse navbar-collapse order-3 order-lg-1" id="main_navbar">
@@ -86,6 +116,46 @@
       </button>
       <div class="search-input-wrapper" id="searchInputWrapper">
         {{ partial "search-input.html" . }}
+    <!-- Desktop actions (Theme Switcher & Search) -->
+    <div class="d-none d-lg-flex order-2 align-items-center navbar-actions">
+      <!-- Theme Switcher Dropdown (Desktop) -->
+      <div class="dropdown theme-switch-dropdown me-3">
+        <button class="theme-toggle-btn" id="themeToggleBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle theme">
+          <i class="theme-toggle-active-icon fa-solid fa-circle-half-stroke"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end theme-dropdown-menu" aria-labelledby="themeToggleBtn">
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+              <i class="fa-solid fa-sun me-2"></i>
+              <span>Light</span>
+              <i class="fa-solid fa-check ms-auto theme-check-icon d-none"></i>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+              <i class="fa-solid fa-moon me-2"></i>
+              <span>Dark</span>
+              <i class="fa-solid fa-check ms-auto theme-check-icon d-none"></i>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+              <i class="fa-solid fa-circle-half-stroke me-2"></i>
+              <span>Auto</span>
+              <i class="fa-solid fa-check ms-auto theme-check-icon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Search (desktop only) -->
+      <div class="navbar-search">
+        <button class="search-toggle-btn" id="searchToggle" type="button" aria-label="Toggle search">
+          <i class="fas fa-search"></i>
+        </button>
+        <div class="search-input-wrapper" id="searchInputWrapper">
+          {{ partial "search-input.html" . }}
+        </div>
       </div>
     </div>
   </div>
