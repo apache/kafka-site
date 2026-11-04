@@ -3,6 +3,10 @@
   {{- $section := .CurrentSection -}}
   {{- if $section -}}
     {{- $pages := $section.RegularPages.ByWeight -}}
+    {{- if eq $section.RelPermalink "/blog/releases/" -}}
+      {{- /* Release announcements should be navigated oldest-to-newest to match Previous/Next semantics. */ -}}
+      {{- $pages = $section.RegularPages.ByDate -}}
+    {{- end -}}
     {{- $s := newScratch -}}
     {{- $s.Set "index" -1 -}}
     {{- range $i, $p := $pages -}}
