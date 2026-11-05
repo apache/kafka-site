@@ -11,6 +11,7 @@ env:
   # GitHub Container Registry
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+  HUGO_BASE_IMAGE: ghcr.io/${{ github.repository }}/hugo:v0.123.7-ext-multiplatform
 
 jobs:
   build-and-push:
@@ -46,10 +47,14 @@ jobs:
       with:
         images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
     
+    - name: Ensure Hugo base image
+      run: |
+        docker pull ${{ env.HUGO_BASE_IMAGE }} || docker build -t ${{ env.HUGO_BASE_IMAGE }} -f Dockerfile.multiplatform .
+
     - name: Build Hugo site
       run: |
-        # Build the site using the multi-platform Hugo image
-        docker run --rm -v $(pwd):/src hvishwanath/hugo:v0.123.7-ext-multiplatform \
+        # Build the site using the Apache-owned multi-platform Hugo image
+        docker run --rm -v $(pwd):/src ${{ env.HUGO_BASE_IMAGE }} \
           --minify \
           --destination output
     

@@ -312,7 +312,8 @@ author: "Author Name (@github_handle)"
    make serve
    ```
    This will:
-   - Build the Hugo Docker image
+   - Pull the published Apache-owned Hugo build image if available
+   - Or build the Hugo build image locally from `Dockerfile.multiplatform`
    - Start a development server on http://localhost:1313
    - Watch for changes and automatically rebuild
    - Enable drafts and future posts
@@ -322,6 +323,33 @@ author: "Author Name (@github_handle)"
    make build
    ```
    The built site will be available in the `output` directory.
+
+### Building with the official Hugo binary (experimental)
+
+`Dockerfile.hugo-builder` defines an alternative build image that installs the
+official Hugo extended release binary from the Hugo project (pinned via the
+`HUGO_VERSION` variable in the `Makefile`) together with the Node.js/PostCSS and
+Go toolchains. Unlike the current build image, it does not
+depend on any externally-hosted or personal image.
+
+> **Why the binary and not the official Hugo container image
+> (`ghcr.io/gohugoio/hugo`)?** That image is not published for the version this
+> site pins (0.123.7; its oldest tags are ~0.135), and newer Hugo releases cannot
+> build the pinned Docsy v0.11.0 theme — the `td-render-heading.html` render hook
+> was removed — which would change the rendered HTML. Installing the official
+> 0.123.7 binary keeps the output byte-identical. Adopting the official image
+> would require a coordinated Hugo + Docsy upgrade and a re-baseline, which is out
+> of scope here.
+
+```bash
+make build-official
+```
+
+This builds the image locally and renders the site into `output`, producing
+output that is byte-for-byte identical to `make build`. It is **not** used by any
+CI workflow yet; the existing `make build`/`make serve` flow and the deployment
+pipeline are unchanged. The intent is to validate the official-binary image
+before switching the build over to it in a follow-up change.
 
 ### Production Build
 
