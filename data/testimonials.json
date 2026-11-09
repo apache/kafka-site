@@ -1,5 +1,11 @@
 [
   {
+    "link": "https://wordfully.ai",
+    "logo": "wordfully.svg",
+    "logoBgColor": "#FFFFFF",
+    "description": "Wordfully is an AI writing assistant. It uses Kafka topics to publish correction activity and subscription changes from its backend. Analytics consumers and background workers read those topics independently, so each consumer can process events at its own pace."
+  },
+  {
     "link": "https://dattell.com/",
     "logo": "dattell.svg",
     "logoBgColor": "#FFFFFF",
