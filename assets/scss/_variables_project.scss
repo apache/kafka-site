@@ -1182,13 +1182,13 @@ p {
   }
 
   .td-footer__social-link {
-    color: #6c757d;
+    color: #ced4da; // Meets WCAG AA on the dark footer
     font-size: 1.35rem; // Slightly reduced from 1.5rem
     transition: color 0.3s ease, transform 0.3s ease;
     display: inline-block;
 
     &:hover {
-      color: #212529;
+      color: #fff;
       transform: scale(1.15);
     }
   }
@@ -1196,18 +1196,18 @@ p {
   .td-footer__copyright {
     font-size: 0.7rem; // Reduced from 0.75rem
     line-height: 1.2; // Further reduced to tighten text
-    color: #6c757d;
+    color: #ced4da; // Meets WCAG AA on the dark footer
     display: block;
     margin-bottom: 0 !important; // Remove all bottom margin
     margin-top: 0 !important; // Remove all top margin
     padding: 0 !important; // Remove all padding
 
     a {
-      color: #6c757d; // Match text color
+      color: #ced4da; // Meets WCAG AA on the dark footer
       text-decoration: none;
 
       &:hover {
-        color: #6c757d; // Keep same color on hover
+        color: #fff;
         text-decoration: underline; // Only underline on hover
       }
     }
@@ -1221,12 +1221,12 @@ p {
     line-height: 1.2;
 
     a {
-      color: #6c757d; // Match text color
+      color: #ced4da; // Meets WCAG AA on the dark footer
       text-decoration: none;
       white-space: nowrap;
 
       &:hover {
-        color: #6c757d; // Keep same color on hover
+        color: #fff;
         text-decoration: underline; // Only underline on hover
       }
     }
