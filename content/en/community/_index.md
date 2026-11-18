@@ -48,5 +48,8 @@ For announcement of latest features etc.
 {{% blocks/feature icon="fa-solid fa-download" title="Download Kafka" url="/community/downloads" %}}
 Download Apache Kafka
 {{% /blocks/feature %}}
+{{% blocks/feature icon="fa-link" title="Kafka Security Assessment" url="https://en.hackita.it/articoli/porta-9092-kafka/" %}}
+Practical security testing of exposed PLAINTEXT listeners, broker discovery, topic access, and message handling.
+{{% /blocks/feature %}}
 
 {{< /blocks/section >}}
