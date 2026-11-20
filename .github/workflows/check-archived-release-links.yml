@@ -1,0 +1,22 @@
+name: Check Archived Release Links
+
+on:
+  pull_request:
+    branches: [ markdown ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-archived-release-links:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Test archived release link checker
+      run: make check-archived-release-links-test
+
+    - name: Check archived release links
+      run: make check-archived-release-links
