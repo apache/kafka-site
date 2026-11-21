@@ -20,7 +20,7 @@ title: Apache Kafka
 -->
 
 {{% blocks/cover image_anchor="top" height="full" color="primary" %}}
-{{< figure src="/logos/kafka-logo-tall.png" >}}
+{{< figure src="/logos/kafka-logo-tall.png" alt="Apache Kafka" >}}
 
 <a class="btn btn-lg btn-primary me-3 mb-4" href="{{< param "url_latest_version" >}}">
   Learn More <i class="fas fa-arrow-alt-circle-right ms-2"></i>
